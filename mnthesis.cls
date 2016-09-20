@@ -568,7 +568,7 @@
     \else
       \addcontentsline{toc}{chapter}{##1}
     \fi
-    \chaptermark{##1}
+	\chaptermark{##1}
 % Don't add extra space to lists of figures and tables after chapters.
  \addtocontents{lof}{\protect\addvspace{10pt}}
  \addtocontents{lot}{\protect\addvspace{10pt}}
