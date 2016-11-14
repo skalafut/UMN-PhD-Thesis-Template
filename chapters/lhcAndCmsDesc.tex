@@ -21,7 +21,7 @@ The LHC was built to discover new physics mediated by heavy particles which are 
 leptons, hadrons and bosons.  To produce heavy, weakly interacting particles, like a $2.0 TeV$ mass right handed W ($W_{R}$) boson
 with production cross section 5 fb, at a rate sufficient for detection, average instantaneous luminosities of
 $10^{33} \frac{1}{cm^{2}s}$ are needed.  At such luminosities, other more abundant or lower energy processes will occur
-at a significant rate, as shown in Figure \ref{smProductionXsxns}.
+at a significant rate, as shown in Figure \ref{fig:smProductionXsxns}.
 
 Of all processes created by collisions in the LHC, low energy, inelastic QCD interactions occur at the highest rate, of the order
 $10^{8}$ events per second at $10^{33} \frac{1}{cm^{2}s}$.  Contributions from these events to new physics searches are mitigated by vetoing
@@ -47,26 +47,61 @@ of 2015 collisions until August the time separation between consecutive proton b
 separation decreased to 25 ns to increase the instantaneous luminosity, and proton proton collisions continued until November.  From August until November, instantaneous 
 luminosities reached $5x10^{33} \frac{1}{cm^{2}s}$, but problems with the CMS
 magnet cooling system limited the amount of data collected to 2.6 $fb^{-1}$.  Decreasing the bunch spacing increased the sensitivity of every new physics search, but
-came with the cost of more proton proton interactions in every bunch collision, or pileup.  At 13 TeV the total inelastic cross section is approximately 70 mb \cite{Haevermaet}, so
-for instantaneous luminosities between $3-5x10^{33} \frac{1}{cm^{2}s}$ in 25 ns running the expected pileup per bunch crossing is $8-13$, which is consistent with
+came with the cost of more proton proton interactions in every bunch collision, or pileup.  At 13 TeV the total inelastic cross section is approximately 70 mb \cite{Haevermaet}, 
+so for instantaneous luminosities between $3-5x10^{33} \frac{1}{cm^{2}s}$ in 25 ns running the expected pileup per bunch crossing is $8-13$, which is consistent with
 the pileup observed in 25 ns collision data.  Pileup increases the complexity of events$\footnote{15 inelastic pp collisions yield a total flux of particles similar to one top antitop quark pair event}$, and makes event reconstruction and offline analysis more challenging.
 
 
 \subsection{Compact Muon Solenoid Detector Overview}
 \begin{itemize}
-	\item general design goals which ultimately focus down to WR search
-	\item brief description of each subdetector and magnet
 	\item trigger description, followed by particle flow event reconstruction
 \end{itemize}
 The Compact Muon Solenoid (CMS) experiment is designed to search for signs of new physics at the high energy and luminosity regime probed by the LHC.  The LHC was built
-as a discovery machine, so particular attention has been paid to searches for physics beyond the SM, such as supersymmetry and right handed extensions of the SM.
+as a discovery machine, so particular attention has been paid to searches for physics beyond the SM (BSM), such as supersymmetry and extensions of the SM.
 
-The CMS detector approximates a cylinder in shape, with a length of 22 meters and outer radius of 7 meters.  It is divided into a central barrel region ($|\eta| < 1.4$)
-in which separate subdetectors are arranged as concentric cylindrical shells at increasing radii from the beam axis, and a forward endcap region ($|\eta| > 1.57$) 
-in which subdetectors are arranged as layers stacked along the beam axis.
+The The CMS detector approximates a cylinder in shape, with a length of 22 meters, outer radius of 7 meters, and weight of 14500 tons.  It is divided into a central barrel region ($|\eta| < 1.4$)
+in which separate subdetectors are arranged as concentric cylindrical shells at increasing radii from the beam axis, and a forward endcap region ($|\eta| > 1.4$) 
+in which subdetectors are arranged as layers stacked along the beam axis.  Illustrated in Figure \ref{fig:cmsDetectorComponentView}, the CMS subdetectors have complete 2$\pi$ radian coverage in
+$\phi$, and hermetic calorimeter coverage from $-5 \leq \eta \leq 5$ ($-179^{\circ} \leq \theta \leq 0.77^{\circ}$) with respect to the beam axis.  Complete detector
+coverage over this large angular range allows precise measurements to be made of missing energy, and the mass of yet-undiscovered light and heavy particles.
 
-The inner most subdetector, the silicon tracker, consists of silicon pixel and strip detectors.  The pixel sensors .
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
+	\caption{The CMS detector with the coordinate system shown   .  The x axis points towards...}
+	\label{fig:cmsDetectorComponentView}
+\end{figure}
 
+
+Starting at the interaction point and going radially outward, the first subdetector encountered by particles produced in collisions is the silicon tracker.
+The tracker consists of silicon pixel detectors surrounded by silicon strip detectors, all of which are immersed in a 3.8 Tesla magnetic field produced by a superconducting solenoid.
+Both detectors are only sensitive to charged particles, and facilitate precise measurements of charged particle momenta
+and the positions of interaction vertices by measuring the curvature of charged particle tracks which have $|\eta| \leq 2.5$.
+
+Particles which exit the tracker with sufficient momentum to travel approximately 1.0 meter radially away from the interaction point will reach the
+electromagnetic calorimeter (ECAL).  ECAL consists of approximately 76000 lead tungstate crystals which, like the tracker, are sit in a 3.8 Tesla
+magnetic field.  The radiation hardness and fast scintillation time of lead tungstate were key factors in chosing to build ECAL out of it.
+ECAL was designed to measure the energy, time, position and shower shape of electrons and photons with $|\eta| \leq 3.0$ by measuring scintillation
+light produced by lead tungstate in electron and photon showers.
+
+Particles which traverse ECAL with sufficient momentum to continue moving away from the interaction point hit the hadronic calorimeter (HCAL).  Built
+from alternating layers of metal and scintillating plastic tiles, HCAL was designed to measure the energy of charged and neutral
+hadrons, and to provide structural support to all of CMS.  Energetic hadrons produce showers of lower energy particles in metal layers, and the
+showers which reach nearby scintillating tiles produce scintillation light.
+HCAL extends out to $|\eta| = 3.0$, is enveloped by the 3.8 Tesla magnetic field, and
+is complimented by a forward hadron calorimeter (HF) which extends the calorimetry coverage out to $|\eta| = 5.0$.  Due to the high radiation
+environment in its vicinity, HF is built from radiation hard steel blocks laced with radiation hard quartz fibers.  Charged particles which travel
+through HF produce Cherenkov light in the quartz fibers; from the Cherenkov light an energy measurement is extracted.
+
+Surrounding HCAL is the CMS magnet.  It produces a 3.8 Tesla magnetic field from superconducting niobium titanate wire wound into a solenoid, and
+carries more than 10000 amps of current during normal operation.
+
+Particles which pass through HCAL and the magnet encounter the last CMS subdetector, designed to measure the energy of muons.  The muon
+detectors consist of three technologies - drift tubes (DT) and resistive plate chambers (RPC) which cover out to $|\eta| \leq 1.3$, while cathode
+strip chambers (CSC) and RPCs which cover $1.3 \leq |\eta| \leq 2.4$, with some overlap near $|\eta| = 1.3$.  All three technologies measure the amount
+of charge ionized in a gas when a muon traverses an enclosed volume filled with gas, and convert this charge into an energy.
+
+All CMS subdetectors are utilized in particle flow (PF) reconstruction and event triggering.  In. 
 
 \subsection{Track and vertex reconstruction}
 
