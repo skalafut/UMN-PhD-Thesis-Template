@@ -4,61 +4,68 @@
 \chapter{Group Problem}
 \label{Group Problem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-initial velocity $v_{0}$\newline
-launch angle $\theta$\newline
-ball mass m\newline
-initial height above ground $y_{0}$\newline
-gravity g = $9.81 \frac{m}{s^{2}}$
+initial height h = 1.20 m\newline
+ramp angle $\theta$ = 10 degrees\newline
+empty barrel mass $M_{bar}$ = 13.5 kg, beer mass $M_{beer}$ = 59.3 kg\newline
+force of friction $F_{f} = \mu N_{y}$\newline
+gravity g = $9.81 \frac{m}{s^{2}}$\newline
+barrel radius $r_{bar}$ = 0.215 m\newline
+translational acceleration of barrel CM $a_{lin}$\newline
+barrel angular acceleration $\alpha$\newline
 
-a. max height above ground = $y_{0} + \frac{v_{0}^{2}\sin^{2}(\theta)}{2g}$\newline
-use energy conservation to find the max height $h_{m}$\newline
-above the launch point\newline
-$0.5m(v_{0}\sin(\theta))^{2} = mgh_{m}$\newline
-$h_{m} = \frac{(v_{0}\sin(\theta))^{2}}{2g}$\newline
-the max height above the ground is $h_{m} + y_{0}$\newline
+a. force diagram shown in Figure \ref{fig:barrelOnRamp}\newline
 
-b. time in air = $\frac{-1}{g}(-v_{0}\sin(\theta) - \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}})$\newline
-after the ball flies a time $t_{f}$ it hits the\newline
-ground, and its Y position satisfies this equation\newline
-0 = $y_{0} + (v_{0}\sin(\theta))t_{f} - \frac{g}{2}t_{f}^{2}$\newline
-solving for the time in air $t_{f}$ yields\newline
-$t_{f} = \frac{-1}{g}(-v_{0}\sin(\theta) +/- \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}})$\newline
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/exam4groupProblemPartA.png}
+	\caption{barrel rolling down ramp}
+	\label{fig:barrelOnRamp}
+\end{figure}
 
-c. travels a distance = $v_{0}\cos(\theta)(\frac{-1}{g}(-v_{0}\sin(\theta) - \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}}))$\newline
+b. the torque on the barrel is -4.2 Nm (clockwise rotation)\newline
+The only torque about the axis of rotation is created by friction $F_{f}$.  If the barrel rolls\newline
+without slipping, then the linear acceleration $a_{lin}$ of the system center of mass\newline
+in the x direction must be equal to $r_{bar} |\alpha|$.\newline
+first solve for $a_{lin}$ in terms of $F_{f}$:\newline
+$(M_{bar} + M_{beer})a_{lin} = (M_{bar} + M_{beer})g\sin(\theta) - F_{f}$\newline
+$a_{lin} = g\sin(\theta) - \frac{F_{f}}{M_{bar} + M_{beer}} = r_{bar} |\alpha|$\newline
 
-d. speed at ground = $\sqrt{v_{0}^{2} + 2gy_{0}}$\newline
-speed = $\sqrt{v_{x}^{2} + v_{y}^{2}}$\newline
-$v_{x} = constant = v_{0}\cos(\theta)$\newline
-the magnitude of the final y velocity $v_{y}$ is equal\newline
-to the magnitude of the initial y velocity plus the\newline
-increase in kinetic energy due to falling an additional\newline
-distance $y_{0}$, so\newline
-$0.5mv_{y}^{2} = 0.5m(v_{0}\sin(\theta))^{2} + mgy_{0}$\newline
-so $v_{y} = \sqrt{(v_{0}\sin(\theta))^{2} + 2gy_{0}}$\newline
-thus final speed = $\sqrt{(v_{0}\cos(\theta))^{2} + (v_{0}\sin(\theta))^{2} + 2gy_{0}}$\newline
+now solve for $\alpha$ in terms of $F_{f}$:\newline
+torque about axis of rotation = -$F_{f}r_{bar}$ = $M_{bar}r_{bar}^{2} \alpha$\newline
+note that only the mass of the barrel contributes to the moment of inertia of the\newline
+keg; the beer in the keg does not rotate.\newline
+$\alpha$ = -$\frac{r_{bar}}{M_{bar}r_{bar}^{2}} F_{f}$\newline
 
-e. angle $\theta_{end} = \arctan(-\frac{\sqrt{(v_{0}\sin(\theta))^{2} + 2gy_{0}}}{v_{0}\cos(\theta)})$\newline
+so equating $r_{bar} |\alpha|$ to $a_{lin}$ yields an expression for $F_{f}$\newline
+$\frac{r_{bar}^{2}}{M_{bar}r_{bar}^{2}} F_{f} = g\sin(\theta) - \frac{F_{f}}{M_{bar} + M_{beer}}$\newline
+or $F_{f}(\frac{1}{M_{bar} + M_{beer}} + \frac{1}{M_{bar}}) = g\sin(\theta)$\newline
+thus $F_{f}$ = 19.40 N, and the torque on the barrel is -$F_{f}r_{bar}$ = -4.17 Nm\newline
 
-f. max height is $y_{0}$\newline
+c. \newline
+linear accel $a_{lin} = g\sin(\theta) - \frac{1}{M_{bar} + M_{beer}}F_{f} = 1.44 \frac{m}{s^{2}}$\newline
+ang accel $\alpha = -\frac{|a_{lin}|}{r_{bar}} = -6.68 \frac{rad}{s^{2}}$\newline
 
-g. time in air = $\frac{-1}{g}(v_{0}\sin(\theta) - \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}})$\newline
+d. \newline
+final linear velocity $v_{f} = \sqrt{2a_{lin}(1.20 / \sin(\theta) )} = 4.5 \frac{m}{s}$\newline
+final angular velocity $\omega_{f} = -\frac{v_{f}}{r_{bar}} = -21 \frac{rad}{s}$\newline
+final angular KE of barrel = $\frac{1}{2}M_{bar}r_{bar}^{2} \omega_{f}^{2}$ = 134 Joules\newline
+final linear KE of barrel and beer = $\frac{1}{2}(M_{bar} + M_{beer}) v_{f}^{2}$ = 723 Joules\newline
+another acceptable answer for the final linear KE is that of just the barrel, ignoring\newline
+the mass of the beer.\newline
+final linear KE of barrel only = $\frac{1}{2}M_{bar} v_{f}^{2}$ = 134 Joules\newline
 
-the ball hits the ground after flying a time $t_{f}$, so\newline
-0 = $y_{0} - (v_{0}\sin(\theta))t_{f} - \frac{g}{2}t_{f}^{2}$\newline
-solving for the time in air $t_{f}$ yields\newline
-$t_{f} = \frac{-1}{g}(v_{0}\sin(\theta) +/- \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}})$\newline
+e. the barrel rolls down the ramp in 3.0 seconds\newline
+there are several ways to calculate the time required for the keg to roll down\newline
+the ramp; two methods are shown here.\newline
+after a time T the linear velocity is equal to the final linear velocity\newline
+$v_{f} = 0 + a_{lin}T \rightarrow T = \frac{v_{f}}{a_{lin}}$ = 3.10 s\newline
 
-h. travels a distance = $v_{0}\cos(\theta)(\frac{-1}{g}(v_{0}\sin(\theta) - \sqrt{2gy_{0} + (v_{0}\sin(\theta))^{2}}))$\newline
+the total angular distance travelled $\theta_{tot}$ is equal to half of\newline
+the angular acceleration multiplied by $T^{2}$\newline
+$\theta_{tot} = -\frac{6.28 rads}{revolution} \frac{1 revolution}{6.28r_{bar}} \frac{1.20 m}{\sin(\theta)}$\newline
+$\theta_{tot}$ = -32.142 radians\newline
+$\theta_{tot} = \frac{1}{2} \alpha T^{2}$\newline
+so T = $\sqrt{\frac{2 \theta_{tot}}{\alpha}}$ = 3.10 s
 
-i. same speed as earlier = $\sqrt{v_{0}^{2} + 2gy_{0}}$\newline
-
-j. same angle as earlier $\theta_{end} = \arctan(-\frac{\sqrt{(v_{0}\sin(\theta))^{2} + 2gy_{0}}}{v_{0}\cos(\theta)})$\newline
-
-k. the speed of the ball when it hits the ground is\newline
-independent of the launch angle $\theta$. This final\newline
-speed only differs from the initial launch speed if\newline
-there is a difference in gravitational potential energy\newline
-between the launch position and the landing position\newline
-on the ground.\newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
