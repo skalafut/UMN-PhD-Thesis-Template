@@ -22,39 +22,51 @@ The data used by this analysis was collected by the CMS experiment from May unti
 the center of mass energy of $\sqrt{s} = 13\TeV$.  As this was the first year of
 collisions at $\sqrt{s} = 13\TeV$, the LHC cautiously operated at a much lower average
 instantaneous luminosity than in 2012, and spent the first half of the data-taking period
-using 50ns spacing between proton bunches, as was done for all of 2012.  During the second
-half of the data-taking period, the LHC collided proton bunches using 25ns spacing between
-bunches, and delivered approximately YYY fb$^{-1}$, as shown in
-Figure \ref{fig:lhc2015IntegLumi}.  The data was split into four run eras -
+using 50ns spacing between proton bunches, as was done for all of 2012.  Over the entire year
+the LHC delivered approximately 4.2 fb$^{-1}$ \cite{lumi}, of which more than 4.0 fb$^{-1}$
+coming with 25ns spacing between proton bunches.  The data was split into four run eras -
 Run2015A, B, C and D - which can be identified in Figure \ref{fig:lhc2015IntegLumi} as
 the periods between plateaus in integrated luminosity.  Each run era corresponds
 to a period in which all LHC fills used similar spacing between individual proton bunches, and
-the structure of each beam, in terms of how large groups of bunches were injected, was
-relatively constant.  The plateaus separating run eras were periods when the
-LHC stopped physics collisions for maintenance or minor upgrades to increase instantaneous
+other beam characteristics.  The plateaus separating run eras correspond to periods when the LHC
+stopped physics collisions for maintenance or minor upgrades to increase instantaneous
 luminosity.  CMS collected data during all four run eras, and the collision datasets
-are named accordingly.  Run eras A and B correspond to collisions with 50ns spacing between
-proton bunches, and are not used in this analysis.  Problems with the CMS magnet cooling system reduced the
-amount of data available for physics analyses from YYY fb$^{-1}$ to 2.6 fb$^{-1}$.
+are named accordingly.  The data collected with 50ns spacing between proton bunches, corresponding
+to run eras A and B, was less than 200 pb$^{-1}$, and was used primarily for calibration
+and alignment.  This is a small amount of data compared to the total collected with 25ns
+bunch spacing.  The challenges with using 50ns and 25ns data in this analysis outweigh the benefits
+of gaining a few percent in integrated luminosity, so this search does not use the data
+collected by CMS during 50ns bunch spacing conditions.  During collisions with 25ns bunch
+spacing, problems with the CMS magnet cooling system and online data taking reduced the amount
+of data available for physics analyses to 2.6 fb$^{-1}$.
 
-The raw dataset collected by CMS is too large ($\gtrsim 10^{4}$ terabytes) for analyses
-which want to run from start to finish in $\lessim 3$ days, and contains more information
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/int_lumi_per_day_cumulative_pp_2015.pdf}
+	\caption{Integrated luminosity delivered by the LHC, and recorded by CMS in 2015.}
+	\label{fig:lhc2015IntegLumi}
+\end{figure}
+
+
+The raw dataset collected by CMS is too large ($\gtrsim 10^{4}$ terabytes) to process for analyses
+which want to run from start to finish in $\lessim 3$ days, and contains much more information
 than what is needed by any individual physics analysis.  To expedite the process of
 transforming collision data into a public physics result, collision data from each run
 era is split into several smaller datasets which are distinguished by the presence of one
 or more objects in the final state, such as events with at least one muon, or least two
-electrons.  The HLT decides which dataset an event should be assigned to based on the
-individual triggers which were fired; in some instances one event can be assigned to several
+electrons or photons.  The HLT decides which dataset an event should be assigned to based on the
+individual triggers which were fired; in some instances one event will be assigned to several
 datasets.  As the average instantaneous luminosity of the LHC increased dramatically in the 
 last 3 months of data-taking, datasets in Run2015D were split into two pieces such that the size
 of each dataset remained small ($\sim 1$ terabyte).  The collision events used in this analysis
 were collected in the "SingleMuon", "DoubleEG", and "MuonEG" datasets summarized in Table
 \ref{tab:collisionDatasets}.  This analysis uses the datasets which were reconstructed, the process
 by which raw detector outputs are transformed into distinguishable objects like muons and
-electrons, in the late summer, fall and early winter of 2015.
+electrons, in the late summer, fall and early winter of 2015 using calibration and alignment
+constants derived in early 2015.
 
 \begin{table}[h]
-\caption{The collision datasets used in this analysis, their total size (all dataset pieces for 2015D) and the run era in which they were made.}
+\caption{The collision datasets used in this analysis, the run eras they correspond to, and their total size (both dataset pieces for 2015D).}
 \label{tab:collisionDatasets}
 \centering
 \begin{tabular}{c|c|c|c|c}
@@ -64,6 +76,9 @@ Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj d
 \end{tabular}
 \end{table}
 
+The "DoubleEG" dataset, which requires at least two energetic energy deposits in ECAL 
+consistent with electrons or photons, is used to study events with two electrons and two jets
+in the final state.  .
 
 
 \subsection{Monte Carlo}
