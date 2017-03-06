@@ -79,10 +79,10 @@ Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj d
 \end{table}
 
 The "DoubleEG" dataset requires at least two energetic energy deposits in ECAL 
-consistent with electrons or photons.  It is used to study events with two electrons and two jets
+consistent with electrons or photons.  The dataset is used to study events with two electrons and two jets
 in the final state, and to look for evidence of \WR bosons which decay to electron flavor
 heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$.
-As explained in Chapter \ref{sec:experiment_chapter}, the trigger runs a subset of the full
+As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a subset of the full
 particle reconstruction software package to reconstruct electron candidates in
 every event.  After reconstruction, the trigger requires at least two electrons to pass
 the cuts defined in Table \ref{tab:eleHltCuts}.  These cuts were optimized to increase the fraction
@@ -119,10 +119,9 @@ Table \ref{tab:singleAndDblEleTriggers}, there is not a significant difference i
 between single and double electron triggers as long as single electron Level 1 triggers are utilized.
 These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow eejj$
 dataset, as events from this dataset have the lowest average leading and subleading electron $E_{T}$
-of all $\WR \rightarrow eejj$ datasets considered in this search.  To allow the offline (post trigger)
-electron energy cuts to be as low as possible for increased signal acceptance, and to allow the HEEP
-offline electron ID requirements to be used, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$ was chosen
-over the higher $E_{T}$ and tighter ID single electron trigger.
+of all $\WR \rightarrow eejj$ datasets considered in this search.  To ensure that most of offline (post trigger)
+electron ID requirements are tighter than the electron trigger ID requirements, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$
+was chosen over the higher $E_{T}$ and tighter ID single electron trigger.
 
 \begin{table}[h]
 \caption{Efficiency of electron triggers in 800 $\GeV$ \WR mass $\WR \rightarrow eejj$ signal events which have
@@ -140,7 +139,46 @@ is fired.}
 \end{tabular}
 \end{table}
 
-The "SingleMuon" dataset requires.
+
+The "SingleMuon" dataset requires at least one energetic energy deposit in the muon detectors 
+consistent with a muon.  This dataset is used to study events with two muons and two jets
+in the final state, and to look for evidence of \WR bosons which decay to muon flavor
+heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_Mu50|$.
+As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a subset of the full
+particle reconstruction software package to reconstruct muon candidates in
+every event.  After reconstruction, the trigger requires at least one muon candidate to be
+geometrically matched to a good quality reconstructed track, and have $p_{T}$ above 50 $\GeV$.
+
+This particular single muon trigger was chosen based on trigger efficiency, and offline (post trigger)
+requirements which must be tighter than the trigger.  As shown in
+Table \ref{tab:singleAndDblMuTriggers}, there is not a significant difference in trigger efficiency
+between single and double muon triggers as long as single muon Level 1 triggers are utilized.
+These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$
+dataset, as events from this dataset have the lowest average leading and subleading muon $E_{T}$
+of all $\WR \rightarrow \mu\mu jj$ datasets considered in this search.
+
+%To allow the offline (post trigger)
+%electron energy cuts to be as low as possible for maximum signal acceptance, and to allow the HEEP
+%offline electron ID requirements to be used, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$ was chosen
+%over the higher $E_{T}$ and tighter ID single electron trigger.
+
+
+
+\begin{table}[h]
+\caption{Efficiency of muon triggers in 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ signal events which have
+two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).  The}
+\label{tab:singleAndDblMuTriggers}
+\centering
+\begin{tabular}{c|c|}
+	Muon trigger & Efficiency (\%)  \\  \hline
+	$\verb|HLT_Mu50|$  &  $98.4\pm0.1$  \\
+	$\verb|HLT_Mu45_eta2p1|$  &  $97.6\pm0.1$  \\
+	$\verb|HLT_Mu40_TkMu11|$  &  $96.9\pm0.1$  \\
+	$\verb|HLT_Mu34|$  &  $99.1\pm0.1$  \\
+\end{tabular}
+\end{table}
+
+
 
 
 \subsection{Monte Carlo}
