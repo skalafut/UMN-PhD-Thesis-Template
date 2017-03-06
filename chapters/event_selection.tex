@@ -5,10 +5,12 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-By studying events with two jets and two same flavor leptons (e,$\mu$), this search
+By studying events with two jets and two same flavor leptons (e$^{\pm}$,$\mu^{\pm}$), this search
 seeks evidence of potential \WR signals which decay via $\WR \rightarrow l\Nell \rightarrow lljj$.
 Events with e$\mu$jj final state discussed here are only used for top quark background
-estimation.  This chapter describes the procedures through which events are selected, and the
+estimation.  No charge requirements are placed on leptons, so charged leptons and their
+antiparticles are equivalent.  For brevity, only electrons and muons are stated explicitly.
+This chapter describes the procedures through which events are selected, and the
 subsequent reconstruction of and selection applied to jets, muons and electrons, and
 combinations thereof.  This chapter concludes by explaining the methodology used
 to interpret the four-object invariant mass of the two same flavor leptons and two jets in the
@@ -79,8 +81,66 @@ Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj d
 The "DoubleEG" dataset requires at least two energetic energy deposits in ECAL 
 consistent with electrons or photons.  It is used to study events with two electrons and two jets
 in the final state, and to look for evidence of \WR bosons which decay to electron flavor
-heavy neutrinos.  During collisions, events are selected using the trigger. %"HLT_DoubleEle33_CaloIdL_GsfTrkIdVL"
-As explained in Chapter \ref{sec:experiment_chapter}.
+heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$.
+As explained in Chapter \ref{sec:experiment_chapter}, the trigger runs a subset of the full
+particle reconstruction software package to reconstruct electron candidates in
+every event.  After reconstruction, the trigger requires at least two electrons to pass
+the cuts defined in Table \ref{tab:eleHltCuts}.  These cuts were optimized to increase the fraction
+of real electrons selected relative to the number of fake electrons, coming from QCD and other
+sources, selected by the trigger.  The ID variable cut thresholds differ between the ECAL barrel ($|\eta| \leq 1.42$)
+and endcap ($|\eta| \geq 1.57$) for the following reason.  All ECAL crystals are used for event
+triggering, but the way in which these crystals are grouped into trigger zones differs between the
+barrel and endcap.  As a result, the shape and peak position of ID variables for real electrons
+produced by $Z \rightarrow ee$ decays differs between barrel and endcap electrons.  The electron
+ID variable cut thresholds differ between the barrel and endcap such that each ID cut selects
+real barrel and endcap electrons with similar efficiencies.
+
+
+\begin{table}[h]
+\caption{Double electron trigger requirements. NOT COMPLETE FINISH LATER}
+\label{tab:eleHltCuts}
+\centering
+\begin{tabular}{c|c|c}
+	Variable & Barrel cut threshold & Endcap cut threshold  \\  \hline
+	energy and geometric acceptance cuts  &  &   \\
+	$E_{T} (\GeV)$  &  33  &  33  \\
+	$|\eta| (-)$  &  $< 2.5$  &  $< 2.5$  \\  \hline
+	electron ID cuts  &  &  \\
+	$\sigma_{i\eta i\eta} (-)$  &  $< 0.014$  &  $< 0.035$  \\
+	$H/E (1/\GeV)$  &  $< 0.15/E_{T}$  &  $< 0.1/E_{T}$  \\
+	ECAL Iso $(1/\GeV)$  &  $< EBISO/E_{T}$  &  $< EEISO/E_{T}$  \\
+\end{tabular}
+\end{table}
+
+
+This particular double electron trigger was chosen based on trigger efficiency, and offline (post trigger)
+requirements which must be tighter than the trigger.  As shown in
+Table \ref{tab:singleAndDblEleTriggers}, there is not a significant difference in trigger efficiency
+between single and double electron triggers as long as single electron Level 1 triggers are utilized.
+These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow eejj$
+dataset, as events from this dataset have the lowest average leading and subleading electron $E_{T}$
+of all $\WR \rightarrow eejj$ datasets considered in this search.  To allow the offline (post trigger)
+electron energy cuts to be as low as possible for increased signal acceptance, and to allow the HEEP
+offline electron ID requirements to be used, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$ was chosen
+over the higher $E_{T}$ and tighter ID single electron trigger.
+
+\begin{table}[h]
+\caption{Efficiency of electron triggers in 800 $\GeV$ \WR mass $\WR \rightarrow eejj$ signal events which have
+two real, reconstructed electrons within the trigger acceptance ($|\eta| \leq 2.5$).  The double electron trigger
+with lower $E_{T}$ cuts (23 and 12) can only fire if a double electron Level 1 trigger is fired, and thus has
+a lower efficiency than the DoubleEle33 trigger which can fire if a double or single electron Level 1 trigger
+is fired.}
+\label{tab:singleAndDblEleTriggers}
+\centering
+\begin{tabular}{c|c|}
+	Electron trigger & Efficiency (\%)  \\  \hline
+	$\verb|HLT_Ele105_CaloIdVT_GsfTrkIdT|$  &  $94.8\pm0.2$  \\
+	$\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$  &  $92.0\pm0.2$  \\
+	$\verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL|$  &  $91.0\pm0.2$  \\
+\end{tabular}
+\end{table}
+
+The "SingleMuon" dataset requires.
 
 
 \subsection{Monte Carlo}
