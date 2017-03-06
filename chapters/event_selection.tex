@@ -144,24 +144,27 @@ The "SingleMuon" dataset requires at least one energetic energy deposit in the m
 consistent with a muon.  This dataset is used to study events with two muons and two jets
 in the final state, and to look for evidence of \WR bosons which decay to muon flavor
 heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_Mu50|$.
-As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a subset of the full
-particle reconstruction software package to reconstruct muon candidates in
-every event.  After reconstruction, the trigger requires at least one muon candidate to be
-geometrically matched to a good quality reconstructed track, and have $p_{T}$ above 50 $\GeV$.
+The trigger first runs a subset of the full particle reconstruction software package to
+reconstruct muon candidates in every event.  After reconstruction, the trigger requires at
+least one muon candidate, made from a good quality track matched to a muon detector energy
+deposit, to have $p_{T} > 50 \GeV$.
 
 This particular single muon trigger was chosen based on trigger efficiency, and offline (post trigger)
 requirements which must be tighter than the trigger.  As shown in
 Table \ref{tab:singleAndDblMuTriggers}, there is not a significant difference in trigger efficiency
 between single and double muon triggers as long as single muon Level 1 triggers are utilized.
-These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$
-dataset, as events from this dataset have the lowest average leading and subleading muon $E_{T}$
-of all $\WR \rightarrow \mu\mu jj$ datasets considered in this search.
-
-%To allow the offline (post trigger)
-%electron energy cuts to be as low as possible for maximum signal acceptance, and to allow the HEEP
-%offline electron ID requirements to be used, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$ was chosen
-%over the higher $E_{T}$ and tighter ID single electron trigger.
-
+Events from the 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ dataset have the lowest average
+leading and subleading muon $p_{T}$ amongst all $\WR \rightarrow \mu\mu jj$ datasets used in this
+analysis, so events from this dataset were used to determine the trigger efficiencies shown in
+Table \ref{tab:singleAndDblMuTriggers}.  Ignoring prescaled triggers\footnote{there are triggers
+which have lower $p_{T}$ thresholds than those listed here, but their rates are artificially
+suppressed by randomly ignoring events which pass all trigger requirements} and triggers
+which require tighter isolation requirements than the optimal offline muon isolation for this
+search, the best trigger for this search is $\verb|HLT_Mu50|$.  Even though switching to lower $p_{T}$
+threshold single and double muon triggers would allow for lower offline lepton $p_{T}$ cuts, it
+will be shown later (SEC REF) that lower offline lepton cuts would reduce signal over background
+sensitivity in the medium and high \WR mass region where this search has better sensitivity than
+the RunI search.
 
 
 \begin{table}[h]
@@ -179,6 +182,30 @@ two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).
 \end{table}
 
 
+The "MuonEG" dataset requires at least one energy deposit in the muon detectors consistent
+with a muon, and at least one energy deposit in ECAL consistent with an electron or photon.
+This dataset is used to study events with one electron, one muon and two jets
+in the final state.  We seek a \WR boson whose decay conserves lepton flavor, so to leading
+order in the right handed electroweak coupling there cannot be any excess of events in the
+$e\mu jj$ final state due to a \WR boson.  The $e\mu jj$ final state is only used to estimate
+backgrounds from the top quark.  During collisions, events are selected using the trigger
+$\verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL|$.  The trigger first runs a subset of the full
+particle reconstruction software package to reconstruct muon and electron candidates in
+every event.  After reconstruction, the trigger requires at least one muon candidate, made
+from a good quality track geometrically matched to a muon detector energy deposit, to have
+$p_{T} > 30 \GeV$.  In addition, at least one electron candidate which passes loose ID cuts
+must be found with $E_{T} > 30 \GeV$.  As this trigger is only used for background estimation
+in the signal region, it was chosen because it replicates the trigger algorithms and
+cut thresholds used to select $\mu\mu jj$ events from the "SingleMuon" dataset, and eejj events
+from the "DoubleEG" dataset, but uses lower $E_{T}$ and $p_{T}$ cuts.
+
+In addition to the trigger requirements discussed above, collision datasets are cleaned of events
+in which global reconstruction problems occurred within the detector.  These include events
+where no primary vertex is reconstructed, and when anomalous noise appears or reconstruction problems
+occur in the tracker, calorimeters, or muon detectors.  Furthermore, events identified as
+coming from interactions between a single proton beam and beam pipe gas
+or other foreign
+material are removed.
 
 
 \subsection{Monte Carlo}
