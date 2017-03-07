@@ -73,12 +73,12 @@ constants derived in early 2015.
 \centering
 \begin{tabular}{c|c|c|c|c}
 Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj dataset \\  \hline
-	2015C &  CLUMI  &  DoubleEG  &  SingleMuon  &  MuonEG  \\
-	2015D &  DLUMI  &  DoubleEG  &  SingleMuon  &  MuonEG  \\ \hline
+	2015C &  20  &  DoubleEG  &  SingleMuon  &  MuonEG  \\
+	2015D &  2620  &  DoubleEG  &  SingleMuon  &  MuonEG  \\ \hline
 \end{tabular}
 \end{table}
 
-The "DoubleEG" dataset requires at least two energetic energy deposits in ECAL 
+The "DoubleEG" dataset requires at least two energy deposits in ECAL 
 consistent with electrons or photons.  The dataset is used to study events with two electrons and two jets
 in the final state, and to look for evidence of \WR bosons which decay to electron flavor
 heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$.
@@ -86,8 +86,8 @@ As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a s
 particle reconstruction software package to reconstruct electron candidates in
 every event.  After reconstruction, the trigger requires at least two electrons to pass
 the cuts defined in Table \ref{tab:eleHltCuts}.  These cuts were optimized to increase the fraction
-of real electrons selected relative to the number of fake electrons, coming from QCD and other
-sources, selected by the trigger.  The ID variable cut thresholds differ between the ECAL barrel ($|\eta| \leq 1.42$)
+of real over fake electrons electrons selected by the trigger.
+The ID variable cut thresholds differ between the ECAL barrel ($|\eta| \leq 1.42$)
 and endcap ($|\eta| \geq 1.57$) for the following reason.  All ECAL crystals are used for event
 triggering, but the way in which these crystals are grouped into trigger zones differs between the
 barrel and endcap.  As a result, the shape and peak position of ID variables for real electrons
@@ -140,7 +140,7 @@ is fired.}
 \end{table}
 
 
-The "SingleMuon" dataset requires at least one energetic energy deposit in the muon detectors 
+The "SingleMuon" dataset requires at least one energy deposit in the muon detectors 
 consistent with a muon.  This dataset is used to study events with two muons and two jets
 in the final state, and to look for evidence of \WR bosons which decay to muon flavor
 heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_Mu50|$.
@@ -163,13 +163,12 @@ which require tighter isolation requirements than the optimal offline muon isola
 search, the best trigger for this search is $\verb|HLT_Mu50|$.  Even though switching to lower $p_{T}$
 threshold single and double muon triggers would allow for lower offline lepton $p_{T}$ cuts, it
 will be shown later (SEC REF) that lower offline lepton cuts would reduce signal over background
-sensitivity in the medium and high \WR mass region where this search has better sensitivity than
-the RunI search.
+sensitivity in the medium and high \WR mass region.
 
 
 \begin{table}[h]
 \caption{Efficiency of muon triggers in 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ signal events which have
-two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).  The}
+two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).}
 \label{tab:singleAndDblMuTriggers}
 \centering
 \begin{tabular}{c|c|}
@@ -187,7 +186,7 @@ with a muon, and at least one energy deposit in ECAL consistent with an electron
 This dataset is used to study events with one electron, one muon and two jets
 in the final state.  We seek a \WR boson whose decay conserves lepton flavor, so to leading
 order in the right handed electroweak coupling there cannot be any excess of events in the
-$e\mu jj$ final state due to a \WR boson.  The $e\mu jj$ final state is only used to estimate
+$e\mu jj$ final state due to a \WR boson.  Thus, the $e\mu jj$ final state is only used to estimate
 backgrounds from the top quark.  During collisions, events are selected using the trigger
 $\verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL|$.  The trigger first runs a subset of the full
 particle reconstruction software package to reconstruct muon and electron candidates in
@@ -196,20 +195,91 @@ from a good quality track geometrically matched to a muon detector energy deposi
 $p_{T} > 30 \GeV$.  In addition, at least one electron candidate which passes loose ID cuts
 must be found with $E_{T} > 30 \GeV$.  As this trigger is only used for background estimation
 in the signal region, it was chosen because it replicates the trigger algorithms and
-cut thresholds used to select $\mu\mu jj$ events from the "SingleMuon" dataset, and eejj events
+lepton ID cut thresholds used to select $\mu\mu jj$ events from the "SingleMuon" dataset, and eejj events
 from the "DoubleEG" dataset, but uses lower $E_{T}$ and $p_{T}$ cuts.
 
 In addition to the trigger requirements discussed above, collision datasets are cleaned of events
 in which global reconstruction problems occurred within the detector.  These include events
-where no primary vertex is reconstructed, and when anomalous noise appears or reconstruction problems
-occur in the tracker, calorimeters, or muon detectors.  Furthermore, events identified as
-coming from interactions between a single proton beam and beam pipe gas
-or other foreign
-material are removed.
+where no primary vertex is reconstructed, and when anomalous noise appears in the
+tracker, calorimeters, or muon detectors.  Furthermore, events identified as coming from
+interactions between a single proton beam and beam pipe gas or other foreign material are
+removed.
 
 
 \subsection{Monte Carlo}
 \label{MC}
+Monte Carlo (\MC) simulations were used to estimate backgrounds and systematic uncertainties, derive
+scale factors, reinterpret \WR cross section limits, and identify kinematic regions for
+hypothetical \WR boson signals with specific \WR masses.  The \MC samples used to estimate backgrounds
+and systematic uncertainties, identify kinematic regions for specific \WR boson signals, and derive
+scale factors were produced by the CMS \MC production group.  Events produced by this group were
+passed through a full simulation of the CMS detector using GEANT4\cite{geant4}, were hadronized\footnote{hadronization
+is the process through which unstable quarks and gluons produced at the Feynman diagram level of simulation
+are transformed into stable jets observed by CMS} using \PYTHIA, and detector information was reconstructed
+into particles using the same CMS particle reconstruction library used with collision data.
+\MC samples were produced by the CMS \MC production group for all SM processes which can yield
+the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
+of diboson pairs is not considered due to its low cross section times branching
+fraction}, and high cross section SM processes which can produce two jets
+and two fake leptons.  These processes are \DY (DY)+jets, W+jets, t$\bar{t}$+jets generated
+with \MADGRAPH \cite{madgraph}, single top and top+W generated with \POWHEG \cite{powheg}, and
+QCD and diboson (WW, WZ, ZZ) generated with \PYTHIA \cite{pythia8}\cite{Sjostrand:2006za}.
+These samples and their generators are listed in Table \ref{tab:centrallyProducedMC} along
+with their cross sections, and the number of events in each sample.
+
+\begin{table}[bt]
+\caption{Fully reconstructed \MC samples produced by the CMS \MC production group.  Cross sections
+	are calculated at next-to-leading order (NLO) unless noted otherwise.  The \DY and t$\bar{t}$+jets events
+were produced with a dilepton mass $M_{LL} > 50 \GeV$ cut using the two
+leptons coming from the hard interaction.}
+\label{tab:centrallyProducedMC}
+
+\centering
+\resizebox{\textwidth}{!}{
+	\begin{tabular}{ |c|c|c|c| } 
+	\hline
+		Dataset         & Generator & $\sigma$ $\times$ filter efficiency (pb) & Events   \\
+		\hline
+		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991 (LO)   & 9042031 \\
+		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3 (LO)   & 2725655 \\
+		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42 (LO)   & 973937 \\
+		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984 (LO)   & 1067758 \\
+		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704 (LO)   & 998912 \\
+		t$\bar{t}$+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\
+		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 1680200 \\
+		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 3299800 \\
+		$\bar{t}$+W   & \POWHEG & 35.85 & 988500 \\
+		t+W   & \POWHEG & 35.85 & 995600 \\
+		WW  & \PYTHIA & 113.8   & 993640   \\
+		ZZ  & \PYTHIA & 10.15   & 996944   \\
+		WZ  & \PYTHIA & 23.4   & 978512   \\
+		W+jets, $W \rightarrow l\nu$ & \MADGRAPH & 50270 (NNLO)   & 72207128 \\
+		QCD Pt 15-20 $e\gamma$ enriched  & \PYTHIA & 2302200   & 2122959   \\
+		QCD Pt 15-20 $\mu$ enriched  & \PYTHIA & 3819570   & 2362016   \\
+		QCD Pt 20-30 $e\gamma$ enriched  & \PYTHIA & 5352960     & 9184197   \\
+		QCD Pt 20-30 $\mu$ enriched  & \PYTHIA & 2960198    & 5311955   \\
+		QCD Pt 30-50 $e\gamma$ enriched  & \PYTHIA & 9928000    & 4736965   \\
+		QCD Pt 30-50 $\mu$ enriched  & \PYTHIA & 1652471    & 4946084   \\
+		QCD Pt 50-80 $e\gamma$ enriched  & \PYTHIA & 2890800    & 5291543   \\
+		QCD Pt 50-80 $\mu$ enriched  & \PYTHIA & 437504     & 5058536   \\
+		QCD Pt 80-120 $e\gamma$ enriched  & \PYTHIA & 350000  & 8130424   \\
+		QCD Pt 80-120 $\mu$ enriched  & \PYTHIA & 106034    & 3882463   \\
+		QCD Pt 120-170 $e\gamma$ enriched  & \PYTHIA & 62964   & 8513976   \\
+		QCD Pt 120-170 $\mu$ enriched  & \PYTHIA & 25191    & 4026104   \\
+		QCD Pt 170-300 $\mu$ enriched  & \PYTHIA & 8654     & 3949716   \\
+		QCD Pt 170-300 $e\gamma$ enriched  & \PYTHIA & 18810     & 5735584   \\
+		QCD Pt $>$ 300 $e\gamma$ enriched  & \PYTHIA & 1350    & 3707833   \\
+		QCD Pt 300-470 $\mu$ enriched  & \PYTHIA & 797.4     & 3960205   \\
+		QCD Pt 470-600 $\mu$ enriched  & \PYTHIA & 79.03     & 1928595   \\
+		QCD Pt 600-800 $\mu$ enriched  & \PYTHIA & 25.1      & 1983363   \\
+		QCD Pt 800-1000 $\mu$ enriched  & \PYTHIA & 4.71     & 1982314   \\
+		QCD Pt $>$ 1000 $\mu$ enriched  & \PYTHIA & 1.62      & 1981954   \\
+		$\WR \rightarrow l\Nell$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3
+		\hline
+		\end{tabular}
+}
+\end{table}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
