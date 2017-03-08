@@ -279,6 +279,46 @@ leptons coming from the hard interaction.}
 }
 \end{table}
 
+The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
+final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
+features of this model are explained in section \ref{sec:theory_chapter}.  \WR signal
+samples were produced with $M_{\Nell} = M_{\WR}/2$, and $M_{\WR}$ starting at 800 \GeV and
+increasing, in increments of 200 \GeV, to 6000 \GeV.
+
+The number of reconstructed interaction vertices from all collision datasets described
+earlier approximates a Poisson distribution, and the average number of reconstructed
+interaction vertices in each event in 2015 was above 9.  In each collision event, this
+set of interaction vertices is comprised of the primary interaction vertex which
+resulted in one or more lepton triggers firing, and secondary interaction vertices,
+typically caused by QCD, which resulted in additional energy being measured by CMS.
+These secondary interaction vertices are created as a result of the high instantaneous
+luminosity, and, in the context of this search, their only effect is to obfuscate
+signs of a \WR boson.  To reproduce the effect of secondary interaction vertices, all
+simulated event samples produced by the CMS \MC group are mixed with "minimum bias"
+events before simulating the detector response and subsequent particle reconstruction.
+Each minimum bias event has only one interaction vertex that results in at least
+one particle travelling into CMS with sufficient energy to be detected\footnote{The minimum
+bias events mixed into simulated events, in principle, can come from any known and
+well measured SM process.  However, the enormous cross section of proton proton
+inelastic scattering and other low momentum transfer QCD processes means the vast
+majority of minimum bias events come from low momentum transfer QCD processes}.
+The number of minimum bias events mixed into one simulated event is determined
+by sampling a random number from a Poisson distribution whose mean was set equal
+to the expected number of average reconstructed vertices in 2015 collision events.
+This expected average was calculated before 2015 collisions began, so \MC events 
+used in this analysis are reweighted based on the true difference between reconstructed
+vertices in \MC and collision data.
+
+A set of \WR \MC signal samples were privately produced only to extend \WR cross
+section limits set for $M_{\Nell} = M_{\WR}/2$ to a 2D plane of possible \WR
+and \Nell mass values.  These private samples were produced using the same
+\PYTHIA generator and parameters used by the CMS \MC production group, but the
+detector response simulation and particle reconstruction steps were omitted.
+Samples were produced starting at $M_{\WR} = 800 \GeV$
+and $M_{\Nell} = 100 \GeV$, and $M_{\WR}$ increasing to 4000 \GeV in increments
+of 100 \GeV.  At each $M_{\WR}$, 15000 events are produced for every $M_{\Nell}$
+value, starting at 100 \GeV and increasing in increments of 100 \GeV up to
+$M_{\Nell} = M_{\WR} - 100 \GeV$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
