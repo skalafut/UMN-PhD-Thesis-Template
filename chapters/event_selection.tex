@@ -7,8 +7,7 @@
 
 By studying events with two jets and two same flavor leptons (e$^{\pm}$,$\mu^{\pm}$), this search
 seeks evidence of potential \WR signals which decay via $\WR \rightarrow l\Nell \rightarrow lljj$.
-Events with e$\mu$jj final state discussed here are only used for top quark background
-estimation.  No charge requirements are placed on leptons, so charged leptons and their
+Events with e$\mu$jj final state discussed here are only used for top quark background estimation.  No charge requirements are placed on leptons, so charged leptons and their
 antiparticles are equivalent.  For brevity, only electrons and muons are stated explicitly.
 This chapter describes the procedures through which events are selected, and the
 subsequent reconstruction of and selection applied to jets, muons and electrons, and
@@ -328,13 +327,15 @@ $M_{\Nell} = M_{\WR} - 100 \GeV$.
 The Particle Flow (PF) algorithm, introduced in Chapter \ref{sec:experiment_chapter}, is used
 to reconstruct all particles which interact with the tracker, calorimeters and muon
 detectors of CMS.  Reconstructed particles are grouped into five categories, each with their
-own distinguishing features, shown in Table \ref{tab:pfRecoBins}.  Jets are born from
-unstable quarks and gluons which decay to stable charged and neutral hadrons ($\pi^{\pm}$,
-$K^{0}$), stable charged leptons ($e^{\pm}$, $\mu^{\pm}$) coming from weak boson
-decays, and photons coming from electromagnetic decays of neutral hadrons like the
-$\pi^{0}$.  Thus, all particles reconstructed by the PF algorithm are considered during
-jet reconstruction.
-
+own distinguishing features, shown in Table \ref{tab:pfRecoBins}.  Information
+from every subdetector is combined to determine the energy and momentum of
+each reconstructed particle.  Jets originate from unstable quarks and gluons,
+but what is actually detected are the stable daughter particles created by
+quark and gluon decays.  These include stable charged and neutral hadrons ($\pi^{\pm}$,
+$K^{0}$), stable charged leptons ($e^{\pm}$, $\mu^{\pm}$) created by weak boson
+decays, and photons resulting from electromagnetic decays of neutral hadrons like
+the $\pi^{0}$.  Thus, all particles reconstructed by the PF algorithm are considered
+during jet reconstruction.
 
 \begin{table}[h]
 \caption{The Particle Flow algorithm reconstructs particles, and, based on the reconstructed
@@ -350,6 +351,37 @@ Particle Category & Identifying Features \\  \hline
 	Neutral Hadron &  has no track, only energy in HCAL or HCAL and ECAL  \\ \hline
 \end{tabular}
 \end{table}
+
+In each event the vertex with the highest $\Sigma p_{T}$ of all tracks is identified
+as the primary vertex, and all other reconstructed vertices are pileup
+vertices.
+Charged hadrons, electrons and muons whose tracks come from pileup vertices
+are removed from the list of possible jet constituents to mitigate the effect
+of pileup interactions.  The remaining reconstructed particles are clustered
+into jets using the anti-$k_{T}$ algorithm \cite{antikt}.  This algorithm
+takes the $i^{th}$ particle from the list of possible jet constituents, and
+calculates the distance parameter $d_{ij}$
+
+\begin{equation}
+	$d_{ij} = min(k_{Ti}^{-2},k_{Tj}^{-2})\frac{\Delta^{2}}{R^{2}}$
+\end{equation}
+
+using the $j^{th}$ particle in the same list, where $\Delta$ is the angular
+separation between the $i^{th}$ and $j^{th}$ particle, R is 0.4, and $k_{Ti}$
+is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle has 
+$d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle is a jet constituent
+and is removed from the constituent list and placed in a different list L.
+This procedure is repeated for all particles in the list of possible jet constituents,
+then repeated for all elements in the new list $L_{1}$.  The iteration over
+all particles in the newly created list continues N times, creating N lists,
+until the lists $L_{N}$ and $L_{N-1}$ have the same number of elements.
+
+Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
+are corrected in several steps.  Neutral hadrons produced by pileup interactions
+can still be clustered into jets, so the first correction reduces the energy
+of every jet in the event based on the jet area and the total neutral hadron
+energy density in the event.  Subsequently, corrections based on jet $\eta$
+and $p_{T}$ are applied.  T.
 
 
 
