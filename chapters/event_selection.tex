@@ -326,7 +326,31 @@ $M_{\Nell} = M_{\WR} - 100 \GeV$.
 \subsection{Jet Reconstruction and Selection}
 \label{jetRecoAndSelection}
 The jets considered in this analysis can be traced back to energy deposits in CMS
-calorimeters (ECAL and HCAL) geometrically matched.
+calorimeters (ECAL and HCAL) and muon detectors which may be geometrically matched
+to charged particle tracks reconstructed in the tracker.  As jets can contain photons
+from $\pi^{0}$ decays, charged leptons from $W^{\pm}$ and Z boson decays, and charged
+and neutral hadrons originating from quarks and gluons, reconstructing a jet begins
+with reconstructing all types of particles which could be found in a jet.  The
+Particle Flow (PF) algorithm, introduced in Chapter \ref{sec:experiment_chapter}, is used
+to reconstruct all particles which interact with the tracker, calorimeters and muon
+detectors of CMS.  The PF process begins with reconstructing tracks and interaction
+vertices in the tracker.
+
+These particles are grouped into five macro bins, each with their
+own distinguishing features.  These bins and their identifying characteristics are
+listed in Table \ref{tab:pfBins}.
+
+\begin{table}[h]
+\caption{The Particle Flow algorithm reconstructs .}
+\label{tab:collisionDatasets}
+\centering
+\begin{tabular}{c|c|c|c|c}
+Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj dataset \\  \hline
+	2015C &  20  &  DoubleEG  &  SingleMuon  &  MuonEG  \\
+	2015D &  2620  &  DoubleEG  &  SingleMuon  &  MuonEG  \\ \hline
+\end{tabular}
+\end{table}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
