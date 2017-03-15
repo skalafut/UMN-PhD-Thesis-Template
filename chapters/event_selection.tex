@@ -379,11 +379,29 @@ until the lists $L_{N}$ and $L_{N-1}$ have the same number of elements.
 Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
 are corrected in several steps.  Neutral hadrons produced by pileup interactions
 can still be clustered into jets, so the first correction reduces the energy
-of every jet in the event based on the jet area and the total neutral hadron
-energy density in the event.  Subsequently, corrections based on jet $\eta$
+of every jet in a data or simulated event based on the jet area and the total neutral hadron
+energy density in the event\cite{pileup1}\cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
 and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
-events in simulations and data, are applied to correct for the known .
+jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
+agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
+range of reconstructed jet $p_{T}$ and $\eta$.  A second set of $p_{T}$ and
+$\eta$ dependent energy corrections, derived from \MC and applied to data
+events, bring the jet response in data into closer agreement with the jet
+response in \MC.  More details on jet energy corrections, such as the types
+of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
 
+After jets in data and simulation are reconstructed and corrected, jet
+identification, acceptance and energy requirements are applied.  The
+identification and acceptance criteria require jets to have
 
+\begin{itemize}
+	\item $|\eta| \leq 2.4$
+	\item less than 90\% of its energy comes from neutral hadrons
+	\item less than 90\% of its energy comes from photons
+	\item at least 2 constituents (from reconstructed PF particles)
+	\item more than 0\% of its energy comes from charged hadrons
+	\item at least one charged hadron constituent
+	\item less than 99\% of its energy comes from electrons
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
