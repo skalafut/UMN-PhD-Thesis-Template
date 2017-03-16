@@ -18,7 +18,7 @@ context of different \WR mass hypotheses.
 \section{Data and Monte Carlo}
 
 \subsection{Data}
-\label{data}
+\label{dataAndTriggers}
 The data used by this analysis was collected by the CMS experiment from May until December 2015, at
 the center of mass energy of $\sqrt{s} = 13\TeV$.  As this was the first year of
 collisions at $\sqrt{s} = 13\TeV$, the LHC cautiously operated at a much lower average
@@ -161,7 +161,7 @@ suppressed by randomly ignoring events which pass all trigger requirements} and 
 which require tighter isolation requirements than the optimal offline muon isolation for this
 search, the best trigger for this search is $\verb|HLT_Mu50|$.  Even though switching to lower $p_{T}$
 threshold single and double muon triggers would allow for lower offline lepton $p_{T}$ cuts, it
-will be shown later (SEC REF) that lower offline lepton cuts would reduce signal over background
+will be shown later (see section \ref{muonRecoAndSelection}) that lower offline lepton cuts would reduce signal over background
 sensitivity in the medium and high \WR mass region.
 
 
@@ -216,6 +216,10 @@ passed through a full simulation of the CMS detector using GEANT4 \cite{geant4},
 is the process through which unstable quarks and gluons produced at the Feynman diagram level of simulation
 are transformed into stable jets observed by CMS} using \PYTHIA, and detector information was reconstructed
 into particles using the same CMS particle reconstruction library used with collision data.
+Fully reconstructed simulated events were required to pass the same trigger as the collision
+data events they were being compared to.  For example, \DY +jet events used to estimate the SM
+background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
+(single muon) trigger discussed earlier (section \ref{dataAndTriggers}).
 \MC samples were produced by the CMS \MC production group for all SM processes which can yield
 the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
 of diboson pairs is not considered due to its low cross section times branching
@@ -244,7 +248,7 @@ leptons coming from the hard interaction.}
 		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42 (LO)   & 973937 \\ \hline
 		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984 (LO)   & 1067758 \\ \hline
 		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704 (LO)   & 998912 \\ \hline
-		t$\bar{t}$+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\ \hline
+		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\ \hline
 		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 1680200 \\ \hline
 		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 3299800 \\ \hline
 		$\bar{t}$+W   & \POWHEG & 35.85 & 988500 \\ \hline
@@ -282,7 +286,8 @@ The CMS \MC production group also generated \WR signal samples, with both eejj a
 final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
 features of this model are explained in section \ref{sec:theory_chapter}.  \WR signal
 samples were produced with $M_{\Nell} = M_{\WR}/2$, and $M_{\WR}$ starting at 800 $\GeV$ and
-increasing, in increments of 200 $\GeV$, to 6000 $\GeV$.
+increasing, in increments of 200 $\GeV$, to 6000 $\GeV$.  The electron and muon triggers
+discussed earlier must also be fired in these \WR signal events.
 
 The number of reconstructed interaction vertices from all collision datasets described
 earlier approximates a Poisson distribution, and the average number of reconstructed
@@ -313,6 +318,7 @@ section limits set for $M_{\Nell} = M_{\WR}/2$ to a 2D plane of possible \WR
 and \Nell mass values.  These private samples were produced using the same
 \PYTHIA generator and parameters used by the CMS \MC production group, but the
 detector response simulation and particle reconstruction steps were omitted.
+In addition, no trigger requirements are applied.
 Samples were produced starting at $M_{\WR} = 800 \GeV$
 and $M_{\Nell} = 100 \GeV$, and $M_{\WR}$ increasing to 4000 $\GeV$ in increments
 of 100 $\GeV$.  At each $M_{\WR}$, 15000 events are produced for every $M_{\Nell}$
@@ -343,11 +349,11 @@ track and or calorimeter information, assigns each particle to one of these cate
 \label{tab:pfRecoBins}
 \centering
 \begin{tabular}{c|c}
-Particle Category & Identifying Features \\  \hline
+Particle Category & Distinguishing Features \\  \hline
 	Photon &  has no track, only energy in ECAL  \\ \hline
-	Electron &  has track linked to energy in ECAL  \\ \hline
-	Muon &  has track linked to energy in muon detector  \\ \hline
-	Charged Hadron &  has track linked to energy in HCAL or HCAL and ECAL  \\ \hline
+	Electron &  has track geometrically linked to energy in ECAL  \\ \hline
+	Muon &  has track geometrically linked to energy in muon detector  \\ \hline
+	Charged Hadron &  has track geometrically linked to energy in HCAL or HCAL and ECAL  \\ \hline
 	Neutral Hadron &  has no track, only energy in HCAL or HCAL and ECAL  \\ \hline
 \end{tabular}
 \end{table}
@@ -370,7 +376,7 @@ using the $j^{th}$ particle in the same list, where $\Delta$ is the angular
 separation between the $i^{th}$ and $j^{th}$ particle, R is 0.4, and $k_{Ti}$
 is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle has 
 $d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle is a jet constituent
-and is removed from the constituent list and placed in a different list L.
+and is removed from the constituent list and placed in a new list $L_{1}$.
 This procedure is repeated for all particles in the list of possible jet constituents,
 then repeated for all elements in the new list $L_{1}$.  The iteration over
 all particles in the newly created list continues N times, creating N lists,
@@ -380,7 +386,7 @@ Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
 are corrected in several steps.  Neutral hadrons produced by pileup interactions
 can still be clustered into jets, so the first correction reduces the energy
 of every jet in a data or simulated event based on the jet area and the total neutral hadron
-energy density in the event\cite{pileup1}\cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
+energy density in the event \cite{pileup1} \cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
 and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
 jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
 agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
@@ -392,7 +398,7 @@ of \MC events used to derive the corrections, can be found elsewhere \cite{jetpa
 
 After jets in data and simulation are reconstructed and corrected, jet
 identification, acceptance and energy requirements are applied.  The
-identification and acceptance criteria require jets to have
+identification and acceptance criteria require each jet to have
 
 \begin{itemize}
 	\item $|\eta| \leq 2.4$
@@ -400,8 +406,157 @@ identification and acceptance criteria require jets to have
 	\item less than 90\% of its energy comes from photons
 	\item at least 2 constituents (from reconstructed PF particles)
 	\item more than 0\% of its energy comes from charged hadrons
-	\item at least one charged hadron constituent
+	\item at least one constituent is a charged hadron
 	\item less than 99\% of its energy comes from electrons
 \end{itemize}
+
+The identification requirements are designed to increase the fraction of
+selected jets which originate from real hadronic activity.  After acceptance
+and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
+the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
+to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
+\ref{tab:lowerJetPtCuts}, a lower $p_{T}$ cut on the subleading jet would
+increase backgrounds without a corresponding increase in \WR signal.
+
+\begin{table}[h]
+	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $p_{T}$
+		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
+	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
+	\label{tab:lowerJetPtCuts}
+	\centering
+	\begin{tabular}{c|c}
+		Sublead jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		30 &  12.1  \\ \hline
+		40 &  12.6  \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Muon Reconstruction and Selection}
+\label{muonRecoAndSelection}
+The search for \WR signals in events with two final state $\mu$s .
+
+%The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
+%clusters from ECAL energy deposits.  Each electron candidate is then built from a track
+%whose end point and trajectory are geometrically matched to at least one ECAL energy
+%cluster.  If several real electrons (or positrons) have well separated tracks that point
+%towards the same ECAL energy cluster, then that ECAL cluster will be shared between
+%several PF electron candidates.
+%
+%After reconstruction, electron candidates are .
+%
+%Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
+%are corrected in several steps.  Neutral hadrons produced by pileup interactions
+%can still be clustered into jets, so the first correction reduces the energy
+%of every jet in a data or simulated event based on the jet area and the total neutral hadron
+%energy density in the event \cite{pileup1} \cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
+%and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
+%jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
+%agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
+%range of reconstructed jet $p_{T}$ and $\eta$.  A second set of $p_{T}$ and
+%$\eta$ dependent energy corrections, derived from \MC and applied to data
+%events, bring the jet response in data into closer agreement with the jet
+%response in \MC.  More details on jet energy corrections, such as the types
+%of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
+%
+%After jets in data and simulation are reconstructed and corrected, jet
+%identification, acceptance and energy requirements are applied.  The
+%identification and acceptance criteria require each jet to have
+%
+%\begin{itemize}
+%	\item $|\eta| \leq 2.4$
+%	\item less than 90\% of its energy comes from neutral hadrons
+%	\item less than 90\% of its energy comes from photons
+%	\item at least 2 constituents (from reconstructed PF particles)
+%	\item more than 0\% of its energy comes from charged hadrons
+%	\item at least one constituent is a charged hadron
+%	\item less than 99\% of its energy comes from electrons
+%\end{itemize}
+%
+%The identification requirements are designed to increase the fraction of
+%selected electrons which originate from real electromagnetic activity.  After acceptance
+%and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
+%the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
+%to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
+%\ref{tab:lowerMuonPtCuts}, a lower $p_{T}$ cut on the subleading jet would
+%increase backgrounds without a corresponding increase in \WR signal.
+%
+%\begin{table}[h]
+%	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $p_{T}$
+%		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
+%	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering these cuts would worsen S/$\sqrt{B}$.}
+%	\label{tab:lowerMuonPtCuts}
+%	\centering
+%	\begin{tabular}{c|c|c}
+%		final state particle & $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+%		sublead $\mu$ & 40 &  11.9  \\
+%		sublead $\mu$ & 53 &  12.6  \\ \hline
+%		lead $\mu$ & 50 &  12.1  \\
+%		lead $\mu$ & 60 &  12.6  \\ \hline
+%	\end{tabular}
+%\end{table}
+
+
+
+\subsection{Electron Reconstruction and Selection}
+\label{eleRecoAndSelection}
+The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
+clusters from ECAL energy deposits.  Each electron candidate is then built from a track
+whose end point and trajectory are geometrically matched to at least one ECAL energy
+cluster.  If several real electrons (or positrons) have well separated tracks that point
+towards the same ECAL energy cluster, then that ECAL cluster will be shared between
+several PF electron candidates.
+
+%After reconstruction, electron candidates are .
+%
+%Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
+%are corrected in several steps.  Neutral hadrons produced by pileup interactions
+%can still be clustered into jets, so the first correction reduces the energy
+%of every jet in a data or simulated event based on the jet area and the total neutral hadron
+%energy density in the event \cite{pileup1} \cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
+%and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
+%jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
+%agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
+%range of reconstructed jet $p_{T}$ and $\eta$.  A second set of $p_{T}$ and
+%$\eta$ dependent energy corrections, derived from \MC and applied to data
+%events, bring the jet response in data into closer agreement with the jet
+%response in \MC.  More details on jet energy corrections, such as the types
+%of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
+%
+%After jets in data and simulation are reconstructed and corrected, jet
+%identification, acceptance and energy requirements are applied.  The
+%identification and acceptance criteria require each jet to have
+%
+%\begin{itemize}
+%	\item $|\eta| \leq 2.4$
+%	\item less than 90\% of its energy comes from neutral hadrons
+%	\item less than 90\% of its energy comes from photons
+%	\item at least 2 constituents (from reconstructed PF particles)
+%	\item more than 0\% of its energy comes from charged hadrons
+%	\item at least one constituent is a charged hadron
+%	\item less than 99\% of its energy comes from electrons
+%\end{itemize}
+%
+%The identification requirements are designed to increase the fraction of
+%selected electrons which originate from real electromagnetic activity.  After acceptance
+%and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
+%the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
+%to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
+%\ref{tab:lowerJetPtCuts}, a lower $p_{T}$ cut on the subleading jet would
+%increase backgrounds without a corresponding increase in \WR signal.
+%
+%\begin{table}[h]
+%	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $p_{T}$
+%		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
+%	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
+%	\label{tab:lowerElePtCuts}
+%	\centering
+%	\begin{tabular}{c|c}
+%		Sublead jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+%		30 &  12.1  \\ \hline
+%		40 &  12.6  \\ \hline
+%	\end{tabular}
+%\end{table}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
