@@ -117,13 +117,56 @@ as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  The angl
 which was 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis, was transformed into pseudorapidity 
 $\eta$ through the following function:
 
+\begin{equation*}
+	\eta \equiv -\ln{\tan{\frac{\theta}{2}}}
+\end{equation*}
 
+Pseudorapidity of 0 was the $y$ axis, and pseudorapidity of $\infty$ was the $z$ axis.
+An equivalent definition of pseudorapidity in terms of the energy E and longitudinal 
+momentum $p_{z}$ of a particle in the massless particle limit was:
+
+\begin{equation*}
+	\eta \equiv \frac{1}{2}\ln{\frac{E+$p_{z}$}{E-$p_{z}$}}
+\end{equation*}
+
+Pseudorapidity was used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
+produced by pp interactions were usually boosted along the $z$ axis, but the degree of boost was never well 
+defined because the momenta of the interacting partons could never be measured.  This boost affected the 
+trajectories of particles in $\theta$, but did not affect particle trajectories measured in $\eta$.  In 
+addition, the particles that caused radiation damage in CMS sub-detector systems were produced at 
+a rate that scaled linearly with $\eta$.  Thus, in discussions about topics where radiation damage 
+or particle isolation played a role, ideas could be more clearly articulated using $\eta$.
+
+The main variables used to quantify the energy of a detected particle were transverse energy 
+$E_{T} \equiv E/\cosh{\eta}$ and transverse momentum $p_{T} \equiv |p|/\cosh{\eta}$, while the distance between 
+a particle and another point in the $(\eta, \phi)$ space was measured as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  
+Transverse momentum, the component of momentum perpendicular to the proton beam axis, and transverse energy, the 
+analogous form of energy, were used because both were insensitive to the unknown momenta of the interacting partons.  
+Explained in later chapters, the distance $\Delta R$ was measured between the trajectory of one particle 
+and another point in the $(\eta, \phi)$ space, which often was the trajectory of another particle.
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
-Comprised of separate silicon pixel and silicon strip detectors, the silicon tracker detected and measured the 
-momenta of charged particles, and identified interaction vertices at which charged particles were produced.  The 
-pixel detector was built from 
+Built from separate silicon pixel and silicon strip trackers, the silicon tracker detected charged particles  
+and measured their momenta, and identified interaction vertices where charged particles were produced.  Closest 
+to the beam axis was the pixel tracker, which used small silicon pixels to pinpoint pp interaction vertices 
+with $\mu$m precision.  Surrounding the pixel tracker were larger silicon strip detectors that measured the 
+momenta of charged particles.  Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ ionized 
+charge in the silicon pixel and strip trackers, and the measurement of this charge formed the basis for all tracker 
+measurements.
+
+Charged particles produced by pp interactions ionized charge in every silicon tracker cell they hit, and attached 
+to each cell was a charge readout module.  Using a $\lesssim$100 V electric potential, each readout module created 
+an electric field along the surface of its silicon cell that swept ionized charge into a charge collector.  The 
+orientation of the silicon cells relative to the magnetic field direction was chosen so that the beneficial effect 
+of the magnetic field on charge collection was maximized.
+
+The pixel tracker was built from several layers of the pixel 
+
+To 
+accommodate greater particle fluxes and radiation damage at increasing $|\eta|$, the pixel and strip 
+detectors were split into barrel ($|\eta| < 1.2$) and endcap ($|\eta| \geq 1.2$) sections.  .
+
 
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
