@@ -163,17 +163,18 @@ momenta of charged particles.  Charged particles produced within the tracker acc
 charge in the silicon pixel and strip trackers, and the measurement of this charge formed the basis for all tracker 
 measurements.
 
-Charged particles produced by pp interactions ionized charge in every silicon tracker cell they hit, and attached 
-to each cell was a charge readout module that measured the ionized charge.  Using a $\lesssim$100 V electric 
-potential, each readout module created an electric field along the surface of its silicon cell that swept ionized 
-charge into a charge collector.  The orientation of the silicon cells relative to the magnetic field direction 
-was chosen so that the beneficial effect of the magnetic field on charge collection was maximized.
+%describe physical layout of pixel and strip trackers first, then explain physics behind how charged particles were identified
 
-The pixel tracker was built from several layers of pixel detectors split into two $|\eta|$ regimes.  In 
-the barrel region ($|\eta| < 1.2$) where the rate of radiation damage was low, three 53 cm long concentric 
-cylindrical shells of pixel detectors were placed at radii of 4, 7 and 10 cm from the interaction point.  
-In the endcap region ($1.2 \geq |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers 
-of pixel detectors were placed in windmill patterns as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.
+The pixel tracker was built from individual rectangular pixel detectors ($100 \times 150 \mu$m) grouped into two 
+structures based on $|\eta|$.  In the barrel region ($|\eta| < 1.2$) where the rate of radiation damage was 
+low, individual pixel detectors were arranged into three 53 cm long concentric cylindrical shells centered on the 
+beam axis, with radii of 4, 7 and 10 cm.  The face of each barrel region pixel pointed towards the interaction 
+region and, for reasons described later, was aligned with the magnetic field direction.  In the endcap region 
+($1.2 \geq |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors that extended 
+from radii of 6 to 15 cm were installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  
+For reasons discussed later the face of each endcap region pixel pointed 20 degrees away from the interaction 
+region.
+
 
 \begin{figure}[ht]
 	\centering
@@ -181,6 +182,15 @@ of pixel detectors were placed in windmill patterns as shown in Figure \ref{fig:
 	\caption{The barrel and endcap sections of the pixel tracker.}
 	\label{fig:pixelTracker}
 \end{figure}
+
+Charged particles ionized charge in every pixel detector they hit, and this charge was measured by readout 
+modules attached to groups of pixels\footnote{$\lesssim$16000 readout modules connected to 66 million individual pixels}.  Using a $\lesssim$100 V electric potential, each readout module created an 
+electric field along the surface of several pixels that swept ionized charges into a charge collector.  The 
+position resolution of pixel detectors improved when ionized charge from one charged particle was shared 
+amongst multiple pixel detectors, so all pixels were oriented to create a Lorentz force that encouraged charges 
+ionized in one pixel to migrate to other pixels.  The resulting pixel tracker configuration allowed vertex 
+coordinates to be measured with $\lesssim 20\mu$m resolution along the $z$ (beam) axis, and with $\lesssim 10\mu$m 
+resolution in perpendicular directions.
 
 
 Figure \ref{fig:stripTracker} \cite{cmsTDR}.
@@ -192,6 +202,13 @@ Figure \ref{fig:stripTracker} \cite{cmsTDR}.
 	the interaction point.}
 	\label{fig:stripTracker}
 \end{figure}
+
+
+Charged particles produced by pp interactions ionized charge in every silicon tracker cell they hit, and attached 
+to each cell was a charge readout module that measured the ionized charge.  Using a $\lesssim$100 V electric 
+potential, each readout module created an electric field along the surface of its silicon cell that swept ionized 
+charge into a charge collector.  The orientation of the silicon cells relative to the magnetic field direction 
+was chosen so that the beneficial effect of the magnetic field on charge collection was maximized.
 
 
 
