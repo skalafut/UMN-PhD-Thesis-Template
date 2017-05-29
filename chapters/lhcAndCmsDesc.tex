@@ -97,6 +97,14 @@ injected the desired number of proton bunches to fill two beams, the LHC acceler
 and focused the beams to increase the rate of pp collisions.  In 2015 each beam was accelerated to an energy of 6.5 TeV, and 
 contained as many as 2300 proton bunches.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
+	\caption{CERN accelerator systems that feed in to the LHC.}
+	\label{fig:accelComplex}
+\end{figure}
+
+
 In the LHC tunnel, superconducting radio-frequency (RF) cavities accelerated proton bunches, and magnets steered and 
 focused the beams towards the collision point at the heart of CMS.  Sixteen RF cavities (8 per beam) accelerated proton 
 bunches to an energy of 6.5 TeV, and also served as a control system in which protons in any bunch moving too quickly 
@@ -117,17 +125,17 @@ as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  The angl
 which was 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis, was transformed into pseudorapidity 
 $\eta$ through the following function:
 
-\begin{equation*}
+\begin{equation}
 	\eta \equiv -\ln{\tan{\frac{\theta}{2}}}
-\end{equation*}
+\end{equation}
 
 Pseudorapidity of 0 was the $y$ axis, and pseudorapidity of $\infty$ was the $z$ axis.
 An equivalent definition of pseudorapidity in terms of the energy E and longitudinal 
 momentum $p_{z}$ of a particle in the massless particle limit was:
 
-\begin{equation*}
-	\eta \equiv \frac{1}{2}\ln{\frac{E+$p_{z}$}{E-$p_{z}$}}
-\end{equation*}
+\begin{equation}
+	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
+\end{equation}
 
 Pseudorapidity was used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
 produced by pp interactions were usually boosted along the $z$ axis, but the degree of boost was never well 
@@ -156,12 +164,24 @@ charge in the silicon pixel and strip trackers, and the measurement of this char
 measurements.
 
 Charged particles produced by pp interactions ionized charge in every silicon tracker cell they hit, and attached 
-to each cell was a charge readout module.  Using a $\lesssim$100 V electric potential, each readout module created 
-an electric field along the surface of its silicon cell that swept ionized charge into a charge collector.  The 
-orientation of the silicon cells relative to the magnetic field direction was chosen so that the beneficial effect 
-of the magnetic field on charge collection was maximized.
+to each cell was a charge readout module that measured the ionized charge.  Using a $\lesssim$100 V electric 
+potential, each readout module created an electric field along the surface of its silicon cell that swept ionized 
+charge into a charge collector.  The orientation of the silicon cells relative to the magnetic field direction 
+was chosen so that the beneficial effect of the magnetic field on charge collection was maximized.
 
-The pixel tracker was built from several layers of the pixel 
+The pixel tracker was built from several layers of pixel detectors split into two $|\eta|$ regimes.  In 
+the barrel region ($|\eta| < 1.2$) where the rate of radiation damage was low, three 53 cm long concentric 
+cylindrical shells of pixel detectors were placed at radii of 4, 7 and 10 cm from the interaction point.  
+In the endcap region ($1.2 \geq |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers 
+of pixel detectors were placed in windmill patterns as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/pixelDetectorSchematic.png}
+	\caption{The barrel and endcap sections of the pixel tracker.}
+	\label{fig:pixelTracker}
+\end{figure}
+
 
 To 
 accommodate greater particle fluxes and radiation damage at increasing $|\eta|$, the pixel and strip 
