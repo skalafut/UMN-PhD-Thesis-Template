@@ -165,15 +165,16 @@ measurements.
 
 %describe physical layout of pixel and strip trackers first, then explain physics behind how charged particles were identified
 
-The pixel tracker was built from individual rectangular pixel detectors ($100 \times 150 \mu$m) grouped into two 
-structures based on $|\eta|$.  In the barrel region ($|\eta| < 1.2$) where the rate of radiation damage was 
+The pixel tracker was built from small rectangular pixel detectors ($100 \times 150 \mu$m) organized in two 
+structures based on $|\eta|$.  In the barrel region ($|\eta| \lesssim 1.2$) where the rate of radiation damage was 
 low, individual pixel detectors were arranged into three 53 cm long concentric cylindrical shells centered on the 
-beam axis, with radii of 4, 7 and 10 cm.  The face of each barrel region pixel pointed towards the interaction 
-region and, for reasons described later, was aligned with the magnetic field direction.  In the endcap region 
-($1.2 \geq |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors that extended 
-from radii of 6 to 15 cm were installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  
-For reasons discussed later the face of each endcap region pixel pointed 20 degrees away from the interaction 
-region.
+$z$ axis, with radii of 4, 7 and 10 cm relative to the $z$ axis.  The face of each barrel pixel pointed towards the interaction 
+region, and, for reasons described later, their faces were aligned with the magnetic field direction.  In the endcap region 
+($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
+installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These disks 
+were placed at $|z| =$ 35 and 47 cm away from the midpoint of the pixel barrel cylindrical shells, and covered 
+radii between 6 and 15 cm from the $z$ axis.  For reasons discussed later the face of each endcap region pixel 
+pointed 20 degrees away from the interaction region.
 
 
 \begin{figure}[ht]
@@ -184,33 +185,47 @@ region.
 \end{figure}
 
 Charged particles ionized charge in every pixel detector they hit, and this charge was measured by readout 
-modules attached to groups of pixels\footnote{$\lesssim$16000 readout modules connected to 66 million individual pixels}.  Using a $\lesssim$100 V electric potential, each readout module created an 
+modules attached to groups of pixels\footnote{$\thicksim$16000 readout modules were connected to 66 million individual pixels}.  Each readout module created an 
 electric field along the surface of several pixels that swept ionized charges into a charge collector.  The 
-position resolution of pixel detectors improved when ionized charge from one charged particle was shared 
-amongst multiple pixel detectors, so all pixels were oriented to create a Lorentz force that encouraged charges 
-ionized in one pixel to migrate to other pixels.  The resulting pixel tracker configuration allowed vertex 
-coordinates to be measured with $\lesssim 20\mu$m resolution along the $z$ (beam) axis, and with $\lesssim 10\mu$m 
-resolution in perpendicular directions.
+position resolution of pixel detectors improved when ionized charge from one charged particle was measured 
+over a greater area, so all pixels were positioned relative to the magnetic field to create a 
+Lorentz force that encouraged charges ionized in one pixel to migrate to nearby pixels.  The resulting pixel 
+tracker configuration allowed interaction vertex coordinates to be measured with $\lesssim 20\mu$m resolution along the 
+$z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to the $z$ axis.
 
-
-Figure \ref{fig:stripTracker} \cite{cmsTDR}.
+Located outside the pixel tracker, the silicon strip tracker was built from larger rectangular silicon detectors 
+organized into four structures based on $|\eta|$, $|z|$ position and radius $r$ from the $z$ axis.  In the barrel region 
+($|\eta| \lesssim 1.2$), four cylindrical shells of 10 cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 cm $< r <$ 55 cm.  At
+55 $< r < $110 cm where radiation levels were much lower, six layers of thicker, larger surface area (25 cm $\times$ $120-180$ $\mu$m) 
+strips were placed in cylindrical shells for improved momentum resolution.  To improve track position resolution the two strip layers with smallest 
+$|r|$ each contained two layers of silicon strips separated by a small distance and tilted relative 
+to each other by 100 mrad.  For the same reason the first two of six strip detector layers in the region $r >$ 55 cm 
+were also built with the double layer design.  Similar to the pixel tracker, the strip tracker in the endcap region 
+($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  Three disk layers were installed between 
+$1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 cm and 65 $< |z| <$ 110 cm, and nine disk layers with thicker strips were installed in 
+the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 cm and 120 $< |z| < $ 280 cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  
+To improve track position resolution two of the three inner disk layers, and three of the nine outer disk layers 
+used two closely spaced silicon strips tilted by 100 mrad.  The faces of all strip detectors pointed at the interaction 
+region.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/siliconStripAndPixelDetectorTwoDimView.png}
-	\caption{The barrel and endcap sections of the silicon strip tracker.  The pixel tracker is shown to scale in the bottom left corner, near 
-	the interaction point.}
+	\caption{The barrel and endcap sections of the silicon strip tracker for $\eta \geq 0.$ and one quadrant of $\phi$.  The pixel tracker is shown to scale in the bottom left corner.}
 	\label{fig:stripTracker}
 \end{figure}
 
+Charged particles ionized charge in every strip detector they hit, and this charge was measured by readout 
+modules attached to groups of strips\footnote{$\thicksim$15400 readout modules were connected to 9.6 million individual strips}.  Each readout module created an 
+electric field along the surface of several strips that swept ionized charges into a charge collector.  The resulting 
+strip tracker measured the $p_{T}$ of 100 GeV $p_{T}$ muons with resolution better than 2\% in the barrel, and 
+7\% in the endcap.
 
-Charged particles produced by pp interactions ionized charge in every silicon tracker cell they hit, and attached 
-to each cell was a charge readout module that measured the ionized charge.  Using a $\lesssim$100 V electric 
-potential, each readout module created an electric field along the surface of its silicon cell that swept ionized 
-charge into a charge collector.  The orientation of the silicon cells relative to the magnetic field direction 
-was chosen so that the beneficial effect of the magnetic field on charge collection was maximized.
-
-
+To measure the position and momenta of charged particles with the quoted resolutions, the alignment and calibration 
+of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
+used to measure the tracker alignment and momentum response, and derive calibration factors that accounted for 
+changes in alignment or momentum response.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon 
+events were used to monitor and recalibrate the tracker alignment and momentum response.
 
 
 \section{The Electromagnetic Calorimeter}
