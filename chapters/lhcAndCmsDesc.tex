@@ -217,7 +217,7 @@ Charged particles ionized charge in every strip detector they hit, and this char
 modules attached to groups of strips\footnote{$\thicksim$15400 readout modules were connected to 9.6 million individual strips}.  Each readout module created an 
 electric field along the surface of several strips that swept ionized charges into a charge collector.  The resulting 
 strip tracker measured the $p_{T}$ of 100 GeV $p_{T}$ muons with resolution better than 2\% in the barrel, and 
-7\% in the endcap.
+better than 7\% in the endcap.
 
 To measure the position and momenta of charged particles with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
@@ -231,25 +231,25 @@ and recalibrate the tracker alignment and momentum response.
 
 Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons produced by 
 pp interactions, and distinguished electrons and positrons ($e^{\pm}$) from other charged particles detected by the 
-tracker.  The ECAL was an absorption calorimeter built from homogeneous lead-tungstate (PbWO$_{4}$) crystals.  
-In response to incident photons and $e^{\pm}$ with total energy E $\gtrsim$ 1 GeV, the ECAL crystals emitted 
+tracker.  The ECAL was an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
+In response to incident photons and $e^{\pm}$ with total energy $\gtrsim$ 1 GeV, the ECAL crystals emitted 
 amounts of visible light proportional to the incident particle energy.  By measuring the amount of visible 
-light produced by the lead-tungstate crystals, the ECAL detected photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
+light produced by the lead-tungstate crystals, the ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
 
 %start with phyiscal description of ECAL - front face location, crystal length and multiplicity
 %then explain physics that was used to detect photons, electrons and positrons
 
 The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
-crystals of length 23 cm were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
+crystals of length 23 cm (26 radiation lengths) were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
 interaction point.  The front face of each crystal measured $\thicksim$22 $\times$ 22 mm, and resided 129 cm 
 from the beam axis, $\thicksim$19 cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
 endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
-endcap) of length 22 cm were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
+endcap) of length 22 cm (25 radiation lengths) were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
 point.  The front face of endcap crystals measured $\thicksim$29 $\times$ 29 mm, and sat behind two layers of 
 thick lead absorber and thin silicon detectors that constituted the preshower detector.  The preshower 
-mitigated radiation damage to endcap region lead-tungstate crystals, and helped discriminate neutral pion 
-decays $\pi^{0} \rightarrow \gamma\gamma$ from photons produced by pp interactions.
+mitigated radiation damage to endcap region lead-tungstate crystals, and improved the spatial resolution with 
+which endcap region electromagnetic showers were studied.
 
 Photons and $e^{\pm}$ that impinged on the ECAL produced showers of lower energy $e^{-}$s and $e^{+}$s.  Incident $e^{\pm}$s interacted 
 with lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Subsequently, gamma rays 
@@ -261,19 +261,32 @@ followed by pair conversion, and a shower of lower energy $e^{-}$s and $e^{+}$s 
 guaranteed an average incident photon or $e^{\pm}$ lost more than $99.999$\% of its incident energy through 
 radiative processes before leaving the ECAL, so the cycle of bremsstrahlung followed by pair conversion 
 stopped when the incident particle energy was too low to produce gamma rays through bremsstrahlung.  The 
-transverse size of each crystal was large enough to contain the full shower created by an incident photon 
-or $e^{\pm}$ that did not interact with the silicon tracker.
+transverse size of each crystal was large enough that a 3 $\times$ 3 crystal grid contained the full shower 
+created by an incident photon or $e^{\pm}$ that did not interact with the silicon tracker.
 
-Showers of low energy $e^{-}$s and $e^{+}$s produced visible light proportional to the energy of the 
-incident photon or $e^{\pm}$.
+Showers of $e^{-}$s and $e^{+}$s interacted with lead-tungstate atoms and quickly produced distinguishable 
+signals that were measured to determine the energies of incident photons and $e^{\pm}$s.  Coulomb interactions 
+transferred several eV of energy from shower $e^{\pm}$s to atomic electrons bound to lead-tungstate nuclei.  
+In addition, relativistic shower $e^{\pm}$s produced Cherenkov photons with several eV of energy, and 
+these Cherenkov photons were absorbed by atomic electrons bound to lead-tungstate nuclei.  The atomic 
+electrons were excited to meta-stable states, and in $\lesssim$ 20 ns more than 80\% of atomic electrons 
+returned to their ground states by emitting scintillation photons in the visible light regime.  The total energy of 
+scintillation photons was proportional to the incident photon or $e^{\pm}$ energy, so the energies 
+of scintillation photons were measured to determine the energy of the incident photon or $e^{\pm}$.  Most 
+scintillation photons were emitted towards photodetectors at the back faces of the ECAL crystals.  To 
+maximize the fraction of photons which reached the photodetectors, 5 faces of each crystal were polished 
+to reduce the impact of surface impurities or imperfections, each crystal was wrapped in a reflective, 
+non-absorbing material, and 17 different crystal shapes (all rectangular) were used to minimize gaps 
+between crystals.  Scintillation photons were measured by avalanche photodiodes in the barrel region, 
+and vacuum photo-triodes in the endcap region.  Both types of photodetectors converted scintillation 
+photons into electric charge, and the amount of charge was measured to determine the energy of the 
+incident photon or $e^{\pm}$.  With these technologies, the ECAL measured the energy (not $E_{T}$) of 
+a 100 GeV photon or $e^{\pm}$ with resolution better than 1\%, and measured the energy E of any 
+incident photon or $e^{\pm}$ with resolution given by:
 
-%After traversing the tracker, electrons and positrons interacted with 
-%lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Gamma rays then interacted 
-%with lead-tungstate nuclei and were converted into electron-positron pairs.  For every electron or positron
-%that impinged on the ECAL, this two step cycle of bremsstrahlung followed by pair conversion repeated many 
-%times, and a shower of lower energy electrons and positrons was made.  Energetic photons that impinged on
-%the ECAL were first converted into an energetic electron-positron pair, then the same two step cycle ensued
-%and produced showers of lower energy electrons and positrons.  These .
+\begin{equation}
+	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.128 GeV}{E} \oplus 0.3\%
+\end{equation}
 
 
 
