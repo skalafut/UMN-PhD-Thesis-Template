@@ -19,9 +19,9 @@ Interactions between protons were identified by the detection of:
 	\item combinations thereof
 \end{itemize}
 Particles produced by proton-proton (pp) interactions were detected using a 3.8$\unit{T}$ magnet and four CMS 
-sub-detector systems.  The full strength magnetic field volume enveloped the region where pp interactions occurred, and three of the four 
+sub-detector systems.  The full strength magnetic field volume enveloped the nominal point where pp interactions occurred, and three of the four 
 sub-detector systems used in particle detection.  As shown in Figure \ref{fig:layersOfCMS}, surrounding the pp interaction
-region was the silicon tracker in which charged particles were first detected.  As charged particles traversed
+point was the silicon tracker in which charged particles were first detected.  As charged particles traversed
 the tracker, mobile electron-hole pairs were ionized in several layers of silicon along the trajectories of charged
 particles.  Charged particles were detected in the tracker by measuring the charge ionized in all silicon layers.
 
@@ -29,7 +29,7 @@ particles.  Charged particles were detected in the tracker by measuring the char
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
 	\caption{Cross section view of the entire CMS detector in a plane perpendicular to the beam axis.  Closest to the
-	proton-proton interaction region is the silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic 
+	proton-proton interaction point is the silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic 
 Calorimeter, and the magnet.  Outside the magnet are the muon detectors.}
 	\label{fig:layersOfCMS}
 \end{figure}
@@ -110,7 +110,7 @@ focused the beams towards the collision point at the heart of CMS.  Sixteen RF c
 bunches to an energy of 6.5 TeV, and also served as a control system in which protons in any bunch moving too quickly 
 were slowed, while protons moving too slowly experienced greater acceleration.  Dipole, quadrupole and higher order 
 magnets operated at magnetic field strengths up to 8$\unit{T}$ steered the beams around the LHC, and focused them 
-on the collision point inside CMS to increase the rate of pp interactions.
+on the nominal interaction point inside CMS to increase the rate of pp interactions.
 
 DISCUSS INST AND INTEGRATED LUMI, CONNECT TO 2015 COLLISION DATA AND SEARCH FOR LOW XSXN WR PRODUCTION
 
@@ -138,7 +138,7 @@ momentum $p_{z}$ of a particle in the massless particle limit was:
 \end{equation}
 
 Pseudorapidity was used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
-produced by pp interactions were usually boosted along the $z$ axis, but the degree of boost was never well 
+produced by pp interactions were often boosted along the $z$ axis, but the degree of boost was never well 
 defined because the momenta of the interacting partons could never be measured.  This boost affected the 
 trajectories of particles in $\theta$, but did not affect particle trajectories measured in $\eta$.  In 
 addition, the particles that caused radiation damage in CMS sub-detector systems were produced at 
@@ -163,18 +163,16 @@ momenta of charged particles.  Charged particles produced within the tracker acc
 charge in the silicon pixel and strip trackers, and the measurement of this charge formed the basis for all tracker 
 measurements.
 
-%describe physical layout of pixel and strip trackers first, then explain physics behind how charged particles were identified
-
 The pixel tracker was built from small rectangular pixel detectors ($100 \times 150 \mu$m) organized in two 
-structures based on $|\eta|$.  In the barrel region ($|\eta| \lesssim 1.2$) where the rate of radiation damage was 
+structures based on $|\eta|$.  In the barrel region ($0 < |\eta| \lesssim 1.2$) where the rate of radiation damage was 
 low, individual pixel detectors were arranged into three 53 cm long concentric cylindrical shells centered on the 
 $z$ axis, with radii of 4, 7 and 10 cm relative to the $z$ axis.  The face of each barrel pixel pointed towards the interaction 
-region, and, for reasons described later, their faces were aligned with the magnetic field direction.  In the endcap region 
+point, and, for reasons described later, their faces were aligned with the magnetic field direction.  In the endcap region 
 ($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
 installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These disks 
 were placed at $|z| =$ 35 and 47 cm away from the midpoint of the pixel barrel cylindrical shells, and covered 
 radii between 6 and 15 cm from the $z$ axis.  For reasons discussed later the face of each endcap region pixel 
-pointed 20 degrees away from the interaction region.
+pointed 20 degrees away from the interaction point.
 
 
 \begin{figure}[ht]
@@ -195,7 +193,7 @@ $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to th
 
 Located outside the pixel tracker, the silicon strip tracker was built from larger rectangular silicon detectors 
 organized into four structures based on $|\eta|$, $|z|$ position and radius $r$ from the $z$ axis.  In the barrel region 
-($|\eta| \lesssim 1.2$), four cylindrical shells of 10 cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 cm $< r <$ 55 cm.  At
+($0 < |\eta| \lesssim 1.2$), four cylindrical shells of 10 cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 cm $< r <$ 55 cm.  At
 55 $< r < $110 cm where radiation levels were much lower, six layers of thicker, larger surface area (25 cm $\times$ $120-180$ $\mu$m) 
 strips were placed in cylindrical shells for improved momentum resolution.  To improve track position resolution the two strip layers with smallest 
 $|r|$ each contained two layers of silicon strips separated by a small distance and tilted relative 
@@ -206,7 +204,7 @@ $1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 cm and 65 $< |z| <$ 110 cm, an
 the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 cm and 120 $< |z| < $ 280 cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  
 To improve track position resolution two of the three inner disk layers, and three of the nine outer disk layers 
 used two closely spaced silicon strips tilted by 100 mrad.  The faces of all strip detectors pointed at the interaction 
-region.
+point.
 
 \begin{figure}[ht]
 	\centering
@@ -224,12 +222,50 @@ strip tracker measured the $p_{T}$ of 100 GeV $p_{T}$ muons with resolution bett
 To measure the position and momenta of charged particles with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
 used to measure the tracker alignment and momentum response, and derive calibration factors that accounted for 
-changes in alignment or momentum response.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon 
-events were used to monitor and recalibrate the tracker alignment and momentum response.
+changes in either.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon events were used to monitor 
+and recalibrate the tracker alignment and momentum response.
 
 
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
+
+Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons produced by 
+pp interactions, and distinguished electrons and positrons ($e^{\pm}$) from other charged particles detected by the 
+tracker.  The ECAL was an absorption calorimeter built from homogeneous lead-tungstate (PbWO$_{4}$) crystals.  
+In response to incident photons and $e^{\pm}$ with total energy E $\gtrsim$ 1 GeV, the ECAL crystals emitted 
+amounts of visible light proportional to the incident particle energy.  By measuring the amount of visible 
+light produced by the lead-tungstate crystals, the ECAL detected photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
+
+%start with phyiscal description of ECAL - front face location, crystal length and multiplicity
+%then explain physics that was used to detect photons, electrons and positrons
+
+The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
+damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
+crystals of length 23 cm were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
+interaction point.  The front face of each crystal measured $\thicksim$22 $\times$ 22 mm, and resided 129 cm 
+from the beam axis, $\thicksim$19 cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
+endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
+endcap) of length 22 cm were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
+point.  The front face of endcap crystals measured $\thicksim$29 $\times$ 29 mm, and sat behind two layers of 
+thick lead absorber and thin silicon detectors that constituted the preshower detector.  The preshower 
+mitigated radiation damage to endcap region lead-tungstate crystals, and helped discriminate neutral pion 
+decays $\pi^{0} \rightarrow \gamma\gamma$ from photons produced by pp interactions.
+
+Photons and $e^{\pm}$ that impinged on the ECAL produced showers of lower energy $e^{-}$s and $e^{+}$s.  Incident $e^{\pm}$s interacted 
+with lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Subsequently, gamma rays 
+interacted with lead-tungstate nuclei and were converted into $e^{-}e^{+}$ pairs.  For every $e^{\pm}$ 
+that impinged on the ECAL, the cycle of bremsstrahlung followed by pair conversion repeated many times, 
+and a shower of lower energy $e^{-}$s and $e^{+}$s was made.  Every energetic photon that impinged on the 
+ECAL first converted into an $e^{-}e^{+}$ pair, then this pair underwent repeated cycles of bremsstrahlung 
+followed by pair conversion, and a shower of lower energy $e^{-}$s and $e^{+}$s was made.  The crystal lengths 
+guaranteed an average incident photon or $e^{\pm}$ lost more than $99.999$\% of its incident energy through 
+radiative processes before leaving the ECAL, so the cycle of bremsstrahlung followed by pair conversion 
+stopped when the incident particle energy was too low to produce gamma rays through bremsstrahlung.  The 
+transverse size of each crystal was large enough to contain the full shower created by an incident photon 
+or $e^{\pm}$ that did not interact with the silicon tracker.
+
+Showers of low energy $e^{-}$s and $e^{+}$s produced visible light proportional to the energy of the 
+incident photon or $e^{\pm}$.
 
 %After traversing the tracker, electrons and positrons interacted with 
 %lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Gamma rays then interacted 
