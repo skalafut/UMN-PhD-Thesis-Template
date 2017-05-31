@@ -236,9 +236,6 @@ In response to incident photons and $e^{\pm}$ with total energy $\gtrsim$ 1 GeV,
 amounts of visible light proportional to the incident particle energy.  By measuring the amount of visible 
 light produced by the lead-tungstate crystals, the ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
 
-%start with phyiscal description of ECAL - front face location, crystal length and multiplicity
-%then explain physics that was used to detect photons, electrons and positrons
-
 The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
 crystals of length 23 cm (26 radiation lengths) were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
@@ -288,11 +285,28 @@ incident photon or $e^{\pm}$ with resolution given by:
 	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.128 GeV}{E} \oplus 0.3\%
 \end{equation}
 
+To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL was calibrated before 
+and during 2015 pp collisions.  Before collisions, the ECAL was calibrated based on 2012 pp collision 
+data.  Once collisions began, data collected from collision events was used by several methods 
+to derive ECAL calibration constants for every lead-tungstate crystal.  The following quantities 
+were measured for every crystal in millions of events:
 
+\begin{itemize}
+	\item $\pi^{0}/\eta$ masses through their decays to $\gamma\gamma$
+	\item the average crystal energy in randomly selected events 
+		(considering many randomly selected events the energy measured should be symmetric in $\phi$, so within one $\phi$ ring each crystal should measure the same average energy)
+	\item the ratio $\frac{energy E_{T} measured by the ECAL}{momentum p_{T} measured by the tracker}$ for isolated electrons coming from W or Z boson decays
+\end{itemize}
+
+and relative calibration constants were derived such that every crystal had the same calibrated response.  
+Then, the absolute scale of each crystal's response was calibrated using $e^{\pm}$ from 
+$Z \rightarrow e^{\pm}e^{\mp}$ decays.  In events where a Z boson decayed to an $e^{\pm}e^{\mp}$ pair, the 
+crystal responses were corrected so that the average mass of all $e^{\pm}e^{\mp}$ pairs was equal to 
+the true Z boson mass.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
-
+The a
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
@@ -303,15 +317,6 @@ incident photon or $e^{\pm}$ with resolution given by:
 
 
 
-The Compact Muon Solenoid (CMS) was built to detect new particles produced by proton-proton (pp) collisions 
-in the Large Hadron Collider (LHC).  Situated underground near the French-Swiss border and
-operated by the European Organization for Nuclear Research (CERN), the LHC collided protons at
-$\sqrt{s} = 13 TeV$ center-of-mass energy to search for new particles like the WR boson discussed 
-in Sec. ~\ref{wrBosonAndHeavyNu}.  Evidence of the WR boson was sought in pp collision events that
-produced Standard Model (SM) leptons and hadronic jets.  The CMS detector used to identify leptons and
-jets is described herein.
-
-The
 
 %use this lumi info in the trigger section.  it is not relevant for the detection of leptons and jets
 %why are high lumi and energy needed
