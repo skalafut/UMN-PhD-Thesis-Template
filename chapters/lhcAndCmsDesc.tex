@@ -14,7 +14,7 @@ Interactions between protons were identified by the detection of:
 \begin{itemize}
 	\item one or more energetic charged leptons (electron, muon, tau or their anti-particles)
 	\item one or more energetic photons
-	\item one or more energetic hadronic jets
+	\item one or more energetic hadronic jets, each containing at least one hadron
 	\item one or more energetic neutrinos\footnote{the presence of neutrinos is inferred from the vector sum of momentum of all charged leptons, photons and hadronic jets detected in a collision event.}
 	\item combinations thereof
 \end{itemize}
@@ -88,7 +88,7 @@ Situated near Geneva, Switzerland and spanning the French-Swiss border, the CERN
 two counter-rotating proton beams in a 27 km circular tunnel (CITE) up to an energy of 6.5 TeV in 2015.  At several points along the tunnel 
 the two beams collided, and surrounding one of these points the CMS experiment was built.
 
-Several accelerator stages were used to create a proton beam in the LHC.  Summarized in Figure \ref{fig:accelComplex} (CITE), each 
+Several accelerator stages were used to create a proton beam in the LHC.  Summarized in Figure \ref{fig:accelComplex} \cite{DeMelis:2197559}, each 
 proton beam began as isolated proton bunches ionized from hydrogen gas.  Proton bunches were first accelerated by a linear 
 accelerator, LINAC 2, and were then injected into the circular Proton Synchrotron (PS) accelerator.  Protons were accelerated 
 to an energy of 26 GeV by the PS, and then were injected into the circular Super Proton Synchrotron (SPS) accelerator.  
@@ -99,8 +99,9 @@ contained as many as 2300 proton bunches.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
-	\caption{CERN accelerator systems that feed in to the LHC.}
+	\includegraphics[width=1\textwidth]{figures/CERNAcceleratorComplex.png}
+	\caption{The CERN accelerator complex.  Protons are ionized from hydrogen, then are accelerated to higher 
+	energies by LINAC 2, the PS, and finally the SPS before entering the LHC.}
 	\label{fig:accelComplex}
 \end{figure}
 
@@ -165,13 +166,13 @@ measurements.
 
 The pixel tracker was built from small rectangular pixel detectors ($100 \times 150 \mu$m) organized in two 
 structures based on $|\eta|$.  In the barrel region ($0 < |\eta| \lesssim 1.2$) where the rate of radiation damage was 
-low, individual pixel detectors were arranged into three 53 cm long concentric cylindrical shells centered on the 
-$z$ axis, with radii of 4, 7 and 10 cm relative to the $z$ axis.  The face of each barrel pixel pointed towards the interaction 
+low, individual pixel detectors were arranged into three 53 \cm long concentric cylindrical shells centered on the 
+$z$ axis, with radii of 4, 7 and 10 \cm relative to the $z$ axis.  The face of each barrel pixel pointed towards the interaction 
 point, and, for reasons described later, their faces were aligned with the magnetic field direction.  In the endcap region 
 ($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
 installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These disks 
-were placed at $|z| =$ 35 and 47 cm away from the midpoint of the pixel barrel cylindrical shells, and covered 
-radii between 6 and 15 cm from the $z$ axis.  For reasons discussed later the face of each endcap region pixel 
+were placed at $|z| =$ 35 and 47 \cm away from the midpoint of the pixel barrel cylindrical shells, and covered 
+radii between 6 and 15 \cm from the $z$ axis.  For reasons discussed later the face of each endcap region pixel 
 pointed 20 degrees away from the interaction point.
 
 
@@ -193,15 +194,15 @@ $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to th
 
 Located outside the pixel tracker, the silicon strip tracker was built from larger rectangular silicon detectors 
 organized into four structures based on $|\eta|$, $|z|$ position and radius $r$ from the $z$ axis.  In the barrel region 
-($0 < |\eta| \lesssim 1.2$), four cylindrical shells of 10 cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 cm $< r <$ 55 cm.  At
-55 $< r < $110 cm where radiation levels were much lower, six layers of thicker, larger surface area (25 cm $\times$ $120-180$ $\mu$m) 
+($0 < |\eta| \lesssim 1.2$), four cylindrical shells of 10 \cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 $< r <$ 55 \cm.  At
+55 $< r < $110 \cm where radiation levels were much lower, six layers of thicker, larger surface area (25 \cm $\times$ $120-180$ $\mu$m) 
 strips were placed in cylindrical shells for improved momentum resolution.  To improve track position resolution the two strip layers with smallest 
 $|r|$ each contained two layers of silicon strips separated by a small distance and tilted relative 
-to each other by 100 mrad.  For the same reason the first two of six strip detector layers in the region $r >$ 55 cm 
+to each other by 100 mrad.  For the same reason the first two of six strip detector layers in the region $r >$ 55 \cm 
 were also built with the double layer design.  Similar to the pixel tracker, the strip tracker in the endcap region 
 ($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  Three disk layers were installed between 
-$1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 cm and 65 $< |z| <$ 110 cm, and nine disk layers with thicker strips were installed in 
-the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 cm and 120 $< |z| < $ 280 cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  
+$1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 \cm and 65 $< |z| <$ 110 \cm, and nine disk layers with thicker strips were installed in 
+the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 \cm and 120 $< |z| < $ 280 \cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  
 To improve track position resolution two of the three inner disk layers, and three of the nine outer disk layers 
 used two closely spaced silicon strips tilted by 100 mrad.  The faces of all strip detectors pointed at the interaction 
 point.
@@ -238,12 +239,12 @@ and $e^{\pm}$ with $0 < |\eta| < 3.0$ by measuring the amount of visible light p
 
 The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
-crystals of length 23 cm (26 radiation lengths) were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
-interaction point.  The front face of each crystal measured $\thicksim$22 $\times$ 22 mm, and resided 129 cm 
-from the beam axis, $\thicksim$19 cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
+crystals of length 23 \cm (26 radiation lengths) were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
+interaction point.  The front face of each crystal measured $\thicksim$22 $\times$ 22 \mm, and resided 129 \cm 
+from the beam axis, $\thicksim$19 \cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
 endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
-endcap) of length 22 cm (25 radiation lengths) were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
-point.  The front face of endcap crystals measured $\thicksim$29 $\times$ 29 mm, and sat behind two layers of 
+endcap) of length 22 \cm (25 radiation lengths) were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
+point.  The front face of endcap crystals measured $\thicksim$29 $\times$ 29 \mm, and sat behind two layers of 
 thick lead absorber and thin silicon detectors that constituted the preshower detector.  The preshower 
 mitigated radiation damage to endcap region lead-tungstate crystals, and improved the spatial resolution with 
 which endcap region electromagnetic showers were studied.
@@ -266,7 +267,7 @@ signals that were measured to determine the energies of incident photons and $e^
 transferred several eV of energy from shower $e^{\pm}$s to atomic electrons bound to lead-tungstate nuclei.  
 In addition, relativistic shower $e^{\pm}$s produced Cherenkov photons with several eV of energy, and 
 these Cherenkov photons were absorbed by atomic electrons bound to lead-tungstate nuclei.  The atomic 
-electrons were excited to meta-stable states, and in $\lesssim$ 20 ns more than 80\% of atomic electrons 
+electrons were excited to meta-stable states, and in $\lesssim$ 20 \ns more than 80\% of atomic electrons 
 returned to their ground states by emitting scintillation photons in the visible light regime.  The total energy of 
 scintillation photons was proportional to the incident photon or $e^{\pm}$ energy, so the energies 
 of scintillation photons were measured to determine the energy of the incident photon or $e^{\pm}$.  Most 
@@ -306,7 +307,7 @@ the true Z boson mass.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
-Surrounding the ECAL was the hadronic calorimeter (HCAL), which detected neutral and charged hadrons.  The 
+Surrounding the ECAL was the hadronic calorimeter (HCAL), which detected charged and neutral hadrons.  The 
 HCAL was a sampling calorimeter built from alternating layers of thin scintillating plastic tiles and thick 
 metal absorber plates.  Hadrons impinging on the HCAL with energy $\gtrsim$ 1 GeV interacted with the metal absorbers and produced amounts 
 of visible light in the scintillating tiles proportional to their incident energies.  The HCAL 
@@ -316,7 +317,8 @@ by the scintillating tiles.
 The HCAL consisted of 17 scintillating tile layers separated by 17 metal absorber layers.  Similar to the ECAL, the 
 HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
 region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
-covered $0.087 \times 0.087$ in $\Delta\eta \times \Delta\phi$.  The towers were arranged in a cylindrical 
+covered an area $0.087 \times 0.087$ in $\Delta\eta \times \Delta\phi$.  The first and last metal absorber layers 
+were made from steel .  The towers were arranged in a cylindrical 
 shell, and each tower pointed towards the interaction point.
 
 %The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
@@ -414,7 +416,7 @@ called triggers, used to select and save collision events at approximately $10^{
 %Operations
 The LHC started operations with collisions at a lower center of mass energy and lower instantaneous luminosity than design.  In 2015 the center of mass
 energy was increased to 13 TeV, and the luminosity was increased closer to the design level.  The 2015 data taking period was split into two portions - from the start
-of 2015 collisions until August the time separation between consecutive proton bunches in each beam was 50 ns.  After August, the bunch
+of 2015 collisions until August the time separation between consecutive proton bunches in each beam was 50 \ns.  After August, the bunch
 separation decreased to 25 ns to increase the instantaneous luminosity, and proton proton collisions continued until November.  From August until November, instantaneous 
 luminosities reached $5x10^{33} \frac{1}{cm^{2}s}$, but problems with the CMS
 magnet cooling system limited the amount of data collected to 2.6 $fb^{-1}$.  Decreasing the bunch spacing increased the sensitivity of every new physics search, but
@@ -444,18 +446,25 @@ coverage over this large angular range allows precise measurements to be made of
 \end{figure}
 
 
-Starting at the interaction point and going radially outward, the first subdetector encountered by particles produced in collisions is the silicon tracker.
-The tracker consists of silicon pixel detectors surrounded by silicon strip detectors, all of which are immersed in a 3.8 Tesla magnetic field produced by a superconducting solenoid.
+Starting at the interaction point and going radially outward, the first subdetector encountered by particles 
+produced in collisions is the silicon tracker.
+The tracker consists of silicon pixel detectors surrounded by silicon strip detectors, all of which are 
+immersed in a 3.8 Tesla magnetic field produced by a superconducting solenoid.
 Both detectors are only sensitive to charged particles, and facilitate precise measurements of charged particle momenta
-and the positions of interaction vertices by measuring the curvature of charged particle tracks which have $|\eta| \leq 2.5$.
+and the positions of interaction vertices by measuring the curvature of charged particle tracks which 
+have $|\eta| \leq 2.5$.
 
-Particles which exit the tracker with sufficient momentum to travel approximately 1.0 meter radially away from the interaction point will reach the
-electromagnetic calorimeter (ECAL).  ECAL consists of approximately 76000 lead tungstate crystals which, like the tracker, are sit in a 3.8 Tesla
+Particles which exit the tracker with sufficient momentum to travel approximately 1.0 meter radially away from 
+the interaction point will reach the
+electromagnetic calorimeter (ECAL).  ECAL consists of approximately 76000 lead tungstate crystals which, like 
+the tracker, are sit in a 3.8 Tesla
 magnetic field.  The radiation hardness and fast scintillation time of lead tungstate were key factors in chosing to build ECAL out of it.
-ECAL was designed to measure the energy, time, position and shower shape of electrons and photons with $|\eta| \leq 3.0$ by measuring scintillation
+ECAL was designed to measure the energy, time, position and shower shape of electrons and photons with 
+$|\eta| \leq 3.0$ by measuring scintillation
 light produced by lead tungstate in electron and photon showers.
 
-Particles which traverse ECAL with sufficient momentum to continue moving away from the interaction point hit the hadronic calorimeter (HCAL).  Built
+Particles which traverse ECAL with sufficient momentum to continue moving away from the interaction point hit 
+the hadronic calorimeter (HCAL).  Built
 from alternating layers of metal and scintillating plastic tiles, HCAL was designed to measure the energy of charged and neutral
 hadrons, and to provide structural support to all of CMS.  Energetic hadrons produce showers of lower energy particles in metal layers, and the
 showers which reach nearby scintillating tiles produce scintillation light.
