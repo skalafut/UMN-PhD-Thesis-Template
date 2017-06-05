@@ -372,6 +372,90 @@ dijet resonances like $W/Z \rightarrow jj$.
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
+Outside the magnet were gas ionization chambers used to detect muons.  Muons that traversed the chambers 
+ionized charge along their trajectories, and the ionized charges drifted through the gas to anodes and 
+cathodes.  The muon detectors measured the momenta of muons with $0 < |\eta| < 2.4$ by measuring the amount of 
+charge collected on the anodes and cathodes.
+
+Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  In the barrel 
+region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and neutron induced background 
+rate were low, drift tubes (DTs) and resistive plate chambers (RPCs) were used to measure the positions and 
+and momenta of muons, and the collision event that produced them.  In the endcap region ($1.2 < |\eta| < 2.4$) where 
+particle fluxes and magnetic field strengths were higher, RPCs and cathode strip chambers (CSCs) were used 
+to measure the quantities stated previously.
+
+The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 
+$\phi$ segments per station covering 30 degrees in $\phi$.  Chambers in different stations were staggered 
+so that high $p_{T}$ muons produced near the $\phi$ sector boundary hit at least three of four stations.  
+DT chambers in the first, second and third stations each contained 12 planes of aluminum drift tubes - 8 
+planes measured muons in r-$\phi$ coordinates, and 4 planes measured muons along the $z$ axis.  DT chambers 
+in the fourth station were the same, but did not have the 4 planes for measurements in $z$.  In all DTs, ionized 
+charge drifted 2 \cm or less to the nearest cathode or anode, and this allowed each station to measure muon 
+vectors with resolution better than 100 $\mu$m in position, and $\thicksim$1 \mrad in $\phi$ direction.  The large 
+distance between the DTs and the interaction point meant that muons produced near the interaction point 
+took 13 \ns or more to reach the first DT station in any of the 5 wheels.  To identify the collision event 
+that produced a muon, each DT chamber was paired with one or two RPCs that detected muons with $\thicksim$1 \ns 
+resolution.  DT chambers in the first two stations were sandwiched between two RPCs, while each DT chamber 
+in the third and fourth stations sat immediately behind one RPC relative to the interaction point.
+
+The CSCs in the endcap .
+
+%The HCAL consisted of 17 scintillating tile layers separated by 17 metal absorber layers.  Similar to the ECAL, the 
+%HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
+%region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
+%covered a $\Delta\eta \times \Delta\phi$ area of $0.087 \times 0.087$ to match the area covered by a 5 $\times$ 5 grid of 
+%ECAL crystals in the barrel region.  In every tower the first and last metal absorber layers 
+%were made from 5 \cm thick steel to support the $\thicksim$1130 tons resting on the HCAL barrel.   All other layers 
+%were made from brass of the same thickness to minimize costs.  To increase the visible light produced by particles 
+%leaving the ECAL, the first layer of scintillating tile was 9 \mm thick , and tiles 
+%used in subsequent layers were 3.7 \mm thick.  The towers were arranged in a cylindrical shell, and each tower 
+%pointed towards the interaction point.  In the high $|\eta|$ ($1.3 < |\eta| < 3.0$) endcap region, scintillating 
+%tiles and absorber plates were assembled into 2304 towers (1152 per endcap) with variable widths in $\Delta\eta$ and 
+%$\Delta\phi$.  Towers that covered $1.3 < |\eta| \leq 1.74$ used absorber plates and scintillating tiles with 
+%the same thickness and $\Delta\eta \times \Delta\phi$ area as those in the barrel region.  At higher $|\eta|$, absorber 
+%plates and scintillating tiles with the same thickness and larger $\Delta\eta \times \Delta\phi$ area were used 
+%such that each tower covered the same area as a 5 $\times$ 5 grid of ECAL endcap crystals.
+%
+%Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
+%inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
+%energy hadrons that traveled into the nearest scintillating tile layers.  The amount of metal absorber 
+%(5.15 to $\thicksim$9 interaction lengths) guaranteed that every hadron that impinged on the HCAL experienced, 
+%on average, at least 5 fully inelastic collisions, and at least 5 diffractive collisions.  Incident hadrons 
+%with higher energy produced showers with greater numbers of lower energy hadrons.  Upon entering a plastic tile, 
+%low energy charged hadrons in a shower transferred several eV of energy to plastic molecules through Cherenkov radiation 
+%and Coulomb interactions.  Each energy transfer excited a plastic molecule into a higher energy, meta-stable 
+%molecular state.  These molecules usually de-excited through the Forster transfer, in which energy was 
+%transferred to nearby scintillator molecules without the emission of radiation.  Mixed throughout every 
+%plastic tile was a cerium based scintillator, whose molecules were excited to higher energy molecular 
+%states through Forster transfer.  In $\thicksim$5 \ns, the cerium based scintillator molecules de-excited by emitting 
+%visible light in every direction.  To detect this scintillation light, an optical fiber was 
+%embedded near the perimeter of every tile in the shape of the sigma ($\sigma$) character.  The tiles were wrapped in 
+%a reflective, non-absorbing material to maximize the amount of scintillation light which reached the optical 
+%fibers.  Upon reaching the surface of a fiber, scintillation light was absorbed and re-emitted at 
+%a longer wavelength in the core of the fiber, along the fiber axis.  Longer wavelength light was used to reduce 
+%transmission losses encountered when transmitting the light to a photodetector.  The light produced in all 17 scintillating 
+%layers of a tower is sent to the same photodetector (hybrid photodiodes were used in the HCAL barrel and endcap), and 
+%the photodetector converted the light into electric charge.  Charge was measured from every tower to determine 
+%the energy of hadrons which impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons
+%with the following resolution:
+%
+%\begin{equation}
+%	\frac{\sigma_{E}}{E} = \frac{84.7\%}{\sqrt{E/(1 GeV)}} \oplus 7.4\%
+%\end{equation}
+%
+%To maintain the energy resolution of the HCAL, the amount of light measured from towers of scintillating tiles 
+%was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
+%with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each tile 
+%in response to the source was used to derive calibration constants.  Once collisions began, a laser system 
+%was used to monitor the decrease in transparency of optical fibers that transmitted scintillation light 
+%from plastic tiles to photodetectors.  From laser transparency data, relative calibration constants were 
+%derived that normalized the response of all towers to hadronic activity to the same value.  The absolute 
+%calibration was determined by selecting events in which a jet recoiled off a photon, or a Z boson that 
+%decayed to a $e^{\pm}e^{\mp}$ or $\mu^{\pm}\mu^{\mp}$ pair.  In such events, the absolute hadronic energy 
+%scale was calibrated relative to the electromagnetic energy scale derived from $Z \rightarrow e^{\pm}e^{\mp}$ 
+%events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
+%dijet resonances like $W/Z \rightarrow jj$.
+
 
 
 \section{The Trigger System}
@@ -394,7 +478,7 @@ system was used during collisions ('online') to select the best events for physi
 
 By discarding collision events where no photons, charged leptons, hadronic jets, or neutrinos were 
 detected, the Level-1 (L1) trigger system reduced the rate of collision events sent to the second 
-level trigger system from 40 MHz to $\lesssim$80 kHz.  After every collision event, data from 
+level trigger system from 40 MHz to $\lesssim$ 80 kHz.  After every collision event, data from 
 charge collection devices on the ECAL, the HCAL and the muon detectors was used to build 'trigger 
 primitive' objects that represented photons, muons and other objects.  In $\thicksim$1 $\mu$s these objects, 
 distinguished by $E_{T}$ values and $(\eta, \phi)$ coordinates, were built and sent to the L1 logic system located 
@@ -406,7 +490,7 @@ or more trigger primitive objects passing selections were processed by the secon
 
 By selecting only the events needed for physics analyses and detector calibration, the second 
 level, or High Level, trigger (HLT) reduced the rate of collision events written to permanent storage 
-from $\lesssim$80 kHz to $\lesssim$1000 Hz.  First, all data from the tracker, both calorimeters and the muon 
+from $\lesssim$ 80 kHz to $\lesssim$ 1000 Hz.  First, all data from the tracker, both calorimeters and the muon 
 detectors were transferred to commercial, multi-core processors where the HLT was run\footnote{the same HLT software was run on every processor}.  
 Then, the HLT began by running a fast, simplified version of the full offline particle reconstruction software in small 
 regions where L1 trigger algorithms were passed.  Then, $\thicksim$400 HLT algorithms running in 
@@ -415,9 +499,8 @@ energetic photons, charged leptons, hadronic jets, and neutrinos.  If the event 
 HLT algorithm, then the data from the entire detector was written to permanent storage, and the event 
 was assigned to one or more primary datasets based on the number of reconstructed particles required 
 by the trigger\footnote{for example, an event that passed a trigger that required one muon was assigned to the SingleMuon primary dataset.}.
-During 2015 pp collisions the rate of data written to permanent storage was $\lesssim 0.5$ gigabytes per 
-second.
-
+Considering events selected by all HLT algorithms, during 2015 pp collisions the rate of data written to 
+permanent storage was $\lesssim 0.5$ gigabytes per second.
 
 
 %Operations
