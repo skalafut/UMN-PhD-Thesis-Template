@@ -377,12 +377,22 @@ ionized charge along their trajectories, and the ionized charges drifted through
 cathodes.  The muon detectors measured the momenta of muons with $0 < |\eta| < 2.4$ by measuring the amount of 
 charge collected on the anodes and cathodes.
 
-Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  In the barrel 
+Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  Shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, in the barrel 
 region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and neutron induced background 
 rate were low, drift tubes (DTs) and resistive plate chambers (RPCs) were used to measure the positions and 
 and momenta of muons, and the collision event that produced them.  In the endcap region ($1.2 < |\eta| < 2.4$) where 
 particle fluxes and magnetic field strengths were higher, RPCs and cathode strip chambers (CSCs) were used 
 to measure the quantities stated previously.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/muonDetectorLayout.png}
+	\caption{The barrel and endcap sections of the muon detectors for $\eta \geq 0.$ and one quadrant of $\phi$.  Shown 
+		between the muon detectors and the interaction point are the magnet solenoid and return yoke, the HCAL, the ECAL, 
+		and the silicon tracker.}
+	\label{fig:stripTracker}
+\end{figure}
+
 
 The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 
 $\phi$ segments per station covering 30 degrees in $\phi$.  Chambers in different stations were staggered 
@@ -391,71 +401,46 @@ DT chambers in the first, second and third stations each contained 12 planes of 
 planes measured muons in r-$\phi$ coordinates, and 4 planes measured muons along the $z$ axis.  DT chambers 
 in the fourth station were the same, but did not have the 4 planes for measurements in $z$.  In all DTs, ionized 
 charge drifted 2 \cm or less to the nearest cathode or anode, and this allowed each station to measure muon 
-vectors with resolution better than 100 $\mu$m in position, and $\thicksim$1 \mrad in $\phi$ direction.  The large 
+vectors with resolution better than 100 $\mu$m in position, and $\thicksim$1 \mrad in $\phi$.  The large 
 distance between the DTs and the interaction point meant that muons produced near the interaction point 
-took 13 \ns or more to reach the first DT station in any of the 5 wheels.  To identify the collision event 
+took 13 \ns or longer to reach the first DT station in any of the 5 wheels.  To identify the collision event 
 that produced a muon, each DT chamber was paired with one or two RPCs that detected muons with $\thicksim$1 \ns 
 resolution.  DT chambers in the first two stations were sandwiched between two RPCs, while each DT chamber 
 in the third and fourth stations sat immediately behind one RPC relative to the interaction point.
 
-The CSCs in the endcap .
+Muons in the endcap region were detected by CSCs divided amongst four disks that faced the barrel region.  
+The first disk, closest to the barrel DTs, was segmented into four radial layers (four rings of different  
+radii).  As shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, the second and third disks were divided 
+into two radial layers, and the fourth disk contained only one ring of CSCs.  The inner most radial layer in 
+the second through fourth disks contained 18 CSCs, and all other radial layers contained 36 chambers.  Each 
+CSC contained 6 gas gaps that were separated by 6 pairs of planes - one plane of cathode strips pointing in 
+the radial direction, and one plane of anode wires that ran nearly perpendicular to the plane of cathode 
+strips.  When a muon traversed a CSC, in a few \ns charge accumulated on the anode wires and was subsequently 
+used for triggering.  Over a longer time period, charge collected on the cathode strips, and the position and 
+trajectory of a muon was determined by measuring the shape of the charge distribution on the strips.  The 
+cathode strips allowed muon vectors to be measured with resolution better than 200 $\mu$m in position, and 
+$\thicksim$10 \mrad in $\phi$.  Similar to the barrel region DTs, the large distance between the interaction 
+point and endcap CSCs meant that muons produced near the interaction point with $1.2 < |\eta| < 1.6$ took 
+13 \ns or longer to reach the first CSC disk closest to the interaction point.  To identify the collision 
+event that produced a muon, each CSC with $1.2 < |\eta| < 1.6$ sat in front of one RPC that detected 
+muons with $\thicksim$1 \ns resolution.  For muons produced with $|\eta| > 1.6$, the distance between the 
+interaction point and the first CSC disk was small enough that anode timing information from this disk 
+unambiguously determined the collision event that produced a muon.
 
-%The HCAL consisted of 17 scintillating tile layers separated by 17 metal absorber layers.  Similar to the ECAL, the 
-%HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
-%region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
-%covered a $\Delta\eta \times \Delta\phi$ area of $0.087 \times 0.087$ to match the area covered by a 5 $\times$ 5 grid of 
-%ECAL crystals in the barrel region.  In every tower the first and last metal absorber layers 
-%were made from 5 \cm thick steel to support the $\thicksim$1130 tons resting on the HCAL barrel.   All other layers 
-%were made from brass of the same thickness to minimize costs.  To increase the visible light produced by particles 
-%leaving the ECAL, the first layer of scintillating tile was 9 \mm thick , and tiles 
-%used in subsequent layers were 3.7 \mm thick.  The towers were arranged in a cylindrical shell, and each tower 
-%pointed towards the interaction point.  In the high $|\eta|$ ($1.3 < |\eta| < 3.0$) endcap region, scintillating 
-%tiles and absorber plates were assembled into 2304 towers (1152 per endcap) with variable widths in $\Delta\eta$ and 
-%$\Delta\phi$.  Towers that covered $1.3 < |\eta| \leq 1.74$ used absorber plates and scintillating tiles with 
-%the same thickness and $\Delta\eta \times \Delta\phi$ area as those in the barrel region.  At higher $|\eta|$, absorber 
-%plates and scintillating tiles with the same thickness and larger $\Delta\eta \times \Delta\phi$ area were used 
-%such that each tower covered the same area as a 5 $\times$ 5 grid of ECAL endcap crystals.
-%
-%Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
-%inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
-%energy hadrons that traveled into the nearest scintillating tile layers.  The amount of metal absorber 
-%(5.15 to $\thicksim$9 interaction lengths) guaranteed that every hadron that impinged on the HCAL experienced, 
-%on average, at least 5 fully inelastic collisions, and at least 5 diffractive collisions.  Incident hadrons 
-%with higher energy produced showers with greater numbers of lower energy hadrons.  Upon entering a plastic tile, 
-%low energy charged hadrons in a shower transferred several eV of energy to plastic molecules through Cherenkov radiation 
-%and Coulomb interactions.  Each energy transfer excited a plastic molecule into a higher energy, meta-stable 
-%molecular state.  These molecules usually de-excited through the Forster transfer, in which energy was 
-%transferred to nearby scintillator molecules without the emission of radiation.  Mixed throughout every 
-%plastic tile was a cerium based scintillator, whose molecules were excited to higher energy molecular 
-%states through Forster transfer.  In $\thicksim$5 \ns, the cerium based scintillator molecules de-excited by emitting 
-%visible light in every direction.  To detect this scintillation light, an optical fiber was 
-%embedded near the perimeter of every tile in the shape of the sigma ($\sigma$) character.  The tiles were wrapped in 
-%a reflective, non-absorbing material to maximize the amount of scintillation light which reached the optical 
-%fibers.  Upon reaching the surface of a fiber, scintillation light was absorbed and re-emitted at 
-%a longer wavelength in the core of the fiber, along the fiber axis.  Longer wavelength light was used to reduce 
-%transmission losses encountered when transmitting the light to a photodetector.  The light produced in all 17 scintillating 
-%layers of a tower is sent to the same photodetector (hybrid photodiodes were used in the HCAL barrel and endcap), and 
-%the photodetector converted the light into electric charge.  Charge was measured from every tower to determine 
-%the energy of hadrons which impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons
-%with the following resolution:
-%
-%\begin{equation}
-%	\frac{\sigma_{E}}{E} = \frac{84.7\%}{\sqrt{E/(1 GeV)}} \oplus 7.4\%
-%\end{equation}
-%
-%To maintain the energy resolution of the HCAL, the amount of light measured from towers of scintillating tiles 
-%was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
-%with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each tile 
-%in response to the source was used to derive calibration constants.  Once collisions began, a laser system 
-%was used to monitor the decrease in transparency of optical fibers that transmitted scintillation light 
-%from plastic tiles to photodetectors.  From laser transparency data, relative calibration constants were 
-%derived that normalized the response of all towers to hadronic activity to the same value.  The absolute 
-%calibration was determined by selecting events in which a jet recoiled off a photon, or a Z boson that 
-%decayed to a $e^{\pm}e^{\mp}$ or $\mu^{\pm}\mu^{\mp}$ pair.  In such events, the absolute hadronic energy 
-%scale was calibrated relative to the electromagnetic energy scale derived from $Z \rightarrow e^{\pm}e^{\mp}$ 
-%events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
-%dijet resonances like $W/Z \rightarrow jj$.
-
+The muon detectors complimented measurements made by the tracker, and improved the resolution of muon 
+momentum measurements for high $p_{T}$ muons relative to tracker only performance.  The 
+strength of the magnetic field allowed the tracker to measure muon momenta in the $0 < |\eta| < 0.2$, $p_{T} <$ 
+200 GeV phase space with 3 or more times better resolution than the muon detectors.  For higher $|\eta|$, this 
+phase space extended to higher $p_{T}$.  As muon $p_{T}$s increased outside the tracker dominated phase 
+space, muon trajectories approached straight line paths that degraded the tracker momentum resolution.  
+Although the momentum resolution of the stand-alone muon detectors also degraded with increasing muon $p_{T}$, 
+there is a significant advantage in combining muon and tracker measurements for high $p_{T}$ muons.  Muons 
+that traversed the muon detectors traveled the same distance ($\thicksim$3 meters) or further that 
+separated the interaction point from the magnet solenoid, but in a magnetic field opposite in direction.  
+While travelling through several meters of muon detectors, even muons with $p_{T} = $ 1 TeV curved by tens 
+of \cm.  By precisely measuring this curvature, combining muon detector and tracker information for a 
+muon with $p_{T} =$ 1 TeV and $0 < |\eta| < 0.2$ improved the muon momentum resolution by $\thicksim$200\% relative 
+to the momentum measurement made with the tracker alone.
 
 
 \section{The Trigger System}
