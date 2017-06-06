@@ -15,7 +15,8 @@ Interactions between protons were identified by the detection of:
 	\item one or more energetic charged leptons (electron, muon, tau or their anti-particles)
 	\item one or more energetic photons
 	\item one or more energetic hadronic jets, each containing at least one hadron
-	\item one or more energetic neutrinos\footnote{the presence of neutrinos is inferred from the vector sum of momentum of all charged leptons, photons and hadronic jets detected in a collision event.}
+	\item one or more energetic neutrinos\footnote{the presence of neutrinos is inferred by measuring a net imbalance in 
+		momentum from all detected charged leptons, photons and jets in a collision event.}
 	\item combinations thereof
 \end{itemize}
 Particles produced by proton-proton (pp) interactions were detected using a 3.8$\unit{T}$ magnet and four CMS 
@@ -27,10 +28,10 @@ particles.  Charged particles were detected in the tracker by measuring the char
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
-	\caption{Cross section view of the entire CMS detector in a plane perpendicular to the beam axis.  Closest to the
-	proton-proton interaction point is the silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic 
-Calorimeter, and the magnet.  Outside the magnet solenoid are the muon detectors.}
+	\includegraphics[width=1\textwidth]{figures/cmsDetectorBasic.png}
+	\caption{Cut-away view of the entire CMS detector.  Closest to the proton-proton interaction point is the 
+		silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic Calorimeter, and the 
+	magnet.  Outside the magnet solenoid are the muon detectors.}
 	\label{fig:layersOfCMS}
 \end{figure}
 
@@ -95,7 +96,7 @@ to an energy of 26 GeV by the PS, and then were injected into the circular Super
 The SPS accelerated proton bunches to an energy of 450 GeV, which were subsequently injected into the LHC.  Once the SPS 
 injected the desired number of proton bunches to fill two beams, the LHC accelerated both beams to the desired energy, 
 and focused the beams to increase the rate of pp collisions.  In 2015 each beam was accelerated to an energy of 6.5 TeV, and 
-contained as many as 2300 proton bunches.
+contained as many as 2300 proton bunches, each separated by 25 \ns.
 
 \begin{figure}[ht]
 	\centering
@@ -111,14 +112,15 @@ focused the beams towards the collision point at the heart of CMS.  Sixteen RF c
 bunches to an energy of 6.5 TeV, and also served as a control system in which protons in any bunch moving too quickly 
 were slowed, while protons moving too slowly experienced greater acceleration.  Dipole, quadrupole and higher order 
 magnets operated at magnetic field strengths up to 8$\unit{T}$ steered the beams around the LHC, and focused them 
-on the nominal interaction point inside CMS to increase the rate of pp interactions.
-
-DISCUSS INST AND INTEGRATED LUMI, CONNECT TO 2015 COLLISION DATA AND SEARCH FOR LOW XSXN WR PRODUCTION
+on the nominal interaction point inside CMS to increase the rate of pp interactions.  Using these technologies, the  
+LHC collided protons at rates approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$ during 2015 data taking.  
+Spanning September through November 2015, 25 \ns collisions delivered by the LHC allowed CMS to record 2.6 $fb^{-1}$ 
+of data at $\sqrt{s} =$ 13 TeV.
 
 \section{The CMS Coordinate System and Kinematic Variables}
 \label{sec:coordinateSystemAndKinematicVars}
-The coordinate system and variables used to characterize the kinematics of detected particles were defined in 
-the following way.  The right-handed coordinate system was defined with the $z$ axis pointed in the direction 
+A coordinate system and variables was used to characterize the kinematics of detected particles.  
+The right-handed coordinate system was defined with the $z$ axis pointed in the direction 
 of the counter-clockwise rotating beam, the $y$ axis pointed up towards the surface, and the $x$ axis pointed towards 
 the center of the LHC ring, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
 trajectories were measured using two angular variables, $\phi$ and $\eta$, that were defined in terms of angles 
@@ -139,9 +141,9 @@ transformed into pseudorapidity $\eta$ through the following function:
 \end{figure}
 
 
-Pseudorapidity of 0 pointed along the $y$ axis, and pseudorapidity of $\infty$ pointed along the $z$ axis.
-An equivalent definition of pseudorapidity in terms of the energy E and longitudinal 
-momentum $p_{z}$ of a particle in the massless particle limit was:
+A pseudorapidity of 0 pointed along the $y$ axis, while a pseudorapidity of $\infty$ pointed along the $z$ axis.
+An equivalent definition of pseudorapidity in terms of the particle energy E and longitudinal 
+momentum $p_{z}$ in the massless particle limit was:
 
 \begin{equation}
 	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
@@ -161,7 +163,7 @@ a particle and another point in the $(\eta, \phi)$ space was measured as $\Delta
 Transverse momentum, the component of momentum perpendicular to the proton beam axis, and transverse energy, the 
 analogous form of energy, were used because both were insensitive to the unknown momenta of the interacting partons.  
 Explained in later chapters, the distance $\Delta R$ was measured between the trajectory of one particle 
-and another point in the $(\eta, \phi)$ space, which often was the trajectory of another particle.
+and another point in the $(\eta, \phi)$ space.
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
@@ -348,14 +350,6 @@ the same thickness and $\Delta\eta \times \Delta\phi$ area as those in the barre
 plates and scintillating tiles with the same thickness and larger $\Delta\eta \times \Delta\phi$ area were used 
 such that each tower covered the same area as a 5 $\times$ 5 grid of ECAL endcap crystals.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/.png}
-	\caption{The HCAL barrel and endcap detectors.}
-	\label{fig:hcalHBAndHE}
-\end{figure}
-
-
 Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
 inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
 energy hadrons that traveled into the nearest scintillating tile layers.  The amount of metal absorber 
@@ -416,7 +410,7 @@ to measure the quantities stated previously.
 	\caption{The barrel and endcap sections of the muon detectors for $\eta \geq 0.$ and one quadrant of $\phi$.  Shown 
 		between the muon detectors and the interaction point are the magnet solenoid and return yoke, the HCAL, the ECAL, 
 		and the silicon tracker.}
-	\label{fig:stripTracker}
+	\label{fig:muonBarrelAndEndcapDetectors}
 \end{figure}
 
 
