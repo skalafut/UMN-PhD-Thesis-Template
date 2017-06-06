@@ -30,7 +30,7 @@ particles.  Charged particles were detected in the tracker by measuring the char
 	\includegraphics[width=0.6\textwidth]{figures/missingImage.png}
 	\caption{Cross section view of the entire CMS detector in a plane perpendicular to the beam axis.  Closest to the
 	proton-proton interaction point is the silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic 
-Calorimeter, and the magnet.  Outside the magnet are the muon detectors.}
+Calorimeter, and the magnet.  Outside the magnet solenoid are the muon detectors.}
 	\label{fig:layersOfCMS}
 \end{figure}
 
@@ -63,7 +63,7 @@ large volume of material linked to the magnet and support systems provided a bar
 could penetrate.
 
 Surrounding the magnet was the fourth sub-detector system used to detect particles, the muon detectors, which resided 
-in the magnet return yoke where the magnetic field strength was 1$\unit{T}$.  Three 
+in the magnet return yoke where the magnetic field strength was between 1 and 3$\unit{T}$.  Three 
 different technologies - drift tubes (DT) in the lowest radiation regions, cathode strip chambers (CSC) in higher 
 radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In detectors of all 
 three technologies, muons travelled through pressurized gas chambers and ionized electrons from the gas along their 
@@ -120,17 +120,26 @@ DISCUSS INST AND INTEGRATED LUMI, CONNECT TO 2015 COLLISION DATA AND SEARCH FOR 
 The coordinate system and variables used to characterize the kinematics of detected particles were defined in 
 the following way.  The right-handed coordinate system was defined with the $z$ axis pointed in the direction 
 of the counter-clockwise rotating beam, the $y$ axis pointed up towards the surface, and the $x$ axis pointed towards 
-the center of the LHC ring.  In this coordinate system particle trajectories were measured using two angular 
-variables, $\phi$ and $\eta$, that were defined in terms of angles in two coordinate planes.  $\phi$ was defined 
-as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  The angle $\theta$ in the $y-z$ plane, 
-which was 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis, was transformed into pseudorapidity 
-$\eta$ through the following function:
+the center of the LHC ring, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
+trajectories were measured using two angular variables, $\phi$ and $\eta$, that were defined in terms of angles 
+in two coordinate planes.  $\phi$ was defined as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  
+The angle $\theta$ in the $y-z$ plane, which was 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis, was 
+transformed into pseudorapidity $\eta$ through the following function:
 
 \begin{equation}
 	\eta \equiv -\ln{\tan{\frac{\theta}{2}}}
 \end{equation}
 
-Pseudorapidity of 0 was the $y$ axis, and pseudorapidity of $\infty$ was the $z$ axis.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/cmsDetectorAndCoordinateSystem.png}
+	\caption{All CMS detector components and the coordinate system used to describe particle kinematics.}
+	\label{fig:cmsAndCoordinateSystem}
+\end{figure}
+
+
+Pseudorapidity of 0 pointed along the $y$ axis, and pseudorapidity of $\infty$ pointed along the $z$ axis.
 An equivalent definition of pseudorapidity in terms of the energy E and longitudinal 
 momentum $p_{z}$ of a particle in the massless particle limit was:
 
@@ -143,8 +152,8 @@ produced by pp interactions were often boosted along the $z$ axis, but the degre
 defined because the momenta of the interacting partons could never be measured.  This boost affected the 
 trajectories of particles in $\theta$, but did not affect particle trajectories measured in $\eta$.  In 
 addition, the particles that caused radiation damage in CMS sub-detector systems were produced at 
-a rate that scaled linearly with $\eta$.  Thus, in discussions about topics where radiation damage 
-or particle isolation played a role, ideas could be more clearly articulated using $\eta$.
+a rate that scaled linearly with $\eta$.  Thus, in discussions where radiation damage or particle 
+isolation played a role, ideas could be more clearly articulated using $\eta$.
 
 The main variables used to quantify the energy of a detected particle were transverse energy 
 $E_{T} \equiv E/\cosh{\eta}$ and transverse momentum $p_{T} \equiv |p|/\cosh{\eta}$, while the distance between 
@@ -239,15 +248,24 @@ and $e^{\pm}$ with $0 < |\eta| < 3.0$ by measuring the amount of visible light p
 
 The ECAL contained $\thicksim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
-crystals of length 23 \cm (26 radiation lengths) were arranged in a cylindrical shell, and each crystal pointed 3 degrees away from the 
+crystals of length 23 \cm (26 radiation lengths) were arranged in a cylindrical shell, and pointed near the 
 interaction point.  The front face of each crystal measured $\thicksim$22 $\times$ 22 \mm, and resided 129 \cm 
 from the beam axis, $\thicksim$19 \cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
 endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
-endcap) of length 22 \cm (25 radiation lengths) were installed in a disk, and each crystal pointed 3 degrees away from the interaction 
+endcap) of length 22 \cm (25 radiation lengths) were installed in a disk, and each crystal pointed near the interaction 
 point.  The front face of endcap crystals measured $\thicksim$29 $\times$ 29 \mm, and sat behind two layers of 
 thick lead absorber and thin silicon detectors that constituted the preshower detector.  The preshower 
 mitigated radiation damage to endcap region lead-tungstate crystals, and improved the spatial resolution with 
-which endcap region electromagnetic showers were studied.
+which endcap region electromagnetic showers were studied.  A partial view of the ECAL barrel, endcap and 
+preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/ecalBarrelEndcapAndPreshower.png}
+	\caption{The ECAL barrel, endcap and preshower detectors.}
+	\label{fig:ecalEBEEandES}
+\end{figure}
+
 
 Photons and $e^{\pm}$ that impinged on the ECAL interacted with lead-tungstate nuclei.  Incident $e^{\pm}$s interacted 
 with lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Subsequently, gamma rays 
@@ -296,7 +314,7 @@ were measured for every crystal in millions of events:
 	\item $\pi^{0}/\eta$ masses through their decays to $\gamma\gamma$
 	\item the average crystal energy in randomly selected events 
 		(considering many randomly selected events, the energy measured should be symmetric in $\phi$.  Thus, within one $\phi$ ring each crystal should measure the same average energy)
-	\item the ratio $\frac{energy E_{T} measured by the ECAL}{momentum p_{T} measured by the tracker}$ for isolated electrons coming from W or Z boson decays
+	\item the ratio $\frac{E_{T,ECAL}}{p_{T,tracker}}$ for isolated electrons coming from W or Z boson decays
 \end{itemize}
 
 and relative calibration constants were derived such that every crystal had the same calibrated response.  
@@ -329,6 +347,14 @@ $\Delta\phi$.  Towers that covered $1.3 < |\eta| \leq 1.74$ used absorber plates
 the same thickness and $\Delta\eta \times \Delta\phi$ area as those in the barrel region.  At higher $|\eta|$, absorber 
 plates and scintillating tiles with the same thickness and larger $\Delta\eta \times \Delta\phi$ area were used 
 such that each tower covered the same area as a 5 $\times$ 5 grid of ECAL endcap crystals.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/.png}
+	\caption{The HCAL barrel and endcap detectors.}
+	\label{fig:hcalHBAndHE}
+\end{figure}
+
 
 Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
 inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
