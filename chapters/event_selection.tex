@@ -7,15 +7,33 @@
 
 If a \WR boson existed at a mass scale and coupling strength accessible at the LHC, evidence 
 of it would manifest as an excess of events relative to expected backgrounds in events 
-where two high-$p_{T}$, same flavor charged leptons, and two high-$p_{T}$ jets were reconstructed.  
+where two high-$p_{T}$, same flavor charged leptons (only $e^{\pm}$ and $\mu^{\pm}$), and two high-$p_{T}$ jets were reconstructed.  
 Charged leptons were reconstructed by the silicon tracker and either the ECAL or muon detectors, 
 and jets were reconstructed by the tracker and the HCAL, and possibly the ECAL and muon 
-detectors.  Events where two high-$p_{T}$, same flavor charged leptons, and two high-$p_{T}$ 
-jets were reconstructed were subjected to additional selections that increased the sensitivity 
-of this search to high-mass \WR boson signatures.
+detectors.  In events where two same flavor charged leptons, and two jets were reconstructed, 
+additional selections were applied to increased the sensitivity of this search to high-mass 
+\WR boson signatures.
 
 
-\section{Data and Monte Carlo}
+
+\section{Online Event Selection}
+Charged leptons that came from an interaction vertex were identified by the trigger system, which 
+selected events online (during collisions) that were saved to permanent storage.  Events in 
+the electron channel ($\WR \rightarrow eejj$ final state) were selected using a trigger that applied the following 
+selections:
+
+\begin{itemize}
+	\item Two non-overlapping 5 $\times$ 5 ECAL crystal clusters detected $E_{T} >$ 33 GeV.
+	\item In both crystal clusters, the majority of the energy must be measured in an $\eta, \phi$ region that is two crystals wide in $\eta$. 
+	\item 
+	\item 
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+
 
 \subsection{Data}
 \label{dataAndTriggers}
@@ -29,7 +47,7 @@ divided into two run periods - Run2015C and Run2015D.  The LHC collided protons 
 2015 with 50 \ns between proton bunches, then stopped collisions in the second half of August and 
 early September, as shown in Figure \ref{fig:lhc2015IntegLumi}.  The small amount of data collected 
 with 50 \ns bunch spacing was used for detector calibration and alignment, but due to significant challenges 
-in combining 50 \ns and 25 \ns data, the 50 \ns data was not used in this analysis.  During the break 
+in combining 50 \ns and 25 \ns data, the 50 \ns data was not used in this analysis.  During the August break 
 the accelerator system was reconfigured to reduce the spacing between proton bunches to 25 \ns, and increase the 
 instantaneous luminosity to achieve higher collision rates.  Decreasing the spacing between proton bunches 
 allowed the LHC to deliver pp collisions at a higher rate without making event reconstruction in 
@@ -39,8 +57,7 @@ conditions, like average instantaneous luminosity and the number of bunches per 
 collisions stopped for $\thicksim$1.5 weeks to perform maintenance on the the LHC, and to modify the 
 collider to deliver collisions with higher instantaneous luminosities, approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$.  
 Data collected after this upgrade and until the end of pp collisions in November constituted the run 
-era Run2015D.  As with Run2015C, in Run2015D all data was collected with similar beam conditions.
-
+era Run2015D.  As in Run2015C, in Run2015D all data was collected with similar beam conditions.
 
 \begin{figure}[h]
 	\centering
@@ -51,7 +68,7 @@ era Run2015D.  As with Run2015C, in Run2015D all data was collected with similar
 \end{figure}
 
 
-The raw dataset collected by CMS is too large ($\gtrsim 10^{4}$ terabytes) to process for analyses
+The raw data collected by CMS is too large ($\gtrsim 10^{4}$ terabytes) to process for analyses
 which want to run from start to finish in $\lessim 3$ days, and contains much more information
 than what is needed by any individual physics analysis.  To expedite the process of
 transforming collision data into a public physics result, collision data from each run
