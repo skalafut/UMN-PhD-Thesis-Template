@@ -10,8 +10,8 @@ number of particles and interactions between them.  During the past four decades
 explained many phenomena observed in physics and astronomy, and predicted the existence of many particles 
 which were confirmed by experiments.
 
-The theory that underpins the SM was proposed by Glashow, Weinberg and Salam in 1967 \cite{weinbergSM,salamSM}.  
-In the theory, the fundamental building blocks of matter are organized into three generations.  Each 
+The theoretical framework of the SM was proposed by Glashow, Weinberg and Salam in 1967 \cite{weinbergSM,salamSM}.  
+In their theory, the fundamental building blocks of matter are organized into three generations.  Each 
 generation has two quarks, a charged lepton paired with a neutral lepton, and particle and anti-particle 
 versions of all four.  The human body and every material or substance that humans are able to sense are 
 built from the first generation of particles, which consists of the electron, electron neutrino, and 
@@ -19,19 +19,82 @@ the up and down quark.  The second generation contains the muon and muon neutrin
 strange quark, while the third generation contains the tau and tau neutrino, and the top and bottom 
 quark.
 
-Interactions in the SM are split into three categories, and are mediated by additional particles.  The 
-strong nuclear interaction occurs between quarks and is mediated by gluons.  The strong nuclear interaction 
-counteracts the electromagnetic repulsion of same sign charged particles to bind protons and neutrons 
-into nuclei.  The electromagnetic interaction occurs between all charged particles and is mediated by 
-photons.  Negatively charged electrons are bound to positively charged nuclei by the electromagnetic 
-interaction.  The weak nuclear interaction occurs between all particles in all generations, and is 
-mediated by the $W^{\pm}$ and $Z^{0}$ bosons.  The weak nuclear interaction causes the neutron to 
-decay $n^{0} \rightarrow p^{+} + e^{-} + \bar{\nu_{e}} + heat$, which is used by nuclear power plants to 
-generate electricity.
+Interactions in the SM are split into three categories, and are mediated by additional particles.  Mathematically, 
+these interactions are represented by three groups, and the group generators correspond to the physical 
+particles.  The strong interaction, represented by the $SU(3)_{C}$ group, occurs between quarks and 
+is mediated by gluons, which are vector fields multiplied by the $SU(3)$ group generators.  The proton, 
+built from three quarks with a net positive charge, is stable because the strong interaction binding 
+between quarks overwhelms the electromagnetic repulsion between quarks with same sign electric charge.  
+The electromagnetic interaction, represented by the $U(1)$ group, occurs between all charged particles 
+and is mediated the photon.  The $\pi^{0}$ contains a linear combination of an up anti-up quark pair and 
+a down anti-down quark pair, and primarily decays through the electromagnetic interaction to two photons, 
+$\pi^{0} \rightarrow \gamma\gamma$.  The weak  interaction, represented by the $SU(2)_{L}$ group, occurs 
+between all particles in all generations, and is mediated by the $W^{\pm}$ and $Z$ bosons.  For reasons 
+discussed next, the photon, $W^{\pm}$ and $Z$ bosons are linear combinations of vector fields multiplied 
+by the $SU(2)_{L}$ and $U(1)$ group generators.
 
-The interaction mediators gain mass through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
-introduces four degrees of freedom to the SM in the form of a complex doublet with four complex fields 
-representing scalar particles.
+The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ become the massless photon and 
+massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
+introduces four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four scalar 
+particles, that obey the Lagrangian $\Ell_{H}$:
+
+\begin{align}
+	\Phi &= \begin{bmatrix}
+	\phi^{+} \\
+	\phi^{0}
+	\end{bmatrix}
+\end{align}
+
+\begin{equation}
+	\Ell_{H} = (D_{\mu}\Phi)^{\dagger}D^{\mu}\Phi - V(\Phi)
+\end{equation}
+
+where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ is the Higgs potential, and 
+$D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ describes the propagation 
+of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_L$ generators $\tau^{j}$ and massless vector 
+fields $A^{j}_{\mu}$, and the $U(1)$ generator $Y$ and massless vector field $B_{\mu}$.  $g_{L}$ and 
+$g'$ are the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ takes an 
+average value $<\Phi> = (0  \nu/sqrt{2})$ so that the Higgs potential is minimized.  When this average 
+value is taken, the subset of the Lagrangian $\Ell_{H}$ without partial derivatives $\partial_{\mu}$ and 
+the Higgs potential $V(\Phi)$:
+
+\begin{equation}
+	\Ell_{HK} = [(ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu})\Phi]^{\dagger}(ig_{L}\tau^{j}A^{j\mu} + i\frac{g'}{2}YB^{\mu})\Phi
+\end{equation}
+
+reduces to:
+
+\begin{equation}
+	\Ell_{HK} = \frac{\nu^{2}}{8}[g^{2}_{L}(A^{1}_{\mu} + iA^{2}_{\mu})(A^{1\mu} - iA^{2\mu}) + (g'B_{\mu} - g_{L}A^{3}_{\mu})^{2}]
+\end{equation}
+
+Defining the photon vector field $A_{\mu}$, and weak boson vector fields $W^{\pm}_{\mu}$ and $Z_{\mu}$ as:
+
+\begin{equation}
+	W^{\pm}_{\mu} \equiv \frac{1}{\sqrt{2}}(A^{1}_{\mu} \pm iA^{2}_{\mu}), 
+	Z_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}_{L}}}(g'B_{\mu} - g_{L}A^{3}_{\mu}), 
+	A_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}_{L}}}(g_{L}B_{\mu} + g'A^{3}_{\mu})
+\end{equation}
+
+yields the Lagrangian:
+
+\begin{equation}
+	\Ell_{HK} = (\frac{\nu g_{L}}{2})^{2}W^{+}_{\mu}W^{-\mu} + \frac{1}{2}(\frac{\nu \bar{g}}{2})^{2}Z_{\mu}Z^{\mu} + 0A_{\mu}A^{\mu}
+\end{equation}
+
+where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  From this Lagrangian, the photon $A_{\mu}$ is massless, 
+the $Z$ boson has mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons have mass $m_{W} = \nu g_{L}/2$.
+
+The .
+
+
+
+
+
+
+
+Three of these fields merge with the fields associated with the weak interaction, and thus the 
+massive $W^{\pm}$ and $Z$ bosons are created.  The fourth field remains as .
 
 Neutrinos play a special role in the SM.  The SM postulates that they are massless, and thus cannot decay 
 to other particles.  In addition, they only interact with matter through the weak interaction.  Neutrino 
