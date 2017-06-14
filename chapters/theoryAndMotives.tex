@@ -1,42 +1,64 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %neutrino_physics.tex: Chapter on neutrino physics:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Phenomenology}
+\chapter{Theory of the Standard Model and Extensions}
 \label{wrBosonAndHeavyNu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Particles and Interaction Mediators}
+\section{Standard Model Particles and Interactions}
 The Standard Model of particle physics (SM) postulates that the universe can be reduced down to a small 
 number of particles and interactions between them.  During the past four decades the SM has successfully 
 explained many phenomena observed in physics and astronomy, and predicted the existence of many particles 
-which were confirmed by experiments.
+which were later confirmed by experiments.
 
 The theoretical framework of the SM was proposed by Glashow, Weinberg and Salam in 1967 \cite{weinbergSM,salamSM}.  
 In their theory, the fundamental building blocks of matter are organized into three generations.  Each 
 generation has two quarks, a charged lepton paired with a neutral lepton, and particle and anti-particle 
 versions of all four.  The human body and every material or substance that humans are able to sense are 
-built from the first generation of particles, which consists of the electron, electron neutrino, and 
+built from the first generation of particles, which consists of the electron and electron neutrino, and 
 the up and down quark.  The second generation contains the muon and muon neutrino, and the charm and 
 strange quark, while the third generation contains the tau and tau neutrino, and the top and bottom 
 quark.
 
 Interactions in the SM are split into three categories, and are mediated by additional particles.  Mathematically, 
-these interactions are represented by three groups, and the group generators correspond to the physical 
-particles.  The strong interaction, represented by the $SU(3)_{C}$ group, occurs between quarks and 
-is mediated by gluons, which are vector fields multiplied by the $SU(3)$ group generators.  The proton, 
-built from three quarks with a net positive charge, is stable because the strong interaction binding 
-between quarks overwhelms the electromagnetic repulsion between quarks with same sign electric charge.  
+these interactions are represented by three groups, and the mediator particles are represented by group 
+generators multiplied by vector fields.  The strong interaction, represented by the $SU(3)_{C}$ group, occurs between quarks and 
+is mediated by gluons, which are represented by vector fields multiplied by the $SU(3)$ group generators.  The proton, 
+built from three quarks with a net positive charge, is stable because the strong interaction attraction 
+between quarks overwhelms the electromagnetic repulsion between quarks with same sign electric charges.  
 The electromagnetic interaction, represented by the $U(1)$ group, occurs between all charged particles 
 and is mediated the photon.  The $\pi^{0}$ contains a linear combination of an up anti-up quark pair and 
 a down anti-down quark pair, and primarily decays through the electromagnetic interaction to two photons, 
 $\pi^{0} \rightarrow \gamma\gamma$.  The weak  interaction, represented by the $SU(2)_{L}$ group, occurs 
 between all particles in all generations, and is mediated by the $W^{\pm}$ and $Z$ bosons.  For reasons 
-discussed next, the photon, $W^{\pm}$ and $Z$ bosons are linear combinations of vector fields multiplied 
-by the $SU(2)_{L}$ and $U(1)$ group generators.
+discussed later, the photon, $W^{\pm}$ and $Z$ bosons are represented mathematically by linear combinations 
+of vector fields multiplied by the $SU(2)_{L}$ and $U(1)$ group generators.
 
-The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ become the massless photon and 
-massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
-introduces four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four scalar 
-particles, that obey the Lagrangian $\Ell_{H}$:
+The dynamics of the strong interaction is driven by a mathematical construct called color charge.  Every 
+quark is produced with one of six possible color charges: red, anti-red, blue, anti-blue, green, or anti-
+green.  Gluons that mediate the strong interaction carry two different color charges, like red and blue, 
+or anti-blue and green.  Color charge is conserved in strong interactions, and all quasi-
+stable\footnote{mean lifetime $\gtrsim 10^{-25}$ seconds} quark bound states 
+are color neutral.  Thus, a pair of quarks that are red and anti-red, or a triplet of quarks that are 
+red, blue and green constitute quasi-stable bound states.  When a proton-proton interaction in the LHC 
+produces a quark, the strong interaction works to keep that quark in a color neutral bound state.  As the 
+quark moves away from quarks in colliding protons, potential energy accumulates, similar to stretching a 
+spring.  Once enough potential energy accumulates, the strong interaction converts the potential energy 
+into a massless gluon that immediately decays into two new quarks.  At least one of the two new quarks has 
+the correct color to form a color neutral bound state with the original quark.  The other new quark may 
+have the correct color to form a color neutral, quark triplet bound state.  If not, the process of 
+potential energy accumulation followed by quark pair production continues until the sum total color 
+charge of all new quarks produced is neutral.  A gluon produced by a proton-proton interaction immediately 
+decays into two quarks of different colors, and the process described for one quark ensues for both 
+quarks.  The shower of color neutral hadrons that results from one quark or gluon and the strong 
+interaction is called a jet for the remainder of this thesis.
+
+
+The weak interaction . (discuss CP violation to explain why anti-neutrinos are LH, and neutrinos are RH)
+
+The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ groups transform into the massless 
+photon and massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
+adds four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four scalar 
+particles, which obey the Lagrangian $\Ell_{H}$:
 
 \begin{align}
 	\Phi &= \begin{bmatrix}
@@ -54,9 +76,9 @@ $D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ d
 of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_L$ generators $\tau^{j}$ and massless vector 
 fields $A^{j}_{\mu}$, and the $U(1)$ generator $Y$ and massless vector field $B_{\mu}$.  $g_{L}$ and 
 $g'$ are the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ takes an 
-average value $<\Phi> = (0  \nu/sqrt{2})$ so that the Higgs potential is minimized.  When this average 
-value is taken, the subset of the Lagrangian $\Ell_{H}$ without partial derivatives $\partial_{\mu}$ and 
-the Higgs potential $V(\Phi)$:
+average value $<\Phi> = (0  \nu/sqrt{2})$ so that the Higgs potential is minimized.  When $\Phi$ is set 
+to this average value and explicit matrices and values are plugged in for the group generators, the subset 
+of the Lagrangian $\Ell_{H}$ without partial derivatives $\partial_{\mu}$ and the Higgs potential $V(\Phi)$:
 
 \begin{equation}
 	\Ell_{HK} = [(ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu})\Phi]^{\dagger}(ig_{L}\tau^{j}A^{j\mu} + i\frac{g'}{2}YB^{\mu})\Phi
@@ -85,19 +107,30 @@ yields the Lagrangian:
 where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  From this Lagrangian, the photon $A_{\mu}$ is massless, 
 the $Z$ boson has mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons have mass $m_{W} = \nu g_{L}/2$.
 
-The .
+Following experimental evidence, quarks and charged leptons can acquire mass through two methods without 
+extensions to the SM.  Their masses can be added directly to the SM Lagrangian, or additional Higgs fields 
+can be added to the BEH mechanism.  In either case, mass terms of the form $-mf\bar{f}$, where the fermion 
+$f$ represents a quark or charged lepton, appear in the SM Lagrangian.  In the coordinate basis where a 
+fermion field $f = (\chi_{L},\chi_{R})$ consists of a right-handed component $\chi_{R}$ and left-handed 
+component $\chi_{L}$, a fermion mass term in the SM Lagrangian is written as:
+
+\begin{equation}
+	\Ell_{D} = -m\bar{f}f = -m\chi^{\dagger}_{L}\chi_{R} - m\chi^{\dagger}_{R}\chi_{L}
+\end{equation}
+
+This type of mass term, called a Dirac mass, contains the product of left and right-handed fields.  Quarks 
+and charged leptons have both left and right-handed fields, corresponding to opposite charge particles and 
+anti-particles, so their masses can be assigned using Dirac mass terms.
+
+Neutrinos play a special role in the SM.  The SM postulates that they are neutral, massless, and only interact 
+with other particles through the weak interaction.  As a result, anti-neutrinos $\bar{\nu_{l}}$, like those 
+from $W^{-} \rightarrow l^{-}\bar{\nu_{l}}$, are always right-handed, and neutrinos $\nu_{l}$ are always 
+left-handed.  Neutrino experiments \cite{NOvAresults,mainzPhaseIIResults,t2kResults} have proven that neutrinos 
+have mass, but otherwise are consistent with SM predictions.  Non-zero neutrino masses can only be explained 
+by extensions to the SM.
 
 
+\section{Left-Right Symmetric Extensions of the Standard Model}
 
-
-
-
-
-Three of these fields merge with the fields associated with the weak interaction, and thus the 
-massive $W^{\pm}$ and $Z$ bosons are created.  The fourth field remains as .
-
-Neutrinos play a special role in the SM.  The SM postulates that they are massless, and thus cannot decay 
-to other particles.  In addition, they only interact with matter through the weak interaction.  Neutrino 
-experiments.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
