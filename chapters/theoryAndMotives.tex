@@ -54,7 +54,7 @@ quarks.  The shower of color neutral hadrons that results from the production of
 is called a jet for the remainder of this thesis.
 
 The weak interaction has garnered much attention from the particle physics community for many decades.  
-To explain the $\Beta$-decay process, in 1932 Fermi proposed a model for the weak interaction based on 
+To explain the $\beta$-decay process, in 1932 Fermi proposed a model for the weak interaction based on 
 the electromagnetic interaction.  His model predicted the existence of a neutral lepton, the electron 
 anti-neutrino, which was later supported by experimental evidence \cite{firstNuDiscovery} and became part of the SM.  However, Fermi's 
 model did not correctly predict the branching fraction of many hadrons that decay through the weak 
@@ -66,7 +66,7 @@ constraint on neutrino masses will be discussed later.
 
 The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ groups transform into the massless 
 photon and massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
-adds four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four scalar 
+adds four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four bosonic 
 particles, which obey the Lagrangian $\Ell_{H}$:
 
 \begin{align}
@@ -84,9 +84,9 @@ where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ is the Higgs poten
 $D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ describes the propagation 
 of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_L$ generators $\tau^{j}$ and massless vector 
 fields $A^{j}_{\mu}$, and the $U(1)$ generator $Y$ and massless vector field $B_{\mu}$.  $g_{L}$ and 
-$g'$ determine the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ takes an 
-average value $<\Phi> = (0  \nu/sqrt{2})$ so that the Higgs potential is minimized.  When $\Phi$ is set 
-to this average value and explicit matrices and values are plugged in for the group generators, the subset 
+$g'$ determine the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ takes a 
+value $<\Phi> =$ (0  $\nu/\sqrt{2}$) so that the Higgs potential is minimized.  When $V(\Phi)$ is minimized 
+and explicit matrices and values are plugged in for the group generators, the subset 
 of the Lagrangian $\Ell_{H}$ without partial derivatives $\partial_{\mu}$ and the Higgs potential $V(\Phi)$:
 
 \begin{equation}
@@ -151,10 +151,165 @@ extensions of the SM postulate that all interactions conserved parity in the ver
 the Big Bang a BEH mechanism brought several massive scalar particles into existence.  These scalar particles merged 
 with massless mediator particles of an interaction, and created a parity violating weak interaction mediated by 
 massive particles.  Many LRS models predict the early universe evolved in this manner.  This thesis focuses on the 
-LRS extension model that replaces the SM $SU(2)_{L} \times U(1)$ groups with $SU(2)_{R} \times SU(2)_{L} \times U(1)$.
+LRS extension model that replaces the SM $SU(2)_{L} \times U(1)$ groups with $SU(2)_{R} \times SU(2)_{L} \times U(1)$, 
+and extends the SM BEH mechanism to give mass to neutrinos and to create additional, massive bosons.
 
-Adding the $SU(2)_{R}$ group to the SM brings three new, massless vector fields $\xi^{j}_{\mu}$ and three neutrinos 
-$N_{l}$.  .
+Adding the $SU(2)_{R}$ group to the SM introduces three new, massless vector fields $\xi^{j}_{\mu}$.  The SM BEH mechanism 
+is extended in two stages, which result in six massive gauge bosons that mediate the weak interaction.  In the first 
+stage \cite{lrsHiggsStageOne}, a chiral, complex Higgs doublet $\chi_{L,R}$ is introduced 
+
+\begin{align}
+	\chi_{L,R} &= \begin{bmatrix}
+	\chi^{+}_{L,R} \\
+	\chi^{0}_{L,R}
+	\end{bmatrix}
+	\label{eq:stageOneVEV}
+\end{align}
+
+with bosonic fields that couple independently to left and right-handed gauge bosons.  Propagation and interaction of these 
+fields with other massless bosons is described by the Lagrangian:
+
+\begin{equation}
+	\Ell_{H,LRS} = \frac{1}{2}(D_{\mu}\chi_{L})^{\dagger}D^{\mu}\chi_{L} + \frac{1}{2}(D_{\mu}\chi_{R})^{\dagger}D^{\mu}\chi_{R} - V(\chi_{L,R})
+\end{equation}
+
+where $D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{L\mu} + ig_{R}\tau^{j}\xi^{j}_{R\mu} + i\frac{g'}{2}YB_{\mu}$ contains 
+the massless boson fields $A^{j}_{L\mu}, \xi^{j}_{R\mu}, B_{\mu}$ multiplied by the generators of the $SU(2)_{L}, SU(2)_{R}, U(1)$ groups.  
+In the model considered here the coupling strengths $g_{R}, g_{L}$ are assumed to be equal, and are denoted as $g$.  The potential $V(\chi_{L,R})$
+
+\begin{equation}
+	V(\chi_{L,R}) = -2\lambda_{1}U^{2}_{R}(\chi^{\dagger}_{R}\chi_{R} + \chi^{\dagger}_{L}\chi_{L}) + \lambda_{1}[(\chi^{\dagger}_{R}\chi_{R})^{2} + (\chi^{\dagger}_{L}\chi_{L})^{2}] + \lambda_{2}\chi^{\dagger}_{R}\chi_{R}\chi^{\dagger}_{L}\chi_{L}
+\end{equation}
+
+respects the symmetries of the LRS model with positive constants $\lambda_{1}, \lambda_{2} > 2\lambda_{1}$, and is minimized when $\chi_{L,R}$ 
+takes values $<\chi^{+}_{L,R}> = 0, <\chi^{0}_{L}> = 0, <\chi^{0}_{R}> = U_{R}$.  In the early universe $V(\chi_{L,R})$ is minimized, and 
+subsequently new, massive fields are created.  Identifying the new massive fields as:
+
+\begin{equation}
+	W^{\pm}_{R\mu} \equiv \frac{1}{\sqrt{2}}(\xi^{1}_{R\mu} \mp i\xi^{2}_{R\mu}), 
+	Z'_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}}}(-g'B_{\mu} + g\xi^{3}_{R\mu})
+\end{equation}
+
+then substituting $<\chi^{+}_{L,R}> = 0, <\chi^{0}_{L}> = 0, <\chi^{0}_{R}> = U_{R}$ into $\Ell_{H,LRS}$, dropping the the potential $V(\chi_{L,R})$ 
+and $\partial_{\mu}$ terms, and multiplying the generator matrices $\tau^{j}$ by the fields $\xi^{j}_{R\mu},\A^{j}_{L\mu}$ yields:
+
+\begin{equation}
+	\Ell_{HK,LRS} = (\frac{1}{4}U^{2}_{R}g^{2})W^{+\mu}_{R}W^{-}_{R\mu} + \frac{1}{2}[\frac{1}{4}U^{2}_{R}(g^{2} + g'^{2})]Z'_{\mu}Z'^{\mu}
+\end{equation}
+
+Thus in the first stage extension of the BEH mechanism, the bosons $W^{\pm}_{R}, Z'$ are created with masses $m_{W_{R}} = \frac{1}{2}gU_{R}$ 
+and $m_{Z'} = \frac{1}{2}U_{R}\sqrt{g'^{2} + g^{2}}$, and all other bosons remain massless.
+
+Following the first stage, the second stage extension of the SM BEH mechanism \cite{lrsHiggsStageOne,lrsHiggsStageTwo} introduces two complex Higgs doublets 
+$\phi_{1}$ and $\phi_{2}$ represented by the multiplet $\Phi$:
+
+\begin{align}
+	\Phi &= \begin{bmatrix}
+	\phi^{0}_{1} & \phi^{+}_{2} \\
+	\phi^{-}_{1} & \phi^{0}_{2}
+	\end{bmatrix}
+\end{align}
+
+The multiplet interacts with the left and right-handed $SU(2)$ boson fields, and the Lagrangian $\Ell_{H2,LRS}$ that 
+describes\footnote{$\Ell_{H2,LRS}$ is similar to $\Ell_{H}$ described in the previous section, but with extra terms for the second Higgs doublet} these 
+interactions includes a potential $V(\phi_{1},\phi_{2})$.  In the early universe this potential is minimized, and 
+the multiplet $\Phi$ takes the value:
+
+\begin{align}
+	<\Phi> &= \begin{bmatrix}
+	\nu_{1} & 0 \\
+	0 & \nu_{2}
+	\end{bmatrix}
+	\label{eq:stageTwoVEV}
+\end{align}
+
+Following the procedure used for the first stage extension of the SM BEH mechanism, $<\Phi>$ is substituted for $\Phi$ in 
+the Lagrangian $\Ell_{H2,LRS}$, and algebraic simplifications are applied.  The second stage extension of the SM BEH 
+mechanism yields the SM weak bosons $W^{\pm}_{L}$ and $Z$, and the new $W^{\pm}_{R}$ and $Z'$ bosons with masses:
+
+\begin{equation}
+	m_{W_{L}} = \frac{1}{2}g\nu , m_{W_{R}} \simeq \frac{1}{2}gU_{R} , m_{Z} = \frac{1}{2}\bar{g}\nu , m_{Z'} \simeq \frac{1}{2}\bar{g}U_{R}
+\end{equation}
+\begin{equation}
+	\nu^{2} \equiv \nu^{2}_{1} + \nu^{2}_{2} , \bar{g}^{2} \equiv g^{2} + g'^{2}
+\end{equation}
+
+
+
+where it is assumed that $U_{R} \gg \nu$, and there is negligible mixing between left and right-handed leptons, 
+which is discussed later.  Thus LRS model yields the SM weak bosons with the correct masses, and three new, 
+heavier bosons.  The parity violation of the SM weak interaction is retained in the LRS model.
+
+The addition of the $SU(2)_{R}$ group to the SM also introduces three new generations of right-handed leptons - 
+three charged leptons $l^{\pm}_{R}$, and three neutral leptons (neutrinos) $N^{l}_{R}$.  The existence of 
+right-handed neutrinos means the LRS model Lagrangian can assign neutrino masses using Dirac mass terms like:
+
+\begin{equation}
+	\Ell_{D} = -m\nu^{\dagger}_{L}N_{R} - mN^{\dagger}_{R}\nu_{L}
+\end{equation}
+
+in addition to using Majorana neutrino mass terms that do not require independent left and right-handed 
+neutrinos, like:
+
+\begin{equation}
+	\Ell_{M} = -m_{L}\nu^{\dagger}_{L}\nu_{L} - m_{R}\nu^{\dagger}_{R}\nu_{R}
+\end{equation}
+
+where $\nu_{R}$ is the anti-particle of the SM neutrino $\nu_{L}$.  The LRS model considered here postulates 
+that neutrino masses come from a mixture of Dirac and Majorana mass terms \cite{seeSawAndParityViolation,seeSawAndGUTs} described by the Lagrangian:
+
+\begin{align}
+	\Ell &= \frac{1}{2}(\bar{\nu}_{Li} \quad \bar{\nu}_{Ri})\begin{bmatrix}
+	B'_{i} & M_{i} \\
+	M_{i} & B_{i}
+\end{bmatrix}(\nu_{Li} \quad \nu_{Ri})^{T}
+\label{eq:nuMasses}
+\end{align}
+
+where $i$ denotes the lepton generation, and $\nu_{L}$ and $\nu_{R}$ are the pure left and right-handed 
+neutrino fermion fields.  The nonzero value of $<\Phi>$ in equation \ref{eq:stageTwoVEV} creates the 
+Dirac masses $M_{i}$, and the expectation values of $\chi_{L}$ and $\chi_{R}$ defined in equation \ref{eq:stageOneVEV} 
+creates the Majorana masses $B'_{i}$ and $B_{i}$.  As a result, $M_{i} \sim \nu$, $B'_{i} \sim 0$, 
+$B_{i} \sim U_{R}$, and $B_{i} \gg M_{i}$, consistent with $m_{W_{R}} \gg m_{W_{L}}$.  Substituting 
+these values in for the Dirac and Majorana masses, equation \ref{eq:nuMasses} can be diagonalized to 
+yield the mass eigenvalues assuming left-right mixing is negligible.  These mass eigenvalues are:
+
+\begin{equation}
+	\lambda_{i+} \simeq B_{i},  \quad \lambda_{i-} \simeq -\frac{M^{2}_{i}}{B_{i}}
+\end{equation}
+
+which yields one very heavy mass state $\lambda_{i+}$ and a very light state $\lambda_{i-}$.  The 
+detectable states $N_{i}, \nu_{i}$ that participate in the weak interactions can be described in terms of 
+the pure left and right-handed neutrino fields as:
+
+\begin{equation}
+	\nu_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(B_{i}\nu_{Li} - M_{i}\nu_{Ri}) \simeq \nu_{Li} - \frac{M_{i}}{B_{i}}\nu_{Ri}
+\end{equation}
+
+with mass $\lambda_{i-}$, and:
+
+\begin{equation}
+	N_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(M_{i}\nu_{Li} + B_{i}\nu_{Ri}) \simeq \nu_{Ri} + \frac{M_{i}}{B_{i}}\nu_{Li}
+\end{equation}
+
+with mass $\lambda_{i+}$.  Thus, in the LRS model, left-handed neutrinos $\nu_{i}$ are very light, and 
+right-handed neutrinos $N_{i}$ are very heavy.  Furthermore, the model predicts that mixing between left 
+and right-handed states is highly suppressed by $\sim \frac{M_{i}}{B_{i}}$, and this is supported by 
+experimental evidence \cite{dZeroMixingLimits,theoreticalMixingLimits}.  Experimental evidence of this 
+LRS model can explain why neutrinos have mass.
+
+
+\section{Phenomenology of LRS Model}
+Using proton-proton collisions delivered by the CERN Large Hadron Collider and the CMS experiment, 
+evidence of the LRS model under consideration can be found in several ways.  The $W_{R}$ and $Z'$ 
+bosons originating from the $SU(2)_{R}$ group couple to quarks found inside the proton, so they 
+can be produced in proton-proton collisions.  In this thesis it is assumed that the coupling 
+strengths between the $W_{R}$ and $Z'$ bosons and SM quarks and right-handed leptons are equal 
+to the coupling strengths between the SM $W$ and $Z$ bosons and the SM quarks and left-handed 
+leptons.  In addition, it is assumed that the ratio of masses $\frac{m_{W_{R}}}{m_{Z'}} \simeq \frac{m_{W}}{m_{Z}}$, 
+and thus the $Z'$ is heavier than the $W_{R}$.  The $Z'$ mass may exceed the 13 TeV collision 
+energy achieved .
+
 
 
 
