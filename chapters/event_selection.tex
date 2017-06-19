@@ -5,43 +5,34 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If a \WR boson existed at a mass scale and coupling strength accessible at the LHC, evidence 
-of it would manifest as an excess of events relative to expected backgrounds in events 
-where two high-$p_{T}$, same flavor charged leptons (only $e^{\pm}$ and $\mu^{\pm}$), and two high-$p_{T}$ jets were reconstructed.  
-Charged leptons were reconstructed by the silicon tracker and either the ECAL or muon detectors, 
-and jets were reconstructed by the tracker and the HCAL, and possibly the ECAL and muon 
-detectors.  In events where two same flavor charged leptons, and two jets were reconstructed, 
-additional selections were applied to increased the sensitivity of this search to high-mass 
-\WR boson signatures.
-
-
+If a \WR boson and heavy neutrino $N_{l}$ existed at a mass scale and coupling strength accessible 
+at the LHC, evidence of them would manifest as an excess of events relative to expected backgrounds 
+where two high-$p_{T}$ jets and two high-$p_{T}$, same flavor charged leptons were reconstructed.  
+Charged leptons and jets were reconstructed and identified using the silicon tracker, the ECAL and 
+HCAL, and the muon detectors.  In events where two same flavor charged leptons, and two jets were 
+reconstructed, additional selections were applied to increase the sensitivity of this search to 
+high-mass \WR boson and neutrino $N_{l}$ signatures.
 
 \section{Online Event Selection}
-Charged leptons that came from an interaction vertex were identified by the trigger system, which 
+Charged leptons that came from a proton-proton interaction were identified by the trigger system, which 
 selected events online (during collisions) that were saved to permanent storage.  Events in 
-the electron channel ($\WR \rightarrow eejj$ final state) were selected using a trigger that applied the following 
-selections:
+the electron channel ($\WR \rightarrow eejj$) were selected using Level-1 triggers that required at least 
+one ECAL supercluster (5 $\times$ 5 crystals) with $E_{T} >$ 40 GeV, or a pair of separated ECAL 
+superclusters with $E_{T} >$ 22 and 10 GeV.  Subsequently, events were selected with the following 
+requirements in a High Level trigger and saved to permanent storage: 
 
 \begin{itemize}
-	\item Two non-overlapping 5 $\times$ 5 ECAL crystal clusters detected $E_{T} >$ 33 GeV.
-	\item For each energetic ECAL crystal cluster:
+	\item Two non-overlapping ECAL superclusters (SC) are detected with $E_{T} >$ 33 GeV.
+	\item For each SC:
 	\begin{itemize}
-		\item The majority of the energy must be measured in an $\eta, \phi$ region that is two crystals wide in $\eta$.
-		\item The ratio of hadronic energy in the tower behind the ECAL cluster to the ECAL cluster energy must be low, $\frac{E_{HCAL}}{E_{ECAL}} < 0.2$.
-		\item The ECAL cluster energy divided by the total ECAL energy in a $\DeltaR =$ 0.3 radius cone centered on the ECAL cluster is high, $\frac{E_{cluster}}{E_{cone}} > 0.85$
-		\item The total HCAL energy in a $\DeltaR =$ 0.3 radius cone centered on the ECAL cluster divided by the ECAL cluster energy is low, $\frac{E_{HCAL,cone}}{E_{ECAL}} < 0.3$
-		\item The .
-
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$.
+		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
+			2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
 	\end{itemize}
-	
-		
-		\item 
-	\item 
-	\item 
-	\item 
-	\item 
 \end{itemize}
 
+The .
 
 
 \subsection{Data}
@@ -317,7 +308,7 @@ leptons coming from the hard interaction.}
 
 The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
 final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
-features of this model are explained in section \ref{sec:theory_chapter}.  \WR signal
+features of this model are explained in Chapter \ref{wrBosonAndHeavyNu}.  \WR signal
 samples were produced with $M_{\Nell} = M_{\WR}/2$, and $M_{\WR}$ starting at 800 $\GeV$ and
 increasing, in increments of 200 $\GeV$, to 6000 $\GeV$.  The electron and muon triggers
 discussed earlier must also be fired in these \WR signal events.
