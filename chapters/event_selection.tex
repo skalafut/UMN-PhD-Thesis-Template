@@ -15,15 +15,81 @@ high-mass \WR boson and neutrino $N_{l}$ signatures.
 
 \section{Online Event Selection}
 Charged leptons that came from a proton-proton interaction were identified by the trigger system, which 
-selected events online (during collisions) that were saved to permanent storage.  Events in 
-the electron channel ($\WR \rightarrow eejj$) were selected using Level-1 triggers that required at least 
-one ECAL supercluster (5 $\times$ 5 crystals) with $E_{T} >$ 40 GeV, or a pair of separated ECAL 
-superclusters with $E_{T} >$ 22 and 10 GeV.  Subsequently, events were selected with the following 
-requirements in a High Level trigger and saved to permanent storage: 
+selected events online (during collisions) that were saved to permanent storage.  Events used in 
+the ee channel \WR search ($\WR \rightarrow eejj$) were first selected using Level-1 triggers 
+that required: 
 
 \begin{itemize}
-	\item Two non-overlapping ECAL superclusters (SC) are detected with $E_{T} >$ 33 GeV.
+	\item At least 40 GeV of energy be measured in a 5 $\times$ 5 crystal region of ECAL (one supercluster, SC).
+	\item Or at least 22 GeV of energy be measured in one SC, and at least 10 GeV of energy be measured in 
+		another, non-overlapping SC.
+\end{itemize}
+
+Subsequently, local reconstruction was run in regions where the Level-1 triggers fired, and events 
+were selected and saved to permanent storage if the following High Level trigger requirements were 
+met: 
+
+\begin{itemize}
+	\item Two non-overlapping ECAL superclusters (SC) are detected with energy > 33 GeV.
 	\item For each SC:
+	\begin{itemize}
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$.
+		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
+			2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.  This only applies to SCs in the barrel.
+	\end{itemize}
+\end{itemize}
+
+A second set of ee channel events were used only to estimate backgrounds.  These events were first 
+selected online using a Level-1 trigger, which required at least 30 GeV of energy be measured in a SC 
+with $|\eta| < 2.1$.  Then, local reconstruction was run in regions where the Level-1 trigger fired, 
+and events were selected and saved to permanent storage if the following High Level trigger requirements 
+were met:
+
+\begin{itemize}
+	\item One SC is detected with energy > 30 GeV.
+	\item For the SC with energy > 30 GeV:
+	\begin{itemize}
+		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
+		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\sim$900 crystals in the cone):
+		\begin{itemize}
+			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
+			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
+		\end{itemize}
+		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
+			1 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of half of one ECAL crystal.  This applies to SCs in the barrel and endcap.
+		\item the reconstructed track momentum and SC energy cannot differ by more than 50\%
+	\end{itemize}
+	\item A second SC is detected with energy > 4 GeV.
+\end{itemize}
+
+
+Events used in the muon channel \WR search ($\WR \rightarrow \mu\mu jj$) were first selected online using a Level-1 trigger 
+that required at least 16 GeV of energy be measured in one muon DT or CSC detector.  Subsequently, local 
+reconstruction was run in regions where the Level-1 trigger fired, and events were selected and saved to 
+permanent storage if the following High Level trigger requirements were met: 
+
+\begin{itemize}
+	\item A global curve representing a muon is fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex is below 1 \mm.
+	\item The reconstructed muon track has $p_{T} >$ 50 GeV.
+\end{itemize}
+
+As stated in Chapter \ref{wrBosonAndHeavyNu}, it is assumed that the $\WR$ decay cannot violate lepton 
+flavor conservation.  As a result, the search presented here did not seek evidence of the LRS model in 
+events with one electron, one muon and two jets in the final state.  However, events in the $e\mu$ channel 
+($e\mu jj$ final state) were used to estimate backgrounds in the ee and $\mu\mu$ channels.  The $e\mu$ channel events were first selected 
+online using Level-1 triggers that required at least 16 GeV of energy be measured in one muon DT or CSC 
+detector.  Then, local reconstruction was run in regions where the Level-1 trigger fired, and events were 
+selected and saved to permanent storage if the following High Level trigger requirements were met:
+
+\begin{itemize}
+	\item A global curve representing a muon is fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+	\item In the $(x,y)$ plane, the distance between the origin of the reconstructed muon track and the primary vertex is below 1 \mm.
+	\item The reconstructed muon track has $p_{T} >$ 30 GeV.
+	\item One ECAL supercluster (SC) is detected with energy > 30 GeV.
+	\item For the SC:
 	\begin{itemize}
 		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$.
 		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
@@ -32,7 +98,6 @@ requirements in a High Level trigger and saved to permanent storage:
 	\end{itemize}
 \end{itemize}
 
-The .
 
 
 \subsection{Data}
