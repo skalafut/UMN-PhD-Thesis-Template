@@ -14,90 +14,117 @@ reconstructed, additional selections were applied to increase the sensitivity of
 high-mass \WR boson and neutrino $N_{l}$ signatures.
 
 \section{Online Event Selection}
-Charged leptons that came from a proton-proton interaction were identified by the trigger system, which 
-selected events online (during collisions) that were saved to permanent storage.  Events used in 
-the ee channel \WR search ($\WR \rightarrow eejj$) were first selected using Level-1 triggers 
+Charged leptons that came from proton-proton interactions were identified by the trigger system.  Based 
+on the multiplicity and energy of charged leptons, the trigger system selected events during 
+collisions, and saved these events to permanent storage for further analysis.  All triggers presented 
+here selected events in two sequential steps.  In the first step, one or more Level-1 triggers were 
+required to fire.  Then, local reconstruction was run in the regions where Level-1 triggers fired to 
+build calorimeter and muon detector energy clusters with finer granularity.  In the second step, 
+a High Level trigger applied selection cuts to the calorimeter or muon detector energy clusters.  If 
+an event passed these selections, tracks and interaction vertices were reconstructed and linked with 
+calorimeter and muon detector energy clusters to build electron (e) and muon ($\mu$) candidates.  Final 
+selections were then applied to e,$\mu$ candidates.  Specific selections used in different Level-1 
+and High Level triggers are discussed next.
+
+Events used in the ee channel \WR search ($\WR \rightarrow eejj$) were first selected by Level-1 triggers 
 that required: 
 
 \begin{itemize}
-	\item At least 40 GeV of energy be measured in a 5 $\times$ 5 crystal region of ECAL (one supercluster, SC).
-	\item Or at least 22 GeV of energy be measured in one SC, and at least 10 GeV of energy be measured in 
+	\item At least 40 GeV of energy was measured in one ECAL supercluster (SC), defined as a 5 $\times$ 5 crystal region.
+	\item Or, at least 22 GeV of energy was measured in one SC, and at least 10 GeV of energy was measured in 
 		another, non-overlapping SC.
 \end{itemize}
 
-Subsequently, local reconstruction was run in regions where the Level-1 triggers fired, and events 
-were selected and saved to permanent storage if the following High Level trigger requirements were 
-met: 
+Then, events were saved to permanent storage if the following High Level trigger requirements were met: 
 
 \begin{itemize}
-	\item Two non-overlapping ECAL superclusters (SC) are detected with energy > 33 GeV.
+	\item Two non-overlapping ECAL SCs were detected with energy $>$ 33 GeV.
 	\item For each SC:
 	\begin{itemize}
-		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$.
-		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
-		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
-			2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.  This only applies to SCs in the barrel.
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$ in the barrel, $< 0.1$ in the endcap.
+		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
+		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the $z_{SC}$ 
+			SC center within 2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
 	\end{itemize}
 \end{itemize}
 
 A second set of ee channel events were used only to estimate backgrounds.  These events were first 
-selected online using a Level-1 trigger, which required at least 30 GeV of energy be measured in a SC 
-with $|\eta| < 2.1$.  Then, local reconstruction was run in regions where the Level-1 trigger fired, 
-and events were selected and saved to permanent storage if the following High Level trigger requirements 
-were met:
+selected online using a Level-1 trigger that required $>$ 30 GeV of energy be measured in an ECAL SC 
+with $|\eta| < 2.1$.  Following the Level-1 selection, events were saved to permanent storage if the 
+following High Level trigger requirements were met:
 
 \begin{itemize}
-	\item One SC is detected with energy > 30 GeV.
-	\item For the SC with energy > 30 GeV:
+	\item One SC was detected with energy $>$ 30 GeV.
+	\item For the SC with energy $>$ 30 GeV:
 	\begin{itemize}
-		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
-		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
-		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\sim$900 crystals in the cone):
+		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
+		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\sim$900 ECAL crystals, $\sim$35 HCAL towers in the cone):
 		\begin{itemize}
 			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
 			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
 		\end{itemize}
-		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
-			1 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of half of one ECAL crystal.  This applies to SCs in the barrel and endcap.
-		\item the reconstructed track momentum and SC energy cannot differ by more than 50\%
+		\item For SCs in the barrel or endcap, a reconstructed track with hits in at least two pixel tracker layers extrapolates to the 
+			$z_{SC}$ SC center within 1 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of $\frac{1}{2}$ ECAL crystal.
+		\item For SCs in the barrel or endcap, the SC energy and the matching reconstructed track momentum cannot differ by more than 50\%
 	\end{itemize}
-	\item A second SC is detected with energy > 4 GeV.
+	\item A second SC was detected with energy $>$ 4 GeV.
 \end{itemize}
 
 
-Events used in the muon channel \WR search ($\WR \rightarrow \mu\mu jj$) were first selected online using a Level-1 trigger 
-that required at least 16 GeV of energy be measured in one muon DT or CSC detector.  Subsequently, local 
-reconstruction was run in regions where the Level-1 trigger fired, and events were selected and saved to 
-permanent storage if the following High Level trigger requirements were met: 
+Events used in the muon channel \WR search ($\WR \rightarrow \mu\mu jj$) were first selected online using 
+a Level-1 trigger that required $>$ 16 GeV of momentum be measured in a muon DT or CSC detector.  Following 
+the Level-1 selection, events were saved to permanent storage if the following High Level trigger requirements 
+were met: 
 
 \begin{itemize}
-	\item A global curve representing a muon is fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
-	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex is below 1 \mm.
-	\item The reconstructed muon track has $p_{T} >$ 50 GeV.
+	\item The same requirements were applied to muon candidates in the barrel and endcap.
+	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
+	\item The reconstructed muon track had $p_{T} >$ 50 GeV.
 \end{itemize}
+
+A second set of $\mu\mu$ channel events were used only to estimate backgrounds.  These events were first 
+selected online by a Level-1 trigger, which required $>$ 20 GeV of momentum be measured in a muon 
+DT or CSC detector.  Following the Level-1 selection, events were saved to permanent storage if the 
+following High Level trigger requirements were met:
+
+\begin{itemize}
+	\item Unless noted otherwise, the same requirements were applied to muon candidates in the barrel and endcap.
+	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
+	\item The reconstructed muon track had $p_{T} >$ 22 GeV.
+	\item In a cone of radius $\DeltaR =$ 0.3 centered on the muon detector energy cluster ($\sim$900 ECAL crystals, $\sim$35 HCAL towers in the cone):
+	\begin{itemize}
+		\item The total ECAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{ECAL}}{E_{\mu}} < 0.11$ in the barrel, $< 0.08$ in the endcap.
+		\item The total HCAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{HCAL}}{E_{\mu}} < 0.21$ in the barrel, $< 0.22$ in the endcap.
+		\item The sum $p_{T,other}$ of all tracks in the cone excluding the muon track is small compared to the muon track $p_{T,\mu}$, 
+			$\frac{p_{T,other}}{p_{T,\mu}} < 0.09$ in the barrel and endcap.
+	\end{itemize}
+\end{itemize}
+
 
 As stated in Chapter \ref{wrBosonAndHeavyNu}, it is assumed that the $\WR$ decay cannot violate lepton 
 flavor conservation.  As a result, the search presented here did not seek evidence of the LRS model in 
 events with one electron, one muon and two jets in the final state.  However, events in the $e\mu$ channel 
-($e\mu jj$ final state) were used to estimate backgrounds in the ee and $\mu\mu$ channels.  The $e\mu$ channel events were first selected 
-online using Level-1 triggers that required at least 16 GeV of energy be measured in one muon DT or CSC 
-detector.  Then, local reconstruction was run in regions where the Level-1 trigger fired, and events were 
-selected and saved to permanent storage if the following High Level trigger requirements were met:
+($e\mu jj$ final state) were used to estimate backgrounds using a procedure described later.  The $e\mu$ 
+channel events were first selected by a Level-1 trigger that required $>$ 16 GeV of momentum be 
+measured in one muon DT or CSC detector.  Events that passed the Level-1 trigger were saved to permanent 
+storage if the following High Level trigger requirements were met:
 
 \begin{itemize}
-	\item A global curve representing a muon is fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
-	\item In the $(x,y)$ plane, the distance between the origin of the reconstructed muon track and the primary vertex is below 1 \mm.
-	\item The reconstructed muon track has $p_{T} >$ 30 GeV.
-	\item One ECAL supercluster (SC) is detected with energy > 30 GeV.
+	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+	\item In the $(x,y)$ plane, the distance between the origin of the reconstructed muon track and the primary vertex was $<$ 1 \mm.
+	\item The reconstructed muon track had $p_{T} >$ 30 GeV.
+	\item One ECAL SC was detected with energy $>$ 30 GeV.
 	\item For the SC:
 	\begin{itemize}
-		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$.
-		\item Ninety percent of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
-		\item A reconstructed track with hits in at least two pixel tracker layers extrapolates to the $z_{SC}$ SC center within 
-			2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
+		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$ in the barrel, $< 0.1$ in the endcap.
+		\item For SCs in the barrel or endcap, 90\% of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the 
+			$z_{SC}$ SC center within 2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
 	\end{itemize}
 \end{itemize}
-
 
 
 \subsection{Data}
