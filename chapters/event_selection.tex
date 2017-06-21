@@ -14,17 +14,23 @@ reconstructed, additional selections were applied to increase the sensitivity of
 high-mass \WR boson and neutrino $N_{l}$ signatures.
 
 \section{Online Event Selection}
+\label{sec:triggers}
 Charged leptons that came from proton-proton interactions were identified by the trigger system.  Based 
 on the multiplicity and energy of charged leptons, the trigger system selected events during 
 collisions, and saved these events to permanent storage for further analysis.  All triggers presented 
-here selected events in two sequential steps.  In the first step, one or more Level-1 triggers were 
-required to fire.  Then, local reconstruction was run in the regions where Level-1 triggers fired to 
-build calorimeter and muon detector energy clusters with finer granularity.  In the second step, 
-a High Level trigger applied selection cuts to the calorimeter or muon detector energy clusters.  If 
-an event passed these selections, tracks and interaction vertices were reconstructed and linked with 
-calorimeter and muon detector energy clusters to build electron (e) and muon ($\mu$) candidates.  Final 
-selections were then applied to e,$\mu$ candidates.  Specific selections used in different Level-1 
-and High Level triggers are discussed next.
+here selected events in two steps.  In the first step, one or more Level-1 triggers were 
+required to fire.  Then, in regions where Level-1 triggers fired, local reconstruction was run to 
+build calorimeter and muon detector hits into granular, 3D energy clusters.  In the second step, 
+a High Level trigger applied selection cuts to the 3D energy clusters.  If 
+enough energy clusters (1 or 2, depending on the trigger) passed these selections, hits in the tracker 
+layers were reconstructed into interaction vertices and charged particle tracks.  Track endpoints 
+were then extrapolated along track trajectories to the calorimeters and muon detectors.  Extrapolated 
+tracks that passed within $\DeltaR \lesssim 0.1$ of an ECAL cluster were identified as electron (e) 
+candidates, and extrapolated tracks that passed within the same distance of a muon detector cluster 
+were identified as muon ($\mu$) candidates.  Final High Level trigger selections were applied to 
+tracks in these e,$\mu$ candidates, and if the selections were passed the entire event was saved 
+to permanent storage.  Specific selections used in different Level-1 and High Level triggers are 
+discussed next.
 
 Events used in the ee channel \WR search ($\WR \rightarrow eejj$) were first selected by Level-1 triggers 
 that required: 
@@ -59,7 +65,7 @@ following High Level trigger requirements were met:
 	\begin{itemize}
 		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
 		\item The ratio of hadronic energy in the tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
-		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\sim$900 ECAL crystals, $\sim$35 HCAL towers in the cone):
+		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
 		\begin{itemize}
 			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
 			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
@@ -94,7 +100,7 @@ following High Level trigger requirements were met:
 	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
 	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
 	\item The reconstructed muon track had $p_{T} >$ 22 GeV.
-	\item In a cone of radius $\DeltaR =$ 0.3 centered on the muon detector energy cluster ($\sim$900 ECAL crystals, $\sim$35 HCAL towers in the cone):
+	\item In a cone of radius $\DeltaR =$ 0.3 centered on the muon detector energy cluster ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
 	\begin{itemize}
 		\item The total ECAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{ECAL}}{E_{\mu}} < 0.11$ in the barrel, $< 0.08$ in the endcap.
 		\item The total HCAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{HCAL}}{E_{\mu}} < 0.21$ in the barrel, $< 0.22$ in the endcap.
@@ -128,28 +134,36 @@ storage if the following High Level trigger requirements were met:
 
 
 \subsection{Data}
-\label{dataAndTriggers}
+\label{collisionData}
 
-Data collected by the CMS experiment from September until November 2015, when the center-of-mass energy 
-was $\sqrt{s} = 13\TeV$ and proton bunches were separated by 25 \ns, was used in this analysis.  
-During this period the LHC delivered approximately 4.0 fb$^{-1}$ \cite{lumi} of data, but problems 
-with the CMS solenoid magnet limited the amount of data recorded by CMS with the full 3.8 $\unit{T}$ 
-magnetic field strength to 2.6 fb$^{-1}$.  The full 2.6 fb$^{-1}$ was used in this analysis, and was 
-divided into two run periods - Run2015C and Run2015D.  The LHC collided protons from April until August 
-2015 with 50 \ns between proton bunches, then stopped collisions in the second half of August and 
-early September, as shown in Figure \ref{fig:lhc2015IntegLumi}.  The small amount of data collected 
-with 50 \ns bunch spacing was used for detector calibration and alignment, but due to significant challenges 
-in combining 50 \ns and 25 \ns data, the 50 \ns data was not used in this analysis.  During the August break 
-the accelerator system was reconfigured to reduce the spacing between proton bunches to 25 \ns, and increase the 
-instantaneous luminosity to achieve higher collision rates.  Decreasing the spacing between proton bunches 
-allowed the LHC to deliver pp collisions at a higher rate without making event reconstruction in 
-CMS and other experiments significantly more difficult.  Data collected after this modification, and until 
-mid October constituted the run era Run2015C.  In Run2015C all data was collected with similar beam 
-conditions, like average instantaneous luminosity and the number of bunches per beam.  In mid October 
-collisions stopped for $\thicksim$1.5 weeks to perform maintenance on the the LHC, and to modify the 
-collider to deliver collisions with higher instantaneous luminosities, approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$.  
-Data collected after this upgrade and until the end of pp collisions in November constituted the run 
-era Run2015D.  As in Run2015C, in Run2015D all data was collected with similar beam conditions.
+%first paragraph about beginning of 2015 data taking with 50ns BX, used for calibrations
+%second paragraph describes data used in this analysis
+
+The LHC started colliding protons at $\sqrt{s} = 13\TeV$ center-of-mass energy in April 2015.  From 
+April until mid August, proton bunches in each beam were separated by 50 \ns.  The data collected 
+in this period, $\thicksim$0.2 fb$^{-1}$, was used to calibrate and align all CMS subdetector systems, but 
+was not used in the search presented here for the following reason.  Before 2015 collisions began it 
+was known that the amount of 50 \ns data collected would be small compared to the data collected with 
+25 \ns bunch spacing.  As a result, the vast resources needed for physics analyses, like Monte Carlo simulations 
+of SM processes used to estimate backgrounds, were only produced for data collected with 25 \ns bunch 
+spacing.  The person-power needed to develop the same resources for 50 \ns data would have been 
+detrimental to the quality of results produced with 25 \ns data.
+
+The LHC stopped collisions in the second half of August and early September, evidenced by the plateau 
+in Figure \ref{fig:lhc2015IntegLumi} during this time, to reconfigure the CERN accelerator system to 
+deliver proton-proton (pp) collisions with 25 \ns between proton bunches.  The bunch spacing was decreased to 
+increase the rate of pp collisions without increasing the number of interactions per pp collision event, 
+which makes particle reconstruction and identification more difficult.  Collisions at $\sqrt{s} = 13\TeV$ 
+resumed in September and continued until November 2015. During this period the LHC delivered approximately 
+4.0 fb$^{-1}$ \cite{lumi} of data, but problems with the CMS magnet limited the amount of data recorded 
+by CMS with the full 3.8 $\unit{T}$ magnetic field strength to 2.6 fb$^{-1}$.  The full 2.6 fb$^{-1}$ was used in this analysis, and was 
+divided into two run periods - Run2015C and Run2015D.  All data collected from September until mid October 
+was collected with similar beam conditions, like average instantaneous luminosity and the number of bunches 
+per beam, and constituted run era Run2015C.  In mid October collisions stopped for $\thicksim$1.5 weeks for 
+LHC maintenance, and to upgrade the LHC to deliver collisions with higher instantaneous luminosities, 
+approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$.  Data collected after this upgrade and until the end 
+of pp collisions in November constituted run era Run2015D.  As in Run2015C, in Run2015D all data was collected 
+with similar beam conditions.
 
 \begin{figure}[h]
 	\centering
@@ -335,7 +349,7 @@ into particles using the same CMS particle reconstruction library used with coll
 Fully reconstructed simulated events were required to pass the same trigger as the collision
 data events they were being compared to.  For example, \DY +jet events used to estimate the SM
 background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
-(single muon) trigger discussed earlier (section \ref{dataAndTriggers}).
+(single muon) trigger discussed earlier (section \ref{collisionData}).
 \MC samples were produced by the CMS \MC production group for all SM processes which can yield
 the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
 of diboson pairs is not considered due to its low cross section times branching
