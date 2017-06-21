@@ -25,14 +25,14 @@ a High Level trigger applied selection cuts to the 3D energy clusters.  If
 enough energy clusters (1 or 2, depending on the trigger) passed these selections, hits in the tracker 
 layers were reconstructed into interaction vertices and charged particle tracks.  Track endpoints 
 were then extrapolated along track trajectories to the calorimeters and muon detectors.  Extrapolated 
-tracks that passed within $\DeltaR \lesssim 0.1$ of an ECAL cluster were identified as electron (e) 
+tracks that passed within $\Delta R < 0.1$ of an ECAL cluster were identified as electron (e) 
 candidates, and extrapolated tracks that passed within the same distance of a muon detector cluster 
 were identified as muon ($\mu$) candidates.  Final High Level trigger selections were applied to 
 tracks in these e,$\mu$ candidates, and if the selections were passed the entire event was saved 
 to permanent storage.  Specific selections used in different Level-1 and High Level triggers are 
 discussed next.
 
-Events used in the ee channel \WR search ($\WR \rightarrow eejj$) were first selected by Level-1 triggers 
+Events used in the ee channel \WR search ($pp \rightarrow \WR \rightarrow eejj$) were first selected by Level-1 triggers 
 that required: 
 
 \begin{itemize}
@@ -41,7 +41,8 @@ that required:
 		another, non-overlapping SC.
 \end{itemize}
 
-Then, events were saved to permanent storage if the following High Level trigger requirements were met: 
+Then, events were saved to permanent storage if the following double electron High Level trigger requirements 
+were met: 
 
 \begin{itemize}
 	\item Two non-overlapping ECAL SCs were detected with energy $>$ 33 GeV.
@@ -57,7 +58,7 @@ Then, events were saved to permanent storage if the following High Level trigger
 A second set of ee channel events were used only to estimate backgrounds.  These events were first 
 selected online using a Level-1 trigger that required $>$ 30 GeV of energy be measured in an ECAL SC 
 with $|\eta| < 2.1$.  Following the Level-1 selection, events were saved to permanent storage if the 
-following High Level trigger requirements were met:
+following double electron High Level trigger requirements were met:
 
 \begin{itemize}
 	\item One SC was detected with energy $>$ 30 GeV.
@@ -65,7 +66,7 @@ following High Level trigger requirements were met:
 	\begin{itemize}
 		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
 		\item The ratio of hadronic energy in the tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
-		\item In a cone of radius $\DeltaR =$ 0.3 centered on the SC ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
+		\item In a cone of radius $\Delta R =$ 0.3 centered on the SC ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
 		\begin{itemize}
 			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
 			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
@@ -78,10 +79,10 @@ following High Level trigger requirements were met:
 \end{itemize}
 
 
-Events used in the muon channel \WR search ($\WR \rightarrow \mu\mu jj$) were first selected online using 
+Events used in the muon channel \WR search ($pp \rightarrow \WR \rightarrow \mu\mu jj$) were first selected online using 
 a Level-1 trigger that required $>$ 16 GeV of momentum be measured in a muon DT or CSC detector.  Following 
-the Level-1 selection, events were saved to permanent storage if the following High Level trigger requirements 
-were met: 
+the Level-1 selection, events were saved to permanent storage if the following single muon High Level trigger 
+requirements were met: 
 
 \begin{itemize}
 	\item The same requirements were applied to muon candidates in the barrel and endcap.
@@ -93,14 +94,14 @@ were met:
 A second set of $\mu\mu$ channel events were used only to estimate backgrounds.  These events were first 
 selected online by a Level-1 trigger, which required $>$ 20 GeV of momentum be measured in a muon 
 DT or CSC detector.  Following the Level-1 selection, events were saved to permanent storage if the 
-following High Level trigger requirements were met:
+following single muon High Level trigger requirements were met:
 
 \begin{itemize}
 	\item Unless noted otherwise, the same requirements were applied to muon candidates in the barrel and endcap.
 	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
 	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
 	\item The reconstructed muon track had $p_{T} >$ 22 GeV.
-	\item In a cone of radius $\DeltaR =$ 0.3 centered on the muon detector energy cluster ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
+	\item In a cone of radius $\Delta R =$ 0.3 centered on the muon detector energy cluster ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
 	\begin{itemize}
 		\item The total ECAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{ECAL}}{E_{\mu}} < 0.11$ in the barrel, $< 0.08$ in the endcap.
 		\item The total HCAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{HCAL}}{E_{\mu}} < 0.21$ in the barrel, $< 0.22$ in the endcap.
@@ -116,7 +117,7 @@ events with one electron, one muon and two jets in the final state.  However, ev
 ($e\mu jj$ final state) were used to estimate backgrounds using a procedure described later.  The $e\mu$ 
 channel events were first selected by a Level-1 trigger that required $>$ 16 GeV of momentum be 
 measured in one muon DT or CSC detector.  Events that passed the Level-1 trigger were saved to permanent 
-storage if the following High Level trigger requirements were met:
+storage if the following electron $+$ muon High Level trigger requirements were met:
 
 \begin{itemize}
 	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
@@ -134,10 +135,7 @@ storage if the following High Level trigger requirements were met:
 
 
 \subsection{Data}
-\label{collisionData}
-
-%first paragraph about beginning of 2015 data taking with 50ns BX, used for calibrations
-%second paragraph describes data used in this analysis
+\label{sec:collisionData}
 
 The LHC started colliding protons at $\sqrt{s} = 13\TeV$ center-of-mass energy in April 2015.  From 
 April until mid August, proton bunches in each beam were separated by 50 \ns.  The data collected 
@@ -150,194 +148,209 @@ spacing.  The person-power needed to develop the same resources for 50 \ns data 
 detrimental to the quality of results produced with 25 \ns data.
 
 The LHC stopped collisions in the second half of August and early September, evidenced by the plateau 
-in Figure \ref{fig:lhc2015IntegLumi} during this time, to reconfigure the CERN accelerator system to 
+in Figure \ref{fig:lhc2015IntegLumi} \cite{lumi} during this time, to reconfigure the CERN accelerator system to 
 deliver proton-proton (pp) collisions with 25 \ns between proton bunches.  The bunch spacing was decreased to 
 increase the rate of pp collisions without increasing the number of interactions per pp collision event, 
 which makes particle reconstruction and identification more difficult.  Collisions at $\sqrt{s} = 13\TeV$ 
 resumed in September and continued until November 2015. During this period the LHC delivered approximately 
-4.0 fb$^{-1}$ \cite{lumi} of data, but problems with the CMS magnet limited the amount of data recorded 
+4.0 fb$^{-1}$ of data, but problems with the CMS magnet limited the amount of data recorded 
 by CMS with the full 3.8 $\unit{T}$ magnetic field strength to 2.6 fb$^{-1}$.  The full 2.6 fb$^{-1}$ was used in this analysis, and was 
-divided into two run periods - Run2015C and Run2015D.  All data collected from September until mid October 
+divided into two run periods - Run2015C and Run2015D.  All data from September until mid October 
 was collected with similar beam conditions, like average instantaneous luminosity and the number of bunches 
 per beam, and constituted run era Run2015C.  In mid October collisions stopped for $\thicksim$1.5 weeks for 
 LHC maintenance, and to upgrade the LHC to deliver collisions with higher instantaneous luminosities, 
 approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$.  Data collected after this upgrade and until the end 
-of pp collisions in November constituted run era Run2015D.  As in Run2015C, in Run2015D all data was collected 
-with similar beam conditions.
+of pp collisions in November constituted run era Run2015D.  As in Run2015C, all data in Run2015D was collected 
+with similar beam conditions.  Comparing the two run eras in Table \ref{tab:collisionDatasets}, most of the 
+data used in this analysis was collected in Run2015D.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/int_lumi_per_day_cumulative_pp_2015.pdf}
-	\caption{Integrated luminosity delivered by the LHC, and recorded by CMS in 2015.  Only data collected after 
-	September 1st was used in this search.}
+	\caption{Integrated luminosity delivered by the LHC and recorded by CMS in 2015.  Only data collected after 
+	September 1st, corresponding to 25 \ns bunch spacing, was used in this search.}
 	\label{fig:lhc2015IntegLumi}
 \end{figure}
 
-
-The raw data collected by CMS is too large ($\gtrsim 10^{4}$ terabytes) to process for analyses
-which want to run from start to finish in $\lessim 3$ days, and contains much more information
-than what is needed by any individual physics analysis.  To expedite the process of
-transforming collision data into a public physics result, collision data from each run
-era is split into several smaller datasets which are distinguished by the presence of one
-or more objects in the final state, such as events with at least one muon, or least two
-electrons or photons.  The HLT decides which dataset an event should be assigned to based on the
-individual triggers which were fired; in some instances one event will be assigned to several
-datasets.  As the average instantaneous luminosity of the LHC increased dramatically in the 
-last 3 months of data-taking, datasets in Run2015D were split into two pieces such that the size
-of each dataset remained small ($\sim 1$ terabyte).  The collision events used in this analysis
-were collected in the "SingleMuon", "DoubleEG", and "MuonEG" datasets summarized in Table
-\ref{tab:collisionDatasets}.  This analysis uses the datasets which were reconstructed, the process
-by which raw detector outputs are transformed into distinguishable objects like muons and
-electrons, in the late summer, fall and early winter of 2015 using calibration and alignment
-constants derived in early 2015.
-
 \begin{table}[h]
-\caption{The collision datasets used in this analysis, the run eras they correspond to, and their total size (both dataset pieces for 2015D).}
+\caption{The amount of data collected in each run era.}
 \label{tab:collisionDatasets}
 \centering
-\begin{tabular}{c|c|c|c|c}
-Run Era & Int. Lumi (pb$^{-1}$) & eejj dataset & $\mu\mu$jj dataset & e$\mu$jj dataset \\  \hline
-	2015C &  20  &  DoubleEG  &  SingleMuon  &  MuonEG  \\
-	2015D &  2620  &  DoubleEG  &  SingleMuon  &  MuonEG  \\ \hline
+\begin{tabular}{c|c}
+Run Era & Int. Lumi (fb$^{-1}$) \\  \hline
+	2015C &  0.02  \\
+	2015D &  2.62  \\ \hline
 \end{tabular}
 \end{table}
 
-The "DoubleEG" dataset requires at least two energy deposits in ECAL 
-consistent with electrons or photons.  The dataset is used to study events with two electrons and two jets
-in the final state, and to look for evidence of \WR bosons which decay to electron flavor
-heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$.
-As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a subset of the full
-particle reconstruction software package to reconstruct electron candidates in
-every event.  After reconstruction, the trigger requires at least two electrons to pass
-the cuts defined in Table \ref{tab:eleHltCuts}.  These cuts were optimized to increase the fraction
-of real over fake electrons electrons selected by the trigger.
-The ID variable cut thresholds differ between the ECAL barrel ($|\eta| \leq 1.42$)
-and endcap ($|\eta| \geq 1.57$) for the following reason.  All ECAL crystals are used for event
-triggering, but the way in which these crystals are grouped into trigger zones differs between the
-barrel and endcap.  As a result, the shape and peak position of ID variables for real electrons
-produced by $Z \rightarrow ee$ decays differs between barrel and endcap electrons.  The electron
-ID variable cut thresholds differ between the barrel and endcap such that each ID cut selects
-real barrel and endcap electrons with similar efficiencies.
+In collision events selected by High Level triggers, raw detector information was reconstructed into charged 
+leptons, photons, and jets using procedures described later.  After the reconstruction process, the full 25 \ns 
+dataset collected by CMS in 2015 was enormous ($\gtrsim 10^{4}$ terabytes), and contained much 
+more information than what was needed by any individual physics analysis.  To expedite the transformation of 
+collision data into a public physics result, reconstructed collision events from each run era were split into smaller 
+datasets distinguished by the High Level triggers that selected the events.  As discussed earlier in 
+Section \ref{sec:triggers}, collision events were selected if they had energy deposits consistent with at least one muon, at least two 
+electrons, or at least one muon and one electron.  Events selected by the single muon triggers were 
+assigned to the "SingleMuon" dataset, while those selected by the double electron and electron $+$ 
+muon triggers were assigned to the "DoubleEG" (EG for electron gamma) and "MuonEG" datasets, respectively.  
+The storage space occupied by these datasets largely came from object collections, representing quantities 
+like individual hits in all tracker or calorimeter cells, that were not needed by the majority of physics 
+analyses, including the one presented here.  These object collections were removed, and their critical 
+information was merged into more general object collections, like the one collection representing all 
+reconstructed electrons.  Slimmed versions of the three datasets mentioned earlier were used in this 
+analysis, and each was $\thicksim$5 terabytes or smaller.
+
+%The "DoubleEG" dataset requires at least two energy deposits in ECAL 
+%consistent with electrons or photons.  The dataset is used to study events with two electrons and two jets
+%in the final state, and to look for evidence of \WR bosons which decay to electron flavor
+%heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$.
+%As explained in Chapter \ref{sec:experiment_chapter}, the trigger first runs a subset of the full
+%particle reconstruction software package to reconstruct electron candidates in
+%every event.  After reconstruction, the trigger requires at least two electrons to pass
+%the cuts defined in Table \ref{tab:eleHltCuts}.  These cuts were optimized to increase the fraction
+%of real over fake electrons electrons selected by the trigger.
+%The ID variable cut thresholds differ between the ECAL barrel ($|\eta| \leq 1.42$)
+%and endcap ($|\eta| \geq 1.57$) for the following reason.  All ECAL crystals are used for event
+%triggering, but the way in which these crystals are grouped into trigger zones differs between the
+%barrel and endcap.  As a result, the shape and peak position of ID variables for real electrons
+%produced by $Z \rightarrow ee$ decays differs between barrel and endcap electrons.  The electron
+%ID variable cut thresholds differ between the barrel and endcap such that each ID cut selects
+%real barrel and endcap electrons with similar efficiencies.
+
+%\begin{table}[h]
+%\caption{Double electron trigger requirements.  The endcap $|\Delta\eta_{in}|$ or $|\Delta\sigma_{in}|$ cuts are
+%not applied as the endcap was not fully aligned with the tracker. NOT COMPLETE FINISH LATER}
+%\label{tab:eleHltCuts}
+%\centering
+%\begin{tabular}{c|c|c}
+%	Variable & Barrel cut threshold & Endcap cut threshold  \\  \hline
+%	energy and geometric acceptance cuts  &  &   \\
+%	$E_{T} (\GeV)$  &  33  &  33  \\
+%	$|\eta| (-)$  &  $< 2.5$  &  $< 2.5$  \\  \hline
+%	electron ID cuts  &  &  \\
+%	$\sigma_{i\eta i\eta} (-)$  &  $< 0.014$  &  $< 0.035$  \\
+%	$H/E (1/\GeV)$  &  $< 0.15/E_{T}$  &  $< 0.1/E_{T}$  \\
+%	ECAL Iso $(1/\GeV)$  &  $< EBISO/E_{T}$  &  $< EEISO/E_{T}$  \\
+%	HCAL Iso $(1/\GeV)$  &  $< HBISO/E_{T}$  &  $< HEISO/E_{T}$  \\
+%	$|\Delta\eta_{in}|$  &  $< 0.02$  &  $N/A$  \\
+%	$|\Delta\sigma_{in}|$  &  $< 0.15$  &  $N/A$  \\
+%	Tracker Iso $(1/\GeV)$  &  $< 0.125/p_{T}$  &  $< 0.125/p_{T}$  \\
+%\end{tabular}
+%\end{table}
 
 
-\begin{table}[h]
-\caption{Double electron trigger requirements.  The endcap $|\Delta\eta_{in}|$ or $|\Delta\sigma_{in}|$ cuts are
-not applied as the endcap was not fully aligned with the tracker. NOT COMPLETE FINISH LATER}
-\label{tab:eleHltCuts}
-\centering
-\begin{tabular}{c|c|c}
-	Variable & Barrel cut threshold & Endcap cut threshold  \\  \hline
-	energy and geometric acceptance cuts  &  &   \\
-	$E_{T} (\GeV)$  &  33  &  33  \\
-	$|\eta| (-)$  &  $< 2.5$  &  $< 2.5$  \\  \hline
-	electron ID cuts  &  &  \\
-	$\sigma_{i\eta i\eta} (-)$  &  $< 0.014$  &  $< 0.035$  \\
-	$H/E (1/\GeV)$  &  $< 0.15/E_{T}$  &  $< 0.1/E_{T}$  \\
-	ECAL Iso $(1/\GeV)$  &  $< EBISO/E_{T}$  &  $< EEISO/E_{T}$  \\
-	HCAL Iso $(1/\GeV)$  &  $< HBISO/E_{T}$  &  $< HEISO/E_{T}$  \\
-	$|\Delta\eta_{in}|$  &  $< 0.02$  &  $N/A$  \\
-	$|\Delta\sigma_{in}|$  &  $< 0.15$  &  $N/A$  \\
-	Tracker Iso $(1/\GeV)$  &  $< 0.125/p_{T}$  &  $< 0.125/p_{T}$  \\
-\end{tabular}
-\end{table}
+%This particular double electron trigger was chosen based on trigger efficiency, and offline (post trigger)
+%requirements which must be tighter than the trigger.  As shown in
+%Table \ref{tab:singleAndDblEleTriggers}, there is not a significant difference in trigger efficiency
+%between single and double electron triggers as long as single electron Level 1 triggers are utilized.
+%These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow eejj$
+%dataset, as events from this dataset have the lowest average leading and subleading electron $E_{T}$
+%of all $\WR \rightarrow eejj$ datasets considered in this search.  To ensure that most of offline (post trigger)
+%electron ID requirements are tighter than the electron trigger ID requirements, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$
+%was chosen over the higher $E_{T}$ and tighter ID single electron trigger.
+%
+%\begin{table}[h]
+%\caption{Efficiency of electron triggers in 800 $\GeV$ \WR mass $\WR \rightarrow eejj$ signal events which have
+%two real, reconstructed electrons within the trigger acceptance ($|\eta| \leq 2.5$).  The double electron trigger
+%with lower $E_{T}$ cuts (23 and 12) can only fire if a double electron Level 1 trigger is fired, and thus has
+%a lower efficiency than the DoubleEle33 trigger which can fire if a double or single electron Level 1 trigger
+%is fired.}
+%\label{tab:singleAndDblEleTriggers}
+%\centering
+%\begin{tabular}{c|c|}
+%	Electron trigger & Efficiency (\%)  \\  \hline
+%	$\verb|HLT_Ele105_CaloIdVT_GsfTrkIdT|$  &  $94.8\pm0.2$  \\
+%	$\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$  &  $92.0\pm0.2$  \\
+%	$\verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL|$  &  $91.0\pm0.2$  \\
+%\end{tabular}
+%\end{table}
+%
+%
+%The "SingleMuon" dataset requires at least one energy deposit in the muon detectors 
+%consistent with a muon.  This dataset is used to study events with two muons and two jets
+%in the final state, and to look for evidence of \WR bosons which decay to muon flavor
+%heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_Mu50|$.
+%The trigger first runs a subset of the full particle reconstruction software package to
+%reconstruct muon candidates in every event.  After reconstruction, the trigger requires at
+%least one muon candidate, made from a good quality track matched to a muon detector energy
+%deposit, to have $p_{T} > 50 \GeV$.
+%
+%This particular single muon trigger was chosen based on trigger efficiency, and offline (post trigger)
+%requirements which must be tighter than the trigger.  As shown in
+%Table \ref{tab:singleAndDblMuTriggers}, there is not a significant difference in trigger efficiency
+%between single and double muon triggers as long as single muon Level 1 triggers are utilized.
+%Events from the 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ dataset have the lowest average
+%leading and subleading muon $p_{T}$ amongst all $\WR \rightarrow \mu\mu jj$ datasets used in this
+%analysis, so events from this dataset were used to determine the trigger efficiencies shown in
+%Table \ref{tab:singleAndDblMuTriggers}.  Ignoring prescaled triggers\footnote{there are triggers
+%which have lower $p_{T}$ thresholds than those listed here, but their rates are artificially
+%suppressed by randomly ignoring events which pass all trigger requirements} and triggers
+%which require tighter isolation requirements than the optimal offline muon isolation for this
+%search, the best trigger for this search is $\verb|HLT_Mu50|$.  Even though switching to lower $p_{T}$
+%threshold single and double muon triggers would allow for lower offline lepton $p_{T}$ cuts, it
+%will be shown later (see section \ref{muonRecoAndSelection}) that lower offline lepton cuts would reduce signal over background
+%sensitivity in the medium and high \WR mass region.
+%
+%
+%\begin{table}[h]
+%\caption{Efficiency of muon triggers in 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ signal events which have
+%two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).}
+%\label{tab:singleAndDblMuTriggers}
+%\centering
+%\begin{tabular}{c|c|}
+%	Muon trigger & Efficiency (\%)  \\  \hline
+%	$\verb|HLT_Mu50|$  &  $98.4\pm0.1$  \\
+%	$\verb|HLT_Mu45_eta2p1|$  &  $97.6\pm0.1$  \\
+%	$\verb|HLT_Mu40_TkMu11|$  &  $96.9\pm0.1$  \\
+%	$\verb|HLT_Mu34|$  &  $99.1\pm0.1$  \\
+%\end{tabular}
+%\end{table}
+%
+%
+%The "MuonEG" dataset requires at least one energy deposit in the muon detectors consistent
+%with a muon, and at least one energy deposit in ECAL consistent with an electron or photon.
+%This dataset is used to study events with one electron, one muon and two jets
+%in the final state.  We seek a \WR boson whose decay conserves lepton flavor, so to leading
+%order in the right handed electroweak coupling there cannot be any excess of events in the
+%$e\mu jj$ final state due to a \WR boson.  Thus, the $e\mu jj$ final state is only used to estimate
+%backgrounds from the top quark.  During collisions, events are selected using the trigger
+%$\verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL|$.  The trigger first runs a subset of the full
+%particle reconstruction software package to reconstruct muon and electron candidates in
+%every event.  After reconstruction, the trigger requires at least one muon candidate, made
+%from a good quality track geometrically matched to a muon detector energy deposit, to have
+%$p_{T} > 30 \GeV$.  In addition, at least one electron candidate which passes loose ID cuts
+%must be found with $E_{T} > 30 \GeV$.  As this trigger is only used for background estimation
+%in the signal region, it was chosen because it replicates the trigger algorithms and
+%lepton ID cut thresholds used to select $\mu\mu jj$ events from the "SingleMuon" dataset, and eejj events
+%from the "DoubleEG" dataset, but uses lower $E_{T}$ and $p_{T}$ cuts.
+%
+%In addition to the trigger requirements discussed above, collision datasets are cleaned of events
+%in which global reconstruction problems occurred within the detector.  These include events
+%where no primary vertex is reconstructed, and when anomalous noise appears in the
+%tracker, calorimeters, or muon detectors.  Furthermore, events identified as coming from
+%interactions between a single proton beam and beam pipe gas or other foreign material are
+%removed.
 
 
-This particular double electron trigger was chosen based on trigger efficiency, and offline (post trigger)
-requirements which must be tighter than the trigger.  As shown in
-Table \ref{tab:singleAndDblEleTriggers}, there is not a significant difference in trigger efficiency
-between single and double electron triggers as long as single electron Level 1 triggers are utilized.
-These efficiencies were calculated using events from the 800 $\GeV$ \WR mass $\WR \rightarrow eejj$
-dataset, as events from this dataset have the lowest average leading and subleading electron $E_{T}$
-of all $\WR \rightarrow eejj$ datasets considered in this search.  To ensure that most of offline (post trigger)
-electron ID requirements are tighter than the electron trigger ID requirements, $\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$
-was chosen over the higher $E_{T}$ and tighter ID single electron trigger.
+\section{Monte Carlo}
+\label{sec:MC}
 
-\begin{table}[h]
-\caption{Efficiency of electron triggers in 800 $\GeV$ \WR mass $\WR \rightarrow eejj$ signal events which have
-two real, reconstructed electrons within the trigger acceptance ($|\eta| \leq 2.5$).  The double electron trigger
-with lower $E_{T}$ cuts (23 and 12) can only fire if a double electron Level 1 trigger is fired, and thus has
-a lower efficiency than the DoubleEle33 trigger which can fire if a double or single electron Level 1 trigger
-is fired.}
-\label{tab:singleAndDblEleTriggers}
-\centering
-\begin{tabular}{c|c|}
-	Electron trigger & Efficiency (\%)  \\  \hline
-	$\verb|HLT_Ele105_CaloIdVT_GsfTrkIdT|$  &  $94.8\pm0.2$  \\
-	$\verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL|$  &  $92.0\pm0.2$  \\
-	$\verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL|$  &  $91.0\pm0.2$  \\
-\end{tabular}
-\end{table}
+%first paragraph explains what MC was used for, subsequent paragraphs go into more detail 
+%of each use case
+
+Monte Carlo (\MC) simulations were used in this search for several purposes.  Standard Model (SM) 
+processes that resulted in the reconstruction of two charged leptons and two jets were modeled using 
+\MC simulations.  These included processes that produced two real charged leptons and two jets, like 
+$pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
+were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l+\nu+jets$.  
+\MC simulations were also used to model the \WR signal process $pp \rightarrow \WR \rightarrow l+N_{l} \rightarrow lljj$ 
+as a function of \WR and $N_{l}$ masses.  .
 
 
-The "SingleMuon" dataset requires at least one energy deposit in the muon detectors 
-consistent with a muon.  This dataset is used to study events with two muons and two jets
-in the final state, and to look for evidence of \WR bosons which decay to muon flavor
-heavy neutrinos.  During collisions, events are selected using the trigger $\verb|HLT_Mu50|$.
-The trigger first runs a subset of the full particle reconstruction software package to
-reconstruct muon candidates in every event.  After reconstruction, the trigger requires at
-least one muon candidate, made from a good quality track matched to a muon detector energy
-deposit, to have $p_{T} > 50 \GeV$.
 
-This particular single muon trigger was chosen based on trigger efficiency, and offline (post trigger)
-requirements which must be tighter than the trigger.  As shown in
-Table \ref{tab:singleAndDblMuTriggers}, there is not a significant difference in trigger efficiency
-between single and double muon triggers as long as single muon Level 1 triggers are utilized.
-Events from the 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ dataset have the lowest average
-leading and subleading muon $p_{T}$ amongst all $\WR \rightarrow \mu\mu jj$ datasets used in this
-analysis, so events from this dataset were used to determine the trigger efficiencies shown in
-Table \ref{tab:singleAndDblMuTriggers}.  Ignoring prescaled triggers\footnote{there are triggers
-which have lower $p_{T}$ thresholds than those listed here, but their rates are artificially
-suppressed by randomly ignoring events which pass all trigger requirements} and triggers
-which require tighter isolation requirements than the optimal offline muon isolation for this
-search, the best trigger for this search is $\verb|HLT_Mu50|$.  Even though switching to lower $p_{T}$
-threshold single and double muon triggers would allow for lower offline lepton $p_{T}$ cuts, it
-will be shown later (see section \ref{muonRecoAndSelection}) that lower offline lepton cuts would reduce signal over background
-sensitivity in the medium and high \WR mass region.
-
-
-\begin{table}[h]
-\caption{Efficiency of muon triggers in 800 $\GeV$ \WR mass $\WR \rightarrow \mu\mu jj$ signal events which have
-two real, reconstructed muons within the trigger acceptance ($|\eta| \leq 2.4$).}
-\label{tab:singleAndDblMuTriggers}
-\centering
-\begin{tabular}{c|c|}
-	Muon trigger & Efficiency (\%)  \\  \hline
-	$\verb|HLT_Mu50|$  &  $98.4\pm0.1$  \\
-	$\verb|HLT_Mu45_eta2p1|$  &  $97.6\pm0.1$  \\
-	$\verb|HLT_Mu40_TkMu11|$  &  $96.9\pm0.1$  \\
-	$\verb|HLT_Mu34|$  &  $99.1\pm0.1$  \\
-\end{tabular}
-\end{table}
-
-
-The "MuonEG" dataset requires at least one energy deposit in the muon detectors consistent
-with a muon, and at least one energy deposit in ECAL consistent with an electron or photon.
-This dataset is used to study events with one electron, one muon and two jets
-in the final state.  We seek a \WR boson whose decay conserves lepton flavor, so to leading
-order in the right handed electroweak coupling there cannot be any excess of events in the
-$e\mu jj$ final state due to a \WR boson.  Thus, the $e\mu jj$ final state is only used to estimate
-backgrounds from the top quark.  During collisions, events are selected using the trigger
-$\verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL|$.  The trigger first runs a subset of the full
-particle reconstruction software package to reconstruct muon and electron candidates in
-every event.  After reconstruction, the trigger requires at least one muon candidate, made
-from a good quality track geometrically matched to a muon detector energy deposit, to have
-$p_{T} > 30 \GeV$.  In addition, at least one electron candidate which passes loose ID cuts
-must be found with $E_{T} > 30 \GeV$.  As this trigger is only used for background estimation
-in the signal region, it was chosen because it replicates the trigger algorithms and
-lepton ID cut thresholds used to select $\mu\mu jj$ events from the "SingleMuon" dataset, and eejj events
-from the "DoubleEG" dataset, but uses lower $E_{T}$ and $p_{T}$ cuts.
-
-In addition to the trigger requirements discussed above, collision datasets are cleaned of events
-in which global reconstruction problems occurred within the detector.  These include events
-where no primary vertex is reconstructed, and when anomalous noise appears in the
-tracker, calorimeters, or muon detectors.  Furthermore, events identified as coming from
-interactions between a single proton beam and beam pipe gas or other foreign material are
-removed.
-
-
-\subsection{Monte Carlo}
-\label{MC}
-Monte Carlo (\MC) simulations were used to estimate backgrounds and systematic uncertainties, derive
+%%%%%%%%%%%%%%%%%%%%%%%
+%old
+to estimate backgrounds, derive
 scale factors, reinterpret \WR cross section limits, and identify kinematic regions for
 hypothetical \WR boson signals with specific \WR masses.  The \MC samples used to estimate backgrounds
 and systematic uncertainties, identify kinematic regions for specific \WR boson signals, and derive
@@ -349,7 +362,7 @@ into particles using the same CMS particle reconstruction library used with coll
 Fully reconstructed simulated events were required to pass the same trigger as the collision
 data events they were being compared to.  For example, \DY +jet events used to estimate the SM
 background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
-(single muon) trigger discussed earlier (section \ref{collisionData}).
+(single muon) trigger discussed earlier (section \ref{sec:collisionData}).
 \MC samples were produced by the CMS \MC production group for all SM processes which can yield
 the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
 of diboson pairs is not considered due to its low cross section times branching
