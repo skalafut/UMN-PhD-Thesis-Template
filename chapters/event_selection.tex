@@ -5,13 +5,13 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If a \WR boson and heavy neutrino $N_{l}$ existed at a mass scale and coupling strength accessible 
+If a \WR boson and heavy neutrino \nul existed at a mass scale and coupling strength accessible 
 at the LHC, evidence of them would manifest as an excess of events relative to expected backgrounds 
 where two high-$p_{T}$ jets and two high-$p_{T}$, same flavor charged leptons were reconstructed.  
 Charged leptons and jets were reconstructed and identified using the silicon tracker, the ECAL and 
 HCAL, and the muon detectors.  In events where two same flavor charged leptons, and two jets were 
 reconstructed, additional selections were applied to increase the sensitivity of this search to 
-high-mass \WR boson and neutrino $N_{l}$ signatures.
+high-mass \WR and \nul signatures.
 
 \section{Online Event Selection}
 \label{sec:triggers}
@@ -338,254 +338,218 @@ analysis, and each was $\thicksim$5 terabytes or smaller.
 %first paragraph explains what MC was used for, subsequent paragraphs go into more detail 
 %of each use case
 
-Monte Carlo (\MC) simulations were used in this search for several purposes.  Standard Model (SM) 
-processes that resulted in the reconstruction of two charged leptons and two jets were modeled using 
-\MC simulations.  These included processes that produced two real charged leptons and two jets, like 
+Monte Carlo (\MC) simulations were used in this search to model two types of processes.  The first 
+type were Standard Model (SM) processes that resulted in the reconstruction of two charged leptons 
+and two jets.  These included processes that produced two real charged leptons and two jets, like 
 $pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
-were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l+\nu+jets$.  
-\MC simulations were also used to model the \WR signal process $pp \rightarrow \WR \rightarrow l+N_{l} \rightarrow lljj$ 
-as a function of \WR and $N_{l}$ masses.  .
+were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
+The second type were \WR signal processes $pp \rightarrow \WR \rightarrow l\nul \rightarrow lljj$, 
+whose cross section times branching fraction times kinematic acceptance varied with the masses \mWR 
+and \mnul.  \MC simulations of both types of processes were produced by the CMS \MC production group 
+in several steps.  In the first step, a \MC generator, like \PYTHIA or \MADGRAPH, simulated 
+collision events between twoprotons in a vacuum, without any magnetic field or CMS detector 
+components.  In simulating the events, the generator accounted for:
 
+\begin{itemize}
+	\item The energy carried by each proton into the collision (6.5 \TeV).
+	\item How the incoming proton energy was distributed amongst constituent quarks and gluons according 
+		to parton distribution functions.
+	\item The masses of the \WR, \nul and all particles in the SM.
+	\item The coupling strengths between fermions and the bosons that mediate pp interactions.
+\end{itemize}
+
+Any unstable particles produced in the interaction, like a $Z$ or \WR boson, decayed according to 
+their branching fractions to other particles, and any free quarks or gluons that were produced were 
+run through a hadronization simulation that emulates jet production described in Chapter \ref{wrBosonAndHeavyNu}.  In the second 
+simulation step, the effect of multiple pp interactions observed in real collisions is simulated by 
+overlaying simulations of randomly chosen SM interactions onto the primary events simulated in the first 
+step.  All pp interaction processes in the SM were assigned a probability proportional to their cross section 
+times branching fraction, then several processes were chosen randomly, and the events they produced after 
+the first simulation stage were overlaid on the primary events of interest.  Inelastic pp scattering and 
+other gluon mediated interactions have cross sections times branching fractions to purely hadronic 
+final states that are several orders of magnitude greater than processes which produce charged leptons 
+or photons, so most of the randomly chosen events only created additional hadronic jets in each event.  After 
+this overlaying procedure, the second simulation step simulated the propagation of all particles in 
+the CMS magnetic field, their interactions with everything in the detector, and the response of the 
+detector to all particles.  The .
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %old
-to estimate backgrounds, derive
-scale factors, reinterpret \WR cross section limits, and identify kinematic regions for
-hypothetical \WR boson signals with specific \WR masses.  The \MC samples used to estimate backgrounds
-and systematic uncertainties, identify kinematic regions for specific \WR boson signals, and derive
-scale factors were produced by the CMS \MC production group.  Events produced by this group were
-passed through a full simulation of the CMS detector using GEANT4 \cite{geant4}, were hadronized\footnote{hadronization
-is the process through which unstable quarks and gluons produced at the Feynman diagram level of simulation
-are transformed into stable jets observed by CMS} using \PYTHIA, and detector information was reconstructed
-into particles using the same CMS particle reconstruction library used with collision data.
-Fully reconstructed simulated events were required to pass the same trigger as the collision
-data events they were being compared to.  For example, \DY +jet events used to estimate the SM
-background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
-(single muon) trigger discussed earlier (section \ref{sec:collisionData}).
-\MC samples were produced by the CMS \MC production group for all SM processes which can yield
-the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
-of diboson pairs is not considered due to its low cross section times branching
-fraction}, and high cross section SM processes which can produce two jets
-and two fake leptons.  These processes are \DY (DY)+jets, W+jets, t$\bar{t}$+jets generated
-with \MADGRAPH \cite{madgraph}, single top and top+W generated with \POWHEG \cite{powheg}, and
-QCD and diboson (WW, WZ, ZZ) generated with \PYTHIA \cite{pythia8}\cite{Sjostrand:2006za}.
-These samples and their generators are listed in Table \ref{tab:centrallyProducedMC} along
-with their cross sections, and the number of events in each sample.
-
-\begin{table}[bt]
-\caption{Fully reconstructed \MC samples produced by the CMS \MC production group.  Cross sections
-	are calculated at next-to-leading order (NLO) unless noted otherwise.  The \DY and t$\bar{t}$+jets events
-were produced with a dilepton mass $M_{LL} > 50 \GeV$ cut using the two
-leptons coming from the hard interaction.}
-\label{tab:centrallyProducedMC}
-
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{ |c|c|c|c| } 
-	\hline
-		Dataset         & Generator & $\sigma$ $\times$ filter efficiency (pb) & Events   \\
-		\hline
-		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991 (LO)   & 9042031 \\ \hline
-		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3 (LO)   & 2725655 \\ \hline
-		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42 (LO)   & 973937 \\ \hline
-		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984 (LO)   & 1067758 \\ \hline
-		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704 (LO)   & 998912 \\ \hline
-		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\ \hline
-		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 1680200 \\ \hline
-		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 3299800 \\ \hline
-		$\bar{t}$+W   & \POWHEG & 35.85 & 988500 \\ \hline
-		t+W   & \POWHEG & 35.85 & 995600 \\ \hline
-		WW  & \PYTHIA & 113.8   & 993640   \\ \hline
-		ZZ  & \PYTHIA & 10.15   & 996944   \\ \hline
-		WZ  & \PYTHIA & 23.4   & 978512   \\ \hline
-		W+jets, $W \rightarrow l\nu$ & \MADGRAPH & 50270 (NNLO)   & 72207128 \\ \hline
-		QCD Pt 15-20 $e\gamma$ enriched  & \PYTHIA & 2302200   & 2122959   \\ \hline
-		QCD Pt 15-20 $\mu$ enriched  & \PYTHIA & 3819570   & 2362016   \\ \hline
-		QCD Pt 20-30 $e\gamma$ enriched  & \PYTHIA & 5352960     & 9184197   \\ \hline
-		QCD Pt 20-30 $\mu$ enriched  & \PYTHIA & 2960198    & 5311955   \\ \hline
-		QCD Pt 30-50 $e\gamma$ enriched  & \PYTHIA & 9928000    & 4736965   \\ \hline
-		QCD Pt 30-50 $\mu$ enriched  & \PYTHIA & 1652471    & 4946084   \\ \hline
-		QCD Pt 50-80 $e\gamma$ enriched  & \PYTHIA & 2890800    & 5291543   \\ \hline
-		QCD Pt 50-80 $\mu$ enriched  & \PYTHIA & 437504     & 5058536   \\ \hline
-		QCD Pt 80-120 $e\gamma$ enriched  & \PYTHIA & 350000  & 8130424   \\ \hline
-		QCD Pt 80-120 $\mu$ enriched  & \PYTHIA & 106034    & 3882463   \\ \hline
-		QCD Pt 120-170 $e\gamma$ enriched  & \PYTHIA & 62964   & 8513976   \\ \hline
-		QCD Pt 120-170 $\mu$ enriched  & \PYTHIA & 25191    & 4026104   \\ \hline
-		QCD Pt 170-300 $\mu$ enriched  & \PYTHIA & 8654     & 3949716   \\ \hline
-		QCD Pt 170-300 $e\gamma$ enriched  & \PYTHIA & 18810     & 5735584   \\ \hline
-		QCD Pt $>$ 300 $e\gamma$ enriched  & \PYTHIA & 1350    & 3707833   \\ \hline
-		QCD Pt 300-470 $\mu$ enriched  & \PYTHIA & 797.4     & 3960205   \\ \hline
-		QCD Pt 470-600 $\mu$ enriched  & \PYTHIA & 79.03     & 1928595   \\ \hline
-		QCD Pt 600-800 $\mu$ enriched  & \PYTHIA & 25.1      & 1983363   \\ \hline
-		QCD Pt 800-1000 $\mu$ enriched  & \PYTHIA & 4.71     & 1982314   \\ \hline
-		QCD Pt $>$ 1000 $\mu$ enriched  & \PYTHIA & 1.62      & 1981954   \\ \hline
-		$\WR \rightarrow l\Nell$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 50000   \\ \hline
-		\end{tabular}
-}
-\end{table}
-
-The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
-final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
-features of this model are explained in Chapter \ref{wrBosonAndHeavyNu}.  \WR signal
-samples were produced with $M_{\Nell} = M_{\WR}/2$, and $M_{\WR}$ starting at 800 $\GeV$ and
-increasing, in increments of 200 $\GeV$, to 6000 $\GeV$.  The electron and muon triggers
-discussed earlier must also be fired in these \WR signal events.
-
-The number of reconstructed interaction vertices from all collision datasets described
-earlier approximates a Poisson distribution, and the average number of reconstructed
-interaction vertices in each event in 2015 was above 9.  In each collision event, this
-set of interaction vertices is comprised of the primary interaction vertex which
-resulted in one or more lepton triggers firing, and secondary interaction vertices,
-typically caused by QCD, which resulted in additional energy being measured by CMS.
-These secondary interaction vertices are created as a result of the high instantaneous
-luminosity, and, in the context of this search, their only effect is to obfuscate
-signs of a \WR boson.  To reproduce the effect of secondary interaction vertices, all
-simulated event samples produced by the CMS \MC group are mixed with "minimum bias"
-events before simulating the detector response and subsequent particle reconstruction.
-Each minimum bias event has only one interaction vertex that results in at least
-one particle travelling into CMS with sufficient energy to be detected\footnote{The minimum
-bias events mixed into simulated events, in principle, can come from any known and
-well measured SM process.  However, the enormous cross section of proton proton
-inelastic scattering and other low momentum transfer QCD processes means the vast
-majority of minimum bias events come from low momentum transfer QCD processes}.
-The number of minimum bias events mixed into one simulated event is determined
-by sampling a random number from a Poisson distribution whose mean was set equal
-to the expected number of average reconstructed vertices in 2015 collision events.
-This expected average was calculated before 2015 collisions began, so \MC events 
-used in this analysis are reweighted based on the true difference between reconstructed
-vertices in \MC and collision data.
-
-A set of \WR \MC signal samples were privately produced only to extend \WR cross
-section limits set for $M_{\Nell} = M_{\WR}/2$ to a 2D plane of possible \WR
-and \Nell mass values.  These private samples were produced using the same
-\PYTHIA generator and parameters used by the CMS \MC production group, but the
-detector response simulation and particle reconstruction steps were omitted.
-In addition, no trigger requirements are applied.
-Samples were produced starting at $M_{\WR} = 800 \GeV$
-and $M_{\Nell} = 100 \GeV$, and $M_{\WR}$ increasing to 4000 $\GeV$ in increments
-of 100 $\GeV$.  At each $M_{\WR}$, 15000 events are produced for every $M_{\Nell}$
-value, starting at 100 $\GeV$ and increasing in increments of 100 $\GeV$ up to
-$M_{\Nell} = M_{\WR} - 100 \GeV$.
-
-
-\section{Jet and Lepton Reconstruction and Selection}
-
-\subsection{Jet Reconstruction and Selection}
-\label{jetRecoAndSelection}
-The Particle Flow (PF) algorithm, introduced in Chapter \ref{sec:experiment_chapter}, is used
-to reconstruct all particles which interact with the tracker, calorimeters and muon
-detectors of CMS.  Reconstructed particles are grouped into five categories, each with their
-own distinguishing features, shown in Table \ref{tab:pfRecoBins}.  Information
-from every subdetector is combined to determine the energy and momentum of
-each reconstructed particle.  Jets originate from unstable quarks and gluons,
-but what is actually detected are the stable daughter particles created by
-quark and gluon decays.  These include stable charged and neutral hadrons ($\pi^{\pm}$,
-$K^{0}$), stable charged leptons ($e^{\pm}$, $\mu^{\pm}$) created by weak boson
-decays, and photons resulting from electromagnetic decays of neutral hadrons like
-the $\pi^{0}$.  Thus, all particles reconstructed by the PF algorithm are considered
-during jet reconstruction.
-
-\begin{table}[h]
-\caption{The Particle Flow algorithm reconstructs particles, and, based on the reconstructed
-track and or calorimeter information, assigns each particle to one of these categories.}
-\label{tab:pfRecoBins}
-\centering
-\begin{tabular}{c|c}
-Particle Category & Distinguishing Features \\  \hline
-	Photon &  has no track, only energy in ECAL  \\ \hline
-	Electron &  has track geometrically linked to energy in ECAL  \\ \hline
-	Muon &  has track geometrically linked to energy in muon detector  \\ \hline
-	Charged Hadron &  has track geometrically linked to energy in HCAL or HCAL and ECAL  \\ \hline
-	Neutral Hadron &  has no track, only energy in HCAL or HCAL and ECAL  \\ \hline
-\end{tabular}
-\end{table}
-
-In each event the vertex with the highest $\Sigma p_{T}$ of all tracks is identified
-as the primary vertex, and all other reconstructed vertices are pileup
-vertices.
-Charged hadrons, electrons and muons whose tracks come from pileup vertices
-are removed from the list of possible jet constituents to mitigate the effect
-of pileup interactions.  The remaining reconstructed particles are clustered
-into jets using the anti-$k_{T}$ algorithm \cite{antikt}.  This algorithm
-takes the $i^{th}$ particle from the list of possible jet constituents, and
-calculates the distance parameter $d_{ij}$
-
-\begin{equation}
-	$d_{ij} = min(k_{Ti}^{-2},k_{Tj}^{-2})\frac{\Delta^{2}}{R^{2}}$
-\end{equation}
-
-using the $j^{th}$ particle in the same list, where $\Delta$ is the angular
-separation between the $i^{th}$ and $j^{th}$ particle, R is 0.4, and $k_{Ti}$
-is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle has 
-$d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle is a jet constituent
-and is removed from the constituent list and placed in a new list $L_{1}$.
-This procedure is repeated for all particles in the list of possible jet constituents,
-then repeated for all elements in the new list $L_{1}$.  The iteration over
-all particles in the newly created list continues N times, creating N lists,
-until the lists $L_{N}$ and $L_{N-1}$ have the same number of elements.
-
-Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
-are corrected in several steps.  Neutral hadrons produced by pileup interactions
-can still be clustered into jets, so the first correction reduces the energy
-of every jet in a data or simulated event based on the jet area and the total neutral hadron
-energy density in the event \cite{pileup1} \cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
-and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
-jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
-agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
-range of reconstructed jet $p_{T}$ and $\eta$.  A second set of $p_{T}$ and
-$\eta$ dependent energy corrections, derived from \MC and applied to data
-events, bring the jet response in data into closer agreement with the jet
-response in \MC.  More details on jet energy corrections, such as the types
-of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
-
-After jets in data and simulation are reconstructed and corrected, jet
-identification, acceptance and energy requirements are applied.  The
-identification and acceptance criteria require each jet to have
-
-\begin{itemize}
-	\item $|\eta| \leq 2.4$
-	\item less than 90\% of its energy comes from neutral hadrons
-	\item less than 90\% of its energy comes from photons
-	\item at least 2 constituents (from reconstructed PF particles)
-	\item more than 0\% of its energy comes from charged hadrons
-	\item at least one constituent is a charged hadron
-	\item less than 99\% of its energy comes from electrons
-\end{itemize}
-
-The identification requirements are designed to increase the fraction of
-selected jets which originate from real hadronic activity.  After acceptance
-and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
-the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
-to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
-\ref{tab:lowerJetPtCuts}, a lower $p_{T}$ cut on the subleading jet would
-increase backgrounds without a corresponding increase in \WR signal.
-
-\begin{table}[h]
-	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $p_{T}$
-		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
-	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
-	\label{tab:lowerJetPtCuts}
-	\centering
-	\begin{tabular}{c|c}
-		Sublead jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
-		30 &  12.1  \\ \hline
-		40 &  12.6  \\ \hline
-	\end{tabular}
-\end{table}
-
-\subsection{Muon Reconstruction and Selection}
-\label{muonRecoAndSelection}
-The search for \WR signals in events with two final state $\mu$s .
-
-%The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
-%clusters from ECAL energy deposits.  Each electron candidate is then built from a track
-%whose end point and trajectory are geometrically matched to at least one ECAL energy
-%cluster.  If several real electrons (or positrons) have well separated tracks that point
-%towards the same ECAL energy cluster, then that ECAL cluster will be shared between
-%several PF electron candidates.
+%to estimate backgrounds, derive
+%scale factors, reinterpret \WR cross section limits, and identify kinematic regions for
+%hypothetical \WR boson signals with specific \WR masses.  The \MC samples used to estimate backgrounds
+%and systematic uncertainties, identify kinematic regions for specific \WR boson signals, and derive
+%scale factors were produced by the CMS \MC production group.  Events produced by this group were
+%passed through a full simulation of the CMS detector using GEANT4 \cite{geant4}, were hadronized\footnote{hadronization
+%is the process through which unstable quarks and gluons produced at the Feynman diagram level of simulation
+%are transformed into stable jets observed by CMS} using \PYTHIA, and detector information was reconstructed
+%into particles using the same CMS particle reconstruction library used with collision data.
+%Fully reconstructed simulated events were required to pass the same trigger as the collision
+%data events they were being compared to.  For example, \DY +jet events used to estimate the SM
+%background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
+%(single muon) trigger discussed earlier (section \ref{sec:collisionData}).
+%\MC samples were produced by the CMS \MC production group for all SM processes which can yield
+%the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
+%of diboson pairs is not considered due to its low cross section times branching
+%fraction}, and high cross section SM processes which can produce two jets
+%and two fake leptons.  These processes are \DY (DY)+jets, W+jets, t$\bar{t}$+jets generated
+%with \MADGRAPH \cite{madgraph}, single top and top+W generated with \POWHEG \cite{powheg}, and
+%QCD and diboson (WW, WZ, ZZ) generated with \PYTHIA \cite{pythia8}\cite{Sjostrand:2006za}.
+%These samples and their generators are listed in Table \ref{tab:centrallyProducedMC} along
+%with their cross sections, and the number of events in each sample.
 %
-%After reconstruction, electron candidates are .
+%\begin{table}[bt]
+%\caption{Fully reconstructed \MC samples produced by the CMS \MC production group.  Cross sections
+%	are calculated at next-to-leading order (NLO) unless noted otherwise.  The \DY and t$\bar{t}$+jets events
+%were produced with a dilepton mass $M_{LL} > 50 \GeV$ cut using the two
+%leptons coming from the hard interaction.}
+%\label{tab:centrallyProducedMC}
+%
+%\centering
+%\resizebox{\textwidth}{!}{
+%	\begin{tabular}{ |c|c|c|c| } 
+%	\hline
+%		Dataset         & Generator & $\sigma$ $\times$ filter efficiency (pb) & Events   \\
+%		\hline
+%		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991 (LO)   & 9042031 \\ \hline
+%		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3 (LO)   & 2725655 \\ \hline
+%		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42 (LO)   & 973937 \\ \hline
+%		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984 (LO)   & 1067758 \\ \hline
+%		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704 (LO)   & 998912 \\ \hline
+%		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\ \hline
+%		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 1680200 \\ \hline
+%		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 3299800 \\ \hline
+%		$\bar{t}$+W   & \POWHEG & 35.85 & 988500 \\ \hline
+%		t+W   & \POWHEG & 35.85 & 995600 \\ \hline
+%		WW  & \PYTHIA & 113.8   & 993640   \\ \hline
+%		ZZ  & \PYTHIA & 10.15   & 996944   \\ \hline
+%		WZ  & \PYTHIA & 23.4   & 978512   \\ \hline
+%		W+jets, $W \rightarrow l\nu$ & \MADGRAPH & 50270 (NNLO)   & 72207128 \\ \hline
+%		QCD Pt 15-20 $e\gamma$ enriched  & \PYTHIA & 2302200   & 2122959   \\ \hline
+%		QCD Pt 15-20 $\mu$ enriched  & \PYTHIA & 3819570   & 2362016   \\ \hline
+%		QCD Pt 20-30 $e\gamma$ enriched  & \PYTHIA & 5352960     & 9184197   \\ \hline
+%		QCD Pt 20-30 $\mu$ enriched  & \PYTHIA & 2960198    & 5311955   \\ \hline
+%		QCD Pt 30-50 $e\gamma$ enriched  & \PYTHIA & 9928000    & 4736965   \\ \hline
+%		QCD Pt 30-50 $\mu$ enriched  & \PYTHIA & 1652471    & 4946084   \\ \hline
+%		QCD Pt 50-80 $e\gamma$ enriched  & \PYTHIA & 2890800    & 5291543   \\ \hline
+%		QCD Pt 50-80 $\mu$ enriched  & \PYTHIA & 437504     & 5058536   \\ \hline
+%		QCD Pt 80-120 $e\gamma$ enriched  & \PYTHIA & 350000  & 8130424   \\ \hline
+%		QCD Pt 80-120 $\mu$ enriched  & \PYTHIA & 106034    & 3882463   \\ \hline
+%		QCD Pt 120-170 $e\gamma$ enriched  & \PYTHIA & 62964   & 8513976   \\ \hline
+%		QCD Pt 120-170 $\mu$ enriched  & \PYTHIA & 25191    & 4026104   \\ \hline
+%		QCD Pt 170-300 $\mu$ enriched  & \PYTHIA & 8654     & 3949716   \\ \hline
+%		QCD Pt 170-300 $e\gamma$ enriched  & \PYTHIA & 18810     & 5735584   \\ \hline
+%		QCD Pt $>$ 300 $e\gamma$ enriched  & \PYTHIA & 1350    & 3707833   \\ \hline
+%		QCD Pt 300-470 $\mu$ enriched  & \PYTHIA & 797.4     & 3960205   \\ \hline
+%		QCD Pt 470-600 $\mu$ enriched  & \PYTHIA & 79.03     & 1928595   \\ \hline
+%		QCD Pt 600-800 $\mu$ enriched  & \PYTHIA & 25.1      & 1983363   \\ \hline
+%		QCD Pt 800-1000 $\mu$ enriched  & \PYTHIA & 4.71     & 1982314   \\ \hline
+%		QCD Pt $>$ 1000 $\mu$ enriched  & \PYTHIA & 1.62      & 1981954   \\ \hline
+%		$\WR \rightarrow l\Nell$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 50000   \\ \hline
+%		\end{tabular}
+%}
+%\end{table}
+%
+%The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
+%final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
+%features of this model are explained in Chapter \ref{wrBosonAndHeavyNu}.  \WR signal
+%samples were produced with $M_{\Nell} = M_{\WR}/2$, and $M_{\WR}$ starting at 800 $\GeV$ and
+%increasing, in increments of 200 $\GeV$, to 6000 $\GeV$.  The electron and muon triggers
+%discussed earlier must also be fired in these \WR signal events.
+%
+%The number of reconstructed interaction vertices from all collision datasets described
+%earlier approximates a Poisson distribution, and the average number of reconstructed
+%interaction vertices in each event in 2015 was above 9.  In each collision event, this
+%set of interaction vertices is comprised of the primary interaction vertex which
+%resulted in one or more lepton triggers firing, and secondary interaction vertices,
+%typically caused by QCD, which resulted in additional energy being measured by CMS.
+%These secondary interaction vertices are created as a result of the high instantaneous
+%luminosity, and, in the context of this search, their only effect is to obfuscate
+%signs of a \WR boson.  To reproduce the effect of secondary interaction vertices, all
+%simulated event samples produced by the CMS \MC group are mixed with "minimum bias"
+%events before simulating the detector response and subsequent particle reconstruction.
+%Each minimum bias event has only one interaction vertex that results in at least
+%one particle travelling into CMS with sufficient energy to be detected\footnote{The minimum
+%bias events mixed into simulated events, in principle, can come from any known and
+%well measured SM process.  However, the enormous cross section of proton proton
+%inelastic scattering and other low momentum transfer QCD processes means the vast
+%majority of minimum bias events come from low momentum transfer QCD processes}.
+%The number of minimum bias events mixed into one simulated event is determined
+%by sampling a random number from a Poisson distribution whose mean was set equal
+%to the expected number of average reconstructed vertices in 2015 collision events.
+%This expected average was calculated before 2015 collisions began, so \MC events 
+%used in this analysis are reweighted based on the true difference between reconstructed
+%vertices in \MC and collision data.
+%
+%A set of \WR \MC signal samples were privately produced only to extend \WR cross
+%section limits set for $M_{\Nell} = M_{\WR}/2$ to a 2D plane of possible \WR
+%and \Nell mass values.  These private samples were produced using the same
+%\PYTHIA generator and parameters used by the CMS \MC production group, but the
+%detector response simulation and particle reconstruction steps were omitted.
+%In addition, no trigger requirements are applied.
+%Samples were produced starting at $M_{\WR} = 800 \GeV$
+%and $M_{\Nell} = 100 \GeV$, and $M_{\WR}$ increasing to 4000 $\GeV$ in increments
+%of 100 $\GeV$.  At each $M_{\WR}$, 15000 events are produced for every $M_{\Nell}$
+%value, starting at 100 $\GeV$ and increasing in increments of 100 $\GeV$ up to
+%$M_{\Nell} = M_{\WR} - 100 \GeV$.
+%
+%
+%\section{Jet and Lepton Reconstruction and Selection}
+%
+%\subsection{Jet Reconstruction and Selection}
+%\label{jetRecoAndSelection}
+%The Particle Flow (PF) algorithm, introduced in Chapter \ref{sec:experiment_chapter}, is used
+%to reconstruct all particles which interact with the tracker, calorimeters and muon
+%detectors of CMS.  Reconstructed particles are grouped into five categories, each with their
+%own distinguishing features, shown in Table \ref{tab:pfRecoBins}.  Information
+%from every subdetector is combined to determine the energy and momentum of
+%each reconstructed particle.  Jets originate from unstable quarks and gluons,
+%but what is actually detected are the stable daughter particles created by
+%quark and gluon decays.  These include stable charged and neutral hadrons ($\pi^{\pm}$,
+%$K^{0}$), stable charged leptons ($e^{\pm}$, $\mu^{\pm}$) created by weak boson
+%decays, and photons resulting from electromagnetic decays of neutral hadrons like
+%the $\pi^{0}$.  Thus, all particles reconstructed by the PF algorithm are considered
+%during jet reconstruction.
+%
+%\begin{table}[h]
+%\caption{The Particle Flow algorithm reconstructs particles, and, based on the reconstructed
+%track and or calorimeter information, assigns each particle to one of these categories.}
+%\label{tab:pfRecoBins}
+%\centering
+%\begin{tabular}{c|c}
+%Particle Category & Distinguishing Features \\  \hline
+%	Photon &  has no track, only energy in ECAL  \\ \hline
+%	Electron &  has track geometrically linked to energy in ECAL  \\ \hline
+%	Muon &  has track geometrically linked to energy in muon detector  \\ \hline
+%	Charged Hadron &  has track geometrically linked to energy in HCAL or HCAL and ECAL  \\ \hline
+%	Neutral Hadron &  has no track, only energy in HCAL or HCAL and ECAL  \\ \hline
+%\end{tabular}
+%\end{table}
+%
+%In each event the vertex with the highest $\Sigma p_{T}$ of all tracks is identified
+%as the primary vertex, and all other reconstructed vertices are pileup
+%vertices.
+%Charged hadrons, electrons and muons whose tracks come from pileup vertices
+%are removed from the list of possible jet constituents to mitigate the effect
+%of pileup interactions.  The remaining reconstructed particles are clustered
+%into jets using the anti-$k_{T}$ algorithm \cite{antikt}.  This algorithm
+%takes the $i^{th}$ particle from the list of possible jet constituents, and
+%calculates the distance parameter $d_{ij}$
+%
+%\begin{equation}
+%	$d_{ij} = min(k_{Ti}^{-2},k_{Tj}^{-2})\frac{\Delta^{2}}{R^{2}}$
+%\end{equation}
+%
+%using the $j^{th}$ particle in the same list, where $\Delta$ is the angular
+%separation between the $i^{th}$ and $j^{th}$ particle, R is 0.4, and $k_{Ti}$
+%is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle has 
+%$d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle is a jet constituent
+%and is removed from the constituent list and placed in a new list $L_{1}$.
+%This procedure is repeated for all particles in the list of possible jet constituents,
+%then repeated for all elements in the new list $L_{1}$.  The iteration over
+%all particles in the newly created list continues N times, creating N lists,
+%until the lists $L_{N}$ and $L_{N-1}$ have the same number of elements.
 %
 %Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
 %are corrected in several steps.  Neutral hadrons produced by pileup interactions
@@ -616,38 +580,100 @@ The search for \WR signals in events with two final state $\mu$s .
 %\end{itemize}
 %
 %The identification requirements are designed to increase the fraction of
-%selected electrons which originate from real electromagnetic activity.  After acceptance
+%selected jets which originate from real hadronic activity.  After acceptance
 %and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
 %the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
 %to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
-%\ref{tab:lowerMuonPtCuts}, a lower $p_{T}$ cut on the subleading jet would
+%\ref{tab:lowerJetPtCuts}, a lower $p_{T}$ cut on the subleading jet would
 %increase backgrounds without a corresponding increase in \WR signal.
 %
 %\begin{table}[h]
-%	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $p_{T}$
+%	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $p_{T}$
 %		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
-%	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering these cuts would worsen S/$\sqrt{B}$.}
-%	\label{tab:lowerMuonPtCuts}
+%	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
+%	\label{tab:lowerJetPtCuts}
 %	\centering
-%	\begin{tabular}{c|c|c}
-%		final state particle & $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
-%		sublead $\mu$ & 40 &  11.9  \\
-%		sublead $\mu$ & 53 &  12.6  \\ \hline
-%		lead $\mu$ & 50 &  12.1  \\
-%		lead $\mu$ & 60 &  12.6  \\ \hline
+%	\begin{tabular}{c|c}
+%		Sublead jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+%		30 &  12.1  \\ \hline
+%		40 &  12.6  \\ \hline
 %	\end{tabular}
 %\end{table}
-
-
-
-\subsection{Electron Reconstruction and Selection}
-\label{eleRecoAndSelection}
-The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
-clusters from ECAL energy deposits.  Each electron candidate is then built from a track
-whose end point and trajectory are geometrically matched to at least one ECAL energy
-cluster.  If several real electrons (or positrons) have well separated tracks that point
-towards the same ECAL energy cluster, then that ECAL cluster will be shared between
-several PF electron candidates.
+%
+%\subsection{Muon Reconstruction and Selection}
+%\label{muonRecoAndSelection}
+%The search for \WR signals in events with two final state $\mu$s .
+%
+%%The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
+%%clusters from ECAL energy deposits.  Each electron candidate is then built from a track
+%%whose end point and trajectory are geometrically matched to at least one ECAL energy
+%%cluster.  If several real electrons (or positrons) have well separated tracks that point
+%%towards the same ECAL energy cluster, then that ECAL cluster will be shared between
+%%several PF electron candidates.
+%%
+%%After reconstruction, electron candidates are .
+%%
+%%Once the jets are clustered, their raw energies ($ = \Sigma E$ of constituents)
+%%are corrected in several steps.  Neutral hadrons produced by pileup interactions
+%%can still be clustered into jets, so the first correction reduces the energy
+%%of every jet in a data or simulated event based on the jet area and the total neutral hadron
+%%energy density in the event \cite{pileup1} \cite{pileup2}.  Subsequently, energy corrections based on jet $\eta$
+%%and $p_{T}$ are applied.  These corrections, derived from \MC and applied to
+%%jets in data and simulated events, brings the reconstructed jet $p_{T}$ into closer
+%%agreement with the true (quark-gluon level) jet $p_{T}$ across the entire
+%%range of reconstructed jet $p_{T}$ and $\eta$.  A second set of $p_{T}$ and
+%%$\eta$ dependent energy corrections, derived from \MC and applied to data
+%%events, bring the jet response in data into closer agreement with the jet
+%%response in \MC.  More details on jet energy corrections, such as the types
+%%of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
+%%
+%%After jets in data and simulation are reconstructed and corrected, jet
+%%identification, acceptance and energy requirements are applied.  The
+%%identification and acceptance criteria require each jet to have
+%%
+%%\begin{itemize}
+%%	\item $|\eta| \leq 2.4$
+%%	\item less than 90\% of its energy comes from neutral hadrons
+%%	\item less than 90\% of its energy comes from photons
+%%	\item at least 2 constituents (from reconstructed PF particles)
+%%	\item more than 0\% of its energy comes from charged hadrons
+%%	\item at least one constituent is a charged hadron
+%%	\item less than 99\% of its energy comes from electrons
+%%\end{itemize}
+%%
+%%The identification requirements are designed to increase the fraction of
+%%selected electrons which originate from real electromagnetic activity.  After acceptance
+%%and identification cuts, all jets must have $p_{T} > 40 \GeV$.  Lowering
+%%the jet $p_{T}$ cut was explored, as a lower cut would increase sensitivity
+%%to \WR signals with \WR mass below 1.8 $\TeV$.  However, as shown in Table
+%%\ref{tab:lowerMuonPtCuts}, a lower $p_{T}$ cut on the subleading jet would
+%%increase backgrounds without a corresponding increase in \WR signal.
+%%
+%%\begin{table}[h]
+%%	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $p_{T}$
+%%		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
+%%	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering these cuts would worsen S/$\sqrt{B}$.}
+%%	\label{tab:lowerMuonPtCuts}
+%%	\centering
+%%	\begin{tabular}{c|c|c}
+%%		final state particle & $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+%%		sublead $\mu$ & 40 &  11.9  \\
+%%		sublead $\mu$ & 53 &  12.6  \\ \hline
+%%		lead $\mu$ & 50 &  12.1  \\
+%%		lead $\mu$ & 60 &  12.6  \\ \hline
+%%	\end{tabular}
+%%\end{table}
+%
+%
+%
+%\subsection{Electron Reconstruction and Selection}
+%\label{eleRecoAndSelection}
+%The PF algorithm reconstructs tracks from charged particles, and electromagnetic energy
+%clusters from ECAL energy deposits.  Each electron candidate is then built from a track
+%whose end point and trajectory are geometrically matched to at least one ECAL energy
+%cluster.  If several real electrons (or positrons) have well separated tracks that point
+%towards the same ECAL energy cluster, then that ECAL cluster will be shared between
+%several PF electron candidates.
 
 %After reconstruction, electron candidates are .
 %
