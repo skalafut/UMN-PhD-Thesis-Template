@@ -17,7 +17,7 @@ high-mass \WR and \nul signatures.
 \label{sec:triggers}
 Charged leptons that came from proton-proton interactions were identified by the trigger system.  Based 
 on the multiplicity and energy of charged leptons, the trigger system selected events during 
-collisions, and saved these events to permanent storage for further analysis.  All triggers presented 
+collisions, and saved these events to permanent storage for further analysis.  The triggers presented 
 here selected events in two steps.  In the first step, one or more Level-1 triggers were 
 required to fire.  Then, in regions where Level-1 triggers fired, local reconstruction was run to 
 build calorimeter and muon detector hits into granular, 3D energy clusters.  In the second step, 
@@ -217,7 +217,7 @@ analysis, and in each run era individual datasets were $\thicksim$5 terabytes or
 \label{sec:MC}
 
 Monte Carlo (\MC) simulations were used in this search to model two types of processes.  The first 
-type were Standard Model (SM) processes that resulted in the reconstruction of two charged leptons 
+type was Standard Model (SM) processes that resulted in the reconstruction of two charged leptons 
 and two jets.  These included processes that produced two real charged leptons and two jets, like 
 $pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
 were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
@@ -233,7 +233,7 @@ components.  In simulations, the generator accounted for:
 	\item How the incoming proton energy was distributed amongst constituent quarks and gluons according 
 		to parton distribution functions (PDFs).
 	\item The masses of the \WR, \nul and all particles in the SM.
-	\item The coupling strengths between fermions and the bosons that mediate pp interactions.
+	\item The coupling strengths between fermions and the bosons that mediated interactions.
 \end{itemize}
 
 Any unstable particles produced in the interaction, like a $Z$ or \WR boson, decayed according to 
@@ -263,37 +263,6 @@ created a \MC dataset with the same structure as the slimmed collision datasets.
 was used to simulate the \WR signal process at different \mWR and \mnul masses, and the SM processes 
 summarized in Table \ref{tab:centrallyProducedMC}.
 
-In simulations of the SM processes, different \MC generators were used in the first simulation step.  
-The \DY (DY)+jets, W+jets, and t$\bar{t}$+jets simulations used the \MADGRAPH \cite{madgraph} generator, 
-the single top and top+W simulations used the \POWHEG \cite{powheg} generator, and the diboson (WW, WZ, ZZ) 
-simulations used the \PYTHIA \cite{pythia8,Sjostrand:2006za} generator.  In all of these 
-simulations, \PYTHIA was used to hadronize free quarks and gluons into jets with the NNPDF23 PDF set 
-\cite{nnpdf}.
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%old
-%to estimate backgrounds, derive
-%scale factors, reinterpret \WR cross section limits, and identify kinematic regions for
-%hypothetical \WR boson signals with specific \WR masses.  The \MC samples used to estimate backgrounds
-%and systematic uncertainties, identify kinematic regions for specific \WR boson signals, and derive
-%scale factors were produced by the CMS \MC production group.  Events produced by this group were
-%passed through a full simulation of the CMS detector using GEANT4 \cite{geant4}, were hadronized\footnote{hadronization
-%is the process through which unstable quarks and gluons produced at the Feynman diagram level of simulation
-%are transformed into stable jets observed by CMS} using \PYTHIA, and detector information was reconstructed
-%into particles using the same CMS particle reconstruction library used with collision data.
-%Fully reconstructed simulated events were required to pass the same trigger as the collision
-%data events they were being compared to.  For example, \DY +jet events used to estimate the SM
-%background in the eejj ($\mu\mu jj$) final state were required to pass the double electron
-%(single muon) trigger discussed earlier (section \ref{sec:collisionData}).
-%\MC samples were produced by the CMS \MC production group for all SM processes which can yield
-%the same final state as a \WR boson at an appreciable rate\footnote{for example, Vector Boson Fusion production
-%of diboson pairs is not considered due to its low cross section times branching
-%fraction}, and high cross section SM processes which can produce two jets
-%and two fake leptons.  These processes are \DY (DY)+jets, W+jets, t$\bar{t}$+jets generated
-%with \MADGRAPH \cite{madgraph}, single top and top+W generated with \POWHEG \cite{powheg}, and
-%QCD and diboson (WW, WZ, ZZ) generated with \PYTHIA \cite{pythia8}\cite{Sjostrand:2006za}.
-%These samples and their generators are listed in Table \ref{tab:centrallyProducedMC} along
-%with their cross sections, and the number of events in each sample.
 
 \begin{table}[bt]
 \caption{Fully reconstructed \MC samples produced by the CMS \MC production group.  Cross sections
@@ -306,7 +275,7 @@ leptons coming from the hard interaction.}
 \resizebox{\textwidth}{!}{
 	\begin{tabular}{ |c|c|c|c| } 
 	\hline
-		Dataset         & Step 1 Generator & cross section (pb) & Events   \\
+	Dataset         & Step 1 Generator & cross section (pb) & Size (fb$^{-1}$)   \\
 		\hline
 		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991 (LO)   & 9042031 \\ \hline
 		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3 (LO)   & 2725655 \\ \hline
@@ -326,6 +295,26 @@ leptons coming from the hard interaction.}
 		\end{tabular}
 }
 \end{table}
+
+In simulations of the SM processes, different \MC generators were used in the first simulation step.  
+The \DY (DY)+jets, W+jets, and t$\bar{t}$+jets simulations used the \MADGRAPH \cite{madgraph} generator, 
+the single top and top+W simulations used the \POWHEG \cite{powheg} generator, and the diboson (WW, WZ, ZZ) 
+simulations used the \PYTHIA \cite{pythia8,Sjostrand:2006za} generator.  In all of these 
+simulations, \PYTHIA was used to hadronize free quarks and gluons into jets with the NNPDF23 PDF set 
+\cite{nnpdf}.  Events used from these \MC datasets were required to pass at least one of the High 
+Level triggers described earlier.
+
+The \WR signal process was simulated using the \PYTHIA generator and NNPDF23 PDF set, and following 
+the assumptions stated in Chapter \ref{wrBosonAndHeavyNu}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
+final states were simulated independently, with \mWR increasing from 0.8 to 6 \TeV in increments of 
+0.2 \TeV, and $\mnul = \frac{1}{2}\mWR$.  Events from the $\WR \rightarrow \mu\mu jj$ samples were 
+required to pass the single \mu, $p_{T} > 50$ \GeV High Level trigger described previously, while 
+$\WR \rightarrow eejj$ events were required to pass the double electron $E_{T} > 33$ \GeV High Level 
+trigger.
+
+%describe GEN only WR signal samples
+%then discuss PU reweighting
+
 
 %The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
 %final states, using the Left-Right Symmetric SM extension model built into \PYTHIA.  Specific
