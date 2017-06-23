@@ -312,8 +312,15 @@ required to pass the single \mu, $p_{T} > 50$ \GeV High Level trigger described 
 $\WR \rightarrow eejj$ events were required to pass the double electron $E_{T} > 33$ \GeV High Level 
 trigger.
 
+As stated previously, in the second step of \MC simulations, simulated events from randomly chosen SM 
+processes were mixed into the main events being simulated.  For each event simulated for the main 
+process (\WR or SM), the number of secondary events mixed in were pulled from a Poisson distribution 
+with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
+or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
+events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
+applied to every simulated event before any further analysis of simulated events.
+
 %describe GEN only WR signal samples
-%then discuss PU reweighting
 
 
 %The CMS \MC production group also generated \WR signal samples, with both eejj and $\mu\mu jj$
