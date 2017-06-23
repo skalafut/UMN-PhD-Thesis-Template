@@ -277,21 +277,21 @@ leptons coming from the hard interaction.}
 	\hline
 	Dataset         & Step 1 Generator & cross section (pb) & Size (fb$^{-1}$)   \\
 		\hline
-		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991 (LO)   & 9042031 \\ \hline
-		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3 (LO)   & 2725655 \\ \hline
-		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42 (LO)   & 973937 \\ \hline
-		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984 (LO)   & 1067758 \\ \hline
-		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704 (LO)   & 998912 \\ \hline
-		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67 (LO)   & 24521141 \\ \hline
-		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 1680200 \\ \hline
-		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 3299800 \\ \hline
-		$\bar{t}$+W   & \POWHEG & 35.85 & 988500 \\ \hline
-		t+W   & \POWHEG & 35.85 & 995600 \\ \hline
-		WW  & \PYTHIA & 113.8   & 993640   \\ \hline
-		ZZ  & \PYTHIA & 10.15   & 996944   \\ \hline
-		WZ  & \PYTHIA & 23.4   & 978512   \\ \hline
-		W+jets $\rightarrow l\nu$+jets & \MADGRAPH & 50270 (NNLO)   & 72207128 \\ \hline
-		$\WR \rightarrow l\nul$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 50000   \\ \hline
+		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991    & 1.51 \\ \hline
+		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3    & 15.0 \\ \hline
+		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42    & 19.3 \\ \hline
+		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984    & 153. \\ \hline
+		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704    & 369. \\ \hline
+		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
+		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 20.8 \\ \hline
+		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 24.3 \\ \hline
+		$\bar{t}$+W   & \POWHEG & 35.85 & 27.6 \\ \hline
+		t+W   & \POWHEG & 35.85 & 27.8 \\ \hline
+		WW  & \PYTHIA & 113.8   & 8.73   \\ \hline
+		ZZ  & \PYTHIA & 10.15   & 98.2   \\ \hline
+		WZ  & \PYTHIA & 23.4   & 41.8   \\ \hline
+		W+jets $\rightarrow l\nu$+jets & \MADGRAPH & 50270   & 1.44 \\ \hline
+		$\WR \rightarrow l\nul$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 5$\times 10^{6}$ - 11.6   \\ \hline
 		\end{tabular}
 }
 \end{table}
@@ -351,7 +351,7 @@ were not always able to traverse multiple layers of the iron return yoke to be d
 muon chambers.  In both algorithms, if multiple matching tracks were found, the track assigned to the muon 
 was the one whose trajectory was the closest match to the extrapolated track.
 
-In the search presented here, the momenta of reconstructed muons were determined using the "TuneP" algorithm 
+In the search presented here, the momenta of reconstructed muons were determined using the "Tune-P" algorithm 
 \cite{cmsMuonRecoRunTwo}, which was developed to improve the momentum resolution with which high $p_{T}$ 
 muons were measured.  For every muon, this algorithm simultaneously runs four algorithms that try to measure 
 the momentum and fit a track to the entire reconstructed muon with the lowest $\chi^{2}/nDOF$.  All algorithms used all available 
@@ -359,8 +359,86 @@ information from the silicon tracker, and combined muon detector measurements an
 different ways.  The first algorithm used all muon detector measurements, but gave greater weight to silicon 
 tracker measurements in the track fit and momentum measurement.  The second algorithm used equally weighted 
 tracker and muon detector measurements to fit a track, and used infrequent but distinct electromagnetic showers 
-in all muon chambers to determine the muon momentum.  The third algorithm used only the first layer of muon 
-chambers closest to the magnet solenoid .
+in all muon chambers to determine the muon momentum.  The third algorithm only used measurements made in the 
+first layer of muon chambers closest to the magnet solenoid, where the muon has traversed the least amount of 
+material before being detected, in combination with the tracker measurements to fit a curve to the global muon 
+path, and determine the muon momentum.  The fourth algorithm dynamically truncated the length of the curve 
+fitted to the global muon path when a large energy loss caused the muon to dramatically change direction, 
+and as a result used as few as one layer of muon chambers to determine the trajectory and momentum of a muon.  
+After all four algorithms were run, the "Tune-P" algorithm assigned the momentum to the muon from the algorithm 
+that yielded a track fit with the lowest $\chi^{2}/nDOF$ and $\sigma(p_{T})/p_{T}$.  This procedure improved 
+the muon momentum resolution for $p_{T} > 200$ \GeV, which in general degrades as muon $p_{T}$ increases as 
+shown in Chapter \ref{sec:experiment_chapter}.
+
+Following the momentum determination, muons were required to pass additional $p_{T}$ selections, and 
+identification selections designed to reject muons that were produced by decays or interactions away from the 
+collision point, or jets incorrectly reconstructed as muons.  These requirements were applied identically to events 
+in data and simulations.  To increase sensitivity to a \WR signal relative to the SM backgrounds, all muons must 
+have $\pt > 53$ \GeV.  As shown in Table \ref{tab:lowerMuonPt}, the sensitivity of this search decreased using 
+a looser $\mu$ $\pt$ selection.  After the $\pt$ cut, muons were required to pass the following selections:
+
+\begin{itemize}
+	\item The track fit obtained from "Tune-P" included at least one muon chamber hit.
+	\item The origin of the track fit obtained from "Tune-P" was within 2 (5) \mm of the primary vertex in the $x,y$ plane ($z$ axis).
+	\item Muon detector tracks were reconstructed in at least two muon chambers.
+	\item The relative $\pt$ error on the muon momentum from "Tune-P" was below 30\%, $\sigma(p_{T})/p_{T} < 0.3$.
+	\item The track obtained from the initial muon reconstruction had at least one hit in the silicon pixel detector, and had 
+		hits in at least five layers in the entire tracker.
+	\item In a $\Delta R = 0.3$ cone centered on the muon track in the silicon tracker, the $\Sigma \pt$ of all 
+		tracks in the cone not matched with the muon must be low compared to the muon $\pt$, $\frac{\Sigma \pt}{\mu \pt} < 0.1$.
+\end{itemize}
+
+\begin{table}[h]
+	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $\pt$
+		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events
+	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the $\mu$ $\pt$ cut would worsen S/$\sqrt{B}$.}
+	\label{tab:lowerMuonPtCuts}
+	\centering
+	\begin{tabular}{c|c}
+		$\mu$ $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		40 &  11.9  \\
+		53 &  12.6  \\ \hline
+	\end{tabular}
+\end{table}
+
+There are known differences between simulations and data that effect the reconstruction and selection efficiencies 
+of muons, and these differences are corrected by applying weights to muons in simulated events, and energy 
+corrections to muons in data and simulated events.  In general the muon triggers were more efficient in simulations than in 
+collisions, so the weight of every simulated event is scaled down by a factor based on the $\pt$ and $\eta$ of the 
+triggering muon.  For the $\pt > 50$ \GeV trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
+correction factors applied to the triggering muon in simulated events are shown in Table \ref{tab:muTrgCorrs}.  
+Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
+events in data and simulations, it was known that the muon energy scale and resolution differed between simulations 
+and data\footnote{the peak position differed due to different muon energy scale calibrations, and the width differed 
+because the muon energy resolution differed between simulations and data}.  The $\pt$ of muons in data were corrected 
+based on their $\eta$, $\phi$, charge and initial $\pt$ to bring the muon energy scale in data and 
+simulations into agreement.  Using the same kinematic variables, the $\pt$ of muons in simulations were corrected 
+to bring the muon energy resolution into agreement between data and simulations.  These corrections were applied 
+before the $\pt > 53$ \GeV cut mentioned earlier.  Additional weights were applied to every simulated muon 
+to eliminate the difference in muon identification selection efficiency between data and simulations.  For 
+any reconstructed muon this weight was always below 1.0 and above 0.985, and the uncertainty on the weight 
+was below 0.001.
+
+\begin{table}[htp]
+  \caption{The correction factor applied to the triggering muon, as a function of its $\pt$ and $\eta$, in simulated events.}
+  \label{tab:muTrgCorrs}
+  \centering
+  \begin{tabular}{ccccc}
+	  \hline
+	  $53 < \pt < 140$ & & & & \\
+	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
+	  \MC correction  & $0.971$ & $0.964$ & $0.961$ & $0.951$  \\
+	  \MC correction uncertainty & $0.00079$ & $0.0021$ & $0.0013$ & $0.0043$  \\
+	  \hline
+	  $140 < \pt$ & & & & \\
+	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
+	  \MC correction  & $0.971$ & $0.999$ & $0.999$ & $1.04$  \\
+	  \MC correction uncertainty & $0.0076$ & $0.025$ & $0.015$ & $0.051$  \\
+	  \hline
+  \end{tabular}
+\end{table}
+
+
 
 %\subsection{Jet Reconstruction and Selection}
 %\label{jetRecoAndSelection}
