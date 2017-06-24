@@ -579,4 +579,41 @@ increased SM backgrounds without a corresponding increase in \WR signal.
 \end{table}
 
 
+\section{\WR Candidate Selection}
+\label{sec:wrCandSelection}
+%Following individual selections on electrons, muons and jets, \WR candidates are builhhhhhhhhhhhhhhhhhhhhhhhhhkt
+Following the reconstruction of and selections applied to electrons, muons and jets, a \WR candidate in every 
+event in the $\mu\mu$ (ee) channels was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
+highest $\pt$ jets.  In the $e\mu$ channel used for background estimation, the highest $\pt$ muon and highest $\Et$ 
+electron were used to build an $e\mu jj$ candidate.  To increase sensitivity to a \WR boson signal, one lepton 
+was required to have $\pt$ or $\Et > 60$ \GeV.  In addition, to significantly reduce the \DY+jets and diboson 
+backgrounds, the combination of the two leptons was required to have mass $\Mll > 200$ \GeV.  After these lepton 
+selections, the following selections were applied to the two leading jets in each event to ensure they did not 
+overlap with the selected leptons:
+
+\begin{itemize}
+	\item $\Delta R(\ell_{1}, j_{1}) > 0.4$
+	\item $\Delta R(\ell_{1}, j_{2}) > 0.4$
+	\item $\Delta R(\ell_{2}, j_{1}) > 0.4$
+	\item $\Delta R(\ell_{2}, j_{2}) > 0.4$
+\end{itemize}
+
+Finally, \WR candidates were required to have mass $\Mlljj > 600$ \GeV to increase the sensitivity to \WR boson 
+signals relative to SM backgrounds.  The selections thresholds, and the lack of other kinematic cuts like missing 
+$\Et$ were chosen to maximize the selection efficiency in \WR signal \MC, and allow the results of this search to 
+be interpreted by a wide range of LRS theoretical models.  Shown in Figure \ref{fig:wrRecoSelectionEff}, the 
+full trigger and offline selection efficiency in fully reconstructed \WR signal \MC exceeded 50\% (70\%) in the ee 
+($\mu\mu$) channel.  The ee channel had lower efficiency due to the gap in electron detection for $1.44 < |\eta| < 1.57$, 
+and tighter identification requirements on electrons than muons.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.pdf}
+	\caption{The efficiency that $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ events are selected using 
+	the trigger and full offline selection in the ee ($\mu\mu$) channel on the left (right).}
+	\label{fig:wrRecoSelectionEff}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
