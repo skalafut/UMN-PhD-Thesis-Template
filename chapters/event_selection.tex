@@ -330,10 +330,10 @@ versus \mWR to \WR and \nul exclusion limits as functions of \mWR and \mnul.
 
 \section{Muon Reconstruction and Selection}
 \label{sec:muonRecoAndSelection}
-Muons reconstruction began with the reconstruction of tracks in the muon chambers and silicon tracker.  
+Muon reconstruction began with the reconstruction of tracks in the muon chambers and silicon tracker.  
 Muons passed through the tracker and ionized charge in silicon layers, which was measured to determine 
 their vertices of origin and momenta.  Charge measurements made in multiple layers allowed a radius of 
-curvature to be measured, which further constrained muon momenta and distinguished muons from other charged 
+curvature to be measured, which further constrained muon momenta and helped distinguish muons from other charged 
 particles.  Muons that reached the muon detectors ionized charge from the gas along their trajectories, 
 and this charge was measured and reconstructed into muon detector tracks.  Following track reconstruction 
 in the silicon tracker and muon detectors, two algorithms \cite{cmsMuonRecoRunOne} were used to identify muons that traversed 
@@ -437,6 +437,49 @@ was below 0.001.
 	  \hline
   \end{tabular}
 \end{table}
+
+
+\section{Electron Reconstruction and Selection}
+\label{sec:electronRecoAndSelection}
+Electron reconstruction started with the reconstruction of ECAL energy clusters.  Electrons that impinged 
+on the ECAL showered and lost substantially all of their energy in 5 $\times$ 5 crystal superclusters (SCs).  
+The SC reconstruction algorithm was optimized to detect real electron energy deposits, typically two crystals 
+wide or smaller in $\eta$, but large in $\phi$ due to electron bremsstrahlung in the magnetic field and energy 
+lost to interactions with the tracker, with high efficiency.  Independent of SC reconstruction, electron 
+tracks were reconstructed from silicon tracker measurements using a specialized electron track reconstruction 
+algorithm.  On average a relativistic electron that traverses the entire silicon tracker will lose 33\% of 
+its initial energy to bremsstrahlung in the tracker hardware.  The dedicated electron track reconstruction 
+algorithm took this significant average energy loss into consideration when building tracks from tracker 
+measurements.  Following track and SC reconstruction, tracks were extrapolated to the ECAL, and each electron 
+was formed from one SC and one or three tracks, whose extrapolated positions matched the ECAL SC.  Three track 
+combinations were allowed because a hard scatter between an electron and the tracker could produce an $e^{+}e^{-}$ 
+pair in the tracker with sufficient energy to reach the ECAL.  The energy of each electron was taken from 
+the ECAL, but its $\eta$ and $\phi$ were obtained from the reconstructed track.
+
+
+
+Tracks reconstructed in the 
+silicon tracker were extrapolated to the ECAL, and each electron was formed from an ECAL SC and one 
+or three tracks that extrapolated to the SC position.  .
+Muons passed through the tracker and ionized charge in silicon layers, which was measured to determine 
+their vertices of origin and momenta.  Charge measurements made in multiple layers allowed a radius of 
+curvature to be measured, which further constrained muon momenta and distinguished muons from other charged 
+particles.  Muons that reached the muon detectors ionized charge from the gas along their trajectories, 
+and this charge was measured and reconstructed into muon detector tracks.  Following track reconstruction 
+in the silicon tracker and muon detectors, two algorithms \cite{cmsMuonRecoRunOne} were used to identify muons that traversed 
+one or both detector systems.  One algorithm started with a seed track in the muon detectors, and 
+extrapolated the track back to the silicon tracker.  Then, tracks in the silicon tracker identified as 
+muon tracks were compared to the extrapolated muon detector track.  If a silicon tracker track had a 
+trajectory that matched the extrapolated muon detector track, the algorithm built a muon from the 
+combination of the two tracks.  This algorithm was developed to maximize reconstruction efficiency of 
+high $p_{T}$, and was complemented by a second algorithm that started with a seed track identified as a 
+muon in the silicon tracker.  The second algorithm extrapolated the seed track to the muon detectors in 
+the magnet return yoke, and compared the seed track to the muon detector tracks.  If a muon detector track 
+had a trajectory that matched the extrapolated seed track, the algorithm built a muon by combining the two 
+tracks.  The second algorithm was developed to maximize reconstruction efficiency of low $p_{T}$ muons, which 
+were not always able to traverse multiple layers of the iron return yoke to be detected in multiple 
+muon chambers.  In both algorithms, if multiple matching tracks were found, the track assigned to the muon 
+was the one whose trajectory was the closest match to the extrapolated track.
 
 
 
