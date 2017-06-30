@@ -158,13 +158,13 @@ momenta of charged particles with better resolution.  Charged particles produced
 e-h pairs in the silicon pixel and strip trackers, and measuring those pairs was the basis for all tracker 
 measurements.
 
-The pixel tracker was built from small rectangular pixel detectors ($100 \times 150 \mu$m) organized in two 
+The pixel tracker was built from small rectangular pixel detectors organized in two 
 structures based on $|\eta|$.  In the barrel region ($0 < |\eta| \lesssim 1.2$) where the rate of radiation damage was 
-low, individual pixel detectors were arranged into three concentric cylindrical shells centered on the 
-$z$ axis, with radii of 4, 7 and 10 \cm relative to the $z$ axis.  In the endcap region 
-($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
-installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These disks 
-covered radii between 6 and 15 \cm from the $z$ axis.
+low, individual pixel detectors were assembled in three concentric cylindrical shells centered on the $z$ axis.  In 
+the endcap region ($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
+installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These pixel 
+layers provided 2 or 3 measurements for every track, and primarily were used to reconstruct interaction 
+vertices.
 
 \begin{figure}[ht]
 	\centering
@@ -175,15 +175,13 @@ covered radii between 6 and 15 \cm from the $z$ axis.
 
 Located outside the pixel tracker, the strip tracker was built from larger rectangular silicon detectors 
 organized into four structures based on $|\eta|$, $|z|$ position and radius $r$ from the $z$ axis.  In the barrel region 
-($0 < |\eta| \lesssim 1.2$), four concentric cylindrical shells built from silicon strips (10 \cm $\times$ 80 to 120 $\mu$m) 
-were placed between 20 $< r <$ 55 \cm.  For 55 $< r <$ 110 \cm where radiation levels were lower, six concentric 
-cyclindrical shells were built from larger surface area silicon strips.  Similar to the pixel tracker, the strip tracker in 
-the endcap region ($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  Three inner disk layers were 
-installed between $1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 \cm and 65 $< |z| <$ 110 \cm, and nine disk layers 
-with thicker strips were installed in the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 \cm and 120 $< |z| < $ 
-280 \cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  In both the barrel and endcap regions, several of the 
-inner and outer strip layers were built from pairs of closely spaced silicon strips that were slightly tilted relative 
-to each other to measure the track origin with better resolution.
+($0 < |\eta| \lesssim 1.2$), silicon strips were used to build 10 concentric cylindrical shells.  Similar to the pixel tracker, the strip tracker in 
+the endcap region ($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  As shown in Figure \ref{fig:stripTracker} 
+\cite{cmsTDR}, silicon strips were used to build 12 endcap disk layers with some overlap in $|\eta|$ with the 
+barrel strip detectors.  In the barrel and endcap regions several strip layers were built from pairs of closely spaced 
+silicon strips that were slightly tilted relative to each other to measure track origins with better resolution.  The 
+strip layers provided between 5 and 14 measurements for every track, and primarily were used to measure the momenta 
+of charged particles.
 
 \begin{figure}[ht]
 	\centering
@@ -194,7 +192,7 @@ to each other to measure the track origin with better resolution.
 
 Charged particles created e-h pairs in every pixel and strip detector they hit, and the total electron charge in such pairs was measured by readout 
 modules attached to groups of pixels or strips\footnote{$\sim$16000 readout modules were connected to 66 million pixels, 
-and $\sim$15400 readout modules were connected to 9.6 million strips}.  
+and $\sim$15400 readout modules were connected to 9.6 million strips.}.  
 The granularity and multilayer structure of both detectors allowed the tracker to measure interaction vertex coordinates 
 with $\lesssim 20\mu$m resolution along the $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to 
 the $z$ axis, and measure the \pt of 100 GeV \pt muons with resolution better than 2\% in the barrel, and better than 
@@ -210,24 +208,23 @@ were used to monitor and recalibrate the tracker alignment and momentum response
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
 
-Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons produced by 
-pp interactions, and distinguished electrons and positrons ($e^{\pm}$) from other charged particles.  
+Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons, and distinguished
+electrons and positrons ($e^{\pm}$) from other charged particles.  
 The ECAL was an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
-In response to incident photons and $e^{\pm}$ with energy $\gtrsim$ 1 GeV, the ECAL crystals emitted 
-amounts of visible light proportional to the incident particle energy.  The ECAL measured the energies of photons 
-and $e^{\pm}$ with $0 < |\eta| < 3.0$ by measuring the amount of visible light produced by the lead-tungstate crystals.
+In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible light in amounts proportional to 
+the incident particle energy.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
+measuring the amount of visible light produced by PbWO$_{4}$ crystals.
 
 The ECAL contained $\sim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
-crystals of length 23 \cm (26 radiation lengths) were arranged in a cylindrical shell, and pointed near the 
-interaction point.  The front face of each crystal measured $\sim$22 $\times$ 22 \mm, and resided 129 \cm 
-from the beam axis, $\sim$19 \cm away from the outer most silicon tracker barrel layer.  In the high $|\eta|$ 
-endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
-endcap) of length 22 \cm (25 radiation lengths) were installed in a disk, and each crystal pointed near the interaction 
-point.  The front face of endcap crystals measured $\sim$29 $\times$ 29 \mm, and sat behind two layers of 
-thick lead absorber and thin silicon detectors that constituted the preshower detector.  The preshower 
-mitigated radiation damage to endcap region lead-tungstate crystals, and improved the spatial resolution with 
-which endcap region electromagnetic showers were studied.  A partial view of the ECAL barrel, endcap and 
+crystals that were 26 radiation lengths\footnote{On average a relativistic $e^{\pm}$ loses 63\% of its initial energy after 
+travelling through one radiation length of material.} long were arranged in a cylindrical shell.  The front face of 
+each crystal measured $\sim$22 $\times$ 22 \mm, and resided $\sim$19 \cm away from the outer most silicon tracker layer.  
+In the endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
+endcap) 25 radiation lengths long were installed in a disk.  The front face of endcap crystals measured $\sim$29 
+$\times$ 29 \mm, and sat behind $\sim$2 radiation lengths of lead and silicon that constituted the preshower detector.  
+The preshower mitigated radiation damage in endcap crystals, and improved the spatial resolution with 
+which electromagnetic showers were studied in the endcap.  A partial view of the ECAL barrel, endcap and 
 preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 
 \begin{figure}[ht]
@@ -238,41 +235,29 @@ preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 \end{figure}
 
 
-Photons and $e^{\pm}$ that impinged on the ECAL interacted with lead-tungstate nuclei.  Incident $e^{\pm}$s interacted 
-with lead-tungstate nuclei through the bremsstrahlung process and produced gamma rays.  Subsequently, gamma rays 
-interacted with lead-tungstate nuclei and were converted into $e^{-}e^{+}$ pairs.  For every $e^{\pm}$ 
-that impinged on the ECAL, the cycle of bremsstrahlung followed by pair conversion repeated many times, 
-and a shower of lower energy $e^{-}$s and $e^{+}$s was made.  Every energetic photon that impinged on the 
-ECAL first interacted with a lead-tungstate nucleus and converted into an $e^{-}e^{+}$ pair, then this pair underwent 
-repeated cycles of bremsstrahlung followed by pair conversion, and a shower of lower energy $e^{-}$s and $e^{+}$s was made.  The crystal lengths 
-guaranteed an average incident photon or $e^{\pm}$ lost more than $99.999$\% of its incident energy through 
-radiative processes before leaving the ECAL, so the cycle of bremsstrahlung followed by pair conversion 
-stopped when the incident particle energy was too low to produce gamma rays through bremsstrahlung.  The 
-transverse size of each crystal was large enough that a 3 $\times$ 3 crystal grid contained the full shower 
-created by an incident photon or $e^{\pm}$ that did not interact with the silicon tracker.
+Photons and $e^{\pm}$ that impinged on the ECAL interacted with lead-tungstate nuclei.  Incident photons 
+converted into $e^{+}e^{-}$ pairs, and any energetic $e^{\pm}$ interacted with PbWO$_{4}$ nuclei through 
+bremsstrahlung and produced gamma rays.  Gamma rays with sufficient energy converted into $e^{+}e^{-}$ pairs, 
+and bremsstrahlung followed by pair conversion continued until more than 99.99\% of the initial photon or 
+$e^{\pm}$ energy was lost.  For an incident photon or $e^{\pm}$ that did not interact with the silicon 
+tracker, the resulting shower of low energy $e^{\pm}$ was usually fully contained in a 3 $\times$ 3 crystal 
+grid centered on the most energetic crystal.
 
-Showers of $e^{-}$s and $e^{+}$s interacted with lead-tungstate atoms and quickly produced distinguishable 
-signals that determined the energies of incident photons and $e^{\pm}$s.  Coulomb interactions 
-transferred several eV of energy from shower $e^{\pm}$s to atomic electrons bound to lead-tungstate nuclei.  
-In addition, relativistic shower $e^{\pm}$s produced Cherenkov photons with several eV of energy, and 
-these Cherenkov photons were absorbed by atomic electrons bound to lead-tungstate nuclei.  The atomic 
-electrons were excited to meta-stable states, and in $\lesssim$ 20 \ns more than 80\% of atomic electrons 
-returned to their ground states by emitting scintillation photons in the visible light regime.  The total energy of 
-scintillation photons was proportional to the incident photon or $e^{\pm}$ energy, so the energies 
-of scintillation photons were measured to determine the energy of the incident photon or $e^{\pm}$.  Scintillation  
-photons were emitted in all directions, but needed to be directed towards the photodetectors at the back faces of the crystals.  To 
-maximize the fraction of photons which reached the photodetectors, 5 faces of each crystal were polished 
-to reduce the impact of surface impurities or imperfections, each crystal was wrapped in a reflective, 
-non-absorbing material, and 17 different crystal shapes (all rectangular) were used to minimize gaps 
-between crystals.  Scintillation photons from groups of 5 $\times$ 5 crystals were measured by avalanche 
-photodiodes in the barrel region, and vacuum photo-triodes in the endcap region.  Both types of 
-photodetectors converted scintillation photons into electric charge, and the amount of charge was measured 
-to determine the energy of the incident photon or $e^{\pm}$.  With these technologies, the ECAL measured 
-the energy of a 100 GeV photon or $e^{\pm}$ with resolution better than 1\%, and measured the energy of any 
-incident photon or $e^{\pm}$ with resolution given by:
+Showers of low energy $e^{\pm}$s interacted with lead-tungstate atoms and quickly produced distinguishable 
+signals indicative of incident photon and $e^{\pm}$ energies.  Coulomb interactions between shower $e^{\pm}$s 
+and bound state electrons in PbWO$_{4}$ atoms excited bound electrons to meta-stable states, and in 
+$\lesssim$20 \ns more than 80\% of bound electrons returned to their ground states by emitting scintillation 
+photons in the visible light regime.  The total energy of 
+scintillation photons was measured to determine the incident photon or $e^{\pm}$ energy.  Scintillation photons 
+from groups of 5 $\times$ 5 crystals were measured by avalanche photodiodes in the barrel region, and vacuum 
+photo-triodes in the endcap region.  Both types of photodetectors converted scintillation photons into electric 
+charge, and the amount of charge was measured to determine the energy of the incident photon or $e^{\pm}$.  
+The scintillating PbWO$_{4}$ and photodetectors enabled the ECAL to measure the energy of a 100 GeV photon or 
+$e^{\pm}$ with resolution better than 1\%, and measure the energy of any incident photon or $e^{\pm}$ with 
+resolution (CITE 2011 data paper):
 
 \begin{equation}
-	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.128 GeV}{E} \oplus 0.3\%
+	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
 \end{equation}
 
 To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL was calibrated before 
