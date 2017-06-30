@@ -160,13 +160,11 @@ measurements.
 
 The pixel tracker was built from small rectangular pixel detectors ($100 \times 150 \mu$m) organized in two 
 structures based on $|\eta|$.  In the barrel region ($0 < |\eta| \lesssim 1.2$) where the rate of radiation damage was 
-low, individual pixel detectors were arranged into three 53 \cm long concentric cylindrical shells centered on the 
+low, individual pixel detectors were arranged into three concentric cylindrical shells centered on the 
 $z$ axis, with radii of 4, 7 and 10 \cm relative to the $z$ axis.  In the endcap region 
 ($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
 installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These disks 
-were placed at $|z| =$ 35 and 47 \cm away from the midpoint of the pixel barrel cylindrical shells, and covered 
-radii between 6 and 15 \cm from the $z$ axis.
-
+covered radii between 6 and 15 \cm from the $z$ axis.
 
 \begin{figure}[ht]
 	\centering
@@ -175,26 +173,17 @@ radii between 6 and 15 \cm from the $z$ axis.
 	\label{fig:pixelTracker}
 \end{figure}
 
-Charged particles created e-h pairs in every pixel detector they hit, and total electron charge was measured by readout 
-modules attached to groups of pixels\footnote{$\sim$16000 readout modules were connected to 66 million individual pixels}.  
-The multilayer structure and large number of pixels enabled the pixel tracker to measure interaction vertex coordinates 
-with $\lesssim 20\mu$m resolution along the $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to 
-the $z$ axis.
-
-Located outside the pixel tracker, the silicon strip tracker was built from larger rectangular silicon detectors 
+Located outside the pixel tracker, the strip tracker was built from larger rectangular silicon detectors 
 organized into four structures based on $|\eta|$, $|z|$ position and radius $r$ from the $z$ axis.  In the barrel region 
-($0 < |\eta| \lesssim 1.2$), four cylindrical shells of 10 \cm $\times$ $80-120$ $\mu$m silicon strips were placed within 20 $< r <$ 55 \cm.  At
-55 $< r < $110 \cm where radiation levels were much lower, six layers of thicker, larger surface area (25 \cm $\times$ $120-180$ $\mu$m) 
-strips were placed in cylindrical shells for improved momentum resolution.  To improve track position resolution the two strip layers with smallest 
-$|r|$ each contained two layers of silicon strips separated by a small distance and tilted relative 
-to each other by 100 mrad.  For the same reason the first two of six strip detector layers in the region $r >$ 55 \cm 
-were also built with the double layer design.  Similar to the pixel tracker, the strip tracker in the endcap region 
-($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  Three disk layers were installed between 
-$1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 \cm and 65 $< |z| <$ 110 \cm, and nine disk layers with thicker strips were installed in 
-the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 \cm and 120 $< |z| < $ 280 \cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  
-To improve track position resolution two of the three inner disk layers, and three of the nine outer disk layers 
-used two closely spaced silicon strips tilted by 100 mrad.  The faces of all strip detectors pointed at the interaction 
-point.
+($0 < |\eta| \lesssim 1.2$), four concentric cylindrical shells built from silicon strips (10 \cm $\times$ 80 to 120 $\mu$m) 
+were placed between 20 $< r <$ 55 \cm.  For 55 $< r <$ 110 \cm where radiation levels were lower, six concentric 
+cyclindrical shells were built from larger surface area silicon strips.  Similar to the pixel tracker, the strip tracker in 
+the endcap region ($1.2 \lesssim |\eta| \leq 2.5$) used strip detectors arranged in disks.  Three inner disk layers were 
+installed between $1.2 \lesssim |\eta| \lesssim 2.3$, 20 $< r <$ 55 \cm and 65 $< |z| <$ 110 \cm, and nine disk layers 
+with thicker strips were installed in the region $1.0 \lesssim |\eta| \lesssim 2.5$, 20 $< r <$ 110 \cm and 120 $< |z| < $ 
+280 \cm, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  In both the barrel and endcap regions, several of the 
+inner and outer strip layers were built from pairs of closely spaced silicon strips that were slightly tilted relative 
+to each other to measure the track origin with better resolution.
 
 \begin{figure}[ht]
 	\centering
@@ -203,17 +192,19 @@ point.
 	\label{fig:stripTracker}
 \end{figure}
 
-Charged particles ionized charge in every strip detector they hit, and this charge was measured by readout 
-modules attached to groups of strips\footnote{$\sim$15400 readout modules were connected to 9.6 million individual strips}.  Each readout module created an 
-electric field along the surface of several strips that swept ionized charges into a charge collector.  The resulting 
-strip tracker measured the $p_{T}$ of 100 GeV $p_{T}$ muons with resolution better than 2\% in the barrel, and 
-better than 7\% in the endcap.
+Charged particles created e-h pairs in every pixel and strip detector they hit, and the total electron charge in such pairs was measured by readout 
+modules attached to groups of pixels or strips\footnote{$\sim$16000 readout modules were connected to 66 million pixels, 
+and $\sim$15400 readout modules were connected to 9.6 million strips}.  
+The granularity and multilayer structure of both detectors allowed the tracker to measure interaction vertex coordinates 
+with $\lesssim 20\mu$m resolution along the $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to 
+the $z$ axis, and measure the \pt of 100 GeV \pt muons with resolution better than 2\% in the barrel, and better than 
+7\% in the endcap.
 
-To measure the position and momenta of charged particles with the quoted resolutions, the alignment and calibration 
+To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
 used to measure the tracker alignment and momentum response, and derive calibration factors that accounted for 
-changes in either.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon events were used to monitor 
-and recalibrate the tracker alignment and momentum response.
+changes in either relative to expectations.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon events 
+were used to monitor and recalibrate the tracker alignment and momentum response.
 
 
 \section{The Electromagnetic Calorimeter}
