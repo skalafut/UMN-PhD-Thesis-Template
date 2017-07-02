@@ -249,35 +249,54 @@ and bound state electrons in PbWO$_{4}$ atoms excited bound electrons to meta-st
 $\lesssim$20 \ns more than 80\% of bound electrons returned to their ground states by emitting scintillation 
 photons in the visible light regime.  The total energy of 
 scintillation photons was measured to determine the incident photon or $e^{\pm}$ energy.  Scintillation photons 
-from groups of 5 $\times$ 5 crystals were measured by avalanche photodiodes in the barrel region, and vacuum 
+from each crystal were measured by avalanche photodiodes in the barrel region, and vacuum 
 photo-triodes in the endcap region.  Both types of photodetectors converted scintillation photons into electric 
 charge, and the amount of charge was measured to determine the energy of the incident photon or $e^{\pm}$.  
 The scintillating PbWO$_{4}$ and photodetectors enabled the ECAL to measure the energy of a 100 GeV photon or 
-$e^{\pm}$ with resolution better than 1\%, and measure the energy of any incident photon or $e^{\pm}$ with 
-resolution (CITE 2011 data paper):
+$e^{\pm}$ with resolution better than 1\% in the barrel region, and measure the energy of any incident photon or $e^{\pm}$ with 
+resolution \cite{eGammaMonitCalib2011}:
 
 \begin{equation}
 	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
 \end{equation}
 
-To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL was calibrated before 
-and during 2015 pp collisions.  Before collisions, the ECAL was calibrated based on 2012 pp collision 
-data.  Once collisions began, data collected from collision events was used by several methods 
-to derive ECAL calibration constants for every lead-tungstate crystal.  The following quantities 
-were measured for every crystal in millions of events:
+To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL crystals were monitored and calibrated 
+during data taking using several techniques.  Two to three times every hour each ECAL crystal was illuminated 
+with light from one blue laser and one green laser to monitor the crystal transparency.  Every week laser data 
+was used to calculate the average change in each crystal's transparency relative to the prior week, and this change 
+was corrected by applying correction factors to the crystals.  Electrons and photons from $\eta \rightarrow \gamma\gamm$, 
+$W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$ were used to validate the weekly corrections derived from laser data.
 
-\begin{itemize}
-	\item $\pi^{0}/\eta$ masses through their decays to $\gamma\gamma$
-	\item the average crystal energy in randomly selected events 
-		(considering many randomly selected events, the energy measured should be symmetric in $\phi$.  Thus, within one $\phi$ ring each crystal should measure the same average energy)
-	\item the ratio $\frac{E_{T,ECAL}}{p_{T,tracker}}$ for isolated electrons coming from W or Z boson decays
-\end{itemize}
+To compliment weekly laser transparency corrections, $\sim$quarterly corrections were applied to ECAL crystals 
+to calibrate their responses in terms of reconstructed particle energy.  Corrections were calculated from the 
+weighted average correction determined using four methods: $\phi$ symmetry, $\eta,\pi^{0} \rightarrow \gamma\gamma$, 
+$W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$.  In a set of millions of randomly selected collision events, 
+the average energy deposited in every crystal at one value of $\eta$ was the same.  The $\phi$ symmetry method 
+used this symmetry to derive relative calibration constants to normalize the energy response of every 
+crystal at one $\eta$ value.  The $\eta,\pi^{0} \rightarrow \gamma\gamma$ method derived a set of calibration 
+constants for crystals at each $\eta$ value using the $\eta,\pi^{0}$ masses.  The .
 
-and relative calibration constants were derived such that every crystal had the same calibrated response.  
-Then, the absolute scale of each crystal's response was calibrated using $e^{\pm}$ from 
-$Z \rightarrow e^{\pm}e^{\mp}$ decays.  In events where a Z boson decayed to an $e^{\pm}e^{\mp}$ pair, the 
-crystal responses were corrected so that the average mass of all $e^{\pm}e^{\mp}$ pairs was equal to 
-the true Z boson mass.
+The $\phi$ symmetry method exploits the symmetry of average 
+energy deposited in the ECAL over millions of randomly selected events.  In a large collection of randomly .
+
+%calibrated before 
+%and during 2015 pp collisions.  Before collisions, the ECAL was calibrated based on 2012 pp collision 
+%data.  Once collisions began, data collected from collision events was used by several methods 
+%to derive ECAL calibration constants for every lead-tungstate crystal.  The following quantities 
+%were measured for every crystal in millions of events:
+%
+%\begin{itemize}
+%	\item $\pi^{0}/\eta$ masses through their decays to $\gamma\gamma$
+%	\item the average crystal energy in randomly selected events 
+%		(considering many randomly selected events, the energy measured should be symmetric in $\phi$.  Thus, within one $\phi$ ring each crystal should measure the same average energy)
+%	\item the ratio $\frac{E_{T,ECAL}}{p_{T,tracker}}$ for isolated electrons coming from W or Z boson decays
+%\end{itemize}
+%
+%and relative calibration constants were derived such that every crystal had the same calibrated response.  
+%Then, the absolute scale of each crystal's response was calibrated using $e^{\pm}$ from 
+%$Z \rightarrow e^{\pm}e^{\mp}$ decays.  In events where a Z boson decayed to an $e^{\pm}e^{\mp}$ pair, the 
+%crystal responses were corrected so that the average mass of all $e^{\pm}e^{\mp}$ pairs was equal to 
+%the true Z boson mass.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
