@@ -248,10 +248,7 @@ signals indicative of incident photon and $e^{\pm}$ energies.  Coulomb interacti
 and bound state electrons in PbWO$_{4}$ atoms excited bound electrons to meta-stable states, and in 
 $\lesssim$20 \ns more than 80\% of bound electrons returned to their ground states by emitting scintillation 
 photons in the visible light regime.  The total energy of 
-scintillation photons was measured to determine the incident photon or $e^{\pm}$ energy.  Scintillation photons 
-from each crystal were measured by avalanche photodiodes in the barrel region, and vacuum 
-photo-triodes in the endcap region.  Both types of photodetectors converted scintillation photons into electric 
-charge, and the amount of charge was measured to determine the energy of the incident photon or $e^{\pm}$.  
+scintillation photons was measured by photodetectors to determine the incident photon or $e^{\pm}$ energy.  
 The scintillating PbWO$_{4}$ and photodetectors enabled the ECAL to measure the energy of a 100 GeV photon or 
 $e^{\pm}$ with resolution better than 1\% in the barrel region, and measure the energy of any incident photon or $e^{\pm}$ with 
 resolution \cite{eGammaMonitCalib2011}:
@@ -268,41 +265,19 @@ was corrected by applying correction factors to the crystals.  Electrons and pho
 $W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$ were used to validate the weekly corrections derived from laser data.
 
 To compliment weekly laser transparency corrections, $\sim$quarterly corrections were applied to ECAL crystals 
-to calibrate their responses in terms of reconstructed particle energy.  Corrections were calculated from the 
-weighted average correction determined using four methods: $\phi$ symmetry, $\eta,\pi^{0} \rightarrow \gamma\gamma$, 
-$W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$.  In a set of millions of randomly selected collision events, 
-the average energy deposited in every crystal at one value of $\eta$ was the same.  The $\phi$ symmetry method 
-used this symmetry to derive relative calibration constants to normalize the energy response of every 
-crystal at one $\eta$ value.  The $\eta,\pi^{0} \rightarrow \gamma\gamma$ method derived a set of calibration 
-constants for crystals at each $\eta$ value using the $\eta,\pi^{0}$ masses.  The .
+to calibrate their responses in terms of reconstructed particle energy.  Relative corrections were calculated from 
+the weighted average relative correction determined using several methods described elsewhere \cite{eGammaMonitCalib2011}.  
+The relative corrections normalized the responses of all crystals to the same value, then absolute scale corrections 
+were applied.  The absolute correction for each crystal was derived using $e^{\pm}$ from $Z \rightarrow e^{+}e^{-}$, 
+and ensured the average dilepton mass measured by each crystal in $Z \rightarrow e^{+}e^{-}$ events was equal to the 
+true $Z$ boson mass.
 
-The $\phi$ symmetry method exploits the symmetry of average 
-energy deposited in the ECAL over millions of randomly selected events.  In a large collection of randomly .
-
-%calibrated before 
-%and during 2015 pp collisions.  Before collisions, the ECAL was calibrated based on 2012 pp collision 
-%data.  Once collisions began, data collected from collision events was used by several methods 
-%to derive ECAL calibration constants for every lead-tungstate crystal.  The following quantities 
-%were measured for every crystal in millions of events:
-%
-%\begin{itemize}
-%	\item $\pi^{0}/\eta$ masses through their decays to $\gamma\gamma$
-%	\item the average crystal energy in randomly selected events 
-%		(considering many randomly selected events, the energy measured should be symmetric in $\phi$.  Thus, within one $\phi$ ring each crystal should measure the same average energy)
-%	\item the ratio $\frac{E_{T,ECAL}}{p_{T,tracker}}$ for isolated electrons coming from W or Z boson decays
-%\end{itemize}
-%
-%and relative calibration constants were derived such that every crystal had the same calibrated response.  
-%Then, the absolute scale of each crystal's response was calibrated using $e^{\pm}$ from 
-%$Z \rightarrow e^{\pm}e^{\mp}$ decays.  In events where a Z boson decayed to an $e^{\pm}e^{\mp}$ pair, the 
-%crystal responses were corrected so that the average mass of all $e^{\pm}e^{\mp}$ pairs was equal to 
-%the true Z boson mass.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
 Surrounding the ECAL was the hadronic calorimeter (HCAL), which detected charged and neutral hadrons.  The 
 HCAL was a sampling calorimeter built from alternating layers of thin scintillating plastic tiles and thick 
-metal absorber plates.  Hadrons impinging on the HCAL with energy $\gtrsim$ 1 GeV interacted with the metal absorbers and produced amounts 
+metal absorber plates.  Hadrons impinging on the HCAL interacted with the metal absorbers and produced amounts 
 of visible light in the scintillating tiles proportional to their incident energies.  The HCAL 
 measured the energies of hadrons with $0 < |\eta| < 3.0$ by measuring the amount of visible light produced 
 by the scintillating tiles.
@@ -310,41 +285,18 @@ by the scintillating tiles.
 The HCAL consisted of 17 scintillating tile layers separated by 17 metal absorber layers.  Similar to the ECAL, the 
 HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
 region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
-covered a $\Delta\eta \times \Delta\phi$ area of $0.087 \times 0.087$ to match the area covered by a 5 $\times$ 5 grid of 
-ECAL crystals in the barrel region.  In every tower the first and last metal absorber layers 
-were made from 5 \cm thick steel to support the $\sim$1130 tons resting on the HCAL barrel.   All other layers 
-were made from brass of the same thickness to minimize costs.  To increase the visible light produced by particles 
-leaving the ECAL, the first layer of scintillating tile was 9 \mm thick , and tiles 
-used in subsequent layers were 3.7 \mm thick.  The towers were arranged in a cylindrical shell, and each tower 
-pointed towards the interaction point.  In the high $|\eta|$ ($1.3 < |\eta| < 3.0$) endcap region, scintillating 
-tiles and absorber plates were assembled into 2304 towers (1152 per endcap) with variable widths in $\Delta\eta$ and 
-$\Delta\phi$.  Towers that covered $1.3 < |\eta| \leq 1.74$ used absorber plates and scintillating tiles with 
-the same thickness and $\Delta\eta \times \Delta\phi$ area as those in the barrel region.  At higher $|\eta|$, absorber 
-plates and scintillating tiles with the same thickness and larger $\Delta\eta \times \Delta\phi$ area were used 
-such that each tower covered the same area as a 5 $\times$ 5 grid of ECAL endcap crystals.
+covered the same area as a 5 $\times$ 5 grid of 
+ECAL barrel crystals.  In the high $|\eta|$ ($1.3 < |\eta| < 3.0$) endcap region, scintillating 
+tiles and absorber plates were assembled into 2304 towers (1152 per endcap), and each tower covered the same area 
+as a 5 $\times$ 5 grid of ECAL endcap crystals.
 
 Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
 inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
-energy hadrons that traveled into the nearest scintillating tile layers.  The amount of metal absorber 
-(5.15 to $\sim$9 interaction lengths) guaranteed that every hadron that impinged on the HCAL experienced, 
-on average, at least 5 fully inelastic collisions, and at least 5 diffractive collisions.  Incident hadrons 
-with higher energy produced showers with greater numbers of lower energy hadrons.  Upon entering a plastic tile, 
-low energy charged hadrons in a shower transferred several eV of energy to plastic molecules through Cherenkov radiation 
-and Coulomb interactions.  Each energy transfer excited a plastic molecule into a higher energy, meta-stable 
-molecular state.  These molecules usually de-excited through the Forster transfer, in which energy was 
-transferred to nearby scintillator molecules without the emission of radiation.  Mixed throughout every 
-plastic tile was a cerium based scintillator, whose molecules were excited to higher energy molecular 
-states through Forster transfer.  In $\sim$5 \ns, the cerium based scintillator molecules de-excited by emitting 
-visible light in every direction.  To detect this scintillation light, an optical fiber was 
-embedded near the perimeter of every tile in the shape of the sigma ($\sigma$) character.  The tiles were wrapped in 
-a reflective, non-absorbing material to maximize the amount of scintillation light which reached the optical 
-fibers.  Upon reaching the surface of a fiber, scintillation light was absorbed and re-emitted at 
-a longer wavelength in the core of the fiber, along the fiber axis.  Longer wavelength light was used to reduce 
-transmission losses encountered when transmitting the light to a photodetector.  The light produced in all 17 scintillating 
-layers of a tower is sent to the same photodetector (hybrid photodiodes were used in the HCAL barrel and endcap), and 
-the photodetector converted the light into electric charge.  Charge was measured from every tower to determine 
-the energy of hadrons which impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons
-with the following resolution:
+energy hadrons that traveled into the nearest scintillating tile layers.  Incident hadrons with more energy yielded 
+more particles in the shower.  Interactions between low energy hadrons and plastic molecules excited the molecules to 
+higher energy states, and most molecules quickly de-excited and allowed scintillator molecules to produce scintillation 
+light in $\lesssim$10 \ns.  This light was measured by photodetectors, and determined the energy of hadrons 
+that impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons with the following resolution:
 
 \begin{equation}
 	\frac{\sigma_{E}}{E} = \frac{84.7\%}{\sqrt{E/(1 GeV)}} \oplus 7.4\%
@@ -354,10 +306,10 @@ To maintain the energy resolution of the HCAL, the amount of light measured from
 was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
 with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each tile 
 in response to the source was used to derive calibration constants.  Once collisions began, a laser system 
-was used to monitor the decrease in transparency of optical fibers that transmitted scintillation light 
-from plastic tiles to photodetectors.  From laser transparency data, relative calibration constants were 
+was used to monitor the efficiency of light transmission from scintillator tiles to the photodetectors.  
+From laser transparency data, relative calibration constants were 
 derived that normalized the response of all towers to hadronic activity to the same value.  The absolute 
-calibration was determined by selecting events in which a jet recoiled off a photon, or a Z boson that 
+calibration was determined by selecting events in which a jet recoiled off a photon, or a jet recoiled off a Z boson that 
 decayed to a $e^{\pm}e^{\mp}$ or $\mu^{\pm}\mu^{\mp}$ pair.  In such events, the absolute hadronic energy 
 scale was calibrated relative to the electromagnetic energy scale derived from $Z \rightarrow e^{\pm}e^{\mp}$ 
 events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
@@ -371,11 +323,11 @@ cathodes.  The muon detectors measured the momenta of muons with $0 < |\eta| < 2
 charge collected on the anodes and cathodes.
 
 Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  Shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, in the barrel 
-region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and neutron induced background 
-rate were low, drift tubes (DTs) and resistive plate chambers (RPCs) were used to measure the positions and 
-and momenta of muons, and the collision event that produced them.  In the endcap region ($1.2 < |\eta| < 2.4$) where 
-particle fluxes and magnetic field strengths were higher, RPCs and cathode strip chambers (CSCs) were used 
-to measure the quantities stated previously.
+region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and background rate were low, drift 
+tubes (DTs) and resistive plate chambers (RPCs) were used to measure the positions and 
+and momenta of muons, and determine the collision event that produced them based on time information.  In the endcap 
+region ($1.2 < |\eta| < 2.4$) where particle fluxes and magnetic field strengths were higher, RPCs and cathode 
+strip chambers (CSCs) were used to measure the same quantities.
 
 \begin{figure}[ht]
 	\centering
@@ -387,19 +339,14 @@ to measure the quantities stated previously.
 \end{figure}
 
 
-The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 
-$\phi$ segments per station covering 30 degrees in $\phi$.  Chambers in different stations were staggered 
-so that high $p_{T}$ muons produced near the $\phi$ sector boundary hit at least three of four stations.  
-DT chambers in the first, second and third stations each contained 12 planes of aluminum drift tubes - 8 
-planes measured muons in r-$\phi$ coordinates, and 4 planes measured muons along the $z$ axis.  DT chambers 
-in the fourth station were the same, but did not have the 4 planes for measurements in $z$.  In all DTs, ionized 
-charge drifted 2 \cm or less to the nearest cathode or anode, and this allowed each station to measure muon 
-vectors with resolution better than 100 $\mu$m in position, and $\sim$1 \mrad in $\phi$.  The large 
-distance between the DTs and the interaction point meant that muons produced near the interaction point 
-took 13 \ns or longer to reach the first DT station in any of the 5 wheels.  To identify the collision event 
-that produced a muon, each DT chamber was paired with one or two RPCs that detected muons with $\sim$1 \ns 
-resolution.  DT chambers in the first two stations were sandwiched between two RPCs, while each DT chamber 
-in the third and fourth stations sat immediately behind one RPC relative to the interaction point.
+The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 $\phi$ segments per 
+station covering 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
+muon trajectories in $z$, and r-$\phi$.  These planes enabled each station of DTs to measure muon trajectories 
+with resolution better than 100 $\mu$m in $z$ and $r$, and $\sim$1 \mrad in $\phi$.  The DTs were separated 
+from the interaction point where muons were produced by 13 \ns or more\footnote{assuming muons traveled at the speed 
+of light.}, so the collision event that produced any muon was identified by RPC detectors.  By measuring 
+the muon arrival time with $\sim$1 \ns resolution, the RPCs uniquely identified the collision event that 
+produced a muon.
 
 Muons in the endcap region were detected by CSCs divided amongst four disks that faced the barrel region.  
 The first disk, closest to the barrel DTs, was segmented into four radial layers (four rings of different  
