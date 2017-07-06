@@ -349,48 +349,31 @@ the muon arrival time with $\sim$1 \ns resolution, the RPCs uniquely identified 
 produced a muon.
 
 Muons in the endcap region were detected by CSCs divided amongst four disks that faced the barrel region.  
-The first disk, closest to the barrel DTs, was segmented into four radial layers (four rings of different  
-radii).  As shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, the second and third disks were divided 
-into two radial layers, and the fourth disk contained only one ring of CSCs.  The inner most radial layer in 
-the second through fourth disks contained 18 CSCs, and all other radial layers contained 36 chambers.  Each 
-CSC contained 6 gas gaps that were separated by 6 pairs of planes - one plane of cathode strips pointing in 
-the radial direction, and one plane of anode wires that ran nearly perpendicular to the plane of cathode 
-strips.  When a muon traversed a CSC, in a few \ns charge accumulated on the anode wires and was subsequently 
-used for triggering.  Over a longer time period, charge collected on the cathode strips, and the position and 
-trajectory of a muon was determined by measuring the shape of the charge distribution on the strips.  The 
-cathode strips allowed muon vectors to be measured with resolution better than 200 $\mu$m in position, and 
-$\sim$10 \mrad in $\phi$.  Similar to the barrel region DTs, the large distance between the interaction 
-point and endcap CSCs meant that muons produced near the interaction point with $1.2 < |\eta| < 1.6$ took 
-13 \ns or longer to reach the first CSC disk closest to the interaction point.  To identify the collision 
-event that produced a muon, each CSC with $1.2 < |\eta| < 1.6$ sat in front of one RPC that detected 
-muons with $\sim$1 \ns resolution.  For muons produced with $|\eta| > 1.6$, the distance between the 
-interaction point and the first CSC disk was small enough that anode timing information from this disk 
-unambiguously determined the collision event that produced a muon.
+The disks were segmented into several radial layers (rings of different radii), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, 
+to improve the resolution that muon positions and momenta were measured.  Each station contained 18 or 36 
+chambers, each with multiple measurement planes, which enabled muon trajectories to be measured with resolution 
+better than 200 $\mu$m in position, and $\sim$10 \mrad in $\phi$.  Similar to the barrel region DTs, the large distance between the interaction 
+point and endcap CSCs meant that muons emitted into the endcap took 13 \ns or longer to reach the first CSC 
+disk closest to the interaction point.  To identify the collision event that produced a muon, RPCs were used 
+to detect muon arrival times with $\sim$1 \ns resolution.
 
 The muon detectors complimented measurements made by the tracker, and improved the resolution of muon 
-momentum measurements for high $p_{T}$ muons relative to tracker only performance.  The 
-strength of the magnetic field allowed the tracker to measure muon momenta in the $0 < |\eta| < 0.2$, $p_{T} <$ 
-200 GeV phase space with 3 or more times better resolution than the muon detectors.  For higher $|\eta|$, this 
-phase space extended to higher $p_{T}$.  As muon $p_{T}$s increased outside the tracker dominated phase 
-space, muon trajectories approached straight line paths that degraded the tracker momentum resolution.  
-Although the momentum resolution of the stand-alone muon detectors also degraded with increasing muon $p_{T}$, 
-there is a significant advantage in combining muon and tracker measurements for high $p_{T}$ muons.  Muons 
-that traversed the muon detectors traveled the same distance ($\sim$3 meters) or further that 
-separated the interaction point from the magnet solenoid, but in a magnetic field opposite in direction.  
-While travelling through several meters of muon detectors, even muons with $p_{T} = $ 1 TeV curved by tens 
-of \cm.  By precisely measuring this curvature, combining muon detector and tracker information for a 
-muon with $p_{T} =$ 1 TeV and $0 < |\eta| < 0.2$ improved the muon momentum resolution by $\sim$200\% relative 
-to the momentum measurement made with the tracker alone.
-
+momentum measurements for high $\pt$ muons relative to tracker only performance.  The 
+strength of the magnetic field enabled the tracker to measure muon momenta in the $\pt <$ 
+200 GeV phase space with 3 or more times better resolution than the muon detectors.  As muon $\pt$ increased 
+above 200 GeV, muon trajectories approached straight line paths, and thus the the tracker momentum resolution degraded.  
+Combining tracker and muon detector information for high $\pt$ muons improved the resolution with which a 
+$\pt = 1$ TeV muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
+measurement made by the tracker alone.
 
 \section{The Trigger System}
 \label{sec:triggerDescription}
 In 2015 the rate of pp collision events delivered by the LHC was several orders of magnitude greater than the 
-rate that CMS could save collision events to permanent storage.  At that time the LHC collided two proton bunches 
+rate that CMS could save collision events to permanent storage.  The LHC collided two proton bunches 
 at a rate of 40 MHz, and in nearly every collision $\gtrsim$1 GeV of energy was detected in CMS.  Due to the large cross 
-section of QCD multijet processes and leptonically decaying heavy quark processes shown in Figure \ref{fig:smProductionXsxns}, CMS 
+section of QCD multijet processes and leptonically decaying heavy quark processes, shown in Figure \ref{fig:smProductionXsxns}, CMS 
 detected $\sim10^{6}$ collision events per second with energetic charged leptons or hadronic jets.  In 2015 
-CMS could only write $\sim10^{3}$ collision events per second to permanent storage, so a two level trigger 
+CMS was able to write $\sim10^{3}$ collision events per second to permanent storage, so a two level trigger 
 system was used during collisions ('online') to select the best events for physics analyses and detector calibration.
 
 \begin{figure}[h]
@@ -404,26 +387,25 @@ system was used during collisions ('online') to select the best events for physi
 By discarding collision events where no photons, charged leptons, hadronic jets, or neutrinos were 
 detected, the Level-1 (L1) trigger system reduced the rate of collision events sent to the second 
 level trigger system from 40 MHz to $\lesssim$ 80 kHz.  After every collision event, data from 
-charge collection devices on the ECAL, the HCAL and the muon detectors was used to build 'trigger 
-primitive' objects that represented photons, muons and other objects.  In $\sim$1 $\mu$s these objects, 
+the ECAL, the HCAL and the muon detectors was used to build 'trigger 
+primitive' objects that represented photons, muons and other particles.  In $\sim$1 $\mu$s these objects, 
 distinguished by $E_{T}$ values and $(\eta, \phi)$ coordinates, were built and sent to the L1 logic system located 
-$\sim$20 meters from CMS.  Implemented in Field Programmable Gate Arrays, Application Specific 
-Integrated Circuits and other custom and semi-custom hardware, the L1 logic system executed 
-$\sim$200 algorithms in less than 1 $\mu$s that selected trigger primitive objects passing $E_{T}$ 
+$\sim$20 meters from CMS.  Implemented in programmable hardware like Field Programmable Gate Arrays, the L1 
+logic system executed $\sim$200 algorithms in less than 1 $\mu$s that selected trigger primitive objects passing $E_{T}$ 
 and $|\eta|$ selections.  The selection results were sent back to the detector, and the regions with one 
 or more trigger primitive objects passing selections were processed by the second level trigger.
 
 By selecting only the events needed for physics analyses and detector calibration, the second 
 level, or High Level, trigger (HLT) reduced the rate of collision events written to permanent storage 
-from $\lesssim$ 80 kHz to $\lesssim$ 1000 Hz.  First, all data from the tracker, both calorimeters and the muon 
-detectors were transferred to commercial, multi-core processors where the HLT was run\footnote{the same HLT software was run on every processor}.  
-Then, the HLT began by running a fast, simplified version of the full offline particle reconstruction software in small 
-regions where L1 trigger algorithms were passed.  Then, $\sim$400 HLT algorithms running in 
+from $\lesssim$ 80 kHz to $\lesssim$ 1000 Hz.  The second level trigger began by transferring all data from the tracker, 
+both calorimeters and the muon detectors to multi-core processors where the HLT was run\footnote{the same HLT software was run on every processor}.  
+Then, the HLT ran a fast, simplified version of the full offline particle reconstruction software in small 
+regions where L1 trigger algorithms fired.  Then, $\sim$400 HLT algorithms running in 
 parallel applied selection cuts ($E_{T}$, $|\eta|$, $\frac{E_{HCAL}}{E_{ECAL}}$, etc) to locally reconstructed particles in search of 
 energetic photons, charged leptons, hadronic jets, and neutrinos.  If the event passed at least one 
 HLT algorithm, then the data from the entire detector was written to permanent storage, and the event 
 was assigned to one or more primary datasets based on the number of reconstructed particles required 
 by the trigger\footnote{for example, an event that passed a trigger that required one muon was assigned to the SingleMuon primary dataset.}.
-Considering events selected by all HLT algorithms, during 2015 pp collisions the rate of data written to 
+Considering events selected by any HLT algorithm, during 2015 pp collisions the rate of data written to 
 permanent storage was $\lesssim 0.5$ gigabytes per second.
 
