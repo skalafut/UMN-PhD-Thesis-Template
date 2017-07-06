@@ -25,8 +25,8 @@ selections were applied to reconstructed particles.  Events from data and simula
 used if they passed a High Level trigger.  The specific triggers used in this search are presented 
 here.
 
-In $\WR \rightarrow \ell\ell jj$ processes predicted by LRS models, the expected mass of the \WR ($\gtrsim 1$ TeV) was 
-so large that the final state leptons were expected to have $\pt \gtrsim$60 GeV.  Standard Model processes that 
+In $\WR \rightarrow \ell\ell jj$ processes predicted by LRS models, the expected mass of the \WR ($\gtrsim 1 \TeV$) was 
+so large that the final state leptons were expected to have $\pt \gtrsim 60 \GeV$.  Standard Model processes that 
 produced two charged leptons with such high $\pt$ were predicted to have very low rate in 2015, so the 
 triggers used in this search sought one or two high $\pt$ charged leptons.
 
@@ -185,7 +185,7 @@ storage if the following electron $+$ muon High Level trigger requirements were 
 %\end{tabular}
 %\end{table}
 
-The collision data used in this search was delivered by the LHC at $\sqrt{s} = 13$ TeV, and recorded by the CMS experiment 
+The collision data used in this search was delivered by the LHC at $\sqrt{s} = 13 \TeV$, and recorded by the CMS experiment 
 from September until November 2015.  The amount of data collected corresponded to 2.6 fb$^{-1}$ \cite{lumi}, and events 
 used in this search were selected during collisions using the High Level triggers described previously.  Following trigger 
 selection, detector information was reconstructed into charged leptons, photons, and jets using procedures described later.  
@@ -221,8 +221,8 @@ $pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multipl
 were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
 The second type was the \WR signal process $pp \rightarrow \WR \rightarrow l\nul \rightarrow lljj$ 
 with different \mWR and \mnul masses.  
-\MC simulations of both types of processes were produced by the CMS \MC production group 
-in the following multi-step procedure.  In the first step, a \MC generator, like \PYTHIA or \MADGRAPH, simulated 
+\MC simulations of both types of processes were produced using a multi-step procedure.  In the first step, 
+a \MC generator, like \PYTHIA or \MADGRAPH, simulated 
 collision events between two protons in a vacuum, without any magnetic field or CMS detector 
 components.  In simulations, the generator accounted for:
 
@@ -236,7 +236,7 @@ components.  In simulations, the generator accounted for:
 
 Any unstable particles produced in the interaction, like a $Z$ or \WR boson, decayed according to 
 their branching fractions to other particles, and any free quarks or gluons that were produced were 
-run through a hadronization simulation that emulates jet production described in Chapter \ref{wrBosonAndHeavyNu}.  In the second 
+run through a hadronization simulation that emulates jet production described in Chapter \ref{intro_chapter}.  In the second 
 simulation step, the effect of multiple pp interactions observed in real collisions is simulated by 
 overlaying simulations of randomly chosen SM interactions onto the primary events simulated in the first 
 step.  All pp interaction processes in the SM were assigned a probability proportional to their cross section 
@@ -256,8 +256,10 @@ summarized in Table \ref{tab:centrallyProducedMC}.
 
 
 \begin{table}[bt]
-\caption{Fully reconstructed \MC samples produced by the CMS \MC production group.  The \DY and t$\bar{t}$+jets events 
-	were produced with a dilepton mass $M_{LL} > 50 \GeV$ selection applied to the two leptons coming from the hard interaction.}
+\caption{Fully reconstructed \MC samples used in the search described here.  The \DY and t$\bar{t}$+jets events 
+	were produced with a dilepton mass $M_{LL} > 50 \GeV$ selection applied to the two leptons coming from the hard interaction.  
+Here, "size" represents the equivalent integrated luminosity of collision data needed to collect the same number 
+of events in data.  For the \WR datasets the size is estimated based on the coupling assumptions stated in Chapter \ref{sec:lrsPhenomenology}.}
 \label{tab:centrallyProducedMC}
 
 \centering
@@ -295,10 +297,10 @@ Level triggers described earlier.
 
 The \WR signal process was simulated using the \PYTHIA generator and NNPDF23 PDF set, and following 
 the assumptions stated in Chapter \ref{sec:lrsPhenomenology}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
-final states were simulated independently, with \mWR increasing from 0.8 to 6 \TeV in increments of 
+final states were simulated independently, with \mWR increasing from 0.8 to 6 $\TeV$ in increments of 
 0.2 \TeV, and $\mnul = \frac{1}{2}\mWR$.  Events from the $\WR \rightarrow \mu\mu jj$ samples were 
-required to pass the single \mu, $\pt > 50$ \GeV High Level trigger described previously, while 
-$\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33$ \GeV High Level 
+required to pass the single $\mu$, $\pt > 50 \GeV$ High Level trigger described previously, while 
+$\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33 \GeV$ High Level 
 trigger.
 
 As stated previously, in the second step of \MC simulations, simulated events from randomly chosen SM 
@@ -307,12 +309,12 @@ process (\WR or SM), the number of secondary events mixed in were pulled from a 
 with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
 or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
 events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
-applied to every simulated event before simulated events were analyzed further.
+applied to every simulated event.
 
-Independent of the CMS \MC production group, additional $\WR \rightarrow lljj$ simulated datasets using 
-\PYTHIA were produced.  Only the first simulation step was run, and the \PYTHIA configuration was 
-identical to what was used by the CMS \MC production group.  Datasets were produced with 
-$0.8 \leq \mWR \leq 4.0$ \TeV increasing in \mWR increments of 0.1 \TeV, and $0.025 \leq \mnul < \mWR$ \TeV.  
+Additional $\WR \rightarrow lljj$ simulated datasets using \PYTHIA were produced for limit setting.  
+Only the first simulation step was run, and the \PYTHIA configuration was 
+identical to what was used for the fully reconstructed \MC events.  Datasets were produced with 
+$0.8 \leq \mWR \leq 4.0 \TeV$ increasing in \mWR increments of 0.1 $\TeV$, and $0.025 \leq \mnul < \mWR$ \TeV.  
 Using a procedure described later, these datasets were used to extrapolate \WR cross section limits 
 versus \mWR to \WR and \nul exclusion limits as functions of \mWR and \mnul.
 
@@ -362,7 +364,7 @@ $\WR \rightarrow \mu\mu jj$ events.
 	\begin{tabular}{c|c}
 		\mWR (\TeV) & Fraction of events with at least one high-$\pt$ muons (\%) \\  \hline
 		1.0 &  80.  \\
-		2.0 &  95.  \\ \hline
+		2.0 &  95.  \\ 
 		3.0 &  98.  \\ \hline
 	\end{tabular}
 \end{table}
@@ -386,19 +388,19 @@ Following the momentum determination, muons were required to pass a $\pt$ select
 identification selections to reject muons that were not produced by \WR decays.  These requirements were applied identically to events 
 in data and simulations.  LRS models predicted $\mWR \gtrsim 1 \TeV$, and as a result the charged leptons 
 produced by \WR decays had average $\pt$ in excess of 100 \GeV.  The kinematics of the expected final state leptons 
-motivated a $\pt > 53$ \GeV cut on muons, to increase sensitivity to \WR signals relative to SM backgrounds.  
-As shown in Table \ref{tab:lowerMuonPt}, a lower $\pt$ cut would reduce \WR sensitivity.  After the $\pt$ cut, muons 
+motivated a $\pt > 53 \GeV$ cut on muons, to increase sensitivity to \WR signals relative to SM backgrounds.  
+As shown in Table \ref{tab:lowerMuonPtCuts}, a lower $\pt$ cut would reduce \WR sensitivity.  After the $\pt$ cut, muons 
 were required to pass the following identification selections:
 
 \begin{itemize}
 	\item The track fit obtained from "Tune-P" included at least one muon chamber hit.
 	\item The origin of the track fit obtained from "Tune-P" was within 2 (5) \mm of the primary vertex in the $x,y$ plane ($z$ axis).
 	\item Muon detector tracks were reconstructed in at least two muon chambers.
-	\item The relative $\pt$ error on the muon momentum from "Tune-P" was below 30\%, $\sigma(p_{T})/p_{T} < 0.3$.
+	\item The relative $\pt$ error on the muon momentum from "Tune-P" was below 30\%, $\sigma(\pt)/\pt < 0.3$.
 	\item The track obtained from the initial muon reconstruction had at least one hit in the silicon pixel detector, and had 
 		hits in at least five layers in the entire tracker.
 	\item In a $\Delta R = 0.3$ cone centered on the muon track in the silicon tracker, the $\Sigma \pt$ of all 
-		tracks in the cone not matched with the muon must be low compared to the muon $\pt$, $\frac{\Sigma \pt}{\mu \pt} < 0.1$.
+		tracks in the cone not matched with the muon must be low compared to the muon $\pt$, $\frac{\Sigma \pt}{muon \pt} < 0.1$.
 \end{itemize}
 
 \begin{table}[h]
@@ -418,16 +420,16 @@ There were known differences between simulations and data that effected the reco
 of muons.  These differences were corrected by applying event weights to muons in simulated events, and energy 
 corrections to muons in data and simulated events.  In general the muon triggers were more efficient in simulations than in 
 collisions, so the weight of every simulated event was scaled down by a factor dependent on the $\pt$ and $\eta$ of the 
-triggering muon.  For the $\pt > 50$ \GeV trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
+triggering muon.  For the $\pt > 50 \GeV$ trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
 event weight (a weight of 1 is equivalent to no correction) applied to triggering muons in simulated events was between 
-0.95 and 0.97 for $\pt < 140$ \GeV, and between 0.97 and 1.0 for $\pt > 140$ \GeV with negligible uncertainty.  
+0.95 and 0.97 for $\pt < 140 \GeV$, and between 0.97 and 1.0 for $\pt > 140 \GeV$ with negligible uncertainty.  
 Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
 events in data and simulations, it was known that the muon energy scale and resolution differed between simulations 
 and data\footnote{the peak position differed due to different muon energy scale calibrations, and the width differed 
 because the muon energy resolution differed between simulations and data}.  The $\pt$ of muons in data and simulations 
 were corrected based on their $\eta$, $\phi$, charge and initial $\pt$ to bring the muon energy scale and resolution 
 into agreement between data and simulations.  These corrections were applied 
-before the $\pt > 53$ \GeV cut mentioned earlier.  Additional weights were applied to every simulated muon 
+before the $\pt > 53 \GeV$ cut mentioned earlier.  Additional weights were applied to every simulated muon 
 to eliminate the difference in muon identification selection efficiency between data and simulations.  For 
 any muon this weight was always between 1.0 and 0.985, with negligible uncertainty.
 %and the uncertainty on the weight was below 0.001.
@@ -478,9 +480,8 @@ taken from the SC, but its $\eta$ and $\phi$ were obtained from the track.
 
 Following electron reconstruction and energy measurement, electrons were required to pass $\Et$ and identification 
 selections.  These requirements were applied identically to events in data and simulations.  
-Similar to muon $\pt$s, electrons were required to have $\Et > 53$ \GeV to increase sensitivity to a \WR signal 
-relative to SM backgrounds.  After the $\Et$ cut, electrons were required to pass the identification selections 
-to reject electrons that were not produced by \WR decays:
+Similar to muon $\pt$s, electrons were required to have $\Et > 53 \GeV$ to increase sensitivity to a \WR signal 
+relative to SM backgrounds.  After the $\Et$ cut, electrons were required to pass the identification selections:
 
 \begin{itemize}
 	\item The extrapolated track position and SC seed crystal position differed by less than 1 crystal width in $\eta$, and 
@@ -504,13 +505,13 @@ to reject electrons that were not produced by \WR decays:
 
 There were known differences between simulations and data that effected the electron reconstruction and selection 
 efficiencies.  These differences were corrected by applying event weights to electrons in simulated events, and energy 
-corrections to electrons in data and simulated events.  The double electron $\Et > 33$ \GeV trigger had the same 
+corrections to electrons in data and simulated events.  The double electron $\Et > 33 \GeV$ trigger had the same 
 efficiency in data and simulations for reconstructed electrons with $\Et > 53$ \GeV, so no trigger correction 
 was applied.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow ee$ 
 events in data and simulations, it was known that the electron energy scale and resolution differed between simulations 
 and data.  The $\Et$ of electrons in data and simulations were corrected based on their $\eta$, $\phi$, initial $\Et$ 
 and ECAL shower shape to bring the electron energy scale and resolution in data and simulations into agreement.  
-These corrections were applied before the $\Et > 53$ \GeV cut mentioned earlier.  Additional weights were applied 
+These corrections were applied before the $\Et > 53 \GeV$ cut mentioned earlier.  Additional weights were applied 
 to every simulated electron to eliminate the difference in electron reconstruction and identification selection 
 efficiency between data and simulations.  The weight applied to all simulated electrons was 0.982 to account for 
 differences in reconstruction efficiency, and an additional weight of 0.989 was applied to simulated electrons to 
@@ -538,9 +539,10 @@ vertex with the highest track $\Sigma \pt$ (the primary vertex) were used to tag
 directions.  Then, all charged particles from the primary vertex, and all photons and neutral hadrons in the event 
 were placed in a list of jet constituent candidates, which was subsequently analyzed using the anti-$k_{T}$ 
 algorithm \cite{antikt}.  Jet constituents were iteratively clustered into jets based on the $\pt$ of each 
-constituent and its $(\eta,\phi)$ distance from the jet axis defined by a charged particle track.  Most jet 
-constituents fell within $\Delta R < 0.4$ of the jet axis, but it was possible for low energy constituents to 
-be futher away.
+constituent and its $(\eta,\phi)$ distance from the jet axis defined by a charged particle track.  The majority 
+of jet constituents fell within $\Delta R < 0.4$ of the jet axis, but it was possible for low energy constituents to 
+be futher away.  A jet's energy was defined as the total energy of its constituents, and its $(\eta,\phi)$ 
+trajectory was the $\pt$-averaged trajectory of all charged constituents.
 
 %This algorithm took the $i^{th}$ particle from the list of jet constituents, and
 %calculated the distance parameter $d_{ij}$
@@ -557,7 +559,7 @@ be futher away.
 %the newly created list continued N times, creating N lists, until the lists $L_{N}$ and $L_{N-1}$ had the same 
 %number of elements.  At the end, jets were produced from clusters of individually reconstructed particles.
 
-Once the jets were clustered, their raw energies ($= \Sigma E$ of constituents) were corrected in several steps.  
+Once the jets were clustered, their raw energies were corrected in several steps.  
 Neutral hadrons produced by pileup interactions can still be clustered into jets, so the first correction reduces 
 the energy of every jet in a data or simulations based on the jet area and the total neutral hadron energy density 
 in the event \cite{pileup1,pileup2}.  Subsequently, energy corrections based on jet $\eta$ and $\pt$ 
@@ -583,7 +585,7 @@ jet to have:
 
 These requirements increased the fraction of selected jets that originated from real hadronic activity expected in the 
 $\WR \rightarrow \ell\ell jj$ decay.  As shown in Table \ref{tab:wrHighPtJets}, LRS models predicted that real jets 
-produced in \WR decays had high $\pt$.  Jets were required to have $\pt > 40$ \GeV to increase sensitivity to 
+produced in \WR decays had high $\pt$.  Jets were required to have $\pt > 40 \GeV$ to increase sensitivity to 
 a \WR signal relative to expected SM backgrounds.  As shown in Table \ref{tab:lowerJetPtCuts}, a lower jet $\pt$ cut 
 increased SM backgrounds without a corresponding increase in \WR signal.
 
@@ -594,7 +596,7 @@ increased SM backgrounds without a corresponding increase in \WR signal.
 	\begin{tabular}{c|c}
 		\mWR (\TeV) & Fraction of events with two high-$\pt$ jets (\%) \\  \hline
 		1.0 &  80.  \\
-		2.0 &  92.  \\ \hline
+		2.0 &  92.  \\
 		3.0 &  94.  \\ \hline
 	\end{tabular}
 \end{table}
@@ -608,7 +610,7 @@ increased SM backgrounds without a corresponding increase in \WR signal.
 	\centering
 	\begin{tabular}{c|c}
 		jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
-		30 &  12.1  \\ \hline
+		30 &  12.1  \\
 		40 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
@@ -616,17 +618,16 @@ increased SM backgrounds without a corresponding increase in \WR signal.
 
 \section{\WR Candidate Selection}
 \label{sec:wrCandSelection}
-%Following individual selections on electrons, muons and jets, \WR candidates are builhhhhhhhhhhhhhhhhhhhhhhhhhkt
 Following the reconstruction and selection of electrons, muons and jets, a \WR candidate in every $\mu\mu$ (ee) 
 channel event was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
 highest $\pt$ jets passing the $\pt$ or $\Et$ selections described earlier.  In the $e\mu$ channel used for top quark background estimation, the highest $\pt$ muon and highest $\Et$ 
 electron were used to build an $e\mu jj$ candidate.  LRS models predicted one lepton from \WR decays to have 
 higher energy than the other, so ,to increase sensitivity to a \WR signal, one lepton was required to have $\pt$ or 
-$\Et > 60$ \GeV.  Furthermore, due to the heavy \nul recoiling off the \ell daughter of the \WR, it was predicted that 
+$\Et > 60$ \GeV.  Furthermore, due to the heavy $\nul$ recoiling off the $\ell$ daughter of the \WR, it was predicted that 
 the two leptons in \WR decays would have a high dilepton mass (Table \ref{tab:wrMll}).  To further increase sensitivity to a \WR signal over expected 
 backgrounds, especially \DY+jets, the two selected leptons were required to have mass $\Mll > 200$ \GeV.  In events 
-that passed the high $\pt$ lepton and $\Mll$ selections, one or both leptons could have come from jets with $\pt \gg 100$ 
-\GeV that produced an energetic lepton in the tracker.  To reduce the fraction of such events passing the kinematic 
+that passed the high $\pt$ lepton and $\Mll$ selections, one or both leptons could have come from jets with $\pt \gg 100 \GeV$ 
+that produced an energetic lepton in the tracker.  To reduce the fraction of such events passing the kinematic 
 selection, the two selected jets were required to be separated from the two selected leptons by $\Delta R > 0.4$:
 
 \begin{itemize}
@@ -643,14 +644,14 @@ selection, the two selected jets were required to be separated from the two sele
 	\begin{tabular}{c|c}
 		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
 		1.0 &  88.  \\
-		2.0 &  98.  \\ \hline
+		2.0 &  98.  \\
 		3.0 &  99.  \\ \hline
 	\end{tabular}
 \end{table}
 
 
 As there were only charged leptons and jets in the final states studied in this search, the dilepton plus dijet mass 
-of the four final state particles (\Mlljj) averaged over many events was expected to be in good agreement with \mWR predicted by 
+of the four final state particles (\Mlljj) averaged over many events was consistent with \mWR predicted by 
 LRS models.  To further increase sensitivity to a \WR signal relative to expected backgrounds, an effective \WR mass 
 cut was applied by requiring the final state lepton plus jet mass $\Mlljj > 600$ \GeV.  Nearly all events from \WR \MC 
 datasets passed this cut with high efficiency, as shown in Table \ref{tab:wrMlljj}.
@@ -667,7 +668,7 @@ relative to muons.
 	\begin{tabular}{c|c}
 		\mWR (\TeV) & Fraction of events with high \Mlljj (\%) \\  \hline
 		1.0 &  99.  \\
-		2.0 &  100.  \\ \hline
+		2.0 &  100.  \\
 		3.0 &  100.  \\ \hline
 	\end{tabular}
 \end{table}
@@ -677,7 +678,8 @@ relative to muons.
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
 	\caption{The efficiency that $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ events are selected using 
-	the trigger and full offline selection in the ee ($\mu\mu$) channel on the left (right).}
+	the trigger and full offline selection in the ee ($\mu\mu$) channel on the left (right).  Different curves represent 
+events where both leptons were in the barrel $\eta$ region (BB), one was in the endcap (EB), or both were in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 
@@ -687,12 +689,12 @@ invariant masses.  Models differed in the shapes and magnitudes of predicted exc
 a \WR boson existed, and evidence of it appeared as a peak in the \Mlljj distribution, whose peak position was consistent 
 with the predicted \mWR.  To look for evidence in support of LRS models without being sensitive to nuances of different 
 models, the \Mlljj mass was used as the search variable of merit.  Shown in Figure \ref{fig:mlljjVariableOfMerit} was 
-proof of this variable's efficacy: a simulated \WR signal with $\mWR = 1.0, \mnul = 0.5$ \TeV appeared as a sharp peak 
-in the \Mlljj distribution centered near $\Mlljj = 1.0$ \TeV that was clearly differentiated from expected SM backgrounds.
+proof of this variable's efficacy: a simulated \WR signal with $\mWR = 1.0, \mnul = 0.5 \TeV$ appeared as a sharp peak 
+in the \Mlljj distribution centered near $\Mlljj = 1.0 \TeV$ that was clearly differentiated from expected SM backgrounds.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.png}
+	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
 	\caption{The $\Mlljj$ distribution from simulations of expected SM backgrounds and \WR signal in the ee channel.  
 		The normalization of the \WR signal distribution is scaled down by 70\% only to better visualize the difference 
 	between \WR signal and expected backgrounds.}
