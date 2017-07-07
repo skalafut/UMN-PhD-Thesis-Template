@@ -1,72 +1,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %neutrino_physics.tex: Chapter on neutrino physics:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Theory of the Standard Model and Extensions}
+\chapter{Theoretical Motivations}
 \label{wrBosonAndHeavyNu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Standard Model Particles and Interactions}
-The Standard Model of particle physics (SM) postulates that the universe can be reduced down to a small 
-number of particles and interactions between them.  During the past four decades the SM has successfully 
-explained many phenomena observed in physics and astronomy, and predicted the existence of many particles 
-which were later confirmed by experiments.
+Experimental evidence \cite{NOvAresults,mainzPhaseIIResults,t2kResults} of neutrinos with non-zero masses motivated extensions to the Standard Model (SM).  
+Before discussing SM extensions, the methods through which the weak bosons $W^{\pm},Z$ and fermions acquired mass 
+in the SM are discussed.  Subsequently, a SM extension is presented to explain neutrino masses using the 
+mass generation methods of the SM, and other experimentally observed phenomena not explained by the SM.  
+The chapter concludes by presenting phenomenological aspects of the SM extension relevant to experimental 
+detection.
 
-The theoretical framework of the SM was proposed by Glashow, Weinberg and Salam in 1967 \cite{weinbergSM,salamSM}.  
-In their theory, the fundamental building blocks of matter are organized into three generations.  Each 
-generation has two quarks, a charged lepton paired with a neutral lepton, and particle and anti-particle 
-versions of all four.  The human body and every material or substance that humans are able to sense are 
-built from the first generation of particles, which consists of the electron and electron neutrino, and 
-the up and down quark.  The second generation contains the muon and muon neutrino, and the charm and 
-strange quark, while the third generation contains the tau and tau neutrino, and the top and bottom 
-quark.
-
-There are three interactions in the SM, and they are mediated by additional particles.  Mathematically, 
-these interactions are represented by gauge groups, and the mediator particles are represented by 
-combinations of group generators multiplied by vector fields.  The strong interaction, represented by 
-the $SU(3)_{C}$ group, occurs between quarks and is mediated 
-by gluons, which are represented by vector fields multiplied by the $SU(3)$ group generators.  The proton, 
-built from three quarks with a net positive charge, is stable because the strong interaction attraction 
-between quarks overwhelms the electromagnetic repulsion between quarks with same sign electric charges.  
-The electromagnetic interaction occurs between all particles with electric charge 
-and is mediated the photon.  The $\pi^{0}$ contains a linear combination of an up anti-up quark pair and 
-a down anti-down quark pair, and primarily decays through the electromagnetic interaction to two photons, 
-$\pi^{0} \rightarrow \gamma\gamma$.  The weak interaction occurs 
-between all particles in all generations, and is mediated by the $W^{\pm}$ and $Z$ bosons.  For reasons 
-discussed later, the photon, $W^{\pm}$ and $Z$ bosons are represented mathematically by linear combinations 
-of vector fields multiplied by the $SU(2)_{L}$ and $U(1)$ group generators.
-
-The dynamics of the strong interaction is driven by a mathematical construct called color charge.  Every 
-quark is produced with one of six possible color charges: red, anti-red, blue, anti-blue, green, or anti-
-green.  Gluons that mediate the strong interaction carry two different color charges, like red and blue, 
-or anti-blue and green.  Color charge is conserved in strong interactions, and all quasi-
-stable\footnote{mean lifetime $\gtrsim 10^{-25}$ seconds} quark bound states 
-are color neutral.  Thus, a pair of quarks that are red and anti-red, or a triplet of quarks that are 
-red, blue and green constitute quasi-stable bound states.  When a proton-proton interaction in the LHC 
-produces a quark, the strong interaction works to keep that quark in a color neutral bound state.  As the 
-quark moves away from quarks in colliding protons, potential energy accumulates, similar to stretching a 
-spring.  Once enough potential energy accumulates, the strong interaction converts the potential energy 
-into a massless gluon that decays into two new quarks.  At least one of the two new quarks has 
-the correct color to form a color neutral bound state with the original quark.  The other new quark may 
-have the correct color to form a color neutral, quark triplet bound state.  If not, the process of 
-potential energy accumulation followed by quark pair production continues until the sum total color 
-charge of all new quarks produced is neutral.  A gluon produced by a proton-proton interaction 
-decays into two quarks of different colors, and the process described for one quark ensues for both 
-quarks.  The shower of color neutral hadrons that results from the production of one quark or gluon 
-is called a jet for the remainder of this thesis.
-
-The weak interaction has garnered much attention from the particle physics community for many decades.  
-To explain the $\beta$-decay process, in 1932 Fermi proposed a model for the weak interaction based on 
-the electromagnetic interaction.  His model predicted the existence of a neutral lepton, the electron 
-anti-neutrino, which was later supported by experimental evidence \cite{firstNuDiscovery} and became part of the SM.  However, Fermi's 
-model did not correctly predict the branching fraction of many hadrons that decay through the weak 
-interaction, like $K^{+} \rightarrow 2\pi, 3\pi$.  In 1956 Lee and Yang proposed the weak interaction 
-violated parity, and this was substantiated with experimental evidence in the following year \cite{weakParityViolation}.  
-The weak interaction in the SM violates parity, and an important consequence of this is the chirality of 
-the neutrinos.  Anti-neutrinos are left-handed, and neutrinos are right-handed.  The implications of this 
-constraint on neutrino masses will be discussed later.
-
-The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ groups transform into the massless 
+\section{Particle Masses in the Standard Model}
+\label{sec:massInSM}
+The SM postulated that the four generators of the $SU(2)_{L} \times U(1)$ groups transformed into the massless 
 photon and massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
-adds four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four bosonic 
+added four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four bosonic 
 particles, which obey the Lagrangian $\Ell_{H}$:
 
 \begin{align}
@@ -80,26 +29,19 @@ particles, which obey the Lagrangian $\Ell_{H}$:
 	\Ell_{H} = (D_{\mu}\Phi)^{\dagger}D^{\mu}\Phi - V(\Phi)
 \end{equation}
 
-where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ is the Higgs potential, and 
-$D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ describes the propagation 
+where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ was the Higgs potential, and 
+$D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ described the propagation 
 of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_L$ generators $\tau^{j}$ and massless vector 
 fields $A^{j}_{\mu}$, and the $U(1)$ generator $Y$ and massless vector field $B_{\mu}$.  $g_{L}$ and 
-$g'$ determine the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ takes a 
-value $<\Phi> =$ (0  $\nu/\sqrt{2}$) so that the Higgs potential is minimized.  When $V(\Phi)$ is minimized 
-and explicit matrices and values are plugged in for the group generators, the subset 
-of the Lagrangian $\Ell_{H}$ without partial derivatives $\partial_{\mu}$ and the Higgs potential $V(\Phi)$:
-
-\begin{equation}
-	\Ell_{HK} = [(ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu})\Phi]^{\dagger}(ig_{L}\tau^{j}A^{j\mu} + i\frac{g'}{2}YB^{\mu})\Phi
-\end{equation}
-
-reduces to:
+$g'$ set the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ took a 
+value $<\Phi> =$ (0  $\nu/\sqrt{2}$) to minimize the Higgs potential, after which the $\Ell_{H}$ reduced 
+to:
 
 \begin{equation}
 	\Ell_{HK} = \frac{\nu^{2}}{8}[g^{2}_{L}(A^{1}_{\mu} + iA^{2}_{\mu})(A^{1\mu} - iA^{2\mu}) + (g'B_{\mu} - g_{L}A^{3}_{\mu})^{2}]
 \end{equation}
 
-Defining the photon vector field $A_{\mu}$, and weak boson vector fields $W^{\pm}_{\mu}$ and $Z_{\mu}$ as:
+The photon vector field $A_{\mu}$, and the weak boson vector fields $W^{\pm}_{\mu}$ and $Z_{\mu}$ were defined as:
 
 \begin{equation}
 	W^{\pm}_{\mu} \equiv \frac{1}{\sqrt{2}}(A^{1}_{\mu} \pm iA^{2}_{\mu}), 
@@ -107,56 +49,68 @@ Defining the photon vector field $A_{\mu}$, and weak boson vector fields $W^{\pm
 	A_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}_{L}}}(g_{L}B_{\mu} + g'A^{3}_{\mu})
 \end{equation}
 
-yields the Lagrangian:
+transformed $\Ell_{H}$ into:
 
 \begin{equation}
 	\Ell_{HK} = (\frac{\nu g_{L}}{2})^{2}W^{+}_{\mu}W^{-\mu} + \frac{1}{2}(\frac{\nu \bar{g}}{2})^{2}Z_{\mu}Z^{\mu} + 0A_{\mu}A^{\mu}
 \end{equation}
 
-where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  From this Lagrangian, the photon $A_{\mu}$ is massless, 
-the $Z$ boson has mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons have mass $m_{W} = \nu g_{L}/2$.  
-Three of the four scalar fields introduced by the BEH mechanism are consumed to give mass to the $Z$ 
+where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  Following from this Lagrangian, the photon $A_{\mu}$ was massless, 
+the $Z$ boson had mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons had mass $m_{W} = \nu g_{L}/2$.  
+Three of the four scalar fields introduced by the BEH mechanism were consumed and gave mass to the $Z$ 
 and $W^{\pm}$ bosons.  Recent experimental evidence of the fourth scalar field \cite{combinedHiggsResult}, the Higgs boson, 
-supports the SM prediction that the $Z$ and $W^{\pm}$ bosons acquire mass through the BEH mechanism.
+supported the SM prediction that the $Z$ and $W^{\pm}$ bosons acquired mass through the BEH mechanism.
 
-Experimental evidence supports the prediction that quarks and charged leptons are massive particles.  In the SM, they can acquire mass 
-through two methods.  Their masses can be added directly to the SM Lagrangian, or additional Higgs fields 
-can be added to the BEH mechanism.  In either case, the result is mass terms of the form $-mf\bar{f}$, where $f$ is a fermion 
-representing a quark or charged lepton, are added to the SM Lagrangian.  In the basis where a 
-fermion field $f$ consists of a right-handed component $\chi_{R}$ and left-handed 
-component $\chi_{L}$, $f = (\chi_{L},\chi_{R})$, a fermion mass term in the SM Lagrangian is written as:
+Experimental evidence supported the prediction that quarks and charged leptons are massive particles.  In the SM, they could acquire mass 
+through two methods.  Their masses could be added directly to the SM Lagrangian, or additional Higgs fields 
+could be added to the BEH mechanism.  In either case, the result was mass terms of the form $-mf\bar{f}$, where $f$ is a fermion 
+representing a quark or charged lepton, were added to the SM Lagrangian.  In the basis where a 
+fermion field $f$ consisted of a right-handed component $\chi_{R}$ and left-handed 
+component $\chi_{L}$, $f = (\chi_{L},\chi_{R})$, a fermion mass term in the SM Lagrangian was written as:
 
 \begin{equation}
 	\Ell_{D} = -m\bar{f}f = -m\chi^{\dagger}_{L}\chi_{R} - m\chi^{\dagger}_{R}\chi_{L}
 \end{equation}
 
-This type of mass term, called a Dirac mass, contains the product of left and right-handed fields.  Quarks 
-and charged leptons can exist as left or right-handed fields, so their masses can be assigned using Dirac 
-mass terms.
+This type of mass term, called a Dirac mass, contained the product of left and right-handed fields.  Experimental 
+evidence substantiated that quarks and charged leptons, or their anti-particles, were massive and could be left or right-handed 
+fields.  Their masses were assigned using Dirac mass terms.
 
-Neutrinos play a special role in the SM.  The SM postulates that they are neutral, massless fermions, and only interact 
+Neutrinos played a special role in the SM.  The SM postulated that they are neutral, massless fermions, and only interacted 
 with other particles through the weak interaction.  In addition, due to parity violation of the weak interaction, 
-anti-neutrinos $\bar{\nu_{l}}$ are always right-handed, and neutrinos $\nu_{l}$ are always left-handed.  Results 
-from neutrino experiments \cite{NOvAresults,mainzPhaseIIResults,t2kResults} support the proposition that neutrinos 
-are massive fermions.  In the SM, fermions can only acquire mass through a Lagrangian of the form $\Ell_{D}$, 
-which requires a fermion to have left and right-handed fields.  Parity violation in the weak interaction prevents 
-neutrinos from having left and right-handed fields, so an extension of the SM is needed to explain the existence 
-of neutrinos with mass.
+anti-neutrinos $\bar{\nu_{\ell}}$ were always right-handed, and neutrinos $\nu_{\ell}$ were always left-handed.  Fermions in 
+the SM acquired mass through a Lagrangian of the form $\Ell_{D}$, which could not be used to explain SM neutrino masses 
+due to the multiplication of left and right-handed fields.  An extension of the SM was needed to explain neutrino masses.
 
 
-\section{Left-Right Symmetric Extensions of the Standard Model}
-Parity violation in the weak interaction constrains SM neutrinos to be massless, but this constraint is removed 
-in SM extensions where parity is conserved.  First proposed in 1974 \cite{earlyLRSModel}, Left-Right Symmetric (LRS) 
-extensions of the SM postulate that all interactions conserved parity in the very early universe.  In LRS models, shortly after 
-the Big Bang a BEH mechanism brought several massive scalar particles into existence.  These scalar particles merged 
-with massless mediator particles of an interaction, and created a parity violating weak interaction mediated by 
-massive particles.  Many LRS models predict the early universe evolved in this manner.  This thesis focuses on the 
-LRS extension model that replaces the SM $SU(2)_{L} \times U(1)$ groups with $SU(2)_{R} \times SU(2)_{L} \times U(1)$, 
-and extends the SM BEH mechanism to give mass to neutrinos and to create additional, massive bosons.
+\section{Standard Model Extensions}
+\label{sec:lrsExtensions}
+Several SM extensions accommodated massive neutrinos.  One of the simplest extensions proposed that neutrinos 
+were Majorana fermions, instead of Dirac fermions as in the SM.  Majorana neutrinos, first proposed 
+in 1937 \cite{majoranaTheory}, were fermions that were their own anti-particles, and had masses 
+$m_{L},m_{R}$ given by the Lagrangian $\Ell_{M}$:
 
-Adding the $SU(2)_{R}$ group to the SM introduces three new, massless vector fields $\xi^{j}_{\mu}$.  The SM BEH mechanism 
-is extended in two stages, which result in six massive gauge bosons that mediate the weak interaction.  In the first 
-stage \cite{lrsHiggsStageOne}, a chiral, complex Higgs doublet $\chi_{L,R}$ is introduced 
+\begin{equation}
+	\Ell_{M} = -m_{L}\chi^{\dagger}_{L}\chi_{L} - m_{R}\chi^{\dagger}_{R}\chi_{R}
+\end{equation}
+
+The Majorana masses could be generated through an extended Higgs model, or adding terms of the form $\Ell_{M}$ 
+to the SM Lagrangian.  If light Majorana neutrinos existed, then the double beta decay process could occur 
+with no neutrinos.  Experimental evidence of neutrinoless double beta decay was not found 
+\cite{igexDblBetaDecay,gerdaDblBetaDecay}, so a different SM extension was needed to explain neutrino masses.
+
+Another class of SM extensions that explained the origin of neutrino masses were Left-Right Symmetric (LRS) extensions.  
+First proposed in 1974 \cite{earlyLRSModel}, LRS models postulated that a precursor to the SM electromagnetic and weak interactions 
+existed in the very early universe, conserved parity and was mediated by seven massless gauge bosons.  
+Shortly after the Big Bang an extension of the SM BEH mechanism transformed the seven massless gauge bosons 
+into the massless photon, the SM $W^{\pm}$ and $Z$ bosons, and three heavier bosons $W^{\pm}_{R}$ (\WR) and $Z'$.  
+The mechanism through which the SM $W^{\pm}$ and $Z$, and \WR and $Z'$ bosons acquired mass is discussed next, and 
+is followed by a discussion of neutrino masses in LRS models.
+
+The subset of LRS models considered here added a $SU(2)_{R}$ group to the SM $SU(2)_{L} \times U(1)$ groups.
+Adding the $SU(2)_{R}$ group to the SM introduced three new, massless vector fields $\xi^{j}_{\mu}$.  In these LRS models, 
+the SM BEH mechanism is extended in two stages, and created six massive gauge bosons that mediated the weak interaction.  
+In the first stage \cite{lrsHiggsStageOne}, a chiral, complex Higgs doublet $\chi_{L,R}$ was introduced 
 
 \begin{align}
 	\chi_{L,R} &= \begin{bmatrix}
@@ -166,8 +120,8 @@ stage \cite{lrsHiggsStageOne}, a chiral, complex Higgs doublet $\chi_{L,R}$ is i
 	\label{eq:stageOneVEV}
 \end{align}
 
-with bosonic fields that couple independently to left and right-handed gauge bosons.  Propagation and interaction of these 
-fields with other massless bosons is described by the Lagrangian:
+with bosonic fields that coupled independently to left and right-handed gauge bosons.  The propagation and interaction of these 
+fields with other massless bosons was described by the Lagrangian:
 
 \begin{equation}
 	\Ell_{H,LRS} = \frac{1}{2}(D_{\mu}\chi_{L})^{\dagger}D^{\mu}\chi_{L} + \frac{1}{2}(D_{\mu}\chi_{R})^{\dagger}D^{\mu}\chi_{R} - V(\chi_{L,R})
@@ -175,32 +129,26 @@ fields with other massless bosons is described by the Lagrangian:
 
 where $D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{L\mu} + ig_{R}\tau^{j}\xi^{j}_{R\mu} + i\frac{g'}{2}YB_{\mu}$ contains 
 the massless boson fields $A^{j}_{L\mu}, \xi^{j}_{R\mu}, B_{\mu}$ multiplied by the generators of the $SU(2)_{L}, SU(2)_{R}, U(1)$ groups.  
-In the model considered here the coupling strengths $g_{R}, g_{L}$ are assumed to be equal, and are denoted as $g$.  The potential $V(\chi_{L,R})$
-
-\begin{equation}
-	V(\chi_{L,R}) = -2\lambda_{1}U^{2}_{R}(\chi^{\dagger}_{R}\chi_{R} + \chi^{\dagger}_{L}\chi_{L}) + \lambda_{1}[(\chi^{\dagger}_{R}\chi_{R})^{2} + (\chi^{\dagger}_{L}\chi_{L})^{2}] + \lambda_{2}\chi^{\dagger}_{R}\chi_{R}\chi^{\dagger}_{L}\chi_{L}
-\end{equation}
-
-respects the symmetries of the LRS model with positive constants $\lambda_{1}, \lambda_{2} > 2\lambda_{1}$, and is minimized when $\chi_{L,R}$ 
-takes values $<\chi^{+}_{L,R}> = 0, <\chi^{0}_{L}> = 0, <\chi^{0}_{R}> = U_{R}$.  In the early universe $V(\chi_{L,R})$ is minimized, and 
-subsequently new, massive fields are created.  Identifying the new massive fields as:
+In the LRS models considered here the coupling strengths $g_{R}, g_{L}$ were assumed to be equal, and denoted as $g$.  
+The potential $V(\chi_{L,R})$ respects the symmetries of LRS models, depends on a constant $U_{R}$, and was minimized when $\chi_{L,R}$ 
+took values $<\chi^{+}_{L,R}> = 0, <\chi^{0}_{L}> = 0, <\chi^{0}_{R}> = U_{R}$.  In the early universe $V(\chi_{L,R})$ was minimized, and 
+subsequently new, massive fields were created.  The new fields:
 
 \begin{equation}
 	W^{\pm}_{R\mu} \equiv \frac{1}{\sqrt{2}}(\xi^{1}_{R\mu} \mp i\xi^{2}_{R\mu}), 
 	Z'_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}}}(-g'B_{\mu} + g\xi^{3}_{R\mu})
 \end{equation}
 
-then substituting $<\chi^{+}_{L,R}> = 0, <\chi^{0}_{L}> = 0, <\chi^{0}_{R}> = U_{R}$ into $\Ell_{H,LRS}$, dropping the the potential $V(\chi_{L,R})$ 
-and $\partial_{\mu}$ terms, and multiplying the generator matrices $\tau^{j}$ by the fields $\xi^{j}_{R\mu},\A^{j}_{L\mu}$ yields:
+acquired masses:
 
 \begin{equation}
 	\Ell_{HK,LRS} = (\frac{1}{4}U^{2}_{R}g^{2})W^{+\mu}_{R}W^{-}_{R\mu} + \frac{1}{2}[\frac{1}{4}U^{2}_{R}(g^{2} + g'^{2})]Z'_{\mu}Z'^{\mu}
 \end{equation}
 
-Thus in the first stage extension of the BEH mechanism, the bosons $W^{\pm}_{R}, Z'$ are created with masses $m_{W_{R}} = \frac{1}{2}gU_{R}$ 
-and $m_{Z'} = \frac{1}{2}U_{R}\sqrt{g'^{2} + g^{2}}$, and all other bosons remain massless.
+Thus in the first stage extension of the BEH mechanism, the bosons $W^{\pm}_{R}, Z'$ were created with masses $m_{W_{R}} = \frac{1}{2}gU_{R}$ 
+and $m_{Z'} = \frac{1}{2}U_{R}\sqrt{g'^{2} + g^{2}}$, and all other bosons remained massless.
 
-Following the first stage, the second stage extension of the SM BEH mechanism \cite{lrsHiggsStageOne,lrsHiggsStageTwo} introduces two complex Higgs doublets 
+Following the first stage, the second stage extension of the BEH mechanism \cite{lrsHiggsStageOne,lrsHiggsStageTwo} introduced two complex Higgs doublets 
 $\phi_{1}$ and $\phi_{2}$ represented by the multiplet $\Phi$:
 
 \begin{align}
@@ -210,10 +158,10 @@ $\phi_{1}$ and $\phi_{2}$ represented by the multiplet $\Phi$:
 	\end{bmatrix}
 \end{align}
 
-The multiplet interacts with the left and right-handed $SU(2)$ boson fields, and the Lagrangian $\Ell_{H2,LRS}$ that 
+The multiplet interacted with the left and right-handed $SU(2)$ boson fields, and the Lagrangian $\Ell_{H2,LRS}$ that 
 describes\footnote{$\Ell_{H2,LRS}$ is similar to $\Ell_{H}$ described in the previous section, but with extra terms for the second Higgs doublet} these 
-interactions includes a potential $V(\phi_{1},\phi_{2})$.  In the early universe this potential is minimized, and 
-the multiplet $\Phi$ takes the value:
+interactions included a potential $V(\phi_{1},\phi_{2})$ that forced $\Phi$ to a non-zero expectation value.  When $V(\phi_{1},\phi_{2})$ was 
+minimized in the early universe, the multiplet $\Phi$ took the value:
 
 \begin{align}
 	<\Phi> &= \begin{bmatrix}
@@ -223,40 +171,23 @@ the multiplet $\Phi$ takes the value:
 	\label{eq:stageTwoVEV}
 \end{align}
 
-Following the procedure used for the first stage extension of the SM BEH mechanism, $<\Phi>$ is substituted for $\Phi$ in 
-the Lagrangian $\Ell_{H2,LRS}$, and algebraic simplifications are applied.  The second stage extension of the SM BEH 
-mechanism yields the SM weak bosons $W^{\pm}_{L}$ and $Z$, and the new $W^{\pm}_{R}$ and $Z'$ bosons with masses:
+and the \WR, $Z'$, SM $W^{\pm}$ and $Z$ acquired masses:
 
 \begin{equation}
-	m_{W_{L}} = \frac{1}{2}g\nu , m_{W_{R}} \simeq \frac{1}{2}gU_{R} , m_{Z} = \frac{1}{2}\bar{g}\nu , m_{Z'} \simeq \frac{1}{2}\bar{g}U_{R}
+	m_{W_{L}} = \frac{1}{2}g\nu ,\quad m_{W_{R}} \simeq \frac{1}{2}gU_{R} ,\quad m_{Z} = \frac{1}{2}\bar{g}\nu ,\quad m_{Z'} \simeq \frac{1}{2}\bar{g}U_{R}
 \end{equation}
 \begin{equation}
 	\nu^{2} \equiv \nu^{2}_{1} + \nu^{2}_{2} , \bar{g}^{2} \equiv g^{2} + g'^{2}
 \end{equation}
 
+where it was assumed that $U_{R} \gg \nu$, and there was negligible mixing between left and right-handed leptons, 
+which is discussed later.  Thus, LRS models predicted the existence of the SM weak bosons with correct masses, and three new, 
+heavier bosons.  The mass splitting between the left-handed SM $W,Z$ and right-handed $\WR,Z'$ provided clear evidence of 
+parity violation in LRS models, whereas it was assumed in the SM without a clear theoretical source.
 
-
-where it is assumed that $U_{R} \gg \nu$, and there is negligible mixing between left and right-handed leptons, 
-which is discussed later.  Thus LRS model yields the SM weak bosons with the correct masses, and three new, 
-heavier bosons.  The parity violation of the SM weak interaction is retained in the LRS model.
-
-The addition of the $SU(2)_{R}$ group to the SM also introduces three new generations of right-handed leptons - 
-three charged leptons $l^{\pm}_{R}$, and three neutral leptons (neutrinos) $N^{l}_{R}$.  The existence of 
-right-handed neutrinos means the LRS model Lagrangian can assign neutrino masses using Dirac mass terms like:
-
-\begin{equation}
-	\Ell_{D} = -m\nu^{\dagger}_{L}N_{R} - mN^{\dagger}_{R}\nu_{L}
-\end{equation}
-
-in addition to using Majorana neutrino mass terms that do not require independent left and right-handed 
-neutrinos, like:
-
-\begin{equation}
-	\Ell_{M} = -m_{L}\nu^{\dagger}_{L}\nu_{L} - m_{R}\nu^{\dagger}_{R}\nu_{R}
-\end{equation}
-
-where $\nu_{R}$ is the anti-particle of the SM neutrino $\nu_{L}$.  The LRS model considered here postulates 
-that neutrino masses come from a mixture of Dirac and Majorana mass terms \cite{seeSawAndParityViolation,seeSawAndGUTs} described by the Lagrangian:
+The addition of the $SU(2)_{R}$ group to the SM also introduced three new right-handed neutrinos $N^{l}_{R}$.  
+LRS models considered here postulated that neutrino masses came from a mixture of Dirac and Majorana mass 
+terms \cite{seeSawAndParityViolation,seeSawAndGUTs} described by the Lagrangian:
 
 \begin{align}
 	\Ell &= \frac{1}{2}(\bar{\nu}_{Li} \quad \bar{\nu}_{Ri})\begin{bmatrix}
@@ -266,74 +197,77 @@ that neutrino masses come from a mixture of Dirac and Majorana mass terms \cite{
 \label{eq:nuMasses}
 \end{align}
 
-where $i$ denotes the lepton generation, and $\nu_{L}$ and $\nu_{R}$ are the pure left and right-handed 
-neutrino fermion fields.  The nonzero value of $<\Phi>$ in equation \ref{eq:stageTwoVEV} creates the 
+where $i$ was the lepton generation, and $\nu_{L}$ and $\nu_{R}$ were the massive, pure left and right-handed 
+neutrino fermion fields.  The nonzero value of $<\Phi>$ in equation \ref{eq:stageTwoVEV} created the 
 Dirac masses $M_{i}$, and the expectation values of $\chi_{L}$ and $\chi_{R}$ defined in equation \ref{eq:stageOneVEV} 
-creates the Majorana masses $B'_{i}$ and $B_{i}$.  As a result, $M_{i} \sim \nu$, $B'_{i} \sim 0$, 
+created the Majorana masses $B'_{i}$ and $B_{i}$.  As a result, $M_{i} \sim \nu$, $B'_{i} \sim 0$, 
 $B_{i} \sim U_{R}$, and $B_{i} \gg M_{i}$, consistent with $m_{W_{R}} \gg m_{W_{L}}$.  Substituting 
-these values in for the Dirac and Majorana masses, equation \ref{eq:nuMasses} can be diagonalized to 
-yield the mass eigenvalues assuming left-right mixing is negligible.  These mass eigenvalues are:
+$\nu,U_{R}$ for the Dirac and Majorana masses, equation \ref{eq:nuMasses} was diagonalized and 
+yielded the following mass eigenvalues, assuming negligible left-right mixing:
 
 \begin{equation}
 	\lambda_{i+} \simeq B_{i},  \quad \lambda_{i-} \simeq -\frac{M^{2}_{i}}{B_{i}}
 \end{equation}
 
-and correspond to one very heavy mass state $\lambda_{i+}$ and a very light state $\lambda_{i-}$.  The 
-detectable states $N_{i}, \nu_{i}$ that participate in the weak interactions can be described in terms of 
+The detectable states $N_{i}, \nu_{i}$ that participated in weak interactions were described in terms of 
 the pure left and right-handed neutrino fields as:
 
 \begin{equation}
-	\nu_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(B_{i}\nu_{Li} - M_{i}\nu_{Ri}) \simeq \nu_{Li} - \frac{M_{i}}{B_{i}}\nu_{Ri}
+	\nu_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(B_{i}\nu_{Li} - M_{i}\nu_{Ri}) \simeq \nu_{Li} - \frac{M_{i}}{B_{i}}\nu_{Ri} , \quad m_{\nu_{i}} = \lambda_{i-}
+	
+	N_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(M_{i}\nu_{Li} + B_{i}\nu_{Ri}) \simeq \nu_{Ri} + \frac{M_{i}}{B_{i}}\nu_{Li} , \quad m_{N_{i}} = \lambda_{i+}
 \end{equation}
 
-with mass $\lambda_{i-}$, and:
+Thus, in LRS models, left-handed neutrinos $\nu_{i}$ were very light,  right-handed neutrinos $N_{i}$ were very 
+heavy, and the left-handed neutrinos became lighter as the right-handed neutrinos became heavier.  Furthermore, 
+mixing between left and right-handed states was highly suppressed by $\sim \frac{M_{i}}{B_{i}}$, which was 
+supported by experimental evidence \cite{dZeroMixingLimits,theoreticalMixingLimits}.
 
-\begin{equation}
-	N_{i} \simeq \frac{1}{\sqrt{M^{2}_{i} + B^{2}_{i}}}(M_{i}\nu_{Li} + B_{i}\nu_{Ri}) \simeq \nu_{Ri} + \frac{M_{i}}{B_{i}}\nu_{Li}
-\end{equation}
-
-with mass $\lambda_{i+}$.  Thus, in the LRS model, left-handed neutrinos $\nu_{i}$ are very light,  
-right-handed neutrinos $N_{i}$ are very heavy, and the left-handed neutrinos become lighter as 
-the right-handed neutrinos become heavier.  Furthermore, the model predicts that mixing between left 
-and right-handed states is highly suppressed by $\sim \frac{M_{i}}{B_{i}}$, and this is supported by 
-experimental evidence \cite{dZeroMixingLimits,theoreticalMixingLimits}.
+In addition to explaining the source of neutrino masses and parity violation in the SM weak interaction, 
+LRS models also predicted greater CP violation needed to explain the observed baryon asymmetry.  
+Theoretical predictions of baryon asymmetry \cite{saharov} were supported by experimental evidence of CP violation, 
+but the amount of CP violation predicted by the SM was insufficient to explain the observed baryon asymmetry \cite{surveyOfExtensions}.  
+In the SM, CP violation only occured in weak interactions between quarks mediated by the $W^{\pm}$ boson.  
+In LRS models the CP violating quark-quark interactions were mediated by the \WR and SM $W^{\pm}$, and the 
+additional \WR mediator provided greater CP violation needed to explain the observed baryon asymmetry.
 
 
 \section{LRS Model Phenomenology}
-The LRS model considered here retains all aspects of the SM that are supported by experimental 
-evidence, and provides an explanation for weakly interacting, massive neutrinos.  In this thesis, the 
-following assumptions are made regarding the experimental detection of the LRS model:
+\label{sec:lrsPhenomenology}
+The LRS models considered here retained all aspects of the SM that were supported by experimental 
+evidence, and provided explanations for massive neutrinos, parity violation, and baryon asymmetry.  
+In this thesis, the following assumptions were made that significantly affected the experimental 
+detection of new particles predicted by LRS models:
 
 \begin{itemize}
-	\item The SM quarks and right-handed leptons have the same coupling strengths to the $W_{R}$ and $Z'$ 
-		as the SM quarks and left-handed leptons have to the SM $W$ and $Z$.
-	\item $\frac{m_{W_{R}}}{m_{Z'}} \simeq \frac{m_{W}}{m_{Z}}$, the $W_{R}$ is lighter than the $Z'$
-	\item The right-handed neutrino $N$ is lighter than the $W_{R}$
+	\item The SM quarks and right-handed leptons had the same coupling strengths with the \WR and $Z'$ 
+		as the SM quarks and left-handed leptons had with the SM $W$ and $Z$.
+	\item $\frac{m_{\WR}}{m_{Z'}} \simeq \frac{m_{W}}{m_{Z}}$, so the \WR was lighter than the $Z'$.
+	\item The right-handed neutrino \nul was lighter than the \WR.
 \end{itemize}
 
-Using proton-proton collisions delivered by the CERN Large Hadron Collider (LHC) and the CMS experiment, 
-evidence of this LRS model can be found in several ways.  The $W_{R}$ and $Z'$ 
-bosons originating from the $SU(2)_{R}$ group couple to quarks found inside the proton, so they 
-can be produced in proton-proton collisions.  As the lighter boson is more likely to be 
-produced in LHC collisions, this thesis presents a search for the $W_{R}$, which, 
-based on previous searches \cite{cmsWRRunOneResults}, is expected to be heavier than $m_{W_{R}} \gtrsim$ 2.8 TeV.
+Using proton-proton (pp) collisions delivered by the CERN Large Hadron Collider (LHC) and recorded 
+by the CMS experiment, evidence of LRS models could be sought in several ways.  The $W_{R}$ and $Z'$ 
+bosons coupled to quarks found inside the proton, so they 
+could be produced in pp collisions.  As the lighter boson was more likely to be 
+produced in LHC collisions, presented here is a search for the \WR, which is expected to be heavier than 
+$m_{W_{R}} \gtrsim$ 2.8 TeV \cite{cmsWRRunOneResults}.
 
-Analogous to the SM $W$ boson decay modes, the LRS model predicts that the $W_{R}$ boson can 
-decay to a pair of quarks, or a right-handed charged lepton and heavy neutrino.  The $W_{R} \rightarrow q_{1} + q_{2}$ 
-process has the highest cross section times branching fraction, but does not allow the heavy 
-neutrino mass to be measured, and the $W_{R}$ signal is obfuscated by the large hadronic 
-backgrounds created by the LHC.  To reduce SM backgrounds and facilitate a heavy neutrino mass 
-measurement, evidence of the LRS model is sought using the $W_{R} \rightarrow l + N_{l}$ 
-decay channel.  In this process, the heavy neutrino can decay to a second charged 
-lepton and a virtual $W^{*}_{R}$, or to a virtual $Z'^{*}$ and a virtual heavy neutrino.  To 
-be consistent with the SM, it is assumed that the heavy neutrino decay to a charged lepton and 
-virtual $W^{*}_{R}$ cannot violate lepton flavor conservation.  Thus, a heavy neutrino produced 
-with an electron can only decay to an electron or positron and a $W^{*}_{R}$.  Returning to the 
-two heavy neutrino decay modes, any heavy neutrino decay via $Z'^{*} + N^{*}$ to detectable quarks or 
-charged leptons is suppressed by the weak coupling constant $g^{2}$ relative to 
-the decay $N \rightarrow l^{\pm} + W^{*}_{R} \rightarrow l^{\pm} + q_{1} + q_{2}$.  To maximize 
-the chance of finding evidence of the LRS model, this thesis presents a search 
-for the $W_{R}$ boson through its decay to $W_{R} \rightarrow l_{1}\thickspace N\rightarrow 
+Analogous to the SM $W$ boson decay modes, LRS models predicted that the \WR 
+decayed to a pair of quarks, or a right-handed charged lepton and heavy \nul.  The $\WR \rightarrow q_{1}q_{2}$ 
+process had the highest cross section times branching fraction, but did not allow the mass 
+\mnul to be measured, and the \WR signal was obscured by the large rate of high energy SM hadronic 
+backgrounds encountered in pp collisions.  Instead, this thesis sought evidence of LRS models using 
+the $\WR \rightarrow l\nul$ decay channel, where hadronic backgrounds were lower, and \mnul measurements 
+were possible.  In this channel, the \nul decayed to a second charged 
+lepton and a virtual $W^{*}_{R}$, or to a virtual $Z'^{*}$ and a virtual \nul.  To 
+be consistent with experimental observations, it was assumed that the heavy neutrino decay to a charged lepton and 
+virtual $W^{*}_{R}$ could not violate lepton flavor conservation, like $N_{\mu} \rightarrow eW^{*}_{R}$.  
+Considering the two \nul decay modes, any \nul decay via $Z'^{*}N^{*}_{l}$ to detectable quarks or 
+charged leptons was suppressed by the weak coupling constant squared, $g^{2}$, relative to 
+the decay $\nul \rightarrow l^{\pm}W^{*}_{R} \rightarrow l^{\pm}q_{1}q_{2}$.  To maximize 
+the probability of finding evidence of LRS models, this thesis presents a search 
+for the \WR and \nul in the decay mode $\WR \rightarrow l_{1}\thickspace \nul \rightarrow 
 l_{1}\thickspace l_{2}\thickspace q_{1}\thickspace q_{2}$ shown in Figure \ref{fig:wrFeynmanDiagram}.
 
 
