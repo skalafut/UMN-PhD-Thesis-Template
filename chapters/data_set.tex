@@ -92,10 +92,60 @@ so no events were subtracted from $e\mu$ channel data to account for non-top qua
 \end{figure}
 
 
-
-
 \section{\DY Background}
 \label{sec:dyBkgnd}
+The production and decay of Z bosons to lepton pairs with jets ($\DY$+jets), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$, 
+was the other of the two largest backgrounds to the \WR and \nul search in the $\ell\ell jj$ final state.  The \DY 
+background was estimated using simulated $\DY$+jets events.  Mis-modelling of $\DY$+jets in simulations lead to two discrepancies 
+with respect to data, and their sizes were estimated in two control regions.
+
+The first discrepancy was a difference in normalization between data and \MC, caused by the cross section uncertainty in 
+the simulation.  The size of the discrepancy was estimated by comparing $Z \rightarrow \ell\ell$ events in data and 
+\DY simulations, selected with the following requirements:
+
+\begin{itemize}
+	\item One of the background only triggers described in Chapter \ref{sec:triggers} was fired.
+	\item At least two leptons were found with $\pt > 35 \GeV$ that passed identification cuts described in 
+		Chapter \ref{sec:event_selection_chapter}.  If more than two leptons were found, only the two highest $\pt$ 
+		leptons were used.
+	\item At least two jets were found with $\pt > 40 \GeV$ that passed identification cuts.  If more than two jets 
+		were found, only the two highest $\pt$ jets were used.
+	\item The leptons and jets had $|\eta| < 2.4$.
+	\item The two leptons had di-lepton mass $70 < M_{\ell\ell} < 110 \GeV$.
+	\item Both leptons were separated from both jets by $\Delta R > 0.4$.
+\end{itemize}
+
+Using selected events, the $\Mll$ distribution was made and used to compare data to simulations.  Based on simulations 
+of non-\DY backgrounds, 3\% of the selected events in data came from non-\DY processes.  The effect of subtracting 
+simulated non-\DY events from data was much smaller than an independent uncertainty assigned to the \DY background 
+estimate, so non-\DY backgrounds were not subtracted from data.  The normalization of the $\Mll$ distribution using 
+data events exceeded that of simulated events by 15.7\% in the $ee$ channel, and 14.2\% in the $\mu\mu$ channel.  To 
+correct the normalization discrepancy, the \DY background estimate derived from simulated events in the signal and 
+other control region was scaled up by the appropriate percentage.
+
+Two additional $\DY$+jets simulated datasets using different generators for the first simulation step were used to 
+estimate an uncertainty on the $\sim$15\% correction to the \DY background predicted by simulations.  The $Z \rightarrow \ell\ell$ 
+selection described earlier without jet requirements was applied to data and all three simulated $\DY$+jets datasets.  
+The jet requirements were removed to compare data to simulations in a phase space where all three simulated datasets 
+yielded a large number of selected events.  Using selected events, the normalization discrepancy between data and 
+simulations in the $\Mll$ distribution was calculated, and the largest discrepancy was taken as a systematic 
+uncertainty on $\sim$15\%.  This uncertainty was estimated to be 2.0\% (1.0\%) in the $ee$ ($\mu\mu$) channel.
+
+After.
+
+The selections described in Chapter \ref{sec:event_selection_chapter} 
+were applied to simulated events, and the selected events represented the \DY background estimate.  However, mis-modelling 
+of $\DY$+jets in simulations lead to two discrepancies with respect to data.  Corrections and uncertainties were applied 
+to the \DY background estimate discussed next.
+
+%After correcting the first discrepancy between data and simulated $Z/\gamma^*$+ jets events, a second discrepancy between data and simulated $Z/\gamma^*$+ jets appears
+%due to mis-modelling of jets in simulations.  This discrepancy appears as a difference in \Mlljj shape, and is estimated by selecting events from data and all simulated backgrounds using the requirements
+%described in Sec.~\ref{sec:datasets} and ~\ref{sec:selection}, but with $\Mll < 180\GeV$.  The normalization of selected $Z/\gamma^*$+ jets events from simulations is rescaled by $1.16$
+%($1.14$) in the electron (muon) channel, then the \Mlljj distributions found in data and simulated background events are compared.  In general simulations agree
+%with data within the statistical uncertainty of the data.  However, in a few \Mlljj bins the $Z/\gamma^*$+ jets simulation predicts nearly 40\% more events than
+%what are observed in data.  This discrepancy is covered by assigning a 40\% systematic uncertainty to the $Z/\gamma^*$+ jets background in both lepton channels.
+
+
 
 \section{Diboson and W+jets Backgrounds}
 \label{sec:dibosonAndWJetsBkgnds}
