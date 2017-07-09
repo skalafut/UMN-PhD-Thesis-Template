@@ -16,17 +16,17 @@ SM processes that produced one or more top quarks constituted one of the two lar
 to the \WR and \nul search in the $\ell\ell jj$ final state.  Based on cross sections times branching 
 fractions to $\ell\ell jj$ final states listed in Chapter \ref{sec:MC}, production 
 of top-anti top quark pairs ($\ttbar$, Figure \ref{fig:ttbarDiag}) and single top quarks in association 
-with W bosons (t+W, Figure \ref{fig:singleTopDiags}) contributed the majority of top quark events that passed 
+with W bosons (top+W, Figure \ref{fig:singleTopDiags}) contributed the majority of top quark events that passed 
 the full event selection.  In such processes, nearly 100\% of top quarks decayed to a bottom quark 
 and SM W boson, and the W boson was free to decay to any charged lepton.  One consequence of this freedom 
-was that $\ttbar$ and t+W production yielded the $e\mu jj$ final state approximately twice as often 
+was that $\ttbar$ and top+W production yielded the $e\mu jj$ final state approximately twice as often 
 as the $eejj$ or $\mu\mu jj$ final states.  This consequence was instrumental in estimating the top quark 
 background.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/topAntiTopFeynDiagram.png}
-	\caption{\ttbar Feynman diagram \cite{ttbarDiagram}.}
+	\caption{$\ttbar$ Feynman diagram \cite{ttbarDiagram}.}
 	\label{fig:ttbarDiag}
 \end{figure}
 
@@ -59,32 +59,35 @@ calculated that scaled $e\mu jj$ data events into $eejj$ and $\mu\mu jj$ events.
 simulated top quark events and the following procedure:
 
 \begin{itemize}
-	\item Simulated top quark events were selected using the ee, $e\mu$, and $\mu\mu$ channel requirements.
+	\item Simulated top quark events were selected using the $ee$, $e\mu$, and $\mu\mu$ channel requirements.
 	\item Using selected events, the \Meejj, \Memujj and \Mmumujj distributions were produced.
 	\item Using the integrals \Nemujj and \Nlljj of the \Memujj and \Mlljj distributions, the top quark background SF 
 		for the $\ell\ell jj$ final state was calculated as $\Nlljj / \Nemujj$.
 \end{itemize}
 
-The SF was $0.432$ in the $eejj$ channel and $0.659$ in the $\mu\mu jj$ channel.  The number of simulated top quark 
-events used to calculate the SFs decreased rapidly with increasing \Mlljj, so the SFs were dominated by simulated 
-top quark events with $\Mlljj < 1500\GeV$.  Fluctuations of the \Mmumujj/\Memujj and \Meejj/\Memujj ratios around 
-the top quark SFs versus \Mlljj, shown in Figure~\ref{fig:ttbarSFratios}, were .
+The SF was $0.432$ in the $ee$ channel and $0.659$ in the $\mu\mu$ channel.  The $ee$ ($\mu\mu$) channel SF 
+was below (above) the expected SF of $0.5$ because electrons were reconstructed with a reduced $|\eta|$ acceptance, 
+and selected with a lower efficiency identification selection relative to muons.  The number of simulated top quark 
+events used to calculate the SFs decreased rapidly with increasing \Mlljj, so the SFs were determined primarily by 
+simulated events with $\Mlljj < 1500\GeV$.  Using SFs that did not vary with \Mlljj created an uncertainty in the 
+top quark background estimate proportional to the fluctuations of \Mmumujj/\Memujj and \Meejj/\Memujj around the 
+constant SFs versus \Mlljj in Figure \ref{fig:ttbarSFratios}.  This uncertainty was covered by assigning a 10\% 
+uncertainty to both SFs.
 
-Based on the magnitude of these fluctuations, a 10\% uncertainty is assigned to the top quark background estimate in both channels.
-
-The top background (\ttbar and top+W) in the $\mu\mu jj$ ($eejj$) final state is estimated by multiplying the \Memujj distribution from data by $0.659$ ($0.432$).  
-Contributions of non-top quark backgrounds to the $e\mu jj$ final state are more than one order of magnitude smaller than the top quark background uncertainty, so
-they are not subtracted from data.  As a result, the $e\mu jj$ data also includes the small WW and single top backgrounds.
+After calculating the SFs, the top quark background in the $\mu\mu jj$ ($eejj$) final state was estimated by 
+multiplying the \Memujj distribution from data by $0.659$ ($0.432$).  Contributions of non-top quark backgrounds 
+in the $e\mu$ channel were more than one order of magnitude smaller than the 10\% top quark background uncertainty, 
+so no events were subtracted from $e\mu$ channel data to account for non-top quark backgrounds.
 
 \begin{figure}[h]
 \centering
 \subfigure[][Ratio of \Meejj and \Memujj]{
-  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_EE_variablebinwidth.png}
+  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_EE_variablebinwidth.pdf}
 }
 \subfigure[][Ratio of \Mmumujj and \Memujj]{
-  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_MuMu_variablebinwidth.png}
+  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_MuMu_variablebinwidth.pdf}
 }
-\caption{Bin-by-bin ratio of \Mlljj distribution and \Memujj from top quark background simulations, where $\ell$ is an electron (left) or a muon (right). }
+\caption{Bin-by-bin ratio of \Mlljj distribution and \Memujj from simulated top quark backgrounds, where $\ell$ was an electron (left) or a muon (right). }
 \label{fig:ttbarSFratios}
 \end{figure}
 
