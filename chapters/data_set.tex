@@ -5,9 +5,9 @@
 \label{sec:backgroundEstimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The event selection described in Chapter \ref{sec:event_selection_chapter} was developed for high 
-sensitivity to a \WR boson signal.  However, when this selection was applied to data, events from 
-Standard Model (SM) processes were selected.  The number of events expected in data from SM processes 
-was estimated using simulated \MC datasets listed in Chapter \ref{sec:event_selection_chapter}.  
+sensitivity to a \WR boson signal in the $\ell\ell jj$ final state.  However, when this selection 
+was applied to data, events from Standard Model (SM) processes were selected.  The number of events 
+expected in data from SM processes was estimated using simulated \MC datasets listed in Chapter \ref{sec:event_selection_chapter}.  
 The procedures used to calculate and validate the expected SM backgrounds are described here.
 
 \section{Top Quark Background}
@@ -50,45 +50,48 @@ processes.  This was confirmed by comparing $e\mu$ channel data and simulations,
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/Mlljj_eMuChannel_log.pdf}
 	\caption{The $\Mlljj$ distribution from data and simulated SM events that passed the $e\mu$ selection, excluding 
-	the $\Mlljj > 600 \GeV$ cut.  The bin widths are variable, and their contents are normalized to the bin widths.}
+	the $\Mlljj > 600 \GeV$ cut.  The bin widths were variable, and their contents were normalized to the bin widths.}
 	\label{fig:dataAndSimsInEMuChannel}
 \end{figure}
 
-To estimate the top quark background in the $eejj$ and $\mu\mu jj$ signal regions, scale factors (SFs) were 
+To estimate the top quark background in the $eejj$ and $\mu\mu jj$ channels, scale factors (SFs) were 
 calculated that scaled $e\mu jj$ data events into $eejj$ and $\mu\mu jj$ events.  The SFs were calculated using 
 simulated top quark events and the following procedure:
 
 \begin{itemize}
-	\item Simulated top quark events were selected using the $ee$, $e\mu$, and $\mu\mu$ channel requirements.
+	\item Simulated top quark events were selected using the $ee$, $e\mu$, and $\mu\mu$ channel requirements from 
+		Chapter \ref{sec:wrCandSelection}.
 	\item Using selected events, the \Meejj, \Memujj and \Mmumujj distributions were produced.
 	\item Using the integrals \Nemujj and \Nlljj of the \Memujj and \Mlljj distributions, the top quark background SF 
 		for the $\ell\ell jj$ final state was calculated as $\Nlljj / \Nemujj$.
 \end{itemize}
 
 The SF was $0.432$ in the $ee$ channel and $0.659$ in the $\mu\mu$ channel.  The $ee$ ($\mu\mu$) channel SF 
-was below (above) the expected SF of $0.5$ because electrons were reconstructed with a reduced $|\eta|$ acceptance, 
-and selected with a lower efficiency identification selection relative to muons.  The number of simulated top quark 
+was below (above) the expected SF of $0.5$ because electrons were reconstructed and selected with a reduced $|\eta|$ 
+acceptance and lower efficiency identification requirements relative to muons.  The number of simulated top quark 
 events used to calculate the SFs decreased rapidly with increasing \Mlljj, so the SFs were determined primarily by 
-simulated events with $\Mlljj < 1500\GeV$.  Using SFs that did not vary with \Mlljj created an uncertainty in the 
-top quark background estimate proportional to the fluctuations of \Mmumujj/\Memujj and \Meejj/\Memujj around the 
-constant SFs versus \Mlljj in Figure \ref{fig:ttbarSFratios}.  This uncertainty was covered by assigning a 10\% 
-uncertainty to both SFs.
+simulated events with $\Mlljj < 1500\GeV$.  Using SFs that did not vary with \Mlljj allowed an error to enter into the 
+top quark background estimate, proportional to the fluctuations of \Mmumujj/\Memujj and \Meejj/\Memujj around the 
+constant SFs versus \Mlljj in Figure \ref{fig:ttbarSFratios}.  This error was covered by assigning a 10\% uncertainty 
+to both SFs.
 
 After calculating the SFs, the top quark background in the $\mu\mu jj$ ($eejj$) final state was estimated by 
-multiplying the \Memujj distribution from data by $0.659$ ($0.432$).  Contributions of non-top quark backgrounds 
-in the $e\mu$ channel were more than one order of magnitude smaller than the 10\% top quark background uncertainty, 
-so no events were subtracted from $e\mu$ channel data to account for non-top quark backgrounds.
+multiplying the \Memujj distribution from data by $0.659$ ($0.432$).  Based on simulations of SM backgrounds, contributions 
+of non-top quark backgrounds to the $e\mu$ channel were more than one order of magnitude smaller than the 10\% top quark 
+background uncertainty.  As a result, simulated non-top quark background events were not subtracted from $e\mu$ channel 
+data.
 
-\begin{figure}[h]
-\centering
-\subfigure[][Ratio of \Meejj and \Memujj]{
-  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_EE_variablebinwidth.pdf}
-}
-\subfigure[][Ratio of \Mmumujj and \Memujj]{
-  \includegraphics[width=0.50\textwidth]{figures/flavor_ratio_MuMu_variablebinwidth.pdf}
-}
-\caption{Bin-by-bin ratio of \Mlljj distribution and \Memujj from simulated top quark backgrounds, where $\ell$ was an electron (left) or a muon (right). }
-\label{fig:ttbarSFratios}
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/flavor_ratio_EE_variablebinwidth.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/flavor_ratio_MuMu_variablebinwidth.pdf}
+	}
+	\label{fig:ttbarSFratios}
+	\caption{Bin-by-bin ratio of $\Mlljj$ and $\Memujj$ distributions from simulated top quark backgrounds, where $\ell$ was 
+	an electron (left) or a muon (right).}
 \end{figure}
 
 
@@ -97,18 +100,19 @@ so no events were subtracted from $e\mu$ channel data to account for non-top qua
 The production and decay of Z bosons to lepton pairs with jets ($\DY$+jets), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$, 
 was the other of the two largest backgrounds to the \WR and \nul search in the $\ell\ell jj$ final state.  The \DY 
 background was estimated using simulated $\DY$+jets events.  Mis-modelling of $\DY$+jets in simulations lead to two discrepancies 
-with respect to data, and their sizes were estimated in two control regions.
+with respect to data.  The effects of mis-modelling on the signal region (Chapter \ref{sec:wrCandSelection}) \DY background estimate 
+were quantified and validated in three control regions where data and simulations of SM backgrounds were expected to agree.
 
 The first discrepancy was a difference in normalization between data and \MC, caused by the cross section uncertainty in 
-the simulation.  The size of the discrepancy was estimated by comparing $Z \rightarrow \ell\ell$ events in data and 
+the simulation.  The effect of the discrepancy was estimated by comparing $Z \rightarrow \ell\ell$ events in data and 
 \DY simulations, selected with the following requirements:
 
 \begin{itemize}
 	\item One of the background only triggers described in Chapter \ref{sec:triggers} was fired.
-	\item At least two leptons were found with $\pt > 35 \GeV$ that passed identification cuts described in 
+	\item At least two leptons were found with $\pt > 35 \GeV$ that passed identification selections described in 
 		Chapter \ref{sec:event_selection_chapter}.  If more than two leptons were found, only the two highest $\pt$ 
 		leptons were used.
-	\item At least two jets were found with $\pt > 40 \GeV$ that passed identification cuts.  If more than two jets 
+	\item At least two jets were found with $\pt > 40 \GeV$ that passed identification selections.  If more than two jets 
 		were found, only the two highest $\pt$ jets were used.
 	\item The leptons and jets had $|\eta| < 2.4$.
 	\item The two leptons had di-lepton mass $70 < M_{\ell\ell} < 110 \GeV$.
@@ -117,38 +121,102 @@ the simulation.  The size of the discrepancy was estimated by comparing $Z \righ
 
 Using selected events, the $\Mll$ distribution was made and used to compare data to simulations.  Based on simulations 
 of non-\DY backgrounds, 3\% of the selected events in data came from non-\DY processes.  The effect of subtracting 
-simulated non-\DY events from data was much smaller than an independent uncertainty assigned to the \DY background 
+simulated non-\DY events from data was much smaller than the total uncertainty on the \DY background 
 estimate, so non-\DY backgrounds were not subtracted from data.  The normalization of the $\Mll$ distribution using 
 data events exceeded that of simulated events by 15.7\% in the $ee$ channel, and 14.2\% in the $\mu\mu$ channel.  To 
-correct the normalization discrepancy, the \DY background estimate derived from simulated events in the signal and 
-other control region was scaled up by the appropriate percentage.
+correct the normalization discrepancy, the \DY background estimate derived from simulated events in the signal region 
+and other control region was scaled up by $\sim$15\%.
 
 Two additional $\DY$+jets simulated datasets using different generators for the first simulation step were used to 
-estimate an uncertainty on the $\sim$15\% correction to the \DY background predicted by simulations.  The $Z \rightarrow \ell\ell$ 
+estimate the uncertainty on the $\sim$15\% correction to the \DY background predicted by simulations.  The $Z \rightarrow \ell\ell$ 
 selection described earlier without jet requirements was applied to data and all three simulated $\DY$+jets datasets.  
 The jet requirements were removed to compare data to simulations in a phase space where all three simulated datasets 
-yielded a large number of selected events.  Using selected events, the normalization discrepancy between data and 
-simulations in the $\Mll$ distribution was calculated, and the largest discrepancy was taken as a systematic 
+yielded a large number of events after selections.  Using selected events, the difference in normalization between data and 
+simulations in the $\Mll$ distribution was calculated, and the largest difference was taken as a systematic 
 uncertainty on $\sim$15\%.  This uncertainty was estimated to be 2.0\% (1.0\%) in the $ee$ ($\mu\mu$) channel.
 
-After.
+Unlike the jets produced naturally as a result of quark decay in $\ttbar \rightarrow \ell\ell jj$ events, jets 
+produced in \DY events were produced randomly by the strong interaction, sometimes before the Z boson was produced.  Simulations of random 
+jet production in \DY events were done only at leading order in the strong interaction, and as a result 
+the $\pt, \eta, \phi$ of jets predicted by simulations did not perfectly agree with jets observed in data.  This disagreement 
+created the second discrepancy between data and simulated \DY, which manifested as a difference in $\Mlljj$ shape.  
+The effect of the $\Mlljj$ shape disagreement was estimated using data and simulations of SM backgrounds selected 
+with the signal region requirements described in Chapter \ref{sec:wrCandSelection}, but with $\Mll < 180 \GeV$.  Subsequently, 
+$\Mlljj$ distributions were built from selected data and all simulated events, and the \DY component of selected simulated events was 
+rescaled by $1.157$ ($1.142$) in the $ee$ ($\mu\mu$) channel to correct for the normalization discrepancy discussed 
+previously.  Then, the $\Mlljj$ distributions from data and simulations shown in 
+Figure \ref{fig:mlljjLowDileptonMassSideband} were compared, and the largest percentage difference between data and 
+all simulations in any bin was taken as a conservative systematic uncertainty on the estimated \DY background.  The 
+mis-modelling of jets in simulations resulted in a symmetric 40\% uncertainty assigned to the \DY background in both channels, 
+constant versus $\Mlljj$.
 
-The selections described in Chapter \ref{sec:event_selection_chapter} 
-were applied to simulated events, and the selected events represented the \DY background estimate.  However, mis-modelling 
-of $\DY$+jets in simulations lead to two discrepancies with respect to data.  Corrections and uncertainties were applied 
-to the \DY background estimate discussed next.
+\begin{figure}[btp]
+\centering
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mlljj_eeChnl_lowMllCR.png}
+}
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mlljj_mumuChnl_lowMllCR.png}
+}
+\caption{The $\Mlljj$ distribution from data and simulated SM events that passed the $\Mll < 180 \GeV$ selection, the 
+		$ee$ ($\mu\mu$) channel on the left (right).  The bin widths were variable, and their contents were normalized to 
+	the bin widths.}
+\label{fig:mlljjLowDileptonMassSideband}
+\end{figure}
 
-%After correcting the first discrepancy between data and simulated $Z/\gamma^*$+ jets events, a second discrepancy between data and simulated $Z/\gamma^*$+ jets appears
-%due to mis-modelling of jets in simulations.  This discrepancy appears as a difference in \Mlljj shape, and is estimated by selecting events from data and all simulated backgrounds using the requirements
-%described in Sec.~\ref{sec:datasets} and ~\ref{sec:selection}, but with $\Mll < 180\GeV$.  The normalization of selected $Z/\gamma^*$+ jets events from simulations is rescaled by $1.16$
-%($1.14$) in the electron (muon) channel, then the \Mlljj distributions found in data and simulated background events are compared.  In general simulations agree
-%with data within the statistical uncertainty of the data.  However, in a few \Mlljj bins the $Z/\gamma^*$+ jets simulation predicts nearly 40\% more events than
-%what are observed in data.  This discrepancy is covered by assigning a 40\% systematic uncertainty to the $Z/\gamma^*$+ jets background in both lepton channels.
+In an attempt to reduce the 40\% uncertainty, a separate set of simulated $\DY$+jets events were used, in which jet simulations 
+were done at a higher order in the strong interaction.  By simulating jet production at a higher order in the strong 
+interaction, it was thought that the disagreement in $\Mlljj$ shape could be reduced.  The results, shown in Figure 
+\ref{fig:mlljjLowDileptonMassSidebandAMCNLO}, did not support switching simulated \DY datasets.  The primary detriment to the 
+higher order \DY simulation was not the jet simulation, but the lack of events.  After selections, the leading order 
+simulated $\DY$+jets dataset had $\sim$3 times more events across all $\Mlljj$, and $\sim$10 times more events with $\Mlljj > 1 \TeV$ 
+than the higher order simulated $\DY$+jets dataset.
 
+\begin{figure}[btp]
+\centering
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mlljj_eeChnl_lowMllCR_AMCNLO.png}
+}
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mlljj_mumuChnl_lowMllCR_AMCNLO.png}
+}
+\caption{The $\Mlljj$ distribution from data and simulated SM events that passed the $\Mll < 180 \GeV$ selection, the 
+		$ee$ ($\mu\mu$) channel on the left (right).  The bin widths were variable, and their contents were normalized to 
+	the bin widths.  In the \DY events, jet production was simulated at a higher order relative to the standard \DY dataset.}
+\label{fig:mlljjLowDileptonMassSidebandAMCNLO}
+\end{figure}
+
+A third control region was used to validate the correction applied and uncertainty assigned to the estimated \DY background.  
+In this control region, events from data and simulations of all SM backgrounds were selected with 
+the signal region requirements described in Chapter \ref{sec:wrCandSelection}, but with $\Mlljj < 600 \GeV$.  Selected 
+data and simulated events were used to make an $\Mll$ distribution, and the simulated \DY component was rescaled 
+by $\sim1.15$.  Based on comparisons between data and simulations shown in Figure \ref{fig:mllInLowMlljjSideband}, the 
+correction applied to simulated \DY events brought data and simulations of SM backgrounds into better agreement.  In addition, 
+the uncertainty assigned to simulated \DY allowed the estimated \DY background to float in a range that improved the overall 
+agreement between data and simulations.
+
+\begin{figure}[btp]
+\centering
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mll_eeChnl_lowMlljjCR.png}
+}
+\subfigure{
+  \includegraphics[width=0.45\textwidth]{figures/Mll_mumuChnl_lowMlljjCR.png}
+}
+\caption{$\Mll$ for data and simulations of all SM backgrounds in the $\Mlljj < 600\GeV$ control region.  The 
+$ee$ ($\mu\mu$) channel was on the left (right).}
+\label{fig:mllInLowMlljjSideband}
+\end{figure}
+
+The \DY background was estimated by selecting simulated \DY events with the signal region selections described in Chapter 
+\ref{sec:wrCandSelection}.  The weight of selected events were scaled by 1.157 (1.142) in the $ee$ ($\mu\mu$) channel, and 
+the scaled events represented the estimated \DY background.  Based on comparisons between data and simulated \DY events in 
+control regions, a 40\% uncertainty for all $\Mlljj > 600\GeV$ was assigned to the estimated \DY background.
 
 
 \section{Diboson and W+jets Backgrounds}
 \label{sec:dibosonAndWJetsBkgnds}
+
 
 \section{QCD Background}
 \label{sec:qcdBkgnd}
