@@ -231,7 +231,7 @@ diboson and W+jets processes were ignored when calculating final results for thi
 		\includegraphics[width=0.45\textwidth]{figures/Mlljj_mumuChnl_signalRegionNoData.pdf}
 	}
 	\label{fig:expectedBkgnds}
-	\caption{$\Mlljj$ distributions from simulated \DY, diboson, W+jets backgrounds, and the top quark background estimated from 
+	\caption{$\Mlljj$ distributions from simulated \DY, diboson, W+jets backgrounds, and the top quark and QCD backgrounds estimated from 
 		data. The normalization of the \WR $\Mlljj$ distribution was scaled down by 70\% to facilitate comparisons between expected 
 		signal and backgrounds.  The $ee$ ($\mu\mu$) channel was shown on the left (right).}
 \end{figure}
@@ -243,9 +243,13 @@ The production of jets through QCD processes yielded multi-jet events where two 
 and passed the signal region selections.  In such events, two real jets were incorrectly reconstructed and identified as charged 
 leptons.  The QCD multi-jet background was estimated by first selecting events in data with the signal region requirements described 
 in Chapter \ref{sec:wrCandSelection}, but with looser identification selections applied to lepton candidates.  Events where one 
-or both leptons passed the normal lepton identification selections were discarded.  Then, remaining selected events were weighted 
-by the probability for both selected leptons to pass the normal lepton identification requirements.  .
-
+or both selected leptons passed the normal lepton identification selections were discarded, as these selected leptons were most likely 
+real charged leptons.  Then, remaining events were weighted by the probability for both selected leptons, which most likely 
+originated from jets, to pass the normal lepton identification requirements.  This probability was determined independently in 
+data as a function of $\eta$ and $\pt$ or $\Et$ of leptons that were incorrectly reconstructed from real jets.  After the probability 
+weights were applied to selected events, the contribution of weighted events to the $\Mlljj$ distribution was compared to the 
+same expected distribution from other SM backgrounds, shown in Figure \ref{fig:expectedBkgnds}.  The expected QCD background was 
+negligible, and was ignored when calculating final results for this search.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
