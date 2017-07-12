@@ -15,7 +15,7 @@ pileup measurements in data.  Additional sources of uncertainty existed and were
 but had a smaller cumulative impact on the results.  Following uncertainty estimation, the 
 results were obtained by comparing data, expected SM backgrounds and hypothetical 
 \WR and \nul signals using the $\Mlljj$ distribution, and limits on the \WR cross section, 
-$\mWR$ and $\mnul$ masses.
+$\mWR$ and $\mnul$ masses derived from data and expected backgrounds.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Statistical Analysis and Uncertainties 
@@ -23,6 +23,33 @@ $\mWR$ and $\mnul$ masses.
 \section{Statistical Analysis and Uncertainties}
 \label{sec:massWindows_uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The $\Mlljj$ signature of \WR and \nul signals considered in this search were characterized 
+by distributions that peaked at \mWR, and had tails that extended several hundred $\GeV$ 
+below and above the peak.  The only other assumption made regarding the shape of signals in 
+$\Mlljj$ was that the tails grew larger as \mWR increased, as shown in Figure \ref{fig:fig:signalShapesAfterSelection}.  
+The.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/missingImage.png}
+	\caption{$\Mlljj$ distribution after all selections for several \WR signal hypotheses in the $ee$ channel.  The 
+	tails of the distribution grew as \mWR increased.}
+	\label{fig:signalShapesAfterSelection}
+\end{figure}
+
+
+
+
+A cut\&count approach is effective in analyzing the data without exploiting further characteristics of the signal model used as benchmark and to reduce the effect of uncertainties on the shapes of the backgrounds, especially in the high \Mlljj region.
+
+
+For each \WR mass hypothesis (\MWR), an invariant mass window ($ min < \Mlljj < max$) is defined such that the expected \WR cross section limit is minimized.
+The expected limit is calculated using a Bayesian approach assuming a flat prior.  Three hundred toys are thrown, and for each toy the number of observed
+events is pulled from a Poisson distribution with mean equal to the number of expected background events.  For each toy a \WR cross section upper limit is calculated, and the
+median cross section upper limit from all toys is taken as the final expected limit.
+The \Mlljj windows corresponding to different \MWR hypotheses and obtained from the expected limit minimization procedure are shown in Table~\ref{tab:masscuts}.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
