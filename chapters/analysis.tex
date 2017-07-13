@@ -29,21 +29,33 @@ below and above the peak.  The only other assumption made regarding the shape of
 $\Mlljj$ was that the tails grew larger as \mWR increased, as shown in Figure \ref{fig:fig:signalShapesAfterSelection}.  
 The.
 
-\begin{figure}[h]
+\begin{figure}[btp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/missingImage.png}
-	\caption{$\Mlljj$ distribution after all selections for several \WR signal hypotheses in the $ee$ channel.  The 
-	tails of the distribution grew as \mWR increased.}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_EE.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
+	}
 	\label{fig:signalShapesAfterSelection}
+	\caption{$\Mlljj$ distribution after all selections for several \WR signal hypotheses in the $ee$ (left) and $\mu\mu$ (right) 
+		channels.  The tails of the distribution grew as \mWR increased.}
 \end{figure}
 
 
+%A cut\&count approach is effective in analyzing the data without exploiting further characteristics 
+%of the signal model used as benchmark and to reduce the effect of uncertainties on the shapes of 
+%the backgrounds, especially in the high \Mlljj region.
 
 
-A cut\&count approach is effective in analyzing the data without exploiting further characteristics of the signal model used as benchmark and to reduce the effect of uncertainties on the shapes of the backgrounds, especially in the high \Mlljj region.
+For each \mWR mass hypothesis, a $\Mlljj$ window ($ min < \Mlljj < max$) was defined such 
+that the expected upper limit\footnote{The expected limit was calculated by setting the 
+number of observed events equal to the number of events expected from SM backgrounds.} on 
+the \WR cross section was minimized.  In each window the limit was calculated by counting 
+the number of events that fell in the window, without regard to the shape of their distribution.  
+a.
 
 
-For each \WR mass hypothesis (\MWR), an invariant mass window ($ min < \Mlljj < max$) is defined such that the expected \WR cross section limit is minimized.
 The expected limit is calculated using a Bayesian approach assuming a flat prior.  Three hundred toys are thrown, and for each toy the number of observed
 events is pulled from a Poisson distribution with mean equal to the number of expected background events.  For each toy a \WR cross section upper limit is calculated, and the
 median cross section upper limit from all toys is taken as the final expected limit.
