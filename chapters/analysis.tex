@@ -43,23 +43,49 @@ The.
 \end{figure}
 
 
-%A cut\&count approach is effective in analyzing the data without exploiting further characteristics 
-%of the signal model used as benchmark and to reduce the effect of uncertainties on the shapes of 
-%the backgrounds, especially in the high \Mlljj region.
-
-
 For each \mWR mass hypothesis, a $\Mlljj$ window ($ min < \Mlljj < max$) was defined such 
 that the expected upper limit\footnote{The expected limit was calculated by setting the 
 number of observed events equal to the number of events expected from SM backgrounds.} on 
 the \WR cross section was minimized.  In each window the limit was calculated by counting 
-the number of events that fell in the window, without regard to the shape of their distribution.  
-a.
+the number of events that fell in the window, without regard to the shape of their distribution, 
+using a procedure described later in Chapter \ref{sec:searchResults}.  The windows used 
+for each \mWR mass hypothesis, shown in Table \ref{tab:masscuts}, were chosen such that the expected upper 
+limit on the \WR cross section was minimized.
 
-
-The expected limit is calculated using a Bayesian approach assuming a flat prior.  Three hundred toys are thrown, and for each toy the number of observed
-events is pulled from a Poisson distribution with mean equal to the number of expected background events.  For each toy a \WR cross section upper limit is calculated, and the
-median cross section upper limit from all toys is taken as the final expected limit.
-The \Mlljj windows corresponding to different \MWR hypotheses and obtained from the expected limit minimization procedure are shown in Table~\ref{tab:masscuts}.
+\begin{table}[h]
+\caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
+\label{tab:masscuts}
+\centering
+\begin{tabular}{|c|r@{ - }l|r@{ - }l|} \hline
+\mWR (\GeV) & \multicolumn{4}{c|}{\Mlljj window (\GeV)}  \\\hline
+& \multicolumn{2}{c|}{Electrons}  & \multicolumn{2}{c|}{Muons}  \\  \hline
+ 800  & 700       &  1100       &  700       &  1200      \\  \hline
+1000  & 900       &  1300       &  900       &  1400      \\  \hline
+1200  & 1100       &  1550       &  1100       &  1650      \\  \hline
+1400  & 1250       &  1750       &  1300       &  1850      \\  \hline
+1600  & 1450      &  2000       &  1500      &  2100      \\  \hline
+1800  & 1600      &  2250       &  1600      &  2300      \\  \hline
+2000  & 1850      &  2550       &  1850      &  2600      \\  \hline
+2200  & 2000      &  2800       &  2000      &  2850      \\  \hline
+2400  & 2150      &  3100       &  2150      &  3100      \\  \hline
+2600  & 2250      &  3400       &  2300      &  3400      \\  \hline
+2800  & 2350      &  3700       &  2400      &  3700      \\  \hline
+3000  & 2500      &  4000       &  2500      &  3950      \\  \hline
+3200  & 2550      &  4300       &  2700      &  4250      \\  \hline
+3600  & 2700      &  4900       &  2900      &  4850      \\  \hline
+3800  & 2750      &  5200       &  2950      &  5150      \\  \hline
+4000  & 2800      &  5500       &  3000      &  5450      \\  \hline
+4200  & 2800      &  5750       &  3100      &  5750      \\  \hline
+4400  & 2850      &  6050       &  3150      &  6100      \\  \hline
+4600  & 2850      &  6300       &  3150      &  6400      \\  \hline
+4800  & 2850      &  6600       &  3200      &  6700      \\  \hline
+5000  & 2900      &  6850       &  3200      &  7000      \\  \hline
+5200  & 2900      &  7050       &  3200      &  7300      \\  \hline
+5600  & 2900      &  7500       &  3200      &  7850      \\  \hline
+5800  & 2950      &  7700       &  3200      &  8150      \\  \hline
+6000  & 2950      &  7900       &  3200      &  8400      \\  \hline
+\end{tabular}
+\end{table}
 
 
 
@@ -69,5 +95,8 @@ The \Mlljj windows corresponding to different \MWR hypotheses and obtained from 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:searchResults}
+%describe how limits are calculated with and without syst uncertainties before showing results
+%when explaining limit calculation procedure without syst uncertainties, refer back to 
+%Chapter \ref{sec:massWindows_uncertainties}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
