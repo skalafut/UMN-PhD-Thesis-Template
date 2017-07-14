@@ -23,11 +23,12 @@ $\mWR$ and $\mnul$ masses derived from data and expected backgrounds.
 \section{Statistical Analysis and Uncertainties}
 \label{sec:massWindows_uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The $\Mlljj$ signature of \WR and \nul signals considered in this search were characterized 
-by distributions that peaked at \mWR, and had tails that extended several hundred $\GeV$ 
-below and above the peak.  The only other assumption made regarding the shape of signals in 
-$\Mlljj$ was that the tails grew larger as \mWR increased, as shown in Figure \ref{fig:fig:signalShapesAfterSelection}.  
-The.
+The \WR and \nul signals considered in this search were characterized by $\Mlljj$ distributions 
+that peaked at \mWR, and had tails that extended several hundred $\GeV$ below and above the 
+peak.  The only other assumption made regarding the shape of signals in $\Mlljj$ was that 
+the tails grew larger as \mWR increased, as shown in Figure \ref{fig:fig:signalShapesAfterSelection}.  
+The general shape of \WR signals in the $\Mlljj$ distribution motivated the use of finite 
+size $\Mlljj$ windows when analyzing the data.
 
 \begin{figure}[btp]
 	\centering
@@ -42,15 +43,39 @@ The.
 		channels.  The tails of the distribution grew as \mWR increased.}
 \end{figure}
 
+The SM backgrounds that passed the signal region selection were characterized by $\Mlljj$ 
+distributions that decreased rapidly with increasing $\Mlljj$, whereas any \WR signal 
+after the same selection appeared as an individual peak in the $\Mlljj$ distribution.  
+This distinction motivated the division of the entire $\Mlljj > 600\GeV$ range into finite 
+width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal size of each window was 
+determined for each \mWR hypothesis using the following procedure:
 
-For each \mWR mass hypothesis, a $\Mlljj$ window ($ min < \Mlljj < max$) was defined such 
-that the expected upper limit\footnote{The expected limit was calculated by setting the 
-number of observed events equal to the number of events expected from SM backgrounds.} on 
-the \WR cross section was minimized.  In each window the limit was calculated by counting 
-the number of events that fell in the window, without regard to the shape of their distribution, 
-using a procedure described later in Chapter \ref{sec:searchResults}.  The windows used 
-for each \mWR mass hypothesis, shown in Table \ref{tab:masscuts}, were chosen such that the expected upper 
-limit on the \WR cross section was minimized.
+\begin{itemize}
+	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the expected width of the $\Mlljj$ distribution.
+	\item In each window:
+	\begin{itemize}
+		\item The number of expected signal events $A$ and all SM background events $B$ were calculated.
+		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ representing 
+			the number of measured events in the window was pulled from the Poisson distribution.
+		\item Using the procedure described in Chapter \ref{sec:searchResults}, the probability that $C$ 
+			was measured due to a fluctuation in $A$ and $B$ was calculated, and transformed into a limit 
+			on .
+	\end{itemize}
+\end{itemize}
+
+
+%For each \mWR hypothesis, a $\Mlljj$ window ($ min < \Mlljj < max$) was defined such 
+%that the expected upper limit\footnote{The expected limit was calculated by setting the 
+%number of observed events equal to the number of events expected from SM backgrounds.} on 
+%the \WR cross section was minimized.  In each window the number of expected SM background 
+%events was assumed to follow a Poisson distribution with mean equal to the number of 
+%events predicted in Chapter \ref{sec:backgroundEstimation}.  The .
+%
+%the limit was calculated using a procedure 
+%described later in Chapter \ref{sec:searchResults}, which was only sensitive to the number 
+%of events in the window, not the shape of their distribution.  The windows used for each \mWR 
+%mass hypothesis, shown in Table \ref{tab:masscuts}, were chosen such that the expected upper 
+%limit on the \WR cross section was minimized.
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
