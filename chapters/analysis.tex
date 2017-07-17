@@ -18,17 +18,17 @@ results were obtained by comparing data, expected SM backgrounds and hypothetica
 $\mWR$ and $\mnul$ masses derived from data and expected backgrounds.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Statistical Analysis and Uncertainties 
+% Statistical Analysis 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Statistical Analysis and Uncertainties}
-\label{sec:massWindows_uncertainties}
+\section{Statistical Analysis}
+\label{sec:massWindows}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The \WR and \nul signals considered in this search were characterized by $\Mlljj$ distributions 
 that peaked at \mWR, and had tails that extended several hundred $\GeV$ below and above the 
 peak.  The only other assumption made regarding the shape of signals in $\Mlljj$ was that 
 the tails grew larger as \mWR increased, as shown in Figure \ref{fig:fig:signalShapesAfterSelection}.  
 The general shape of \WR signals in the $\Mlljj$ distribution motivated the use of finite 
-size $\Mlljj$ windows when analyzing the data.
+size $\Mlljj$ windows to search for evidence in support of LRS models.
 
 \begin{figure}[btp]
 	\centering
@@ -47,35 +47,32 @@ The SM backgrounds that passed the signal region selection were characterized by
 distributions that decreased rapidly with increasing $\Mlljj$, whereas any \WR signal 
 after the same selection appeared as an individual peak in the $\Mlljj$ distribution.  
 This distinction motivated the division of the entire $\Mlljj > 600\GeV$ range into finite 
-width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal size of each window was 
-determined for each \mWR hypothesis using the following procedure:
+width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal window size for each 
+\mWR hypothesis was determined using the following procedure:
 
 \begin{itemize}
-	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the expected width of the $\Mlljj$ distribution.
+	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the expected width of the \WR $\Mlljj$ distribution.
 	\item In each window:
 	\begin{itemize}
 		\item The number of expected signal events $A$ and all SM background events $B$ were calculated.
 		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ representing 
 			the number of measured events in the window was pulled from the Poisson distribution.
 		\item Using the procedure described in Chapter \ref{sec:searchResults}, the probability that $C$ 
-			was measured due to a fluctuation in $A$ and $B$ was calculated, and transformed into a limit 
-			on .
+			was measured due to a fluctuation in $A$ and $B$ was calculated, and was rescaled into an 
+			upper limit on the \WR cross section.  The size of fluctuations of $A$ and $B$ only depended 
+			on their statistical uncertainties.
+		\item The cross section limit calculation was repeated 300 times, and each time a new random 
+			number $C$ was pulled from the Poisson distribution with mean $B$.  The median value of 
+			all 300 limits was taken as the cross section upper limit for the window.
 	\end{itemize}
+	\item The window that minimized the \WR cross section upper limit was used with the \mWR hypothesis.
 \end{itemize}
 
-
-%For each \mWR hypothesis, a $\Mlljj$ window ($ min < \Mlljj < max$) was defined such 
-%that the expected upper limit\footnote{The expected limit was calculated by setting the 
-%number of observed events equal to the number of events expected from SM backgrounds.} on 
-%the \WR cross section was minimized.  In each window the number of expected SM background 
-%events was assumed to follow a Poisson distribution with mean equal to the number of 
-%events predicted in Chapter \ref{sec:backgroundEstimation}.  The .
-%
-%the limit was calculated using a procedure 
-%described later in Chapter \ref{sec:searchResults}, which was only sensitive to the number 
-%of events in the window, not the shape of their distribution.  The windows used for each \mWR 
-%mass hypothesis, shown in Table \ref{tab:masscuts}, were chosen such that the expected upper 
-%limit on the \WR cross section was minimized.
+The $\Mlljj$ window optimization yielded the windows listed in Table \ref{tab:masscuts}.  In each 
+window the number of events observed in data, and expected from \WR signal and all SM backgrounds 
+were counted.  In calculating the expected \WR signal events, only the \mWR hypothesis used to 
+optimize the window was considered.  The effect of uncertainties on expected event estimates were 
+calculated in each window using procedures described in the next section.
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
@@ -113,6 +110,13 @@ determined for each \mWR hypothesis using the following procedure:
 \end{table}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncertainties 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Uncertainties}
+\label{sec:uncertainties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,6 +126,16 @@ determined for each \mWR hypothesis using the following procedure:
 \label{sec:searchResults}
 %describe how limits are calculated with and without syst uncertainties before showing results
 %when explaining limit calculation procedure without syst uncertainties, refer back to 
-%Chapter \ref{sec:massWindows_uncertainties}
+%Chapter \ref{sec:massWindows}
+
+%%%
+%from statistical.tex file of AN
+%The probability of the observed number of events being produced by a combination of background and signal with a cross section ($x$) is calculated using the Bayesian approach with the \emph{combine} tool with flat prior. 
+%The exclusion limit on the cross section ($x$) is defined as the value for which the posterior likelihood reaches 95\% of the total area under the curve.
+%This is repeated for each mass hypothesis.
+%
+%In order to take into account the uncertainties, pseudo-experiments are performed by the \combine tool varying the expected number of events from signal and background according to the uncertainties as described in the following section. The median of the distribution of the excluded cross section produced by pseudo-experiments and the intervals containing 68\% and 95\% of the pseudo-experiments are then quoted in the ``expected'' limits.
+%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
