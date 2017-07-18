@@ -117,7 +117,64 @@ calculated in each window using procedures described in the next section.
 \label{sec:uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In each window the estimated number of expected signal and background events were subject to 
-several sources of uncertainty.  The effect of these uncertainties on .
+many sources of uncertainty.  The sizes of these uncertainties were estimated in several ways, and 
+when calculating the search results the effects of the uncertainties were included as percentage 
+uncertainties on the expected number of events in each window.
+
+The impact of uncertainties that affected lepton and jet selection was 
+estimated simultaneously with the impact of the statistical uncertainty, but ignoring other 
+uncertainties.  In a set of events, from data or simulations, that had a subset passing the full 
+selection, varying the measured values of $\Et$ or $\pt$ and identification variables by their 
+average uncertainties resulted in the following:
+
+\begin{itemize}
+	\item An event that failed the full selection without any uncertainty variations suddenly passed the 
+		selection after varying the measured values.
+	\item An event that passed the full selection without any uncertainty variations suddenly failed the 
+		selection after varying the measured values.
+	\item An event that passed the full selection without any uncertainty variations again passed the 
+		selection after varying the measured values, but different leptons or jets were selected and 
+		caused the event to fall in a different $\Mlljj$ window.
+	\item An event that passed the full selection without any uncertainty variations again passed the 
+		selection after varying the measured values, the same leptons and jets were selected as if no 
+		variations were applied, and the event fell in the same $\Mlljj$ window.
+	\item An event that passed the full selection without any uncertainty variations again passed the 
+		selection after varying the measured values, the same leptons and jets were selected as if no 
+		variations were applied, but the energy variations caused the event to fall in a different 
+		$\Mlljj$ window.
+\end{itemize}
+
+The magnitudes of lepton and jet uncertainties varied with kinematic variables, including energy and 
+trajectory, and were estimated and validated independent of physics analyses.  The impact of these 
+uncertainties on estimates of expected SM background and \WR signal events was determined using the 
+following procedure that was approved by the CMS collaboration:
+
+\begin{itemize}
+	\item onetwothree.
+\end{itemize}
+
+
+
+
+\begin{table}[ht]
+	\caption{Magnitude of individual \emph{Category B} uncertainties for the $\MWR = 2.2\TeV$ hypothesis.  All
+	uncertainties in percent of expected events.  Note the lepton uncertainty for Top backgrounds is the combination of electron and muon uncertainties, while for DY and \WR it is electron only or muon only.  All uncertainties obtained by throwing 3200 toys.}
+  \label{tab:catBUncertaintiesOneMassBin}
+  \centering
+    \begin{tabular}{c|c|c}
+%      \hline
+		Uncertainty                  & eejj magnitude (\%) & $\mu\mu$jj magnitude (\%)  \\
+      \hline
+	  \WR lepton energy scale and resolution, ID and iso & $1$ & $3$ \\ 
+	  \WR jet energy scale and resolution & $1$ & $1$ \\ 
+	  DY lepton energy scale and resolution, ID and iso & $4$ & $7$  \\
+	  DY jet energy scale and resolution & $14$ & $11$  \\
+	  Top lepton energy scale and resolution, ID and iso & $8$ & $8$ \\
+	  Top jet energy scale and resolution & $2$ & $2$  \\
+  \hline
+  \end{tabular}
+\end{table}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
