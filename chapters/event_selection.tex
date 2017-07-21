@@ -422,8 +422,9 @@ corrections to muons in data and simulated events.  In general the muon triggers
 collisions, so the weight of every simulated event was scaled down by a factor dependent on the $\pt$ and $\eta$ of the 
 triggering muon.  For the $\pt > 50 \GeV$ trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
 event weight (a weight of 1 is equivalent to no correction) applied to triggering muons in simulated events was between 
-0.95 and 0.97 for $\pt < 140 \GeV$, and between 0.97 and 1.0 for $\pt > 140 \GeV$ with negligible uncertainty.  
-Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
+0.95 (5\% decrease) and 0.97 (3\% decrease) for $\pt < 140 \GeV$, and between 0.97 (3\% decrease) and 1.04 (4\% increase) for $\pt > 140 \GeV$.  
+The uncertainty on these weights was purely statistical, and the small impact of muon trigger weight uncertainties is discussed in 
+Chapter \ref{sec:leptonRecoTriggerEffUnc}.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
 events in data and simulations, it was known that the muon energy scale and resolution differed between simulations 
 and data\footnote{the peak position differed due to different muon energy scale calibrations, and the width differed 
 because the muon energy resolution differed between simulations and data}.  The $\pt$ of muons in data and simulations 
@@ -431,8 +432,8 @@ were corrected based on their $\eta$, $\phi$, charge and initial $\pt$ to bring 
 into agreement between data and simulations.  These corrections were applied 
 before the $\pt > 53 \GeV$ cut mentioned earlier.  Additional weights were applied to every simulated muon 
 to eliminate the difference in muon identification selection and reconstruction efficiency between data and simulations.  
-For all muons this weight was always between 1.0 and 0.985, and the effect of weight uncertainties are discussed in Chapter 
-\ref{sec:uncertainties}.
+For all muons this weight was always between 1.0 (0\% change) and 0.985 (1.5\% decrease), and the effect of weight uncertainties 
+are discussed in Chapter \ref{sec:uncertainties}.
 
 %\begin{table}[htp]
 %  \caption{The correction factor applied to the triggering muon, as a function of its $\pt$ and $\eta$, in simulated events.}
@@ -513,8 +514,8 @@ and data.  The $\Et$ of electrons in data and simulations were corrected based o
 and ECAL shower shape to bring the electron energy scale and resolution in data and simulations into agreement.  
 These corrections were applied before the $\Et > 53 \GeV$ cut mentioned earlier.  Additional weights were applied 
 to every simulated electron to eliminate the difference in electron reconstruction and identification selection 
-efficiencies between data and simulations.  A weight of 0.982 was applied to all simulated electrons to account for 
-differences in reconstruction efficiency, and an additional weight of 0.989 was applied to all simulated electrons to 
+efficiencies between data and simulations.  A weight of 0.982 (1.8\% decrease) was applied to all simulated electrons to account for 
+differences in reconstruction efficiency, and an additional weight of 0.989 (1.1\% decrease) was applied to all simulated electrons to 
 account for differences in identification selection efficiency.  The effect of uncertainties on these weights was 
 small, and is discussed in Chapter \ref{sec:uncertainties}.
 
