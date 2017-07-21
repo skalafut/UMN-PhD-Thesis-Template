@@ -119,9 +119,9 @@ section.
 \label{sec:uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In each window the estimated number of expected signal and background events were subject to 
-many sources of uncertainty.  The sizes of these uncertainties were estimated in several ways, and 
-when calculating the search results their effects were included as percentage uncertainties on 
-the expected number of events in each window.
+many sources of uncertainty.  The magnitude of each uncertainty was estimated using a technique 
+approved by the CMS Collaboration, and the effect of each on the search results was quantified 
+as percentage uncertainties on the expected number of events in each $\Mlljj$ window.
 
 The impacts of lepton and jet energy uncertainties, and simulated lepton ID uncertainties on 
 expected signal and background events was estimated simultaneously, but ignoring other 
@@ -176,7 +176,7 @@ lepton ID & Uncertainty on ID weights applied to simulated events, see Chapters 
 The impact of these uncertainties on estimates of expected background and signal events was 
 determined by applying the following procedure\footnote{This procedure was reviewed and approved by the CMS Collaboration.} 
 independently to simulated $\DY$ events, simulated $\WR \rightarrow \ell\ell jj$ events, and 
-$e\mu$ data events that were used to estimate the top quark backgrounds:
+$e\mu$ data events that were used to estimate the top quark background:
 
 \begin{itemize}
 	\item In every event selected by a trigger, but before any lepton or jet selections:
@@ -197,11 +197,11 @@ $e\mu$ data events that were used to estimate the top quark backgrounds:
 \end{itemize}
 
 This procedure was iterated 3200 times for every event.  For each signal and background process, distributions 
-of the number of events for all 3200 iterations in each $\Mlljj$ window were made, of which an example  
+of the number of events in each $\Mlljj$ window for all 3200 iterations were made, of which an example  
 is shown in Figure \ref{fig:effectOfEnergyIdUncerts}.  For each process in an $\Mlljj$ window, the 
 distribution's standard deviation represented the uncertainty in the expected number of events due 
-to energy and ID uncertainties.  The effect of the these uncertainties on background and signal 
-estimates in one $\Mlljj$ window is shown in Table \ref{tab:impactOfEnergyIdUncerts}.
+to energy and ID uncertainties.  A summary of the expected event uncertainties due to energy and ID 
+uncertainties in one $\Mlljj$ window is shown in Table \ref{tab:impactOfEnergyIdUncerts}.
 
 \begin{figure}[h]
 	\centering
@@ -214,11 +214,11 @@ estimates in one $\Mlljj$ window is shown in Table \ref{tab:impactOfEnergyIdUnce
 \begin{table}[ht]
 	\caption{Impact of energy and ID uncertainties on expected signal and background event counts in the $\Mlljj$ 
 		window optimized for the $\mWR = 2.2\TeV$ hypothesis.  All uncertainties are in percentages of expected events.  Unlike the \DY and \WR 
-		estimates, the estimate of top quark backgrounds in $ee$ and $\mu\mu$ channels is sensitive to electron and muon energy and ID uncertainties.}
+		estimates, the estimate of top quark background in $ee$ and $\mu\mu$ channels is sensitive to electron and muon energy and ID uncertainties.}
   \label{tab:impactOfEnergyIdUncerts}
   \centering
     \begin{tabular}{c|c|c|c}
-		Process & Uncertainty sources    & Uncertainty on number of $eejj$ events (\%) & Uncertainty on number of $\mu\mu jj$ events (\%)  \\
+		Process & Uncertainty sources    & $\Delta($number of $eejj$ events$)$ (\%) & $\Delta($number of $\mu\mu jj$ events$)$ (\%)  \\
       \hline
 	  \WR & lepton energy and ID & $1$ & $3$ \\ 
 	  \WR & jet energy & $1$ & $1$ \\ 
@@ -226,26 +226,37 @@ estimates in one $\Mlljj$ window is shown in Table \ref{tab:impactOfEnergyIdUnce
 	  \DY &  lepton energy and ID & $4$ & $7$  \\
 	  \DY &  jet energy & $14$ & $11$  \\
 	  %\DY & statistical & $6$ & $5$ \\
-	 Top quark backgrounds & lepton energy & $8$ & $8$ \\
-	 Top quark backgrounds & jet energy & $2$ & $2$  \\
-	 %Top quark backgrounds & statistical & $44$ & $44$  \\
+	 Top quark background & lepton energy & $8$ & $8$ \\
+	 Top quark background & jet energy & $2$ & $2$  \\
+	 %Top quark background & statistical & $44$ & $44$  \\
   \hline
   \end{tabular}
 \end{table}
 
+The statistical uncertainty in each $\Mlljj$ window was calculated as $\sqrt{\sum w_{i}^{2}}$, where 
+$w_{i}$ was the weight of event i, and the sum ran over all events passing the full selection.  As an 
+example, consider an $ee$ channel window that has 10 $e\mu$ data events after all selections.  Here 
+the estimated top quark background is $0.43 \cdot 10 = 4.3$ events, and the statistical uncertainty is 
+$0.43 \cdot \sqrt{10} \sim 1.4$ events, since $e\mu$ data events all have a weight of 1.  However, in 
+many $\Mlljj$ windows optimized for $\mWR \geq 3.0\TeV$ hypotheses, zero background events were expected.  
+In such windows, the statistical uncertainty was set equal to the average event weight for all selected 
+events.  As shown in Table \ref{tab:impactOfStatUncert}, the statistical uncertainty was largest in the 
+top quark background estimate.
 
-%the number of expected events in a window is obtained before any toys are thrown, and the statistical uncertainty is calculated using the formula listed below
-%
-%The statistical uncertainty is equal to $\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ is the weight of event i.  For example, if an electron channel cut and count bin has 10 events
-%from data in the \FS CR, the statistical uncertainty on the top background in this bin would be $0.43 \cdot \sqrt{10}$, since data events all have a weight of 1.
-%When there are zero expected events, such as in the \FS CR for $\Mlljj > 2.7\TeV$, the Gamma function parameters are
-%modified as follows:
-%
-%\begin{itemize}
-%	\item N is set to 0
-%	\item $\alpha$ is the average event weight, equal to weighted events / unweighted events, with $\Mlljj > 600\GeV$.
-%	\item the statistical contribution to $\sigma$ is set to $\alpha$.  Thus when there are zero weighted events, the statistical uncertainty is $\alpha$.
-%\end{itemize}
+\begin{table}[ht]
+	\caption{Impact of statistical uncertainty on the number of expected signal and background events in the $\Mlljj$ 
+		window optimized for the $\mWR = 2.2\TeV$ hypothesis.  All uncertainties are in percentages of expected events.}
+  \label{tab:impactOfStatUncert}
+  \centering
+    \begin{tabular}{c|c|c}
+		Process & $\Delta($number of $eejj$ events$)$ (\%) & $\Delta($number of $\mu\mu jj$ events$)$ (\%)  \\
+      \hline
+	  \WR & $1$ & $1$ \\
+	  \DY & $6$ & $5$ \\
+	 Top quark background & $44$ & $44$  \\
+  \hline
+  \end{tabular}
+\end{table}
 
 
 
