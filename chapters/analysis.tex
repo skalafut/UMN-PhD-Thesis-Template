@@ -264,11 +264,12 @@ quark background estimate.
 
 \subsubsection{Background Uncertainty from Control Regions}
 \label{sec:bkgndNormUnc}
-In the control regions discussed in Chapter \ref{sec:backgroundEstimation}, studies of events in 
-data and simulations motivated applying fixed percentage uncertainties to background estimates.  For 
-the top quark background estimate, an uncertainty of 10\% constant in $\Mlljj$ was applied.  For the 
-$\DY$ background estimate, an uncertainty of 40\% constant in $\Mlljj$ was applied.  This was the 
-dominant uncertainty in the $\DY$ background estimate.
+In the control regions discussed in Chapter \ref{sec:backgroundEstimation}, studies of data and 
+simulations motivated applying fixed percentage uncertainties to background estimates.  For 
+the top quark background estimate, an uncertainty of 10\% on the expected event count, constant 
+in $\Mlljj$, was applied.  For the $\DY$ background estimate, an uncertainty of 40\% on the 
+expected event count, constant in $\Mlljj$, was applied.  This was the dominant uncertainty in 
+the $\DY$ background estimate.
 
 \subsection{Sub-dominant Uncertainties}
 \label{sec:subdominantUncs}
@@ -280,12 +281,24 @@ of lepton reconstruction and the muon trigger differed between simulated and dat
 were corrected by applying $\sim$unity weights to simulated \DY and \WR events based on selected leptons.  
 In the $\mu\mu$ channel, the trigger and reconstruction efficiency weights varied with the energy and $\eta$ of selected muons, and the 
 number of events in data and simulations available to estimate these efficiency weights determined 
-their uncertainties.  The uncertainty on muon reconstruction efficiency weights were negligible.  The muon trigger 
-weight for a triggering muon with $\pt < 140\GeV$ had an uncertainty below 0.5\%.  For higher $\pt$ muons 
-the trigger weights had much greater uncertainties because fewer data events were available: $<$ 3\% 
-uncertainty for triggering muons with $|\eta| < 2.1$, and 5.1\% uncertainty for triggering muons with 
-$2.1 < |\eta| < 2.4$.  In the $ee$ channel, one electron reconstruction efficiency weight was 
-calculated for all electrons.
+their uncertainties.  The uncertainty on muon reconstruction efficiency weights was negligible.  The muon trigger 
+weight for a triggering muon with $\pt < 140\GeV$ had an uncertainty below 0.5\% of the expected event 
+count.  For higher $\pt$ muons the trigger weights had much greater uncertainties because fewer data 
+events were available: $<$ 3\% uncertainty for triggering muons with $|\eta| < 2.1$, and 5.1\% uncertainty 
+for triggering muons with $2.1 < |\eta| < 2.4$.  In the $ee$ channel, one electron reconstruction 
+efficiency weight was calculated for all electrons, and the maximum difference between this inclusive 
+weight and an $\Et, \eta$ dependent weight was taken as the uncertainty on the weight.  This uncertainty 
+was 2\% of the expected event count.
+
+\subsubsection{Cross Section, Pileup and PDF Uncertainties}
+\label{sec:crossSxnPileupPdfUnc}
+As \DY and \WR expected event counts are estimated from simulated events, these estimates were subject 
+to three additional uncertainties that did not effect the top quark background estimate: cross 
+section uncertainty, pileup uncertainty, and parton distribution function (PDF) uncertainty.  The 
+effect of all three uncertainties was estimated using techniques approved by the CMS Collaboration, 
+and quantified as an uncertainty on the expected number of events.
+
+The cross section uncertainty .
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
