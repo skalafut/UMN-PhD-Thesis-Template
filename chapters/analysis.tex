@@ -123,11 +123,15 @@ many sources of uncertainty.  The magnitude of each uncertainty was estimated us
 approved by the CMS Collaboration, and the effect of each on the search results was quantified 
 as percentage uncertainties on the expected number of events in each $\Mlljj$ window.
 
+\subsection{Dominant Uncertainties}
+\label{sec:dominantUncs}
+
+\subsubsection{Energy and Lepton Identification Uncertainties}
+\label{sec:enrgyLeptIdUncs}
 The impacts of lepton and jet energy uncertainties, and simulated lepton ID uncertainties on 
 expected signal and background events was estimated simultaneously, but ignoring other 
-uncertainties.  In a set of data or simulated events that contained events that passed the full 
-selection, varying the measured energies of leptons and jets by their uncertainties resulted in 
-the following:
+uncertainties.  In a set of data or simulated events, some of which passed the full selection, 
+varying the measured energies of leptons and jets by their uncertainties resulted in the following:
 
 \begin{itemize}
 	\item Some events that failed the full selection without any uncertainty variations suddenly passed the 
@@ -222,17 +226,16 @@ uncertainties in one $\Mlljj$ window is shown in Table \ref{tab:impactOfEnergyId
       \hline
 	  \WR & lepton energy and ID & $1$ & $3$ \\ 
 	  \WR & jet energy & $1$ & $1$ \\ 
-	  %\WR & statistical & $1$ & $1$ \\
 	  \DY &  lepton energy and ID & $4$ & $7$  \\
 	  \DY &  jet energy & $14$ & $11$  \\
-	  %\DY & statistical & $6$ & $5$ \\
 	 Top quark background & lepton energy & $8$ & $8$ \\
 	 Top quark background & jet energy & $2$ & $2$  \\
-	 %Top quark background & statistical & $44$ & $44$  \\
   \hline
   \end{tabular}
 \end{table}
 
+\subsubsection{Statistical Uncertainty}
+\label{sec:statUnc}
 The statistical uncertainty in each $\Mlljj$ window was calculated as $\sqrt{\sum w_{i}^{2}}$, where 
 $w_{i}$ was the weight of event i, and the sum ran over all events passing the full selection.  As an 
 example, consider an $ee$ channel window that has 10 $e\mu$ data events after all selections.  Here 
@@ -241,7 +244,8 @@ $0.43 \cdot \sqrt{10} \sim 1.4$ events, since $e\mu$ data events all have a weig
 many $\Mlljj$ windows optimized for $\mWR \geq 3.0\TeV$ hypotheses, zero background events were expected.  
 In such windows, the statistical uncertainty was set equal to the average event weight for all selected 
 events.  As shown in Table \ref{tab:impactOfStatUncert}, the statistical uncertainty was largest in the 
-top quark background estimate.
+top quark background estimate.  The statistical uncertainty was the dominant uncertainty in the top 
+quark background estimate.
 
 \begin{table}[ht]
 	\caption{Impact of statistical uncertainty on the number of expected signal and background events in the $\Mlljj$ 
@@ -258,7 +262,29 @@ top quark background estimate.
   \end{tabular}
 \end{table}
 
+\subsubsection{Background Uncertainty from Control Regions}
+\label{sec:bkgndNormUnc}
+In the control regions discussed in Chapter \ref{sec:backgroundEstimation}, studies of events in 
+data and simulations motivated applying fixed percentage uncertainties to background estimates.  For 
+the top quark background estimate, an uncertainty of 10\% constant in $\Mlljj$ was applied.  For the 
+$\DY$ background estimate, an uncertainty of 40\% constant in $\Mlljj$ was applied.  This was the 
+dominant uncertainty in the $\DY$ background estimate.
 
+\subsection{Sub-dominant Uncertainties}
+\label{sec:subdominantUncs}
+
+\subsubsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
+\label{sec:leptonRecoTriggerEffUnc}
+As discussed in Chapters \ref{sec:muonRecoAndSelection,sec:electronRecoAndSelection}, the efficiencies 
+of lepton reconstruction and the muon trigger differed between simulated and data events.  These differences 
+were corrected by applying $\sim$unity weights to simulated \DY and \WR events based on selected leptons.  
+In the $\mu\mu$ channel, the trigger and reconstruction efficiency weights varied with the energy and $\eta$ of selected muons, and the 
+number of events in data and simulations available to estimate these efficiency weights determined 
+their uncertainties.  The uncertainty on muon reconstruction efficiency weights were negligible.  The muon trigger 
+weight for a triggering muon with $\pt < 140\GeV$ had an uncertainty below 0.5\%.  For higher $\pt$ muons 
+the trigger weights had much greater uncertainties because fewer data events were available: $<$ 3\% 
+uncertainty for triggering muons with $|\eta| < 2.1$, and 5.1\% uncertainty for triggering muons with 
+$2.1 < |\eta| < 2.4$.  In the $ee$ channel, the electron reconstruction effic.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
