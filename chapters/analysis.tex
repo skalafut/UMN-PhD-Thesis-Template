@@ -288,18 +288,30 @@ events were available: $<$ 3\% uncertainty for triggering muons with $|\eta| < 2
 for triggering muons with $2.1 < |\eta| < 2.4$.  In the $ee$ channel, one electron reconstruction 
 efficiency weight was calculated for all electrons, and the maximum difference between this inclusive 
 weight and an $\Et, \eta$ dependent weight was taken as the uncertainty on the weight.  This uncertainty 
-was 2\% of the expected event count.
+was 2\%, and was applied to all $\Mlljj$ windows.
 
 \subsubsection{Cross Section, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
-As \DY and \WR expected event counts were estimated from simulated events, these estimates were effected 
-by three additional uncertainties that did not effect the top quark background estimate: uncertainties 
-in cross section, pileup, and parton distribution functions (PDFs).  By comparing different simulated 
-\DY datasets to data, the \DY cross section uncertainty was 2\% (1\%) in the $ee$ $\mu\mu$ channel.
+As \DY and \WR expected event counts were estimated from simulated events, these estimates were affected 
+by three additional uncertainties that did not affect the top quark background estimate: uncertainties 
+in cross section, pileup, and parton distribution functions (PDFs) and scale uncertainties.  By comparing \DY datasets simulated 
+with different generators to data, the \DY cross section uncertainty was determined as 2\% (1\%) in the 
+$ee$ $\mu\mu$ channel.  \WR datasets simulated with different generators were not available, so the \WR 
+cross section uncertainty was determined by uncertainties in SM coupling constants and particle masses 
+hard coded into \PYTHIA.  The total effect of these uncertainties decreased as more events were generated, 
+and as a result the 50000 event \WR datasets used here had negligible cross section uncertainties.
 
-%The effect of all three was estimated 
-%using techniques approved by the CMS Collaboration, and quantified as an uncertainty on the expected number of events.
+Pileup weights $w_{PUi}$ applied to simulated events were derived assuming the pileup distribution in data followed 
+a specific shape, which was sensitive to the vertex reconstruction efficiency of the tracker.  Uncertainties 
+and inefficiencies in vertex reconstruction lead to an uncertainty in the pileup 
+distribution of data.  The effect of this uncertainty was estimated by shifting the entire pileup distribution 
+in data, without changing its shape, higher (lower) to change the mean pileup value in data by +5\% (-5\%).  
+New pileup weights $w_{PUj}$ were calculated for both the upward and downward shifts, and the pileup uncertainty 
+was calculated as the maximum percentage change in events in $\Mlljj$ windows when events were weighted with 
+the original and new weights.  For \DY and \WR event estimates, the pileup uncertainty was 3\% or less in 
+all $\Mlljj$ windows and \mWR values.
 
+The effect of PDF uncertainties, and factorization and normalization (QCD) scales were .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Results
