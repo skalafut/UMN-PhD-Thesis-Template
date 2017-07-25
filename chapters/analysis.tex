@@ -134,17 +134,17 @@ uncertainties.  In a set of data or simulated events, some of which passed the f
 varying the measured energies of leptons and jets by their uncertainties resulted in the following:
 
 \begin{itemize}
-	\item Some events that failed the full selection without any uncertainty variations suddenly passed the 
+	\item Events that failed the full selection without any uncertainty variations suddenly passed the 
 		selection after varying the energies.
-	\item Some events that passed the full selection without any uncertainty variations suddenly failed the 
+	\item Events that passed the full selection without any uncertainty variations suddenly failed the 
 		selection after varying the energies.
-	\item Some events that passed the full selection without any uncertainty variations again passed the 
+	\item Events that passed the full selection without any uncertainty variations again passed the 
 		selection after varying the energies, but different leptons or jets were selected, and 
 		as a result the events migrated to other $\Mlljj$ windows.
-	\item Some events that passed the full selection without any uncertainty variations again passed the 
+	\item Events that passed the full selection without any uncertainty variations again passed the 
 		selection after varying the energies, the same leptons and jets were selected as if no 
 		variations were applied, and the events fell in the same $\Mlljj$ windows.
-	\item Some events that passed the full selection without any uncertainty variations again passed the 
+	\item Events that passed the full selection without any uncertainty variations again passed the 
 		selection after varying the energies, the same leptons and jets were selected as if no 
 		variations were applied, but the variations moved the events to other $\Mlljj$ windows.
 \end{itemize}
@@ -350,7 +350,7 @@ By excluding this model dependent uncertainty, the results can be interpreted in
   \label{tab:wrPdfAndQCDscaleUnc}
   \centering
     \begin{tabular}{c|c|c}
-		\mWR (GeV)                     & eejj uncertainty (\%) & $\mu\mu$jj uncertainty (\%)  \\
+		\mWR (GeV)                     & $\Delta( eejj$ events$)$ (\%) & $\Delta( \mu\mu jj$ events$)$ (\%)  \\
       \hline
 	  1000  & $4$ & $4$ \\
 	  2200 & $7$ & $7$ \\
@@ -372,10 +372,23 @@ full selection with $\Mlljj > 600\GeV$.
 
 \begin{table}[htp]
 	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of expected \WR signal and background events in each $\Mlljj$ window, and 
-		their statistical and systematic uncertainties.  Each uncertainty is listed as a number of events relative to the expected number of events.}
+	their statistical and systematic uncertainties.  Each uncertainty is listed as a number of events relative to the expected number of events. BG = Backgrounds}
 	\label{tab:expectedEventsAndAllUncs}
-\centering
-\resizebox{1\textwidth}{9cm}{\input{uncertainty_table_withoutData}}
+	\centering
+	\resizebox{1\textwidth}{3.1cm}{\begin{tabular}{|c|c|c|c|c|}
+		& \multicolumn{4}{c|}{Electron channel}  \\
+		\mWR ($\GeV$) & Signal (exp $\pm$ stat $\pm$ syst) & $Z/\gamma^*$ (exp $\pm$ stat $\pm$ syst) & Top quark (exp $\pm$ stat $\pm$ syst) & $\Sigma$ BG (exp $\pm$ stat $\pm$ syst) \\\hline
+		1000 & 1196.0 $\pm$ 15.0 $\pm$ 46.0 & 21.11 $\pm$ 1.64 $\pm$ 8.79 & 40.87 $\pm$ 4.2 $\pm$ 4.76 & 61.99 $\pm$ 4.51 $\pm$ 10.0   \\ \hline
+		2200 & 38.0 $\pm$ 0.4 $\pm$ 1.5 & 2.66 $\pm$ 0.15 $\pm$ 1.16 & 2.25 $\pm$ 0.99 $\pm$ 0.3 & 4.92 $\pm$ 1.0 $\pm$ 1.2    \\ \hline
+		3000 & 7.3 $\pm$ 0.07 $\pm$ 0.27 & 1.02 $\pm$ 0.09 $\pm$ 0.44 & 0.43 $\pm$ 0.43 $\pm$ 0.05 & 1.45 $\pm$ 0.44 $\pm$ 0.45    \\ \hline
+		4000 & 1.0 $\pm$ 0.01 $\pm$ 0.04 & 0.65 $\pm$ 0.08 $\pm$ 0.29 & 0.0 $\pm$ 0.43 $\pm$ 0.0 & 0.65 $\pm$ 0.44 $\pm$ 0.29    \\ \hline
+	   & \multicolumn{4}{c|}{Muon channel}  \\
+		\mWR ($\GeV$) & Signal (exp $\pm$ stat $\pm$ syst) & $Z/\gamma^*$ (exp $\pm$ stat $\pm$ syst) & Top quark (exp $\pm$ stat $\pm$ syst) & $\Sigma$ BG (exp $\pm$ stat $\pm$ syst) \\\hline
+		1000 & 1805.0 $\pm$ 17.9 $\pm$ 83.1 & 42.16 $\pm$ 2.28 $\pm$ 17.85 & 70.51 $\pm$ 6.82 $\pm$ 7.97 & 112.67 $\pm$ 7.19 $\pm$ 19.55   \\ \hline
+		2200 & 52.0 $\pm$ 0.5 $\pm$ 2.5 & 4.97 $\pm$ 0.25 $\pm$ 2.14 & 3.44 $\pm$ 1.51 $\pm$ 0.45 & 8.41 $\pm$ 1.53 $\pm$ 2.18    \\ \hline
+		3000 & 9.1 $\pm$ 0.08 $\pm$ 0.39 & 2.62 $\pm$ 0.16 $\pm$ 1.13 & 0.66 $\pm$ 0.66 $\pm$ 0.08 & 3.28 $\pm$ 0.68 $\pm$ 1.13    \\ \hline
+		4000 & 1.2 $\pm$ 0.01 $\pm$ 0.05 & 1.37 $\pm$ 0.1 $\pm$ 0.63 & 0.0 $\pm$ 0.66 $\pm$ 0.0 & 1.37 $\pm$ 0.67 $\pm$ 0.63    \\ \hline
+	\end{tabular}}
 \end{table}
 
 
@@ -384,6 +397,10 @@ full selection with $\Mlljj > 600\GeV$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:searchResults}
+Evidence of LRS models was searched for by comparing expected signal and background events to observed data 
+events after all selections.  The initial comparison between expectations and observations was made using the 
+$\Meejj$ and $\Mmumujj$ distributions, with (Table ) and without (Figure ) applying the $\Mlljj$ window cuts described earlier in Section 
+\ref{sec:massWindows}.
 
 
 %describe how limits are calculated with and without syst uncertainties before showing results
