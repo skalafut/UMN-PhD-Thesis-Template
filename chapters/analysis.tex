@@ -21,8 +21,43 @@ $\mWR$ and $\mnul$ masses derived from data and expected backgrounds.
 % Statistical Analysis 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Statistical Analysis}
-\label{sec:massWindows}
+\label{sec:statAnalysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bayesian Limits}
+\label{sec:bayesianStatsAndLimits}
+Limits on \WR production were calculated both to design a structure using simulated events to 
+facilitate tests of different \mWR hypotheses, and to interpret events from data and simulations 
+in light of different \mWR hypotheses.  In both cases limits were calculated at 95\% confidence 
+level (CL) using Bayesian statistics, and a Poisson model of the expected number of signal ($s$) 
+and background ($b$) events:
+
+\begin{equation}
+	\mu s(\textbf{\theta}) + b(\textbf{\theta})
+\end{equation}
+
+where $\mu$ is the signal strength, and $\textbf{\theta}$ are the expected event uncertainties 
+described in detail in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability 
+distribution for $\mu$ given $\Nlljj$ measured events, $p(\mu|\Nlljj)$, was calculated as \cite{bayesianDataAnalysis}:
+
+\begin{equation}
+	p(\mu|\Nlljj) = \int p(\mu|\textbf{\theta},\Nlljj)p(\textbf{\theta}|\Nlljj)d\textbf{\theta}
+\end{equation}
+
+where $p(\textbf{\theta}|\Nlljj)$ are the probability distributions for the uncertainties given 
+the measurement $\Nlljj$ (``marginal posterior distributions''), and $p(\mu|\textbf{\theta},\Nlljj)$ 
+are the probability distributions for the measurement $\Nlljj$, and the signal strength $\mu$ given 
+the uncertainties $\textbf{\theta}$ (``conditional posterior distributions'').  Functional forms 
+of the marginal posterior distributions were either log-normal or gamma distributions depending on the 
+uncertainty, and are identified in Section \ref{sec:uncertainties}.  Functional forms of the 
+conditional posterior distributions were derived from Poisson distributions with known means (the 
+expected number of signal and background events) and uniform prior distributions.  The integrals 
+over $\textbf{\theta}$ were evaluated numerically using \MC simulations.  Following \MC integration, 
+the function $p(\mu|\Nlljj)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that 95\% of 
+the total area under $p(\mu|\Nlljj)$ was covered.  The value $\mu = \mu_{max}$ is the 95\% CL upper 
+limit on the signal strength, and this value was scaled into a limit on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$.
+
+\subsection{$\Mlljj$ Windows}
+\label{sec:mlljjWindows}
 The \WR and \nul signals considered in this search were characterized by $\Mlljj$ distributions 
 that peaked at \mWR, and had tails that extended several hundred $\GeV$ below and above the 
 peak.  The only other assumption made regarding the shape of signals in $\Mlljj$ was that 
@@ -43,7 +78,7 @@ models.
 		channels.  The tails of the distribution grow as \mWR increased.}
 \end{figure}
 
-The SM backgrounds that passed the signal region selection were characterized by $\Mlljj$ 
+The SM backgrounds that passed the signal region selection were characterized by event 
 distributions that decreased rapidly with increasing $\Mlljj$, whereas any \WR signal 
 after the same selection appeared as an individual peak in the $\Mlljj$ distribution.  
 This distinction motivated the division of the entire $\Mlljj > 600\GeV$ range into finite 
@@ -55,17 +90,17 @@ width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal window s
 	\item In each window:
 	\begin{itemize}
 		\item The number of expected signal events $A$ and all SM background events $B$ were calculated.
-		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ representing 
-			the number of measured events in the window was pulled from the Poisson distribution.
-		\item Using the procedure described in Chapter \ref{sec:searchResults}, the probability that $C$ 
-			was measured due to a fluctuation in $A$ and $B$ was calculated, and was rescaled into an 
-			upper limit on the \WR cross section.  The size of fluctuations of $A$ and $B$ only depended 
-			on their statistical uncertainties.
-		\item The cross section limit calculation was repeated 300 times, and each time a new random 
+		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ was pulled 
+			from the Poisson distribution that represented the number of measured events in the window.
+		\item Using the procedure described in Section \ref{sec:bayesianStatsAndLimits}, a 95\% confidence 
+			level (CL) upper limit on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ was calculated 
+			based on the probability of measuring $C$ due to fluctuations in $A$ and $B$.  The size of 
+			fluctuations of $A$ and $B$ only depended on their statistical uncertainties.
+		\item The $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ limit was recalculated 300 times, and each time a new random 
 			number $C$ was pulled from the Poisson distribution with mean $B$.  The median value of 
 			all 300 limits was taken as the cross section upper limit for the window.
 	\end{itemize}
-	\item The window that minimized the \WR cross section upper limit was used with the \mWR hypothesis.
+	\item The \mWR hypothesis was tested using the window that minimized the $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ upper limit.
 \end{itemize}
 
 The $\Mlljj$ window optimization yielded the windows listed in Table \ref{tab:masscuts}.  The windows 
@@ -400,7 +435,9 @@ full selection with $\Mlljj > 600\GeV$.
 Evidence of LRS models was searched for by comparing expected signal and background events to observed data 
 events after all selections.  The initial comparison between expectations and observations was made using the 
 $\Meejj$ and $\Mmumujj$ distributions, with (Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure 
-\ref{fig:obsAndExpMlljj}) applying the $\Mlljj$ window cuts described in Section \ref{sec:massWindows}.
+\ref{fig:obsAndExpMlljj}) applying the $\Mlljj$ window cuts described in Section \ref{sec:mlljjWindows}.  No 
+statistically significant excess was observed in data with respect to expected backgrounds, so limits were 
+calculated on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$, and \mWR and \mnul.
 
 \begin{table}[htp]
 	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of expected \WR signal and background events in each $\Mlljj$ window, and 
@@ -478,20 +515,6 @@ $\Meejj$ and $\Mmumujj$ distributions, with (Table \ref{tab:expAndObsEvtsWithAll
 		the left (right).}
 \end{figure}
 
-
-
-%describe how limits are calculated with and without syst uncertainties before showing results
-%when explaining limit calculation procedure without syst uncertainties, refer back to 
-%Chapter \ref{sec:massWindows}
-
-%%%
-%from statistical.tex file of AN
-%The probability of the observed number of events being produced by a combination of background and signal with a cross section ($x$) is calculated using the Bayesian approach with the \emph{combine} tool with flat prior. 
-%The exclusion limit on the cross section ($x$) is defined as the value for which the posterior likelihood reaches 95\% of the total area under the curve.
-%This is repeated for each mass hypothesis.
-%
-%In order to take into account the uncertainties, pseudo-experiments are performed by the \combine tool varying the expected number of events from signal and background according to the uncertainties as described in the following section. The median of the distribution of the excluded cross section produced by pseudo-experiments and the intervals containing 68\% and 95\% of the pseudo-experiments are then quoted in the ``expected'' limits.
-%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
