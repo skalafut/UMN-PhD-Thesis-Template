@@ -32,26 +32,26 @@ level (CL) using Bayesian statistics, and a Poisson model of the expected number
 and background ($b$) events:
 
 \begin{equation}
-	Poisson(\mu s(\textbf{\theta}) + b(\textbf{\theta}))
+	Poisson(\mu s(\pmb{\theta}) + b(\pmb{\theta}))
 \end{equation}
 
-where $\mu$ is the signal strength, and $\textbf{\theta}$ are the expected event uncertainties 
+where $\mu$ is the signal strength, and $\pmb{\theta}$ are the expected event uncertainties 
 described in detail in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability 
-distribution for $\mu$ given $\Nlljj$ measured events, $p(\mu|\Nlljj)$, is calculated as \cite{bayesianDataAnalysis}:
+distribution for $\mu$ given $\Nlljj$ measured events, $p(\mu|\Nlljj)$, is calculated using\cite{bayesianDataAnalysis}:
 
 \begin{equation}
-	p(\mu|\Nlljj) = \int p(\mu|\textbf{\theta},\Nlljj)p(\textbf{\theta}|\Nlljj)d\textbf{\theta}
+	p(\mu|\Nlljj) = \int p(\mu|\pmb{\theta},\Nlljj)p(\pmb{\theta}|\Nlljj)d\pmb{\theta}
 \end{equation}
 
-where $p(\textbf{\theta}|\Nlljj)$ are the probability distributions for the uncertainties given 
-the measurement $\Nlljj$ (``marginal posterior distributions''), and $p(\mu|\textbf{\theta},\Nlljj)$ 
+where $p(\pmb{\theta}|\Nlljj)$ are the probability distributions for the uncertainties given 
+the measurement $\Nlljj$ (``marginal posterior distributions''), and $p(\mu|\pmb{\theta},\Nlljj)$ 
 are the probability distributions for the measurement $\Nlljj$, and the signal strength $\mu$ given 
-the uncertainties $\textbf{\theta}$ (``conditional posterior distributions'').  Functional forms 
+the uncertainties $\pmb{\theta}$ (``conditional posterior distributions'').  Functional forms 
 of the marginal posterior distributions were either log-normal or Gamma distributions depending on the 
 uncertainty, and are identified in Section \ref{sec:uncertainties}.  Functional forms of the 
 conditional posterior distributions were derived from Poisson distributions with known means (the 
 expected number of signal and background events) and uniform prior distributions.  The integrals 
-over $\textbf{\theta}$ were evaluated numerically using \MC simulations.  Following \MC integration, 
+over $\pmb{\theta}$ were evaluated numerically using \MC simulations.  Following \MC integration, 
 the function $p(\mu|\Nlljj)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that 95\% of 
 the total area under $p(\mu|\Nlljj)$ was covered.  The value $\mu = \mu_{max}$ is the 95\% CL upper 
 limit on the signal strength, and this value was scaled into a limit on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$.
@@ -444,11 +444,10 @@ full selection with $\Mlljj > 600\GeV$.
 \section{Results}
 \label{sec:searchResults}
 Evidence of LRS models was searched for by comparing expected signal and background events to observed data 
-events after all selections.  The initial comparison between expected (simulated) and observed results was made 
-by inspecting the $\Meejj$ and $\Mmumujj$ distributions with (Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure 
-\ref{fig:obsAndExpMlljj}) the $\Mlljj$ window cuts.  No 
-statistically significant excess was observed in data with respect to expected backgrounds, so limits were 
-calculated on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$, and \mWR and \mnul.
+events after all selections.  Initial results were obtained by inspecting the $\Meejj$ and $\Mmumujj$ 
+distributions with (Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) 
+the $\Mlljj$ window cuts.  No statistically significant excess was observed in data with respect to expected 
+backgrounds, so limits were calculated on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$, and \mWR and \mnul.
 
 \begin{table}[htp]
 	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of expected \WR signal and background events in each $\Mlljj$ window, and 
@@ -522,10 +521,44 @@ calculated on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$, and \mWR and
 		\includegraphics[width=0.45\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_MuMuChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
 	}
 	\label{fig:obsAndExpMlljj}
-	\caption{$\Mlljj$ distributions found in data, one simulated \WR signal, and expected backgrounds in the $ee$ ($\mu\mu$) channel on 
+	\caption{$\Mlljj$ distributions found in data, \WR simulations, and expected backgrounds.  The $ee$ ($\mu\mu$) channel is shown on 
 		the left (right).}
 \end{figure}
 
+Upper limits on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL were calculated in each $\Mlljj$ 
+window with all uncertainties taken into account, and assuming $\mnul = \frac{1}{2}\mWR$.  Expected limits were 
+calculated by setting the measured number of events $\Nlljj$ equal to the expected number of background events, 
+and observed limits were calculated by setting $\Nlljj$ equal to the number of events observed in data.  The 
+expected and observed limit as a function of \mWR is shown in Figure \ref{fig:oneDimLimits}.  Subsequently, limits 
+on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ for fixed $\mnul = \frac{1}{2}\mWR$ were extrapolated into 
+\mnul and \mWR exclusion limits using a procedure described next.
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/limWReejj_SHv19700toysAprilTwentyThree.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/limWRmumujj_SHv19700toysAprilTwentyThree.png}
+	}
+	\label{fig:oneDimLimits}
+	\caption{Limits on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL versus \mWR hypothesis.  The $ee$ ($\mu\mu$) channel 
+	is shown on the left (right).}
+\end{figure}
+
+The limits on $\sigma_{WR} \times BR(\WR \rightarrow \ell\ell jj)$ for fixed $\mnul = \frac{1}{2}\mWR$ are proportional 
+to the \WR signal efficiency $\chi$ of the event selection, but are not dependent on the shape of the \WR signal distribution 
+within any $\Mlljj$ window.  Thus, a limit at $(\mWR_{1}, \mnul_{1} = \frac{1}{2}\mWR_{1})$ can be extrapolated to a limit at any 
+other point $(\mWR_{2}, \mnul_{2} \neq \frac{1}{2}\mWR_{2})$ by knowing the difference in signal efficiency $\chi$ between the two 
+points:
+
+%no type of multiplication sign looks good between the fraction and the Limit written on the right side of this equation
+\begin{equation}
+	Limit[(\mWR_{2}, \mnul_{2} \neq \frac{1}{2}\mWR_{2})] = \frac{\chi[(\mWR_{2}, \mnul_{2} \neq \frac{1}{2}\mWR_{2})]}{\chi[(\mWR_{1}, \mnul_{1} = \frac{1}{2}\mWR_{1})]} \quad Limit[(\mWR_{1}, \mnul_{1} = \frac{1}{2}\mWR_{1})]
+\end{equation}
+
+In general $\chi$ increases for increasing \mWR, as a heavier initial \WR translates into more energetic final state 
+leptons and jets.  For a fixed value of \mWR, variations in $\chi$ with \mnul were determined by .
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
