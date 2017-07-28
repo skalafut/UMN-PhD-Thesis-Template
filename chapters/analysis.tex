@@ -210,7 +210,7 @@ analyses.  These uncertainties and a brief description of them are listed in Tab
  jet energy resolution & Uncertainty on the resolution with which jet energies were measured. \\
 	  $\ell$ energy scale & Analogous to the jet energy scale uncertainty, but for $\ell$. \\
  $\ell$ energy resolution & Analogous to the jet energy resolution uncertainty, but for $\ell$. \\
-$\ell$ ID & Uncertainty on $\ell$ ID weights applied to simulated events, see Chapters \ref{sec:muonRecoAndSelection,sec:electronRecoAndSelection}. \\
+$\ell$ ID & Uncertainty on $\ell$ ID weights for simulated events, see Chapters \ref{sec:muonRecoAndSelection,sec:electronRecoAndSelection}. \\
   \hline
   \end{tabular}
 \end{table}
@@ -348,12 +348,12 @@ The integrated luminosity of data was measured with a 2.7\% uncertainty, and thi
 into a 2.7\% uncertainty on the number of expected \WR and \DY events in every $\Mlljj$ window.  In limit 
 calculations the luminosity uncertainty was taken into account using a log-normal distribution.
 
-Pileup weights $w_{PUi}$ applied to simulated events were derived assuming the pileup distribution in data followed 
+Pileup weights $w_{PU}$ applied to simulated events were derived assuming the pileup distribution in data followed 
 a specific shape, which was sensitive to the performance of vertex reconstruction in the tracker.  
 Uncertainties and inefficiencies in vertex reconstruction lead to an uncertainty in the pileup 
 distribution of data.  The effect of this uncertainty was estimated by shifting the entire pileup distribution 
 in data, without changing its shape, higher (lower) to change the mean pileup value by +5\% (-5\%).  
-New pileup weights $w_{PU,j,\Uparrow}$ and $w_{PU,j,\Downarrow}$ for simulated events were calculated after the upward and downward shifts, and 
+New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ for simulated events were calculated after the upward and downward shifts, and 
 the pileup uncertainty was calculated as the maximum percentage change in events in $\Mlljj$ windows 
 using the original and new weights.  For \DY and \WR event estimates, the pileup uncertainty was 3\% or less 
 in all $\Mlljj$ windows and for all \mWR values, and in limit calculations was taken into account using 
@@ -600,7 +600,7 @@ $L_{true}$ and $L'$ were consistent within their uncertainties.  For $\mnul \les
 minimum excluded \mnul was higher) than $L_{true}$ because of pileup jets.  The simulations used to calculate $L_{true}$ included 
 pileup interactions (on average 10 for every simulated event), and pileup jets enabled more \WR events to pass the full 
 selection, which extended the excluded \WR production region to lower \mnul values.  The event selection was known to have low 
-signal selection efficiency, $\chi \lesssim 10\%$, for any \mWR with $\mnul \lesssim \frac{1}{8}\mWR$, so in this low \mnul 
+signal selection efficiency, $\chi \lesssim 10\%$, for all \mWR with $\mnul \lesssim \frac{1}{8}\mWR$, so in this low \mnul 
 region no correction was applied to bring the limits $L'$ and $L_{true}$ into better agreement.
 
 Using data collected in 2015 \mWR production is excluded at 95\% CL for $\mWR \lesssim 3500 (3300) \GeV$ in the $\mu\mu$ 
