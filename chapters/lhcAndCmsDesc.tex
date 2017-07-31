@@ -277,10 +277,10 @@ were applied.  The absolute correction for each crystal was derived using $e^{\p
 and ensured the average dilepton mass measured by each crystal in $Z \rightarrow e^{+}e^{-}$ events was equal to the 
 true $Z$ boson mass.
 
-In particle reconstruction, energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
+During particle reconstruction energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
 deposits, centered on crystals with local energy maxima.  In the subset of ECAL energy deposits that were isolated 
-from HCAL energy deposits, photons were identified as individual ECAL energy deposits, and electrons and positrons were 
-identified as individual ECAL energy deposits whose positions geometrically matched reconstructed track trajectories.
+from HCAL energy deposits, $e^{\pm}$ were identified as individual ECAL energy deposits that geometrically matched 
+reconstructed track trajectories, while photons were identified as energy deposits not associated with any track.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
@@ -324,12 +324,11 @@ scale was calibrated relative to the electromagnetic energy scale derived from $
 events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
 dijet resonances like $W/Z \rightarrow jj$.
 
-The energy measured in each HCAL tower was .
-
-%In particle reconstruction, energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
-%deposits, centered on crystals with local energy maxima.  In the subset of ECAL energy deposits that were isolated 
-%from HCAL energy deposits, photons were identified as individual ECAL energy deposits, and electrons and positrons were 
-%identified as individual ECAL energy deposits whose positions geometrically matched reconstructed track trajectories.
+During particle reconstruction the energy measured by each HCAL tower was treated as the simplest HCAL energy 
+deposit.  Each hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
+deposits.  Charged hadrons were identified as calorimeter energy deposits that geometrically matched reconstructed 
+track trajectories, while neutral hadrons were identified as calorimeter energy deposits not associated with any 
+track.
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
@@ -382,14 +381,20 @@ Combining tracker and muon detector information for high $\pt$ muons improved th
 $\pt = 1$ $\TeV$ muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
 measurement made by the tracker alone.
 
+The muon detectors measured trajectory vectors for every muon, and these vectors were subsequently used in 
+muon reconstruction.  Muons produced far from the interaction point by hadron decays were identified as 
+individual tracks in multiple muon chambers, while muons produced within the silicon tracker volume were 
+identified as silicon tracker tracks whose trajectories matched those of muon detector tracks.
+
 \section{The Trigger System}
 \label{sec:triggerDescription}
 In 2015 the rate of pp collision events delivered by the LHC was several orders of magnitude greater than the 
-rate that CMS could save collision events to permanent storage.  The LHC collided two proton bunches 
+rate that CMS could process collision event data into reconstructed particles.  The LHC collided two proton bunches 
 at a rate of 40 MHz, and in nearly every collision $\gtrsim$1 GeV of energy was detected in CMS.  Due to the large cross 
-section of QCD multijet processes and leptonically decaying heavy quark processes, shown in Figure \ref{fig:smProductionXsxns}, CMS 
+section of QCD multijet processes and leptonically decaying heavy quark processes, as shown in Figure \ref{fig:smProductionXsxns}, CMS 
 detected $\sim10^{6}$ collision events per second with energetic charged leptons or hadronic jets.  In 2015 
-CMS was able to write $\sim10^{3}$ collision events per second to permanent storage, so a two level trigger 
+CMS was able to readout all detector information and subsequently reconstruct particles in only $\sim10^{3}$ 
+collision events per second, so a two level trigger 
 system was used during collisions ('online') to select the best events for physics analyses and detector calibration.
 
 \begin{figure}[h]
@@ -411,15 +416,15 @@ logic system executed $\sim$200 algorithms in less than 1 $\mu$s that selected t
 and $|\eta|$ selections.  The selection results were sent back to the detector, and the regions with one 
 or more trigger primitive objects passing selections were processed by the second level trigger.
 
-By selecting only the events needed for physics analyses and detector calibration, the second 
-level, or High Level, trigger (HLT) reduced the rate of collision events written to permanent storage 
-from $\lesssim$ 80 kHz to $\lesssim$ 1000 Hz.  The second level trigger began by transferring all data from the tracker, 
-both calorimeters and the muon detectors to multi-core processors where the HLT was run\footnote{the same HLT software was run on every processor}.  
-Then, the HLT ran a fast, simplified version of the full offline particle reconstruction software in small 
-regions where L1 trigger algorithms fired.  Then, $\sim$400 HLT algorithms running in 
-parallel applied selection cuts ($E_{T}$, $|\eta|$, $\frac{E_{HCAL}}{E_{ECAL}}$, etc) to locally reconstructed particles in search of 
-energetic photons, charged leptons, hadronic jets, and neutrinos.  If the event passed at least one 
-HLT algorithm, then the data from the entire detector was written to permanent storage.
-Considering events selected by any HLT algorithm, during 2015 pp collisions the rate of data written to 
-permanent storage was $\lesssim 0.5$ gigabytes per second.
+The second level, or High Level, trigger (HLT) selected only the best events for physics analyses and 
+detector calibration, and reduced the rate of events selected for offline reconstruction from 
+$\lesssim$ 80 kHz to $\lesssim$ 1000 Hz.  The second level trigger began by transferring all data from all 
+sub-detectors to multi-core processors all loaded with the same HLT software.  
+Then, the a fast, simplified version of the full offline particle reconstruction software was run in small 
+regions where L1 trigger algorithms had fired.  Then, $\sim$400 different selection algorithms running in 
+parallel applied selections ($E_{T}$, $|\eta|$, $\frac{E_{HCAL}}{E_{ECAL}}$, etc) to locally reconstructed particles 
+to find energetic photons, charged leptons, hadronic jets, and neutrinos.  If the event passed at least one 
+selection algorithm, then all detector data was read out and used in subsequent offline particle reconstruction.
+%Considering events selected by any HLT algorithm, during 2015 pp collisions the rate of data written to 
+%permanent storage was $\lesssim 0.5$ gigabytes per second.
 
