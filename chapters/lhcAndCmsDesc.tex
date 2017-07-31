@@ -8,8 +8,8 @@
 The Compact Muon Solenoid (CMS) experiment was built to detect all Standard Model (SM) particles, and to
 search for any interactions, predicted by the SM or not, that produced SM particles, like the extended 
 weak interaction described in Chapter ~\ref{wrBosonAndHeavyNu}.  The CERN Large Hadron Collider (LHC) 
-collided high-energy protons at the geometric center of the CMS experiment, and the results of proton-proton (pp) 
-interactions were recorded.
+collides high-energy protons at the geometric center of the CMS experiment, and the results of proton-proton (pp) 
+interactions are recorded.
 
 The results of pp interactions were recorded if any of the following were detected:
 \begin{itemize}
@@ -59,7 +59,7 @@ were supported by a structure made mostly from iron, through which only muons co
 Surrounding the magnet were the muon detectors, which resided 
 in the magnet iron return yoke where the magnetic field strength was between 1 and 3$\unit{T}$.  Three 
 different technologies - drift tubes (DT) in the lowest radiation regions, cathode strip chambers (CSC) in higher 
-radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In all muon detectors 
+radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In these detectors 
 muons travelled through pressurized gas chambers and ionized electrons from the gas along their 
 trajectories.  Within the chambers, electric fields accelerated the ionized electrons towards conducting wires.  Muons 
 were detected by measuring the charge collected by conducting wires.
@@ -79,14 +79,14 @@ particles, the four sub-detector systems and the trigger system are discussed in
 \section{The Large Hadron Collider}
 \label{sec:lhcDescription}
 Situated near Geneva, Switzerland and spanning the French-Swiss border, the CERN Large Hadron Collider (LHC) accelerated 
-two counter-rotating proton beams in a 27 km circular tunnel \cite{lhcTDR} to an energy of 6.5 TeV in 2015.  At several points along the tunnel 
-the two beams collided, and surrounding one of these points the CMS experiment was built.
+two counter-rotating proton beams in a 27 km circular tunnel \cite{lhcTDR} to an energy of 6.5 $\TeV$ in 2015.  The two beams 
+collided at several points along the tunnel, and the CMS experiment was built around one of these points.
 
 Several accelerator stages, shown in Figure \ref{fig:accelComplex} \cite{cernAccelSys}, were used to create each proton beam in the LHC.  
 Each proton beam began as isolated proton bunches ionized from hydrogen gas.  Proton bunches were then accelerated to higher 
 energies in 3 accelerator stages before they were injected into the LHC.  Once enough proton bunches were 
 collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proton beams with proton bunches separated by 
-25\ns, and accelerated both beams to an energy of 6.5 TeV.
+25\ns, and accelerated both beams to an energy of 6.5 $\TeV$.
 
 \begin{figure}[ht]
 	\centering
@@ -100,18 +100,18 @@ collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proto
 In the LHC tunnel, superconducting radio-frequency (RF) cavities accelerated proton bunches, and magnets steered and 
 focused the beams towards the collision point at the heart of CMS.  
 During 2015 data taking the LHC collided protons at intensities approaching $6 \times 10^{33} \frac{1}{cm^{2}s}$ ($\sim 0.02 \frac{1}{fb\thickspace hr}$).  
-From September through November 2015, CMS recorded 2.6 $fb^{-1}$ of collision events at $\sqrt{s} =$ 13 TeV.
+From September through November 2015, CMS recorded 2.6 $fb^{-1}$ of collision events at $\sqrt{s} =$ 13 $\TeV$.
 
 \section{The CMS Coordinate System and Kinematic Variables}
 \label{sec:coordinateSystemAndKinematicVars}
-A coordinate system and variables was used to characterize the kinematics of detected particles.  
-The right-handed coordinate system was defined with the $z$ axis pointed in the direction 
-of the counter-clockwise rotating beam, the $y$ axis pointed up towards the surface, and the $x$ axis pointed towards 
+A coordinate system and kinematic variables were used to characterize the kinematics of detected particles.  
+The right-handed coordinate system is used in which the $z$ axis points in the direction 
+of the counter-clockwise rotating beam, the $y$ axis points up towards the surface, and the $x$ axis points towards 
 the center of the LHC ring, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
 trajectories were measured using two angular variables, $\phi$ and $\eta$, that were defined in terms of angles 
-in two coordinate planes.  $\phi$ was defined as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  
-The angle $\theta$ in the $y-z$ plane, which was 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis, was 
-transformed into pseudorapidity $\eta$ through the following function:
+in two coordinate planes.  $\phi$ is defined as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  
+The angle $\theta$ is defined in the $y-z$ plane, and is 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis.  
+$\theta$ is transformed into pseudorapidity $\eta$ through the following function:
 
 \begin{equation}
 	\eta \equiv -\ln{\tan{\frac{\theta}{2}}}
@@ -125,8 +125,7 @@ transformed into pseudorapidity $\eta$ through the following function:
 	\label{fig:cmsAndCoordinateSystem}
 \end{figure}
 
-
-A pseudorapidity of 0 pointed along the $y$ axis, while a pseudorapidity of $\infty$ pointed along the $z$ axis.
+A pseudorapidity of 0 points along the $y$ axis, while a pseudorapidity of $\infty$ points along the $z$ axis.
 An equivalent definition of pseudorapidity in terms of the particle energy E and longitudinal 
 momentum $p_{z}$ in the massless particle limit was:
 
@@ -143,15 +142,15 @@ a rate that scaled linearly with $\eta$.  Thus, in discussions where radiation d
 isolation played a role, ideas could be more clearly articulated using $\eta$.
 
 The main variables used to quantify particle energies were transverse energy 
-$E_{T} \equiv E/\cosh{\eta}$ and transverse momentum $p_{T} \equiv |p|/\cosh{\eta}$, while the distance between 
+$\Et \equiv E/\cosh{\eta}$ and transverse momentum $\pt \equiv |p|/\cosh{\eta}$, while the distance between 
 a particle and another point in the $(\eta, \phi)$ space was measured as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  
-Transverse momentum, the component of momentum perpendicular to the proton beam axis, and transverse energy, the 
+Transverse momentum $\pt$, the component of momentum perpendicular to the proton beam axis, and transverse energy $\Et$, the 
 analogous form of energy, were used because both were insensitive to the unknown $z$ momenta of the interacting partons.  
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
-Built from separate silicon pixel and silicon strip trackers, the silicon tracker detected charged particles  
-and measured their momenta, and identified interaction vertices where charged particles were produced.  Closest 
+The silicon tracker detected charged particles, measured charged particle momenta, and identified interaction 
+verticles that produced charged particles using silicon pixel and strip detectors.  Closest 
 to the beam axis was the pixel tracker, which used small silicon pixels to pinpoint pp interaction vertices 
 with $\mu$m precision.  Surrounding the pixel tracker were larger silicon strip detectors that measured the 
 momenta of charged particles with better resolution.  Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ created 
@@ -163,7 +162,7 @@ structures based on $|\eta|$.  In the barrel region ($0 < |\eta| \lesssim 1.2$) 
 low, individual pixel detectors were assembled in three concentric cylindrical shells centered on the $z$ axis.  In 
 the endcap region ($1.2 \lesssim |\eta| \leq 2.5$) where the rate of radiation damage was high, two layers of pixel detectors were 
 installed in a turbine pattern as shown in Figure \ref{fig:pixelTracker} \cite{pixelCommissioning}.  These pixel 
-layers provided 2 or 3 measurements for every track, and primarily were used to reconstruct interaction 
+layers provided up to 3 measurements for every track, and primarily were used to reconstruct interaction 
 vertices.
 
 \begin{figure}[ht]
@@ -204,6 +203,12 @@ used to measure the tracker alignment and momentum response, and derive calibrat
 changes in either relative to expectations.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon events 
 were used to monitor and recalibrate the tracker alignment and momentum response.
 
+During particle reconstruction charged leptons and hadrons were distinguished from photons and neutral hadrons using 
+interaction vertices and tracks reconstructed by the tracker.  Tracks that extrapolated to ECAL energy deposits were 
+identified as electrons, and tracks that extrapolated to HCAL or muon detector energy deposits were identified as charged 
+hadrons or muons, respectively.  Interaction vertices linked to tracks allwed each charged particle class to be divided 
+into multiple sub-classes, like charged hadrons that came from the highest $\sum \pt$ vertex in an event, or charged 
+leptons produced by bottom quark decays.
 
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
@@ -212,7 +217,7 @@ Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), whic
 electrons and positrons ($e^{\pm}$) from other charged particles.  
 The ECAL was an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
 In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible light in amounts proportional to 
-the incident particle energy.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
+the energies of incident particles.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
 measuring the amount of visible light produced by PbWO$_{4}$ crystals.
 
 The ECAL contained $\sim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
@@ -272,6 +277,10 @@ were applied.  The absolute correction for each crystal was derived using $e^{\p
 and ensured the average dilepton mass measured by each crystal in $Z \rightarrow e^{+}e^{-}$ events was equal to the 
 true $Z$ boson mass.
 
+In particle reconstruction, energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
+deposits, centered on crystals with local energy maxima.  In the subset of ECAL energy deposits that were isolated 
+from HCAL energy deposits, photons were identified as individual ECAL energy deposits, and electrons and positrons were 
+identified as individual ECAL energy deposits whose positions geometrically matched reconstructed track trajectories.
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
@@ -314,6 +323,13 @@ decayed to a $e^{\pm}e^{\mp}$ or $\mu^{\pm}\mu^{\mp}$ pair.  In such events, the
 scale was calibrated relative to the electromagnetic energy scale derived from $Z \rightarrow e^{\pm}e^{\mp}$ 
 events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
 dijet resonances like $W/Z \rightarrow jj$.
+
+The energy measured in each HCAL tower was .
+
+%In particle reconstruction, energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
+%deposits, centered on crystals with local energy maxima.  In the subset of ECAL energy deposits that were isolated 
+%from HCAL energy deposits, photons were identified as individual ECAL energy deposits, and electrons and positrons were 
+%identified as individual ECAL energy deposits whose positions geometrically matched reconstructed track trajectories.
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
@@ -363,7 +379,7 @@ strength of the magnetic field enabled the tracker to measure muon momenta in th
 200 GeV phase space with 3 or more times better resolution than the muon detectors.  As muon $\pt$ increased 
 above 200 GeV, muon trajectories approached straight line paths, and thus the the tracker momentum resolution degraded.  
 Combining tracker and muon detector information for high $\pt$ muons improved the resolution with which a 
-$\pt = 1$ TeV muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
+$\pt = 1$ $\TeV$ muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
 measurement made by the tracker alone.
 
 \section{The Trigger System}
