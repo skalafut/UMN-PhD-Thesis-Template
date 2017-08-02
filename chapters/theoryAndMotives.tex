@@ -8,15 +8,15 @@ Experimental evidence of massive neutrinos and the baryon-antibaryon asymmetry m
 In this chapter, the SM description of particle mass generation is discussed as a precursor to SM extensions.  
 Then, the Majorana neutrino model and generic LRS models are explained, and highlighting how these extensions 
 show better agreement with experimental observations than the SM.  Finally, this chapter concludes with 
-important characteristics of the subset of LRS models that can be tested at the LHC, and the predicted experimental 
-signatures of \WR and \nul production.
+important characteristics of LRS models that can be tested at the LHC, and their predicted experimental signatures 
+of \WR and \nul production.
+
 
 \section{Particle Masses in the Standard Model}
 \label{sec:massInSM}
-The SM postulated that the four generators of the $SU(2)_{L} \times U(1)$ groups transformed into the massless 
+The SM postulates that the four generators of the $SU(2)_{L} \times U(1)$ groups transform into the massless 
 photon and massive $W^{\pm}$ and $Z$ bosons through the Brout-Englert-Higgs (BEH) mechanism.  This mechanism 
-added four degrees of freedom to the SM, in the form of a complex doublet $\Phi$ representing four bosonic 
-particles, which obey the Lagrangian $\Ell_{H}$:
+introduces a complex doublet $\Phi$, representing four scalar bosons, that obey the Lagrangian $\Ell_{H}$:
 
 \begin{align}
 	\Phi &= \begin{bmatrix}
@@ -29,12 +29,12 @@ particles, which obey the Lagrangian $\Ell_{H}$:
 	\Ell_{H} = (D_{\mu}\Phi)^{\dagger}D^{\mu}\Phi - V(\Phi)
 \end{equation}
 
-where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ was the Higgs potential (Figure \ref{fig:smHiggsPotential}), and 
-$D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ described the propagation 
-of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_L$ generators $\tau^{j}$ and massless vector 
-fields $A^{j}_{\mu}$, and the $U(1)$ generator $Y$ and massless vector field $B_{\mu}$.  $g_{L}$ and 
-$g'$ set the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ took a 
-value $<\Phi> =$ (0  $\nu/\sqrt{2}$) to minimize the Higgs potential, after which the $\Ell_{H}$ reduced 
+where $V(\Phi) = \frac{1}{2}(|\Phi|^{2} - \frac{\nu^{2}}{2})$ is the Higgs potential (see Figure \ref{fig:smHiggsPotential}), and 
+$D_{\mu} = \partial_{\mu} + ig_{L}\tau^{j}A^{j}_{\mu} + i\frac{g'}{2}YB_{\mu}$ describes the propagation 
+of the Higgs doublet $\Phi$ and its couplings to the $SU(2)_{L}$ and $U(1)$ generators $\tau^{j}$ and $Y$, 
+and to the massless vector fields $A^{j}_{\mu}$ and $B_{\mu}$.  $g_{L}$ and 
+$g'$ set the weak and electromagnetic interaction coupling strengths.  The Higgs doublet $\Phi$ naturally 
+moves to a value $<\Phi> =$ (0  $\nu/\sqrt{2}$) to minimize the Higgs potential, after which $\Ell_{H}$ reduces 
 to:
 
 \begin{figure}[h]
@@ -48,7 +48,7 @@ to:
 	\Ell_{HK} = \frac{\nu^{2}}{8}[g^{2}_{L}(A^{1}_{\mu} + iA^{2}_{\mu})(A^{1\mu} - iA^{2\mu}) + (g'B_{\mu} - g_{L}A^{3}_{\mu})^{2}]
 \end{equation}
 
-The photon vector field $A_{\mu}$, and the weak boson vector fields $W^{\pm}_{\mu}$ and $Z_{\mu}$ were defined as:
+Defining the photon vector field $A_{\mu}$, and the weak boson vector fields $W^{\pm}_{\mu}$ and $Z_{\mu}$ as:
 
 \begin{equation}
 	W^{\pm}_{\mu} \equiv \frac{1}{\sqrt{2}}(A^{1}_{\mu} \pm iA^{2}_{\mu}), 
@@ -56,38 +56,38 @@ The photon vector field $A_{\mu}$, and the weak boson vector fields $W^{\pm}_{\m
 	A_{\mu} \equiv \frac{1}{\sqrt{g'^{2} + g^{2}_{L}}}(g_{L}B_{\mu} + g'A^{3}_{\mu})
 \end{equation}
 
-transformed $\Ell_{H}$ into:
+transforms $\Ell_{H}$ into:
 
 \begin{equation}
 	\Ell_{HK} = (\frac{\nu g_{L}}{2})^{2}W^{+}_{\mu}W^{-\mu} + \frac{1}{2}(\frac{\nu \bar{g}}{2})^{2}Z_{\mu}Z^{\mu} + 0A_{\mu}A^{\mu}
 \end{equation}
 
-where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  Following from this Lagrangian, the photon $A_{\mu}$ was massless, 
-the $Z$ boson had mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons had mass $m_{W} = \nu g_{L}/2$.  
-Three of the four scalar fields introduced by the BEH mechanism were consumed and gave mass to the $Z$ 
+where $\bar{g} \equiv \sqrt{g'^{2} + g^{2}_{L}}$.  Following from this Lagrangian, the photon $A_{\mu}$ is massless, 
+the $Z$ boson has mass $m_{Z} = \nu\bar{g}/2$, and the $W^{\pm}$ bosons have mass $m_{W} = \nu g_{L}/2$.  
+Three of the four scalar fields introduced by the BEH mechanism are consumed to give mass to the $Z$ 
 and $W^{\pm}$ bosons.  Recent experimental evidence of the fourth scalar field \cite{combinedHiggsResult}, the Higgs boson, 
-supported the SM prediction that the $Z$ and $W^{\pm}$ bosons acquired mass through the BEH mechanism.
+supports the SM prediction that the $Z$ and $W^{\pm}$ bosons acquire mass through the BEH mechanism.
 
-Experimental evidence supported the prediction that quarks and charged leptons are massive particles.  In the SM, they could acquire mass 
-through two methods.  Their masses could be added directly to the SM Lagrangian, or additional Higgs fields 
-could be added to the BEH mechanism.  In either case, the result was mass terms of the form $-mf\bar{f}$, where $f$ is a fermion 
-representing a quark or charged lepton, were added to the SM Lagrangian.  In the basis where a 
-fermion field $f$ consisted of a right-handed component $\chi_{R}$ and left-handed 
-component $\chi_{L}$, $f = (\chi_{L},\chi_{R})$, a fermion mass term in the SM Lagrangian was written as:
+Experimental evidence indicates that quarks and charged leptons are massive fermions.  In the SM, fermions 
+can acquire mass by adding mass terms directly to the SM Lagrangian, or by adding more Higgs fields to the 
+BEH mechanism.  In either case, mass terms of the form $-mf\bar{f}$, where $f$ is a fermion, are added to 
+the SM Lagrangian.  In the basis where a fermion field $f$ consists of right and left-handed components $\chi_{R}$ 
+and $\chi_{L}$, $f = (\chi_{L},\chi_{R})$, a fermion mass term in the SM Lagrangian is expressed as:
 
 \begin{equation}
 	\Ell_{D} = -m\bar{f}f = -m\chi^{\dagger}_{L}\chi_{R} - m\chi^{\dagger}_{R}\chi_{L}
 \end{equation}
 
-This type of mass term, called a Dirac mass, contained the product of left and right-handed fields.  Experimental 
-evidence substantiated that quarks and charged leptons, or their anti-particles, were massive and could be left or right-handed 
-fields.  Their masses were assigned using Dirac mass terms.
+This type of mass term, called a Dirac mass, contains the product of left and right-handed fields.  Experimental 
+evidence substantiates that quarks and charged leptons exist in left and right-handed states that are degenerate 
+in mass, so Dirac mass terms are used to assign masses to fermions in the SM.
 
-Neutrinos played a special role in the SM.  The SM postulated that they are neutral, massless fermions, and only interacted 
-with other particles through the weak interaction.  In addition, due to parity violation of the weak interaction, 
-anti-neutrinos $\bar{\nu_{\ell}}$ were always right-handed, and neutrinos $\nu_{\ell}$ were always left-handed.  Fermions in 
-the SM acquired mass through a Lagrangian of the form $\Ell_{D}$, which could not be used to explain SM neutrino masses 
-due to the multiplication of left and right-handed fields.  An extension of the SM was needed to explain neutrino masses.
+Neutrinos play a special role in the SM.  The SM predicts that they are neutral, massless fermions, and only interact 
+through the weak interaction.  In addition, due to parity violation of the weak interaction, 
+anti-neutrinos $\bar{\nu_{\ell}}$ are always right-handed, and neutrinos $\nu_{\ell}$ are always left-handed.  
+The SM can only assign masses to fermions using Dirac mass terms, which depend on the product of left and 
+right-handed fields.  A Dirac mass term for neutrinos yields a mass of zero, so a SM extension is needed 
+to model the experimental observation of massive neutrinos.
 
 
 \section{Standard Model Extensions}
