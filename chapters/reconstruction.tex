@@ -10,13 +10,29 @@ tracks measured by the silicon tracker, and energy deposits measured by the calo
 detectors.  The high expected energy of final state leptons and jets motivated the use of specific 
 lepton and jet reconstruction algorithms described herein.
 
+
 \section{Electron Reconstruction}
 \label{sec:eleReco}
-Electrons ($e \equiv e^{\pm}$) were the only final state particles that, on average, lost a significant 
+Electrons ($\equiv e^{\pm}$) were the only final state particles that, on average, lost a non-negligible 
 amount of energy in the tracker.  They lost energy through bremstrahhlung, and the resulting bremsstrahlung 
 photons were detected outside the tracker by the ECAL.  Electron tracks were reconstructed from hits in 
-individual tracker layers using a dedicated algorithm that estimated the energy lost in and between 
-successive layers.  Electron $(\eta, \phi)$ trajectories were determined from their reconstructed tracks, 
-but their energies $\Et$ were dictated by ECAL measurements.
+individual tracker layers along helical paths using a dedicated algorithm that also estimated the energy lost.  
+Later in reconstruction, tracks determined electron $(\eta, \phi)$ trajectories, but ECAL measurements 
+dictated their energies ($\Et$).
+
+After traversing the tracker, electrons impinged on ECAL crystals and lost substantially all of their 
+energy through radiative processes.  These processes produced produced showers of lower energy particles 
+that enabled measurements of initial electron energies.  Showers from individual electrons were contained 
+in 5 $\times$ 5 crystal regions centered on the first crystal hit by an electron, so electron energies 
+were measured in 5 $\times$ 5 crystal superclusters (SCs).  The large SC size also facilitated 
+bremsstrahlung photon recovery, and thus more precise measurements of the energy lost by the electron 
+before the ECAL.  Following SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to 
+the $(\eta, \phi)$ trajectories of electron candidate tracks.  Pairs of SCs and tracks with matching 
+spatial coordinates were identified as reconstructed electrons.
+
+
+\section{Muon Reconstruction}
+\label{sec:muReco}
+Muons ($\equiv \mu^{\pm}$) were .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
