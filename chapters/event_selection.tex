@@ -26,7 +26,7 @@ used if they passed a High Level trigger.  The specific triggers used in this se
 here.
 
 In $\WR \rightarrow \ell\ell jj$ processes predicted by LRS models, the expected mass of the \WR ($\gtrsim 1 \TeV$) was 
-so large that the final state leptons were expected to have $\pt \gtrsim 60 \GeV$.  Standard Model processes that 
+so large that the final state leptons were expected to have $\pt \gtrsim 60 \GeV$.  ST processes that 
 produced two charged leptons with such high $\pt$ were predicted to have very low rate in 2015, so the 
 triggers used in this search sought one or two high $\pt$ charged leptons.
 
@@ -215,7 +215,7 @@ selection, detector information was reconstructed into charged leptons, photons,
 \label{sec:MC}
 
 Monte Carlo (\MC) simulations were used in this search to model two types of processes.  The first 
-type was Standard Model (SM) processes that resulted in the reconstruction of two charged leptons 
+type was ST processes that resulted in the reconstruction of two charged leptons 
 and two jets.  These included processes that produced two real charged leptons and two jets, like 
 $pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
 were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
@@ -230,7 +230,7 @@ components.  In simulations, the generator accounted for:
 	\item The energy carried by each proton into the collision (6.5 \TeV).
 	\item How the incoming proton energy was distributed amongst constituent quarks and gluons according 
 		to parton distribution functions (PDFs).
-	\item The masses of the \WR, \nul and all particles in the SM.
+	\item The masses of the \WR, \nul and all particles in the ST.
 	\item The coupling strengths between fermions and the bosons that mediated interactions.
 \end{itemize}
 
@@ -238,8 +238,8 @@ Any unstable particles produced in the interaction, like a $Z$ or \WR boson, dec
 their branching fractions to other particles, and any free quarks or gluons that were produced were 
 run through a hadronization simulation that emulates jet production described in Chapter \ref{intro_chapter}.  In the second 
 simulation step, the effect of multiple pp interactions observed in real collisions is simulated by 
-overlaying simulations of randomly chosen SM interactions onto the primary events simulated in the first 
-step.  All pp interaction processes in the SM were assigned a probability proportional to their cross section 
+overlaying simulations of randomly chosen ST interactions onto the primary events simulated in the first 
+step.  All pp interaction processes in the ST were assigned a probability proportional to their cross section 
 times branching fraction, then several processes were chosen randomly, and the events they produced after 
 the first simulation stage were overlaid on the primary events of interest.  The processes with the highest cross section times 
 branching fraction by several orders of magnitude were inelastic pp scattering and 
@@ -251,7 +251,7 @@ the last step simulated the Level-1 and High Level triggers, and the reconstruct
 vertices, charged and neutral particles, and jets.  The same reconstruction software 
 was used in simulations and collision data, and pertinent details of jet, electron and muon reconstruction 
 algorithms are discussed later.  This multi-step procedure 
-was used to simulate the \WR signal process at different \mWR and \mnul masses, and the SM processes 
+was used to simulate the \WR signal process at different \mWR and \mnul masses, and the ST processes 
 summarized in Table \ref{tab:centrallyProducedMC}.
 
 
@@ -287,7 +287,7 @@ of events in data.  For the \WR datasets the size is estimated based on the coup
 }
 \end{table}
 
-In simulations of SM processes, different \MC generators were used in the first simulation step.  
+In simulations of ST processes, different \MC generators were used in the first simulation step.  
 The \DY (DY)+jets, W+jets, and t$\bar{t}$+jets simulations used the \MADGRAPH \cite{madgraph} generator, 
 the single top and top+W simulations used the \POWHEG \cite{powheg} generator, and the diboson (WW, WZ, ZZ) 
 simulations used the \PYTHIA \cite{pythia8,Sjostrand:2006za} generator.  In all of these 
@@ -303,9 +303,9 @@ required to pass the single $\mu$, $\pt > 50 \GeV$ High Level trigger described 
 $\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33 \GeV$ High Level 
 trigger.
 
-As stated previously, in the second step of \MC simulations, simulated events from randomly chosen SM 
+As stated previously, in the second step of \MC simulations, simulated events from randomly chosen ST 
 processes were mixed into the main events being simulated.  For each event simulated for the main 
-process (\WR or SM), the number of secondary events mixed in were pulled from a Poisson distribution 
+process (\WR or ST), the number of secondary events mixed in were pulled from a Poisson distribution 
 with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
 or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
 events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
@@ -388,7 +388,7 @@ Following the momentum determination, muons were required to pass a $\pt$ select
 identification selections to reject muons that were not produced by \WR decays.  These requirements were applied identically to events 
 in data and simulations.  LRS models predicted $\mWR \gtrsim 1 \TeV$, and as a result the charged leptons 
 produced by \WR decays had average $\pt$ in excess of 100 \GeV.  The kinematics of the expected final state leptons 
-motivated a $\pt > 53 \GeV$ cut on muons, to increase sensitivity to \WR signals relative to SM backgrounds.  
+motivated a $\pt > 53 \GeV$ cut on muons, to increase sensitivity to \WR signals relative to ST backgrounds.  
 As shown in Table \ref{tab:lowerMuonPtCuts}, the $\pt$ cut was not lowered to maintain good \WR sensitivity.  After the $\pt$ cut, muons 
 were required to pass the following identification selections:
 
@@ -587,8 +587,8 @@ jet to have:
 These requirements increased the fraction of selected jets that originated from real hadronic activity expected in the 
 $\WR \rightarrow \ell\ell jj$ decay.  As shown in Table \ref{tab:wrHighPtJets}, LRS models predicted that real jets 
 produced in \WR decays had high $\pt$.  Jets were required to have $\pt > 40 \GeV$ to increase sensitivity to 
-a \WR signal relative to expected SM backgrounds.  As shown in Table \ref{tab:lowerJetPtCuts}, a lower jet $\pt$ cut 
-increased SM backgrounds without a corresponding increase in \WR signal.
+a \WR signal relative to expected ST backgrounds.  As shown in Table \ref{tab:lowerJetPtCuts}, a lower jet $\pt$ cut 
+increased ST backgrounds without a corresponding increase in \WR signal.
 
 \begin{table}[h]
 	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events that had two jets with $\pt > 40$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
@@ -691,12 +691,12 @@ a \WR boson existed, and evidence of it appeared as a peak in the \Mlljj distrib
 with the predicted \mWR.  To look for evidence in support of LRS models without being sensitive to nuances of different 
 models, the \Mlljj mass was used as the search variable of merit.  Shown in Figure \ref{fig:mlljjVariableOfMerit} was 
 proof of this variable's efficacy: a simulated \WR signal with $\mWR = 1.0, \mnul = 0.5 \TeV$ appeared as a sharp peak 
-in the \Mlljj distribution centered near $\Mlljj = 1.0 \TeV$ that was clearly differentiated from expected SM backgrounds.
+in the \Mlljj distribution centered near $\Mlljj = 1.0 \TeV$ that was clearly differentiated from expected ST backgrounds.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
-	\caption{The $\Mlljj$ distribution from simulations of expected SM backgrounds and \WR signal in the ee channel.  
+	\caption{The $\Mlljj$ distribution from simulations of expected ST backgrounds and \WR signal in the ee channel.  
 		The normalization of the \WR signal distribution is scaled down by 70\% only to better visualize the difference 
 	between \WR signal and expected backgrounds.}
 	\label{fig:mlljjVariableOfMerit}
