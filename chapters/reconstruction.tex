@@ -13,26 +13,44 @@ lepton and jet reconstruction algorithms described herein.
 
 \section{Electron Reconstruction}
 \label{sec:eleReco}
-Electrons ($\equiv e^{\pm}$) were the only final state particles that, on average, lost a non-negligible 
-amount of energy in the tracker.  They lost energy through bremstrahhlung, and the resulting bremsstrahlung 
+Electrons ($\equiv e^{\pm}$) were the only particles considered in the \WR search that, on average, lost non-negligible 
+amounts of energy in the tracker.  They lost energy through bremstrahhlung, and the resulting bremsstrahlung 
 photons were detected outside the tracker by the ECAL.  Electron tracks were reconstructed from hits in 
 individual tracker layers along helical paths using a dedicated algorithm that also estimated the energy lost.  
-Later in reconstruction, tracks determined electron $(\eta, \phi)$ trajectories, but ECAL measurements 
-dictated their energies ($\Et$).
+Reconstructed tracks determined electron $(\eta, \phi)$ trajectories, but ECAL measurements dictated their 
+energies.
 
 After traversing the tracker, electrons impinged on ECAL crystals and lost substantially all of their 
-energy through radiative processes.  These processes produced produced showers of lower energy particles 
+energy through radiative processes.  These processes resulted in showers of lower energy particles 
 that enabled measurements of initial electron energies.  Showers from individual electrons were contained 
 in 5 $\times$ 5 crystal regions centered on the first crystal hit by an electron, so electron energies 
 were measured in 5 $\times$ 5 crystal superclusters (SCs).  The large SC size also facilitated 
 bremsstrahlung photon recovery, and thus more precise measurements of the energy lost by the electron 
 before the ECAL.  Following SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to 
-the $(\eta, \phi)$ trajectories of electron candidate tracks.  Pairs of SCs and tracks with matching 
-spatial coordinates were identified as reconstructed electrons.
+the $(\eta, \phi)$ trajectories of electron candidate tracks.  Each reconstructed electrons was identified 
+as a SC and at least one track with matching $(\eta, \phi)$ coordinates.
 
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
-Muons ($\equiv \mu^{\pm}$) were .
+Muon ($\equiv \mu^{\pm}$) reconstruction started with track reconstruction in the silicon tracker.  
+Hits in individual tracker layers were reconstructed into helical tracks, whose $(\eta, \phi)$ 
+trajectories determined the directions of reconstructed muons.  Reconstructed tracks also provided 
+initial muon momentum estimates that were further refined by muon detector measurements.
+
+Muons, on average, lost negligible amounts of energy before entering the muon detectors.  Hits in 
+muon chambers were reconstructed into helical tracks, and their radii of curvature enabled more precise 
+momentum measurements.  Muon detector tracks were extrapolated back to the silicon tracker, and 
+then the $\eta$ and $\phi$ of silicon tracker and muon detector tracks were compared.  Each 
+reconstructed muon was identified as a muon detector track whose trajectory matched a silicon 
+tracker track. 
+
+The momentum of muons was determined using silicon tracker and muon detector measurements.  Four 
+reconstruction algorithms fitted four continuous tracks that represented a muon's trajectory from 
+the silicon tracker through the muon detectors \cite{cmsMuonRecoRunOne}.  Each algorithm combined 
+muon detector and silicon tracker measurements in a different way, and could exclude measurements 
+with large uncertainty.  Each continuous track fitted to silicon tracker and muon detector data was 
+distinguished by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
+fitted track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
