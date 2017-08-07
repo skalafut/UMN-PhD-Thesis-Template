@@ -56,32 +56,23 @@ fitted track with the lowest fit and momentum uncertainties determined the recon
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-As a result of hadronization, photon radiation and leptonic weak decays, quarks produced in pp interactions 
-created showers of photons, hadrons and charged leptons that carried the initial quark energies.  
+Through hadronization, photon radiation and leptonic weak decays, quarks produced in pp interactions 
+created jets of photons, hadrons and leptons.  Jet reconstruction began by reconstructing photons, 
+electrons and muons, and generic charged and neutral hadrons.  Charged hadrons were reconstructed as 
+if they were heavy electrons\footnote{On average, hadrons did not undergo bremsstrahlung in the silicon tracker.}, but with ECAL 
+SCs replaced by energies measured in individual HCAL towers.  Unlike a reconstructed electron, a charged 
+hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position was consistent with the HCAL tower of 
+the charged hadron.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
+an ECAL SC, whose position was not consistent with any reconstructed track.  Similarly, each photon was 
+reconstructed as an ECAL SC whose position was not consistent with any reconstructed track.  Subsequently, 
+jets were reconstructed by clustering individual reconstructed particles together.
 
-Jets produced in proton-proton collisions contained long lived charged and neutral hadrons, photons from 
-$\pi^{0} \rightarrow \gamma\gamma$ decays, and charged leptons from heavy quark decays.  Jets reconstruction began 
-by reconstructing electrons, muons, photons, and charged and neutral hadrons.  Photons were reconstructed using the same algorithm 
-used to reconstruct electrons, excluding matching ECAL SCs to reconstructed tracks.  On average, a hadron that 
-impinged on the ECAL had one significant interaction with the PbWO$_{4}$ before entering 
-the HCAL.  As a result, reconstructing charged and neutral hadrons started with the ECAL.  A modified version of 
-the electron SC reconstruction algorithm, with looser requirements on the $\eta$ distribution of energy 
-in the SC, was used to reconstruct hadronic energy clusters in the ECAL.  Then, energy deposited in individual 
-HCAL towers was reconstructed into tower clusters (TC).  Independently, tracks not consistent with muons or 
-electrons were reconstructed using silicon tracker measurements.  Every neutral hadron was built from an HCAL TC, and 
-an ECAL SC if a geometric match was found.  Hadron tracks were extrapolated from the tracker to the HCAL, and 
-each charged hadron was built from a TC and geometrically matching track, and an ECAL SC if a geometric match 
-with the track was found.  After all particles were reconstructed, jets were reconstructed starting with 
-charged particle tracks.  In each event, charged particles that traced back to the interaction 
-vertex with the highest track $\Sigma \pt$ (the primary vertex) were used to tag different jets and their 
-directions.  Then, all charged particles from the primary vertex, and all photons and neutral hadrons in the event 
-were placed in a list of jet constituent candidates, which was subsequently analyzed using the anti-$k_{T}$ 
-algorithm \cite{antikt}.  Jet constituents were iteratively clustered into jets based on the $\pt$ of each 
-constituent and its $(\eta,\phi)$ distance from the jet axis defined by a charged particle track.  The majority 
-of jet constituents fell within $\Delta R < 0.4$ of the jet axis, but it was possible for low energy constituents to 
-be futher away.  A jet's energy was defined as the total energy of its constituents, and its $(\eta,\phi)$ 
-trajectory was the $\pt$-averaged trajectory of all charged constituents.
-
+In each event, every reconstructed particle was considered a jet candidate, except charged 
+hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Reconstructed 
+particles were clustered into multi-particle jets based on their energies and trajectories relative to 
+jet axes using the anti-$k_{T}$ algorithm, described in detail elsewhere \cite{antikt}.  Most jets were 
+no larger than $\Delta R = 0.4$, their energies were defined as the energy sum of all constituents, and 
+their $(\eta, \phi)$ trajectories were defined as the energy averaged trajectory of all constituents.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
