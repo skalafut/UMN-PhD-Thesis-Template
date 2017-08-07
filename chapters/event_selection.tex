@@ -5,14 +5,96 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If a \WR boson and heavy neutrino \nul existed at a mass scale and coupling strength accessible 
-at the LHC, evidence of them would manifest as an excess of events relative to expected backgrounds 
-that produced two high-$p_{T}$ jets and two high-$p_{T}$, same flavor charged leptons.  
-Using collision data recorded by CMS in 2015, evidence of a \WR boson and \nul was sought in events 
-with this final state.  In the data, charged leptons and jets were reconstructed and identified 
-using the silicon tracker, the ECAL and HCAL, and the muon detectors.  Following reconstruction 
-and identification, additional selections were applied to increase sensitivity to heavy \WR and 
-\nul signatures relative to expected backgrounds.
+LRS models presented earlier predict the existence of a \WR boson and heavy neutrinos \nul, and that their 
+production and decay yields events where two high energy jets and two high energy charged leptons are 
+reconstructed.  Using collision data recorded by CMS from September through November 2015, evidence of 
+\WR and \nul production was searched for in events with $\ell\ell jj$ ($\ell = e,\mu$) final states.  
+Events were selected using lepton and jet selections developed from features of expected ST backgrounds 
+and $\WR \rightarrow \ell\nul rightarrow \ell\ell jj$ decays.
+
+
+\section{\WR and \nul Signal Features}
+\label{sec:signalFeatures}
+Lepton and jet selections were driven by several model-independent features of \WR and \nul decays.  \mWR 
+was expected to be large, 2 $\TeV$ or more, relative to the center-of-mass collision energy of 13 $\TeV$, 
+so \WR bosons would have been produced with low momentum.  Therefore, the lighter lepton and jet decay 
+products, on average, were distributed uniformly in $\phi$, and concentrated in the region $|\eta| < 2.5$, 
+as indicated in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
+\mWR yielded reconstructed leptons and jets with several hundred $\GeV$ or more of $\pt$, as shown in 
+Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  The decay of the \WR into a charged lepton $\ell$ 
+with negligible mass $m_{\ell} \ll \mnul$ and a \nul with non-negligible mass $\mnul < \mWR$ yielded 
+additional, distinguishing features of $\WR \rightarrow \ell\ell jj$ decays.  To conserve momentum in 
+the $\WR \rightarrow \ell \nul$ decay, the charged lepton $\ell$ recoiled against the neutrino \nul.  The 
+second charged lepton produced by the \nul decay often recoiled against the first charged lepton, and the 
+lepton pair, on average, had a large dilepton mass $\Mll$ (Figure \ref{fig:wrSigMll}).
+
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrLeptonEtas}
+	\caption{The $\eta$ distribution of the leading (sub-leading) reconstructed muon is shown on the left (right) for 
+		$\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.  The electron 
+	distributions are identical, except for the ECAL barrel-endcap gap where electrons are not reconstructed.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrJetEtas}
+	\caption{The $\eta$ distribution of the leading (sub-leading) reconstructed jet is shown on the left (right) for 
+		$\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrLeptonPts}
+	\caption{The $\pt$ distribution of the leading (sub-leading) reconstructed muon is shown on the left (right) for 
+		$\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrJetPts}
+	\caption{The $\pt$ distribution of the leading (sub-leading) reconstructed jet is shown on the left (right) for 
+		$\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	\label{fig:wrSigMll}
+	\caption{The distribution of the dilepton mass $\Mll$ is shown for $\WR \rightarrow \mu\mu jj$ events with 
+	$\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
+
+
+
+
+
+
 
 \section{Online Event Selection}
 \label{sec:triggers}
