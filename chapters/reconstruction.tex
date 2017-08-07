@@ -46,11 +46,11 @@ reconstructed muon was identified as a muon detector track whose trajectory matc
 tracker track. 
 
 The momentum of muons was determined using silicon tracker and muon detector measurements.  Four 
-reconstruction algorithms fitted four continuous tracks that represented a muon's trajectory from 
-the silicon tracker through the muon detectors \cite{cmsMuonRecoRunOne}.  Each algorithm combined 
+reconstruction algorithms fitted four continuous tracks that represented one muon's trajectory from 
+the silicon tracker to the last muon detector \cite{cmsMuonRecoRunOne}.  Each algorithm combined 
 muon detector and silicon tracker measurements in a different way, and could exclude measurements 
 with large uncertainty.  Each continuous track fitted to silicon tracker and muon detector data was 
-distinguished by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
+identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
 fitted track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.
 
 
@@ -58,25 +58,27 @@ fitted track with the lowest fit and momentum uncertainties determined the recon
 \label{sec:jetReco}
 Through hadronization, photon radiation and leptonic weak decays, quarks produced in pp interactions 
 created jets of photons, hadrons and leptons.  Jet reconstruction began by reconstructing photons, 
-electrons and muons, and generic charged and neutral hadrons.  Charged hadrons were reconstructed as 
-if they were heavy electrons\footnote{On average, hadrons did not undergo bremsstrahlung in the silicon tracker.}, but with ECAL 
-SCs replaced by energies measured in individual HCAL towers.  Unlike a reconstructed electron, a charged 
-hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position was consistent with the HCAL tower of 
-the charged hadron.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
-an ECAL SC, whose position was not consistent with any reconstructed track.  Similarly, each photon was 
-reconstructed as an ECAL SC whose position was not consistent with any reconstructed track.  Subsequently, 
-jets were reconstructed by clustering individual reconstructed particles together.
+electrons and muons, and generic charged and neutral hadrons.  Each charged hadron was reconstructed as 
+an energy measured in an HCAL tower geometrically matched to a reconstructed track.  In addition, 
+charged hadrons could also contain an ECAL SC if the SC $(\eta, \phi)$ position was consistent with 
+the HCAL tower.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
+an ECAL SC, whose $(\eta, \phi)$ position was not consistent with any reconstructed track.  Similarly, 
+each photon was reconstructed as an ECAL SC whose position was not consistent with any reconstructed 
+track.  Subsequently, jets were reconstructed by clustering individual reconstructed particles together.
 
 In each event, every reconstructed particle was considered a jet candidate, except charged 
-hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Reconstructed 
-particles were clustered into multi-particle jets based on their energies and trajectories relative to 
-jet axes using the anti-$k_{T}$ algorithm, described in detail elsewhere \cite{antikt}.  Most jets were 
-no larger than $\Delta R = 0.4$, their energies were defined as the energy sum of all constituents, and 
-their $(\eta, \phi)$ trajectories were defined as the energy averaged trajectory of all constituents.
+hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Using the 
+anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles were clustered into multi-particle jets 
+based on their individual energies and trajectories.  Jet energies were equal to the total energy of 
+all constituents, jet $(\eta, \phi)$ trajectories were defined as the energy-weighted average trajectory 
+of all constituents, and the majority of each jet's energy was contained in a circular area with radius 
+$\Delta R = 0.4$.
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Charged .
+Energetic electrons, muons and jets produced by all types of interactions in pp collisions were 
+reconstructed using several CMS subdetector systems.  Additional selections were applied to charged leptons 
+and jets to isolate events with signs of a \WR and \nul.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
