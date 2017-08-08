@@ -6,27 +6,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 LRS models presented earlier predict the existence of a \WR boson and heavy neutrinos \nul, and that their 
-production and decay yields events where two high energy jets and two high energy charged leptons are 
-reconstructed.  Using collision data recorded by CMS from September through November 2015, evidence of 
+production and decay yields events with two high energy jets and two high energy charged leptons.  Using 
+collision data recorded by CMS from September through November 2015, evidence of 
 \WR and \nul production was searched for in events with $\ell\ell jj$ ($\ell = e,\mu$) final states.  
 Events were selected using lepton and jet selections developed from features of expected ST backgrounds 
-and $\WR \rightarrow \ell\nul rightarrow \ell\ell jj$ decays.
+and $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ decays.
 
 
 \section{\WR and \nul Signal Features}
 \label{sec:signalFeatures}
-Lepton and jet selections were driven by several model-independent features of \WR and \nul decays.  \mWR 
-was expected to be large, 2 $\TeV$ or more, relative to the center-of-mass collision energy of 13 $\TeV$, 
-so \WR bosons would have been produced with low momentum.  Therefore, the lighter lepton and jet decay 
-products, on average, were distributed uniformly in $\phi$, and concentrated in the region $|\eta| < 2.5$, 
-as indicated in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
-\mWR yielded reconstructed leptons and jets with several hundred $\GeV$ or more of $\pt$, as shown in 
-Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  The decay of the \WR into a charged lepton $\ell$ 
-with negligible mass $m_{\ell} \ll \mnul$ and a \nul with non-negligible mass $\mnul < \mWR$ yielded 
-additional, distinguishing features of $\WR \rightarrow \ell\ell jj$ decays.  To conserve momentum in 
-the $\WR \rightarrow \ell \nul$ decay, the charged lepton $\ell$ recoiled against the neutrino \nul.  The 
-second charged lepton produced by the \nul decay often recoiled against the first charged lepton, and the 
-lepton pair, on average, had a large dilepton mass $\Mll$ (Figure \ref{fig:wrSigMll}).
+Lepton and jet selections were driven by several model-independent features of \WR and \nul decays.  The \WR mass 
+(\mWR) was expected to be large, 2 $\TeV$ or more, relative to the center-of-mass collision energy of 13 $\TeV$, 
+so \WR bosons would have been produced with low momentum.  Therefore, the charged lepton and jet decay 
+products, on average, were distributed uniformly in $\phi$, and concentrated in the region $|\eta| < 2.4$, 
+as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
+\mWR yielded leptons and jets with several hundred $\GeV$ or more of $\pt$, as shown in 
+Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  The $\eta$ and $\pt$ distributions of final state 
+particles, and the large expected \mWR motivated the following selections on charged leptons and jets in 
+every event:
+
+\begin{itemize}
+	\item Two leptons were reconstructed with $\pt$ or $\Et > 53$ $\GeV$, and one had $\pt$ or $\Et > 60$ $\GeV$.
+	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
+	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
+	\item The invariant mass $\Mlljj$ of the selected leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
+\end{itemize}
+
+The large predicted mass difference between the charged lepton $\ell$ and heavy neutrino \nul yielded 
+additional distinguishing features of the signal.  To conserve momentum in the $\WR \rightarrow \ell \nul$ 
+decay, the charged lepton $\ell$ recoiled against the heavier neutrino \nul.  Then the \nul decayed to a 
+second charged lepton and two jets that recoiled against the first charged lepton.  Thus the lepton pair, 
+on average, had a large dilepton mass $\Mll$ (Figure \ref{fig:wrSigMll}), and the first charged 
+lepton\footnote{produced with the \nul} was often well separated in $(\eta, \phi)$ from the \nul decay 
+products (Figure \ref{fig:wrLeadLeptJetSeparation}).  The large expected neutrino mass \mnul, hundreds of 
+$\GeV$ or more, needed to predict low ST neutrino masses usually resulted in large $(\eta, \phi)$ separations 
+between \nul decay products, as shown in Figure \ref{fig:wrSubleadLeptJetSeparation}.  The $(\eta, \phi)$ 
+separation between charged leptons and jets, and the recoil of one charged lepton against the \nul 
+decay products motivated additional event selections:
+
+\begin{itemize}
+	\item Each selected lepton was separated from both selected jets by $\Delta R > 0.4$.
+	\item The dilepton mass $\Mll$ of the two selected leptons exceeded $\Mll > 200$ $\GeV$.
+\end{itemize}
 
 
 \begin{figure}[btp]
@@ -86,18 +107,41 @@ lepton pair, on average, had a large dilepton mass $\Mll$ (Figure \ref{fig:wrSig
 	\centering
 	\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
 	\label{fig:wrSigMll}
-	\caption{The distribution of the dilepton mass $\Mll$ is shown for $\WR \rightarrow \mu\mu jj$ events with 
+	\caption{The distribution of the dilepton mass $\Mll$ for $\WR \rightarrow \mu\mu jj$ events with 
 	$\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
 \end{figure}
 
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrLeadLeptJetSeparation}
+	\caption{The $\Delta R(\ell,j)$ separation between the leading reconstructed muon and leading (sub-leading) reconstructed jet 
+		is shown on the left (right) for $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
 
-
-
-
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:wrSubleadLeptJetSeparation}
+	\caption{The $\Delta R(\ell,j)$ separation between the sub-leading reconstructed muon and leading (sub-leading) reconstructed jet 
+		is shown on the left (right) for $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+\end{figure}
 
 
 \section{Online Event Selection}
 \label{sec:triggers}
+
+
 Charged leptons that came from proton-proton interactions were identified by the trigger system.  Based 
 on the multiplicity and energy of charged leptons, the trigger system selected events during 
 collisions, and saved these events to permanent storage for further analysis.  As described in Chapter 
