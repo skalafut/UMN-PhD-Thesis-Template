@@ -141,10 +141,10 @@ decay products motivated additional event selections:
 \section{Online Event Selection}
 \label{sec:triggers}
 Evidence of \WR and \nul production was searched for in events selected by lepton triggers.  Events 
-used in the $ee$ channel search were selected with a double electron HLT algorithm, and events used 
-in the $\mu\mu$ channel search were selected with a single muon HLT algorithm.
+used in the $ee$-channel search were selected with a double electron HLT algorithm, and events used 
+in the $\mu\mu$-channel search were selected with a single muon HLT algorithm.
 
-In the $ee$ channel search events were selected by Level-1 triggers that required one ECAL supercluster 
+In the $ee$-channel search events were selected by Level-1 triggers that required one ECAL supercluster 
 (SC) with $\Et > 40 \GeV$, or a pair of non-overlapping SCs - one with $\Et > 22$ $\GeV$, the other with 
 $\Et > 10$ $\GeV$.  Events that passed the L1 selection were reconstructed if they passed the 
 following double electron HLT selections:
@@ -162,7 +162,7 @@ following double electron HLT selections:
 \end{itemize}
 
 %add this to the background estimation chapter
-%A second set of ee channel events were used only to estimate backgrounds.  These events were first 
+%A second set of ee -channel events were used only to estimate backgrounds.  These events were first 
 %selected online using a Level-1 trigger that required $>$ 30 GeV of energy be measured in an ECAL SC 
 %with $|\eta| < 2.1$.  Following the Level-1 selection, events were saved to permanent storage if the 
 %following double electron High Level trigger requirements were met:
@@ -185,7 +185,7 @@ following double electron HLT selections:
 %	\item A second SC was detected with energy $>$ 4 GeV.
 %\end{itemize}
 
-Events used in the $\mu\mu$ channel search were selected by a Level-1 trigger that required a track in one 
+Events used in the $\mu\mu$-channel search were selected by a Level-1 trigger that required a track in one 
 muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the L1 selection were reconstructed if 
 they passed the following single muon HLT selections (same requirements in the barrel and endcap):
 
@@ -199,7 +199,7 @@ they passed the following single muon HLT selections (same requirements in the b
 \end{itemize}
 
 %add this to the background estimation chapter
-%A second set of $\mu\mu$ channel events were used only to estimate backgrounds.  These events were first 
+%A second set of $\mu\mu$ -channel events were used only to estimate backgrounds.  These events were first 
 %selected online by a Level-1 trigger, which required $>$ 20 GeV of momentum be measured in a muon 
 %DT or CSC detector.  Following the Level-1 selection, events were saved to permanent storage if the 
 %following single muon High Level trigger requirements were met:
@@ -221,9 +221,9 @@ they passed the following single muon HLT selections (same requirements in the b
 %add this to the background estimation chapter
 %As stated earlier, it is assumed that the $\WR$ decay cannot violate lepton 
 %flavor conservation.  Therefore, evidence of \WR and \nul production was not searched for in 
-%events with the $e\mu jj$ final state.  However, events in the $e\mu$ channel 
+%events with the $e\mu jj$ final state.  However, events in the $e\mu$ -channel 
 %($e\mu jj$ final state) were used to estimate top quark backgrounds using a procedure described later.  The $e\mu$ 
-%channel events were selected by a Level-1 trigger that required a track in one 
+%-channel events were selected by a Level-1 trigger that required a track in one 
 %muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the L1 selection were reconstructed if 
 %they passed the following electron-muon HLT selections:
 %
@@ -247,56 +247,35 @@ they passed the following single muon HLT selections (same requirements in the b
 
 \section{Monte Carlo}
 \label{sec:MC}
-Monte Carlo (\MC) simulations were used to predict ST backgrounds, and study lepton and jet kinematic 
-distributions in $\WR \rightarrow \ell\ell jj$ events.
-
-%RESUME HERE%
-The first 
-type was ST processes that resulted in the reconstruction of two charged leptons 
-and two jets.  These included processes that produced two real charged leptons and two jets, like 
-$pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
-were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
-The second type was the \WR signal process $pp \rightarrow \WR \rightarrow l\nul \rightarrow lljj$ 
-with different \mWR and \mnul masses.  
-\MC simulations of both types of processes were produced using a multi-step procedure.  In the first step, 
-a \MC generator, like \PYTHIA or \MADGRAPH, simulated 
-collision events between two protons in a vacuum, without any magnetic field or CMS detector 
-components.  In simulations, the generator accounted for:
+Monte Carlo (\MC) simulations were used to predict ST backgrounds, and study lepton and jet kinematics 
+in $\WR \rightarrow \ell\ell jj$ events.  ST backgrounds were processes, like $Z+jets \rightarrow \ell\ell+jets$ 
+and $W+jets \rightarrow \ell\nu+jets$, that passed lepton triggers and resulted in reconstructed 
+events with charged leptons and jets passing selections.  \MC simulations of ST backgrounds and \WR 
+signal processes were produced using the following multi-step procedure:
 
 \begin{itemize}
-	\item The energy carried by each proton into the collision (6.5 \TeV).
-	\item How the incoming proton energy was distributed amongst constituent quarks and gluons according 
-		to parton distribution functions (PDFs).
-	\item The masses of the \WR, \nul and all particles in the ST.
-	\item The coupling strengths between fermions and the bosons that mediated interactions.
+	\item \textbf{Step 1} used a dedicated \MC generator to simulate the interaction between two protons 
+		colliding in a vacuum, and the particles produced by the interaction.
+	\item \textbf{Step 2} simulated the effect of multiple pp interactions occurring in the same collision, 
+		and used GEANT4 \cite{geant4} to simulate interactions between particles and detector materials, 
+		and the detector response to all particles.
+	\item \textbf{Step 3} used the simulated detector response to simulate the Level-1 and High Level 
+		trigger decisions, and the reconstruction of particles and interaction vertices.
 \end{itemize}
 
-Any unstable particles produced in the interaction, like a $Z$ or \WR boson, decayed according to 
-their branching fractions to other particles, and any free quarks or gluons that were produced were 
-run through a hadronization simulation that emulates jet production described in Chapter \ref{intro_chapter}.  In the second 
-simulation step, the effect of multiple pp interactions observed in real collisions is simulated by 
-overlaying simulations of randomly chosen ST interactions onto the primary events simulated in the first 
-step.  All pp interaction processes in the ST were assigned a probability proportional to their cross section 
-times branching fraction, then several processes were chosen randomly, and the events they produced after 
-the first simulation stage were overlaid on the primary events of interest.  The processes with the highest cross section times 
-branching fraction by several orders of magnitude were inelastic pp scattering and 
-other gluon mediated interactions that produced hadrons, so most of the randomly chosen events only added 
-hadronic jets to each event.  After this overlaying procedure, the second simulation step used GEANT4 \cite{geant4} to simulate 
-the propagation of all particles in the CMS magnetic field, their interactions with everything in the CMS detector, 
-and the tracker, calorimeters and muon detectors to these particles.  Using the simulated detector response, 
-the last step simulated the Level-1 and High Level triggers, and the reconstruction of interaction 
-vertices, charged and neutral particles, and jets.  The same reconstruction software 
-was used in simulations and collision data, and pertinent details of jet, electron and muon reconstruction 
-algorithms are discussed later.  This multi-step procedure 
-was used to simulate the \WR signal process at different \mWR and \mnul masses, and the ST processes 
-summarized in Table \ref{tab:centrallyProducedMC}.
-
+The first step also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
+Before starting the second step, an independent \MC simulation of minimum bias collisions was produced 
+using the first simulation step.  Then, for every event $Y$ simulated in the second step, a random integer $X$ 
+was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations started, the 
+average expected pileup was 12}.  $X$ simulated minimum bias collision events, and all 
+the particles they produced, were added to the primary event $Y$ before starting GEANT4 simulations.  The 
+third step saved trigger decisions without discarding events based on trigger decisions, and reconstructed 
+particles using the same reconstruction algorithms used with real collision data.  The multi-step procedure 
+was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
 
 \begin{table}[bt]
-\caption{Fully reconstructed \MC samples used in the search described here.  The \DY and t$\bar{t}$+jets events 
-	were produced with a dilepton mass $M_{LL} > 50 \GeV$ selection applied to the two leptons coming from the hard interaction.  
-Here, "size" represents the equivalent integrated luminosity of collision data needed to collect the same number 
-of events in data.  For the \WR datasets the size is estimated based on the coupling assumptions stated in Chapter \ref{sec:lrsPhenomenology}.}
+\caption{Simulated datasets used to study backgrounds and the \WR signal.  The "Size" of each dataset 
+is the integrated luminosity of collision data needed to collect the same number of simulated events (for \WR this is estimated).}
 \label{tab:centrallyProducedMC}
 
 \centering
@@ -325,13 +304,15 @@ of events in data.  For the \WR datasets the size is estimated based on the coup
 \end{table}
 
 In simulations of ST processes, different \MC generators were used in the first simulation step.  
-The \DY (DY)+jets, W+jets, and t$\bar{t}$+jets simulations used the \MADGRAPH \cite{madgraph} generator, 
-the single top and top+W simulations used the \POWHEG \cite{powheg} generator, and the diboson (WW, WZ, ZZ) 
-simulations used the \PYTHIA \cite{pythia8,Sjostrand:2006za} generator.  In all of these 
-simulations, \PYTHIA was used to hadronize free quarks and gluons into jets with the NNPDF23 PDF set 
-\cite{nnpdf}.  Events used from these \MC datasets were required to pass at least one of the High 
-Level triggers described earlier.
+The production of jets through initial or final state quark or gluon radiation was best simulated 
+by the \MADGRAPH \cite{madgraph} generator, so this generator was used to simulate \DY+jets, W+jets, 
+and t$\bar{t}$+jets.  The production and decay of individual top quarks was best simulated by the 
+\POWHEG \cite{powheg} generator, so this generator was used to simulate single top and top+W.  The 
+general purpose \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate diboson (WW, 
+WZ, ZZ) backgrounds and \WR signals.  In addition, \PYTHIA was used to hadronize free quarks and 
+gluons into jets with the NNPDF23 PDF set \cite{nnpdf}.  %RESUME HERE%
 
+%%%
 The \WR signal process was simulated using the \PYTHIA generator and NNPDF23 PDF set, and following 
 the assumptions stated in Chapter \ref{sec:lrsPhenomenology}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
 final states were simulated independently, with \mWR increasing from 0.8 to 6 $\TeV$ in increments of 
@@ -340,13 +321,13 @@ required to pass the single $\mu$, $\pt > 50 \GeV$ High Level trigger described 
 $\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33 \GeV$ High Level 
 trigger.
 
-As stated previously, in the second step of \MC simulations, simulated events from randomly chosen ST 
-processes were mixed into the main events being simulated.  For each event simulated for the main 
-process (\WR or ST), the number of secondary events mixed in were pulled from a Poisson distribution 
-with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
-or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
-events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
-applied to every simulated event.
+%As stated previously, in the second step of \MC simulations, simulated events from randomly chosen ST 
+%processes were mixed into the main events being simulated.  For each event simulated for the main 
+%process (\WR or ST), the number of secondary events mixed in were pulled from a Poisson distribution 
+%with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
+%or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
+%events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
+%applied to every simulated event.
 
 Additional $\WR \rightarrow lljj$ simulated datasets using \PYTHIA were produced for limit setting.  
 Only the first simulation step was run, and the \PYTHIA configuration was 
@@ -657,8 +638,8 @@ increased ST backgrounds without a corresponding increase in \WR signal.
 \section{\WR Candidate Selection}
 \label{sec:wrCandSelection}
 Following the reconstruction and selection of electrons, muons and jets, a \WR candidate in every $\mu\mu$ (ee) 
-channel event was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
-highest $\pt$ jets passing the $\pt$ or $\Et$ selections described earlier.  In the $e\mu$ channel used for top quark background estimation, the highest $\pt$ muon and highest $\Et$ 
+-channel event was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
+highest $\pt$ jets passing the $\pt$ or $\Et$ selections described earlier.  In the $e\mu$ -channel used for top quark background estimation, the highest $\pt$ muon and highest $\Et$ 
 electron were used to build an $e\mu jj$ candidate.  LRS models predicted one lepton from \WR decays to have 
 higher energy than the other, so ,to increase sensitivity to a \WR signal, one lepton was required to have $\pt$ or 
 $\Et > 60$ \GeV.  Furthermore, due to the heavy $\nul$ recoiling off the $\ell$ daughter of the \WR, it was predicted that 
@@ -695,7 +676,7 @@ cut was applied by requiring the final state lepton plus jet mass $\Mlljj > 600$
 datasets passed this cut with high efficiency, as shown in Table \ref{tab:wrMlljj}.
 
 The full trigger and kinematic selection efficiency in fully reconstructed \WR signal \MC events exceeded 50\% (70\%) 
-in the ee ($\mu\mu$) channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The ee channel had lower efficiency due 
+in the ee ($\mu\mu$) -channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The ee -channel had lower efficiency due 
 to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter identification requirements for electrons 
 relative to muons.
 
@@ -716,7 +697,7 @@ relative to muons.
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
 	\caption{The efficiency that $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ events are selected using 
-	the trigger and full offline selection in the ee ($\mu\mu$) channel on the left (right).  Different curves represent 
+	the trigger and full offline selection in the ee ($\mu\mu$) -channel on the left (right).  Different curves represent 
 events where both leptons were in the barrel $\eta$ region (BB), one was in the endcap (EB), or both were in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
@@ -733,7 +714,7 @@ in the \Mlljj distribution centered near $\Mlljj = 1.0 \TeV$ that was clearly di
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
-	\caption{The $\Mlljj$ distribution from simulations of expected ST backgrounds and \WR signal in the ee channel.  
+	\caption{The $\Mlljj$ distribution from simulations of expected ST backgrounds and \WR signal in the ee -channel.  
 		The normalization of the \WR signal distribution is scaled down by 70\% only to better visualize the difference 
 	between \WR signal and expected backgrounds.}
 	\label{fig:mlljjVariableOfMerit}
