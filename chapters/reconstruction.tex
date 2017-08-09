@@ -46,13 +46,13 @@ reconstructed muon was identified as a muon detector track whose trajectory matc
 tracker track. 
 
 The momentum of muons was determined using silicon tracker and muon detector measurements.  Four 
-reconstruction algorithms fitted four continuous tracks that represented one muon's trajectory from 
-the silicon tracker to the last muon detector \cite{cmsMuonRecoRunTwo}.  Each algorithm combined 
+reconstruction algorithms fitted four continuous tracks to silicon tracker and muon detector hits 
+to estimate the muon's trajectory through all of CMS \cite{cmsMuonRecoRunTwo}.  Each algorithm combined 
 muon detector and silicon tracker measurements in a different way, and could exclude measurements 
-with large uncertainty.  Each continuous track fitted to silicon tracker and muon detector data was 
+with large uncertainty.  The precision of each continuous track was 
 identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
-fitted track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.  
-This procedure improved muon momentum resolution for muons with $\pt > 200$ $\GeV$, which were 
+track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.  
+This procedure improved the momentum resolution for muons with $\pt > 200$ $\GeV$, which were 
 expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as shown in Table 
 \ref{tab:wrHighPtMuons}.
 
@@ -62,7 +62,7 @@ expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as sho
 	\label{tab:wrHighPtMuons}
 	\centering
 	\begin{tabular}{c|c}
-		\mWR ($\TeV$) & Fraction of events with at least one high-$\pt$ muons (\%) \\  \hline
+		\mWR ($\TeV$) & Fraction of events with at least one high-$\pt$ muon (\%) \\  \hline
 		1.0 &  80.  \\
 		2.0 &  95.  \\ 
 		3.0 &  98.  \\ \hline
