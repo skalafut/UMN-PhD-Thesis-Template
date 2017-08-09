@@ -266,12 +266,14 @@ signal processes were produced using the following multi-step procedure:
 The first step also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
 Before starting the second step, an independent \MC simulation of minimum bias collisions was produced 
 using the first simulation step.  Then, for every event $Y$ simulated in the second step, a random integer $X$ 
-was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations started, the 
+, representing the number of pileup interactions, was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations started, the 
 average expected pileup was 12}.  $X$ simulated minimum bias collision events, and all 
-the particles they produced, were added to the primary event $Y$ before starting GEANT4 simulations.  The 
+the particles they produced, were added to the primary event $Y$ before starting GEANT4 simulations.  After 
+simulations finished, the distribution of pileup events was compared between data and simulations.  A weight 
+was applied to each simulated event to bring the two pileup distributions into agreement.  The 
 third step saved trigger decisions without discarding events based on trigger decisions, and reconstructed 
 particles using the same reconstruction algorithms used with real collision data.  The multi-step procedure 
-was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
+was used to simulate the ST backgrounds and the \WR signal listed in Table \ref{tab:centrallyProducedMC}.
 
 \begin{table}[bt]
 \caption{Simulated datasets used to study backgrounds and the \WR signal.  The "Size" of each dataset 
@@ -305,135 +307,72 @@ is the integrated luminosity of collision data needed to collect the same number
 
 In simulations of ST processes, different \MC generators were used in the first simulation step.  
 The production of jets through initial or final state quark or gluon radiation was best simulated 
-by the \MADGRAPH \cite{madgraph} generator, so this generator was used to simulate \DY+jets, W+jets, 
+by the \MADGRAPH \cite{madgraph} generator, so \MADGRAPH was used to simulate \DY+jets, W+jets, 
 and t$\bar{t}$+jets.  The production and decay of individual top quarks was best simulated by the 
-\POWHEG \cite{powheg} generator, so this generator was used to simulate single top and top+W.  The 
+\POWHEG \cite{powheg} generator, so \POWHEG was used to simulate single top and top+W.  The 
 general purpose \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate diboson (WW, 
-WZ, ZZ) backgrounds and \WR signals.  In addition, \PYTHIA was used to hadronize free quarks and 
-gluons into jets with the NNPDF23 PDF set \cite{nnpdf}.  %RESUME HERE%
+WZ, ZZ) backgrounds and the \WR signal.  \PYTHIA was also used to hadronize free quarks and gluons into 
+jets with the NNPDF23 PDF set \cite{nnpdf} in all ST background and \WR signal simulations.
 
-%%%
-The \WR signal process was simulated using the \PYTHIA generator and NNPDF23 PDF set, and following 
+The \WR signal process was simulated using the NNPDF23 PDF set, and following 
 the assumptions stated in Chapter \ref{sec:lrsPhenomenology}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
-final states were simulated independently, with \mWR increasing from 0.8 to 6 $\TeV$ in increments of 
-0.2 \TeV, and $\mnul = \frac{1}{2}\mWR$.  Events from the $\WR \rightarrow \mu\mu jj$ samples were 
-required to pass the single $\mu$, $\pt > 50 \GeV$ High Level trigger described previously, while 
-$\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33 \GeV$ High Level 
-trigger.
+final states were simulated independently, with \mWR stepping from 0.8 to 6 $\TeV$ in increments of 
+0.2 $\TeV$, with the requirement that $\mnul = \frac{1}{2}\mWR$.
 
-%As stated previously, in the second step of \MC simulations, simulated events from randomly chosen ST 
-%processes were mixed into the main events being simulated.  For each event simulated for the main 
-%process (\WR or ST), the number of secondary events mixed in were pulled from a Poisson distribution 
-%with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
-%or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
-%events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
-%applied to every simulated event.
+Simulated ST background and \WR signal events used in each channel were required to pass the 
+appropriate lepton trigger.
 
-Additional $\WR \rightarrow lljj$ simulated datasets using \PYTHIA were produced for limit setting.  
-Only the first simulation step was run, and the \PYTHIA configuration was 
-identical to what was used for the fully reconstructed \MC events.  Datasets were produced with 
-$0.8 \leq \mWR \leq 4.0 \TeV$ increasing in \mWR increments of 0.1 $\TeV$, and $0.025 \leq \mnul < \mWR$ \TeV.  
-Using a procedure described later, these datasets were used to extrapolate \WR cross section limits 
-versus \mWR to \WR and \nul exclusion limits as functions of \mWR and \mnul.
+Additional $\WR \rightarrow \ell\ell jj$ simulated datasets were produced with \PYTHIA and used in the 
+situation when no \WR signal was found.  Events were simulated only through the first step, and the \PYTHIA 
+configuration was identical to the fully reconstructed datasets except the values of \mWR and \mnul.  Datasets were 
+produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and at each \mWR 
+several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  In the situation when no \WR signal 
+was found, these datasets were used to test observations against predictions made by different 
+$(\mWR, \mnul \neq \frac{1}{2}\mWR)$ hypotheses, and set \mWR and \mnul exclusion limits.
 
 
-\section{Offline Muon Reconstruction and Selection}
-\label{sec:muonRecoAndSelection}
-Muons were reconstructed using a combination of silicon tracker and muon detector information.  Muons 
-that traversed the tracker layers were reconstructed as charged particles.  Their radii of curvature 
-and measured rate of energy loss helped distinguish muons from other particles, and improved the 
-resolution with which their momenta were measured.  Muons that reached the muon detectors were reconstructed 
-as tracks, with opposite sign radii of curvature relative to the silicon tracker due to the magnetic 
-field in the muon detectors.  Following track reconstruction in the silicon tracker and muon detectors, 
-algorithms \cite{cmsMuonRecoRunOne} were used to identify muons as combinations of tracks in both detector 
-systems that had similar trajectories.  The high-$\pt$ muons studied in this search were primarily 
-reconstructed by starting with tracks in the muon detectors, and looking for matching tracks in the 
-silicon tracker.
-
-%One algorithm started with a seed track in the muon detectors, and 
-%extrapolated the track back to the silicon tracker.  Then, tracks in the silicon tracker identified as 
-%muon tracks were compared to the extrapolated muon detector track.  If a silicon tracker track had a 
-%trajectory that matched the extrapolated muon detector track, the algorithm built a muon from the 
-%combination of the two tracks.  This algorithm was developed to maximize reconstruction efficiency of 
-%high $p_{T}$, and was complemented by a second algorithm that started with a seed track identified as a 
-%muon in the silicon tracker.  The second algorithm extrapolated the seed track to the muon detectors in 
-%the magnet return yoke, and compared the seed track to the muon detector tracks.  If a muon detector track 
-%had a trajectory that matched the extrapolated seed track, the algorithm built a muon by combining the two 
-%tracks.  The second algorithm was developed to maximize reconstruction efficiency of low $p_{T}$ muons, which 
-%were not always able to traverse multiple layers of the iron return yoke to be detected in multiple 
-%muon chambers.  In both algorithms, if multiple matching tracks were found, the track assigned to the muon 
-%was the one whose trajectory was the closest match to the extrapolated track.
-
-The momenta of reconstructed muons were determined using the "Tune-P" algorithm 
-\cite{cmsMuonRecoRunTwo}, which was developed to improve high-$\pt$ muon momentum resolution.  For every muon, 
-this algorithm simultaneously runs four algorithms that try to measure 
-the momentum and fit a track to the entire reconstructed muon with the lowest $\chi^{2}/nDOF$.  All algorithms used all available 
-information from the silicon tracker, and combined muon detector measurements and tracker measurements in 
-different ways.  After all four algorithms were run, the "Tune-P" algorithm identified the muon momentum  
-from the algorithm that fitted a global track to the muon detector and silicon tracker trajectories with the 
-lowest $\chi^{2}/nDOF$ and $\sigma(\pt)/\pt$.  This procedure improved muon momentum resolution for $\pt > 200$ \GeV, 
-which, as shown in Table \ref{tab:wrHighPtMuons}, were expected in a significant fraction of 
-$\WR \rightarrow \mu\mu jj$ events.
-
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrHighPtMuons}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with at least one high-$\pt$ muons (\%) \\  \hline
-		1.0 &  80.  \\
-		2.0 &  95.  \\ 
-		3.0 &  98.  \\ \hline
-	\end{tabular}
-\end{table}
-
-
-%The first algorithm used all muon detector measurements, but gave greater weight to silicon 
-%tracker measurements in the track fit and momentum measurement.  The second algorithm used equally weighted 
-%tracker and muon detector measurements to fit a track, and used infrequent but distinct electromagnetic showers 
-%in all muon chambers to determine the muon momentum.  The third algorithm only used measurements made in the 
-%first layer of muon chambers closest to the magnet solenoid, where the muon has traversed the least amount of 
-%material before being detected, in combination with the tracker measurements to fit a curve to the global muon 
-%path, and determine the muon momentum.  The fourth algorithm dynamically truncated the length of the curve 
-%fitted to the global muon path when a large energy loss caused the muon to dramatically change direction, 
-%and as a result used as few as one layer of muon chambers to determine the trajectory and momentum of a muon.  
-%After all four algorithms were run, the "Tune-P" algorithm assigned the momentum to the muon from the algorithm 
-%that yielded a track fit with the lowest $\chi^{2}/nDOF$ and $\sigma(p_{T})/p_{T}$.  This procedure improved 
-%the muon momentum resolution for $p_{T} > 200$ \GeV, which in general degrades as muon $p_{T}$ increases as 
-%shown in Chapter \ref{sec:experiment_chapter}.
-
-Following the momentum determination, muons were required to pass a $\pt$ selection, and 
-identification selections to reject muons that were not produced by \WR decays.  These requirements were applied identically to events 
-in data and simulations.  LRS models predicted $\mWR \gtrsim 1 \TeV$, and as a result the charged leptons 
-produced by \WR decays had average $\pt$ in excess of 100 \GeV.  The kinematics of the expected final state leptons 
-motivated a $\pt > 53 \GeV$ cut on muons, to increase sensitivity to \WR signals relative to ST backgrounds.  
-As shown in Table \ref{tab:lowerMuonPtCuts}, the $\pt$ cut was not lowered to maintain good \WR sensitivity.  After the $\pt$ cut, muons 
-were required to pass the following identification selections:
+\section{Offline Muon Selection}
+\label{sec:muonSelection}
+Kinematic and identification selections were applied to reconstructed muons to select muons consistent 
+with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons had $\pt > 60$ $\GeV$.  Reducing the 
+lower $\pt$ selection was explored, but a looser $\pt$ selection reduced the sensitivity to signals 
+with $\mWR > 2$ $\TeV$, as shown in Table \ref{tab:lowerMuonPtCuts}.  Then, selected muons were filtered 
+with the following identification selections:
 
 \begin{itemize}
-	\item The track fit obtained from "Tune-P" included at least one muon chamber hit.
-	\item The origin of the track fit obtained from "Tune-P" was within 2 (5) \mm of the primary vertex in the $x,y$ plane ($z$ axis).
-	\item Muon detector tracks were reconstructed in at least two muon chambers.
-	\item The relative $\pt$ error on the muon momentum from "Tune-P" was below 30\%, $\sigma(\pt)/\pt < 0.3$.
-	\item The track obtained from the initial muon reconstruction had at least one hit in the silicon pixel detector, and had 
-		hits in at least five layers in the entire tracker.
-	\item In a $\Delta R = 0.3$ cone centered on the muon track in the silicon tracker, the $\Sigma \pt$ of all 
-		tracks in the cone not matched with the muon must be low compared to the muon $\pt$, $\frac{\Sigma \pt}{muon \pt} < 0.1$.
+	\item Considering the muon's track reconstructed in the silicon tracker:
+	\begin{itemize}
+		\item The track was reconstructed from at least 1 hit in the silicon pixel detector, and at least 
+			5 hits in the entire tracker.
+		\item Within a cone of radius $\Delta R = 0.3$ centered on the track, the $\sum \pt$ of all other 
+			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{muon \pt} < 0.1$.
+	\end{itemize}
+	\item The muon was detected in at least 2 muon chambers.
+	\item The fitted track representing the estimated muon trajectory through all of CMS originated at a 
+		point that was within 2 (5) \mm of the muon's reconstructed vertex in the $x,y$ plane ($z$ axis). 
+	\item The muon momentum measurement included at least one muon chamber hit.
+	\item The error on the muon momentum measurement, $\sigma(\pt)$, was less than 30\% of the muon $\pt$, 
+		$\sigma(\pt)/\pt < 0.3$.
 \end{itemize}
 
 \begin{table}[h]
-	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $\pt$ 
-	cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  
-Lowering the $\mu$ $\pt$ cut worsened S/$\sqrt{B}$.}
+	\caption{Signal (S) over background (B) sensitivity, represented as S/$\sqrt{B}$, for low and high $\mu$ $\pt$ 
+	selections.  The background is estimated from simulated \DY and t$\bar{t}$, and the signal is estimated 
+	from simulated $\WR \rightarrow \mu\mu jj$ with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 	\label{tab:lowerMuonPtCuts}
 	\centering
 	\begin{tabular}{c|c}
-		$\mu$ $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		$\mu$ $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
 		40 &  11.9  \\
 		53 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
 
+If more than two muons passed all kinematic and identification selections, the two highest $\pt$ muons 
+were selected.
+
+%RESUME HERE%
 There were known differences between simulations and data that effected the reconstruction and selection efficiencies 
 of muons.  These differences were corrected by applying event weights to muons in simulated events, and energy 
 corrections to muons in data and simulated events.  In general the muon triggers were more efficient in simulations than in 
@@ -473,8 +412,8 @@ are discussed in Chapter \ref{sec:uncertainties}.
 %\end{table}
 
 
-\section{Offline Electron Reconstruction and Selection}
-\label{sec:electronRecoAndSelection}
+\section{Offline Electron Selection}
+\label{sec:electronSelection}
 Electron reconstruction started with the reconstruction of ECAL energy clusters.  Electrons that impinged 
 on the ECAL showered and lost substantially all of their energy in 5 $\times$ 5 crystal, and these 25 crystals 
 were reconstructed as individual superclusters (SCs).  In tandem with ECAL SC reconstruction, electron tracks 
@@ -538,8 +477,8 @@ account for differences in identification selection efficiency.  The effect of u
 small, and is discussed in Chapter \ref{sec:uncertainties}.
 
 
-\section{Offline Jet Reconstruction and Selection}
-\label{sec:jetRecoAndSelection}
+\section{Offline Jet Selection}
+\label{sec:jetSelection}
 Jets produced in proton-proton collisions contained long lived charged and neutral hadrons, photons from 
 $\pi^{0} \rightarrow \gamma\gamma$ decays, and charged leptons from heavy quark decays.  Jets reconstruction began 
 by reconstructing electrons, muons, photons, and charged and neutral hadrons.  Photons were reconstructed using the same algorithm 
