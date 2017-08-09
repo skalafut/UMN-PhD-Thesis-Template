@@ -335,7 +335,7 @@ $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ hypotheses, and set \mWR and \mnul exclusio
 \label{sec:muonSelection}
 Kinematic and identification selections were applied to reconstructed muons to select muons consistent 
 with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
-$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons had $\pt > 60$ $\GeV$.  Reducing the 
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  Reducing the 
 lower $\pt$ selection was explored, but a looser $\pt$ selection reduced the sensitivity to signals 
 with $\mWR > 2$ $\TeV$, as shown in Table \ref{tab:lowerMuonPtCuts}.  Then, selected muons were filtered 
 with the following identification selections:
@@ -372,152 +372,64 @@ with the following identification selections:
 If more than two muons passed all kinematic and identification selections, the two highest $\pt$ muons 
 were selected.
 
-%RESUME HERE%
-There were known differences between simulations and data that effected the reconstruction and selection efficiencies 
-of muons.  These differences were corrected by applying event weights to muons in simulated events, and energy 
-corrections to muons in data and simulated events.  In general the muon triggers were more efficient in simulations than in 
-collisions, so the weight of every simulated event was scaled down by a factor dependent on the $\pt$ and $\eta$ of the 
-triggering muon.  For the $\pt > 50 \GeV$ trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
-event weight (a weight of 1 is equivalent to no correction) applied to triggering muons in simulated events was between 
-0.95 (5\% decrease) and 0.97 (3\% decrease) for $\pt < 140 \GeV$, and between 0.97 (3\% decrease) and 1.04 (4\% increase) for $\pt > 140 \GeV$.  
-The uncertainty on these weights was purely statistical, and the small impact of muon trigger weight uncertainties is discussed in 
-Chapter \ref{sec:leptonRecoTriggerEffUnc}.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
-events in data and simulations, it was known that the muon energy scale and resolution differed between simulations 
-and data\footnote{the peak position differed due to different muon energy scale calibrations, and the width differed 
-because the muon energy resolution differed between simulations and data}.  The $\pt$ of muons in data and simulations 
-were corrected based on their $\eta$, $\phi$, charge and initial $\pt$ to bring the muon energy scale and resolution 
-into agreement between data and simulations.  These corrections were applied 
-before the $\pt > 53 \GeV$ cut mentioned earlier.  Additional weights were applied to every simulated muon 
-to eliminate the difference in muon identification selection and reconstruction efficiency between data and simulations.  
-For all muons this weight was always between 1.0 (0\% change) and 0.985 (1.5\% decrease), and the effect of weight uncertainties 
-are discussed in Chapter \ref{sec:uncertainties}.
-
-%\begin{table}[htp]
-%  \caption{The correction factor applied to the triggering muon, as a function of its $\pt$ and $\eta$, in simulated events.}
-%  \label{tab:muTrgCorrs}
-%  \centering
-%  \begin{tabular}{ccccc}
-%	  \hline
-%	  $53 < \pt < 140$ & & & & \\
-%	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
-%	  \MC correction  & $0.971$ & $0.964$ & $0.961$ & $0.951$  \\
-%	  \MC correction uncertainty & $0.00079$ & $0.0021$ & $0.0013$ & $0.0043$  \\
-%	  \hline
-%	  $140 < \pt$ & & & & \\
-%	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
-%	  \MC correction  & $0.971$ & $0.999$ & $0.999$ & $1.04$  \\
-%	  \MC correction uncertainty & $0.0076$ & $0.025$ & $0.015$ & $0.051$  \\
-%	  \hline
-%  \end{tabular}
-%\end{table}
+The muon reconstruction and selection efficiencies differed between simulations and data, and 
+were corrected in two ways.  The difference in trigger efficiency, and reconstruction and ID selection 
+efficiencies were corrected by applying multiplicative weights for each selected muon in every simulated event.  
+The weights were calculated based on the charges and kinematic variables of selected muons, and varied between 
+0.95 (5\% decrease) and 1.04 (4\% increase) for the trigger efficiency weight, and between 1.0 and 0.97 (3\% 
+decrease) for the combined reconstruction and ID selection efficiency weight.  The remaining difference in 
+selection efficiency was caused by a difference in muon $\pt$ scale and resolution between data and simulations.  
+The $\pt$ scale and resolution difference was corrected by adjusting the $\pt$ of muons in data and simulations, 
+before applying $\pt$ selections.  The adjustments were derived by comparing muon kinematic variables in 
+$Z \rightarrow \mu\mu$ decays from data and simulated events.
 
 
 \section{Offline Electron Selection}
 \label{sec:electronSelection}
-Electron reconstruction started with the reconstruction of ECAL energy clusters.  Electrons that impinged 
-on the ECAL showered and lost substantially all of their energy in 5 $\times$ 5 crystal, and these 25 crystals 
-were reconstructed as individual superclusters (SCs).  In tandem with ECAL SC reconstruction, electron tracks 
-were reconstructed from silicon tracker measurements using a dedicated electron algorithm.  On average an electron 
-lost 33\% of its initial energy to bremsstrahlung in the tracker, and the electron track reconstruction algorithm 
-estimated this energy loss for tracks indicative of electrons.  Tracks were subsequently extrapolated to the 
-ECAL, and electrons were identified as tracks that geometrically matched ECAL SCs.  The electron energy was 
-taken from the SC, but its $\eta$ and $\phi$ were obtained from the track.
-%The SC reconstruction algorithm was optimized to detect real electron energy deposits, typically two crystals 
-%wide or smaller in $\eta$, but large in $\phi$ due to electron bremsstrahlung in the magnetic field and energy 
-%lost to interactions with the tracker, with high efficiency.  
-%Independent of SC reconstruction, electron 
-%tracks were reconstructed from silicon tracker measurements using a specialized electron track reconstruction 
-%algorithm.  On average a relativistic electron that traverses the entire silicon tracker will lose 33\% of 
-%its initial energy to bremsstrahlung in the tracker hardware.  The dedicated electron track reconstruction 
-%algorithm took this significant average energy loss into consideration when building tracks from tracker 
-%measurements.  Following track and SC reconstruction, tracks were extrapolated to the ECAL, and each electron 
-%was formed from one SC and one or three tracks, whose extrapolated positions matched the ECAL SC.  Three track 
-%combinations were allowed because a hard scatter between an electron and the tracker could produce an $e^{+}e^{-}$ 
-%pair in the tracker with sufficient energy to reach the ECAL.  The energy of each electron was taken from 
-%the ECAL, but its $\eta$ and $\phi$ were obtained from the reconstructed track.
-
-Following electron reconstruction and energy measurement, electrons were required to pass $\Et$ and identification 
-selections.  These requirements were applied identically to events in data and simulations.  
-Similar to muon $\pt$s, electrons were required to have $\Et > 53 \GeV$ to increase sensitivity to a \WR signal.  
-After the $\Et$ cut, electrons were required to pass the following identification selections:
+Reconstructed electrons were filtered by kinematic and identification requirements to select electrons consistent 
+with those expected from \WR decays.  Each event was required to have two electrons reconstructed with 
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\pt > 60$ $\GeV$.  
+Then, selected electrons were required to pass the following identification selections:
 
 \begin{itemize}
-	\item The extrapolated track position and SC seed crystal position differed by less than 1 crystal width in $\eta$, and 
-		about 3 crystal widths in $\phi$.
-	\item For endcap electrons ($1.567 < |\eta| < 2.5$), at least 90\% of the ECAL SC energy was measured in a 2 crystal wide 
-		region in $\eta$.
-	\item For barrel electrons ($|\eta| < 1.44$), at least 94\% (83\%) of the SC energy was measured in a 2 (1) crystal wide 
-		region in $\eta$.
-	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.05 + 1/E_{SC}$ in the barrel, $< 0.05 + 5/E_{SC}$ in the endcap.
-	\item In a cone of radius $\Delta R =$ 0.3 centered on the electron:
+	\item For endcap electrons, at least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
+	\item For barrel electrons, at least 94\% (83\%) of the SC energy was measured in a region 2 (1) crystals wide 
+		in $\eta$.
+	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy $E_{SC}$ was $< 0.05 + 1/E_{SC}$ 
+		in the barrel, and $< 0.05 + 5/E_{SC}$ in the endcap.
+	\item In a cone of radius $\Delta R =$ 0.3 centered on the electron's $(\eta, \phi)$ position:
 	\begin{itemize}
-		\item The $\Sigma \pt$ of all tracks excluding the electron track was low, $\Sigma \pt < 5$ \GeV.
-		\item The calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
-			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$, where $\rho =$ the neutral hadron energy per unit $\eta,\phi$ area, 
-			and in the barrel $\alpha = \Et$ of the electron, and in the endcap $= \Et - 50$ of the electron.
+		\item The $\sum \pt$ of all tracks excluding the electron track was low, $\sum \pt < 5$ $\GeV$.
+		\item The total calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
+			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$.  $\rho$ was the neutral hadron energy per unit $\eta,\phi$ area, 
+			$\alpha$ in the barrel was the electron $\Et$, and $\alpha$ in the endcap was the electron $\Et$ minus 50 $\GeV$.
 	\end{itemize}
-	\item The number of silicon pixel or inner silicon strip layers that were not hit by the electron track was one or less. 
-	\item The distance $\Delta_{xy}$ between the electron track origin and primary vertex in the $x$, $y$ plane was small, 
-		$\Delta_{xy} < 0.2$ \mm in the barrel tracker, or $\Delta_{xy} < 0.5$ \mm in the endcap tracker.
+	\item The electron's track extrapolated to the $(\eta, \phi)$ position of its SC seed crystal within 1 crystal width in 
+		$\eta$, and within $\sim$3 crystal widths in $\phi$.
+	\item The electron track missed 1 or fewer layers in the silicon pixel or inner silicon strip detectors.
+	\item The electron track origin and its reconstructed vertex were separated by a small distance in the $x,y$ plane, 
+		$\Delta_{xy} < 0.2$ \mm in the tracker barrel, and $\Delta_{xy} < 0.5$ \mm in the tracker endcap.
 \end{itemize}
 
-There were known differences between simulations and data that effected the electron reconstruction and selection 
-efficiencies.  These differences were corrected by applying event weights to electrons in simulated events, and energy 
-corrections to electrons in data and simulated events.  The double electron $\Et > 33 \GeV$ trigger had the same 
-efficiency in data and simulations for reconstructed electrons with $\Et > 53$ \GeV, so no trigger correction 
-was applied.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow ee$ 
-events in data and simulations, it was known that the electron energy scale and resolution differed between simulations 
-and data.  The $\Et$ of electrons in data and simulations were corrected based on their $\eta$, $\phi$, initial $\Et$ 
-and ECAL shower shape to bring the electron energy scale and resolution in data and simulations into agreement.  
-These corrections were applied before the $\Et > 53 \GeV$ cut mentioned earlier.  Additional weights were applied 
-to every simulated electron to eliminate the difference in electron reconstruction and identification selection 
-efficiencies between data and simulations.  A weight of 0.982 (1.8\% decrease) was applied to all simulated electrons to account for 
-differences in reconstruction efficiency, and an additional weight of 0.989 (1.1\% decrease) was applied to all simulated electrons to 
-account for differences in identification selection efficiency.  The effect of uncertainties on these weights was 
-small, and is discussed in Chapter \ref{sec:uncertainties}.
+If more than two electrons passed all kinematic and identification selections, the two highest $\pt$ electrons 
+were selected.
+
+The electron reconstruction and selection efficiencies differed between simulations and data, and were corrected 
+in two ways.  The double electron trigger had the same efficiency in data and simulations, so no trigger efficiency 
+correction was needed.  The difference in reconstruction and ID selection efficiencies were corrected by applying 
+multiplicative weights for each selected electron in every simulated event.  For each selected electron, a weight of 
+0.982 (1.8\% decrease) resolved the reconstruction efficiency difference, and a weight of 0.989 (1.1\% decrease) 
+corrected the ID selection efficiency difference.  The remaining difference in selection efficiency was caused by 
+a difference in electron $\Et$ scale and resolution between data and simulations.  The $\Et$ scale and resolution 
+difference was corrected by adjusting the $\Et$ of electrons in data and simulations, before applying $\Et$ 
+selections.  The adjustments were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
+from data and simulated events.
 
 
 \section{Offline Jet Selection}
 \label{sec:jetSelection}
-Jets produced in proton-proton collisions contained long lived charged and neutral hadrons, photons from 
-$\pi^{0} \rightarrow \gamma\gamma$ decays, and charged leptons from heavy quark decays.  Jets reconstruction began 
-by reconstructing electrons, muons, photons, and charged and neutral hadrons.  Photons were reconstructed using the same algorithm 
-used to reconstruct electrons, excluding matching ECAL SCs to reconstructed tracks.  On average, a hadron that 
-impinged on the ECAL had one significant interaction with the PbWO$_{4}$ before entering 
-the HCAL.  As a result, reconstructing charged and neutral hadrons started with the ECAL.  A modified version of 
-the electron SC reconstruction algorithm, with looser requirements on the $\eta$ distribution of energy 
-in the SC, was used to reconstruct hadronic energy clusters in the ECAL.  Then, energy deposited in individual 
-HCAL towers was reconstructed into tower clusters (TC).  Independently, tracks not consistent with muons or 
-electrons were reconstructed using silicon tracker measurements.  Every neutral hadron was built from an HCAL TC, and 
-an ECAL SC if a geometric match was found.  Hadron tracks were extrapolated from the tracker to the HCAL, and 
-each charged hadron was built from a TC and geometrically matching track, and an ECAL SC if a geometric match 
-with the track was found.  After all particles were reconstructed, jets were reconstructed starting with 
-charged particle tracks.  In each event, charged particles that traced back to the interaction 
-vertex with the highest track $\Sigma \pt$ (the primary vertex) were used to tag different jets and their 
-directions.  Then, all charged particles from the primary vertex, and all photons and neutral hadrons in the event 
-were placed in a list of jet constituent candidates, which was subsequently analyzed using the anti-$k_{T}$ 
-algorithm \cite{antikt}.  Jet constituents were iteratively clustered into jets based on the $\pt$ of each 
-constituent and its $(\eta,\phi)$ distance from the jet axis defined by a charged particle track.  The majority 
-of jet constituents fell within $\Delta R < 0.4$ of the jet axis, but it was possible for low energy constituents to 
-be futher away.  A jet's energy was defined as the total energy of its constituents, and its $(\eta,\phi)$ 
-trajectory was the $\pt$-averaged trajectory of all charged constituents.
-
-%This algorithm took the $i^{th}$ particle from the list of jet constituents, and
-%calculated the distance parameter $d_{ij}$
-%
-%\begin{equation}
-%	$d_{ij} = min(k_{Ti}^{-2},k_{Tj}^{-2})\frac{\Delta^{2}}{R^{2}}$
-%\end{equation}
-%
-%using the $j^{th}$ particle in the same list, where $\Delta$ is the angular separation between the $i^{th}$ 
-%and $j^{th}$ particle, R is 0.4, and $k_{Ti}$ is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle 
-%had $d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle was a jet constituent and was removed from the 
-%constituent list and placed in a new list $L_{1}$.  This procedure was repeated for all particles in the list of 
-%jet constituents, then repeated for all elements in the new list $L_{1}$.  The iteration over all particles in 
-%the newly created list continued N times, creating N lists, until the lists $L_{N}$ and $L_{N-1}$ had the same 
-%number of elements.  At the end, jets were produced from clusters of individually reconstructed particles.
-
-Once the jets were clustered, their raw energies were corrected in several steps.  
+The energy of reconstructed jets was corrected in several steps.  
+%RESUME HERE%
 Neutral hadrons produced by pileup interactions can still be clustered into jets, so the first correction reduces 
 the energy of every jet in a data or simulations based on the jet area and the total neutral hadron energy density 
 in the event \cite{pileup1,pileup2}.  Subsequently, energy corrections based on jet $\eta$ and $\pt$ 
