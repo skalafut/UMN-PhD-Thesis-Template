@@ -51,7 +51,23 @@ the silicon tracker to the last muon detector \cite{cmsMuonRecoRunTwo}.  Each al
 muon detector and silicon tracker measurements in a different way, and could exclude measurements 
 with large uncertainty.  Each continuous track fitted to silicon tracker and muon detector data was 
 identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
-fitted track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.
+fitted track with the lowest fit and momentum uncertainties determined the reconstructed muon momenta.  
+This procedure improved muon momentum resolution for muons with $\pt > 200$ $\GeV$, which were 
+expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as shown in Table 
+\ref{tab:wrHighPtMuons}.
+
+\begin{table}[h]
+	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
+	($\mnul = \frac{1}{2}\mWR$)}
+	\label{tab:wrHighPtMuons}
+	\centering
+	\begin{tabular}{c|c}
+		\mWR ($\TeV$) & Fraction of events with at least one high-$\pt$ muons (\%) \\  \hline
+		1.0 &  80.  \\
+		2.0 &  95.  \\ 
+		3.0 &  98.  \\ \hline
+	\end{tabular}
+\end{table}
 
 
 \section{Jet Reconstruction}
