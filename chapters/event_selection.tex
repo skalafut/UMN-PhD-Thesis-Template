@@ -15,38 +15,41 @@ and $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ decays.
 
 \section{\WR and \nul Signal Features}
 \label{sec:signalFeatures}
-Lepton and jet selections were driven by several model-independent features of \WR and \nul decays.  The \WR mass 
+Lepton and jet selections were driven by model-independent features of \WR and \nul decays, and kinematics 
+of ST backgrounds.  The \WR mass 
 (\mWR) was expected to be large, 2 $\TeV$ or more, relative to the center-of-mass collision energy of 13 $\TeV$, 
-so \WR bosons would have been produced with low momentum.  Therefore, the charged lepton and jet decay 
+so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay 
 products, on average, were distributed uniformly in $\phi$, and concentrated in the region $|\eta| < 2.4$, 
 as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
-\mWR yielded leptons and jets with several hundred $\GeV$ or more of $\pt$, as shown in 
-Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  The $\eta$ and $\pt$ distributions of final state 
-particles, and the large expected \mWR motivated the following selections on charged leptons and jets in 
-every event:
+\mWR produced leptons and jets with several hundred $\GeV$ or more of $\pt$ or $\Et$, as shown in 
+Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  In contrast, the majority of ST background events 
+produced leptons and jets with $\pt$ below 100 $\GeV$.  The lepton and jet kinematic distributions, and 
+the large expected \mWR motivated the following event selections:
 
 \begin{itemize}
 	\item Two leptons were reconstructed with $\pt$ or $\Et > 53$ $\GeV$, and one had $\pt$ or $\Et > 60$ $\GeV$.
 	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
 	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
-	\item The invariant mass $\Mlljj$ of the selected leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
+	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-The large predicted mass difference between the charged lepton $\ell$ and heavy neutrino \nul yielded 
-additional distinguishing features of the signal.  To conserve momentum in the $\WR \rightarrow \ell \nul$ 
-decay, the charged lepton $\ell$ recoiled against the heavier neutrino \nul.  Then the \nul decayed to a 
-second charged lepton and two jets that recoiled against the first charged lepton.  Thus the lepton pair, 
-on average, had a large dilepton mass $\Mll$ (Figure \ref{fig:wrSigMll}), and the first charged 
-lepton\footnote{produced with the \nul} was often well separated in $(\eta, \phi)$ from the \nul decay 
-products (Figure \ref{fig:wrLeadLeptJetSeparation}).  The large expected neutrino mass \mnul, hundreds of 
-$\GeV$ or more, needed to predict low ST neutrino masses usually resulted in large $(\eta, \phi)$ separations 
-between \nul decay products, as shown in Figure \ref{fig:wrSubleadLeptJetSeparation}.  The $(\eta, \phi)$ 
-separation between charged leptons and jets, and the recoil of one charged lepton against the \nul 
-decay products motivated additional event selections:
+The large expected mass difference between any charged lepton $\ell$ and heavy neutrino \nul yielded 
+additional distinguishing features of \WR and \nul decays.  To conserve momentum in the $\WR \rightarrow \ell_{1} \nul$ 
+decay, the charged lepton $\ell_{1}$ recoiled against the heavier neutrino \nul.  Then the \nul decayed to a 
+second charged lepton $\ell_{2}$ and two jets, which all recoiled against $\ell_{1}$.  Thus the lepton pair $\ell_{1}\ell_{2}$, 
+on average, had a large dilepton mass $\Mll$ (Table \ref{tab:wrMll}), and $\ell_{1}$ was well separated 
+in $(\eta, \phi)$ from the \nul decay 
+products (Figure \ref{fig:wrLeadLeptJetSeparation}).  In addition, the large expected neutrino mass \mnul, hundreds of 
+$\GeV$ or more, needed to predict low ST neutrino masses resulted in large $(\eta, \phi)$ separations 
+between $\ell_{2}$ and both jets, as shown in Figure \ref{fig:wrSubleadLeptJetSeparation}.  Meanwhile, \DY 
+and diboson (WW, WZ, ZZ) background events were concentrated in the $\Mll < 180 \GeV$ region.  Also, in 
+multi-jet (QCD) background events with a reconstructed lepton, the lepton was often close to a reconstructed 
+jet.  The $(\eta, \phi)$ separation between leptons and jets, and the recoil of $\ell_{1}$ against $\ell_{2}$ 
+motivated additional event selections:
 
 \begin{itemize}
-	\item Each selected lepton was separated from both selected jets by $\Delta R > 0.4$.
-	\item The dilepton mass $\Mll$ of the two selected leptons exceeded $\Mll > 200$ $\GeV$.
+	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
+	\item The dilepton mass $\Mll$ of the two reconstructed leptons exceeded $\Mll > 200$ $\GeV$.
 \end{itemize}
 
 
@@ -103,13 +106,25 @@ decay products motivated additional event selections:
 		$\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
 \end{figure}
 
-\begin{figure}[btp]
+\begin{table}[h]
+	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
+	\label{tab:wrMll}
 	\centering
-	\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
-	\label{fig:wrSigMll}
-	\caption{The distribution of the dilepton mass $\Mll$ for $\WR \rightarrow \mu\mu jj$ events with 
-	$\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
-\end{figure}
+	\begin{tabular}{c|c}
+		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
+		1.0 &  88.  \\
+		2.0 &  98.  \\
+		3.0 &  99.  \\ \hline
+	\end{tabular}
+\end{table}
+
+%\begin{figure}[btp]
+%	\centering
+%	\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	\label{fig:wrSigMll}
+%	\caption{The dilepton mass $\Mll$ distribution for $\WR \rightarrow \mu\mu jj$ events with 
+%	$\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+%\end{figure}
 
 \begin{figure}[btp]
 	\centering
@@ -333,17 +348,17 @@ $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ hypotheses, and set \mWR and \mnul exclusio
 
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
-The energies of reconstructed muons were corrected before applying any selections.  Muon energy 
-corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
-between data and simulated events.  The corrections were applied to resolve the difference in 
-muon $\pt$ selection efficiency between data and simulated events.
+The energies of reconstructed muons in data and simulations were corrected before applying any selections.  
+Muon energy corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
+between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
+muon $\pt$ selections between data and simulated events.
 
-Following energy corrections, muon kinematic and identification selections were applied to select muons consistent 
+Following energy corrections, muon kinematic and identification (ID) selections were applied to select muons consistent 
 with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
-$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  Reducing the 
-lower $\pt$ selection was explored, but a looser $\pt$ selection reduced the sensitivity to signals 
-with $\mWR > 2$ $\TeV$, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons that passed kinematic 
-selections were filtered with the following identification selections:
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  
+Reducing the lower $\pt$ selection was explored, but was found to increase ST 
+backgrounds without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons 
+passing kinematic selections were filtered with the following ID selections:
 
 \begin{itemize}
 	\item Considering the muon's track reconstructed in the silicon tracker:
@@ -362,7 +377,7 @@ selections were filtered with the following identification selections:
 \end{itemize}
 
 \begin{table}[h]
-	\caption{Signal (S) over background (B) sensitivity, represented as S/$\sqrt{B}$, for low and high $\mu$ $\pt$ 
+	\caption{Signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\mu$ $\pt$ 
 	selections.  The background is estimated from simulated \DY and t$\bar{t}$, and the signal is estimated 
 	from simulated $\WR \rightarrow \mu\mu jj$ with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 	\label{tab:lowerMuonPtCuts}
@@ -374,7 +389,7 @@ selections were filtered with the following identification selections:
 	\end{tabular}
 \end{table}
 
-If an event contained more than two muons that passed all kinematic and identification selections, the two 
+If an event contained more than two muons passing all kinematic and ID selections, the two 
 highest $\pt$ muons were selected.
 
 The muon reconstruction, trigger and ID selection efficiencies differed between simulations and data, and 
@@ -387,15 +402,15 @@ every event.
 
 \section{Offline Electron Selection}
 \label{sec:electronSelection}
-The energies of reconstructed electrons were corrected before applying any selections.  Electron energy 
+The energies of reconstructed electrons in data and simulations were corrected before applying any selections.  Electron energy 
 corrections were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
-between data and simulated events.  The corrections were applied to resolve the difference in electron $\Et$ 
-selection efficiency between data and simulated events.
+between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
+electron $\Et$ selections between data and simulated events.
 
-Following energy corrections, electron kinematic and identification selections were applied to select electrons 
+Following energy corrections, electron kinematic and identification (ID) selections were applied to select electrons 
 consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
 with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\Et > 60$ $\GeV$.  
-Electrons that passed kinematic selections were filtered with the following identification selections:
+Electrons passing kinematic selections were filtered with the following ID selections:
 
 \begin{itemize}
 	\item For endcap electrons, at least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
@@ -417,7 +432,7 @@ Electrons that passed kinematic selections were filtered with the following iden
 		$\Delta_{xy} < 0.2$ \mm in the tracker barrel, and $\Delta_{xy} < 0.5$ \mm in the tracker endcap.
 \end{itemize}
 
-If an event contained more than two electrons that passed all kinematic and identification selections, the two 
+If an event contained more than two electrons passing all kinematic and ID selections, the two 
 highest $\Et$ electrons were selected.
 
 The electron reconstruction and ID selection efficiencies\footnote{The electron trigger efficiency was the same 
@@ -429,120 +444,73 @@ weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were 
 
 \section{Offline Jet Selection}
 \label{sec:jetSelection}
-The energy of reconstructed jets was corrected in several steps.  
-%RESUME HERE%
-Neutral hadrons produced by pileup interactions can still be clustered into jets, so the first correction reduces 
-the energy of every jet in a data or simulations based on the jet area and the total neutral hadron energy density 
-in the event \cite{pileup1,pileup2}.  Subsequently, energy corrections based on jet $\eta$ and $\pt$ 
-were applied.  These corrections, derived from \MC and applied to jets in data and simulated events, accomplished 
-two tasks.  First, the $\pt$ of reconstructed jets in simulated events was brought into better agreement with the 
-true (quark, gluon, photon and lepton) jet $\pt$.  Second, the response of the calorimeters to reconstructed jet 
-constituents in simulations and data were brought into better agreement.  More details on jet energy corrections, 
-such as the types of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
+As was done with leptons, the energies of reconstructed jets in data and simulations were corrected before applying 
+any selections.  Jet energies in data and simulations were increased by neutral hadrons from pileup interactions, so 
+the first correction reduced each jet's energy based on its area and the neutral hadron energy density measured in the 
+event \cite{pileup1,pileup2}.  Subsequent corrections were derived from simulations and applied to data and simulated 
+events.  These corrections resolved the difference in efficiency of jet $\pt$ selections between data and simulated 
+events, and are described in more detail elsewhere \cite{jetpaper}.
 
-After jets in data and simulation were reconstructed and corrected, jet identification and energy selections 
-were applied to increase sensitivity to jets coming from \WR decays.  The identification criteria required each 
-jet to have:
+Following energy corrections, jet kinematic and identification (ID) selections were applied to select jets consistent 
+with those expected from \WR decays.  Each event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ 
+and $|\eta| < 2.4$.  Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds 
+without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic 
+selections were filtered with the following ID selections:
 
 \begin{itemize}
-	\item $|\eta| \leq 2.4$
-	\item less than 90\% of its energy came from neutral hadrons
-	\item less than 90\% of its energy came from photons
-	\item at least 2 constituents (from reconstructed charged or neutral particles)
-	\item more than 0\% of its energy came from charged hadrons
-	\item at least one constituent was a charged hadron
-	\item less than 99\% of its energy came from electrons
+	\item The jet had at least 2 constituents.
+	\item The jet had at least 1 charged hadron constituent.
+	\item More than 0\% of the total jet energy came from charged hadrons.
+	\item Less than 90\% of the total jet energy came from neutral hadrons.
+	\item Less than 90\% of the total jet energy came from photons.
+	\item Less than 99\% of the total jet energy came from electrons.
 \end{itemize}
 
-These requirements increased the fraction of selected jets that originated from real hadronic activity expected in the 
-$\WR \rightarrow \ell\ell jj$ decay.  As shown in Table \ref{tab:wrHighPtJets}, LRS models predicted that real jets 
-produced in \WR decays had high $\pt$.  Jets were required to have $\pt > 40 \GeV$ to increase sensitivity to 
-a \WR signal relative to expected ST backgrounds.  As shown in Table \ref{tab:lowerJetPtCuts}, a lower jet $\pt$ cut 
-increased ST backgrounds without a corresponding increase in \WR signal.
-
 \begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events that had two jets with $\pt > 40$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrHighPtJets}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with two high-$\pt$ jets (\%) \\  \hline
-		1.0 &  80.  \\
-		2.0 &  92.  \\
-		3.0 &  94.  \\ \hline
-	\end{tabular}
-\end{table}
-
-
-\begin{table}[h]
-	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $\pt$ 
-		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events 
-	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
+	\caption{Signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
+	selections on one jet.  The background is estimated from simulated \DY and t$\bar{t}$, and the 
+	signal is estimated from simulated $\WR \rightarrow \mu\mu jj$ with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 	\label{tab:lowerJetPtCuts}
 	\centering
 	\begin{tabular}{c|c}
-		jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		jet $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
 		30 &  12.1  \\
 		40 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
 
+If an event contained more than two jets passing all kinematic and ID selections, the two highest $\pt$ jets were selected.
+
+No jet reconstruction or ID selection weights were needed because the reconstruction and ID selection efficiencies were 
+the same in data and simulated events within uncertainties.
+
 
 \section{\WR Candidate Selection}
 \label{sec:wrCandSelection}
-Following the reconstruction and selection of electrons, muons and jets, a \WR candidate in every $\mu\mu$ (ee) 
--channel event was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
-highest $\pt$ jets passing the $\pt$ or $\Et$ selections described earlier.  In the $e\mu$ -channel used for top quark background estimation, the highest $\pt$ muon and highest $\Et$ 
-electron were used to build an $e\mu jj$ candidate.  LRS models predicted one lepton from \WR decays to have 
-higher energy than the other, so ,to increase sensitivity to a \WR signal, one lepton was required to have $\pt$ or 
-$\Et > 60$ \GeV.  Furthermore, due to the heavy $\nul$ recoiling off the $\ell$ daughter of the \WR, it was predicted that 
-the two leptons in \WR decays would have a high dilepton mass (Table \ref{tab:wrMll}).  To further increase sensitivity to a \WR signal over expected 
-backgrounds, especially \DY+jets, the two selected leptons were required to have mass $\Mll > 200$ \GeV.  In events 
-that passed the high $\pt$ lepton and $\Mll$ selections, one or both leptons could have come from jets with $\pt \gg 100 \GeV$ 
-that produced an energetic lepton in the tracker.  To reduce the fraction of such events passing the kinematic 
-selection, the two selected jets were required to be separated from the two selected leptons by $\Delta R > 0.4$:
+In each event passing selections, a \WR candidate was built from selected leptons and jets, and filtered with additional 
+kinematic selections:
 
 \begin{itemize}
-	\item $\Delta R(\ell_{1}, j_{1}) > 0.4$
-	\item $\Delta R(\ell_{1}, j_{2}) > 0.4$
-	\item $\Delta R(\ell_{2}, j_{1}) > 0.4$
-	\item $\Delta R(\ell_{2}, j_{2}) > 0.4$
+	\item Each selected lepton was separated from the other lepton and both selected jets by $\Delta R > 0.4$.
+	\item The dilepton mass $\Mll$ of the two selected leptons exceeded $\Mll > 200$ $\GeV$.
+	\item The invariant mass $\Mlljj$ of the selected leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrMll}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
-		1.0 &  88.  \\
-		2.0 &  98.  \\
-		3.0 &  99.  \\ \hline
-	\end{tabular}
-\end{table}
+The full trigger, kinematic, and ID selection efficiency in \WR signal events exceeded 50\% (70\%) in the $ee$-channel 
+($\mu\mu$-channel), as shown in Figure \ref{fig:wrRecoSelectionEff}.  The efficiency was lower in the $ee$-channel due 
+to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter ID selections for electrons relative to muons.  
 
-
-As there were only charged leptons and jets in the final states studied in this search, the dilepton plus dijet mass 
-of the four final state particles (\Mlljj) averaged over many events was consistent with \mWR predicted by 
-LRS models.  To further increase sensitivity to a \WR signal relative to expected backgrounds, an effective \WR mass 
-cut was applied by requiring the final state lepton plus jet mass $\Mlljj > 600$ \GeV.  Nearly all events from \WR \MC 
-datasets passed this cut with high efficiency, as shown in Table \ref{tab:wrMlljj}.
-
-The full trigger and kinematic selection efficiency in fully reconstructed \WR signal \MC events exceeded 50\% (70\%) 
-in the ee ($\mu\mu$) -channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The ee -channel had lower efficiency due 
-to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter identification requirements for electrons 
-relative to muons.
-
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton plus dijet mass $\Mlljj > 600$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrMlljj}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with high \Mlljj (\%) \\  \hline
-		1.0 &  99.  \\
-		2.0 &  100.  \\
-		3.0 &  100.  \\ \hline
-	\end{tabular}
-\end{table}
+%\begin{table}[h]
+%	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton plus dijet mass $\Mlljj > 600$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
+%	\label{tab:wrMlljj}
+%	\centering
+%	\begin{tabular}{c|c}
+%		\mWR (\TeV) & Fraction of events with high \Mlljj (\%) \\  \hline
+%		1.0 &  99.  \\
+%		2.0 &  100.  \\
+%		3.0 &  100.  \\ \hline
+%	\end{tabular}
+%\end{table}
 
 
 \begin{figure}[h]
@@ -554,6 +522,7 @@ events where both leptons were in the barrel $\eta$ region (BB), one was in the 
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 
+%RESUME HERE%
 LRS models predicted a signal from a \WR boson and heavy neutrino \nul manifested as an excess of events relative 
 to expected backgrounds in distributions of several lepton and jet kinematic variables, like $\pt$ and multi-particle 
 invariant masses.  Models differed in the shapes and magnitudes of predicted excesses, but all agreed on one point: 
