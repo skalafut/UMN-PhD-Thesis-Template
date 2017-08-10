@@ -333,12 +333,17 @@ $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ hypotheses, and set \mWR and \mnul exclusio
 
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
-Kinematic and identification selections were applied to reconstructed muons to select muons consistent 
+The energies of reconstructed muons were corrected before applying any selections.  Muon energy 
+corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
+between data and simulated events.  The corrections were applied to resolve the difference in 
+muon $\pt$ selection efficiency between data and simulated events.
+
+Following energy corrections, muon kinematic and identification selections were applied to select muons consistent 
 with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
 $\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  Reducing the 
 lower $\pt$ selection was explored, but a looser $\pt$ selection reduced the sensitivity to signals 
-with $\mWR > 2$ $\TeV$, as shown in Table \ref{tab:lowerMuonPtCuts}.  Then, selected muons were filtered 
-with the following identification selections:
+with $\mWR > 2$ $\TeV$, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons that passed kinematic 
+selections were filtered with the following identification selections:
 
 \begin{itemize}
 	\item Considering the muon's track reconstructed in the silicon tracker:
@@ -369,27 +374,28 @@ with the following identification selections:
 	\end{tabular}
 \end{table}
 
-If more than two muons passed all kinematic and identification selections, the two highest $\pt$ muons 
-were selected.
+If an event contained more than two muons that passed all kinematic and identification selections, the two 
+highest $\pt$ muons were selected.
 
-The muon reconstruction and selection efficiencies differed between simulations and data, and 
-were corrected in two ways.  The difference in trigger efficiency, and reconstruction and ID selection 
-efficiencies were corrected by applying multiplicative weights for each selected muon in every simulated event.  
-The weights were calculated based on the charges and kinematic variables of selected muons, and varied between 
-0.95 (5\% decrease) and 1.04 (4\% increase) for the trigger efficiency weight, and between 1.0 and 0.97 (3\% 
-decrease) for the combined reconstruction and ID selection efficiency weight.  The remaining difference in 
-selection efficiency was caused by a difference in muon $\pt$ scale and resolution between data and simulations.  
-The $\pt$ scale and resolution difference was corrected by adjusting the $\pt$ of muons in data and simulations, 
-before applying $\pt$ selections.  The adjustments were derived by comparing muon kinematic variables in 
-$Z \rightarrow \mu\mu$ decays from data and simulated events.
+The muon reconstruction, trigger and ID selection efficiencies differed between simulations and data, and 
+the differences were corrected by applying multiplicative weights to simulated events.  Trigger 
+and reconstruction+ID weights were calculated as functions of the charge and kinematic variables of selected 
+muons.  The trigger weight, between 0.95 (5\% decrease) and 1.04 (4\% increase), was applied once to every 
+event, and the reconstruction+ID weight, between 1.0 and 0.985 (1.5\% decrease), was applied twice to 
+every event.
 
 
 \section{Offline Electron Selection}
 \label{sec:electronSelection}
-Reconstructed electrons were filtered by kinematic and identification requirements to select electrons consistent 
-with those expected from \WR decays.  Each event was required to have two electrons reconstructed with 
-$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\pt > 60$ $\GeV$.  
-Then, selected electrons were required to pass the following identification selections:
+The energies of reconstructed electrons were corrected before applying any selections.  Electron energy 
+corrections were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
+between data and simulated events.  The corrections were applied to resolve the difference in electron $\Et$ 
+selection efficiency between data and simulated events.
+
+Following energy corrections, electron kinematic and identification selections were applied to select electrons 
+consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
+with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\Et > 60$ $\GeV$.  
+Electrons that passed kinematic selections were filtered with the following identification selections:
 
 \begin{itemize}
 	\item For endcap electrons, at least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
@@ -411,19 +417,14 @@ Then, selected electrons were required to pass the following identification sele
 		$\Delta_{xy} < 0.2$ \mm in the tracker barrel, and $\Delta_{xy} < 0.5$ \mm in the tracker endcap.
 \end{itemize}
 
-If more than two electrons passed all kinematic and identification selections, the two highest $\pt$ electrons 
-were selected.
+If an event contained more than two electrons that passed all kinematic and identification selections, the two 
+highest $\Et$ electrons were selected.
 
-The electron reconstruction and selection efficiencies differed between simulations and data, and were corrected 
-in two ways.  The double electron trigger had the same efficiency in data and simulations, so no trigger efficiency 
-correction was needed.  The difference in reconstruction and ID selection efficiencies were corrected by applying 
-multiplicative weights for each selected electron in every simulated event.  For each selected electron, a weight of 
-0.982 (1.8\% decrease) resolved the reconstruction efficiency difference, and a weight of 0.989 (1.1\% decrease) 
-corrected the ID selection efficiency difference.  The remaining difference in selection efficiency was caused by 
-a difference in electron $\Et$ scale and resolution between data and simulations.  The $\Et$ scale and resolution 
-difference was corrected by adjusting the $\Et$ of electrons in data and simulations, before applying $\Et$ 
-selections.  The adjustments were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
-from data and simulated events.
+The electron reconstruction and ID selection efficiencies\footnote{The electron trigger efficiency was the same 
+in data and simulated events within its uncertainty.} differed between simulations and data, and, again, 
+the differences were corrected by applying multiplicative weights to simulated events.  Fixed value reconstruction 
+and ID weights were calculated for electrons with $\Et > 53$ $\GeV$, inclusive of $\eta$.  The reconstruction 
+weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were applied twice to every event.
 
 
 \section{Offline Jet Selection}
