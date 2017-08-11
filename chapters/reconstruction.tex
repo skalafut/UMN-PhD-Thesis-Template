@@ -8,7 +8,17 @@
 Electrons, muons and jets expected from \WR and \nul decays were reconstructed from charged particle 
 tracks measured by the silicon tracker, and energy deposits measured by the calorimeters and muon 
 detectors.  The high expected energy of final state leptons and jets motivated the use of specific 
-lepton and jet reconstruction algorithms described herein.
+lepton and jet reconstruction algorithms described herein.  In general, these algorithms reconstructed 
+charged particles by matching calorimeter energy clusters to reconstructed tracks, and reconstructed 
+neutral particles from calorimeter energy clusters that did not match any reconstructed tracks.  
+Representative trajectories of electrons, muons, and hadrons are shown in Figure \ref{fig:particleTrajectories}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/flowOfParticlesThroughCMS.gif}
+	\caption{A typical trajectory of a muon and other particles travelling through CMS, from $European Laboratory for Particle Physics$.}
+	\label{fig:particleTrajectories}
+\end{figure}
 
 
 \section{Electron Reconstruction}
@@ -39,15 +49,15 @@ trajectories determined the directions of reconstructed muons.  Reconstructed tr
 initial muon momentum estimates that were further refined by muon detector measurements.
 
 Muons, on average, lost negligible amounts of energy before entering the muon detectors.  Hits in 
-muon chambers were reconstructed into helical tracks, and their radii of curvature enabled more precise 
-momentum measurements.  Muon detector tracks were extrapolated back to the silicon tracker, and 
+muon chambers were reconstructed into helical tracks, and measuring their radii of curvature improved 
+muon momentum resolution.  Muon detector tracks were extrapolated back to the silicon tracker, and 
 then the $\eta$ and $\phi$ of silicon tracker and muon detector tracks were compared.  Each 
 reconstructed muon was identified as a muon detector track whose trajectory matched a silicon 
-tracker track. 
+tracker track.
 
 The momentum of muons was determined using silicon tracker and muon detector measurements.  Four 
-reconstruction algorithms fitted four continuous tracks to silicon tracker and muon detector hits 
-to estimate the muon's trajectory through all of CMS \cite{cmsMuonRecoRunTwo}.  Each algorithm combined 
+reconstruction algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon detector hits 
+to estimate the muon's trajectory through all of CMS, represented in Figure \ref{fig:particleTrajectories}.  Each algorithm combined 
 muon detector and silicon tracker measurements in a different way, and could exclude measurements 
 with large uncertainty.  The precision of each continuous track was 
 identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
