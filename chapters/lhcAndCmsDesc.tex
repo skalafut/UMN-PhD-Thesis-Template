@@ -58,13 +58,13 @@ were supported by a structure made mostly from iron, which stopped most particle
 Surrounding the magnet were the muon detectors, which resided in a magnetic field with strength between 1 and 3$\unit{T}$.  Three 
 different technologies - drift tubes (DT) in the lowest radiation regions, cathode strip chambers (CSC) in higher 
 radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In these detectors 
-muons travelled through pressurized gas chambers and ionized electrons from the gas along their 
-trajectories.  Within the chambers, electric fields accelerated the ionized electrons towards conducting wires.  Muons 
+muons travelled through pressurized gas chambers and ionized charges from the gas along their 
+trajectories.  Within the chambers, electric fields accelerated ionized charges towards conducting wires.  Muons 
 were detected by measuring the charge collected by conducting wires.
 
 Due to the enormous rate of diffractive and inelastic pp collisions where energy was detected, a two tiered trigger 
-system selected events where CMS detected charged leptons, hadronic jets, photons, neutrinos or combinations 
-thereof.  The first tier of the trigger system processed information from the ECAL, the HCAL and the muon 
+system selected events during collisions for offline reconstruction.  The first tier of the trigger system processed 
+information from the ECAL, the HCAL and the muon 
 detectors in small regions where high energy particles were detected.  Then, these high energy regions of interest 
 were processed by the second tier trigger system.  In the second tier, reconstruction software 
 was run in regions of interest to identify charged leptons, photons, jets and neutrinos.  If a pp collision event produced 
@@ -80,7 +80,7 @@ Situated near Geneva, Switzerland and spanning the French-Swiss border, the CERN
 two counter-rotating proton beams in a 27 km circular tunnel \cite{lhcTDR} to an energy of 6.5 $\TeV$ in 2015.  The two beams 
 collided at several points along the tunnel, and the CMS experiment was built around one of these points.
 
-Several accelerator stages, shown in Figure \ref{fig:accelComplex} \cite{cernAccelSys}, were used to create each proton beam in the LHC.  
+Several accelerator stages, shown in Figure \ref{fig:accelComplex}, were used to create each LHC proton beam.  
 Each proton beam began as isolated proton bunches ionized from hydrogen gas.  Proton bunches were then accelerated to higher 
 energies in 3 accelerator stages before they were injected into the LHC.  Once enough proton bunches were 
 collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proton beams with proton bunches separated by 
@@ -90,7 +90,7 @@ collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proto
 	\centering
 	\includegraphics[width=1\textwidth]{figures/CERNAcceleratorComplex.png}
 	\caption{The CERN accelerator complex.  Protons are ionized from hydrogen, then are accelerated to higher 
-	energies by LINAC 2, the PS, and finally the SPS before entering the LHC. from $CERN$}
+	energies by LINAC 2, the PS, and finally the SPS before entering the LHC.  From $CERN$}
 	\label{fig:accelComplex}
 \end{figure}
 
@@ -98,17 +98,16 @@ collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proto
 In the LHC tunnel, superconducting radio-frequency (RF) cavities accelerated proton bunches, and magnets steered and 
 focused the beams towards the collision point at the heart of CMS.  
 During 2015 data taking the LHC collided protons at intensities approaching $6 \times 10^{33} \frac{1}{cm^{2}s}$ ($\sim 0.02 \frac{1}{fb\thickspace hr}$).  
-From September through November 2015, CMS recorded 2.6 $fb^{-1}$ of collision events at $\sqrt{s} =$ 13 $\TeV$.
 
 \section{The CMS Coordinate System and Kinematic Variables}
 \label{sec:coordinateSystemAndKinematicVars}
-A coordinate system and kinematic variables were used to characterize the kinematics of detected particles.  
-The right-handed coordinate system is used in which the $z$ axis points in the direction 
-of the counter-clockwise rotating beam, the $y$ axis points up towards the surface, and the $x$ axis points towards 
-the center of the LHC ring, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
-trajectories were measured using two angular variables, $\phi$ and $\eta$, that were defined in terms of angles 
-in two coordinate planes.  $\phi$ is defined as the angle in the $x-y$ plane, and took values between 0 and $2\pi$.  
-The angle $\theta$ is defined in the $y-z$ plane, and is 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis.  
+A right-handed coordinate system and kinematic variables are used to characterize the kinematics of detected particles.  
+The coordinate system defines the $z$ axis pointing in the counter-clockwise direction, the $y$ axis 
+points at the surface, and the $x$ axis points at 
+the LHC ring center, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
+trajectories are described using two angular variables, $\phi$ and $\eta$, that are defined 
+in separate coordinate planes.  $\phi$ is the angle in the $x-y$ plane, and spanned values between 0 and $2\pi$.  
+$\theta$ is defined in the $y-z$ plane, and is 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis.  
 $\theta$ is transformed into pseudorapidity $\eta$ through the following function:
 
 \begin{equation}
@@ -123,32 +122,33 @@ $\theta$ is transformed into pseudorapidity $\eta$ through the following functio
 	\label{fig:cmsAndCoordinateSystem}
 \end{figure}
 
-A pseudorapidity of 0 points along the $y$ axis, while a pseudorapidity of $\infty$ points along the $z$ axis.
+$\eta$ of 0 points along the $y$ axis, while $\eta$ of $\infty$ points along the $z$ axis.
 An equivalent definition of pseudorapidity in terms of the particle energy E and longitudinal 
-momentum $p_{z}$ in the massless particle limit was:
+momentum $p_{z}$ in the massless particle limit is:
 
 \begin{equation}
 	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
 \end{equation}
 
-Pseudorapidity was used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
+Pseudorapidity is used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
 produced by pp interactions were often boosted along the $z$ axis, but the degree of boost was never well 
-defined because the momenta of the interacting partons could never be measured.  This boost affected the 
-trajectories of particles in $\theta$, but did not affect particle trajectories measured in $\eta$.  In 
+defined because the momenta of the interacting partons was unknown.  This boost affected the 
+trajectories of particles in $\theta$, but did not affect particle trajectories in $\eta$.  In 
 addition, the particles that caused radiation damage in CMS sub-detector systems were produced at 
 a rate that scaled linearly with $\eta$.  Thus, in discussions where radiation damage or particle 
 isolation played a role, ideas could be more clearly articulated using $\eta$.
 
-The main variables used to quantify particle energies were transverse energy 
-$\Et \equiv E/\cosh{\eta}$ and transverse momentum $\pt \equiv |p|/\cosh{\eta}$, while the distance between 
-a particle and another point in the $(\eta, \phi)$ space was measured as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  
-Transverse momentum $\pt$, the component of momentum perpendicular to the proton beam axis, and transverse energy $\Et$, the 
-analogous form of energy, were used because both were insensitive to the unknown $z$ momenta of the interacting partons.  
+The main variables used to quantify particle energies are transverse energy 
+$\Et \equiv E/\cosh{\eta}$ and transverse momentum $\pt \equiv |p|/\cosh{\eta}$.  The silicon tracker and muon detectors measure $\pt$, 
+while the calorimeters measure $\Et$.  The distance between 
+a particle and another point in the $(\eta, \phi)$ space is measured as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  
+%Transverse momentum $\pt$, the component of momentum perpendicular to the proton beam axis, and transverse energy $\Et$, the 
+%analogous form of energy, were used because both were insensitive to the unknown $z$ momenta of the interacting partons.  
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
-The silicon tracker detected charged particles, measured charged particle momenta, and identified interaction 
-verticles that produced charged particles using silicon pixel and strip detectors.  Closest 
+The silicon tracker used silicon pixel and strip detectors to detect charged particles and measure their momenta, 
+and identify interaction verticles.  Closest 
 to the beam axis was the pixel tracker, which used small silicon pixels to pinpoint pp interaction vertices 
 with $\mu$m precision.  Surrounding the pixel tracker were larger silicon strip detectors that measured the 
 momenta of charged particles with better resolution.  Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ created 
@@ -204,13 +204,13 @@ were used to monitor and recalibrate the tracker alignment and momentum response
 During particle reconstruction charged leptons and hadrons were distinguished from photons and neutral hadrons using 
 interaction vertices and tracks reconstructed by the tracker.  Tracks that extrapolated to ECAL energy deposits were 
 identified as electrons, and tracks that extrapolated to HCAL or muon detector energy deposits were identified as charged 
-hadrons or muons, respectively.  Interaction vertices linked to tracks allwed each charged particle class to be divided 
-into multiple sub-classes, like charged hadrons that came from the highest $\sum \pt$ vertex in an event, or charged 
-leptons produced by bottom quark decays.
+hadrons or muons, respectively.  The association between tracks and interaction vertices allowed each charged particle class 
+to be divided into multiple sub-classes, like charged hadrons that came from the highest $\sum \pt$ vertex in an event, 
+or charged leptons produced by bottom quark decays.
+
 
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
-
 Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons, and distinguished
 electrons and positrons ($e^{\pm}$) from other charged particles.  
 The ECAL was an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
@@ -236,7 +236,6 @@ preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 	\caption{The ECAL barrel, endcap and preshower detectors.}
 	\label{fig:ecalEBEEandES}
 \end{figure}
-
 
 Photons and $e^{\pm}$ that impinged on the ECAL interacted with lead-tungstate nuclei.  Incident photons 
 converted into $e^{+}e^{-}$ pairs, and any energetic $e^{\pm}$ interacted with PbWO$_{4}$ nuclei through 
@@ -275,10 +274,11 @@ were applied.  The absolute correction for each crystal was derived using $e^{\p
 and ensured the average dilepton mass measured by each crystal in $Z \rightarrow e^{+}e^{-}$ events was equal to the 
 true $Z$ boson mass.
 
-During particle reconstruction energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal energy 
-deposits, centered on crystals with local energy maxima.  In the subset of ECAL energy deposits that were isolated 
-from HCAL energy deposits, $e^{\pm}$ were identified as individual ECAL energy deposits that geometrically matched 
-reconstructed track trajectories, while photons were identified as energy deposits not associated with any track.
+During particle reconstruction energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal superclusters 
+(SCs), centered on crystals with local energy maxima.  In the subset of SCs that were isolated 
+from HCAL energy deposits, each $e^{\pm}$ was identified as a SC that geometrically matched a reconstructed track 
+trajectories, while each photon was identified as a SC not matched to any track.
+
 
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
@@ -289,7 +289,7 @@ of visible light in the scintillating tiles proportional to their incident energ
 measured the energies of hadrons with $0 < |\eta| < 3.0$ by measuring the amount of visible light produced 
 by the scintillating tiles.
 
-The HCAL consisted of 17 scintillating tile layers separated by 17 metal absorber layers.  Similar to the ECAL, the 
+The HCAL consisted of 17 scintillating tile layers separated by metal absorber layers.  Similar to the ECAL, the 
 HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
 region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
 covered the same area as a 5 $\times$ 5 grid of 
@@ -300,7 +300,7 @@ as a 5 $\times$ 5 grid of ECAL endcap crystals.
 Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
 inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
 energy hadrons that traveled into the nearest scintillating tile layers.  Incident hadrons with more energy yielded 
-more particles in the shower.  Interactions between low energy hadrons and plastic molecules excited the molecules to 
+more particles in their showers.  Interactions between low energy hadrons and plastic molecules excited the molecules to 
 higher energy states, and most molecules quickly de-excited and allowed scintillator molecules to produce scintillation 
 light in $\lesssim$10 \ns.  This light was measured by photodetectors, and determined the energy of hadrons 
 that impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons with the following resolution:
@@ -309,24 +309,25 @@ that impinged on the HCAL.  After calibrations the HCAL measured the energy of h
 	\frac{\sigma_{E}}{E} = \frac{84.7\%}{\sqrt{E/(1 GeV)}} \oplus 7.4\%
 \end{equation}
 
-To maintain the energy resolution of the HCAL, the amount of light measured from towers of scintillating tiles 
+To maintain the energy resolution of the HCAL, the amount of light measured in scintillating tile towers 
 was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
-with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each tile 
-in response to the source was used to derive calibration constants.  Once collisions began, a laser system 
-was used to monitor the efficiency of light transmission from scintillator tiles to the photodetectors.  
-From laser transparency data, relative calibration constants were 
-derived that normalized the response of all towers to hadronic activity to the same value.  The absolute 
-calibration was determined by selecting events in which a jet recoiled off a photon, or a jet recoiled off a Z boson that 
-decayed to a $e^{\pm}e^{\mp}$ or $\mu^{\pm}\mu^{\mp}$ pair.  In such events, the absolute hadronic energy 
-scale was calibrated relative to the electromagnetic energy scale derived from $Z \rightarrow e^{\pm}e^{\mp}$ 
-events.  Furthermore, the precision of the absolute hadronic energy scale calibration was improved using 
+with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each 
+tower was used to calibrate each tower's response.  Once collisions began, a laser system 
+monitored the efficiency of light transmission from scintillator tiles to the photodetectors.  
+From laser transparency data, relative calibrations were derived that normalized the response of all towers 
+to the same level.  The absolute 
+calibration was determined in events where a jet recoiled off a photon, or a leptonically decaying Z boson.  
+In such events, the absolute hadronic energy 
+scale was calibrated relative to the electromagnetic or muonic energy scale derived from $Z \rightarrow \ell\ell$ 
+events.  Finally, the precision of the absolute hadronic energy scale calibration was improved using 
 dijet resonances like $W/Z \rightarrow jj$.
 
 During particle reconstruction the energy measured by each HCAL tower was treated as the simplest HCAL energy 
-deposit.  Each hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
-deposits.  Charged hadrons were identified as calorimeter energy deposits that geometrically matched reconstructed 
-track trajectories, while neutral hadrons were identified as calorimeter energy deposits not associated with any 
+deposit.  Each reconstructed hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
+deposits.  Charged hadrons were identified as calorimeter energies geometrically matched to reconstructed 
+track trajectories, while neutral hadrons were identified as calorimeter energy deposits not matching any 
 track.
+
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
@@ -337,10 +338,10 @@ charge collected on the anodes and cathodes.
 
 Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  Shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, in the barrel 
 region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and background rate were low, drift 
-tubes (DTs) and resistive plate chambers (RPCs) were used to measure the positions and 
-and momenta of muons, and determine the collision event that produced them based on time information.  In the endcap 
+tubes (DTs) and resistive plate chambers (RPCs) measured the trajectories and 
+and momenta of muons, and determined the collision event that produced them.  In the endcap 
 region ($1.2 < |\eta| < 2.4$) where particle fluxes and magnetic field strengths were higher, RPCs and cathode 
-strip chambers (CSCs) were used to measure the same quantities.
+strip chambers (CSCs) measured the same quantities.
 
 \begin{figure}[ht]
 	\centering
@@ -356,19 +357,18 @@ The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', a
 station covering 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
 muon trajectories in $z$, and r-$\phi$.  These planes enabled each station of DTs to measure muon trajectories 
 with resolution better than 100 $\mu$m in $z$ and $r$, and $\sim$1 \mrad in $\phi$.  The DTs were separated 
-from the interaction point where muons were produced by 13 \ns or more\footnote{assuming muons traveled at the speed 
-of light.}, so the collision event that produced any muon was identified by RPC detectors.  By measuring 
-the muon arrival time with $\sim$1 \ns resolution, the RPCs uniquely identified the collision event that 
-produced a muon.
+from the interaction point by 13 \ns or more\footnote{assuming muons traveled at the speed 
+of light.}, so the collision event that produced each muon was identified by RPC detectors.  By measuring 
+each muon's arrival time with $\sim$1 \ns resolution, the RPCs uniquely identified the collision event that 
+produced each muon.
 
 Muons in the endcap region were detected by CSCs divided amongst four disks that faced the barrel region.  
 The disks were segmented into several radial layers (rings of different radii), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, 
-to improve the resolution that muon positions and momenta were measured.  Each station contained 18 or 36 
-chambers, each with multiple measurement planes, which enabled muon trajectories to be measured with resolution 
-better than 200 $\mu$m in position, and $\sim$10 \mrad in $\phi$.  Similar to the barrel region DTs, the large distance between the interaction 
-point and endcap CSCs meant that muons emitted into the endcap took 13 \ns or longer to reach the first CSC 
-disk closest to the interaction point.  To identify the collision event that produced a muon, RPCs were used 
-to detect muon arrival times with $\sim$1 \ns resolution.
+that improved muon trajectory and momentum resolutions.  Each station contained 18 or 36 
+chambers, each with multiple measurement planes, and measured muon trajectories with resolution 
+better than 200 $\mu$m in position, and $\sim$10 \mrad in $\phi$.  Similar to the barrel region DTs, the endcap 
+CSCs were separated from the interaction point by 13 \ns or longer.  RPCs measured muon arrival times with $\sim$1 
+\ns resolution to determine which collision event produced each muon.
 
 The muon detectors complimented measurements made by the tracker, and improved the resolution of muon 
 momentum measurements for high $\pt$ muons relative to tracker only performance.  The 
@@ -379,10 +379,9 @@ Combining tracker and muon detector information for high $\pt$ muons improved th
 $\pt = 1$ $\TeV$ muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
 measurement made by the tracker alone.
 
-The muon detectors measured trajectory vectors for every muon, and these vectors were subsequently used in 
-muon reconstruction.  Muons produced far from the interaction point by hadron decays were identified as 
-individual tracks in multiple muon chambers, while muons produced within the silicon tracker volume were 
-identified as silicon tracker tracks whose trajectories matched those of muon detector tracks.
+The muon detectors measured tracks that were used in muon reconstruction.  Muons produced far from the interaction 
+point were identified as individual tracks in muon detectors, whereas muons produced within the silicon tracker 
+volume were identified as silicon tracker tracks whose trajectories extrapolated to muon detector tracks.
 
 \section{The Trigger System}
 \label{sec:triggerDescription}
