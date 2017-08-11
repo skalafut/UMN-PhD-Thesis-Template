@@ -32,13 +32,19 @@ energies.
 
 After traversing the tracker, electrons impinged on ECAL crystals and lost substantially all of their 
 energy through radiative processes.  These processes resulted in showers of lower energy particles 
-that enabled measurements of initial electron energies.  Showers from individual electrons were contained 
-in 5 $\times$ 5 crystal regions centered on the first crystal hit by an electron, so electron energies 
-were measured in 5 $\times$ 5 crystal superclusters (SCs).  The large SC size also facilitated 
-bremsstrahlung photon recovery, and thus more precise measurements of the energy lost by the electron 
-before the ECAL.  Following SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to 
-the $(\eta, \phi)$ trajectories of electron candidate tracks.  Each reconstructed electrons was identified 
+that enabled measurements of initial electron energies.  Showers of individual electrons in ECAL were usually 
+3 or fewer crystals wide in $\eta$ and $\phi$, but electrons were reconstructed in 5 $\times$ 5 crystal 
+superclusters (SCs) to recover bremsstrahlung photons, as shown in Figure \ref{fig:eleTrackAndSC}.  Following 
+SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to 
+the $(\eta, \phi)$ trajectories of electron candidate tracks.  Each reconstructed electron was identified 
 as a SC and at least one track with matching $(\eta, \phi)$ coordinates.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/electronTrackAndSupercluster.png}
+	\caption{An electron's trajectory through the tracker and ECAL.}
+	\label{fig:eleTrackAndSC}
+\end{figure}
 
 
 \section{Muon Reconstruction}
@@ -90,7 +96,16 @@ charged hadrons could also contain an ECAL SC if the SC $(\eta, \phi)$ position 
 the HCAL tower.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
 an ECAL SC, whose $(\eta, \phi)$ position was not consistent with any reconstructed track.  Similarly, 
 each photon was reconstructed as an ECAL SC whose position was not consistent with any reconstructed 
-track.  Subsequently, jets were reconstructed by clustering individual reconstructed particles together.
+track.  Subsequently, jets were reconstructed by clustering individual reconstructed particles together, 
+as shown in Figure \ref{fig:jetClustering}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/jetClusteringInCMS.png}
+	\caption{A cone of reconstructed particles clustered into a jet, with the reconstructed vertex on the right.  
+	From $CMS Experiment$.}
+	\label{fig:jetClustering}
+\end{figure}
 
 In each event, every reconstructed particle was considered a jet candidate, except charged 
 hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Using the 
