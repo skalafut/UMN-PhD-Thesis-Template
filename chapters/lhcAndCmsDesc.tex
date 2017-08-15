@@ -183,17 +183,23 @@ of charged particles.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/siliconStripAndPixelDetectorTwoDimView.png}
-	\caption{The barrel and endcap sections of the silicon strip tracker for $\eta \geq 0.$ and one quadrant of $\phi$.  The pixel tracker is shown to scale in the bottom left corner.}
+	\caption{The barrel and endcap sections of the silicon strip tracker for $\eta \geq 0.$ and one quadrant of $\phi$.  
+	The pixel tracker is shown to scale in the bottom left corner.}
 	\label{fig:stripTracker}
 \end{figure}
 
 Charged particles created e-h pairs in every pixel and strip detector they hit, and the total electron charge in such pairs was measured by readout 
 modules attached to groups of pixels or strips\footnote{$\sim$16000 readout modules were connected to 66 million pixels, 
 and $\sim$15400 readout modules were connected to 9.6 million strips.}.  
-The granularity and multilayer structure of both detectors allowed the tracker to measure interaction vertex coordinates 
-with $\lesssim 20\mu$m resolution along the $z$ axis, and with $\lesssim 10\mu$m resolution in the plane perpendicular to 
-the $z$ axis, and measure the \pt of 100 GeV \pt muons with resolution better than 2\% in the barrel, and better than 
-7\% in the endcap.
+
+
+The tracker measured the coordinates of interaction vertices with a resolution better than 12$\mu$m along the beam axis 
+and in perpendicular directions.  In addition, the tracker measured the impact parameter and $\pt$ of charged particles 
+with high precision.  As an example, the $\pt$ of isolated muons with $\pt = 100\GeV$ and $|\eta| < 1.4$ was measured 
+with .
+
+%and measure the \pt of 100 GeV \pt muons with resolution better than 2\% in the barrel, and better than 
+%7\% in the endcap.
 
 To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
@@ -213,20 +219,20 @@ or charged leptons produced by bottom quark decays.
 \label{sec:ecalDescription}
 Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons, and distinguished
 electrons and positrons ($e^{\pm}$) from other charged particles.  
-The ECAL was an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
+The ECAL is an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
 In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible light in amounts proportional to 
 the energies of incident particles.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
 measuring the amount of visible light produced by PbWO$_{4}$ crystals.
 
-The ECAL contained $\sim$76000 crystals divided into two $|\eta|$ regions based on the rate of radiation 
-damage.  In the low $|\eta|$ barrel region ($0 < |\eta| < 1.479$) where the rate of radiation damage was low, 61200 
-crystals that were 26 radiation lengths\footnote{On average a relativistic $e^{\pm}$ loses 63\% of its initial energy after 
+The ECAL contained 75848 crystals divided into two $|\eta|$ regions based on the rate of radiation 
+damage.  In the barrel region ($0 < |\eta| < 1.479$), 61200 
+crystals that were $\sim$26 radiation lengths\footnote{On average the energy of a relativistic $e^{\pm}$ decreases by $e^{-1}$ after 
 travelling through one radiation length of material.} long were arranged in a cylindrical shell.  The front face of 
-each crystal measured $\sim$22. $\times$ 22. mm, and resided $\sim$19. cm away from the outer most silicon tracker layer.  
-In the endcap region ($1.479 < |\eta| < 3.0$) where the rate of radiation damage was high, 14648 crystals (half in each 
-endcap) 25 radiation lengths long were installed in a disk.  The front face of endcap crystals measured $\sim$29. 
-$\times$ 29. mm, and sat behind $\sim$2 radiation lengths of lead and silicon that constituted the preshower detector.  
-The preshower mitigated radiation damage in endcap crystals, and improved the spatial resolution with 
+each crystal measured 2.2 $\times$ 2.2 cm$^{2}$, and resided $\sim$19. cm away from the outer most silicon tracker layer.  
+In the endcap region ($1.479 < |\eta| < 3.0$), 14648 crystals (half in each 
+endcap) $\sim$25 radiation lengths long were installed in a disk.  The front face of endcap crystals measured 2.86 
+$\times$ 2.86 cm$^{2}$, and resided behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
+The preshower improved the spatial and energy resolution with 
 which electromagnetic showers were studied in the endcap.  A partial view of the ECAL barrel, endcap and 
 preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 
@@ -250,14 +256,16 @@ signals indicative of incident photon and $e^{\pm}$ energies.  Coulomb interacti
 and bound state electrons in PbWO$_{4}$ atoms excited bound electrons to meta-stable states, and in 
 $\lesssim$20 ns more than 80\% of bound electrons returned to their ground states by emitting scintillation 
 photons in the visible light regime.  The total energy of 
-scintillation photons was measured by photodetectors to determine the incident photon or $e^{\pm}$ energy.  
-The scintillating PbWO$_{4}$ and photodetectors enabled the ECAL to measure the energy of a 100 GeV photon or 
-$e^{\pm}$ with resolution better than 1\% in the barrel region, and measure the energy of any incident photon or $e^{\pm}$ with 
-resolution \cite{eGammaMonitCalib2011}:
-
-\begin{equation}
-	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
-\end{equation}
+scintillation photons was measured by avalanche photodiodes in the barrel, and vacuum phototriodes in the 
+endcap to determine the incident photon or $e^{\pm}$ energy.  Using these photodetectors, the ECAL measured 
+the energies of electrons from $Z \rightarrow ee$ decays ($\Et \approx 45 \GeV$) in real collisions with a resolution 
+better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  
+At a slightly lower $\Et$ scale, the ECAL measured the energies of photons from $Z \rightarrow \mu\mu\gamma$ 
+decays in real collisions with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
+%this energy resolution is from test beam measurements with no material in front of the ECAL crystals
+%\begin{equation}
+%	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
+%\end{equation}
 
 To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL crystals were monitored and calibrated 
 during data taking using several techniques.  Two to three times every hour each ECAL crystal was illuminated 
@@ -266,7 +274,7 @@ was used to calculate the average change in each crystal's transparency relative
 was corrected by applying correction factors to the crystals.  Electrons and photons from $\eta \rightarrow \gamma\gamm$, 
 $W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$ were used to validate the weekly corrections derived from laser data.
 
-To compliment weekly laser transparency corrections, $\sim$quarterly corrections were applied to ECAL crystals 
+To compliment weekly laser transparency corrections, monthly corrections were applied to ECAL crystals 
 to calibrate their responses in terms of reconstructed particle energy.  Relative corrections were calculated from 
 the weighted average relative correction determined using several methods described elsewhere \cite{eGammaMonitCalib2011}.  
 The relative corrections normalized the responses of all crystals to the same value, then absolute scale corrections 
@@ -283,44 +291,32 @@ trajectories, while each photon was identified as a SC not matched to any track.
 \section{The Hadronic Calorimeter}
 \label{sec:hcalDescription}
 Surrounding the ECAL was the hadronic calorimeter (HCAL), which detected charged and neutral hadrons.  The 
-HCAL was a sampling calorimeter built from alternating layers of thin scintillating plastic tiles and thick 
-metal absorber plates.  Hadrons impinging on the HCAL interacted with the metal absorbers and produced amounts 
-of visible light in the scintillating tiles proportional to their incident energies.  The HCAL 
-measured the energies of hadrons with $0 < |\eta| < 3.0$ by measuring the amount of visible light produced 
-by the scintillating tiles.
+HCAL is a sampling calorimeter constructed with 17 layers of 3.7 mm thick scintillating plastic tiles separated by 
+17 layers of metal absorber plates about 5 cm thick.  In the barrel 
+region ($0 < |\eta| < 1.4$), absorber plates and scintillating tiles were organized into 2304 towers, each 
+covering a 5 $\times$ 5 grid of ECAL barrel crystals.  In the endcap region ($1.3 < |\eta| < 3.0$), absorber 
+plates and scintillating tiles were assembled into 2304 towers (1152 per endcap), each covering 
+a 5 $\times$ 5 grid of ECAL endcap crystals.
 
-The HCAL consisted of 17 scintillating tile layers separated by metal absorber layers.  Similar to the ECAL, the 
-HCAL was divided into two $|\eta|$ regions based on the rate of radiation damage.  In the low $|\eta|$ barrel 
-region ($0 < |\eta| < 1.4$), scintillating tiles and metal plates were organized into 2304 towers, and each 
-covered the same area as a 5 $\times$ 5 grid of 
-ECAL barrel crystals.  In the high $|\eta|$ ($1.3 < |\eta| < 3.0$) endcap region, scintillating 
-tiles and absorber plates were assembled into 2304 towers (1152 per endcap), and each tower covered the same area 
-as a 5 $\times$ 5 grid of ECAL endcap crystals.
-
-Hadrons that impinged on the HCAL interacted with nuclei in metal absorber layers.  Diffractive and fully 
-inelastic collisions between incident hadrons and absorber nuclei produced showers of lower 
-energy hadrons that traveled into the nearest scintillating tile layers.  Incident hadrons with more energy yielded 
-more particles in their showers.  Interactions between low energy hadrons and plastic molecules excited the molecules to 
-higher energy states, and most molecules quickly de-excited and allowed scintillator molecules to produce scintillation 
-light in $\lesssim$10 ns.  This light was measured by photodetectors, and determined the energy of hadrons 
-that impinged on the HCAL.  After calibrations the HCAL measured the energy of hadrons with the following resolution:
-
-\begin{equation}
-	\frac{\sigma_{E}}{E} = \frac{84.7\%}{\sqrt{E/(1 GeV)}} \oplus 7.4\%
-\end{equation}
+Hadrons that impinged on the HCAL showered in metal absorber layers, and in $\sim$10 ns produced scintillation 
+light in the plastic tiles.  Optical fibers transmitted the scintillation light to hybrid photodiodes, 
+which measured the scintillation light to determine the energies of incident hadrons.  The HCAL was used in 
+combination with the tracker, ECAL, and muon detectors to measure the energy of jets.  After calibrating the 
+HCAL and the other sub-detectors, the energy of jets with $\pt > 50\GeV$ and $|\eta| < 3.0$ was measured with 
+a resolution better than 15\% \cite{jetResolutionInCollisions}.
 
 To maintain the energy resolution of the HCAL, the amount of light measured in scintillating tile towers 
 was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
 with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each 
 tower was used to calibrate each tower's response.  Once collisions began, a laser system 
-monitored the efficiency of light transmission from scintillator tiles to the photodetectors.  
+monitored the efficiency of light transmission from the scintillator tiles to the photodetectors.  
 From laser transparency data, relative calibrations were derived that normalized the response of all towers 
 to the same level.  The absolute 
 calibration was determined in events where a jet recoiled off a photon, or a leptonically decaying Z boson.  
-In such events, the absolute hadronic energy 
+There, the absolute hadronic energy 
 scale was calibrated relative to the electromagnetic or muonic energy scale derived from $Z \rightarrow \ell\ell$ 
-events.  Finally, the precision of the absolute hadronic energy scale calibration was improved using 
-dijet resonances like $W/Z \rightarrow jj$.
+and $Z \rightarrow \mu\mu\gamma$ events.  Finally, the precision of the absolute hadronic energy scale calibration 
+was improved using dijet resonances like $W/Z \rightarrow jj$.
 
 During particle reconstruction the energy measured by each HCAL tower was treated as the basic unit of HCAL energy.  
 Each reconstructed hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
