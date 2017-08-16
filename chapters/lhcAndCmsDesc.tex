@@ -193,13 +193,12 @@ modules attached to groups of pixels or strips\footnote{$\sim$16000 readout modu
 and $\sim$15400 readout modules were connected to 9.6 million strips.}.  
 
 
-The tracker measured the coordinates of interaction vertices with a resolution better than 12$\mu$m along the beam axis 
-and in perpendicular directions.  In addition, the tracker measured the impact parameter and $\pt$ of charged particles 
-with high precision.  As an example, the $\pt$ of isolated muons with $\pt = 100\GeV$ and $|\eta| < 1.4$ was measured 
-with .
-
-%and measure the \pt of 100 GeV \pt muons with resolution better than 2\% in the barrel, and better than 
-%7\% in the endcap.
+In data events with at least one reconstructed jet with $\pt > 20\GeV$, the tracker measured the coordinates of interaction vertices 
+with a resolution better than 12$\mu$m in any direction.  It also 
+reconstructed vertices with at least 2 associated tracks with efficiency better than 98\% \cite{trackerPerformanceInCollisions}, 
+and measured $\pt$s of tracks linked to reconstructed vertices with high precision.  In data events where muons were reconstructed 
+with $20 < \pt < 100\GeV$, the tracker measured the $\pt$ of muons in the barrel $|\eta|$ region with a resolution of 1.3\% to 2.0\%, 
+and measured the $\pt$ of endcap muons with a resolution up to $\approx$6\% \cite{muonRecoFirstCollisions}.
 
 To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during pp collisions in 2015.  Before collisions, cosmic ray muons were 
@@ -267,7 +266,7 @@ decays in real collisions with a resolution of 2.5\% in the barrel, and 4.7\% in
 %	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
 %\end{equation}
 
-To measure photon and $e^{\pm}$ energies with the quoted resolution, the ECAL crystals were monitored and calibrated 
+To maintain the ECAL energy resolution, the ECAL crystals were monitored and calibrated 
 during data taking using several techniques.  Two to three times every hour each ECAL crystal was illuminated 
 with light from one blue laser and one green laser to monitor the crystal transparency.  Every week laser data 
 was used to calculate the average change in each crystal's transparency relative to the prior week, and this change 
@@ -327,17 +326,18 @@ track.
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
-Outside the magnet were gas ionization chambers used to detect muons.  Muons that traversed the chambers 
-ionized charge along their trajectories, and the ionized charges drifted through the gas to anodes and 
-cathodes.  The muon detectors measured the momenta of muons with $0 < |\eta| < 2.4$ by measuring the amount of 
-charge collected on the anodes and cathodes.
+Interspersed among layers of the magnet iron return yoke were gas ionization chambers used to detect muons.  Muons 
+that traversed the chambers ionized charge along their trajectories, and the ionized charges drifted to the 
+anodes and cathodes.  The muon detectors measured the momenta, trajectories, and arrival times of muons with $0 < |\eta| < 2.4$ by 
+measuring the amount of charge collected by the anodes and cathodes.  A muon produced at the interaction point 
+traveled 13 ns or more\footnote{Assuming muons traveled at the speed of light.} before being detected, so the 
+muon detectors measured each muon's arrival time to identify the collision event that produced it.
 
-Like the calorimeters, the muon detectors were separated into barrel and endcap sections.  Shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, in the barrel 
-region ($0 < |\eta| < 1.2$) where the magnetic field strength, muon rate and background rate were low, drift 
-tubes (DTs) and resistive plate chambers (RPCs) measured the trajectories and 
-and momenta of muons, and determined the collision event that produced them.  In the endcap 
-region ($1.2 < |\eta| < 2.4$) where particle fluxes and magnetic field strengths were higher, RPCs and cathode 
-strip chambers (CSCs) measured the same quantities.
+The muon barrel and endcap sections, shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, used three types of 
+gas ionization detectors to measure muon momenta, trajectories, and arrival times.  In the barrel region ($0 < |\eta| < 1.2$), 
+drift tubes (DTs) and resistive plate chambers (RPCs) measured muon momenta, trajectories, and arrival times.  In 
+the endcap region ($1.2 < |\eta| < 2.4$), RPCs (only for $|\eta| < 1.9$) and cathode strip chambers (CSCs) measured 
+the same quantities.
 
 \begin{figure}[ht]
 	\centering
@@ -348,13 +348,20 @@ strip chambers (CSCs) measured the same quantities.
 	\label{fig:muonBarrelAndEndcapDetectors}
 \end{figure}
 
-
 The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 $\phi$ segments per 
 station covering 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
-muon trajectories in $z$, and r-$\phi$.  These planes enabled each station of DTs to measure muon trajectories 
-with resolution better than 100 $\mu$m in $z$ and $r$, and $\sim$1 mrad in $\phi$.  The DTs were separated 
-from the interaction point by 13 ns or more\footnote{assuming muons traveled at the speed 
-of light.}, so the collision event that produced each muon was identified by RPC detectors.  By measuring 
+muon trajectories in $z$, and r-$\phi$.  Using these planes, each station of DTs measured muon trajectories 
+with a resolution better than 300$\mu$m in any direction.  Muon arrival times .
+
+The DTs were separated 
+from the interaction point by 13 ns or more\footnote{assuming muons traveled at the speed of light.}, but 
+their fast response enabled .
+
+%DT measures muon arrival time with a resolution of 2 ns
+%CSC measures muon arrival time with a resolution of 3.2 ns
+%RPC measures muon arrival time with a resolution better than 2 ns
+
+so the collision event that produced each muon was identified by RPC detectors.  By measuring 
 each muon's arrival time with $\sim$1 ns resolution, the RPCs uniquely identified the collision event that 
 produced each muon.
 
@@ -370,10 +377,9 @@ The muon detectors complimented measurements made by the tracker, and improved t
 momentum measurements for high $\pt$ muons relative to tracker only performance.  The 
 strength of the magnetic field enabled the tracker to measure muon momenta in the $\pt <$ 
 200 $\GeV$ phase space with 3 or more times better resolution than the muon detectors.  As muon $\pt$ increased 
-above 200 $\GeV$, muon trajectories approached straight line paths, and thus the the tracker momentum resolution degraded.  
-Combining tracker and muon detector information for high $\pt$ muons improved the resolution with which a 
-$\pt = 1$ $\TeV$ muon was measured in the central barrel region by $\sim$200\% relative to the momentum 
-measurement made by the tracker alone.
+above 200 $\GeV$, muon trajectories approached straight line paths, and the tracker momentum resolution degraded.  
+Using cosmic ray muons detected in 2015, the combined tracker and muon detector system measured the $\pt$ of 
+barrel region muons with $200 < \pt < 400 \GeV$ with a resolution better than 3.5\% \cite{cmsMuonRecoRunTwo}.
 
 The muon detectors measured tracks that were used in muon reconstruction.  Muons produced far from the interaction 
 point were identified as individual tracks in muon detectors, whereas muons produced within the silicon tracker 
