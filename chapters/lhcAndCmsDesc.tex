@@ -329,15 +329,13 @@ track.
 Interspersed among layers of the magnet iron return yoke were gas ionization chambers used to detect muons.  Muons 
 that traversed the chambers ionized charge along their trajectories, and the ionized charges drifted to the 
 anodes and cathodes.  The muon detectors measured the momenta, trajectories, and arrival times of muons with $0 < |\eta| < 2.4$ by 
-measuring the amount of charge collected by the anodes and cathodes.  A muon produced at the interaction point 
-traveled 13 ns or more\footnote{Assuming muons traveled at the speed of light.} before being detected, so the 
-muon detectors measured each muon's arrival time to identify the collision event that produced it.
+measuring the amount of charge collected by the anodes and cathodes.  The muon detectors measured each muon's arrival 
+time to identify the collision event that produced it.
 
 The muon barrel and endcap sections, shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, used three types of 
 gas ionization detectors to measure muon momenta, trajectories, and arrival times.  In the barrel region ($0 < |\eta| < 1.2$), 
 drift tubes (DTs) and resistive plate chambers (RPCs) measured muon momenta, trajectories, and arrival times.  In 
-the endcap region ($1.2 < |\eta| < 2.4$), RPCs (only for $|\eta| < 1.9$) and cathode strip chambers (CSCs) measured 
-the same quantities.
+the endcap region ($1.2 < |\eta| < 2.4$), RPCs and cathode strip chambers (CSCs) measured the same quantities.
 
 \begin{figure}[ht]
 	\centering
@@ -350,40 +348,29 @@ the same quantities.
 
 The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 $\phi$ segments per 
 station covering 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
-muon trajectories in $z$, and r-$\phi$.  Using these planes, each station of DTs measured muon trajectories 
-with a resolution better than 300$\mu$m in any direction.  Muon arrival times .
+muon trajectories in $z$, and r-$\phi$.  Using these planes, in 2015 collisions each DT station measured muon trajectories 
+with a resolution better than 300$\mu$m in any direction, and measured muon arrival times with a resolution of 2 ns \cite{cmsMuonRecoRunTwo}.  
 
-The DTs were separated 
-from the interaction point by 13 ns or more\footnote{assuming muons traveled at the speed of light.}, but 
-their fast response enabled .
+In the endcap, CSCs were installed in four disks that faced the interaction point.  
+The disks were segmented into several radial layers (rings of different radii, 'stations'), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, 
+and each station contained 18 or 36 chambers with multiple measurement planes.  The CSCs measured muon trajectories with 
+resolution better than 150 $\mu$m in any direction, and measured muon arrival times with a resolution of 3.2 ns.  
 
-%DT measures muon arrival time with a resolution of 2 ns
-%CSC measures muon arrival time with a resolution of 3.2 ns
-%RPC measures muon arrival time with a resolution better than 2 ns
-
-so the collision event that produced each muon was identified by RPC detectors.  By measuring 
-each muon's arrival time with $\sim$1 ns resolution, the RPCs uniquely identified the collision event that 
-produced each muon.
-
-Muons in the endcap region were detected by CSCs divided amongst four disks that faced the barrel region.  
-The disks were segmented into several radial layers (rings of different radii), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, 
-that improved muon trajectory and momentum resolutions.  Each station contained 18 or 36 
-chambers, each with multiple measurement planes, and measured muon trajectories with resolution 
-better than 200 $\mu$m in position, and $\sim$10 mrad in $\phi$.  Similar to the barrel region DTs, muons produced 
-at the interaction point needed 13 ns or more to reach the endcap CSCs.  RPCs measured muon arrival times with $\sim$1 
-ns resolution to determine which collision event produced each muon.
+In the barrel and the endcap for $|\eta| < 1.9$, the RPCs measured muon arrival times with a resolution better than 
+2 ns.  RPC measurements were used by the trigger system to identify the collision event that produced each muon \cite{cmsMuonRecoRunTwo}.
 
 The muon detectors complimented measurements made by the tracker, and improved the resolution of muon 
-momentum measurements for high $\pt$ muons relative to tracker only performance.  The 
-strength of the magnetic field enabled the tracker to measure muon momenta in the $\pt <$ 
-200 $\GeV$ phase space with 3 or more times better resolution than the muon detectors.  As muon $\pt$ increased 
-above 200 $\GeV$, muon trajectories approached straight line paths, and the tracker momentum resolution degraded.  
-Using cosmic ray muons detected in 2015, the combined tracker and muon detector system measured the $\pt$ of 
-barrel region muons with $200 < \pt < 400 \GeV$ with a resolution better than 3.5\% \cite{cmsMuonRecoRunTwo}.
+momentum measurements for high $\pt$ muons relative to tracker only performance.  The strength of the magnetic field 
+enabled the tracker to measure muon momenta in the $\pt <$ 200 $\GeV$ phase space with 3 or more times better resolution 
+than the muon detectors.  As muon $\pt$ increased above 200 $\GeV$, muon trajectories approached straight line paths, 
+and the tracker momentum resolution degraded.  Using cosmic ray muons detected in 2015, the combined tracker and muon 
+detector system measured the $\pt$ of barrel region muons with $200 < \pt < 400 \GeV$ with a resolution better than 
+3.5\% \cite{cmsMuonRecoRunTwo}.
 
-The muon detectors measured tracks that were used in muon reconstruction.  Muons produced far from the interaction 
-point were identified as individual tracks in muon detectors, whereas muons produced within the silicon tracker 
-volume were identified as silicon tracker tracks whose trajectories extrapolated to muon detector tracks.
+The muon detectors measured tracks that were used in muon reconstruction.  Muons produced outside the silicon tracker 
+were identified as individual tracks in muon detectors, while muons produced within the silicon tracker were identified 
+as silicon tracker tracks whose trajectories extrapolated to muon detector tracks.
+
 
 \section{The Trigger System}
 \label{sec:triggerDescription}
