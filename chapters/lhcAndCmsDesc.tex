@@ -4,146 +4,54 @@
 \chapter{The Large Hadron Collider and CMS Experiment}
 \label{sec:experiment_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Overview of the Compact Muon Solenoid and Large Hadron Collider}
-The CMS experiment was built to detect all ST particles, and to
-search for interactions that produced ST particles, like those described in Chapter ~\ref{wrBosonAndHeavyNu}.  The CERN LHC 
-collides high-energy protons at the geometric center of the CMS experiment, and the results of proton-proton (pp) 
-interactions are recorded.
+The CERN Large Hadron Collider (LHC) delivered proton-proton (pp) collisions at an energy of 13 $\TeV$.  The LHC 
+was constructed in a 27 km circular tunnel \cite{lhcTDR}, and collided two proton beams that each contained 
+$\sim$2300 proton bunches separated by 25 ns.  The beams collided at 4 interaction points (IPs), and the beam optics 
+were such that the highest intensity collisions occurred at 2 IPs.  The general purpose ATLAS 
+(A Toroidal Lhc Apparatus) \cite{atlasTdrPhysPerformance} and CMS (Compact Muon Solenoid) \cite{cmsTdrPhysPerformance} 
+experiments were built around these 2 IPs.  The CMS IP coincides with the geometric center of CMS, and in 2015 
+the LHC collided protons at the IP at intensities approaching $6 \times 10^{33} \frac{Hz}{cm^{2}}$, or $6 \times 10^{-3} \frac{Hz}{pb}$.  
+The intensity is proportional to the rate of pp bunch collisions divided by the beam cross 
+sectional area around the IP, and is multiplied by a cross section of a process to obtain the process rate.  
+At 13 $\TeV$ the $t\bar{t} \rightarrow \ell\ell jj$ cross section is $\sim$86 pb, so 2015 pp collisions in CMS 
+produced $t\bar{t} \rightarrow \ell\ell jj$ events at a rate approaching $\sim$0.5 Hz.
 
-The results of pp interactions were recorded if any of the following were detected:
-\begin{itemize}
-	\item one or more energetic charged leptons (electron, muon, tau or their anti-particles)
-	\item one or more energetic photons
-	\item one or more energetic hadronic jets, each containing at least one hadron
-	\item one or more energetic neutrinos\footnote{the presence of neutrinos is inferred by measuring a net imbalance in 
-		momentum from all detected charged leptons, photons and jets in a collision event.}
-	\item combinations thereof
-\end{itemize}
-Particles produced by pp interactions were detected using a 3.8$\unit{T}$ magnet and four CMS 
-sub-detector systems.  The important aspects of each sub-detector system are presented here, a more detailed 
-description is given elsewhere \cite{cmsDetectorPaper}.  As shown in Figure \ref{fig:layersOfCMS}, the nominal pp interaction point 
-was surrounded by the silicon tracker where charged particles were first detected.  As charged particles traversed
-the tracker, mobile electron-hole (e-h) pairs were created along their trajectories.  The tracker detected 
-charged particles by counting the number of e-h pairs created.
+The CMS experiment was built to detect all ST particles, and to search for interactions that produced ST particles, 
+like the \WR-mediated interactions described earlier.  Particles produced in pp collisions were detected using four 
+sub-detectors - the silicon tracker, the electromagnetic and hadronic calorimeters, and the muon detectors - and a powerful 
+solenoid magnet, described in detail elsewhere \cite{cmsDetectorPaper} and shown in Figure \ref{fig:layersOfCMS}.  
+The tracker and both calorimeters were inside the solenoid magnet, where the magnetic field strength was 3.8 $\unit{T}$.  
+The muon detectors were located in the magnet iron return yoke, where the magnetic field strength varied between 
+1 and 3 $\unit{T}$.  Each sub-detector was divided into a barrel 
+and two endcaps so that CMS could detect particles produced as close as 2.85 degrees from the beam direction, and 
+as far as 90 degrees from the beam direction.  
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/cmsDetectorBasic.png}
-	\caption{Cut-away view of the entire CMS detector.  Closest to the proton-proton collision/interaction point is the 
-		silicon tracker, followed by the Electromagnetic Calorimeter, then the Hadronic Calorimeter, and the 
-	magnet.  Outside the magnet solenoid are the muon detectors.}
-	\label{fig:layersOfCMS}
-\end{figure}
-
-
-Surrounding the silicon tracker was the lead-tungstate crystal (PbWO$_{4}$) Electromagnetic Calorimeter (ECAL).  
-The ECAL was an absorption calorimeter that detected photons, and distinguished electrons and positrons from other charged 
-particles detected by the tracker.  Electrons, positrons and photons interacted with lead-tungstate nuclei, 
-produced showers of lower energy $e^{\pm}$ that interacted with atomic electrons in PbWO$_{4}$, and subsequently 
-emitted visible light through fast ($\lesssim$20 ns) scintillation.  Electrons, positrons and photons produced 
-by pp interactions were detected by measuring the visible light produced by PbWO$_{4}$ crystals.
-
-Wrapped around the ECAL was the Hadronic Calorimeter (HCAL).  Built from alternating layers of brass absorber and 
-scintillating plastic tiles, the HCAL was a sampling calorimeter that detected hadrons in jets.  Hadrons that 
-reached the HCAL interacted with nucleons in brass absorber layers, produced showers of 
-lower energy hadrons that interacted with plastic scintillator molecules, which then emitted visible light through 
-fast ($\lesssim$10 ns) scintillation.  Hadrons in jets produced by pp interactions were detected by measuring the 
-visible light produced by scintillating plastic tiles.
-
-Outside the HCAL was the solenoid magnet that generated a 3.8$\unit{T}$ field.  The magnetic field was generated by running a current of 
-$\lesssim$18000 amps through superconducting wire wound into a solenoid.  The wire, made from a niobium alloy, was 
-cooled to a superconducting state using a cryogenic system adjacent to the solenoid.  The magnet and its subsystems 
-were supported by a structure made mostly from iron, which stopped most particles except muons.
-
-Surrounding the magnet were the muon detectors, which were in a magnetic field with strength between 1 and 3$\unit{T}$.  Three 
-different technologies - drift tubes (DT) in the lowest radiation regions, cathode strip chambers (CSC) in higher 
-radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In these detectors 
-muons travelled through pressurized gas chambers and ionized charges from the gas along their 
-trajectories.  Within the chambers, electric fields accelerated ionized charges towards conducting wires.  Muons 
-were detected by measuring the charge collected by conducting wires.
-
-Due to the enormous rate of diffractive and inelastic pp collisions where energy was detected, a two tiered trigger 
-system selected events during collisions for offline reconstruction.  The first tier of the trigger system processed 
-information from the ECAL, the HCAL and the muon 
-detectors in small regions where high energy particles were detected.  Then, these high energy regions of interest 
-were processed by the second tier trigger system.  In the second tier, reconstruction software 
-was run in regions of interest to identify charged leptons, photons, jets and neutrinos.  If a pp collision event produced 
-one or more reconstructed particles passing second tier energy and quality selections, then all data 
-from all four sub-detector systems was read out and used in offline particle reconstruction.
-
-The accelerator that collided protons, the coordinate system used to characterize the kinematics of detected 
-particles, the four sub-detector systems and the trigger system are discussed in this chapter.
-
-\section{The Large Hadron Collider}
-\label{sec:lhcDescription}
-Situated near Geneva, Switzerland and spanning the French-Swiss border, the CERN Large Hadron Collider (LHC) accelerated 
-two counter-rotating proton beams in a 27 km circular tunnel \cite{lhcTDR} to an energy of 6.5 $\TeV$ in 2015.  The two beams 
-collided at several points along the tunnel, and the CMS experiment was built around one of these points.
-
-Several accelerator stages, shown in Figure \ref{fig:accelComplex}, were used to create each LHC proton beam.  
-Each proton beam began as isolated proton bunches ionized from hydrogen gas.  Proton bunches were then accelerated to higher 
-energies in 3 accelerator stages before they were injected into the LHC.  Once enough proton bunches were 
-collected in the LHC (up to $\sim$2300 for each beam), the LHC created two proton beams with proton bunches separated by 
-25\ns, and accelerated both beams to an energy of 6.5 $\TeV$.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/CERNAcceleratorComplex.png}
-	\caption{The CERN accelerator complex.  Protons are ionized from hydrogen, then are accelerated to higher 
-	energies by LINAC 2, the PS, and finally the SPS before entering the LHC.  From CERN.}
-	\label{fig:accelComplex}
-\end{figure}
-
-
-In the LHC tunnel, superconducting radio-frequency (RF) cavities accelerated proton bunches, and magnets steered and 
-focused the beams towards the collision point at the heart of CMS.  
-During 2015 data taking the LHC collided protons at intensities approaching $6 \times 10^{33} \frac{1}{cm^{2}s}$ ($\sim 0.02 \frac{1}{fb\thickspace hr}$).  
-
-\section{The CMS Coordinate System and Kinematic Variables}
-\label{sec:coordinateSystemAndKinematicVars}
-A right-handed coordinate system and kinematic variables are used to characterize the kinematics of detected particles.  
-The coordinate system defines the $z$ axis pointing in the counter-clockwise direction, the $y$ axis 
-points at the surface, and the $x$ axis points at 
-the LHC ring center, as shown in Figure \ref{fig:cmsAndCoordinateSystem}.  In this coordinate system particle 
-trajectories are described using two angular variables, $\phi$ and $\eta$, that are defined 
-in separate coordinate planes.  $\phi$ is the angle in the $x-y$ plane, and spanned values between 0 and $2\pi$.  
-$\theta$ is defined in the $y-z$ plane, and is 0 ($\frac{\pi}{2}$) when pointing along the $z$ ($y$) axis.  
-$\theta$ is transformed into pseudorapidity $\eta$ through the following function:
-
-\begin{equation}
-	\eta \equiv -\ln{\tan{\frac{\theta}{2}}}
-\end{equation}
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/cmsDetectorAndCoordinateSystem.png}
-	\caption{All CMS detector components and the coordinate system used to describe particle kinematics.}
-	\label{fig:cmsAndCoordinateSystem}
-\end{figure}
-
-$\eta$ of 0 points along the $y$ axis, while $\eta$ of $\infty$ points along the $z$ axis.
-An equivalent definition of pseudorapidity in terms of the particle energy E and longitudinal 
-momentum $p_{z}$ in the massless particle limit is:
+Detected particles were characterized by points of origin and trajectories relative to the IP, and energies 
+perpendicular to the beam axis.  The tracker and muon detectors measured the energy of detected particles in 
+terms of a scalar transverse momentum $\pt$, and the two calorimeters used a scalar transverse energy $\Et$.  The two 
+quantities are equivalent because detected particles are assumed to be massless.  The trajectory of each detected particle 
+is expressed using two angular variables.  A particle's trajectory relative to the beam direction is expressed using 
+the pseudorapidity $\eta$
 
 \begin{equation}
 	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
 \end{equation}
+where E is the particle's energy, and $p_{z}$ is the particle's momentum along the beam direction.  A particle's 
+trajectory in the plane perpendicular to the beam axis is expressed using the angle $\phi$, $0 \leq phi < 2\pi$.  The 
+transverse energies $\Et$ and $\pt$ are related to the magnitudes $E$ and $|p|$ as $\Et \equiv E/\cosh{\eta}$ and 
+$\pt \equiv |p|/\cosh{\eta}$.  The distance between a particle's trajectory and another point in the $(\eta,\phi)$ 
+space is expressed as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  Each charged particles detected in the tracker 
+was also characterized by a point of origin.  Each point is measured from the IP, and 
+is identified by a longitudinal distance along the beam axis, and a transverse distance perpendicular to the beam axis.
 
-Pseudorapidity is used to describe particle trajectories instead of the angle $\theta$ for several reasons.  Particles 
-produced by pp interactions were often boosted along the $z$ axis, but the degree of boost was never well 
-defined because the momenta of the interacting partons was unknown.  This boost affected the 
-trajectories of particles in $\theta$, but did not affect particle trajectories in $\eta$.  In 
-addition, the particles that caused radiation damage in CMS sub-detector systems were produced at 
-a rate that scaled linearly with $\eta$.  Thus, in discussions where radiation damage or particle 
-isolation played a role, ideas could be more clearly articulated using $\eta$.
-
-The main variables used to quantify particle energies are transverse energy 
-$\Et \equiv E/\cosh{\eta}$ and transverse momentum $\pt \equiv |p|/\cosh{\eta}$.  The silicon tracker and muon detectors measure $\pt$, 
-while the calorimeters measure $\Et$.  The distance between 
-a particle and another point in the $(\eta, \phi)$ space is measured as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  
-%Transverse momentum $\pt$, the component of momentum perpendicular to the proton beam axis, and transverse energy $\Et$, the 
-%analogous form of energy, were used because both were insensitive to the unknown $z$ momenta of the interacting partons.  
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/cmsDetectorBasic.png}
+	\caption{Cut-away view of the entire CMS detector.  Closest to the proton-proton interaction point is the 
+		silicon tracker, followed by the electromagnetic calorimeter, then the hadronic calorimeter, and the 
+	magnet.  The muon detectors are located in the magnet iron return yoke.}
+	\label{fig:layersOfCMS}
+\end{figure}
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
@@ -153,12 +61,6 @@ to the beam axis was the pixel detector, which used silicon pixels to pinpoint p
 Surrounding the pixel detector was the strip detector, which used silicon strips to measure charged particle momenta with 
 a resolution of a few percent.  Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ generated an 
 analog signal that was detected and stored in an analog memory until it was readout or discarded.
-
-to the beam axis was the pixel detector, which used $\approx$1 m$^{2}$ of silicon divided into 100 $\times$ 150 $\mu$m$^{2}$ 
-silicon pixels to pinpoint pp interaction vertices with $\mu$m precision.  Surrounding the pixel detector was the strip 
-detector, which used 200 m$^{2}$ of silicon divided into silicon strips\footnote{The strip size varied with $\eta$ and 
-distance away from the beam axis - the strip width was between 80 and 180 $\mu$m, and the strip length was between 
-12 and 16 cm.} to measure charged particle momenta with a resolution of a few percent.  Charged particles produced within 
 
 The pixel detector was built from $\approx$1 m$^{2}$ of silicon divided into 100 $\times$ 150 $\mu$m$^{2}$ silicon detectors.  
 In the barrel region ($0 < |\eta| < 1.2$), individual silicon detectors were assembled in three concentric cylindrical shells 
@@ -175,7 +77,7 @@ vertices.
 \end{figure}
 
 Located outside the pixel detector, the strip detector was constructed with 200 m$^{2}$ of silicon divided into larger silicon detectors\footnote{The strip size varied with $\eta$ and 
-distance away from the beam axis - the strip width was between 80 and 180 $\mu$m, and the strip length was between 12 and 16 cm.} organized 
+distance away from the beam axis.  The strip width was between 80 and 180 $\mu$m, and the strip length was between 12 and 16 cm.} organized 
 into four structures based on $|\eta|$, and distance from the interaction point.  In the barrel region, silicon detectors 
 were used to build 10 concentric cylindrical shells.  In the endcap region, silicon detectors 
 were arranged in 12 disks, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}, with some overlap in $|\eta|$ with the 
@@ -202,8 +104,8 @@ The tracker measured the momenta of charged particles with a resolution that deg
 increased.  For reconstructed muons with $20 < \pt < 100\GeV$, the tracker measured the $\pt$ of barrel region muons with a 
 resolution of 1.3\% to 2.0\%, and measured the $\pt$ of endcap muons with a resolution no worse than $\approx$6\% \cite{muonRecoFirstCollisions}.  
 For reconstructed charged hadrons with similar $\pt$, the tracker measured the $\pt$ of charged hadrons with a resolution 
-similar to muons as long as a nuclear interaction did not occur in the tracker. Due to the tracker material budget (0.18 
-to 0.56 nuclear interaction lengths), on average the tracker measured the 
+similar to muons as long as a nuclear interaction did not occur in the tracker. Due to the tracker material budget, 0.18 
+to 0.56 nuclear interaction lengths, on average the tracker measured the 
 $\pt$ of charged hadrons with a worse resolution than muons.  Due to bremsstrahlung the tracker measured the $\pt$ of 
 electrons with a resolution worse than charged hadrons or muons, but this was inconsequential because the ECAL measured 
 electron energies with a better resolution.
@@ -250,13 +152,6 @@ preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 	\label{fig:ecalEBEEandES}
 \end{figure}
 
-%Hadrons that impinged on the HCAL showered in metal absorber layers, and in $\sim$10 ns produced scintillation 
-%light in the plastic tiles.  Optical fibers transmitted the scintillation light to hybrid photodiodes, 
-%which measured the scintillation light to determine the energies of incident hadrons.  The HCAL was used in 
-%combination with the tracker, ECAL, and muon detectors to measure the energy of jets.  After calibrating the 
-%HCAL and the other sub-detectors, the energy of jets with $\pt > 50\GeV$ and $|\eta| < 3.0$ was measured with 
-%a resolution better than 15\% \cite{jetResolutionInCollisions}.
-
 Photons and electrons that impinged on the ECAL interacted with lead-tungstate nuclei, causing a scintillation 
 signal to be emitted that was detected with avalanche photodiodes in the barrel, and vacuum phototriodes in the 
 endcap.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, 
@@ -297,7 +192,7 @@ trajectory, and each photon was identified as a SC not matched to any track.
 \label{sec:hcalDescription}
 Surrounding the ECAL was the hadronic calorimeter (HCAL), which detected charged and neutral hadrons.  The 
 HCAL is a sampling calorimeter constructed with 17 layers of 3.7 mm thick scintillating plastic tiles separated by 
-17 layers of metal absorber plates about 5 cm thick.  In the barrel 
+17 layers of 5 cm thick metal absorber plates.  In the barrel 
 region ($0 < |\eta| < 1.4$), absorber plates and scintillating tiles were organized into 2304 towers, each 
 covering a 5 $\times$ 5 grid of ECAL barrel crystals.  In the endcap region ($1.3 < |\eta| < 3.0$), absorber 
 plates and scintillating tiles were assembled into 2304 towers (1152 per endcap), each covering 
