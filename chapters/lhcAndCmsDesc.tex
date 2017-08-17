@@ -55,7 +55,7 @@ $\lesssim$18000 amps through superconducting wire wound into a solenoid.  The wi
 cooled to a superconducting state using a cryogenic system adjacent to the solenoid.  The magnet and its subsystems 
 were supported by a structure made mostly from iron, which stopped most particles except muons.
 
-Surrounding the magnet were the muon detectors, which resided in a magnetic field with strength between 1 and 3$\unit{T}$.  Three 
+Surrounding the magnet were the muon detectors, which were in a magnetic field with strength between 1 and 3$\unit{T}$.  Three 
 different technologies - drift tubes (DT) in the lowest radiation regions, cathode strip chambers (CSC) in higher 
 radiation regions, and resistive plate chambers (RPC) in all regions - were used to detect muons.  In these detectors 
 muons travelled through pressurized gas chambers and ionized charges from the gas along their 
@@ -204,9 +204,9 @@ resolution of 1.3\% to 2.0\%, and measured the $\pt$ of endcap muons with a reso
 For reconstructed charged hadrons with similar $\pt$, the tracker measured the $\pt$ of charged hadrons with a resolution 
 similar to muons as long as a nuclear interaction did not occur in the tracker. Due to the tracker material budget (0.18 
 to 0.56 nuclear interaction lengths), on average the tracker measured the 
-$\pt$ of charged hadrons with a worse resolution than muons.  Due to electron bremsstrahlung the tracker measured the $\pt$ of 
-electrons with a resolution worse than charged hadrons or muons, but on average the energy lost through bremsstrahlung was 
-recovered by the electromagnetic calorimeter.
+$\pt$ of charged hadrons with a worse resolution than muons.  Due to bremsstrahlung the tracker measured the $\pt$ of 
+electrons with a resolution worse than charged hadrons or muons, but this was inconsequential because the ECAL measured 
+electron energies with a better resolution.
 
 To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during 2015 pp collisions.  Before collisions, cosmic ray muons were 
@@ -231,14 +231,14 @@ In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible
 the energies of incident particles.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
 measuring the amount of visible light produced by PbWO$_{4}$ crystals.
 
-The ECAL contained 75848 crystals divided into two $|\eta|$ regions based on the rate of radiation 
+The ECAL contained 75848 crystals \cite{ecalPerformanceInCollisions} divided into two $|\eta|$ regions based on the rate of radiation 
 damage.  In the barrel region ($0 < |\eta| < 1.479$), 61200 
-crystals that were $\sim$26 radiation lengths\footnote{On average the energy of a relativistic $e^{\pm}$ decreases by $e^{-1}$ after 
-travelling through one radiation length of material.} long were arranged in a cylindrical shell.  The front face of 
-each crystal measured 2.2 $\times$ 2.2 cm$^{2}$, and resided $\sim$19. cm away from the outer most silicon tracker layer.  
+crystals with $\sim$26 radiation lengths\footnote{On average the energy of a relativistic $e^{\pm}$ decreases by $e^{-1}$ after 
+travelling through one radiation length of material.} of PbWO$_{4}$ were arranged in a cylindrical shell.  The front face of 
+each crystal measured 2.2 $\times$ 2.2 cm$^{2}$, and was 19 cm away from the outer most silicon tracker layer.  
 In the endcap region ($1.479 < |\eta| < 3.0$), 14648 crystals (half in each 
-endcap) $\sim$25 radiation lengths long were installed in a disk.  The front face of endcap crystals measured 2.86 
-$\times$ 2.86 cm$^{2}$, and resided behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
+endcap) with $\sim$25 radiation lengths of PbWO$_{4}$ were installed in a disk.  The front face of endcap crystals measured 2.86 
+$\times$ 2.86 cm$^{2}$, and was located behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
 The preshower improved the spatial and energy resolution with 
 which electromagnetic showers were studied in the endcap.  A partial view of the ECAL barrel, endcap and 
 preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
@@ -250,49 +250,47 @@ preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 	\label{fig:ecalEBEEandES}
 \end{figure}
 
-Photons and $e^{\pm}$ that impinged on the ECAL interacted with lead-tungstate nuclei.  Incident photons 
-converted into $e^{+}e^{-}$ pairs, and any energetic $e^{\pm}$ interacted with PbWO$_{4}$ nuclei through 
-bremsstrahlung and produced gamma rays.  Gamma rays with sufficient energy converted into $e^{+}e^{-}$ pairs, 
-and bremsstrahlung followed by pair conversion continued until more than 99.99\% of the initial photon or 
-$e^{\pm}$ energy was lost.  For an incident photon or $e^{\pm}$ that did not interact with the silicon 
-tracker, the resulting shower of low energy $e^{\pm}$ was usually fully contained in a 3 $\times$ 3 crystal 
-grid centered on the most energetic crystal.
+%Hadrons that impinged on the HCAL showered in metal absorber layers, and in $\sim$10 ns produced scintillation 
+%light in the plastic tiles.  Optical fibers transmitted the scintillation light to hybrid photodiodes, 
+%which measured the scintillation light to determine the energies of incident hadrons.  The HCAL was used in 
+%combination with the tracker, ECAL, and muon detectors to measure the energy of jets.  After calibrating the 
+%HCAL and the other sub-detectors, the energy of jets with $\pt > 50\GeV$ and $|\eta| < 3.0$ was measured with 
+%a resolution better than 15\% \cite{jetResolutionInCollisions}.
 
-Showers of low energy $e^{\pm}$s interacted with lead-tungstate atoms and quickly produced distinguishable 
-signals indicative of incident photon and $e^{\pm}$ energies.  Coulomb interactions between shower $e^{\pm}$s 
-and bound state electrons in PbWO$_{4}$ atoms excited bound electrons to meta-stable states, and in 
-$\lesssim$20 ns more than 80\% of bound electrons returned to their ground states by emitting scintillation 
-photons in the visible light regime.  The total energy of 
-scintillation photons was measured by avalanche photodiodes in the barrel, and vacuum phototriodes in the 
-endcap to determine the incident photon or $e^{\pm}$ energy.  Using these photodetectors, the ECAL measured 
-the energies of electrons from $Z \rightarrow ee$ decays ($\Et \approx 45 \GeV$) in real collisions with a resolution 
-better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  
-At a slightly lower $\Et$ scale, the ECAL measured the energies of photons from $Z \rightarrow \mu\mu\gamma$ 
-decays in real collisions with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
-%this energy resolution is from test beam measurements with no material in front of the ECAL crystals
-%\begin{equation}
-%	\frac{\sigma_{E}}{E} = \frac{2.8\%}{\sqrt{E/(1 GeV)}} \oplus \frac{0.151 GeV}{E} \oplus 0.3\%
-%\end{equation}
+Photons and electrons that impinged on the ECAL interacted with lead-tungstate nuclei, causing a scintillation 
+signal to be emitted that was detected with avalanche photodiodes in the barrel, and vacuum phototriodes in the 
+endcap.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, 
+was sufficiently high that the scintillation signal was usually fully contained in a 3 $\times$ 3 crystal 
+grid centered on the most energetic crystal.  PbWO$_{4}$ was chosen because the scintillation signal was fast - 
+more than 80\% of the scintillation light was emitted in $\sim$20 ns - as required by the high pp collision rate.  
+The scintillation signal was amplified and measured by photodetectors to determine the energy of incident 
+photons and electrons.  Based on real collision data, the ECAL measured the energies of electrons from $Z \rightarrow ee$ 
+decays ($\Et \approx 45 \GeV$) with a resolution better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  
+At a slightly lower $\Et$ scale in real collision data, the ECAL measured the energies of photons from $Z \rightarrow \mu\mu\gamma$ 
+decays with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
 
 To maintain the ECAL energy resolution, the ECAL crystals were monitored and calibrated 
-during data taking using several techniques.  Two to three times every hour each ECAL crystal was illuminated 
-with light from one blue laser and one green laser to monitor the crystal transparency.  Every week laser data 
-was used to calculate the average change in each crystal's transparency relative to the prior week, and this change 
-was corrected by applying correction factors to the crystals.  Electrons and photons from $\eta \rightarrow \gamma\gamm$, 
-$W \rightarrow e\nu$, and $Z \rightarrow e^{+}e^{-}$ were used to validate the weekly corrections derived from laser data.
+during data taking using several techniques.  Every 40 minutes each ECAL crystal was illuminated 
+with light from blue and green lasers to monitor the crystal transparency.  Every week laser data 
+was used to calculate new crystal correction factors, which corrected the changes in crystal transparency 
+since the previous week.  Photons from $\eta \rightarrow \gamma\gamma$, and electrons from 
+$W \rightarrow e\nu$ and $Z \rightarrow e^{+}e^{-}$ were used to validate the weekly transparency corrections.
 
-To compliment weekly laser transparency corrections, monthly corrections were applied to ECAL crystals 
-to calibrate their responses in terms of reconstructed particle energy.  Relative corrections were calculated from 
-the weighted average relative correction determined using several methods described elsewhere \cite{eGammaMonitCalib2011}.  
-The relative corrections normalized the responses of all crystals to the same value, then absolute scale corrections 
-were applied.  The absolute correction for each crystal was derived using $e^{\pm}$ from $Z \rightarrow e^{+}e^{-}$, 
-and ensured the average dilepton mass measured by each crystal in $Z \rightarrow e^{+}e^{-}$ events was equal to the 
-true $Z$ boson mass.
+To compliment the transparency corrections, additional corrections were applied to ECAL crystals 
+to calibrate their responses based on the arrival times and energies of reconstructed particles.  Relative energy 
+and relative arrival time corrections were calculated from 
+the weighted average correction determined from methods described elsewhere \cite{eGammaMonitCalib2011}.  
+The relative corrections normalized the responses of all crystals, in terms of energy and time, to the same value, then 
+absolute energy scale corrections were applied.  The absolute energy correction for each crystal was derived using 
+electrons from $Z \rightarrow e^{+}e^{-}$, and ensured the average dilepton mass measured by each crystal in 
+$Z \rightarrow e^{+}e^{-}$ events was consistent with the true $Z$ boson mass.  New arrival time corrections 
+were applied every month, and new energy corrections were applied once in September 2015.
 
-During particle reconstruction energies measured by individual ECAL crystals were grouped into 5 $\times$ 5 crystal superclusters 
-(SCs), centered on crystals with local energy maxima.  In the subset of SCs that were isolated 
+During particle reconstruction energies measured by individual ECAL crystals were grouped into dynamically 
+sized superclusters (SCs) with at least 9 crystals.  The SC size was allowed to vary to capture bremsstrahlung 
+photons produced by electrons traversing the silicon tracker.  In the subset of SCs that were isolated 
 from HCAL energy deposits, each $e^{\pm}$ was identified as a SC that geometrically matched a reconstructed track 
-trajectories, while each photon was identified as a SC not matched to any track.
+trajectory, and each photon was identified as a SC not matched to any track.
 
 
 \section{The Hadronic Calorimeter}
