@@ -84,15 +84,15 @@ expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as sho
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-Through hadronization, photon radiation and leptonic weak decays, quarks produced in pp interactions 
-created jets of photons, hadrons and leptons.  Jet reconstruction began by reconstructing photons, 
-electrons and muons, and generic charged and neutral hadrons.  Each charged hadron was reconstructed as 
-an energy measured in an HCAL tower geometrically matched to a reconstructed track.  In addition, 
-charged hadrons could also contain an ECAL SC if the SC $(\eta, \phi)$ position was consistent with 
-the HCAL tower.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
-an ECAL SC, whose $(\eta, \phi)$ position was not consistent with any reconstructed track.  Similarly, 
-each photon was reconstructed as an ECAL SC whose position was not consistent with any reconstructed 
-track.  Subsequently, jets were reconstructed by clustering individual reconstructed particles together, 
+Quarks, through hadronization, photon radiation, and leptonic weak decays, produced jets of photons, 
+hadrons, and leptons.  Jet reconstruction began by reconstructing photons, 
+electrons and muons, and charged and neutral hadrons.  Each charged hadron was reconstructed in a 
+similar way to electrons, by geometrically matching an energy measured in an HCAL tower to a 
+reconstructed track.  A charged hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position 
+matched the HCAL tower.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
+an ECAL SC, whose $(\eta, \phi)$ position did not match any reconstructed track.  Similarly, 
+each photon was reconstructed as an ECAL SC whose position did not match any reconstructed track.  
+After reconstructing individual particles, jets were reconstructed as clusters of individual particles, 
 as shown in Figure \ref{fig:jetClustering}.
 
 \begin{figure}[h]
@@ -103,6 +103,7 @@ as shown in Figure \ref{fig:jetClustering}.
 	\label{fig:jetClustering}
 \end{figure}
 
+%RESUME HERE%
 In each event, every reconstructed particle was considered a jet candidate, except charged 
 hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Using the 
 anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles were clustered into multi-particle jets 
