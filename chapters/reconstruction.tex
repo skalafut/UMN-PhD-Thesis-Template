@@ -38,7 +38,7 @@ electron candidate tracks.  Each reconstructed electron was identified as a SC t
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/electronTrackAndSupercluster.png}
-	\caption{A typical electron's trajectory through the tracker and ECAL.}
+	\caption{The trajectory of a typical electron through the tracker and the ECAL.}
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
@@ -103,20 +103,18 @@ as shown in Figure \ref{fig:jetClustering}.
 	\label{fig:jetClustering}
 \end{figure}
 
-%RESUME HERE%
-In each event, every reconstructed particle was considered a jet candidate, except charged 
-hadrons that did not originate from the reconstructed vertex with the highest $\sum \pt$.  Using the 
-anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles were clustered into multi-particle jets 
-based on their individual energies and trajectories.  Jet energies were equal to the total energy of 
-all constituents, jet $(\eta, \phi)$ trajectories were defined as the energy-weighted average trajectory 
-of all constituents, and the majority of each jet's energy was contained in a circular area with radius 
-$\Delta R = 0.4$.
+In each collision event, every reconstructed particle was considered a jet candidate, except charged 
+hadrons that did not come from the reconstructed vertex with the highest $\sum \pt$.  Using the 
+anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles were clustered into jets 
+based on their individual energies and trajectories.  The jet energies were the total energies of 
+all constituents, and the jet $(\eta, \phi)$ trajectories were the energy-weighted average trajectories 
+of all constituents.  The majority of each jet's energy was contained in a cone with radius $\Delta R = 0.4$.
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Energetic electrons, muons and jets produced by all types of interactions in pp collisions were 
-reconstructed using several CMS subdetector systems.  Additional selections were applied to charged leptons 
-and jets to isolate events with signs of a \WR and \nul.
+Energetic electrons, muons and jets produced in collisions were reconstructed using several CMS sub-detectors 
+and dedicated reconstruction algorithms.  Additional selections were applied to these leptons and jets to 
+increase sensitivity to the \WR signal relative to ST processes that produced $\ell\ell jj$ events.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
