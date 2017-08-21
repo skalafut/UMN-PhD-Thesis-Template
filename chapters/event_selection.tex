@@ -5,26 +5,26 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The LRS model predicts the existence of a \WR boson and heavy neutrinos \nul, and that their 
-production and decay yields events with two high energy jets and two high energy charged leptons.  Using 
-the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 2015, evidence of 
-\WR and \nul production was searched for in events with $\ell\ell jj$ ($\ell = e,\mu$) final states.  
-Events were selected using lepton and jet selections developed from features of ST backgrounds 
-and $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ decays.
+The LRS model predicts the existence of a \WR and \nul that decay to two energetic charged leptons and two 
+energetic jets.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
+2015, evidence of the \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  
+Events were selected using requirements that were developed based on features of ST processes and \WR decays.
 
 
 \section{Features of \WR signal and ST backgrounds}
 \label{sec:signalAndBkgndFeatures}
-Lepton and jet selections were driven by model independent features of \WR and \nul decays, and characteristics 
-of ST backgrounds.  The expected \WR mass 
+The event selections were driven by model independent features of \WR decays and ST processes, like \DY 
+and t$\bar{t}$, in the $\ell\ell jj$ final states.  The expected \WR mass 
 (\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
 so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay 
-products, on average, were distributed uniformly in $\phi$, and concentrated in the region $|\eta| < 2.4$, 
+products, on average, were distributed uniformly in $\phi$, and concentrated in the $|\eta| < 2.4$ 
+region\footnote{The $|\eta| < 2.4$ region covers 94\% of the $0 \leq \theta < 180$ degree phase space, where 
+$\theta = 0$ points along the beam axis.}, 
 as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
-\mWR meant final state leptons and jets would each have $\pt$ of several hundred $\GeV$ or more, as shown in 
+\mWR meant final state leptons and jets would have $\pt$ of several hundred $\GeV$ or more, as shown in 
 Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  In contrast, the majority of ST background events 
-produced leptons and jets with $\pt$ below 100 $\GeV$.  The lepton and jet kinematic distributions, and 
-the large expected \mWR motivated the following event selections:
+produced leptons and jets with $\pt$ below 100 $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and 
+\ref{fig:bkgJetPts}.  These kinematic features motivated the event selections:
 
 \begin{itemize}
 	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one had $\pt > 60$ $\GeV$.
@@ -33,17 +33,20 @@ the large expected \mWR motivated the following event selections:
 	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-The large expected mass difference between any charged lepton $\ell$ and heavy neutrino \nul motivated 
-additional selections.  To conserve momentum in the $\WR \rightarrow \ell_{1} \nul$ 
-decay, $\ell_{1}$ recoiled against the neutrino \nul.  Then the \nul decayed to 
-$\ell_{2}$ and two jets, which recoiled against $\ell_{1}$.  Thus the lepton pair $\ell_{1}\ell_{2}$, 
-on average, had a large dilepton mass $\Mll$ (Table \ref{tab:wrMll}), and $\ell_{1}$ was well separated 
-from the \nul decay products.  In addition, the large expected neutrino mass \mnul, hundreds of 
-$\GeV$ or more, needed to predict low ST neutrino masses resulted in large separations 
-between $\ell_{2}$ and both jets.  In contrast, \DY and diboson (WW, WZ, ZZ) background events primarily 
-had $\Mll < 180 \GeV$, and in QCD multi-jet background events with a reconstructed lepton, the lepton was 
-often close to a reconstructed jet.  The separation between leptons and jets, and the recoil of $\ell_{1}$ 
-against $\ell_{2}$ motivated additional event selections:
+The large expected mass difference between a charged lepton $\ell$ and a \nul motivated 
+additional event selections.  In the $\WR \rightarrow \ell_{1} \nul$ decay, the $\ell_{1}$ recoiled against 
+the heavier \nul to conserve momentum.  Then, the \nul decayed to 
+a second lepton $\ell_{2}$ and two jets that recoiled against the $\ell_{1}$.  
+Thus the lepton pair $\ell_{1}\ell_{2}$, on average, had a large dilepton mass ($\Mll$, Table \ref{tab:wrMll}), 
+and the $\ell_{1}$ was well separated from the \nul decay products.  In constrast, \DY and diboson (WW, WZ, ZZ) 
+events primarily had $\Mll < 180 \GeV$.  In $\WR \rightarrow \ell_{1} \nul$ decays, 
+the neutrino masses $\mnul$ are expected to exceed the ST $Z$ boson mass in order to predict ST neutrino 
+masses below 1 eV consistent with experimental evidence \cite{sumNuMassLimit}, and to suppress left-right 
+mixing, which increases \nul production through $pp \rightarrow Z \rightarrow \nu\nu \rightarrow \nul\nu$.  
+The high expected $\mnul$ resulted in large $\Delta R$ separations between \nul decay products.  However, 
+in QCD and other multi-jet events with a reconstructed lepton, the lepton was often a byproduct of 
+hadronization, and was reconstructed near a jet but not clustered into it.  The separation between leptons 
+and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the additional event selections:
 
 \begin{itemize}
 	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
@@ -101,6 +104,32 @@ against $\ell_{2}$ motivated additional event selections:
 	\label{fig:wrJetPts}
 	\caption{The $\pt$ distributions of the reconstructed jets produced by the \nul decay are shown for 
 		$\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:bkgLeptonPts}
+	\caption{The $\pt$ distribution of the leading (subleading) electron reconstructed in simulated \DY and t$\bar{t}$ events is 
+		shown on the top (bottom).}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:bkgJetPts}
+	\caption{The $\pt$ distribution of the leading (subleading) jet reconstructed in simulated \DY and t$\bar{t}$ events is shown 
+	on the top (bottom).}
 \end{figure}
 
 \begin{table}[h]
