@@ -8,23 +8,23 @@
 The LRS model predicts the existence of a \WR and \nul that decay to two energetic charged leptons and two 
 energetic jets.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
 2015, evidence of the \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  
-Events were selected using requirements that were developed based on features of ST processes and \WR decays.
+Events were selected using requirements that were developed based on features of ST processes and \WR and \nul 
+decays.
 
 
 \section{Features of \WR signal and ST backgrounds}
 \label{sec:signalAndBkgndFeatures}
-The event selections were driven by model independent features of \WR decays and ST processes, like \DY 
-and t$\bar{t}$, in the $\ell\ell jj$ final states.  The expected \WR mass 
-(\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
+The event selections were driven by model independent features of \WR and \nul decays and ST processes in the $\ell\ell jj$ 
+final states.  The expected \WR mass (\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
 so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay 
 products, on average, were distributed uniformly in $\phi$, and concentrated in the $|\eta| < 2.4$ 
 region\footnote{The $|\eta| < 2.4$ region covers 94\% of the $0 \leq \theta < 180$ degree phase space, where 
 $\theta = 0$ points along the beam axis.}, 
 as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
 \mWR meant final state leptons and jets would have $\pt$ of several hundred $\GeV$ or more, as shown in 
-Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  In contrast, the majority of ST background events 
-produced leptons and jets with $\pt$ below 100 $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and 
-\ref{fig:bkgJetPts}.  These kinematic features motivated the event selections:
+Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  In contrast, the two backgrounds \DY and 
+t$\bar{t}$ produced leptons and jets each with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} 
+and \ref{fig:bkgJetPts}.  These kinematic features motivated the event selections:
 
 \begin{itemize}
 	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one had $\pt > 60$ $\GeV$.
@@ -46,7 +46,7 @@ mixing, which increases \nul production through $pp \rightarrow Z \rightarrow \n
 The high expected $\mnul$ resulted in large $\Delta R$ separations between \nul decay products.  However, 
 in QCD and other multi-jet events with a reconstructed lepton, the lepton was often a byproduct of 
 hadronization, and was reconstructed near a jet but not clustered into it.  The separation between leptons 
-and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the additional event selections:
+and jets, and the recoil of the $\ell_{2}$ against the $\ell_{1}$ motivated the additional event selections:
 
 \begin{itemize}
 	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
@@ -64,7 +64,7 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 	}
 	\label{fig:wrLeptonEtas}
 	\caption{The $\eta$ distribution of the reconstructed electron produced by the \WR (\nul) decay is shown on the top (bottom) for 
-		$\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 \end{figure}
 
 \begin{figure}[btp]
@@ -77,7 +77,7 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 	}
 	\label{fig:wrJetEtas}
 	\caption{The $\eta$ distributions of the reconstructed jets produced by the \nul decay are shown for 
-		$\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 \end{figure}
 
 \begin{figure}[btp]
@@ -90,7 +90,7 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 	}
 	\label{fig:wrLeptonPts}
 	\caption{The $\pt$ distribution of the reconstructed electron produced by the \WR (\nul) decay is shown on the top (bottom) for 
-		$\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 \end{figure}
 
 \begin{figure}[btp]
@@ -103,7 +103,7 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 	}
 	\label{fig:wrJetPts}
 	\caption{The $\pt$ distributions of the reconstructed jets produced by the \nul decay are shown for 
-		$\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 \end{figure}
 
 \begin{figure}[btp]
@@ -115,8 +115,8 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
 	}
 	\label{fig:bkgLeptonPts}
-	\caption{The $\pt$ distribution of the leading (subleading) electron reconstructed in simulated \DY and t$\bar{t}$ events is 
-		shown on the top (bottom).}
+	\caption{The $\pt$ distribution of the leading (subleading) electron reconstructed with $|\eta| < 2.4$ in simulated \DY and t$\bar{t}$ events 
+		with two reconstructed jets is shown on the top (bottom).}
 \end{figure}
 
 \begin{figure}[btp]
@@ -128,12 +128,12 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
 	}
 	\label{fig:bkgJetPts}
-	\caption{The $\pt$ distribution of the leading (subleading) jet reconstructed in simulated \DY and t$\bar{t}$ events is shown 
-	on the top (bottom).}
+	\caption{The $\pt$ distribution of the leading (subleading) jet reconstructed with $|\eta| < 2.4$ in simulated \DY and t$\bar{t}$ events with 
+		two reconstructed electrons is shown on the top (bottom).}
 \end{figure}
 
 \begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
+	\caption{The fraction of simulated $\WR \rightarrow eejj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
 	\label{tab:wrMll}
 	\centering
 	\begin{tabular}{c|c}
@@ -181,13 +181,13 @@ and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated the addition
 
 \section{Online Event Selection}
 \label{sec:triggers}
-Evidence of \WR and \nul production was searched for in events selected by lepton triggers.  The $ee$-channel 
+Evidence of a \WR and \nul was searched for in events selected during collisions by lepton triggers.  The $ee$-channel 
 search used a double electron HLT algorithm, and the $\mu\mu$-channel search used a single muon HLT algorithm.
 
-Events in the $ee$-channel search were selected by Level-1 triggers that required one ECAL supercluster 
-(SC) with $\Et > 40 \GeV$, or two non-overlapping SCs - one with $\Et > 22$ $\GeV$, the other with 
-$\Et > 10$ $\GeV$.  Events that passed the L1 selection were reconstructed if they passed the 
-following double electron HLT selections:
+In the $ee$-channel, events were first selected by Level-1 triggers that required one ECAL supercluster (SC) 
+with $\Et > 40 \GeV$, or two non-overlapping SCs: one with $\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  
+Events that passed the Level-1 selection were reconstructed offline if they passed the following double electron 
+HLT selections:
 
 \begin{itemize}
 	\item Two non-overlapping SCs were detected with $\Et > 33$ $\GeV$.
@@ -196,7 +196,7 @@ following double electron HLT selections:
 		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ in the barrel, and $< 0.1$ in the endcap.
 		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
 		\item If the SC was in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the SC 
-			center along the $z$ axis within $2.3$ cm, and extrapolated to the SC center in $(\eta, \phi)$ within the $(\eta, \phi)$ 
+			center along the beam axis within $2.3$ cm, and extrapolated to the SC center in $(\eta, \phi)$ within the $(\eta, \phi)$ 
 			area of one ECAL crystal.
 	\end{itemize}
 \end{itemize}
@@ -225,17 +225,20 @@ following double electron HLT selections:
 %	\item A second SC was detected with energy $>$ 4 GeV.
 %\end{itemize}
 
-Events used in the $\mu\mu$-channel search were selected by a Level-1 trigger that required a track in one 
-muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the L1 selection were reconstructed if 
-they passed the following single muon HLT selections (no difference between the barrel and endcap):
+In the $\mu\mu$-channel, events were first selected by a Level-1 trigger that required a track in one muon DT or 
+CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection were reconstructed offline if they 
+passed the following single muon HLT selections:
 
 \begin{itemize}
-	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ was geometrically matched to 
-		the muon detector hits that passed the L1 trigger.
-	\item A curve, representing the muon trajectory through CMS, was fitted to the silicon tracker track and 
-		at least one muon detector hit with $\chi^{2}/nDOF < 20$.
-	\item The distance in the $x-y$ plane between the origin of the silicon tracker track and its 
-		reconstructed vertex was $< 1$ mm.
+	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching reconstructed 
+		track:
+	\begin{itemize}
+		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least 
+			one muon detector hit with $\chi^{2}/nDOF < 20$.
+		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
+			reconstructed vertex was $< 1$ mm.
+	\end{itemize}
 \end{itemize}
 
 %add this to the background estimation chapter
@@ -294,30 +297,31 @@ and passed all selections.  \MC simulations of ST backgrounds and \WR signal pro
 the following procedure:
 
 \begin{itemize}
-	\item \textbf{Step 1} used a dedicated \MC generator to simulate the interaction between two protons 
+	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
 		colliding in a vacuum, and the particles produced by the interaction.
-	\item \textbf{Step 2} simulated the effect of multiple pp interactions occurring in the same collision, 
-		and used GEANT4 \cite{geant4} to simulate interactions between particles and detector materials, 
-		and the detector response to all particles.
-	\item \textbf{Step 3} used the simulated detector response to simulate the Level-1 and High Level 
-		trigger decisions, and the reconstruction of particles and interaction vertices.
+	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
+		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
+		and the detector response to particles.
+	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
+		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
+		algorithms used in data.
 \end{itemize}
 
-Step 1 also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
-Before starting the second step, an independent \MC simulation of minimum bias collisions was produced 
-using the step 1.  Then, for every event $Y$ simulated in step 2, a random integer $X$ 
-, representing the number of pileup interactions, was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations started, the 
-average expected pileup was 12}.  $X$ simulated minimum bias events, and all 
-their final state particles, were added to the primary event $Y$ before starting GEANT4 simulations.  Step 
-3 saved trigger decisions but did not exclude events from reconstruction, where particles were 
-reconstructed using the same algorithms used with data.  The 3 step procedure 
-was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.  After 
-a full simulated dataset was produced, the distribution of pileup interactions was compared between data 
-and simulated events.  Each simulated event was weighted to bring the two pileup distributions into agreement.
+In step 1 the \MC generator also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
+Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
+Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
+was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
+pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
+simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
+3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
+
+The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
+differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
+dependent weight to every simulated event.
 
 \begin{table}[bt]
-\caption{Simulated datasets used to study backgrounds and the \WR signal.  The "Size" of each dataset 
-is the integrated luminosity of collision data needed to collect the same number of simulated events (for \WR this is estimated).}
+\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
+	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching ratio of the process.}
 \label{tab:centrallyProducedMC}
 
 \centering
@@ -345,31 +349,36 @@ is the integrated luminosity of collision data needed to collect the same number
 }
 \end{table}
 
-Different \MC generators were used in step 1 based on the process that was simulated.  
-The production of jets through initial or final state parton radiation was best simulated 
-by the \MADGRAPH \cite{madgraph} generator, so \MADGRAPH was used to simulate \DY+jets, W+jets, 
-and t$\bar{t}$+jets.  The production and decay of individual top quarks was best simulated by the 
-\POWHEG \cite{powheg} generator, so \POWHEG was used to simulate single top and top+W.  The 
-general purpose \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate diboson (WW, 
-WZ, ZZ) backgrounds and the \WR signal.  In simulations of all processes, \PYTHIA was also used 
-to hadronize quarks and gluons into jets with the NNPDF23 PDF set \cite{nnpdf}.
+In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
+production of additional jets through initial or final state parton radiation was best simulated by the \MADGRAPH 
+\cite{madgraph} generator, but the effect of additional jets was significant only in high rate, leptonic ST backgrounds 
+- $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  Thus, \MADGRAPH was 
+used to simulate these backgrounds with additional jets.  However, \MADGRAPH was one of the most time consuming 
+generators, and only simulated Feynman diagrams at leading order in the electroweak and strong interaction coupling 
+constants, so faster generators simulated other interactions.  The cross sections 
+$\times$ branching ratios of other top or $\bar{t}$ quark backgrounds to energetic $\ell\ell jj$ events were 
+sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
+was used to simulate these backgrounds.  The cross sections times branching ratios of diboson (WW, WZ, ZZ) backgrounds 
+to energetic $\ell\ell jj$ events were so low that next-to-leading order electroweak corrections could safely be 
+ignored, so the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate the diboson 
+backgrounds.  In simulations of all ST backgrounds and signals, \PYTHIA was also used to hadronize quarks and gluons 
+into jets with the NNPDF23 PDF set \cite{nnpdf}.
 
-The \WR signal process was simulated using the NNPDF23 PDF set, and following 
-the assumptions stated in Chapter \ref{sec:lrsPhenomenology}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
-final states were simulated independently, with \mWR stepping from 0.8 to 6 $\TeV$ in increments of 
-0.2 $\TeV$, and the requirement $\mnul = \frac{1}{2}\mWR$.
+The \WR signal model assumes negligible mixing between left- and right-handed fermions, so next-to-leading 
+order electroweak corrections should have a negligible impact on the signal.  \PYTHIA was used to simulate the 
+\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
+stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
 
 Any simulated event used in either channel was required to pass the appropriate lepton trigger.
 
-Additional $\WR \rightarrow \ell\ell jj$ simulated datasets were produced with \PYTHIA and used in the 
-situation when no \WR signal was found.  Events were simulated only through step 1 with the same 
-\PYTHIA configuration used in the 3 step simulation.  Datasets were 
-produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  At each \mWR 
-several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal 
-was found, these datasets were used to test observations against predictions made by different 
-$(\mWR, \mnul \neq \frac{1}{2}\mWR)$ hypotheses, and set \mWR and \mnul exclusion limits.
+Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
+signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
+full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
+At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
+datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
+hypotheses, and set \mWR and \mnul exclusion limits.
 
-
+%RESUME HERE%
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
 The energies of reconstructed muons in data and simulations were corrected before applying any selections.  
