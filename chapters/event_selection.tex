@@ -179,6 +179,95 @@ and jets, and the recoil of the $\ell_{2}$ against the $\ell_{1}$ motivated the 
 %\end{figure}
 
 
+\section{Monte Carlo}
+\label{sec:MC}
+Monte Carlo (\MC) simulations were used to predict ST backgrounds, and study lepton and jet kinematics 
+in $\WR \rightarrow \ell\ell jj$ events.  ST backgrounds were processes, like $Z+jets \rightarrow \ell\ell+jets$ 
+and $W+jets \rightarrow \ell\nu+jets$, that produced events where 2 leptons and 2 jets were reconstructed 
+and passed all selections.  \MC simulations of ST backgrounds and \WR signal processes were produced using 
+the following procedure:
+
+\begin{itemize}
+	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
+		colliding in a vacuum, and the particles produced by the interaction.
+	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
+		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
+		and the detector response to particles.
+	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
+		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
+		algorithms used in data.
+\end{itemize}
+
+In step 1 the \MC generator also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
+Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
+Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
+was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
+pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
+simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
+3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
+
+The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
+differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
+dependent weight to every simulated event.
+
+\begin{table}[bt]
+\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
+	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching ratio of the process.}
+\label{tab:centrallyProducedMC}
+
+\centering
+\resizebox{\textwidth}{!}{
+	\begin{tabular}{ |c|c|c|c| } 
+	\hline
+	Dataset         & Step 1 Generator & cross section (pb) & Size (fb$^{-1}$)   \\
+		\hline
+		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991    & 1.51 \\ \hline
+		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3    & 15.0 \\ \hline
+		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42    & 19.3 \\ \hline
+		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984    & 153. \\ \hline
+		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704    & 369. \\ \hline
+		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
+		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 20.8 \\ \hline
+		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 24.3 \\ \hline
+		$\bar{t}$+W   & \POWHEG & 35.85 & 27.6 \\ \hline
+		t+W   & \POWHEG & 35.85 & 27.8 \\ \hline
+		WW  & \PYTHIA & 113.8   & 8.73   \\ \hline
+		ZZ  & \PYTHIA & 10.15   & 98.2   \\ \hline
+		WZ  & \PYTHIA & 23.4   & 41.8   \\ \hline
+		W+jets $\rightarrow l\nu$+jets & \MADGRAPH & 50270   & 1.44 \\ \hline
+		$\WR \rightarrow l\nul$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 5$\times 10^{6}$ - 11.6   \\ \hline
+		\end{tabular}
+}
+\end{table}
+
+In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
+production of additional jets through initial or final state parton radiation was best simulated by the \MADGRAPH 
+\cite{madgraph} generator, but the effect of additional jets was significant only in high rate, leptonic ST backgrounds 
+- $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  Thus, \MADGRAPH was 
+used to simulate these backgrounds with additional jets.  However, \MADGRAPH was one of the most time consuming 
+generators, and only simulated Feynman diagrams at leading order in the electroweak and strong interaction coupling 
+constants, so faster generators simulated other interactions.  The cross sections 
+$\times$ branching ratios of other top or $\bar{t}$ quark backgrounds to energetic $\ell\ell jj$ events were 
+sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
+was used to simulate these backgrounds.  The cross sections times branching ratios of diboson (WW, WZ, ZZ) backgrounds 
+to energetic $\ell\ell jj$ events were so low that next-to-leading order electroweak corrections could safely be 
+ignored, so the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate the diboson 
+backgrounds.  In simulations of all ST backgrounds and signals, \PYTHIA was also used to hadronize quarks and gluons 
+into jets with the NNPDF23 PDF set \cite{nnpdf}.
+
+The \WR signal model assumes negligible mixing between left- and right-handed fermions, so next-to-leading 
+order electroweak corrections should have a negligible impact on the signal.  \PYTHIA was used to simulate the 
+\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
+stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
+
+Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
+signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
+full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
+At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
+datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
+hypotheses, and set \mWR and \mnul exclusion limits.
+
+
 \section{Online Event Selection}
 \label{sec:triggers}
 Evidence of a \WR and \nul was searched for in events selected during collisions by lepton triggers.  The $ee$-channel 
@@ -287,102 +376,13 @@ passed the following single muon HLT selections:
 %	\end{itemize}
 %\end{itemize}
 
+Simulated events used in either channel were required to pass the appropriate trigger.
 
-\section{Monte Carlo}
-\label{sec:MC}
-Monte Carlo (\MC) simulations were used to predict ST backgrounds, and study lepton and jet kinematics 
-in $\WR \rightarrow \ell\ell jj$ events.  ST backgrounds were processes, like $Z+jets \rightarrow \ell\ell+jets$ 
-and $W+jets \rightarrow \ell\nu+jets$, that produced events where 2 leptons and 2 jets were reconstructed 
-and passed all selections.  \MC simulations of ST backgrounds and \WR signal processes were produced using 
-the following procedure:
 
-\begin{itemize}
-	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
-		colliding in a vacuum, and the particles produced by the interaction.
-	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
-		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
-		and the detector response to particles.
-	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
-		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
-		algorithms used in data.
-\end{itemize}
-
-In step 1 the \MC generator also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
-Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
-Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
-was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
-pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
-simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
-3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
-
-The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
-differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
-dependent weight to every simulated event.
-
-\begin{table}[bt]
-\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
-	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching ratio of the process.}
-\label{tab:centrallyProducedMC}
-
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{ |c|c|c|c| } 
-	\hline
-	Dataset         & Step 1 Generator & cross section (pb) & Size (fb$^{-1}$)   \\
-		\hline
-		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991    & 1.51 \\ \hline
-		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3    & 15.0 \\ \hline
-		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42    & 19.3 \\ \hline
-		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984    & 153. \\ \hline
-		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704    & 369. \\ \hline
-		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
-		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 20.8 \\ \hline
-		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 24.3 \\ \hline
-		$\bar{t}$+W   & \POWHEG & 35.85 & 27.6 \\ \hline
-		t+W   & \POWHEG & 35.85 & 27.8 \\ \hline
-		WW  & \PYTHIA & 113.8   & 8.73   \\ \hline
-		ZZ  & \PYTHIA & 10.15   & 98.2   \\ \hline
-		WZ  & \PYTHIA & 23.4   & 41.8   \\ \hline
-		W+jets $\rightarrow l\nu$+jets & \MADGRAPH & 50270   & 1.44 \\ \hline
-		$\WR \rightarrow l\nul$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 5$\times 10^{6}$ - 11.6   \\ \hline
-		\end{tabular}
-}
-\end{table}
-
-In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
-production of additional jets through initial or final state parton radiation was best simulated by the \MADGRAPH 
-\cite{madgraph} generator, but the effect of additional jets was significant only in high rate, leptonic ST backgrounds 
-- $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  Thus, \MADGRAPH was 
-used to simulate these backgrounds with additional jets.  However, \MADGRAPH was one of the most time consuming 
-generators, and only simulated Feynman diagrams at leading order in the electroweak and strong interaction coupling 
-constants, so faster generators simulated other interactions.  The cross sections 
-$\times$ branching ratios of other top or $\bar{t}$ quark backgrounds to energetic $\ell\ell jj$ events were 
-sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
-was used to simulate these backgrounds.  The cross sections times branching ratios of diboson (WW, WZ, ZZ) backgrounds 
-to energetic $\ell\ell jj$ events were so low that next-to-leading order electroweak corrections could safely be 
-ignored, so the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate the diboson 
-backgrounds.  In simulations of all ST backgrounds and signals, \PYTHIA was also used to hadronize quarks and gluons 
-into jets with the NNPDF23 PDF set \cite{nnpdf}.
-
-The \WR signal model assumes negligible mixing between left- and right-handed fermions, so next-to-leading 
-order electroweak corrections should have a negligible impact on the signal.  \PYTHIA was used to simulate the 
-\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
-stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
-
-Any simulated event used in either channel was required to pass the appropriate lepton trigger.
-
-Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
-signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
-full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
-At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
-datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
-hypotheses, and set \mWR and \mnul exclusion limits.
-
-%RESUME HERE%
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
 The energies of reconstructed muons in data and simulations were corrected before applying any selections.  
-Muon energy corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
+The muon energy corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
 between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
 muon $\pt$ selections between data and simulated events.
 
@@ -422,10 +422,10 @@ passing kinematic selections were filtered with the following ID selections:
 	\end{tabular}
 \end{table}
 
-If an event contained more than two muons passing all kinematic and ID selections, the two 
-highest $\pt$ muons were selected.
+If an event contained more than two muons passing all kinematic and ID selections, the two highest $\pt$ muons 
+were selected.
 
-The muon reconstruction, trigger and ID selection efficiencies differed between simulations and data, and 
+The efficiencies of muon reconstruction, trigger and ID selections differed between simulations and data, and 
 the differences were corrected by applying multiplicative weights to simulated events.  Trigger 
 and reconstruction+ID weights were calculated as functions of the charge and kinematic variables of selected 
 muons.  The trigger weight, between 0.95 (5\% decrease) and 1.04 (4\% increase), was applied once to every 
@@ -435,12 +435,12 @@ every event.
 
 \section{Offline Electron Selection}
 \label{sec:electronSelection}
-The energies of reconstructed electrons in data and simulations were corrected before applying any selections.  Electron energy 
-corrections were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
+The energies of reconstructed electrons in data and simulations were corrected before applying any selections.  Similar 
+to muons, the electron energy corrections were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
 between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
 electron $\Et$ selections between data and simulated events.
 
-Following energy corrections, electron kinematic and identification (ID) selections were applied to select electrons 
+Following energy corrections, electron kinematic and ID selections were applied to select electrons 
 consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
 with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\Et > 60$ $\GeV$.  
 Electrons passing kinematic selections were filtered with the following ID selections:
@@ -465,26 +465,26 @@ Electrons passing kinematic selections were filtered with the following ID selec
 		$\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
 
-If an event contained more than two electrons passing all kinematic and ID selections, the two 
-highest $\Et$ electrons were selected.
+If an event contained more than two electrons passing all kinematic and ID selections, the two highest $\Et$ 
+electrons were selected.
 
-The electron reconstruction and ID selection efficiencies\footnote{The electron trigger efficiency was the same 
-in data and simulated events within its uncertainty.} differed between simulations and data, and, again, 
-the differences were corrected by applying multiplicative weights to simulated events.  Fixed value reconstruction 
+The efficiencies of electron reconstruction and ID selections\footnote{The electron trigger efficiency was the same 
+in data and simulated events within its statistical uncertainty.} differed between simulations and data, and, similar 
+to muons, the differences were corrected by applying multiplicative weights to simulated events.  Fixed value reconstruction 
 and ID weights were calculated for electrons with $\Et > 53$ $\GeV$, inclusive of $\eta$.  The reconstruction 
 weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were applied twice to every event.
 
 
 \section{Offline Jet Selection}
 \label{sec:jetSelection}
-As was done with leptons, the energies of reconstructed jets in data and simulations were corrected before applying 
+Similar to leptons, the energies of reconstructed jets in data and simulations were corrected before applying 
 any selections.  Jet energies in data and simulations were increased by neutral hadrons from pileup interactions, so 
 the first correction reduced each jet's energy based on its area and the neutral hadron energy density measured in the 
 event \cite{pileup1,pileup2}.  Subsequent corrections were derived from simulations and applied to data and simulated 
 events.  These corrections resolved the difference in efficiency of jet $\pt$ selections between data and simulated 
 events, and are described in more detail elsewhere \cite{jetpaper}.
 
-Following energy corrections, jet kinematic and identification (ID) selections were applied to select jets consistent 
+Following energy corrections, jet kinematic and ID selections were applied to select jets consistent 
 with those expected from \WR decays.  Each event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ 
 and $|\eta| < 2.4$.  Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds 
 without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic 
@@ -514,15 +514,14 @@ selections were filtered with the following ID selections:
 
 If an event contained more than two jets passing all kinematic and ID selections, the two highest $\pt$ jets were selected.
 
-
-The jet reconstruction and ID selection efficiencies were the same in data and simulated events within uncertainties, so 
-no additional weights were needed.
+The efficiencies of jet reconstruction and ID selections were the same in data and simulated events within uncertainties, so 
+no additional corrective weights were needed.
 
 
 \section{\WR Candidate Selection}
 \label{sec:wrCandSelection}
-In each event passing selections, a \WR candidate was built from selected leptons and jets, and filtered with additional 
-kinematic selections:
+In each event passing trigger, lepton, and jet selections, a \WR candidate was built from selected leptons and jets, and 
+filtered with additional kinematic selections:
 
 \begin{itemize}
 	\item Each selected lepton was separated from the other selected lepton and both jets by $\Delta R > 0.4$.
@@ -530,23 +529,10 @@ kinematic selections:
 	\item The invariant mass $\Mlljj$ of the selected leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-The full trigger, kinematic, and ID selection efficiency in \WR signal events exceeded 50\% in the $ee$-channel, and 
+The net efficiency of trigger, kinematic, and ID selections in \WR signal events exceeded 50\% in the $ee$-channel, and 
 70\% in the $\mu\mu$-channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The efficiency was lower in the $ee$-channel due 
 to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter ID selections applied to electrons relative 
-to muons.  
-
-%\begin{table}[h]
-%	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton plus dijet mass $\Mlljj > 600$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-%	\label{tab:wrMlljj}
-%	\centering
-%	\begin{tabular}{c|c}
-%		\mWR (\TeV) & Fraction of events with high \Mlljj (\%) \\  \hline
-%		1.0 &  99.  \\
-%		2.0 &  100.  \\
-%		3.0 &  100.  \\ \hline
-%	\end{tabular}
-%\end{table}
-
+to muons.
 
 \begin{figure}[h]
 	\centering
@@ -558,7 +544,9 @@ to muons.
 \end{figure}
 
 After all selections, evidence of \WR and \nul production was searched for as an excess over expected background events 
-in kinematic variable distributions.  However, for different variables the excess's shape and magnitude have different 
+in kinematic variable distributions.  
+%RESUME HERE%
+However, for different variables the excess's shape and magnitude have different 
 sensitivities to the unknown ratio $\mnul / \mWR$, and unconstrained parameters of the LRS model.  To minimize sensitivity 
 to unknown quantities, the $\Mlljj$ variable was chosen as the figure of merit; an example of its discriminating power 
 is shown in Figure \ref{fig:mlljjVariableOfMerit}.  The $\Mlljj$ distribution for ST backgrounds was estimated using 
