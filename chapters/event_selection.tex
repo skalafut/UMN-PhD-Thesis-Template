@@ -5,261 +5,214 @@
 \label{sec:event_selection_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If a \WR boson and heavy neutrino \nul existed at a mass scale and coupling strength accessible 
-at the LHC, evidence of them would manifest as an excess of events relative to expected backgrounds 
-that produced two high-$p_{T}$ jets and two high-$p_{T}$, same flavor charged leptons.  
-Using collision data recorded by CMS in 2015, evidence of a \WR boson and \nul was sought in events 
-with this final state.  In the data, charged leptons and jets were reconstructed and identified 
-using the silicon tracker, the ECAL and HCAL, and the muon detectors.  Following reconstruction 
-and identification, additional selections were applied to increase sensitivity to heavy \WR and 
-\nul signatures relative to expected backgrounds.
+The LRS model predicts the existence of a \WR and \nul that decay to two energetic charged leptons and two 
+energetic jets.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
+2015, evidence of a \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  
+Events were selected using requirements that were developed based on features of ST processes and \WR and \nul 
+decays.
 
-\section{Online Event Selection}
-\label{sec:triggers}
-Charged leptons that came from proton-proton interactions were identified by the trigger system.  Based 
-on the multiplicity and energy of charged leptons, the trigger system selected events during 
-collisions, and saved these events to permanent storage for further analysis.  As described in Chapter 
-\ref{sec:experiment_chapter}, triggers selected events in two steps.  In the first step, one or more Level-1 triggers were 
-required to fire.  Then, in regions where Level-1 triggers fired, local reconstruction was run, and 
-selections were applied to reconstructed particles.  Events from data and simulations were only 
-used if they passed a High Level trigger.  The specific triggers used in this search are presented 
-here.
 
-In $\WR \rightarrow \ell\ell jj$ processes predicted by LRS models, the expected mass of the \WR ($\gtrsim 1 \TeV$) was 
-so large that the final state leptons were expected to have $\pt \gtrsim 60 \GeV$.  Standard Model processes that 
-produced two charged leptons with such high $\pt$ were predicted to have very low rate in 2015, so the 
-triggers used in this search sought one or two high $\pt$ charged leptons.
-
-Events used in the ee channel \WR search ($pp \rightarrow \WR \rightarrow eejj$) were first selected by Level-1 triggers 
-that required: 
+\section{Features of \WR signal and ST backgrounds}
+\label{sec:signalAndBkgndFeatures}
+The event selections were driven by model independent features of \WR and \nul decays and ST processes in the $\ell\ell jj$ 
+final states.  The expected \WR mass (\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
+so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay 
+products, on average, were distributed uniformly in $\phi$, and concentrated in the $|\eta| < 2.4$ 
+region\footnote{The $|\eta| < 2.4$ region covers 94\% of the $0 \leq \theta < 180$ degree phase space, where 
+$\theta = 0$ points along the beam axis.}, 
+as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected 
+\mWR meant final state leptons and jets would have $\pt$ of several hundred $\GeV$ or more, as shown in 
+Figures \ref{fig:wrLeptonPts} and \ref{fig:wrJetPts}.  In contrast, the two backgrounds \DY and 
+t$\bar{t}$ produced leptons and jets each with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} 
+and \ref{fig:bkgJetPts}.  These kinematic features motivated the event selections:
 
 \begin{itemize}
-	\item At least 40 GeV of energy was measured in one ECAL supercluster (SC), defined as a 5 $\times$ 5 crystal region.
-	\item Or, at least 22 GeV of energy was measured in one SC, and at least 10 GeV of energy was measured in 
-		another, non-overlapping SC.
+	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one had $\pt > 60$ $\GeV$.
+	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
+	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
+	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-Then, events were saved to permanent storage if the following double electron High Level trigger requirements 
-were met: 
+The large expected mass difference between a charged lepton $\ell$ and a \nul motivated 
+additional event selections.  In the $\WR \rightarrow \ell_{1} \nul$ decay, the $\ell_{1}$ recoiled against 
+the heavier \nul to conserve momentum.  Then, the \nul decayed to 
+a second lepton $\ell_{2}$ and two jets that recoiled against the $\ell_{1}$.  
+Thus the lepton pair $\ell_{1}\ell_{2}$, on average, had a large dilepton mass ($\Mll$, Table \ref{tab:wrMll}), 
+and the $\ell_{1}$ was well separated from the \nul decay products.  In constrast, \DY and diboson (WW, WZ, ZZ) 
+events primarily had $\Mll < 180 \GeV$.  In $\WR \rightarrow \ell_{1} \nul$ decays, 
+the neutrino masses $\mnul$ are expected to exceed the ST $Z$ boson mass in order to predict ST neutrino 
+masses below 1 eV consistent with experimental evidence \cite{sumNuMassLimit}, and to suppress left-right 
+mixing, which increases \nul production through $pp \rightarrow Z \rightarrow \nu\nu \rightarrow \nul\nu$.  
+The high expected $\mnul$ resulted in large $\Delta R$ separations between \nul decay products.  However, 
+in QCD and other multi-jet events with a reconstructed lepton, the lepton was often a byproduct of 
+hadronization, and was reconstructed near a jet but not clustered into it.  The separation between leptons 
+and jets, and the recoil of the $\ell_{2}$ against the $\ell_{1}$ motivated the additional event selections:
 
 \begin{itemize}
-	\item Two non-overlapping ECAL SCs were detected with energy $>$ 33 GeV.
-	\item For each SC:
-	\begin{itemize}
-		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$ in the barrel, $< 0.1$ in the endcap.
-		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
-		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the $z_{SC}$ 
-			SC center within 2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
-	\end{itemize}
-\end{itemize}
-
-The High Level trigger selections for electrons differ between the barrel and endcap regions because the ECAL 
-crystal sizes and orientations relative to the $x$ and $y$ axes differ between the barrel and endcap, as 
-explained in Chapter \ref{sec:experiment_chapter}.
-
-A second set of ee channel events were used only to estimate backgrounds.  These events were first 
-selected online using a Level-1 trigger that required $>$ 30 GeV of energy be measured in an ECAL SC 
-with $|\eta| < 2.1$.  Following the Level-1 selection, events were saved to permanent storage if the 
-following double electron High Level trigger requirements were met:
-
-\begin{itemize}
-	\item One SC was detected with energy $>$ 30 GeV.
-	\item For the SC with energy $>$ 30 GeV:
-	\begin{itemize}
-		\item For SCs in the barrel or endcap, 90\% of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
-		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
-		\item In a cone of radius $\Delta R =$ 0.3 centered on the SC ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
-		\begin{itemize}
-			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
-			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
-		\end{itemize}
-		\item For SCs in the barrel or endcap, a reconstructed track with hits in at least two pixel tracker layers extrapolates to the 
-			$z_{SC}$ SC center within 1 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of $\frac{1}{2}$ ECAL crystal.
-		\item For SCs in the barrel or endcap, the SC energy and the matching reconstructed track momentum cannot differ by more than 50\%
-	\end{itemize}
-	\item A second SC was detected with energy $>$ 4 GeV.
+	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
+	\item The dilepton mass $\Mll$ of the two reconstructed leptons exceeded $\Mll > 200$ $\GeV$.
 \end{itemize}
 
 
-Events used in the muon channel \WR search ($pp \rightarrow \WR \rightarrow \mu\mu jj$) were first selected online using 
-a Level-1 trigger that required $>$ 16 GeV of momentum be measured in a muon DT or CSC detector.  Following 
-the Level-1 selection, events were saved to permanent storage if the following single muon High Level trigger 
-requirements were met: 
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/etaMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/etaMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrLeptonEtas}
+	\caption{The $\eta$ distribution of the reconstructed electron produced by the \WR (\nul) decay is shown on the top (bottom) for 
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
 
-\begin{itemize}
-	\item The same requirements were applied to muon candidates in the barrel and endcap.
-	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
-	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
-	\item The reconstructed muon track had $p_{T} >$ 50 GeV.
-\end{itemize}
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrJetEtas}
+	\caption{The $\eta$ distributions of the reconstructed jets produced by the \nul decay are shown for 
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
 
-A second set of $\mu\mu$ channel events were used only to estimate backgrounds.  These events were first 
-selected online by a Level-1 trigger, which required $>$ 20 GeV of momentum be measured in a muon 
-DT or CSC detector.  Following the Level-1 selection, events were saved to permanent storage if the 
-following single muon High Level trigger requirements were met:
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/ptMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/ptMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrLeptonPts}
+	\caption{The $\pt$ distribution of the reconstructed electron produced by the \WR (\nul) decay is shown on the top (bottom) for 
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
 
-\begin{itemize}
-	\item Unless noted otherwise, the same requirements were applied to muon candidates in the barrel and endcap.
-	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
-	\item In the $(x,y)$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
-	\item The reconstructed muon track had $p_{T} >$ 22 GeV.
-	\item In a cone of radius $\Delta R =$ 0.3 centered on the muon detector energy cluster ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
-	\begin{itemize}
-		\item The total ECAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{ECAL}}{E_{\mu}} < 0.11$ in the barrel, $< 0.08$ in the endcap.
-		\item The total HCAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{HCAL}}{E_{\mu}} < 0.21$ in the barrel, $< 0.22$ in the endcap.
-		\item The sum $p_{T,other}$ of all tracks in the cone excluding the muon track is small compared to the muon track $p_{T,\mu}$, 
-			$\frac{p_{T,other}}{p_{T,\mu}} < 0.09$ in the barrel and endcap.
-	\end{itemize}
-\end{itemize}
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/ptMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/ptMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrJetPts}
+	\caption{The $\pt$ distributions of the reconstructed jets produced by the \nul decay are shown for 
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
 
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:bkgLeptonPts}
+	\caption{The $\pt$ distribution of the leading (subleading) electron reconstructed with $|\eta| < 2.4$ in simulated \DY and t$\bar{t}$ events 
+		with two reconstructed jets is shown on the top (bottom).}
+\end{figure}
 
-As stated in Chapter \ref{sec:lrsPhenomenology}, it is assumed that the $\WR$ decay cannot violate lepton 
-flavor conservation.  As a result, the search presented here did not seek evidence of the LRS model in 
-events with one electron, one muon and two jets in the final state.  However, events in the $e\mu$ channel 
-($e\mu jj$ final state) were used to estimate top quark backgrounds using a procedure described later.  The $e\mu$ 
-channel events were first selected by a Level-1 trigger that required $>$ 16 GeV of momentum be 
-measured in one muon DT or CSC detector.  Events that passed the Level-1 trigger were saved to permanent 
-storage if the following electron $+$ muon High Level trigger requirements were met:
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+	}
+	\label{fig:bkgJetPts}
+	\caption{The $\pt$ distribution of the leading (subleading) jet reconstructed with $|\eta| < 2.4$ in simulated \DY and t$\bar{t}$ events with 
+		two reconstructed electrons is shown on the top (bottom).}
+\end{figure}
 
-\begin{itemize}
-	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
-	\item In the $(x,y)$ plane, the distance between the origin of the reconstructed muon track and the primary vertex was $<$ 1 \mm.
-	\item The reconstructed muon track had $p_{T} >$ 30 GeV.
-	\item One ECAL SC was detected with energy $>$ 30 GeV.
-	\item For the SC:
-	\begin{itemize}
-		\item The ratio of hadronic energy in the tower behind the SC to the SC energy must be low, $\frac{E_{HCAL}}{E_{SC}} < 0.15$ in the barrel, $< 0.1$ in the endcap.
-		\item For SCs in the barrel or endcap, 90\% of the SC energy must be measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
-		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the 
-			$z_{SC}$ SC center within 2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
-	\end{itemize}
-\end{itemize}
+\begin{table}[h]
+	\caption{The fraction of simulated $\WR \rightarrow eejj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
+	\label{tab:wrMll}
+	\centering
+	\begin{tabular}{c|c}
+		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
+		1.0 &  88.  \\
+		2.0 &  98.  \\
+		3.0 &  99.  \\ \hline
+	\end{tabular}
+\end{table}
 
-
-\subsection{Data}
-\label{sec:collisionData}
-
-%The LHC started colliding protons at $\sqrt{s} = 13\TeV$ center-of-mass energy in April 2015.  From 
-%April until mid August, proton bunches in each beam were separated by 50 \ns.  The data collected 
-%in this period, $\thicksim$0.2 fb$^{-1}$, was used to calibrate and align all CMS subdetector systems, but 
-%was not used in the search presented here for the following reason.  Before 2015 collisions began it 
-%was known that the amount of 50 \ns data collected would be small compared to the data collected with 
-%25 \ns bunch spacing.  As a result, the vast resources needed for physics analyses, like Monte Carlo simulations 
-%of SM processes used to estimate backgrounds, were only produced for data collected with 25 \ns bunch 
-%spacing.  The person-power needed to develop the same resources for 50 \ns data would have been 
-%detrimental to the quality of results produced with 25 \ns data.
-%
-%The LHC stopped collisions in the second half of August and early September, evidenced by the plateau 
-%in Figure \ref{fig:lhc2015IntegLumi} \cite{lumi} during this time, to reconfigure the CERN accelerator system to 
-%deliver proton-proton (pp) collisions with 25 \ns between proton bunches.  The bunch spacing was decreased to 
-%increase the rate of pp collisions without increasing the number of interactions per pp collision event, 
-%which makes particle reconstruction and identification more difficult.  Collisions at $\sqrt{s} = 13\TeV$ 
-%resumed in September and continued until November 2015. During this period the LHC delivered approximately 
-%4.0 fb$^{-1}$ of data, but problems with the CMS magnet limited the amount of data recorded 
-%by CMS with the full 3.8 $\unit{T}$ magnetic field strength to 2.6 fb$^{-1}$.  The full 2.6 fb$^{-1}$ was used in this analysis, and was 
-%divided into two run periods - Run2015C and Run2015D.  All data from September until mid October 
-%was collected with similar beam conditions, like average instantaneous luminosity and the number of bunches 
-%per beam, and constituted run era Run2015C.  In mid October collisions stopped for $\thicksim$1.5 weeks for 
-%LHC maintenance, and to upgrade the LHC to deliver collisions with higher instantaneous luminosities, 
-%approaching $6 \times 10^{33} \frac{protons}{cm^{2}s}$.  Data collected after this upgrade and until the end 
-%of pp collisions in November constituted run era Run2015D.  As in Run2015C, all data in Run2015D was collected 
-%with similar beam conditions.  Comparing the two run eras in Table \ref{tab:collisionDatasets}, most of the 
-%data used in this analysis was collected in Run2015D.
-
-%\begin{figure}[h]
+%\begin{figure}[btp]
 %	\centering
-%	\includegraphics[width=1.0\textwidth]{figures/int_lumi_per_day_cumulative_pp_2015.pdf}
-%	\caption{Integrated luminosity delivered by the LHC and recorded by CMS in 2015.  Only data collected after 
-%	September 1st, corresponding to 25 \ns bunch spacing, was used in this search.}
-%	\label{fig:lhc2015IntegLumi}
+%	\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	\label{fig:wrSigMll}
+%	\caption{The dilepton mass $\Mll$ distribution for $\WR \rightarrow \mu\mu jj$ events with 
+%	$\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+%\end{figure}
+
+%\begin{figure}[btp]
+%	\centering
+%	\subfigure{
+%		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	}
+%	\subfigure{
+%		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	}
+%	\label{fig:wrLeadLeptJetSeparation}
+%	\caption{The $\Delta R(\ell,j)$ separation between the leading reconstructed muon and leading (sub-leading) reconstructed jet 
+%		is shown on the top (bottom) for $\WR \rightarrow eejj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
 %\end{figure}
 %
-%\begin{table}[h]
-%\caption{The amount of data collected in each run era.}
-%\label{tab:collisionDatasets}
-%\centering
-%\begin{tabular}{c|c}
-%Run Era & Int. Lumi (fb$^{-1}$) \\  \hline
-%	2015C &  0.02  \\
-%	2015D &  2.62  \\ \hline
-%\end{tabular}
-%\end{table}
+%\begin{figure}[btp]
+%	\centering
+%	\subfigure{
+%		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	}
+%	\subfigure{
+%		\includegraphics[width=0.65\textwidth]{figures/missingImage.png}
+%	}
+%	\label{fig:wrSubleadLeptJetSeparation}
+%	\caption{The $\Delta R(\ell,j)$ separation between the sub-leading reconstructed muon and leading (sub-leading) reconstructed jet 
+%		is shown on the top (bottom) for $\WR \rightarrow eejj$ events with $\mWR = 2.0 \TeV$ and $\mnul = 1.0 \TeV$.}
+%\end{figure}
 
-The collision data used in this search was delivered by the LHC at $\sqrt{s} = 13 \TeV$, and recorded by the CMS experiment 
-from September until November 2015.  The amount of data collected corresponded to 2.6 fb$^{-1}$ \cite{lumi}, and events 
-used in this search were selected during collisions using the High Level triggers described previously.  Following trigger 
-selection, detector information was reconstructed into charged leptons, photons, and jets using procedures described later.  
-%The fully reconstructed dataset representing all of 2015 was enormous ($\gtrsim 10^{4}$ terabytes), and contained much 
-%more information than what was needed by any individual physics analysis.  To expedite the transformation of 
-%collision data into a public physics result, reconstructed collision events from each run era were split into smaller 
-%datasets distinguished by the High Level triggers that selected the events.  As discussed earlier in 
-%Section \ref{sec:triggers}, collision events used in this analysis were selected if they had energy deposits consistent 
-%with at least one muon, at least two electrons, or at least one muon and one electron.  Events selected by the single 
-%muon triggers were assigned to the "SingleMuon" dataset, while those selected by the double electron and electron $+$ 
-%muon triggers were assigned to the "DoubleEG" (EG for electron gamma) and "MuonEG" datasets, respectively.  
-%The storage space consumed by these datasets largely came from object collections, representing quantities 
-%like individual hits in all tracker or calorimeter cells, that were not needed by the majority of physics 
-%analyses, including the one presented here.  Slimmed datasets were made by removing these object collections, and moving 
-%their important information into more general object collections, like the sole collection representing all 
-%reconstructed electrons.  Slimmed versions of the three datasets mentioned earlier were used in this 
-%analysis, and in each run era individual datasets were $\thicksim$5 terabytes or smaller.
-
-%In addition to the trigger requirements discussed above, collision datasets are cleaned of events
-%in which global reconstruction problems occurred within the detector.  These include events
-%where no primary vertex is reconstructed, and when anomalous noise appears in the
-%tracker, calorimeters, or muon detectors.  Furthermore, events identified as coming from
-%interactions between a single proton beam and beam pipe gas or other foreign material are
-%removed.
 
 \section{Monte Carlo}
 \label{sec:MC}
-
-Monte Carlo (\MC) simulations were used in this search to model two types of processes.  The first 
-type was Standard Model (SM) processes that resulted in the reconstruction of two charged leptons 
-and two jets.  These included processes that produced two real charged leptons and two jets, like 
-$pp \rightarrow Z+jets \rightarrow ll+jets$, and processes that produced multiple jets that 
-were incorrectly reconstructed as charged leptons, like $pp \rightarrow W+jets \rightarrow l\nu+jets$.  
-The second type was the \WR signal process $pp \rightarrow \WR \rightarrow l\nul \rightarrow lljj$ 
-with different \mWR and \mnul masses.  
-\MC simulations of both types of processes were produced using a multi-step procedure.  In the first step, 
-a \MC generator, like \PYTHIA or \MADGRAPH, simulated 
-collision events between two protons in a vacuum, without any magnetic field or CMS detector 
-components.  In simulations, the generator accounted for:
+Monte Carlo (\MC) simulations were used to predict ST backgrounds, and study lepton and jet kinematics 
+in $\WR \rightarrow \ell\ell jj$ events.  ST backgrounds were processes, like $Z+jets \rightarrow \ell\ell+jets$ 
+and $W+jets \rightarrow \ell\nu+jets$, that produced events where 2 leptons and 2 jets were reconstructed 
+and passed all selections.  \MC simulations of ST backgrounds and \WR signal processes were produced using 
+the following procedure:
 
 \begin{itemize}
-	\item The energy carried by each proton into the collision (6.5 \TeV).
-	\item How the incoming proton energy was distributed amongst constituent quarks and gluons according 
-		to parton distribution functions (PDFs).
-	\item The masses of the \WR, \nul and all particles in the SM.
-	\item The coupling strengths between fermions and the bosons that mediated interactions.
+	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
+		colliding in a vacuum, and the particles produced by the interaction.
+	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
+		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
+		and the detector response to particles.
+	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
+		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
+		algorithms used in data.
 \end{itemize}
 
-Any unstable particles produced in the interaction, like a $Z$ or \WR boson, decayed according to 
-their branching fractions to other particles, and any free quarks or gluons that were produced were 
-run through a hadronization simulation that emulates jet production described in Chapter \ref{intro_chapter}.  In the second 
-simulation step, the effect of multiple pp interactions observed in real collisions is simulated by 
-overlaying simulations of randomly chosen SM interactions onto the primary events simulated in the first 
-step.  All pp interaction processes in the SM were assigned a probability proportional to their cross section 
-times branching fraction, then several processes were chosen randomly, and the events they produced after 
-the first simulation stage were overlaid on the primary events of interest.  The processes with the highest cross section times 
-branching fraction by several orders of magnitude were inelastic pp scattering and 
-other gluon mediated interactions that produced hadrons, so most of the randomly chosen events only added 
-hadronic jets to each event.  After this overlaying procedure, the second simulation step used GEANT4 \cite{geant4} to simulate 
-the propagation of all particles in the CMS magnetic field, their interactions with everything in the CMS detector, 
-and the tracker, calorimeters and muon detectors to these particles.  Using the simulated detector response, 
-the last step simulated the Level-1 and High Level triggers, and the reconstruction of interaction 
-vertices, charged and neutral particles, and jets.  The same reconstruction software 
-was used in simulations and collision data, and pertinent details of jet, electron and muon reconstruction 
-algorithms are discussed later.  This multi-step procedure 
-was used to simulate the \WR signal process at different \mWR and \mnul masses, and the SM processes 
-summarized in Table \ref{tab:centrallyProducedMC}.
+In step 1 the \MC generator also simulated the decay of unstable particles, and the hadronization of quarks and gluons.  
+Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
+Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
+was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
+pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
+simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
+3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
 
+The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
+differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
+dependent weight to every simulated event.
 
 \begin{table}[bt]
-\caption{Fully reconstructed \MC samples used in the search described here.  The \DY and t$\bar{t}$+jets events 
-	were produced with a dilepton mass $M_{LL} > 50 \GeV$ selection applied to the two leptons coming from the hard interaction.  
-Here, "size" represents the equivalent integrated luminosity of collision data needed to collect the same number 
-of events in data.  For the \WR datasets the size is estimated based on the coupling assumptions stated in Chapter \ref{sec:lrsPhenomenology}.}
+\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
+	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching ratio of the process.}
 \label{tab:centrallyProducedMC}
 
 \centering
@@ -287,421 +240,328 @@ of events in data.  For the \WR datasets the size is estimated based on the coup
 }
 \end{table}
 
-In simulations of SM processes, different \MC generators were used in the first simulation step.  
-The \DY (DY)+jets, W+jets, and t$\bar{t}$+jets simulations used the \MADGRAPH \cite{madgraph} generator, 
-the single top and top+W simulations used the \POWHEG \cite{powheg} generator, and the diboson (WW, WZ, ZZ) 
-simulations used the \PYTHIA \cite{pythia8,Sjostrand:2006za} generator.  In all of these 
-simulations, \PYTHIA was used to hadronize free quarks and gluons into jets with the NNPDF23 PDF set 
-\cite{nnpdf}.  Events used from these \MC datasets were required to pass at least one of the High 
-Level triggers described earlier.
+In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
+production of additional jets through initial or final state parton radiation was best simulated by the \MADGRAPH 
+\cite{madgraph} generator, but the effect of additional jets was significant only in high rate, leptonic ST backgrounds 
+- $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  Thus, \MADGRAPH was 
+used to simulate these backgrounds with additional jets.  However, \MADGRAPH was one of the most time consuming 
+generators, and only simulated Feynman diagrams at leading order in the electroweak and strong interaction coupling 
+constants, so faster generators simulated other interactions.  The cross sections 
+$\times$ branching ratios of other top or $\bar{t}$ quark backgrounds to energetic $\ell\ell jj$ events were 
+sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
+was used to simulate these backgrounds.  The cross sections times branching ratios of diboson (WW, WZ, ZZ) backgrounds 
+to energetic $\ell\ell jj$ events were so low that next-to-leading order electroweak corrections could safely be 
+ignored, so the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator was used to simulate the diboson 
+backgrounds.  In simulations of all ST backgrounds and signals, \PYTHIA was also used to hadronize quarks and gluons 
+into jets with the NNPDF23 PDF set \cite{nnpdf}.
 
-The \WR signal process was simulated using the \PYTHIA generator and NNPDF23 PDF set, and following 
-the assumptions stated in Chapter \ref{sec:lrsPhenomenology}.  \WR signals in the $\mu\mu jj$ and $eejj$ 
-final states were simulated independently, with \mWR increasing from 0.8 to 6 $\TeV$ in increments of 
-0.2 \TeV, and $\mnul = \frac{1}{2}\mWR$.  Events from the $\WR \rightarrow \mu\mu jj$ samples were 
-required to pass the single $\mu$, $\pt > 50 \GeV$ High Level trigger described previously, while 
-$\WR \rightarrow eejj$ events were required to pass the double electron $\Et > 33 \GeV$ High Level 
-trigger.
+The \WR signal model assumes negligible mixing between left- and right-handed fermions, so next-to-leading 
+order electroweak corrections should have a negligible impact on the signal.  \PYTHIA was used to simulate the 
+\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
+stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
 
-As stated previously, in the second step of \MC simulations, simulated events from randomly chosen SM 
-processes were mixed into the main events being simulated.  For each event simulated for the main 
-process (\WR or SM), the number of secondary events mixed in were pulled from a Poisson distribution 
-with mean 12.  The secondary simulated events emulated multiple reconstructed interaction vertices, 
-or pileup, in real data, but the PU distribution observed in data did not match that in simulated 
-events.  To correct for the PU discrepancy between data and simulations, a PU dependent weight was 
-applied to every simulated event.
-
-Additional $\WR \rightarrow lljj$ simulated datasets using \PYTHIA were produced for limit setting.  
-Only the first simulation step was run, and the \PYTHIA configuration was 
-identical to what was used for the fully reconstructed \MC events.  Datasets were produced with 
-$0.8 \leq \mWR \leq 4.0 \TeV$ increasing in \mWR increments of 0.1 $\TeV$, and $0.025 \leq \mnul < \mWR$ \TeV.  
-Using a procedure described later, these datasets were used to extrapolate \WR cross section limits 
-versus \mWR to \WR and \nul exclusion limits as functions of \mWR and \mnul.
+Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
+signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
+full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
+At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
+datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
+hypotheses, and set \mWR and \mnul exclusion limits.
 
 
-\section{Offline Muon Reconstruction and Selection}
-\label{sec:muonRecoAndSelection}
-Muons were reconstructed using a combination of silicon tracker and muon detector information.  Muons 
-that traversed the tracker layers were reconstructed as charged particles.  Their radii of curvature 
-and measured rate of energy loss helped distinguish muons from other particles, and improved the 
-resolution with which their momenta were measured.  Muons that reached the muon detectors were reconstructed 
-as tracks, with opposite sign radii of curvature relative to the silicon tracker due to the magnetic 
-field in the muon detectors.  Following track reconstruction in the silicon tracker and muon detectors, 
-algorithms \cite{cmsMuonRecoRunOne} were used to identify muons as combinations of tracks in both detector 
-systems that had similar trajectories.  The high-$\pt$ muons studied in this search were primarily 
-reconstructed by starting with tracks in the muon detectors, and looking for matching tracks in the 
-silicon tracker.
+\section{Online Event Selection}
+\label{sec:triggers}
+Evidence of a \WR and \nul was searched for in events selected during collisions by lepton triggers.  The $ee$-channel 
+search used a double electron HLT algorithm, and the $\mu\mu$-channel search used a single muon HLT algorithm.
 
-%One algorithm started with a seed track in the muon detectors, and 
-%extrapolated the track back to the silicon tracker.  Then, tracks in the silicon tracker identified as 
-%muon tracks were compared to the extrapolated muon detector track.  If a silicon tracker track had a 
-%trajectory that matched the extrapolated muon detector track, the algorithm built a muon from the 
-%combination of the two tracks.  This algorithm was developed to maximize reconstruction efficiency of 
-%high $p_{T}$, and was complemented by a second algorithm that started with a seed track identified as a 
-%muon in the silicon tracker.  The second algorithm extrapolated the seed track to the muon detectors in 
-%the magnet return yoke, and compared the seed track to the muon detector tracks.  If a muon detector track 
-%had a trajectory that matched the extrapolated seed track, the algorithm built a muon by combining the two 
-%tracks.  The second algorithm was developed to maximize reconstruction efficiency of low $p_{T}$ muons, which 
-%were not always able to traverse multiple layers of the iron return yoke to be detected in multiple 
-%muon chambers.  In both algorithms, if multiple matching tracks were found, the track assigned to the muon 
-%was the one whose trajectory was the closest match to the extrapolated track.
-
-The momenta of reconstructed muons were determined using the "Tune-P" algorithm 
-\cite{cmsMuonRecoRunTwo}, which was developed to improve high-$\pt$ muon momentum resolution.  For every muon, 
-this algorithm simultaneously runs four algorithms that try to measure 
-the momentum and fit a track to the entire reconstructed muon with the lowest $\chi^{2}/nDOF$.  All algorithms used all available 
-information from the silicon tracker, and combined muon detector measurements and tracker measurements in 
-different ways.  After all four algorithms were run, the "Tune-P" algorithm identified the muon momentum  
-from the algorithm that fitted a global track to the muon detector and silicon tracker trajectories with the 
-lowest $\chi^{2}/nDOF$ and $\sigma(\pt)/\pt$.  This procedure improved muon momentum resolution for $\pt > 200$ \GeV, 
-which, as shown in Table \ref{tab:wrHighPtMuons}, were expected in a significant fraction of 
-$\WR \rightarrow \mu\mu jj$ events.
-
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrHighPtMuons}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with at least one high-$\pt$ muons (\%) \\  \hline
-		1.0 &  80.  \\
-		2.0 &  95.  \\ 
-		3.0 &  98.  \\ \hline
-	\end{tabular}
-\end{table}
-
-
-%The first algorithm used all muon detector measurements, but gave greater weight to silicon 
-%tracker measurements in the track fit and momentum measurement.  The second algorithm used equally weighted 
-%tracker and muon detector measurements to fit a track, and used infrequent but distinct electromagnetic showers 
-%in all muon chambers to determine the muon momentum.  The third algorithm only used measurements made in the 
-%first layer of muon chambers closest to the magnet solenoid, where the muon has traversed the least amount of 
-%material before being detected, in combination with the tracker measurements to fit a curve to the global muon 
-%path, and determine the muon momentum.  The fourth algorithm dynamically truncated the length of the curve 
-%fitted to the global muon path when a large energy loss caused the muon to dramatically change direction, 
-%and as a result used as few as one layer of muon chambers to determine the trajectory and momentum of a muon.  
-%After all four algorithms were run, the "Tune-P" algorithm assigned the momentum to the muon from the algorithm 
-%that yielded a track fit with the lowest $\chi^{2}/nDOF$ and $\sigma(p_{T})/p_{T}$.  This procedure improved 
-%the muon momentum resolution for $p_{T} > 200$ \GeV, which in general degrades as muon $p_{T}$ increases as 
-%shown in Chapter \ref{sec:experiment_chapter}.
-
-Following the momentum determination, muons were required to pass a $\pt$ selection, and 
-identification selections to reject muons that were not produced by \WR decays.  These requirements were applied identically to events 
-in data and simulations.  LRS models predicted $\mWR \gtrsim 1 \TeV$, and as a result the charged leptons 
-produced by \WR decays had average $\pt$ in excess of 100 \GeV.  The kinematics of the expected final state leptons 
-motivated a $\pt > 53 \GeV$ cut on muons, to increase sensitivity to \WR signals relative to SM backgrounds.  
-As shown in Table \ref{tab:lowerMuonPtCuts}, the $\pt$ cut was not lowered to maintain good \WR sensitivity.  After the $\pt$ cut, muons 
-were required to pass the following identification selections:
+In the $ee$-channel, events were first selected by Level-1 triggers that required one ECAL supercluster (SC) 
+with $\Et > 40 \GeV$, or two non-overlapping SCs: one with $\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  
+Events that passed the Level-1 selection were reconstructed offline if they passed the following double electron 
+HLT selections:
 
 \begin{itemize}
-	\item The track fit obtained from "Tune-P" included at least one muon chamber hit.
-	\item The origin of the track fit obtained from "Tune-P" was within 2 (5) \mm of the primary vertex in the $x,y$ plane ($z$ axis).
-	\item Muon detector tracks were reconstructed in at least two muon chambers.
-	\item The relative $\pt$ error on the muon momentum from "Tune-P" was below 30\%, $\sigma(\pt)/\pt < 0.3$.
-	\item The track obtained from the initial muon reconstruction had at least one hit in the silicon pixel detector, and had 
-		hits in at least five layers in the entire tracker.
-	\item In a $\Delta R = 0.3$ cone centered on the muon track in the silicon tracker, the $\Sigma \pt$ of all 
-		tracks in the cone not matched with the muon must be low compared to the muon $\pt$, $\frac{\Sigma \pt}{muon \pt} < 0.1$.
+	\item Two non-overlapping SCs were detected with $\Et > 33$ $\GeV$.
+	\item For each SC:
+	\begin{itemize}
+		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ in the barrel, and $< 0.1$ in the endcap.
+		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
+		\item If the SC was in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the SC 
+			center along the beam axis within $2.3$ cm, and extrapolated to the SC center in $(\eta, \phi)$ within the $(\eta, \phi)$ 
+			area of one ECAL crystal.
+	\end{itemize}
+\end{itemize}
+
+%add this to the background estimation chapter
+%A second set of ee -channel events were used only to estimate backgrounds.  These events were first 
+%selected online using a Level-1 trigger that required $>$ 30 GeV of energy be measured in an ECAL SC 
+%with $|\eta| < 2.1$.  Following the Level-1 selection, events were saved to permanent storage if the 
+%following double electron High Level trigger requirements were met:
+%
+%\begin{itemize}
+%	\item One SC was detected with $\Et > 30$ $\GeV$, and a second SC was detected with $\Et > 4$ $\GeV$.
+%	\item For the SC with $\Et > 30$ $\GeV$:
+%	\begin{itemize}
+%		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
+%		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.055$ in the barrel, $< 0.07$ in the endcap.
+%		\item In a cone of radius $\Delta R =$ 0.3 centered on the SC ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
+%		\begin{itemize}
+%			\item The fraction of the total ECAL energy in the cone not associated with the SC is low, $\frac{E_{ECAL}}{E_{SC}} < 0.225$ in the barrel, $< 0.121$ in the endcap.
+%			\item The total HCAL energy in the cone is small compared to the SC energy, $\frac{E_{HCAL}}{E_{SC}} < 0.155$ in the barrel, $< 0.16$ in the endcap.
+%		\end{itemize}
+%		\item For SCs in the barrel or endcap, a reconstructed track with hits in at least two pixel tracker layers extrapolates to the 
+%			$z_{SC}$ SC center within 1 cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of $\frac{1}{2}$ ECAL crystal.
+%		\item For SCs in the barrel or endcap, the SC energy and the matching reconstructed track momentum cannot differ by more than 50\%
+%	\end{itemize}
+%	\item A second SC was detected with energy $>$ 4 GeV.
+%\end{itemize}
+
+In the $\mu\mu$-channel, events were first selected by a Level-1 trigger that required a track in one muon DT or 
+CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection were reconstructed offline if they 
+passed the following single muon HLT selections:
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching reconstructed 
+		track:
+	\begin{itemize}
+		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least 
+			one muon detector hit with $\chi^{2}/nDOF < 20$.
+		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
+			reconstructed vertex was $< 1$ mm.
+	\end{itemize}
+\end{itemize}
+
+%add this to the background estimation chapter
+%A second set of $\mu\mu$ -channel events were used only to estimate backgrounds.  These events were first 
+%selected online by a Level-1 trigger, which required $>$ 20 GeV of momentum be measured in a muon 
+%DT or CSC detector.  Following the Level-1 selection, events were saved to permanent storage if the 
+%following single muon High Level trigger requirements were met:
+%
+%\begin{itemize}
+%	\item Unless noted otherwise, the same requirements were applied to muon candidates in the barrel and endcap.
+%	\item A global curve representing a muon candidate was fit to a reconstructed track and at least one muon detector hit with $\chi^{2}/nDOF <$ 20.
+%	\item In the $x-y$ plane, the distance between the origin of the muon track and the primary vertex was $<$ 1 \mm.
+%	\item The reconstructed muon track had $p_{T} >$ 22 GeV.
+%	\item In a cone of radius $\Delta R =$ 0.3 centered on the muon detector energy cluster ($\thicksim$900 ECAL crystals, $\thicksim$35 HCAL towers in the cone):
+%	\begin{itemize}
+%		\item The total ECAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{ECAL}}{E_{\mu}} < 0.11$ in the barrel, $< 0.08$ in the endcap.
+%		\item The total HCAL energy in the cone is small compared to the muon cluster energy, $\frac{E_{HCAL}}{E_{\mu}} < 0.21$ in the barrel, $< 0.22$ in the endcap.
+%		\item The sum $p_{T,other}$ of all tracks in the cone excluding the muon track is small compared to the muon track $p_{T,\mu}$, 
+%			$\frac{p_{T,other}}{p_{T,\mu}} < 0.09$ in the barrel and endcap.
+%	\end{itemize}
+%\end{itemize}
+
+%add this to the background estimation chapter
+%As stated earlier, it is assumed that the $\WR$ decay cannot violate lepton 
+%flavor conservation.  Therefore, evidence of a \WR and \nul was not searched for in 
+%events with the $e\mu jj$ final state.  However, events in the $e\mu$ -channel 
+%($e\mu jj$ final state) were used to estimate top quark backgrounds using a procedure described later.  The $e\mu$ 
+%-channel events were selected by a Level-1 trigger that required a track in one 
+%muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the L1 selection were reconstructed if 
+%they passed the following electron-muon HLT selections:
+%
+%\begin{itemize}
+%	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ was geometrically matched to 
+%		the muon detector hits that passed the L1 trigger.
+%	\item A curve, representing the muon trajectory through CMS, was fitted to the silicon tracker track and 
+%		at least one muon detector hit with $\chi^{2}/nDOF < 20$.
+%	\item The distance in the $x-y$ plane between the origin of the silicon tracker track and its 
+%		reconstructed vertex was $< 1$ \mm.
+%	\item One ECAL SC was detected with energy $>$ 30 GeV.
+%	\item For the SC:
+%	\begin{itemize}
+%		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ in the barrel, and $< 0.1$ in the endcap.
+%		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+%		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the 
+%			$z_{SC}$ SC center within 2.3 \cm, and the $(\eta_{SC}, \phi_{SC})$ SC center within the $(\eta, \phi)$ area of one ECAL crystal.
+%	\end{itemize}
+%\end{itemize}
+
+Simulated events used in either channel were required to pass the appropriate trigger.
+
+
+\section{Offline Muon Selection}
+\label{sec:muonSelection}
+The energies of reconstructed muons in data and simulations were corrected before applying any selections.  
+The muon energy corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
+between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
+muon $\pt$ selections between data and simulated events.
+
+Following energy corrections, muon kinematic and identification (ID) selections were applied to select muons consistent 
+with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  
+Reducing the lower $\pt$ selection was explored, but was found to increase ST 
+backgrounds without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons 
+passing kinematic selections were filtered with the following ID selections:
+
+\begin{itemize}
+	\item Considering the muon's track reconstructed in the silicon tracker:
+	\begin{itemize}
+		\item The track was reconstructed from at least 1 hit in the silicon pixel detector, and at least 
+			5 hits in the entire tracker.
+		\item Within a cone of radius $\Delta R = 0.3$ centered on the track, the $\sum \pt$ of all other 
+			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{muon \pt} < 0.1$.
+	\end{itemize}
+	\item The muon was detected in at least 2 muon chambers.
+	\item The fitted track representing the estimated muon trajectory through all of CMS originated at a 
+		point that was within 2 (5) mm of the muon's reconstructed vertex in the $x-y$ plane ($z$ axis). 
+	\item The muon momentum measurement included at least one muon chamber hit.
+	\item The error on the muon momentum measurement, $\sigma(\pt)$, was less than 30\% of the muon $\pt$, 
+		$\sigma(\pt)/\pt < 0.3$.
 \end{itemize}
 
 \begin{table}[h]
-	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for $\mu$ $\pt$ 
-	cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  
-Lowering the $\mu$ $\pt$ cut worsened S/$\sqrt{B}$.}
+	\caption{Signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\mu$ $\pt$ 
+	selections.  The background is estimated from simulated \DY and t$\bar{t}$, and the signal is estimated 
+	from simulated $\WR \rightarrow \mu\mu jj$ with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 	\label{tab:lowerMuonPtCuts}
 	\centering
 	\begin{tabular}{c|c}
-		$\mu$ $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		$\mu$ $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
 		40 &  11.9  \\
 		53 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
 
-There were known differences between simulations and data that effected the reconstruction and selection efficiencies 
-of muons.  These differences were corrected by applying event weights to muons in simulated events, and energy 
-corrections to muons in data and simulated events.  In general the muon triggers were more efficient in simulations than in 
-collisions, so the weight of every simulated event was scaled down by a factor dependent on the $\pt$ and $\eta$ of the 
-triggering muon.  For the $\pt > 50 \GeV$ trigger used in the $\WR \rightarrow \mu\mu jj$ channel search, the 
-event weight (a weight of 1 is equivalent to no correction) applied to triggering muons in simulated events was between 
-0.95 (5\% decrease) and 0.97 (3\% decrease) for $\pt < 140 \GeV$, and between 0.97 (3\% decrease) and 1.04 (4\% increase) for $\pt > 140 \GeV$.  
-The uncertainty on these weights was purely statistical, and the small impact of muon trigger weight uncertainties is discussed in 
-Chapter \ref{sec:leptonRecoTriggerEffUnc}.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow \mu\mu$ 
-events in data and simulations, it was known that the muon energy scale and resolution differed between simulations 
-and data\footnote{the peak position differed due to different muon energy scale calibrations, and the width differed 
-because the muon energy resolution differed between simulations and data}.  The $\pt$ of muons in data and simulations 
-were corrected based on their $\eta$, $\phi$, charge and initial $\pt$ to bring the muon energy scale and resolution 
-into agreement between data and simulations.  These corrections were applied 
-before the $\pt > 53 \GeV$ cut mentioned earlier.  Additional weights were applied to every simulated muon 
-to eliminate the difference in muon identification selection and reconstruction efficiency between data and simulations.  
-For all muons this weight was always between 1.0 (0\% change) and 0.985 (1.5\% decrease), and the effect of weight uncertainties 
-are discussed in Chapter \ref{sec:uncertainties}.
+If an event contained more than two muons passing all kinematic and ID selections, the two highest $\pt$ muons 
+were selected.
 
-%\begin{table}[htp]
-%  \caption{The correction factor applied to the triggering muon, as a function of its $\pt$ and $\eta$, in simulated events.}
-%  \label{tab:muTrgCorrs}
-%  \centering
-%  \begin{tabular}{ccccc}
-%	  \hline
-%	  $53 < \pt < 140$ & & & & \\
-%	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
-%	  \MC correction  & $0.971$ & $0.964$ & $0.961$ & $0.951$  \\
-%	  \MC correction uncertainty & $0.00079$ & $0.0021$ & $0.0013$ & $0.0043$  \\
-%	  \hline
-%	  $140 < \pt$ & & & & \\
-%	  $|\eta|$         & $< 0.9$ & 0.9 to 1.2 & 1.2 to 2.1 & 2.1 to 2.4 \\
-%	  \MC correction  & $0.971$ & $0.999$ & $0.999$ & $1.04$  \\
-%	  \MC correction uncertainty & $0.0076$ & $0.025$ & $0.015$ & $0.051$  \\
-%	  \hline
-%  \end{tabular}
-%\end{table}
+The efficiencies of muon reconstruction, trigger and ID selections differed between simulations and data, and 
+the differences were corrected by applying multiplicative weights to simulated events.  Trigger 
+and reconstruction+ID weights were calculated as functions of the charge and kinematic variables of selected 
+muons.  The trigger weight, between 0.95 (5\% decrease) and 1.04 (4\% increase), was applied once to every 
+event, and the reconstruction+ID weight, between 1.0 and 0.985 (1.5\% decrease), was applied twice to 
+every event.
 
 
-\section{Offline Electron Reconstruction and Selection}
-\label{sec:electronRecoAndSelection}
-Electron reconstruction started with the reconstruction of ECAL energy clusters.  Electrons that impinged 
-on the ECAL showered and lost substantially all of their energy in 5 $\times$ 5 crystal, and these 25 crystals 
-were reconstructed as individual superclusters (SCs).  In tandem with ECAL SC reconstruction, electron tracks 
-were reconstructed from silicon tracker measurements using a dedicated electron algorithm.  On average an electron 
-lost 33\% of its initial energy to bremsstrahlung in the tracker, and the electron track reconstruction algorithm 
-estimated this energy loss for tracks indicative of electrons.  Tracks were subsequently extrapolated to the 
-ECAL, and electrons were identified as tracks that geometrically matched ECAL SCs.  The electron energy was 
-taken from the SC, but its $\eta$ and $\phi$ were obtained from the track.
-%The SC reconstruction algorithm was optimized to detect real electron energy deposits, typically two crystals 
-%wide or smaller in $\eta$, but large in $\phi$ due to electron bremsstrahlung in the magnetic field and energy 
-%lost to interactions with the tracker, with high efficiency.  
-%Independent of SC reconstruction, electron 
-%tracks were reconstructed from silicon tracker measurements using a specialized electron track reconstruction 
-%algorithm.  On average a relativistic electron that traverses the entire silicon tracker will lose 33\% of 
-%its initial energy to bremsstrahlung in the tracker hardware.  The dedicated electron track reconstruction 
-%algorithm took this significant average energy loss into consideration when building tracks from tracker 
-%measurements.  Following track and SC reconstruction, tracks were extrapolated to the ECAL, and each electron 
-%was formed from one SC and one or three tracks, whose extrapolated positions matched the ECAL SC.  Three track 
-%combinations were allowed because a hard scatter between an electron and the tracker could produce an $e^{+}e^{-}$ 
-%pair in the tracker with sufficient energy to reach the ECAL.  The energy of each electron was taken from 
-%the ECAL, but its $\eta$ and $\phi$ were obtained from the reconstructed track.
+\section{Offline Electron Selection}
+\label{sec:electronSelection}
+The energies of reconstructed electrons in data and simulations were corrected before applying any selections.  Similar 
+to muons, the electron energy corrections were derived by comparing electron kinematic variables in $Z \rightarrow ee$ decays 
+between data and simulated events.  The corrections were applied to resolve the difference in efficiency of 
+electron $\Et$ selections between data and simulated events.
 
-Following electron reconstruction and energy measurement, electrons were required to pass $\Et$ and identification 
-selections.  These requirements were applied identically to events in data and simulations.  
-Similar to muon $\pt$s, electrons were required to have $\Et > 53 \GeV$ to increase sensitivity to a \WR signal.  
-After the $\Et$ cut, electrons were required to pass the following identification selections:
+Following energy corrections, electron kinematic and ID selections were applied to select electrons 
+consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
+with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\Et > 60$ $\GeV$.  
+Electrons passing kinematic selections were filtered with the following ID selections:
 
 \begin{itemize}
-	\item The extrapolated track position and SC seed crystal position differed by less than 1 crystal width in $\eta$, and 
-		about 3 crystal widths in $\phi$.
-	\item For endcap electrons ($1.567 < |\eta| < 2.5$), at least 90\% of the ECAL SC energy was measured in a 2 crystal wide 
-		region in $\eta$.
-	\item For barrel electrons ($|\eta| < 1.44$), at least 94\% (83\%) of the SC energy was measured in a 2 (1) crystal wide 
-		region in $\eta$.
-	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was low, $\frac{E_{HCAL}}{E_{SC}} < 0.05 + 1/E_{SC}$ in the barrel, $< 0.05 + 5/E_{SC}$ in the endcap.
-	\item In a cone of radius $\Delta R =$ 0.3 centered on the electron:
+	\item For endcap electrons, at least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
+	\item For barrel electrons, at least 94\% (83\%) of the SC energy was measured in a region 2 (1) crystals wide 
+		in $\eta$.
+	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy $E_{SC}$ was $< 0.05 + 1/E_{SC}$ 
+		in the barrel, and $< 0.05 + 5/E_{SC}$ in the endcap.
+	\item In a cone of radius $\Delta R =$ 0.3 centered on the electron's $(\eta, \phi)$ position:
 	\begin{itemize}
-		\item The $\Sigma \pt$ of all tracks excluding the electron track was low, $\Sigma \pt < 5$ \GeV.
-		\item The calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
-			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$, where $\rho =$ the neutral hadron energy per unit $\eta,\phi$ area, 
-			and in the barrel $\alpha = \Et$ of the electron, and in the endcap $= \Et - 50$ of the electron.
+		\item The $\sum \pt$ of all tracks excluding the electron track was low, $\sum \pt < 5$ $\GeV$.
+		\item The total calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
+			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$.  $\rho$ was the neutral hadron energy per unit $\eta,\phi$ area, 
+			$\alpha$ in the barrel was the electron $\Et$, and $\alpha$ in the endcap was the electron $\Et$ minus 50 $\GeV$.
 	\end{itemize}
-	\item The number of silicon pixel or inner silicon strip layers that were not hit by the electron track was one or less. 
-	\item The distance $\Delta_{xy}$ between the electron track origin and primary vertex in the $x$, $y$ plane was small, 
-		$\Delta_{xy} < 0.2$ \mm in the barrel tracker, or $\Delta_{xy} < 0.5$ \mm in the endcap tracker.
+	\item The electron's track extrapolated to the $(\eta, \phi)$ position of its SC seed crystal within 1 crystal width in 
+		$\eta$, and within $\sim$3 crystal widths in $\phi$.
+	\item The electron track missed 1 or fewer layers in the silicon pixel or inner silicon strip detectors.
+	\item The electron track origin and its reconstructed vertex were separated by a small distance in the $x-y$ plane, 
+		$\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
 
-There were known differences between simulations and data that effected the electron reconstruction and selection 
-efficiencies.  These differences were corrected by applying event weights to electrons in simulated events, and energy 
-corrections to electrons in data and simulated events.  The double electron $\Et > 33 \GeV$ trigger had the same 
-efficiency in data and simulations for reconstructed electrons with $\Et > 53$ \GeV, so no trigger correction 
-was applied.  Based on the peak position and width of the dilepton mass distribution in $Z \rightarrow ee$ 
-events in data and simulations, it was known that the electron energy scale and resolution differed between simulations 
-and data.  The $\Et$ of electrons in data and simulations were corrected based on their $\eta$, $\phi$, initial $\Et$ 
-and ECAL shower shape to bring the electron energy scale and resolution in data and simulations into agreement.  
-These corrections were applied before the $\Et > 53 \GeV$ cut mentioned earlier.  Additional weights were applied 
-to every simulated electron to eliminate the difference in electron reconstruction and identification selection 
-efficiencies between data and simulations.  A weight of 0.982 (1.8\% decrease) was applied to all simulated electrons to account for 
-differences in reconstruction efficiency, and an additional weight of 0.989 (1.1\% decrease) was applied to all simulated electrons to 
-account for differences in identification selection efficiency.  The effect of uncertainties on these weights was 
-small, and is discussed in Chapter \ref{sec:uncertainties}.
+If an event contained more than two electrons passing all kinematic and ID selections, the two highest $\Et$ 
+electrons were selected.
+
+The efficiencies of electron reconstruction and ID selections\footnote{The electron trigger efficiency was the same 
+in data and simulated events within its statistical uncertainty.} differed between simulations and data, and, similar 
+to muons, the differences were corrected by applying multiplicative weights to simulated events.  Fixed value reconstruction 
+and ID weights were calculated for electrons with $\Et > 53$ $\GeV$, inclusive of $\eta$.  The reconstruction 
+weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were applied twice to every event.
 
 
-\section{Offline Jet Reconstruction and Selection}
-\label{sec:jetRecoAndSelection}
-Jets produced in proton-proton collisions contained long lived charged and neutral hadrons, photons from 
-$\pi^{0} \rightarrow \gamma\gamma$ decays, and charged leptons from heavy quark decays.  Jets reconstruction began 
-by reconstructing electrons, muons, photons, and charged and neutral hadrons.  Photons were reconstructed using the same algorithm 
-used to reconstruct electrons, excluding matching ECAL SCs to reconstructed tracks.  On average, a hadron that 
-impinged on the ECAL had one significant interaction with the PbWO$_{4}$ before entering 
-the HCAL.  As a result, reconstructing charged and neutral hadrons started with the ECAL.  A modified version of 
-the electron SC reconstruction algorithm, with looser requirements on the $\eta$ distribution of energy 
-in the SC, was used to reconstruct hadronic energy clusters in the ECAL.  Then, energy deposited in individual 
-HCAL towers was reconstructed into tower clusters (TC).  Independently, tracks not consistent with muons or 
-electrons were reconstructed using silicon tracker measurements.  Every neutral hadron was built from an HCAL TC, and 
-an ECAL SC if a geometric match was found.  Hadron tracks were extrapolated from the tracker to the HCAL, and 
-each charged hadron was built from a TC and geometrically matching track, and an ECAL SC if a geometric match 
-with the track was found.  After all particles were reconstructed, jets were reconstructed starting with 
-charged particle tracks.  In each event, charged particles that traced back to the interaction 
-vertex with the highest track $\Sigma \pt$ (the primary vertex) were used to tag different jets and their 
-directions.  Then, all charged particles from the primary vertex, and all photons and neutral hadrons in the event 
-were placed in a list of jet constituent candidates, which was subsequently analyzed using the anti-$k_{T}$ 
-algorithm \cite{antikt}.  Jet constituents were iteratively clustered into jets based on the $\pt$ of each 
-constituent and its $(\eta,\phi)$ distance from the jet axis defined by a charged particle track.  The majority 
-of jet constituents fell within $\Delta R < 0.4$ of the jet axis, but it was possible for low energy constituents to 
-be futher away.  A jet's energy was defined as the total energy of its constituents, and its $(\eta,\phi)$ 
-trajectory was the $\pt$-averaged trajectory of all charged constituents.
+\section{Offline Jet Selection}
+\label{sec:jetSelection}
+Similar to leptons, the energies of reconstructed jets in data and simulations were corrected before applying 
+any selections.  Jet energies in data and simulations were increased by neutral hadrons from pileup interactions, so 
+the first correction reduced each jet's energy based on its area and the neutral hadron energy density measured in the 
+event \cite{pileup1,pileup2}.  Subsequent corrections were derived from simulations and applied to data and simulated 
+events.  These corrections resolved the difference in efficiency of jet $\pt$ selections between data and simulated 
+events, and are described in more detail elsewhere \cite{jetpaper}.
 
-%This algorithm took the $i^{th}$ particle from the list of jet constituents, and
-%calculated the distance parameter $d_{ij}$
-%
-%\begin{equation}
-%	$d_{ij} = min(k_{Ti}^{-2},k_{Tj}^{-2})\frac{\Delta^{2}}{R^{2}}$
-%\end{equation}
-%
-%using the $j^{th}$ particle in the same list, where $\Delta$ is the angular separation between the $i^{th}$ 
-%and $j^{th}$ particle, R is 0.4, and $k_{Ti}$ is the $p_{T}$ of the $i^{th}$ particle.  If the $i^{th}$ particle 
-%had $d_{ij} > k_{Ti}^{-2}$ for all j, then the $i^{th}$ particle was a jet constituent and was removed from the 
-%constituent list and placed in a new list $L_{1}$.  This procedure was repeated for all particles in the list of 
-%jet constituents, then repeated for all elements in the new list $L_{1}$.  The iteration over all particles in 
-%the newly created list continued N times, creating N lists, until the lists $L_{N}$ and $L_{N-1}$ had the same 
-%number of elements.  At the end, jets were produced from clusters of individually reconstructed particles.
-
-Once the jets were clustered, their raw energies were corrected in several steps.  
-Neutral hadrons produced by pileup interactions can still be clustered into jets, so the first correction reduces 
-the energy of every jet in a data or simulations based on the jet area and the total neutral hadron energy density 
-in the event \cite{pileup1,pileup2}.  Subsequently, energy corrections based on jet $\eta$ and $\pt$ 
-were applied.  These corrections, derived from \MC and applied to jets in data and simulated events, accomplished 
-two tasks.  First, the $\pt$ of reconstructed jets in simulated events was brought into better agreement with the 
-true (quark, gluon, photon and lepton) jet $\pt$.  Second, the response of the calorimeters to reconstructed jet 
-constituents in simulations and data were brought into better agreement.  More details on jet energy corrections, 
-such as the types of \MC events used to derive the corrections, can be found elsewhere \cite{jetpaper}.
-
-After jets in data and simulation were reconstructed and corrected, jet identification and energy selections 
-were applied to increase sensitivity to jets coming from \WR decays.  The identification criteria required each 
-jet to have:
+Following energy corrections, jet kinematic and ID selections were applied to select jets consistent 
+with those expected from \WR decays.  Each event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ 
+and $|\eta| < 2.4$.  Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds 
+without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic 
+selections were filtered with the following ID selections:
 
 \begin{itemize}
-	\item $|\eta| \leq 2.4$
-	\item less than 90\% of its energy came from neutral hadrons
-	\item less than 90\% of its energy came from photons
-	\item at least 2 constituents (from reconstructed charged or neutral particles)
-	\item more than 0\% of its energy came from charged hadrons
-	\item at least one constituent was a charged hadron
-	\item less than 99\% of its energy came from electrons
+	\item The jet had at least 2 constituents.
+	\item The jet had at least 1 charged hadron constituent.
+	\item More than 0\% of the total jet energy came from charged hadrons.
+	\item Less than 90\% of the total jet energy came from neutral hadrons.
+	\item Less than 90\% of the total jet energy came from photons.
+	\item Less than 99\% of the total jet energy came from electrons.
 \end{itemize}
 
-These requirements increased the fraction of selected jets that originated from real hadronic activity expected in the 
-$\WR \rightarrow \ell\ell jj$ decay.  As shown in Table \ref{tab:wrHighPtJets}, LRS models predicted that real jets 
-produced in \WR decays had high $\pt$.  Jets were required to have $\pt > 40 \GeV$ to increase sensitivity to 
-a \WR signal relative to expected SM backgrounds.  As shown in Table \ref{tab:lowerJetPtCuts}, a lower jet $\pt$ cut 
-increased SM backgrounds without a corresponding increase in \WR signal.
-
 \begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events that had two jets with $\pt > 40$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrHighPtJets}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with two high-$\pt$ jets (\%) \\  \hline
-		1.0 &  80.  \\
-		2.0 &  92.  \\
-		3.0 &  94.  \\ \hline
-	\end{tabular}
-\end{table}
-
-
-\begin{table}[h]
-	\caption{Signal/$\sqrt{Background}$ (S/$\sqrt{B}$) for subleading jet $\pt$ 
-		cuts using simulated \DY, t$\bar{t}$ and $\WR \rightarrow \mu\mu jj$ events 
-	with $\mWR = 2.2 \TeV$ and $\mnuR = 1.1 \TeV$.  Lowering the cut would worsen S/$\sqrt{B}$.}
+	\caption{Signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
+	selections on one jet.  The background is estimated from simulated \DY and t$\bar{t}$, and the 
+	signal is estimated from simulated $\WR \rightarrow \mu\mu jj$ with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
 	\label{tab:lowerJetPtCuts}
 	\centering
 	\begin{tabular}{c|c}
-		jet $p_{T}$ cut (\GeV) & S/$\sqrt{B}$ \\  \hline
+		jet $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
 		30 &  12.1  \\
 		40 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
 
+If an event contained more than two jets passing all kinematic and ID selections, the two highest $\pt$ jets were selected.
+
+The efficiencies of jet reconstruction and ID selections were the same in data and simulated events within uncertainties, so 
+no additional corrective weights were needed.
+
 
 \section{\WR Candidate Selection}
 \label{sec:wrCandSelection}
-Following the reconstruction and selection of electrons, muons and jets, a \WR candidate in every $\mu\mu$ (ee) 
-channel event was built from the two highest $\pt$ ($\Et$) muons (electrons), and the two 
-highest $\pt$ jets passing the $\pt$ or $\Et$ selections described earlier.  In the $e\mu$ channel used for top quark background estimation, the highest $\pt$ muon and highest $\Et$ 
-electron were used to build an $e\mu jj$ candidate.  LRS models predicted one lepton from \WR decays to have 
-higher energy than the other, so ,to increase sensitivity to a \WR signal, one lepton was required to have $\pt$ or 
-$\Et > 60$ \GeV.  Furthermore, due to the heavy $\nul$ recoiling off the $\ell$ daughter of the \WR, it was predicted that 
-the two leptons in \WR decays would have a high dilepton mass (Table \ref{tab:wrMll}).  To further increase sensitivity to a \WR signal over expected 
-backgrounds, especially \DY+jets, the two selected leptons were required to have mass $\Mll > 200$ \GeV.  In events 
-that passed the high $\pt$ lepton and $\Mll$ selections, one or both leptons could have come from jets with $\pt \gg 100 \GeV$ 
-that produced an energetic lepton in the tracker.  To reduce the fraction of such events passing the kinematic 
-selection, the two selected jets were required to be separated from the two selected leptons by $\Delta R > 0.4$:
+In each event passing trigger, lepton, and jet selections, a \WR candidate was built from selected leptons and jets, and 
+filtered with additional kinematic selections:
 
 \begin{itemize}
-	\item $\Delta R(\ell_{1}, j_{1}) > 0.4$
-	\item $\Delta R(\ell_{1}, j_{2}) > 0.4$
-	\item $\Delta R(\ell_{2}, j_{1}) > 0.4$
-	\item $\Delta R(\ell_{2}, j_{2}) > 0.4$
+	\item Each selected lepton was separated from the other selected lepton and both jets by $\Delta R > 0.4$.
+	\item The dilepton mass $\Mll$ of the two selected leptons exceeded $\Mll > 200$ $\GeV$.
+	\item The invariant mass $\Mlljj$ of the selected leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrMll}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
-		1.0 &  88.  \\
-		2.0 &  98.  \\
-		3.0 &  99.  \\ \hline
-	\end{tabular}
-\end{table}
-
-
-As there were only charged leptons and jets in the final states studied in this search, the dilepton plus dijet mass 
-of the four final state particles (\Mlljj) averaged over many events was consistent with \mWR predicted by 
-LRS models.  To further increase sensitivity to a \WR signal relative to expected backgrounds, an effective \WR mass 
-cut was applied by requiring the final state lepton plus jet mass $\Mlljj > 600$ \GeV.  Nearly all events from \WR \MC 
-datasets passed this cut with high efficiency, as shown in Table \ref{tab:wrMlljj}.
-
-The full trigger and kinematic selection efficiency in fully reconstructed \WR signal \MC events exceeded 50\% (70\%) 
-in the ee ($\mu\mu$) channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The ee channel had lower efficiency due 
-to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter identification requirements for electrons 
-relative to muons.
-
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \ell\ell jj$ events with dilepton plus dijet mass $\Mlljj > 600$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrMlljj}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with high \Mlljj (\%) \\  \hline
-		1.0 &  99.  \\
-		2.0 &  100.  \\
-		3.0 &  100.  \\ \hline
-	\end{tabular}
-\end{table}
-
+The net efficiency of trigger, kinematic, and ID selections in \WR signal events exceeded 50\% in the $ee$-channel, and 
+70\% in the $\mu\mu$-channel, as shown in Figure \ref{fig:wrRecoSelectionEff}.  The efficiency was lower in the $ee$-channel due 
+to the gap in electron detection for $1.44 < |\eta| < 1.57$, and tighter ID selections applied to electrons relative 
+to muons.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
-	\caption{The efficiency that $\WR \rightarrow \ell\nul \rightarrow \ell\ell jj$ events are selected using 
-	the trigger and full offline selection in the ee ($\mu\mu$) channel on the left (right).  Different curves represent 
-events where both leptons were in the barrel $\eta$ region (BB), one was in the endcap (EB), or both were in the endcap (EE).}
+	\caption{The full selection efficiency in $\WR \rightarrow \ell\ell jj$ events, in the $ee$-channel ($\mu\mu$-channel) 
+		on the left (right).  Different curves represent events where both leptons are in the barrel (BB), one was in the 
+	endcap (EB), or both were in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 
-LRS models predicted a signal from a \WR boson and heavy neutrino \nul manifested as an excess of events relative 
-to expected backgrounds in distributions of several lepton and jet kinematic variables, like $\pt$ and multi-particle 
-invariant masses.  Models differed in the shapes and magnitudes of predicted excesses, but all agreed on one point: 
-a \WR boson existed, and evidence of it appeared as a peak in the \Mlljj distribution, whose peak position was consistent 
-with the predicted \mWR.  To look for evidence in support of LRS models without being sensitive to nuances of different 
-models, the \Mlljj mass was used as the search variable of merit.  Shown in Figure \ref{fig:mlljjVariableOfMerit} was 
-proof of this variable's efficacy: a simulated \WR signal with $\mWR = 1.0, \mnul = 0.5 \TeV$ appeared as a sharp peak 
-in the \Mlljj distribution centered near $\Mlljj = 1.0 \TeV$ that was clearly differentiated from expected SM backgrounds.
+After all selections, evidence of a \WR and \nul was searched for as an excess of events over expected backgrounds 
+in one kinematic variable distribution.  The existence of a \WR and \nul would create an excess in many kinematic 
+variable distributions, like the leading lepton $\pt$ distribution, but for most variables the shape, position, and 
+magnitude of the excess is sensitive to the unknown masses \mWR and \mnul.  In addition, the event selections sculpted 
+expected background events and created a peak away from $0$ in many kinematic variable distributions.  To avoid sculpted 
+background distributions and mitigate sensitivity to \mWR and \mnul, evidence of a \WR and \nul was searched for as an 
+excess in the $\Mlljj$ distribution.  There, evidence of a \WR would appear as a peak centered on \mWR 
+that is distinguished from the $\Mlljj$ distribution expected from backgrounds, as shown in Figure \ref{fig:mlljjVariableOfMerit}.  
+Before looking for evidence of a \WR and \nul in data, the $\Mlljj$ distribution expected from backgrounds was estimated 
+using data and simulated events found in kinematic `control` regions where data and simulations were expected to agree.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
-	\caption{The $\Mlljj$ distribution from simulations of expected SM backgrounds and \WR signal in the ee channel.  
-		The normalization of the \WR signal distribution is scaled down by 70\% only to better visualize the difference 
-	between \WR signal and expected backgrounds.}
+	\caption{The $\Mlljj$ distribution from simulations of ST backgrounds and a \WR signal in the $ee$-channel.  
+		The \WR signal normalization is reduced by 70\% to better visualize the difference 
+	between the signal and expected backgrounds.}
 	\label{fig:mlljjVariableOfMerit}
 \end{figure}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -13,7 +13,7 @@ statistics in $e\mu$ data, and discrepancies between data and simulations in con
 regions.  The main uncertainties that affected the signal estimate came from luminosity and 
 pileup measurements in data.  Additional sources of uncertainty existed and were measured, 
 but had a smaller cumulative impact on the results.  Following uncertainty estimation, the 
-results were obtained by comparing data, expected SM backgrounds and hypothetical 
+results were obtained by comparing data, expected ST backgrounds and hypothetical 
 \WR and \nul signals using the $\Mlljj$ distribution, and limits on the \WR cross section, 
 $\mWR$ and $\mnul$ masses derived from data and expected backgrounds.
 
@@ -68,17 +68,17 @@ models.
 \begin{figure}[btp]
 	\centering
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_EE.pdf}
+		\includegraphics[width=0.65\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_EE.pdf}
 	}
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
+		\includegraphics[width=0.65\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
 	}
 	\label{fig:signalShapesAfterSelection}
 	\caption{$\Mlljj$ distribution after all selections for several \WR signal hypotheses in the $ee$ (left) and $\mu\mu$ (right) 
 		channels.  The tails of the distribution grow as \mWR increased.}
 \end{figure}
 
-The SM backgrounds that passed the signal region selection were characterized by event 
+The ST backgrounds that passed the signal region selection were characterized by event 
 distributions that decreased rapidly with increasing $\Mlljj$, whereas any \WR signal 
 after the same selection appeared as an individual peak in the $\Mlljj$ distribution.  
 This distinction motivated the division of the entire $\Mlljj > 600\GeV$ range into finite 
@@ -89,7 +89,7 @@ width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal window s
 	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the expected width of the \WR $\Mlljj$ distribution.
 	\item In each window:
 	\begin{itemize}
-		\item The number of expected signal events $A$ and all SM background events $B$ were calculated.
+		\item The number of expected signal events $A$ and all ST background events $B$ were calculated.
 		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ was pulled 
 			from the Poisson distribution that represented the number of measured events in the window.
 		\item Using the procedure described in Section \ref{sec:bayesianStatsAndLimits}, a 95\% confidence 
@@ -106,7 +106,7 @@ width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal window s
 The $\Mlljj$ window optimization yielded the windows listed in Table \ref{tab:masscuts}.  The windows 
 overlapped in $\Mlljj$ because one event with a unique $\Mlljj$ value is compatible with several 
 \mWR hypotheses.  In each window the number of events observed in data, and expected from \WR 
-signal and all SM backgrounds were counted, and these numbers were compared in search of a signal.  
+signal and all ST backgrounds were counted, and these numbers were compared in search of a signal.  
 In calculating the expected \WR signal events, only 
 the \mWR hypothesis used to optimize the window was considered.  The effect of uncertainties on 
 expected event estimates were calculated in each window using procedures described in the next 
@@ -210,7 +210,7 @@ analyses.  These uncertainties and a brief description of them are listed in Tab
  jet energy resolution & Uncertainty on the resolution with which jet energies were measured. \\
 	  $\ell$ energy scale & Analogous to the jet energy scale uncertainty, but for $\ell$. \\
  $\ell$ energy resolution & Analogous to the jet energy resolution uncertainty, but for $\ell$. \\
-$\ell$ ID & Uncertainty on $\ell$ ID weights for simulated events, see Chapters \ref{sec:muonRecoAndSelection,sec:electronRecoAndSelection}. \\
+$\ell$ ID & Uncertainty on $\ell$ ID weights for simulated events, see Chapters \ref{sec:muonSelection,sec:electronSelection}. \\
   \hline
   \end{tabular}
 \end{table}
@@ -316,7 +316,7 @@ using log-normal distributions.
 
 \subsubsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
 \label{sec:leptonRecoTriggerEffUnc}
-As discussed in Chapters \ref{sec:muonRecoAndSelection,sec:electronRecoAndSelection}, the efficiencies 
+As discussed in Chapters \ref{sec:muonSelection,sec:electronSelection}, the efficiencies 
 of lepton reconstruction and the muon trigger differed between simulated and data events.  These differences 
 were corrected by applying $\sim$unity weights to simulated \DY and \WR events based on selected leptons.  
 In the $\mu\mu$ channel, the trigger and reconstruction efficiency weights varied with the energy and $\eta$ of selected muons, and the 
@@ -339,8 +339,8 @@ in cross section, luminosity, pileup, and parton distribution functions (PDFs) a
 with different generators to data, the \DY cross section uncertainty was estimated at 2\% (1\%) in the 
 $ee$ ($\mu\mu$) channel.  In limit calculations the \DY cross section uncertainty was taken into account 
 using a log-normal distribution.  \WR datasets simulated with different generators were not available, so the \WR 
-cross section uncertainty resulted from uncertainties on SM coupling constants and particle masses 
-hard coded in \PYTHIA.  The magnitudes of uncertainties on SM parameters were small, and as a result 
+cross section uncertainty resulted from uncertainties on ST coupling constants and particle masses 
+hard coded in \PYTHIA.  The magnitudes of uncertainties on ST parameters were small, and as a result 
 the \WR cross section uncertainties were negligible.
 
 The number of expected \WR and \DY events was normalized to the measured integrated luminosity of data.  
@@ -407,7 +407,7 @@ distributions.
 
 \subsection{Cumulative Uncertainty}
 \label{sec:cumulativeUnc}
-The net effect of all uncertainty sources on the estimated number of SM background and \WR signal events in 
+The net effect of all uncertainty sources on the estimated number of ST background and \WR signal events in 
 several $\Mlljj$ windows is shown in Table \ref{tab:expectedEventsAndAllUncs}.  All uncertainties excluding 
 the statistical uncertainty were labeled as systematic uncertainties, and their magnitudes were all summed 
 in quadrature.  The dominant \DY background uncertainty was the 40\% uncertainty assigned based on disagreement 
@@ -514,10 +514,10 @@ backgrounds, so limits were calculated on $\sigma(\WR) \times BR(\WR \rightarrow
 \begin{figure}[btp]
 	\centering
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
+		\includegraphics[width=0.65\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
 	}
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_MuMuChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
+		\includegraphics[width=0.65\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_MuMuChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
 	}
 	\label{fig:obsAndExpMlljj}
 	\caption{$\Mlljj$ distributions found in data, \WR simulations, and expected backgrounds.  The $ee$ ($\mu\mu$) channel is shown on 
@@ -535,10 +535,10 @@ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ for fixed $\mnul = \frac
 \begin{figure}[btp]
 	\centering
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/limWReejj_SHv19700toysAprilTwentyThree.png}
+		\includegraphics[width=0.65\textwidth]{figures/limWReejj_SHv19700toysAprilTwentyThree.png}
 	}
 	\subfigure{
-		\includegraphics[width=0.45\textwidth]{figures/limWRmumujj_SHv19700toysAprilTwentyThree.png}
+		\includegraphics[width=0.65\textwidth]{figures/limWRmumujj_SHv19700toysAprilTwentyThree.png}
 	}
 	\label{fig:oneDimLimits}
 	\caption{Limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL versus \mWR hypothesis.  The $ee$ ($\mu\mu$) channel 
@@ -582,10 +582,10 @@ the maximum and minimum \mnul masses for each \mWR, and these mass exclusion lim
   \centering
   
   \subfigure{
-    \includegraphics[width=0.55\textwidth]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+    \includegraphics[width=0.65\textwidth]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
   }
   \subfigure{
-    \includegraphics[width=0.55\textwidth]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+    \includegraphics[width=0.65\textwidth]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
   }
   \caption{Exclusion limits on \mWR and \mnul at 95\% CL for $\WR \rightarrow eejj$ (left) and $\WR \rightarrow \mu\mu jj$ (right).}
   \label{fig:twoDimLimits}
@@ -604,7 +604,7 @@ signal selection efficiency, $\chi \lesssim 10\%$, for all \mWR with $\mnul \les
 region no correction was applied to bring the limits $L'$ and $L_{true}$ into better agreement.
 
 Using data collected in 2015 \mWR production is excluded at 95\% CL for $\mWR \lesssim 3500 (3300) \GeV$ in the $\mu\mu$ 
-($ee$) channel.  These exclusion limits are consistent with expectations of the SM, and extend the mass limits in the $\mu\mu$ 
+($ee$) channel.  These exclusion limits are consistent with expectations of the ST, and extend the mass limits in the $\mu\mu$ 
 ($ee$) channel 400 $\GeV$ (400 $\GeV$) higher in \mWR, and 150 $\GeV$ (300 $\GeV$) higher in \mnul relative to the Run I limits.
 
 
