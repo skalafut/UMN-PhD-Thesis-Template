@@ -7,7 +7,7 @@
 
 The LRS model predicts the existence of a \WR and \nul that decay to two energetic charged leptons and two 
 energetic jets.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
-2015, evidence of the \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  
+2015, evidence of a \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  
 Events were selected using requirements that were developed based on features of ST processes and \WR and \nul 
 decays.
 
@@ -352,7 +352,7 @@ passed the following single muon HLT selections:
 
 %add this to the background estimation chapter
 %As stated earlier, it is assumed that the $\WR$ decay cannot violate lepton 
-%flavor conservation.  Therefore, evidence of \WR and \nul production was not searched for in 
+%flavor conservation.  Therefore, evidence of a \WR and \nul was not searched for in 
 %events with the $e\mu jj$ final state.  However, events in the $e\mu$ -channel 
 %($e\mu jj$ final state) were used to estimate top quark backgrounds using a procedure described later.  The $e\mu$ 
 %-channel events were selected by a Level-1 trigger that required a track in one 
@@ -543,21 +543,23 @@ to muons.
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 
-After all selections, evidence of \WR and \nul production was searched for as an excess over expected background events 
-in kinematic variable distributions.  
-%RESUME HERE%
-However, for different variables the excess's shape and magnitude have different 
-sensitivities to the unknown ratio $\mnul / \mWR$, and unconstrained parameters of the LRS model.  To minimize sensitivity 
-to unknown quantities, the $\Mlljj$ variable was chosen as the figure of merit; an example of its discriminating power 
-is shown in Figure \ref{fig:mlljjVariableOfMerit}.  The $\Mlljj$ distribution for ST backgrounds was estimated using 
-techniques discussed next.
+After all selections, evidence of a \WR and \nul was searched for as an excess of events over expected backgrounds 
+in one kinematic variable distribution.  The existence of a \WR and \nul would create an excess in many kinematic 
+variable distributions, like the leading lepton $\pt$ distribution, but for most variables the shape, position, and 
+magnitude of the excess is sensitive to the unknown masses \mWR and \mnul.  In addition, the event selections sculpted 
+expected background events and created a peak away from $0$ in many kinematic variable distributions.  To avoid sculpted 
+background distributions and mitigate sensitivity to \mWR and \mnul, evidence of a \WR and \nul was searched for as an 
+excess in the $\Mlljj$ distribution.  There, evidence of a \WR would appear as a peak centered on \mWR 
+that is distinguished from the $\Mlljj$ distribution expected from backgrounds, as shown in Figure \ref{fig:mlljjVariableOfMerit}.  
+Before looking for evidence of a \WR and \nul in data, the $\Mlljj$ distribution expected from backgrounds was estimated 
+using data and simulated events found in kinematic `control` regions where data and simulations were expected to agree.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
 	\caption{The $\Mlljj$ distribution from simulations of ST backgrounds and a \WR signal in the $ee$-channel.  
 		The \WR signal normalization is reduced by 70\% to better visualize the difference 
-	between signal and expected backgrounds.}
+	between the signal and expected backgrounds.}
 	\label{fig:mlljjVariableOfMerit}
 \end{figure}
 
