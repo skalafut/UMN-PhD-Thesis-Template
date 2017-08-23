@@ -17,24 +17,13 @@ One of the two largest backgrounds in the \WR and \nul search was ST processes t
 one top quark, like top quark $\plus$ $W$ boson production (top+W, Figure \ref{fig:singleTopDiags}), 
 and top anti-top quark pair production ($\ttbar$, Figure \ref{fig:ttbarDiag}).  Virtually all top 
 quarks decay to a $W$ boson and bottom (b) quark, which subsequently decay to leptons and hadrons.  
-Based on lepton universality in leptonic $W$ boson and b quark decays, in events where one or more top 
-(or anti-top) quarks are produced and decay to leptons, the $ee$ and $\mu\mu$ final states are produced 
-
-%RESUME HERE%
-at the same rate, and the $e\mu$ final state is produced at .
-
-
-
-%ST processes that produced one or more top quarks constituted one of the two largest backgrounds 
-%to the \WR and \nul search in the $\ell\ell jj$ final state.  Based on cross sections times branching 
-%fractions to $\ell\ell jj$ final states listed in Chapter \ref{sec:MC}, production 
-%of top-anti top quark pairs ($\ttbar$, Figure \ref{fig:ttbarDiag}) and single top quarks in association 
-%with W bosons (top+W, Figure \ref{fig:singleTopDiags}) contributed the majority of top quark events that passed 
-%the full event selection.  In such processes, nearly 100\% of top quarks decayed to a bottom quark 
-%and ST W boson, and the W boson was free to decay to any charged lepton.  One consequence of this freedom 
-%was that $\ttbar$ and top+W production yielded the $e\mu jj$ final state approximately twice as often 
-%as the $eejj$ or $\mu\mu jj$ final states.  This consequence was instrumental in estimating the top quark 
-%background.
+Based on lepton universality in $W$ boson and b quark decays, in events where one or more top (or anti-top) 
+quarks are produced and decay to di-leptons, the $e\mu$ final state is produced at twice 
+the rate of the $ee$ or $\mu\mu$ final state.  The \WR cannot decay to the $e\mu$ final state at leading 
+order in the weak coupling constant, so data events with one reconstructed electron and muon were used to 
+estimate the shape and magnitude of the $\Memujj$ distribution from top quark backgrounds.  A scale 
+factor (SF) of $\sim 0.5$ was then applied to rescale the $\Memujj$ distribution magnitude to the 
+magnitude of the $\Meejj$ or $\Mmumujj$ distribution.
 
 \begin{figure}[h]
 	\centering
@@ -50,14 +39,37 @@ at the same rate, and the $e\mu$ final state is produced at .
 	\label{fig:singleTopDiags}
 \end{figure}
 
-The top quark background was estimated directly from collision data that passed the $e\mu$ channel requirements.  
-An estimate of the pure top quark background was possible in the $e\mu$ channel for several reasons.  Based on 
-the lepton flavor conservation assumption stated in Chapter \ref{sec:lrsPhenomenology}, a \WR signal produced 
-events that passed the $e\mu$ channel selections at a rate suppressed by the weak coupling constant 
-$g_{R} \sim \frac{1}{100}$.  In addition, the ST backgrounds without top quarks listed in Chapter \ref{sec:MC} 
-produced events that passed the $e\mu$ channel selection at a rate suppressed by the electromagnetic coupling 
-constant $\alpha \sim \frac{1}{100}$.  Thus, the $e\mu$ channel was expected to be dominated by top quark 
-processes.  This was confirmed by comparing $e\mu$ channel data and simulations, as shown in Figure \ref{fig:dataAndSimsInEMuChannel}.
+Data events in the $e\mu$-channel were selected during collisions using a Level-1 trigger that required 
+a track in one muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection 
+were reconstructed if they passed the following electron and muon HLT selections:
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching 
+		reconstructed track:
+	\begin{itemize}
+		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least one 
+			muon detector hit with $\chi^{2}/nDOF < 20$.
+		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
+			reconstructed vertex was $< 1$ mm.
+	\end{itemize}
+	\item One ECAL SC was detected with $\Et > 30$ $\GeV$.
+	\item For the SC:
+	\begin{itemize}
+		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ in the barrel, and $< 0.1$ in the endcap.
+		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
+		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the 
+			SC centroid along the beam axis within 2.3 \cm, and extrapolated to the SC centroid in $(\eta_{SC}, \phi_{SC})$ within the 
+			$(\eta, \phi)$ area of one ECAL crystal.
+	\end{itemize}
+\end{itemize}
+
+The reconstructed $e\mu$ data events were filtered by the electron, muon, and jet selections described 
+previously, with the requirement that one selected lepton was a muon, the other was an electron, 
+and at least one lepton had $\pt > 60$ $\GeV$.  Simulated ST background events were selected with the 
+same online and offline requirements, and compared to $e\mu$-channel data events.  As shown in Figure 
+\ref{fig:dataAndSimsInEMuChannel}, top quark backgrounds produced the majority of events that passed 
+the $e\mu$-channel selections.
 
 \begin{figure}[h]
 	\centering
@@ -66,6 +78,18 @@ processes.  This was confirmed by comparing $e\mu$ channel data and simulations,
 	the $\Mlljj > 600 \GeV$ cut.  The bin widths were variable, and their contents were normalized to the bin widths.}
 	\label{fig:dataAndSimsInEMuChannel}
 \end{figure}
+
+%first explain that the Mlljj distribution shape does not change between the emu, ee, and mumu channels
+The $\Memujj$ distribution found in data was produced by top quark backgrounds, so its shape was expected 
+to match the $\Meejj$ or $\Mmumujj$ distributions.  This expectation was studied by selecting .
+%RESUME HERE%
+
+
+%then explain how scale factors were derived to rescale the magnitude of the Memujj distribution to the 
+%Meejj and Mmumujj distributions based on the difference between electron and muon acceptances, and 
+%efficiencies of the trigger, reco, and offline selections
+
+
 
 To estimate the top quark background in the $eejj$ and $\mu\mu jj$ channels, scale factors (SFs) were 
 calculated that scaled $e\mu jj$ data events into $eejj$ and $\mu\mu jj$ events.  The SFs were calculated using 
