@@ -15,15 +15,15 @@ procedures described here.
 \label{sec:topQrkBkgnds}
 One of the two largest backgrounds in the \WR and \nul search was ST processes that produced at least 
 one top quark, like top quark $\plus$ $W$ boson production (top+W, Figure \ref{fig:singleTopDiags}), 
-and top anti-top quark pair production ($\ttbar$, Figure \ref{fig:ttbarDiag}).  Virtually all top 
+and top anti-top quark pair production ($\ttbar$, Figure \ref{fig:ttbarDiag}).  Top 
 quarks decay to a $W$ boson and bottom (b) quark, which subsequently decay to leptons and hadrons.  
 Based on lepton universality in $W$ boson and b quark decays, in events where one or more top (or anti-top) 
-quarks are produced and decay to di-leptons, the $e\mu$ final state is produced at twice 
+quarks are produced and decay to two leptons, the $e\mu$ final state is produced at twice 
 the rate of the $ee$ or $\mu\mu$ final state.  The \WR cannot decay to the $e\mu$ final state at leading 
 order in the weak coupling constant, so data events with one reconstructed electron and muon were used to 
-estimate the shape and magnitude of the $\Memujj$ distribution from top quark backgrounds.  A scale 
-factor (SF) of $\sim 0.5$ was then applied to rescale the $\Memujj$ distribution magnitude to the 
-magnitude of the $\Meejj$ or $\Mmumujj$ distribution.
+estimate the shape and magnitude of the $\Memujj$ distribution from top quark backgrounds.  Normalization 
+factors of $\sim 0.5$ were then applied to scale the $\Memujj$ distribution into the $\Meejj$ or $\Mmumujj$ 
+distribution.
 
 \begin{figure}[h]
 	\centering
@@ -81,12 +81,12 @@ the $e\mu$-channel selections.
 
 %first explain that the Mlljj distribution shape does not change between the emu, ee, and mumu channels
 The $\Memujj$ distribution found in data was produced by top quark backgrounds, so its shape was expected 
-to be the same in the $\Meejj$ and $\Mmumujj$ distributions.  The shape of the top quark background $\Mlljj$ 
-distribution in different lepton channels was studied using simulated top quark background events.  Simulated 
+to be the same in the $\Meejj$ and $\Mmumujj$ distributions.  This expectation was studied using simulated 
+top quark background events.  Simulated 
 events were selected with the $ee$-, $e\mu$-, and $\mu\mu$-channel selections, and these events were used 
 to produce $\Meejj$, $\Memujj$, and $\Mmumujj$ distributions.  The ratio of the binned distributions $\Meejj / \Memujj$ 
 and $\Mmumujj / \Memujj$, shown in Figure \ref{fig:ttbarSFratios}, was consistent with a constant value, 
-independent of $\Mlljj$, within the statistical uncertainty of each bin.  The flat ratios indicated that the 
+independent of $\Mlljj$, within the statistical uncertainty of each bin.  The constant ratios indicated that the 
 shape of the $\Mlljj$ distribution in top quark background events was the same in all three lepton channels, 
 which meant the $\Memujj$ distribution found in data could be used to estimate the top quark background in 
 the $ee$- and $\mu\mu$-channel.
@@ -94,47 +94,32 @@ the $ee$- and $\mu\mu$-channel.
 %then explain how scale factors were derived to rescale the magnitude of the Memujj distribution to the 
 %Meejj and Mmumujj distributions based on the difference between electron and muon acceptances, and 
 %efficiencies of the trigger, reco, and offline selections
-The $\Memujj$ distribution found in simulated top quark events differed from the $\Meejj$ and $\Mmumujj$ 
-distributions by a factor equal to the difference in $e\mu$ and $\ell\ell$ production rate, and the difference 
-in acceptance, trigger efficiency, and reconstruction and selection efficiency between electrons and muons.  
-The production rates are $ee/e\mu \thickspace = \thickspace \mu\mu/e\mu \thickspace = \thickspace 0.5$, 
-and the difference between electron and muon acceptance $\times$ efficiency forced the ratios $ee/e\mu$ and 
-$\mu\mu/e\mu$ after all selections away from 0.5, in opposite directions. 
-%RESUME HERE%
-In general this factor is $\pt$ and $\eta$ dependent, 
-but for the high energy, central leptons used in the \WR search, the factor is a constant independent 
-of kinematic variables.  The .
+The $\Memujj$ distribution found in data represented top quark backgrounds, and differed from the top quark 
+$\Meejj$ and $\Mmumujj$ distributions by a normalization factor (NF) equal to the difference in several quantities.  
+The difference between the $e\mu$ and the same flavor $\ell\ell$ production rate is 0.5, so the NF 
+was expected to be $\approx$0.5.  Differences existed between the electron and muon acceptance $\times$ 
+selection efficiency\footnote{For example, muons were reconstructed in the region $1.44 \leq |\eta| \leq 1.57$, 
+while electrons were not.}, and they caused the $ee:e\mu$ and $\mu\mu:e\mu$ NFs to differ from 0.5.  
+The normalization factors were calculated using simulated top quark events selected with the $ee$-, $e\mu$-, 
+and $\mu\mu$-channel selections and corrections described previously.  Selected events were used to 
+produce the $\Mlljj$ distribution in each channel, and the integral of each distribution $\Nlljj$ was 
+calculated.  The NF that scales the simulated $\Memujj$ distribution into the $\Meejj$ 
+distribution was calculated as $\Neejj / \Nemujj \thickspace = \thickspace 0.432$, and for the $\Mmumujj$ 
+distribution was calculated as $\Nmumujj / \Nemujj \thickspace = \thickspace 0.659$.  The lower acceptance 
+$\times$ selection efficiency for electrons relative to muons decreased (increased) the $ee:e\mu$ 
+($\mu\mu:e\mu$) NF relative to 0.5.  The NFs were 
+calculated independent of $\Mlljj$, but were dominated by simulated events with $\Mlljj < 1500$ $\GeV$ 
+because the number of simulated top quark events decreased rapidly with increasing $\Mlljj$.  As a 
+result, an error entered the top quark background estimate that was proportional to the per-bin 
+fluctuations of $\Mmumujj / \Memujj$ and $\Meejj / \Memujj$ around the values 0.659 and 0.432 shown 
+in Figure \ref{fig:ttbarSFratios}.  The impact of this error was covered by assigning a 10\% uncertainty 
+to both NFs.
 
-
-
-
-
-To estimate the top quark background in the $eejj$ and $\mu\mu jj$ channels, scale factors (SFs) were 
-calculated that scaled $e\mu jj$ data events into $eejj$ and $\mu\mu jj$ events.  The SFs were calculated using 
-simulated top quark events and the following procedure:
-
-\begin{itemize}
-	\item Simulated top quark events were selected using the $ee$, $e\mu$, and $\mu\mu$ channel requirements from 
-		Chapter \ref{sec:wrCandSelection}.
-	\item Using selected events, the \Meejj, \Memujj and \Mmumujj distributions were produced.
-	\item Using the integrals \Nemujj and \Nlljj of the \Memujj and \Mlljj distributions, the top quark background SF 
-		for the $\ell\ell jj$ final state was calculated as $\Nlljj / \Nemujj$.
-\end{itemize}
-
-The SF was $0.432$ in the $ee$ channel and $0.659$ in the $\mu\mu$ channel.  The $ee$ ($\mu\mu$) channel SF 
-was below (above) the expected SF of $0.5$ because electrons were reconstructed with a reduced $|\eta|$ acceptance,
-and selected with lower efficiency identification requirements relative to muons.  The number of simulated top quark 
-events used to calculate the SFs decreased rapidly with increasing \Mlljj, so the SFs were determined primarily by 
-simulated events with $\Mlljj < 1500\GeV$.  Using SFs that did not vary with \Mlljj allowed an error to enter into the 
-top quark background estimate, proportional to the fluctuations of \Mmumujj/\Memujj and \Meejj/\Memujj around the 
-constant SFs versus \Mlljj in Figure \ref{fig:ttbarSFratios}.  This error was covered by assigning a 10\% uncertainty 
-to both SFs.
-
-After calculating the SFs, the top quark background in the $\mu\mu jj$ ($eejj$) final state was estimated by 
-multiplying the \Memujj distribution from data by $0.659$ ($0.432$).  Based on simulations of ST backgrounds, contributions 
-of non-top quark backgrounds to the $e\mu$ channel were more than one order of magnitude smaller than the 10\% top quark 
-background uncertainty.  As a result, simulated non-top quark background events were not subtracted from $e\mu$ channel 
-data.
+After calculating the NFs, the top quark background in the $\mu\mu jj$ ($eejj$) final state was estimated by 
+multiplying the $\Memujj$ distribution from data by $0.659$ ($0.432$).  Based on simulations of all ST backgrounds, 
+contributions of non-top quark backgrounds to the $e\mu$ channel were more than one order of magnitude smaller 
+than the 10\% top quark background uncertainty.  For this reason, simulated non-top quark background events 
+were not subtracted from $e\mu$ channel data.
 
 \begin{figure}[btp]
 	\centering
@@ -145,18 +130,40 @@ data.
 		\includegraphics[width=0.45\textwidth]{figures/flavor_ratio_MuMu_variablebinwidth.pdf}
 	}
 	\label{fig:ttbarSFratios}
-	\caption{Bin-by-bin ratio of $\Mlljj$ and $\Memujj$ distributions from simulated top quark backgrounds, where $\ell$ was 
-	an electron (left) or a muon (right).}
+	\caption{The bin-by-bin ratio of the $\Mlljj$ and $\Memujj$ distributions from simulated top quark backgrounds, where 
+		$\ell$ is an electron on the left, and a muon on the right.}
 \end{figure}
 
 
 \section{\DY Background}
 \label{sec:dyBkgnd}
-The production and decay of Z bosons to lepton pairs in association with jets ($\DY$+jets), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$, 
-was the other of the two largest backgrounds to the \WR and \nul search in the $\ell\ell jj$ final state.  The \DY 
-background was estimated using simulated $\DY$+jets events.  Mis-modelling of $\DY$+jets in simulations lead to two discrepancies 
-with respect to data.  The effects of mis-modelling on the signal region (defined in Chapter \ref{sec:wrCandSelection}) \DY background estimate 
-were quantified and validated in three control regions where data and simulations of ST backgrounds were expected to agree.
+The second of the two largest backgrounds in the \WR and \nul search was the production and decay of a Z boson to 
+a lepton pair in association with jets (\DY), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$.  The \DY 
+background was estimated using simulated $\DY$+jets events selected with the $ee$- and $\mu\mu$-channel requirements 
+described previously.  $\DY$+jets simulations were developed to model $\DY$+jets interactions observed in data, and 
+mis-modelling in simulations lead to two discrepancies between $\DY$+jets simulations and data.
+
+$\DY$+jets events were simulated using the \MADGRAPH generator at leading order in the electroweak and strong coupling 
+constants, while $\DY$+jets events observed in data were produced at all orders in these coupling constants.  The 
+simulated dataset contained more events than were expected in the 2.6 fb$^{-1}$ of data, so the simulated events were 
+weighted to the integrated luminosity of data using an uncertain cross section $\times$ branching fraction calculated during 
+simulations.  The cross section $\times$ branching fraction uncertainty was sensitive to the higher order electroweak 
+and strong coupling corrections, and it produced a discrepancy in the $\Mlljj$ distribution normalization between data 
+and simulated events.
+
+In $\DY$+jets events, in data or simulations, the Z production and decay was reconstructed as a vertex that was 
+most often the primary vertex (PV), which was defined as the vertex with the highest $\sum \pt$ of all associated 
+tracks in the event.  Selected reconstructed jets were required to have at least one charged hadron from the PV, and the partons 
+radiated during the Z production and decay produced the majority of charged hadrons traced back to the PV\footnote{The 
+contamination of $Z \rightarrow \tau\tau$ events to $ee$+jets and $\mu\mu$+jets final states was minimized by 
+requiring two leptons with $\pt > 53$ $\GeV$.}.  $\DY$+jets events were simulated with up to 4 partons radiated from 
+the $Z \rightarrow \ell\ell$ interaction, while $\DY$+jets events observed in data were produced with any number - 
+0, 2, 6, etc. - of partons radiated from the $Z \rightarrow \ell\ell$ interaction.  As jets were reconstructed in 
+large $(\eta,\phi)$ areas where multiple partons could hadronize into charged hadrons, the limit of 4 radiated partons 
+in simulated events affected the number of produced jets that could pass the selections, and the energy of selected jets.  
+These jet modelling effects produced a discrepancy in the $\Mlljj$ distribution shape between data and simulated events.
+
+%RESUME HERE%
 
 The first discrepancy was a difference in normalization between data and \MC, caused by the cross section uncertainty in 
 the simulation.  The effect of the discrepancy was estimated by comparing $Z \rightarrow \ell\ell$ events in data and 
