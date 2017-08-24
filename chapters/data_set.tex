@@ -40,7 +40,7 @@ distribution.
 \end{figure}
 
 Data events in the $e\mu$-channel were selected during collisions using a Level-1 trigger that required 
-a track in one muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection 
+a track in at least one muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection 
 were reconstructed if they passed the following electron and muon HLT selections:
 
 \begin{itemize}
@@ -143,6 +143,8 @@ background was estimated using simulated $\DY$+jets events selected with the $ee
 described previously.  $\DY$+jets simulations were developed to model $\DY$+jets interactions observed in data, and 
 mis-modelling in simulations lead to two discrepancies between $\DY$+jets simulations and data.
 
+\subsection{\DY Normalization in $\Mlljj$}
+\label{sec:dyNormInMlljj}
 $\DY$+jets events were simulated using the \MADGRAPH generator at leading order in the electroweak and strong coupling 
 constants, while $\DY$+jets events observed in data were produced at all orders in these coupling constants.  The 
 simulated dataset contained more events than were expected in the 2.6 fb$^{-1}$ of data, so the simulated events were 
@@ -151,19 +153,72 @@ simulations.  The cross section $\times$ branching fraction uncertainty was sens
 and strong coupling corrections, and it produced a discrepancy in the $\Mlljj$ distribution normalization between data 
 and simulated events.
 
+The discrepancy in the $\Mlljj$ distribution normalization between simulated $\DY$+jets events and data was estimated 
+using a $Z \rightarrow \ell\ell$ control region where data and simulated events were expected to agree.  Events in 
+the $ee$-channel control region were selected during collisions using a Level-1 trigger that required one ECAL SC with 
+$\Et > 30$ $\GeV$ and $|\eta| < 2.1$.  Events that passed the Level-1 selection were reconstructed offline if they 
+passed the following double electron HLT selections: (simulated events were required to pass the same trigger selections)
+
+\begin{itemize}
+	\item One SC was detected with $\Et > 30$ $\GeV$, and a second non-overlapping SC was detected with $\Et > 4$ $\GeV$.
+	\item For the SC with $\Et > 30$ $\GeV$:
+	\begin{itemize}
+		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.055$ in the barrel, and 
+			$< 0.07$ in the endcap.
+		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
+		\item A reconstructed track with hits in at least two pixel tracker layers was matched to the SC, and extrapolated to the SC 
+			centroid along the beam axis within 1 cm, and extrapolated to the SC centroid in $(\eta, \phi)$ within the $(\eta, \phi)$ 
+			area of $\frac{1}{2}$ an ECAL crystal.  In addition, the SC energy and track momentum cannot differ by more than 50\%.
+		\item In a cone of radius $\Delta R =$ 0.3 centered on the SC:
+		\begin{itemize}
+			\item The fraction of the total ECAL energy in the cone not associated with the SC was $< 0.225$ in the barrel, and 
+				$< 0.121$ in the endcap.
+			\item The total HCAL energy in the cone divided by the SC energy is $< 0.155$ in the barrel, and $< 0.16$ in the endcap.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+Events in the $\mu\mu$-channel control region were selected during collisions using a Level-1 trigger that required a track 
+in at least one muon DT or CSC detector with $\pt > 20$ $\GeV$.  Events that passed the Level-1 selection were reconstructed offline 
+if they passed the following single muon HLT selections: (simulated events were required to pass the same trigger selections)
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt > 22$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching reconstructed 
+		track:
+	\begin{itemize}
+		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least 
+			one muon detector hit with $\chi^{2}/nDOF < 20$.
+		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
+			reconstructed vertex was $< 1$ mm.
+		\item In a cone of radius $\Delta R =$ 0.3 centered on the muon trajectory:
+		\begin{itemize}
+			\item The total ECAL energy in the cone divided by the momentum measured by the muon detectors is $< 0.11$ in 
+				the barrel, and $< 0.08$ in the endcap.
+			\item The total HCAL energy in the cone divided by the momentum measured by the muon detectors is $< 0.21$ in 
+				the barrel, and $< 0.22$ in the endcap.
+			\item The total $\pt$ of all silicon tracker tracks in the cone (excluding the muon track) divided by the 
+				muon track $\pt$ is $< 0.09$.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+Events .
+
+\subsection{\DY Shape in $\Mlljj$}
+\label{sec:dyShapeInMlljj}
 In $\DY$+jets events, in data or simulations, the Z production and decay was reconstructed as a vertex that was 
 most often the primary vertex (PV), which was defined as the vertex with the highest $\sum \pt$ of all associated 
 tracks in the event.  Selected reconstructed jets were required to have at least one charged hadron from the PV, and the partons 
-radiated during the Z production and decay produced the majority of charged hadrons traced back to the PV\footnote{The 
-contamination of $Z \rightarrow \tau\tau$ events to $ee$+jets and $\mu\mu$+jets final states was minimized by 
+radiated during the Z production and decay produced the majority of charged hadrons that traced back to the PV\footnote{The 
+contamination of $Z \rightarrow \tau\tau$ in events with $ee$+jets or $\mu\mu$+jets final states was minimized by 
 requiring two leptons with $\pt > 53$ $\GeV$.}.  $\DY$+jets events were simulated with up to 4 partons radiated from 
 the $Z \rightarrow \ell\ell$ interaction, while $\DY$+jets events observed in data were produced with any number - 
-0, 2, 6, etc. - of partons radiated from the $Z \rightarrow \ell\ell$ interaction.  As jets were reconstructed in 
-large $(\eta,\phi)$ areas where multiple partons could hadronize into charged hadrons, the limit of 4 radiated partons 
-in simulated events affected the number of produced jets that could pass the selections, and the energy of selected jets.  
-These jet modelling effects produced a discrepancy in the $\Mlljj$ distribution shape between data and simulated events.
+0, 2, 6, etc. - of partons radiated from the $Z \rightarrow \ell\ell$ interaction.  The limit of 4 radiated partons 
+in simulated events reduced the number of reconstructed jets that could pass the selections, and affected the energy 
+of selected jets, as multiple partons could contribute to the same jet.  These jet modelling effects produced a discrepancy 
+in the $\Mlljj$ distribution shape between data and simulated events.
 
-%RESUME HERE%
 
 The first discrepancy was a difference in normalization between data and \MC, caused by the cross section uncertainty in 
 the simulation.  The effect of the discrepancy was estimated by comparing $Z \rightarrow \ell\ell$ events in data and 
@@ -196,6 +251,8 @@ The jet requirements were removed to compare data to simulations in a phase spac
 yielded a large number of events after selections.  Using selected events, the difference in normalization between data and 
 simulations in the $\Mll$ distribution was calculated, and the largest difference was taken as a systematic 
 uncertainty on $\sim$15\%.  This uncertainty was estimated to be 2.0\% (1.0\%) in the $ee$ ($\mu\mu$) channel.
+
+
 
 Unlike the jets produced naturally as a result of quark decay in $\ttbar \rightarrow \ell\ell jj$ events, jets 
 produced in \DY events were produced randomly by the strong interaction, sometimes before the Z boson was produced.  Simulations of random 
