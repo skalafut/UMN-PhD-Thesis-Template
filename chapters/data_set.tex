@@ -263,29 +263,17 @@ of selected jets, as multiple partons could contribute to the same jet.  These j
 in the $\Mlljj$ distribution shape between data and simulated events.
 
 The magnitude of the shape discrepancy in the $\Mlljj$ distribution was estimated 
-using a high $\Mlljj$ control region where data and simulated events were expected to agree.  Data and simulated $\DY$+jets events 
-in the $ee$- and $\mu\mu$-channel control regions were selected with the electron and muon triggers described in 
+using a low $\Mll$ control region where data and simulated events were expected to agree.  Events from data and all simulated ST 
+backgrounds in the $ee$- and $\mu\mu$-channel low $\Mll$ control regions were selected using the electron and muon triggers described in 
 Chapter \ref{sec:triggers}.  Events passing the trigger selections were required to have two energetic jets and leptons 
-with $\Mlljj > 600$ $\GeV$, but $\Mll < 180$ $\GeV$.  .
-
-
-%RESUME HERE%
-
-
-%Unlike the jets produced naturally as a result of quark decay in $\ttbar \rightarrow \ell\ell jj$ events, jets 
-%produced in \DY events were produced randomly by the strong interaction, sometimes before the Z boson was produced.  Simulations of random 
-%jet production in \DY events were done only at leading order in the strong interaction, and as a result 
-%the $\pt, \eta, \phi$ of jets predicted by simulations did not perfectly agree with jets observed in data.  This disagreement 
-%created the second discrepancy between data and simulated \DY, which manifested as a difference in $\Mlljj$ shape.  
-%The effect of the $\Mlljj$ shape disagreement was estimated using data and simulations of ST backgrounds selected 
-%with the signal region requirements described in Chapter \ref{sec:wrCandSelection}, but with $\Mll < 180 \GeV$.  Subsequently, 
-%$\Mlljj$ distributions were built from selected data and all simulated events, and the \DY component of selected simulated events was 
-%rescaled by $1.157$ ($1.142$) in the $ee$ ($\mu\mu$) channel to correct for the normalization discrepancy discussed 
-%previously.  Then, the $\Mlljj$ distributions from data and simulations shown in 
-%Figure \ref{fig:mlljjLowDileptonMassSideband} were compared, and the largest percentage difference between data and 
-%all simulations in any bin was taken as a conservative systematic uncertainty on the estimated \DY background.  The 
-%mis-modelling of jets in simulations resulted in a symmetric 40\% uncertainty assigned to the \DY background in both channels, 
-%constant versus $\Mlljj$.
+with $\Mlljj > 600$ $\GeV$, but $\Mll < 180$ $\GeV$.  Excluding the $\Mll$ requirement, the corrections and selections 
+used in the low $\Mll$ control region were identical to those used in the \WR search region (Table \ref{tab:cutCompSignalRegAndZllReg}).  
+Selected events in data and simulations were used to produce $\Mlljj$ distributions, and the $\sim$15\% increase was 
+applied to simulated $\DY$+jets events.  The $\Mlljj$ distributions from data and simulated events shown in Figure 
+\ref{fig:mlljjLowDileptonMassSideband} were compared, and the $\Mlljj$ shape discrepancy was estimated as the largest 
+percentage difference between data and the total simulated background in any bin.  The shape discrepancy magnitude was 
+conservatively estimated to be 40\% in both lepton channels, constant versus $\Mlljj$.  When calculating results the 
+40\% uncertainty was applied to the \DY background normalization.
 
 \begin{figure}[btp]
 \centering
@@ -295,19 +283,18 @@ with $\Mlljj > 600$ $\GeV$, but $\Mll < 180$ $\GeV$.  .
 \subfigure{
   \includegraphics[width=0.45\textwidth]{figures/Mlljj_mumuChnl_lowMllCR.png}
 }
-\caption{The $\Mlljj$ distribution from data and simulated ST events that passed the $\Mll < 180 \GeV$ selection, the 
-		$ee$ ($\mu\mu$) channel on the left (right).  The bin widths were variable, and their contents were normalized to 
-	the bin widths.}
+\caption{The $\Mlljj$ distribution from data and simulated ST background events that passed the low $\Mll$ region selection, with 
+	the $ee$- ($\mu\mu$-) channel on the left (right).  The bin widths are variable, so the bin contents were normalized to their widths.}
 \label{fig:mlljjLowDileptonMassSideband}
 \end{figure}
 
-In an attempt to reduce the 40\% uncertainty, a separate set of simulated $\DY$+jets events were used, in which jet simulations 
-were done at a higher order in the strong interaction.  By simulating jet production at a higher order in the strong 
-interaction, it was thought that the disagreement in $\Mlljj$ shape could be reduced.  The results, shown in Figure 
-\ref{fig:mlljjLowDileptonMassSidebandAMCNLO}, did not support switching simulated \DY datasets.  The primary detriment to the 
-higher order \DY simulation was not the jet simulation, but the lack of events.  After selections, the leading order 
-simulated $\DY$+jets dataset had $\sim$3 times more events across all $\Mlljj$, and $\sim$10 times more events with $\Mlljj > 1 \TeV$ 
-than the higher order simulated $\DY$+jets dataset.
+The $\DY$+jets simulation was produced at leading order in the strong coupling constant, and it was studied if the 40\% 
+uncertainty assigned to the \DY background could be reduced by simulating higher order strong interactions.  $\DY$+jets 
+events were simulated at next-to-leading order in the strong coupling constant, and were selected using the low $\Mll$ 
+control region requirements.  Using the higher order simulation did not reduce the 40\% uncertainty, as shown in Figure 
+\ref{fig:mlljjLowDileptonMassSidebandAMCNLO}.  The higher order simulation was limited by a lack of events with $\Mlljj > 600$ 
+$\GeV$.  Relative to the leading order $\DY$+jets simulation, the higher order simulation had a factor of $\sim$3 fewer 
+events with $\Mlljj > 600$ $\GeV$, and a factor of $\sim$10 fewer events with $\Mlljj > 1$ $\TeV$.
 
 \begin{figure}[btp]
 \centering
@@ -322,6 +309,8 @@ than the higher order simulated $\DY$+jets dataset.
 	the bin widths.  In the \DY events, jet production was simulated at a higher order relative to the standard \DY dataset.}
 \label{fig:mlljjLowDileptonMassSidebandAMCNLO}
 \end{figure}
+
+%RESUME HERE%
 
 A third control region was used to validate the correction applied and uncertainty assigned to the estimated \DY background.  
 In this control region, events from data and simulations of all ST backgrounds were selected with 
