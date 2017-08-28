@@ -123,8 +123,10 @@ the $e\mu$-channel data.
 The second of the two largest backgrounds in the \WR and \nul search was the production and decay of a Z boson to 
 a lepton pair in association with jets (\DY), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$.  The \DY 
 background was estimated using simulated $\DY$+jets events selected with the $ee$- and $\mu\mu$-channel requirements 
-described previously.  $\DY$+jets simulations were developed to model $\DY$+jets interactions observed in data, and 
-mis-modelling in simulations lead to two discrepancies between $\DY$+jets simulations and data.
+described previously.  Using simulated events to predict the \DY background transformed known limitations of 
+the $\DY$+jets simulation into changes to the normalization and shape of the \DY background.  The magnitude of 
+these changes were estimated in control regions where data and simulated background events were expected to agree.
+
 
 \subsection{\DY Normalization in $\Mlljj$}
 \label{sec:dyNormInMlljj}
@@ -133,11 +135,11 @@ constants, while $\DY$+jets events observed in data were produced at all orders 
 simulated dataset contained more events than were expected in the 2.6 fb$^{-1}$ of data, so the simulated events were 
 weighted to the integrated luminosity of data using an uncertain cross section $\times$ branching fraction calculated during 
 simulations.  The cross section $\times$ branching fraction uncertainty was sensitive to the higher order electroweak 
-and strong coupling corrections, and it created a discrepancy in the $\Mlljj$ distribution normalization between data 
-and simulated events.
+and strong coupling corrections, and the size of these corrections created a discrepancy in the $\Mlljj$ distribution 
+normalization between data and simulated events.
 
 The magnitude of the normalization discrepancy in the $\Mlljj$ distribution was estimated 
-using a $Z \rightarrow \ell\ell$ control region where data and simulated events were expected to agree.  Data and simulated 
+using the $Z \rightarrow \ell\ell$ control region where data and simulated background events were expected to agree.  Data and simulated 
 $\DY$+jets events in the $ee$-channel control region were selected by a Level-1 trigger that required one ECAL SC with 
 $\Et > 30$ $\GeV$ and $|\eta| < 2.1$.  Events that passed the Level-1 selection were used offline if they passed the 
 following double electron HLT selections:
@@ -186,8 +188,8 @@ if they passed the following single muon HLT selections:
 	\end{itemize}
 \end{itemize}
 
-Similar to the offline lepton and jet selections used in the \WR search and defined in Chapters \ref{sec:muonSelection}, \ref{sec:electronSelection}, 
-and \ref{sec:jetSelection}, reconstructed events in both channels were required to have two leptons and two jets passing kinematic 
+Similar to the offline lepton and jet selections used in the \WR search defined in Chapter 
+\ref{sec:event_selection_chapter}, reconstructed events in both channels were required to have two leptons and two jets passing kinematic 
 and ID selections.  However, looser lepton $\pt$ and $\Mll$ selections were used to select events in the $Z \rightarrow \ell\ell$ 
 mass window.  The differences and similarities between the $Z \rightarrow \ell\ell$ control region and the \WR search selections 
 are listed in Table \ref{tab:cutCompSignalRegAndZllReg}.
@@ -214,22 +216,22 @@ are listed in Table \ref{tab:cutCompSignalRegAndZllReg}.
 	\end{tabular}
 \end{table}
 
-Events in data and $\DY$+jets simulations passing the $Z \rightarrow \ell\ell$ selections were used to produce a $\Mll$ 
-distribution.  In both lepton channels, the $\Mll$ distribution shape agreed between data and simulated events.  The 
-normalization of the $\Mll$ distribution in data events exceeded that of simulated events by 15.7\% in the $ee$-channel, 
-and 14.2\% in the $\mu\mu$-channel.  To correct this normalization discrepancy, the $\DY$ background predicted using 
-simulated events was increased by $\sim$15\%.  The contamination of other ST backgrounds in selected data events was 
-estimated using simulated background events selected with the requirements described above, and found to be $\sim$3\%.  
-This was similar to the uncertainty on the $\sim$15\% correction discussed next, so other ST backgrounds were not subtracted 
-from data.
+Events in data and $\DY$+jets simulations passing the $Z \rightarrow \ell\ell$ selections were used to produce $\Mll$ 
+distributions.  In both lepton channels, the $\Mll$ distribution shape agreed between data and simulated events.  The 
+$\Mll$ distribution normalization in data events exceeded that in simulated events by 15.7\% in the $ee$-channel, 
+and by 14.2\% in the $\mu\mu$-channel.  This normalization discrepancy was applied as an increase to the simulated $\DY$ 
+background in each channel.  The contamination of other ST backgrounds in 
+selected data events was estimated using simulated background events selected with the requirements described above, and 
+was $\sim$3\% of the estimated $\DY$ background.  This was comparable to the uncertainty on the $\sim$15\% correction 
+discussed next, so other ST backgrounds were ignored when the \DY background normalization correction was calculated.
 
 Two additional simulated $\DY$+jets datasets were produced with different \MC generators, and used to estimate the uncertainty 
 on the $\sim$15\% \DY background correction.  Events from data and all three simulated $\DY$+jets datasets were selected 
 using the $Z \rightarrow \ell\ell$ selections without jet requirements.  The jet requirements were removed to compare data 
 to simulations in a phase space where all three simulated datasets yielded a large number of events after selections.  Selected 
-events were used to produce $\Mll$ distributions, and the difference in $\Mll$ normalization was calculated between data and each 
-set of simulated events.  The largest difference was taken as the uncertainty on $\sim$15\%.  The uncertainty was 2.0\% in the 
-$ee$-channel, and 1.0\% in the $\mu\mu$-channel.
+events were used to produce $\Mll$ distributions, and the difference in the $\Mll$ normalization was calculated between data and each 
+set of simulated events.  The largest difference between data and any set of simulated events was taken as the uncertainty on 
+$\sim$15\%.  The uncertainty was 2.0\% in the $ee$-channel, and 1.0\% in the $\mu\mu$-channel.
 
 \subsection{\DY Shape in $\Mlljj$}
 \label{sec:dyShapeInMlljj}
@@ -245,15 +247,14 @@ in simulated events reduced the number of reconstructed jets that could pass the
 of selected jets, as multiple partons could contribute to the same jet.  These jet modelling effects produced a discrepancy 
 in the $\Mlljj$ distribution shape between data and simulated events.
 
-The magnitude of the shape discrepancy in the $\Mlljj$ distribution was estimated 
-using a low $\Mll$ control region where data and simulated events were expected to agree.  Events from data and all simulated ST 
+The magnitude of the $\Mlljj$ distribution shape discrepancy was estimated 
+using a low $\Mll$ control region where data and simulated ST background events were expected to agree.  Events from data and all simulated ST 
 backgrounds in the $ee$- and $\mu\mu$-channel low $\Mll$ control regions were selected using the electron and muon triggers described in 
-Chapter \ref{sec:triggers}.  Events passing the trigger selections were required to have two energetic jets and leptons 
-with $\Mlljj > 600$ $\GeV$, but $\Mll < 180$ $\GeV$.  Excluding the $\Mll$ requirement, the corrections and selections 
-used in the low $\Mll$ control region were identical to those used in the \WR search region (Table \ref{tab:cutCompSignalRegAndZllReg}).  
+Chapter \ref{sec:triggers}.  Events passing the trigger selections were corrected and selected in the same way as events 
+used in the \WR search region (Table \ref{tab:cutCompSignalRegAndZllReg}), but were required to have $\Mll < 180$ $\GeV$.  
 Selected events in data and simulations were used to produce $\Mlljj$ distributions, and the $\sim$15\% increase was 
-applied to simulated $\DY$+jets events.  The $\Mlljj$ distributions from data and simulated events shown in Figure 
-\ref{fig:mlljjLowDileptonMassSideband} were compared, and the $\Mlljj$ shape discrepancy was estimated as the largest 
+applied to simulated $\DY$+jets events.  The $\Mlljj$ distributions from data and simulated events, shown in Figure 
+\ref{fig:mlljjLowDileptonMassSideband}, were compared, and the $\Mlljj$ shape discrepancy was estimated as the largest 
 percentage difference between data and the total simulated background in any bin.  The shape discrepancy magnitude was 
 conservatively estimated to be 40\% in both lepton channels, constant versus $\Mlljj$.  When calculating results the 
 40\% uncertainty was applied to the expected number of \DY events.
@@ -272,10 +273,10 @@ conservatively estimated to be 40\% in both lepton channels, constant versus $\M
 \end{figure}
 
 The $\DY$+jets simulation was produced at leading order in the strong coupling constant, and it was studied if the 40\% 
-uncertainty assigned to the \DY background could be reduced by simulating higher order strong interactions.  $\DY$+jets 
+\DY background uncertainty could be reduced by simulating higher order strong interactions.  A separate set of $\DY$+jets 
 events were simulated at next-to-leading order in the strong coupling constant, and were selected using the low $\Mll$ 
 control region requirements.  Using the higher order simulation did not reduce the 40\% uncertainty, as shown in Figure 
-\ref{fig:mlljjLowDileptonMassSidebandAMCNLO}.  The higher order simulation was limited by a lack of events with $\Mlljj > 600$ 
+\ref{fig:mlljjLowDileptonMassSidebandAMCNLO}, because the higher order simulation lacked events with $\Mlljj > 600$ 
 $\GeV$.  Relative to the leading order $\DY$+jets simulation, the higher order simulation had a factor of $\sim$3 fewer 
 events with $\Mlljj > 600$ $\GeV$, and a factor of $\sim$10 fewer events with $\Mlljj > 1$ $\TeV$.
 
@@ -295,8 +296,8 @@ events with $\Mlljj > 600$ $\GeV$, and a factor of $\sim$10 fewer events with $\
 
 The low $\Mlljj$ control region was used to validate the $\sim$15\% correction applied, and 40\% uncertainty assigned to 
 the estimated \DY background.  In this control region, events from data and simulations of all ST backgrounds were selected 
-using the \WR search requirements (Table \ref{tab:cutCompSignalRegAndZllReg}), but with $\Mlljj < 600 \GeV$.  Selected 
-data and simulated events were used to make an $\Mll$ distribution, and the simulated \DY background was increased by $\sim$15\%.  
+using the \WR search requirements (Table \ref{tab:cutCompSignalRegAndZllReg}), but with $\Mlljj < 600$ $\GeV$.  Selected 
+data and simulated events were used to make $\Mll$ distributions, and the simulated \DY background was increased by $\sim$15\%.  
 Comparing the $\Mll$ distributions found in data and simulations, shown in Figure \ref{fig:mllInLowMlljjSideband}, indicated 
 that the $\sim$15\% \DY correction brought data and simulations into better agreement.  In addition, the comparison showed 
 that the 40\% \DY normalization uncertainty was not too conservative, as the disagreement between data and simulated 
@@ -356,16 +357,16 @@ events by the probability for selected leptons to pass the default (tight) lepto
 with the requirements described in Chapter \ref{sec:event_selection_chapter}, but with the following (looser) lepton ID 
 requirements:
 
+\textbf{Muons}
 \begin{itemize}
-	\item \textbf{Muons}
 	\item The silicon tracker track was reconstructed from at least 1 hit in the silicon pixel detector, and at least 5 hits in the 
 		entire tracker.
 	\item The fitted track representing the estimated muon trajectory through all of CMS originated at a 
 		point that was within 2 (5) mm of the muon's reconstructed vertex in the $x-y$ plane ($z$ axis). 
 \end{itemize}
 
+\textbf{Electrons}
 \begin{itemize}
-	\item \textbf{Electrons}
 	\item At least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
 	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ 
 		in the barrel, and $< 0.10$ in the endcap.
