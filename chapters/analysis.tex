@@ -61,15 +61,32 @@ to $\mu = \mu_{max}$ such that 95\% of the area under $p(\mu|G)$ was covered.  T
 \subsection{$\Mlljj$ Windows}
 \label{sec:mlljjWindows}
 %combine first and second paragraphs into one paragraph that motivates the use of \Mlljj windows
-The $\Mlljj$ distribution of ST background and \WR signal events after selections motivated the use of 
-finite size $\Mlljj$ windows to test different \mWR hypotheses.  .
+The shapes of the $\Mlljj$ distributions from selected ST background and \WR signal events motivated the use of 
+finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
+peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
+as shown in Figure \ref{fig:signalShapesAfterSelection}.  In contrast, the total ST backgrounds appeared as a 
+distribution that decreased rapidly with increasing $\Mlljj$.  This distinction in the $\Mlljj$ shape was 
+transformed into greater signal over background sensitivity by dividing the $\Mlljj > 600$ $\GeV$ range into 
+smaller $\Mlljj$ windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized 
+for its corresponding \mWR hypothesis using the following procedure:
 
-%first paragraph
-The \WR and \nul signals considered here were characterized by $\Mlljj$ distributions that peaked 
-at \mWR, and had tails that extended several hundred $\GeV$ below and above the peak.  The only other 
-assumption made regarding the shape of signals in $\Mlljj$ was that the tails grew larger as \mWR increased, 
-as shown in Figure \ref{fig:signalShapesAfterSelection}.  %These signal characteristics motivated the use of 
-%finite size $\Mlljj$ windows to search for evidence of a \WR and \nul.
+\begin{itemize}
+	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the width of the simulated \WR $\Mlljj$ distribution.
+	\item In each window:
+	\begin{itemize}
+		\item The number of signal events $S$ and background events $B$ were counted.
+		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ was pulled 
+			from the Poisson distribution that represented the number of measured events in the window.
+		\item Using the procedure described in Section \ref{sec:bayesianStatsAndLimits}, an expected 
+			upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL was calculated 
+			based on the probability of measuring $C$ due to fluctuations in $S$ and $B$.  To expedite the calculation, 
+			only statistical uncertainties were considered in the fluctuations of $S$ and $B$.
+		\item The expected limit was recalculated 300 times, and each time a new random number $C$ was 
+			pulled from the Poisson distribution with mean $B$.  The expected upper limit for the window 
+			was the median value of all 300 limits.
+	\end{itemize}
+	\item The optimized window was chosen as the window that minimized the expected upper limit.
+\end{itemize}
 
 \begin{figure}[btp]
 	\centering
@@ -84,41 +101,13 @@ as shown in Figure \ref{fig:signalShapesAfterSelection}.  %These signal characte
 	$ee$- ($\mu\mu$-) channel is shown on the left (right).}
 \end{figure}
 
-%second paragraph
-%After all selections the estimated ST backgrounds were cha.
-The ST backgrounds that passed the signal region selection were characterized by $\Mlljj$ 
-distributions that decreased rapidly with increasing $\Mlljj$, whereas any \WR signal 
-after the same selection appeared as an individual peak in the $\Mlljj$ distribution.  
-This distinction motivated the division of the entire $\Mlljj > 600\GeV$ range into finite 
-width $\Mlljj$ windows linked to specific \mWR hypotheses.  The optimal window size for each 
-\mWR hypothesis was determined using the following procedure:
-
-\begin{itemize}
-	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the expected width of the \WR $\Mlljj$ distribution.
-	\item In each window:
-	\begin{itemize}
-		\item The number of expected signal events $A$ and all ST background events $B$ were calculated.
-		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ was pulled 
-			from the Poisson distribution that represented the number of measured events in the window.
-		\item Using the procedure described in Section \ref{sec:bayesianStatsAndLimits}, a 95\% confidence 
-			level (CL) upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ was calculated 
-			based on the probability of measuring $C$ due to fluctuations in $A$ and $B$.  Only statistical 
-			uncertainties were considered in the fluctuations of $A$ and $B$.
-		\item The $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limit was recalculated 300 times, and each time a new random 
-			number $C$ was pulled from the Poisson distribution with mean $B$.  The median value of 
-			all 300 limits was taken as the upper limit for the window.
-	\end{itemize}
-	\item The window that minimized the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ upper limit was selected as the optimal window.
-\end{itemize}
-
-The $\Mlljj$ window optimization yielded the windows listed in Table \ref{tab:masscuts}.  The windows 
-overlapped in $\Mlljj$ because one event with a unique $\Mlljj$ value is compatible with several 
-\mWR hypotheses.  In each window the number of events observed in data, and expected from \WR 
-signal and all ST backgrounds were counted, and these numbers were compared in search of a signal.  
-In calculating the expected \WR signal events, only 
-the \mWR hypothesis used to optimize the window was considered.  The effect of uncertainties on 
-expected event estimates were calculated in each window using procedures described in the next 
-section.
+The optimized windows, listed in Table \ref{tab:masscuts}, overlapped in $\Mlljj$ because 
+each selected event could be consistent with several \mWR hypotheses.  In each window the number of selected 
+events in data, estimated $\DY$ and top quark backgrounds, and the appropriate \WR simulation\footnote{The window 
+optimized for $\mWR = 1000$ $\GeV$ only considered signal events produced in the $\mWR = 1000$ $\GeV$ simulation.} 
+were counted, and were used to calculate two upper limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$: 
+an observed limit, and an expected upper limit with uncertainties.  The uncertainties that affected expected 
+limits were calculated using procedures described next.
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
@@ -162,6 +151,7 @@ section.
 \section{Uncertainties}
 \label{sec:uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%RESUME HERE
 In each window the estimated number of expected signal and background events were subject to 
 many sources of uncertainty.  The magnitude of each uncertainty was estimated, and the effect 
 of each on the search results was quantified as a percentage uncertainty on the expected number 
