@@ -205,9 +205,9 @@ distributions.
 \end{figure}
 
 \begin{table}[ht]
-	\caption{Impact of energy and ID uncertainties on the number of expected signal and background events in the $\Mlljj$ 
-		window optimized for the $\mWR = 2.2\TeV$ hypothesis.  All uncertainties are in percentages of expected events.  Unlike the \DY and \WR 
-		estimates, the estimate of top quark background in $ee$ and $\mu\mu$ channels is sensitive to electron and muon energy and ID uncertainties.}
+	\caption{The effect of energy and ID uncertainties on the number of signal and background events in the $\Mlljj$ 
+		window optimized for the $\mWR = 2.2\TeV$ hypothesis.  All uncertainties are in percentages of expected events.  The top 
+	quark background estimate is sensitive to $e$ and $\mu$ energy uncertainties.}
   \label{tab:impactOfEnergyIdUncerts}
   \centering
     \begin{tabular}{c|c|c|c}
@@ -225,11 +225,12 @@ distributions.
 
 \subsubsection{Statistical Uncertainty}
 \label{sec:statUnc}
+The statistical uncertainty in each $\Mlljj$ window was calculated for each signal and background source as 
+$\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ was the weight of event i, and the sum ran over all selected events.  
+The top quark background was estimated using $e\mu$ data events all with a weight of 1, while simulated \WR 
+and \DY events had positive weights less than 1.
+
 %RESUME HERE
-The statistical uncertainty in each $\Mlljj$ window was calculated as $\sqrt{\sum w_{i}^{2}}$, where 
-$w_{i}$ was the weight of event i, and the sum ran over all events passing the full selection.  As an 
-example, consider an $ee$ channel window that has 10 $e\mu$ data events after all selections.  Here 
-the estimated top quark background is $0.43 \cdot 10 = 4.3$ events, and the statistical uncertainty is 
 $0.43 \cdot \sqrt{10} \sim 1.4$ events, since $e\mu$ data events all have a weight of 1.  However, in 
 many $\Mlljj$ windows optimized for $\mWR \geq 3.0\TeV$ hypotheses, zero background events were expected.  
 In such windows, the statistical uncertainty was set equal to the average event weight for all selected 
