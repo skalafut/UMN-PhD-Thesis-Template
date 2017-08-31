@@ -225,19 +225,17 @@ distributions.
 
 \subsubsection{Statistical Uncertainty}
 \label{sec:statUnc}
-The statistical uncertainty in each $\Mlljj$ window was calculated for each signal and background source as 
-$\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ was the weight of event i, and the sum ran over all selected events.  
-The top quark background was estimated using $e\mu$ data events all with a weight of 1, while simulated \WR 
-and \DY events had positive weights less than 1.
-
-%RESUME HERE
-$0.43 \cdot \sqrt{10} \sim 1.4$ events, since $e\mu$ data events all have a weight of 1.  However, in 
-many $\Mlljj$ windows optimized for $\mWR \geq 3.0\TeV$ hypotheses, zero background events were expected.  
-In such windows, the statistical uncertainty was set equal to the average event weight for all selected 
-events.  As shown in Table \ref{tab:impactOfStatUncert}, the statistical uncertainty was largest in the 
-top quark background estimate.  The statistical uncertainty was the dominant uncertainty in the top 
-quark background estimate.  In limit calculations the statistical uncertainty was taken into account 
-using a Gamma distribution.
+The statistical uncertainty was calculated for each signal and background source as 
+$\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ was the weight of event i, and the sum ran over all selected events 
+in a $\Mlljj$ window.  The top quark background was estimated using $e\mu$ data events all with a weight of 
+1, while simulated \WR and \DY events had positive weights $<$ 1.  Comparing signal and background statistical 
+uncertainties, the statistical uncertainty was largest for the top quark background, as shown in Table 
+\ref{tab:impactOfStatUncert}.  No $e\mu$ data events had $\Memujj \geq 2700$ $\GeV$, so the top quark 
+background estimate was 0 events for signal hypotheses with $\mWR \geq 3600$ $\GeV$, and the standard 
+statistical uncertainty formula could not be used.  In $\Mlljj$ windows where the top quark background estimate 
+was 0 events, the statistical uncertainty assigned to 0 events was 1 $e\mu$ event multiplied by the appropriate 
+$\ell\ell:e\mu$ normalization factor, 0.659 or 0.432.  The effect of statistical uncertainties were included 
+in limit calculations by using Gamma distributions for the marginal posterior distributions.
 
 \begin{table}[ht]
 	\caption{Impact of statistical uncertainty on the number of expected signal and background events in the $\Mlljj$ 
@@ -256,36 +254,38 @@ using a Gamma distribution.
 
 \subsubsection{Background Uncertainty from Control Regions}
 \label{sec:bkgndNormUnc}
-In the control regions discussed in Chapter \ref{sec:backgroundEstimation}, studies of data and 
-simulations motivated applying fixed percentage uncertainties to background estimates.  For 
-the top quark background estimate, an uncertainty of 10\% on the expected event count, constant 
-in $\Mlljj$, was applied.  For the $\DY$ background estimate, an uncertainty of 40\% on the 
-expected event count, constant in $\Mlljj$, was applied.  This was the dominant uncertainty in 
-the $\DY$ background estimate.  In limit calculations these uncertainties were taken into account 
-using log-normal distributions.
+Based on previously discussed comparisons between data and simulated backgrounds in control regions, 
+additional uncertainties independent of $\Mlljj$ were applied to background estimates.  A 10\% 
+uncertainty was assigned to the top quark background estimate to account for fluctuations in the 
+$\ell\ell:e\mu$ normalization factor versus $\Mlljj$.  A 40\% uncertainty was applied to the $\DY$ 
+background estimate to account for disagreement between data and simulated $\DY$+jets events in 
+the $\Mlljj$ distribution in the low $\Mll$ control region.  The effect of these uncertainties were 
+included in limit calculations using log-normal distributions for the marginal posterior distributions.
 
 \subsection{Secondary Uncertainties}
 \label{sec:subdominantUncs}
 
 \subsubsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
 \label{sec:leptonRecoTriggerEffUnc}
-As discussed in Chapters \ref{sec:muonSelection,sec:electronSelection}, the efficiencies 
-of lepton reconstruction and the muon trigger differed between simulated and data events.  These differences 
-were corrected by applying $\sim$unity weights to simulated \DY and \WR events based on selected leptons.  
-In the $\mu\mu$ channel, the trigger and reconstruction efficiency weights varied with the energy and $\eta$ of selected muons, and the 
-number of events in data and simulations available to estimate these efficiency weights determined 
-their uncertainties.  The uncertainty on muon reconstruction efficiency weights was negligible.  The muon trigger 
-weight for a triggering muon with $\pt < 140\GeV$ had an uncertainty below 0.5\% of the expected event 
-count.  For higher $\pt$ muons the trigger weights had much greater uncertainties because fewer data 
-events were available: $<$ 3\% uncertainty for triggering muons with $|\eta| < 2.1$, and 5.1\% uncertainty 
-for triggering muons with $2.1 < |\eta| < 2.4$.  In the $ee$ channel, one electron reconstruction 
-efficiency weight was calculated for all electrons, and the maximum difference between this inclusive 
-weight and an $\Et, \eta$ dependent weight was taken as the uncertainty on the weight.  This uncertainty 
-was 2\%, and was applied to \DY and \WR estimates in all $\Mlljj$ windows.  In limit calculations the 
-reconstruction and trigger efficiency uncertainties were taken into account using log-normal distributions.
+The efficiencies of lepton reconstruction and muon trigger selections differed between events selected 
+in simulations and in data, and these differences were corrected by applying $\sim$unity weights to simulated 
+\DY and \WR events.  In the $\mu\mu$-channel, the trigger and lepton reconstruction 
+efficiency weights varied with the $\pt$ and $\eta$ of selected muons, and the weight uncertainties 
+were statistical uncertainties, determined by the number of data and simulated events used to calculate 
+the weights.  The uncertainty on the muon reconstruction efficiency weights was negligible.  The muon 
+trigger efficiency weight uncertainty was $<$ 0.5\% for events triggered by muons with $\pt < 140$ $\GeV$.  For 
+events triggered by muons with $\pt \geq 140$ $\GeV$, the trigger efficiency weight uncertainty was higher 
+because fewer data events were available to calculate the weight: $<$ 3\% uncertainty for triggering 
+muons with $|\eta| < 2.1$, and 5.1\% uncertainty for triggering muons with $2.1 < |\eta| < 2.4$.  In 
+the $ee$-channel, an electron reconstruction efficiency weight of 0.982 was applied to all selected 
+electrons.  The weight uncertainty was 2\%, and was calculated as the maximum difference between 0.982 
+and an $\Et,\eta$ dependent weight.  The effect of lepton reconstruction and trigger selection efficiency 
+uncertainties were included in limit calculations using log-normal distributions for the marginal posterior 
+distributions.
 
 \subsubsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
+%RESUME HERE
 As \DY and \WR expected event counts were estimated from simulated events, these estimates were affected 
 by additional uncertainties that did not affect the top quark background estimate: uncertainties 
 in cross section, luminosity, pileup, and parton distribution functions (PDFs) and QCD scale uncertainties.  By comparing \DY datasets simulated 
