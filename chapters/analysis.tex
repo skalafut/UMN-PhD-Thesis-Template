@@ -285,32 +285,35 @@ distributions.
 
 \subsubsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
+The \DY background and \WR signal were estimated using simulated events whose event weights were 
+susceptible to uncertainties on cross sections, pileup, integrated luminosity, parton distribution functions 
+(PDFs), and QCD scales.  The \DY cross section uncertainty was 2\% (1\%) in the $ee$- ($\mu\mu$-) channel, 
+and was estimated by comparing data to simulated \DY datasets produced with different \MC generators in 
+the $Z \rightarrow \ell\ell$ control region discussed earlier.  Treating PDF uncertainties separately, the 
+\WR cross section uncertainty was proportional to the uncertainties on the ST top quark mass, and the 
+ST $W$ boson coupling strengths to ST fermions.  These ST uncertainties are $<$ 0.5\%, and the resulting 
+\WR cross section uncertainty was negligible.
+
+The pileup weights $w_{PU}$ applied to simulated events were derived assuming the vertex reconstruction 
+efficiency in data was parameterized by .
+
+%The pileup weights $w_{PU}$ applied to simulated events were derived assuming the pileup distribution in data 
+%followed a specific shape, which was sensitive to the performance of vertex reconstruction in the tracker.  
+%Uncertainties and inefficiencies in vertex reconstruction lead to an uncertainty in the pileup 
+%distribution of data.  The effect of this uncertainty was estimated by shifting the entire pileup distribution 
+%in data, without changing its shape, higher (lower) to change the mean pileup value by +5\% (-5\%).  
+%New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ for simulated events were calculated after the upward and downward shifts, and 
+%the pileup uncertainty was calculated as the maximum percentage change in events in $\Mlljj$ windows 
+%using the original and new weights.  For \DY and \WR event estimates, the pileup uncertainty was 3\% or less 
+%in all $\Mlljj$ windows and for all \mWR values, and in limit calculations was taken into account using 
+%a log-normal distribution.
+
 %RESUME HERE
-As \DY and \WR expected event counts were estimated from simulated events, these estimates were affected 
-by additional uncertainties that did not affect the top quark background estimate: uncertainties 
-in cross section, luminosity, pileup, and parton distribution functions (PDFs) and QCD scale uncertainties.  By comparing \DY datasets simulated 
-with different generators to data, the \DY cross section uncertainty was estimated at 2\% (1\%) in the 
-$ee$ ($\mu\mu$) channel.  In limit calculations the \DY cross section uncertainty was taken into account 
-using a log-normal distribution.  \WR datasets simulated with different generators were not available, so the \WR 
-cross section uncertainty resulted from uncertainties on ST coupling constants and particle masses 
-hard coded in \PYTHIA.  The magnitudes of uncertainties on ST parameters were small, and as a result 
-the \WR cross section uncertainties were negligible.
 
 The number of expected \WR and \DY events was normalized to the measured integrated luminosity of data.  
 The integrated luminosity of data was measured with a 2.7\% uncertainty, and this uncertainty translated 
 into a 2.7\% uncertainty on the number of expected \WR and \DY events in every $\Mlljj$ window.  In limit 
 calculations the luminosity uncertainty was taken into account using a log-normal distribution.
-
-Pileup weights $w_{PU}$ applied to simulated events were derived assuming the pileup distribution in data followed 
-a specific shape, which was sensitive to the performance of vertex reconstruction in the tracker.  
-Uncertainties and inefficiencies in vertex reconstruction lead to an uncertainty in the pileup 
-distribution of data.  The effect of this uncertainty was estimated by shifting the entire pileup distribution 
-in data, without changing its shape, higher (lower) to change the mean pileup value by +5\% (-5\%).  
-New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ for simulated events were calculated after the upward and downward shifts, and 
-the pileup uncertainty was calculated as the maximum percentage change in events in $\Mlljj$ windows 
-using the original and new weights.  For \DY and \WR event estimates, the pileup uncertainty was 3\% or less 
-in all $\Mlljj$ windows and for all \mWR values, and in limit calculations was taken into account using 
-a log-normal distribution.
 
 \DY and \WR events were simulated using:
 
@@ -342,6 +345,9 @@ production rate uncertainty, constituting the majority of the PDF uncertainty, g
 included when calculating the results because the uncertainty depended on the LRS model that was chosen.  
 In limit calculations the PDF, $\mu_{R}$ and $\mu_{F}$ uncertainties were taken into account using log-normal 
 distributions.
+
+The effect of uncertainties on cross sections, pileup, integrated luminosity, PDFs, and QCD scales were included 
+in limit calculations using log-normal distributions for the marginal posterior distributions.
 
 \begin{table}[ht]
 	\caption{Uncertainty in the number of predicted \WR signal events due to PDF and QCD scale uncertainties.}
