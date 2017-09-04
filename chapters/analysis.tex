@@ -9,8 +9,8 @@ backgrounds and simulated \WR signals, and
 the selected events were used to produce $\Mlljj$ distributions in the $ee$- and $\mu\mu$-channels.  
 Each $\Mlljj$ distribution ($\Mlljj > 600$ $\GeV$) was divided into smaller $\Mlljj$ windows linked 
 to specific \mWR hypotheses.  In each window, evidence of a \WR and \nul was searched for as an excess 
-of events in data relative to estimated backgrounds.  The window sizes were optimized and the results were 
-obtained by using Bayesian statistics to calculate limits on the \WR cross section $\times$ branching 
+of events in data relative to estimated backgrounds.  Limits with Bayesian statistics were calculated 
+to optimize the window sizes, and determine limits on the \WR cross section $\times$ branching 
 fraction to $\ell\ell jj$ final states.
 
 
@@ -291,29 +291,24 @@ susceptible to uncertainties on cross sections, pileup, integrated luminosity, p
 and was estimated by comparing data to simulated \DY datasets produced with different \MC generators in 
 the $Z \rightarrow \ell\ell$ control region discussed earlier.  Treating PDF uncertainties separately, the 
 \WR cross section uncertainty was proportional to the uncertainties on the ST top quark mass, and the 
-ST $W$ boson coupling strengths to ST fermions.  These ST uncertainties are $<$ 0.5\%, and the resulting 
-\WR cross section uncertainty was negligible.
+ST $W$ boson coupling strengths to ST fermions.  These ST uncertainties are $<$ 0.5\%, and as a result 
+the \WR cross section uncertainty was negligible.
 
-The pileup weights $w_{PU}$ applied to simulated events were derived assuming the vertex reconstruction 
-efficiency in data was parameterized by .
+The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an 
+analytic, multivariate function was used to approximate this efficiency in data.  This function was used to 
+derive the pileup weights\footnote{The pileup weights were equal to the pileup distribution in data 
+divided by the pileup distribution in simulated events} $w_{PU}$ applied to simulated events, and uncertainty 
+in the function's parameters created uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty was estimated by 
+shifting the pileup distribution in data without changing its shape so that the mean pileup value increased 
+or decreased by 5\%.  New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ were calculated after the 
+upward and downward shifts, and the $w_{PU}$ uncertainty was calculated as the maximum percentage change in 
+events in each $\Mlljj$ window using the original and new weights.  For \DY and \WR event estimates, the pileup 
+uncertainty was 3\% or less in all $\Mlljj$ windows.
 
-%The pileup weights $w_{PU}$ applied to simulated events were derived assuming the pileup distribution in data 
-%followed a specific shape, which was sensitive to the performance of vertex reconstruction in the tracker.  
-%Uncertainties and inefficiencies in vertex reconstruction lead to an uncertainty in the pileup 
-%distribution of data.  The effect of this uncertainty was estimated by shifting the entire pileup distribution 
-%in data, without changing its shape, higher (lower) to change the mean pileup value by +5\% (-5\%).  
-%New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ for simulated events were calculated after the upward and downward shifts, and 
-%the pileup uncertainty was calculated as the maximum percentage change in events in $\Mlljj$ windows 
-%using the original and new weights.  For \DY and \WR event estimates, the pileup uncertainty was 3\% or less 
-%in all $\Mlljj$ windows and for all \mWR values, and in limit calculations was taken into account using 
-%a log-normal distribution.
-
-%RESUME HERE
-
-The number of expected \WR and \DY events was normalized to the measured integrated luminosity of data.  
-The integrated luminosity of data was measured with a 2.7\% uncertainty, and this uncertainty translated 
-into a 2.7\% uncertainty on the number of expected \WR and \DY events in every $\Mlljj$ window.  In limit 
-calculations the luminosity uncertainty was taken into account using a log-normal distribution.
+Knowing the cross sections of the \WR and \DY processes, the numbers of \WR and \DY events were normalized 
+to the measured integrated luminosity of data.  The integrated luminosity of data was measured with a 2.7\% 
+uncertainty, which translated into a 2.7\% luminosity uncertainty on the number of \WR and \DY events in 
+every $\Mlljj$ window.
 
 \DY and \WR events were simulated using:
 
@@ -324,14 +319,18 @@ calculations the luminosity uncertainty was taken into account using a log-norma
 	\item One renormalization scale value $\mu_{R}$ (in $\GeV$) that determined the QCD coupling strength $\alpha_{QCD}$.
 	\item One factorization scale value $\mu_{F}$ (in $\GeV$), which allowed QCD interactions with low momentum transfer 
 		$k_{low} \ll \mu_{F}$ to be simulated independently of QCD interactions with high momentum transfer 
-		$k_{high} \sim \mu_{F}$ (see \cite{qcdFactorizationTheory} for more details).
+		$k_{high} \sim \mu_{F}$ (explained further in \cite{qcdFactorizationTheory}).
 \end{itemize}
 
 The effect of uncertainties in the PDF, $\mu_{R}$ and $\mu_{F}$ values were estimated by resimulating \DY and 
-\WR events with different PDF coefficients and QCD scale values, and subsequently reapplying all event selections and 
-corrections.  To be conservative, the QCD scales were independently increased or decreased by a factor of 2 
-(both were doubled, one was not changed while the other was halved, etc), and the maximum percentage change 
-in events in an $\Mlljj$ window was used as the QCD scale uncertainty.  The QCD scale uncertainty was added 
+\WR events with different PDF coefficients and QCD scale values, and subsequently reapplying all event selections 
+and corrections.  The QCD scales were independently increased or decreased by a factor of 2 
+(both were doubled, one was not changed while the other was halved, etc), and the QCD scale uncertainty was the 
+maximum percentage change in events in a $\Mlljj$ window.  The PDF coefficients were varied o.
+
+%RESUME HERE
+
+The QCD scale uncertainty was added 
 in quadrature with the PDF uncertainty for each $\Mlljj$ window.  For \DY events the combined PDF and QCD 
 scale uncertainty never exceeded 4\% in any $\Mlljj$ window.  For each \mWR hypothesis, the PDF and QCD scale 
 uncertainty was calculated in the $\Mlljj$ window optimized for the specific \mWR hypothesis.  For all \mWR 
