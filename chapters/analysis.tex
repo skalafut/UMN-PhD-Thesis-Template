@@ -34,7 +34,6 @@ limits were calculated at 95\% confidence level (CL) using a Poisson model of th
 	Poisson(\mu S(\pmb{\theta}) \thickspace \plus \thickspace B(\pmb{\theta}))
 	\label{eq:poissonModel}
 \end{equation}
-
 where $\mu$ was the unknown, dimensionless \WR signal strength, and $\pmb{\theta}$ represented the uncertainties $\delta S$ 
 and $\delta B$ described later in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability 
 distribution for $\mu$ given $G$ measured events, $p(\mu|G)$, was obtained by evaluating the integral\cite{bayesianDataAnalysis}:
@@ -43,7 +42,6 @@ distribution for $\mu$ given $G$ measured events, $p(\mu|G)$, was obtained by ev
 	p(\mu|G) = \int p(\mu|\pmb{\theta},G)p(\pmb{\theta}|G)d\pmb{\theta}
 	\label{eq:sigStrngthProbDist}
 \end{equation}
-
 where $p(\pmb{\theta}|G)$ were the probability distributions for the uncertainties given the measurement 
 $G$ (``marginal posterior distributions''), and $p(\mu|\pmb{\theta},G)$ were the probability distributions 
 for $\mu$ given the uncertainties, and the measurement $G$ (``conditional posterior distributions'').  
@@ -274,15 +272,15 @@ events triggered by muons with $\pt < 140$ $\GeV$.  For events triggered by high
 was $<$ 3\% when the triggering muon had $|\eta| < 2.1$, and was 5.1\% when the triggering muon had $2.1 < |\eta| < 2.4$.  In 
 the $ee$-channel, an electron reconstruction efficiency weight of 0.982 was applied to all selected electrons, and propagated 
 into the weight of each event.  The electron reconstruction weight uncertainty was calculated as the maximum difference between 
-0.982 and an $\Et,\eta$ dependent weight, and was found to be 2\%.  The uncertainties on lepton reconstruction and trigger 
-selection efficiencies were included in limit calculations using log-normal distributions for the marginal posterior distributions.
+0.982 and an $\Et,\eta$ dependent weight, and was found to be 2\%.  The lepton reconstruction and trigger uncertainties were 
+included in limit calculations using log-normal distributions for the marginal posterior distributions.
 
 \subsubsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
 Simulated events were also weighted to normalize the events to the integrated luminosity of data, and to account for the pileup 
 distribution measured in data, and the effects of parton distribution functions (PDFs), and renormalization and factorization 
-energy scales.  Uncertainties on these weights lead to uncertainties on the number of selected \DY and \WR events, whose 
-magnitudes were estimated as follows.
+energy scales.  Uncertainties on these weights lead to additional uncertainties on the number of selected \DY and \WR events.  
+The uncertainties on the number of selected events in each $\Mlljj$ window were estimated as follows.
 
 The \DY cross section uncertainty was estimated by comparing data to three sets of simulated \DY events in the 
 $Z \rightarrow \ell\ell$ control region discussed earlier, and was found to be 2\% (1\%) in the $ee$- ($\mu\mu$-) channel.  
@@ -290,23 +288,21 @@ At each \mWR value the \WR cross section was calculated during simulations based
 produced \WR events in the kinematically allowed phase space.  The cross section uncertainty was calculated as the uncertainty 
 on this fraction, and was $<$0.5\% for all values of \mWR.
 
-The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an analytic, multivariate 
-function was used to approximate this efficiency in data.  This function was used to derive the pileup weights\footnote{The pileup 
+The \WR and \DY events were normalized to the measured integrated luminosity of data using the \WR and \DY cross sections 
+calculated in simulations.  The uncertainty on the integrated luminosity measurement in data lead to a 2.7\% uncertainty on the 
+number of \WR and \DY events in every $\Mlljj$ window.
+
+The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an analytic 
+function was used to approximate this efficiency.  This function was used to derive the pileup weights\footnote{The pileup 
 weights were equal to the pileup distribution in data divided by the pileup distribution in simulated events} $w_{PU}$ applied 
-to simulated events, so the uncertainties of this function's parameters lead to uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty 
+to simulated events, and the uncertainties in this function's parameters lead to an uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty 
 was estimated by first shifting the pileup distribution in data without changing its shape so that the mean pileup value increased 
 or decreased by 5\%.  After the upward and downward shifts new pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ were 
-calculated, and the $w_{PU}$ uncertainty was calculated as the maximum difference in total event weight between the original and 
-the new weights.  For both \DY and \WR events, the pileup uncertainty was 3\% or less in all $\Mlljj$ windows.
-
-%RESUME HERE
-Knowing the cross sections of the \WR and \DY processes, the numbers of \WR and \DY events were normalized 
-to the measured integrated luminosity of data.  The integrated luminosity of data was measured with a 2.7\% 
-uncertainty, which translated into a 2.7\% luminosity uncertainty on the number of \WR and \DY events in 
-every $\Mlljj$ window.
+calculated.  Using selected events the $w_{PU}$ uncertainty was calculated as the largest difference in the total weight of 
+all events between the original weights $w_{PU}$ and either of the new sets of weights $w_{PU,\Uparrow}$ or $w_{PU,\Downarrow}$.  
+For \DY and \WR the pileup uncertainty was 3\% or less in all $\Mlljj$ windows.
 
 \DY and \WR events were simulated using:
-
 \begin{itemize}
 	\item One parton distribution function (PDF) that described how momenta were distributed amongst quark and 
 		gluon constituents of colliding protons.  \WR simulations used NNPDF23 \cite{nnpdf23}, \DY simulations 
@@ -316,31 +312,26 @@ every $\Mlljj$ window.
 		$k_{low} \ll \mu_{F}$ to be simulated independently of QCD interactions with high momentum transfer 
 		$k_{high} \sim \mu_{F}$ (explained further in \cite{qcdFactorizationTheory}).
 \end{itemize}
+The effect of PDF uncertainties, and $\mu_{R}$ and $\mu_{F}$ (QCD scale) uncertainties were estimated by resimulating \DY and 
+\WR events with different PDF coefficients and QCD scale values, and subsequently reapplying all event corrections and 
+selections.  The QCD scales were independently increased or decreased by a factor of 2 (both were doubled, one was not changed 
+while the other was halved, etc), and the QCD scale uncertainty was calculated as the maximum change in selected events between 
+the original scales and any other scales.  Similarly, the PDF coefficients were increased and decreased independently to test 
+$\sim$300 different sets of PDF coefficients, and the PDF uncertainty was calculated as the average change in the number of events 
+between the original PDF coefficients and any other set of coefficients.  In \DY events the QCD scale uncertainty added in 
+quadrature with the PDF uncertainty never exceeded 4\% in any $\Mlljj$ window.  The same procedures were used to estimate the QCD 
+scale and PDF uncertainties in \WR events.  There the QCD scale uncertainty never exceeded 5\% for any \mWR hypothesis, but the 
+PDF uncertainty increased with from 1\% to 15\% as \mWR increased from 0.8 to 4 $\TeV$, as shown in Table \ref{tab:wrPdfAndQCDscaleUnc}.  
+Following CMS guidelines, the \WR PDF uncertainty was factored into two parts: one part that affected the \WR production rate, 
+and another part that affected the $(\eta,\phi)$ trajectories of final state leptons and jets.  The PDF uncertainty affecting 
+$(\eta,\phi)$ was included in limit calculations, and was $\lesssim$ 1\% for all \mWR hypotheses.  The remaining PDF uncertainty, 
+which grew with \mWR, varied with the specific LRS model realization being tested, so it was not included in limit calculations.
 
-The effect of uncertainties in the PDF, $\mu_{R}$ and $\mu_{F}$ (QCD scale) values were estimated by resimulating \DY and 
-\WR events with different PDF coefficients and QCD scale values, and subsequently reapplying all event selections 
-and corrections.  The QCD scales were independently increased or decreased by a factor of 2 
-(both were doubled, one was not changed while the other was halved, etc), and the QCD scale uncertainty was 
-calculated as the maximum change in events in a $\Mlljj$ window between the original and modified 
-scales.  Similarly, the PDF coefficients were increased and decreased independently to test $\sim$300 different 
-sets of PDF coefficients, and the PDF uncertainty was calculated as the average change in the number of events 
-when the original PDF coefficients were exchanged for any other set of coefficients.  The QCD scale uncertainty 
-was added in quadrature with the PDF uncertainty; in \DY events their combination never exceeded 4\% in any 
-$\Mlljj$ window.  The combined PDF and QCD scale uncertainty in \WR events was only estimated in the $\Mlljj$ 
-window optimized for a particular \mWR hypothesis.  The QCD scale uncertainty never exceeded 5\% for any \mWR 
-hypothesis, but the PDF uncertainty increased with \mWR from 1\% to 15\%, as shown in Table \ref{tab:wrPdfAndQCDscaleUnc}.  
-Following CMS guidelines, the \WR PDF uncertainty was factored into two pieces: one piece that affected the 
-production rate of the \WR, and another piece that affected the $(\eta,\phi)$ of final state leptons and jets.  
-The PDF uncertainty affecting $(\eta,\phi)$ was included in limit calculations, and was $\lesssim$ 1\% for all 
-\mWR hypotheses.  The other PDF uncertainty increased in magnitude with \mWR, but since its magnitude depended 
-on the model being tested, it was not included in limit calculations.
-
-The effect of uncertainties on cross sections, pileup, integrated luminosity, PDFs, and QCD scales on the number 
-of \DY and \WR events were included in limit calculations using log-normal distributions for the marginal posterior 
+These simulated event uncertainties were included in limit calculations using log-normal distributions for the marginal posterior 
 distributions.
 
 \begin{table}[ht]
-	\caption{The uncertainty ($\Delta$) in the number of \WR events ($\Nlljj$) due to the combined PDF and QCD scale uncertainties.}
+	\caption{The uncertainty ($\Delta$) in the number of \WR events ($\Nlljj$) due to PDF and QCD scale uncertainties.}
   \label{tab:wrPdfAndQCDscaleUnc}
   \centering
     \begin{tabular}{c|c|c}
@@ -356,13 +347,12 @@ distributions.
 
 \subsection{Cumulative Uncertainty}
 \label{sec:cumulativeUnc}
-The cumulative effect of all uncertainty sources on the number of ST background and \WR signal events in several 
-$\Mlljj$ windows is shown in Table \ref{tab:expectedEventsAndAllUncs}.  All uncertainties excluding the statistical 
-uncertainty are labeled as systematic uncertainties, and the magnitudes of all systematic uncertainties were summed 
-in quadrature.  The dominant uncertainty affecting the \DY background was the 40\% uncertainty assigned based on 
-disagreement between data and simulated ST background events in a control region where good agreement was expected.  
-The dominant uncertainty affecting the top quark background was the statistical uncertainty, as $<$ 500 $e\mu$ 
-data events were available to estimate the top quark background with $\Mlljj > 600\GeV$.
+The cumulative effect of all uncertainties on the number of ST background and \WR signal events in several $\Mlljj$ windows is 
+shown in Table \ref{tab:expectedEventsAndAllUncs}.  All uncertainties excluding the statistical uncertainty are labeled as systematic 
+uncertainties, and the magnitudes of all systematic uncertainties are summed in quadrature.  The dominant \DY background uncertainty 
+was the 40\% uncertainty assigned based on disagreement between data and simulated ST backgrounds in a control region where good 
+agreement was expected.  The dominant top quark background uncertainty was the statistical uncertainty, as fewer than 500 $e\mu$ data 
+events passed the full selection with $\Mlljj > 600$ $\GeV$.
 
 \begin{table}[htp]
 	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of \WR signal and background events in each $\Mlljj$ window, and 
@@ -391,10 +381,10 @@ data events were available to estimate the top quark background with $\Mlljj > 6
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:searchResults}
-Evidence of LRS models was searched for by comparing selected events in data, \WR signal, and ST backgrounds.  Initial 
+Evidence of LRS models was searched for by comparing selected events in data to ST backgrounds and \WR signals.  Initial 
 results were obtained by comparing the $\Meejj$ and $\Mmumujj$ distributions between data and ST backgrounds with 
 (Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) the $\Mlljj$ window cuts.  
-No statistically significant excess was found in data relative to the backgrounds, so limits on 
+No statistically significant excess was found in data relative to backgrounds, so limits on 
 $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 
 \begin{table}[htp]
@@ -474,13 +464,12 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 		channel is shown on the left (right).}
 \end{figure}
 
-Upper limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ 
-window assuming $\mnul = \frac{1}{2}\mWR$.  Expected limits were 
-calculated by setting the measured number of events $\Nlljj$ equal to the number of ST background events, while 
-observed limits were calculated by setting $\Nlljj$ equal to the number of events found in data.  The expected 
-and observed limits as functions of \mWR are shown in Figure \ref{fig:oneDimLimits}.  Subsequently, the expected 
-and observed limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ for $\mnul = \frac{1}{2}\mWR$ were 
-extrapolated into \mnul and \mWR exclusion limits.
+Upper limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window 
+assuming $\mnul = \frac{1}{2}\mWR$.  Expected limits were calculated by setting the measured number of events $\Nlljj$ 
+equal to the number of ST background events, and observed limits were calculated by setting $\Nlljj$ equal to the number 
+of events found in data.  The expected and observed limits as functions of \mWR are shown in Figure \ref{fig:oneDimLimits}.  
+Subsequently, the expected and observed cross section limits for $\mnul = \frac{1}{2}\mWR$ were extrapolated into \mnul 
+and \mWR exclusion limits.
 
 \begin{figure}[btp]
 	\centering
@@ -495,23 +484,20 @@ extrapolated into \mnul and \mWR exclusion limits.
 	is shown on the left (right).}
 \end{figure}
 
-The limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ for $\mnul = \frac{1}{2}\mWR$ were directly 
-related to the signal efficiency $\chi$ of the event selection multiplied by the \WR cross section $\sigma(\WR)$, 
-$\chi \times \sigma(\WR)$.  Since the estimated background was not sensitive to the \mnul hypothesis, the limits at 
-two points with the same \mWR but different \mnul only differed by the ratio of $\chi \times \sigma(\WR)$ between 
-the two points.  Thus, knowing the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limit for 
-$\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a}$, the limit at $\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a}$ was 
-calculated as:
+The limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ for any \mnul were linearly proportional to the signal 
+efficiency $\chi$ of the event selection multiplied by the \WR cross section $\sigma(\WR)$, $\chi \times \sigma(\WR)$.  
+Since the estimated background was only sensitive to the \mWR hypothesis, the limits at two points with the same \mWR but 
+different \mnul only differed by the ratio of $\chi \times \sigma(\WR)$ at the points.  Since the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ 
+limit was known at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$, the limit at any other point $(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$ 
+could be calculated as:
 
-%no type of multiplication sign looks good between the fraction and the Limit written on the right side of this equation
 \begin{equation}
 	Limit[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})] = \frac{\chi[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})]}{\chi[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]} \quad Limit[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]
 \label{eq:limitExtrapolation}
 \end{equation}
-
-The dependence of $\chi$ on \mnul and \mWR was estimated by simulating additional 15000 event $\WR \rightarrow \ell\ell jj$ 
-samples with \mWR between 800 and 4000 $\GeV$, and many values of \mnul between 0 $\GeV$ and \mWR at each value 
-of \mWR.  
+The dependence of $\chi$ on \mnul and \mWR was estimated by simulating additional $\WR \rightarrow \ell\ell jj$ samples with 
+\mWR increasing from 800 to 4000 $\GeV$ in 100 $\GeV$ steps.  At each \mWR value, at least 20 samples were produced with 
+different \mnul values between 0 $\GeV$ and \mWR.  
 %in steps of:
 %\begin{itemize}
 %	\item 25 $\GeV$ from 0 to 300 $\GeV$,
@@ -519,17 +505,16 @@ of \mWR.
 %	\item 25 $\GeV$ from $\mWR - 200$ to \mWR $\GeV$
 %\end{itemize}
 %Smaller steps were used in regions where $\chi$ had a strong dependence on \mnul.
-The traditional full simulation used to produce \WR samples with $\mnul = \frac{1}{2}\mWR$ required enormous computational 
-resources that were not available for the limit extrapolation procedure described here.  Instead, additional \WR 
-simulations were produced using only the first simulation step.  \PYTHIA simulated the \WR production and decay into 
-leptons and quarks, and the hadronization of quarks into jets.  Similar to reconstructed jets, jets from \PYTHIA 
-were clustered from individual hadrons, leptons and photons in a cone of radius $\Delta R =$ 0.4.  After event generation 
-and jet clustering, the offline selection used in fully reconstructed events was applied, excluding lepton and jet ID 
-selections.  The efficiency of this selection $\chi^'$ was measured as a function of $(\mWR, \mnul)$, and used in place 
-of $\chi$.  Then, the limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ calculated for $(\mWR, \mnul = \frac{1}{2}\mWR)$ 
-were extrapolated to limits $L'$ for $\mnul \neq \frac{1}{2}\mWR$ using $\chi^'$ and Equation \ref{eq:limitExtrapolation}.  
-The resulting $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits were rescaled by $\sigma(\WR)$ for 
-$\mnul \neq \frac{1}{2}\mWR$ to calculate \mnul and \mWR exclusion limits at 95\% CL, and are shown in Figure \ref{fig:twoDimLimits}.
+The standard full simulation and reconstruction used to produce \WR samples with $\mnul = \frac{1}{2}\mWR$ required enormous 
+computational resources that were not available for the limit extrapolation procedure described here.  Instead, additional \WR 
+simulations were produced using only the first simulation step.  \PYTHIA simulated the \WR production and decay into leptons 
+and quarks, and the hadronization of quarks into jets.  Similar to reconstructed jets, jets from \PYTHIA were clustered from 
+individual hadrons, leptons and photons in a cone of radius $\Delta R =$ 0.4.  After jet clustering, the offline selection was 
+applied, excluding lepton and jet ID selections.  The efficiency of this selection $\chi^'$ was measured as a function of 
+$(\mWR, \mnul)$, and used in place of $\chi$.  Then, $\chi^'$ and Equation \ref{eq:limitExtrapolation} were used to extrapolate 
+the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for 
+$\mnul \neq \frac{1}{2}\mWR$.  The resulting $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits were rescaled by $\sigma(\WR)$ 
+for $\mnul \neq \frac{1}{2}\mWR$ to obtain the \mnul and \mWR exclusion limits at 95\% CL shown in Figure \ref{fig:twoDimLimits}.
 
 \begin{figure}[tp]
   \centering
@@ -545,23 +530,22 @@ $\mnul \neq \frac{1}{2}\mWR$ to calculate \mnul and \mWR exclusion limits at 95\
  
 \end{figure}
 
-The difference between $\chi^'$ (without reconstruction) and $\chi$ (with reconstruction) was checked by simulating 
-$\WR \rightarrow \ell\ell jj$ at $\mWR =$ 2400 and 4000 $\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$ including detector 
-response simulations and particle reconstruction.  Simulated events were selected with the online and offline selection 
-requirements, and limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at each 
+The difference between the selection efficiencies $\chi^'$, without reconstruction, and $\chi$ was estimated by simulating 
+$\WR \rightarrow \ell\ell jj$ at $\mWR =$ 2400 and 4000 $\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$ with detector 
+response simulations and particle reconstruction, and calculating limits with these events.  Simulated events were selected with the online and offline selection 
+requirements, and the limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at each 
 $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ point.  For $\mnul \gtrsim \frac{1}{8}\mWR$, $L_{true}$ and $L'$ were consistent 
-within their uncertainties.  For $\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ was stronger (the minimum excluded 
-\mnul was lower) than $L'$ because of pileup jets.  $L_{true}$ was calculated using simulated events that included 
-pileup interactions (on average 10 per event) that produced pileup jets, which enabled more \WR events to pass the full 
-selection.  The resulting increase in signal selection efficiency $\chi$ extended the excluded \WR production region to 
-lower \mnul values.  In the $\mnul \lesssim \frac{1}{8}\mWR$ region, the efficiencies $\chi$ (with reconstruction) 
-and $\chi^'$ (without reconstruction) were below 10\% for all \mWR, and the difference in lower bounds on \mnul 
-was less than 100 $\GeV$.  The extrapolated limit $L'$ represented the result, and, since the extrapolated limit $L'$ 
-was weaker than the limit $L_{true}$, no correction was applied to the extrapolated limit $L'$.
+within their uncertainties.  For $\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ was stronger than $L'$ because of 
+pileup jets.  $L_{true}$ was calculated using simulated events that included pileup interactions, on average 10 per event, that 
+produced pileup jets, which enabled more \WR events to pass the full selection.  The resulting increase in signal selection 
+efficiency $\chi$ extended the excluded \WR production region to lower \mnul values.  Although $\chi > \chi^'$ in this region, 
+both signal selection efficiencies were below 10\%, and at every \mWR value the difference in the lowest excluded \mnul between 
+$L_{true}$ and $L'$ was less than 100 $\GeV$.  The extrapolated limit $L'$ represented the result, and, since $L'$ was weaker 
+than $L_{true}$, no correction was applied to it.
 
-Using data collected in 2015 \mWR production was excluded at 95\% CL for $\mWR \lesssim 3500 (3300) \GeV$ in the $\mu\mu$- 
-($ee$-) channel.  The exclusion limits were consistent with ST expectations, and extended the mass limits in the $\mu\mu$- 
-($ee$-) channel 400 $\GeV$ (400 $\GeV$) higher in \mWR, and 150 $\GeV$ (300 $\GeV$) higher in \mnul relative to the Run I limits.
+Using 2015 data \mWR production was excluded at 95\% CL for $\mWR \lesssim 3500 (3300) \GeV$ in the $\mu\mu$- ($ee$-) channel.  
+The exclusion limits were consistent with ST expectations, and relative to the Run I limits, the mass limits in the $\mu\mu$- 
+($ee$-) channel were extended 400 $\GeV$ (400 $\GeV$) higher in \mWR, and 150 $\GeV$ (300 $\GeV$) higher in \mnul.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
