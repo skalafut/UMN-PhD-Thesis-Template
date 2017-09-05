@@ -4,14 +4,12 @@
 \chapter{Statistical Analysis, Uncertainties, and Results}
 \label{statAnalysis_uncerts_results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The selections described in Chapter \ref{sec:event_selection_chapter} were applied to data, estimated 
-backgrounds and simulated \WR signals, and 
+The selections described in Chapter \ref{sec:event_selection_chapter} were applied to data, backgrounds 
+and simulated \WR signals, and 
 the selected events were used to produce $\Mlljj$ distributions in the $ee$- and $\mu\mu$-channels.  
 Each $\Mlljj$ distribution ($\Mlljj > 600$ $\GeV$) was divided into smaller $\Mlljj$ windows linked 
-to specific \mWR hypotheses.  In each window, evidence of a \WR and \nul was searched for as an excess 
-of events in data relative to estimated backgrounds.  Limits with Bayesian statistics were calculated 
-to optimize the window sizes, and determine limits on the \WR cross section $\times$ branching 
-fraction to $\ell\ell jj$ final states.
+to specific \mWR hypotheses.  The size of each window was optimized by calculating cross section $\times$ 
+branching fraction limits with Bayesian statistics.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,44 +20,44 @@ fraction to $\ell\ell jj$ final states.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bayesian Limits}
 \label{sec:bayesianStatsAndLimits}
-In general, cross section $\times$ branching fraction limits are calculated using several quantities 
-obtained after applying all selections: the 
+Generic cross section $\times$ branching fraction limits are calculated using several quantities 
+obtained after all selections were applied: the 
 number of measured events $G$, the estimated number of signal events $S$ and background events $B$, 
-and the signal and background uncertainties $\delta S$, and $\delta B$.  In the \WR search, 
-limits on the \WR cross section $\times$ branching fraction to $\ell\ell jj$ final states were 
-calculated in two scenarios: ``expected'' limits where $G = B$, and ``observed'' limits, the results, 
-where $G$ equaled the number of selected data events.  The expected limits were used to design a 
-set of $\Mlljj$ windows in which the observed limits were calculated to test different \mWR hypotheses.  
-In both scenarios limits were calculated at 95\% confidence level (CL) using a Poisson model of the 
-estimated number of $S \plus B$ events:
+and the signal and background event uncertainties $\delta S$ and $\delta B$.  In the \WR search, 
+limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated in two scenarios: 
+``expected'' limits where $G = B$, and ``observed'' limits, the results, where $G$ equaled the number 
+of selected events in data.  Expected limits were calculated to optimize the sizes of $\Mlljj$ windows, 
+in which the observed limits were calculated to test different \mWR hypotheses.  In both scenarios 
+limits were calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
 
 \begin{equation}
 	Poisson(\mu S(\pmb{\theta}) \thickspace \plus \thickspace B(\pmb{\theta}))
+	\label{eq:poissonModel}
 \end{equation}
 
-where $\mu$ is the unknown \WR signal strength, and $\pmb{\theta}$ represents the uncertainties $\delta S$ 
+where $\mu$ was the unknown, dimensionless \WR signal strength, and $\pmb{\theta}$ represented the uncertainties $\delta S$ 
 and $\delta B$ described later in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability 
-distribution for $\mu$ given $G$ measured events, $p(\mu|G)$, is obtained by evaluating the integral\cite{bayesianDataAnalysis}:
+distribution for $\mu$ given $G$ measured events, $p(\mu|G)$, was obtained by evaluating the integral\cite{bayesianDataAnalysis}:
 
 \begin{equation}
 	p(\mu|G) = \int p(\mu|\pmb{\theta},G)p(\pmb{\theta}|G)d\pmb{\theta}
 	\label{eq:sigStrngthProbDist}
 \end{equation}
 
-where $p(\pmb{\theta}|G)$ are the probability distributions for the uncertainties given the measurement 
-$G$ (``marginal posterior distributions''), and $p(\mu|\pmb{\theta},G)$ are the probability distributions 
-for the measurement $G$, and $\mu$ given the uncertainties (``conditional posterior distributions'').  
+where $p(\pmb{\theta}|G)$ were the probability distributions for the uncertainties given the measurement 
+$G$ (``marginal posterior distributions''), and $p(\mu|\pmb{\theta},G)$ were the probability distributions 
+for $\mu$ given the uncertainties, and the measurement $G$ (``conditional posterior distributions'').  
 Functional forms of the marginal posterior distributions were either log-normal or Gamma distributions 
 depending on the uncertainty, and are identified later in Section \ref{sec:uncertainties}.  Functional forms 
-of the conditional posterior distributions were derived from uniform prior distributions and Poisson 
-distributions with means $= S \plus B$.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated 
-numerically using \MC methods to obtain $p(\mu|G)$.  Then the function $p(\mu|G)$ was integrated from $\mu =$ 0 
+of the conditional posterior distributions were derived from uniform prior distributions and Equation 
+\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated 
+numerically using \MC simulations to obtain $p(\mu|G)$.  Then the function $p(\mu|G)$ was integrated from $\mu =$ 0 
 to $\mu = \mu_{max}$ such that 95\% of the area under $p(\mu|G)$ was covered.  The value $\mu_{max}$ was the 
-95\% CL upper limit on the signal strength, and this value was scaled into a limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
+95\% CL upper limit on the signal strength, and $\mu_{max}$ was multiplied by $\sigma(\WR)$ obtained from 
+\WR simulations to calculate a limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 
 \subsection{$\Mlljj$ Windows}
 \label{sec:mlljjWindows}
-%combine first and second paragraphs into one paragraph that motivates the use of \Mlljj windows
 The shapes of the $\Mlljj$ distributions from selected ST background and \WR signal events motivated the use of 
 finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
 peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
@@ -69,6 +67,7 @@ transformed into greater signal over background sensitivity by dividing the $\Ml
 smaller $\Mlljj$ windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized 
 for its corresponding \mWR hypothesis using the following procedure:
 
+%RESUME HERE
 \begin{itemize}
 	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the width of the simulated \WR $\Mlljj$ distribution.
 	\item In each window:
@@ -565,7 +564,7 @@ was less than 100 $\GeV$.  The extrapolated limit $L'$ represented the result, a
 was weaker than the limit $L_{true}$, no correction was applied to the extrapolated limit $L'$.
 
 Using data collected in 2015 \mWR production was excluded at 95\% CL for $\mWR \lesssim 3500 (3300) \GeV$ in the $\mu\mu$- 
-($ee$-) channel.  The exclusion limits were consistent with ST expectations, and extend the mass limits in the $\mu\mu$- 
+($ee$-) channel.  The exclusion limits were consistent with ST expectations, and extended the mass limits in the $\mu\mu$- 
 ($ee$-) channel 400 $\GeV$ (400 $\GeV$) higher in \mWR, and 150 $\GeV$ (300 $\GeV$) higher in \mnul relative to the Run I limits.
 
 
