@@ -51,23 +51,22 @@ Functional forms of the marginal posterior distributions were either log-normal 
 depending on the uncertainty, and are identified later in Section \ref{sec:uncertainties}.  Functional forms 
 of the conditional posterior distributions were derived from uniform prior distributions and Equation 
 \ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated 
-numerically using \MC simulations to obtain $p(\mu|G)$.  Then the function $p(\mu|G)$ was integrated from $\mu =$ 0 
+numerically using \MC simulations to obtain $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 
 to $\mu = \mu_{max}$ such that 95\% of the area under $p(\mu|G)$ was covered.  The value $\mu_{max}$ was the 
-95\% CL upper limit on the signal strength, and $\mu_{max}$ was multiplied by $\sigma(\WR)$ obtained from 
+95\% CL upper limit on the signal strength; and $\mu_{max}$ was multiplied by $\sigma(\WR)$ obtained from 
 \WR simulations to calculate a limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 
 \subsection{$\Mlljj$ Windows}
 \label{sec:mlljjWindows}
-The shapes of the $\Mlljj$ distributions from selected ST background and \WR signal events motivated the use of 
-finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
+The difference in the $\Mlljj$ distribution shape between selected ST background and simulated \WR events motivated the 
+use of finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
 peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
-as shown in Figure \ref{fig:signalShapesAfterSelection}.  In contrast, the total ST backgrounds appeared as a 
-distribution that decreased rapidly with increasing $\Mlljj$.  This distinction in the $\Mlljj$ shape was 
-transformed into greater signal over background sensitivity by dividing the $\Mlljj > 600$ $\GeV$ range into 
-smaller $\Mlljj$ windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized 
-for its corresponding \mWR hypothesis using the following procedure:
+as shown in Figure \ref{fig:signalShapesAfterSelection}.  In contrast, the $\Mlljj$ distribution found in all ST 
+backgrounds decreased rapidly with increasing $\Mlljj$.  To transform this difference in the $\Mlljj$ shape into 
+greater signal over background sensitivity, the $\Mlljj > 600$ $\GeV$ range was divided into smaller $\Mlljj$ 
+windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized for its corresponding 
+\mWR hypothesis using the following procedure:
 
-%RESUME HERE
 \begin{itemize}
 	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the width of the simulated \WR $\Mlljj$ distribution.
 	\item In each window:
@@ -99,12 +98,11 @@ for its corresponding \mWR hypothesis using the following procedure:
 	$ee$- ($\mu\mu$-) channel is shown on the left (right).}
 \end{figure}
 
-The optimized windows, listed in Table \ref{tab:masscuts}, overlapped in $\Mlljj$ because 
-each selected event could be consistent with several \mWR hypotheses.  In each window the number of selected 
-events in data, estimated $\DY$ and top quark backgrounds, and the appropriate \WR simulation\footnote{The window 
-optimized for $\mWR = 1000$ $\GeV$ only considered signal events produced in the $\mWR = 1000$ $\GeV$ simulation.} 
-were counted, and were used to calculate observed and expected upper limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
-The uncertainties affecting these limits were calculated using procedures described next.
+The optimized windows, listed in Table \ref{tab:masscuts}, overlapped in $\Mlljj$ because any selected event could be 
+consistent with several \mWR hypotheses.  In each window the number of data events, $\DY$ and top quark background events, 
+and simulated \WR events\footnote{In the window optimized for $\mWR = 1000$ $\GeV$, only events produced in the $\mWR = 1000$ $\GeV$ 
+simulation were counted.} were counted, and were used to calculate observed and expected upper limits on 
+$\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
@@ -147,9 +145,9 @@ The uncertainties affecting these limits were calculated using procedures descri
 \section{Uncertainties}
 \label{sec:uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The precision of expected and observed limits was reduced by uncertainties on the number of selected signal 
-and background events.  In every $\Mlljj$ window the uncertainty magnitudes were estimated and quantified as a 
-percentage uncertainty on the number of counted events.
+The precision of expected and observed upper limits was reduced by uncertainties on the number of selected signal 
+and background events.  In each $\Mlljj$ window the uncertainty magnitudes were estimated using the procedures 
+described here.
 
 \subsection{Primary Uncertainties}
 \label{sec:dominantUncs}
@@ -157,43 +155,42 @@ percentage uncertainty on the number of counted events.
 \subsubsection{Energy and Lepton Identification Uncertainties}
 \label{sec:enrgyLeptIdUncs}
 The only uncertainties that affected the shape of the $\Mlljj$ distribution found in signal and background 
-events were uncertainties on the lepton and jet energy resolutions and calibration scales.  The magnitude of 
-these uncertainties varied with selected particle kinematic variables like energy and $(\eta,\phi)$ trajectory, 
-but never exceeded 25\% for jets, and $\sim$7\% for electrons and muons.  These energy uncertainties changed 
-the energies of all reconstructed leptons and jets, and therefore could change the $\Mlljj$ value of a 
-selected event, or cause an event to pass (fail) the selection when initially, ignoring energy uncertainties, 
-the event failed (passed) the selection.  For convenience, the effect of lepton and jet energy uncertainties 
-were estimated simultaneously with the effect of lepton ID uncertainties, which only affected the weight of 
-selected simulated events.  Independently considering simulated $\WR$ signal events, simulated $\DY$ events, 
-and $e\mu$ data events representing the top quark background, the effect of lepton and jet energy uncertainties 
-and lepton ID uncertainties was estimated using the following procedure:
+events were uncertainties on the lepton and jet energy resolutions and energy calibration scales.  The magnitude of 
+these uncertainties varied with kinematic variables like lepton and jet energy and $(\eta,\phi)$ trajectory, 
+and never exceeded 25\% for jets, and $\sim$7\% for electrons and muons.  These energy uncertainties affected 
+the energies of all reconstructed leptons and jets, and therefore could cause an event to pass or fail the 
+selection, or change the $\Mlljj$ value of a selected event.  The efficiency of lepton ID selections was sensitive 
+to the energy of all jets and leptons in an event, so the effect of uncertainties in lepton ID weights applied 
+to simulated events was estimated simultaneously with the effect of energy uncertainties.  Independently considering 
+simulated \WR events, simulated \DY events, and $e\mu$ data events representing the top quark background, the effect 
+of energy and lepton ID uncertainties was estimated using the following procedure:
 
 \begin{itemize}
 	\item In each event selected by a trigger, but before any lepton or jet selections:
 	\begin{itemize}
 		\item Eight random numbers were pulled from eight different Gaussians, each with mean 0 and variance 1.
-		\item Two random numbers multiplied the electron energy scale and resolution uncertainty of each electron, and these 
-			energy changes were propagated to every electron.  In simulated events, a third random number multiplied 
-			the ID weight uncertainty of each electron, and the change in weight was propagated to the total event weight 
-			after all selections.
-		\item Three other random numbers were used to determine the effect of muon energy and ID uncertainties (ID uncertainty 
-			only considered in simulated events) following the same procedure used for electrons.
-		\item The remaining two random numbers multiplied the jet energy scale and resolution uncertainty of each jet, and 
-			these energy changes were propagated to every jet.
+		\item Two random numbers multiplied each electron's energy scale and resolution uncertainty to determine the 
+			energy change applied to each electron.  In simulated events, a third random number multiplied 
+			each electron's ID weight uncertainty, and the change in weight was propagated to the total event weight 
+			after selections.
+		\begin{itemize}
+			\item Using the same procedure with three other random numbers, the effect of energy and ID uncertainties were 
+				propagated to each muon's energy and ID weight.
+		\end{itemize}
+		\item The two remaining random numbers multiplied each jet's energy scale and resolution uncertainty to 
+			determine the energy change applied to each jet.
 	\end{itemize}
-	\item The offline selections described in Chapter \ref{sec:event_selection_chapter} were applied to each event.  If all 
-		requirements were met and a \WR candidate was built, the event was assigned to one or more $\Mlljj$ windows based on 
-		the \WR candidate mass.
+	\item Then, the offline selection described previously was applied to each event.  If all requirements were met, the 
+		event was assigned to one or more $\Mlljj$ windows based on its $\Mlljj$ value.
 \end{itemize}
 
-This procedure was repeated 3200 times for every event.  For each signal and background process, distributions 
-of the number of events in each $\Mlljj$ window for all 3200 iterations were made, of which an example  
-is shown in Figure \ref{fig:effectOfEnergyIdUncerts}.  The 
-distribution's standard deviation represented the uncertainty on the number of events due 
-to energy and ID uncertainties.  The uncertainties on the number of signal and background events in one $\Mlljj$ 
-window due to energy and ID uncertainties is shown in Table \ref{tab:impactOfEnergyIdUncerts}.  The effect of 
-these uncertainties were included in limit calculations by using Gamma distributions for the marginal posterior 
-distributions.
+This procedure was repeated 3200 times for every \WR, \DY, and $e\mu$ data event.  For each signal and background process 
+in each $\Mlljj$ window, a distribution was made showing the number of events in the window for all 3200 iterations, as 
+shown in Figure \ref{fig:effectOfEnergyIdUncerts}.  The distribution's standard deviation represented the uncertainty on 
+the number of events due to energy and ID uncertainties.  In mass windows for $\mWR \geq 2$ $\TeV$ hypotheses, the combined 
+energy and ID uncertainty lead to an uncertainty of $\lesssim$4\% on the number of \WR events, and larger uncertainties on 
+the number of \DY and top quark background events, as shown in Table \ref{tab:impactOfEnergyIdUncerts}.  These uncertainties 
+were included in limit calculations by using Gamma distributions for the marginal posterior distributions.
 
 \begin{figure}[h]
 	\centering
@@ -224,17 +221,20 @@ distributions.
 
 \subsubsection{Statistical Uncertainty}
 \label{sec:statUnc}
-The statistical uncertainty was calculated for each signal and background source as 
-$\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ was the weight of event i, and the sum ran over all selected events 
-in a $\Mlljj$ window.  The top quark background was estimated using $e\mu$ data events all with a weight of 
-1, while simulated \WR and \DY events had positive weights $<$ 1.  Comparing signal and background statistical 
-uncertainties, the statistical uncertainty was largest for the top quark background, as shown in Table 
-\ref{tab:impactOfStatUncert}.  No $e\mu$ data events had $\Memujj \geq 2700$ $\GeV$, so the top quark 
-background estimate was 0 events for signal hypotheses with $\mWR \geq 3600$ $\GeV$, and the standard 
-statistical uncertainty formula could not be used.  In $\Mlljj$ windows where the top quark background estimate 
-was 0 events, the statistical uncertainty assigned to 0 events was 1 $e\mu$ event multiplied by the appropriate 
-$\ell\ell:e\mu$ normalization factor, 0.659 or 0.432.  The effect of statistical uncertainties were included 
-in limit calculations by using Gamma distributions for the marginal posterior distributions.
+The statistical uncertainty was calculated for each signal and background source as $\sqrt{\sum w_{i}^{2}}$, where 
+$w_{i}$ was the weight of event i, and the sum ran over all selected events in a $\Mlljj$ window.  The $e\mu$ data 
+events used to estimate the top quark background all had a weight of 1, while simulated \WR and \DY events had positive 
+weights $<$1 because the number of simulated events exceeded the number of events expected in 2.6 fb$^{-1}$ of data.  
+In the mass windows for $\mWR \geq 2$ $\TeV$ hypotheses, the statistical uncertainty was $<$2\% on the number 
+of \WR events, $\geq$5\% on the number of \DY events, and $>$30\% on the number of top quark events, as shown in 
+Table \ref{tab:impactOfStatUncert}.  These uncertainties were included in limit calculations by using Gamma distributions 
+for the marginal posterior distributions.
+
+Every $\Mlljj$ window had more than one simulated \DY and \WR event, so the formula $\sqrt{\sum w_{i}^{2}}$ could always 
+be used to calculate the statistical uncertainty on the number of \DY and \WR events.  However, the absence of $e\mu$ 
+data events with $\Memujj \geq 2700$ $\GeV$ resulted in 0 predicted top quark events in mass windows optimized for 
+$\mWR \geq 3600$ $\GeV$ hypotheses.  In this high \mWR region the top quark background statistical uncertainty was 
+calculated as 1 $e\mu$ event multiplied by the appropriate $\ell\ell:e\mu$ normalization factor - 0.659 or 0.432.
 
 \begin{table}[ht]
 	\caption{Impact of statistical uncertainty on the number of expected signal and background events in the $\Mlljj$ 
@@ -253,57 +253,53 @@ in limit calculations by using Gamma distributions for the marginal posterior di
 
 \subsubsection{Background Uncertainty from Control Regions}
 \label{sec:bkgndNormUnc}
-Based on previously discussed comparisons between data and simulated backgrounds in control regions, 
-additional uncertainties independent of $\Mlljj$ were applied to background estimates.  A 10\% 
-uncertainty was assigned to the top quark background estimate to account for fluctuations in the 
-$\ell\ell:e\mu$ normalization factor versus $\Mlljj$.  A 40\% uncertainty was applied to the $\DY$ 
-background estimate to account for disagreement between data and simulated $\DY$+jets events in 
-the $\Mlljj$ distribution in the low $\Mll$ control region.  The effect of these uncertainties were 
-included in limit calculations using log-normal distributions for the marginal posterior distributions.
+Additional uncertainties were assigned to background estimates based on previously discussed studies of data and simulated 
+backgrounds in control regions.  A 10\% uncertainty was assigned to the top quark background estimate to account for 
+fluctuations in the $\ell\ell:e\mu$ normalization factors versus $\Mlljj$.  A 40\% uncertainty was assigned to the \DY 
+background estimate to account for disagreement between data and simulated $\DY$+jets events in the $\Mlljj$ distribution 
+in the low $\Mll$ control region.  These uncertainties were included in limit calculations using log-normal distributions 
+for the marginal posterior distributions.
 
 \subsection{Secondary Uncertainties}
 \label{sec:subdominantUncs}
 
 \subsubsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
 \label{sec:leptonRecoTriggerEffUnc}
-The efficiencies of lepton reconstruction and muon trigger selections differed between events selected 
-in simulations and in data, and these differences were corrected by applying $\sim$unity weights to simulated 
-\DY and \WR events.  In the $\mu\mu$-channel, the trigger and lepton reconstruction 
-efficiency weights varied with the $\pt$ and $\eta$ of selected muons, and the weight uncertainties 
-were statistical uncertainties, determined by the number of data and simulated events used to calculate 
-the weights.  The uncertainty on the muon reconstruction efficiency weights was negligible.  The muon 
-trigger efficiency weight uncertainty was $<$ 0.5\% for events triggered by muons with $\pt < 140$ $\GeV$.  For 
-events triggered by muons with $\pt \geq 140$ $\GeV$, the trigger efficiency weight uncertainty was higher 
-because fewer data events were available to calculate the weight: $<$ 3\% uncertainty for triggering 
-muons with $|\eta| < 2.1$, and 5.1\% uncertainty for triggering muons with $2.1 < |\eta| < 2.4$.  In 
-the $ee$-channel, an electron reconstruction efficiency weight of 0.982 was applied to all selected 
-electrons.  The reconstruction weight uncertainty was calculated as the maximum difference between 0.982 and 
-an $\Et,\eta$ dependent weight, and was 2\%.  The effect of lepton reconstruction and trigger selection 
-efficiency uncertainties were included in limit calculations using log-normal distributions for the marginal 
-posterior distributions.
+The efficiencies of lepton reconstruction and muon trigger selections differed between selected data and simulated events, 
+and these differences were corrected in simulated events by applying $\sim$unity event weights.  In the $\mu\mu$-channel, 
+the trigger and lepton reconstruction efficiency weights, and their uncertainties, varied with the $\pt$ and $\eta$ of selected 
+muons, and the uncertainty magnitudes were calculated based on the number of data and simulated events used to calculate the 
+weights.  The muon reconstruction weight uncertainty was negligible.  The muon trigger weight uncertainty was $<$ 0.5\% for 
+events triggered by muons with $\pt < 140$ $\GeV$.  For events triggered by higher $\pt$ muons, the trigger weight uncertainty 
+was $<$ 3\% when the triggering muon had $|\eta| < 2.1$, and was 5.1\% when the triggering muon had $2.1 < |\eta| < 2.4$.  In 
+the $ee$-channel, an electron reconstruction efficiency weight of 0.982 was applied to all selected electrons, and propagated 
+into the weight of each event.  The electron reconstruction weight uncertainty was calculated as the maximum difference between 
+0.982 and an $\Et,\eta$ dependent weight, and was found to be 2\%.  The uncertainties on lepton reconstruction and trigger 
+selection efficiencies were included in limit calculations using log-normal distributions for the marginal posterior distributions.
 
 \subsubsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
-The \DY background and \WR signal were estimated using simulated events whose event weights were 
-susceptible to uncertainties on cross sections, pileup, integrated luminosity, parton distribution functions 
-(PDFs), and QCD scales.  The \DY cross section uncertainty was 2\% (1\%) in the $ee$- ($\mu\mu$-) channel, 
-and was estimated by comparing data to simulated \DY datasets produced with different \MC generators in 
-the $Z \rightarrow \ell\ell$ control region discussed earlier.  Treating PDF uncertainties separately, the 
-\WR cross section uncertainty was proportional to the uncertainties on the ST top quark mass, and the 
-ST $W$ boson coupling strengths to ST fermions.  These ST uncertainties are $<$ 0.5\%, and so 
-the \WR cross section uncertainty was negligible.
+Simulated events were also weighted to normalize the events to the integrated luminosity of data, and to account for the pileup 
+distribution measured in data, and the effects of parton distribution functions (PDFs), and renormalization and factorization 
+energy scales.  Uncertainties on these weights lead to uncertainties on the number of selected \DY and \WR events, whose 
+magnitudes were estimated as follows.
 
-The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an 
-analytic, multivariate function was used to approximate this efficiency in data.  This function was used to 
-derive the pileup weights\footnote{The pileup weights were equal to the pileup distribution in data 
-divided by the pileup distribution in simulated events} $w_{PU}$ applied to simulated events, and uncertainty 
-in the function's parameters created uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty was estimated by 
-shifting the pileup distribution in data without changing its shape so that the mean pileup value increased 
-or decreased by 5\%.  New pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ were calculated after the 
-upward and downward shifts, and the $w_{PU}$ uncertainty was calculated as the maximum change in 
-events in a $\Mlljj$ window between the original and new weights.  For \DY and \WR event estimates, the pileup 
-uncertainty was 3\% or less in all $\Mlljj$ windows.
+The \DY cross section uncertainty was estimated by comparing data to three sets of simulated \DY events in the 
+$Z \rightarrow \ell\ell$ control region discussed earlier, and was found to be 2\% (1\%) in the $ee$- ($\mu\mu$-) channel.  
+At each \mWR value the \WR cross section was calculated during simulations based on the fraction of \MC trials executed that 
+produced \WR events in the kinematically allowed phase space.  The cross section uncertainty was calculated as the uncertainty 
+on this fraction, and was $<$0.5\% for all values of \mWR.
 
+The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an analytic, multivariate 
+function was used to approximate this efficiency in data.  This function was used to derive the pileup weights\footnote{The pileup 
+weights were equal to the pileup distribution in data divided by the pileup distribution in simulated events} $w_{PU}$ applied 
+to simulated events, so the uncertainties of this function's parameters lead to uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty 
+was estimated by first shifting the pileup distribution in data without changing its shape so that the mean pileup value increased 
+or decreased by 5\%.  After the upward and downward shifts new pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ were 
+calculated, and the $w_{PU}$ uncertainty was calculated as the maximum difference in total event weight between the original and 
+the new weights.  For both \DY and \WR events, the pileup uncertainty was 3\% or less in all $\Mlljj$ windows.
+
+%RESUME HERE
 Knowing the cross sections of the \WR and \DY processes, the numbers of \WR and \DY events were normalized 
 to the measured integrated luminosity of data.  The integrated luminosity of data was measured with a 2.7\% 
 uncertainty, which translated into a 2.7\% luminosity uncertainty on the number of \WR and \DY events in 
@@ -314,7 +310,7 @@ every $\Mlljj$ window.
 \begin{itemize}
 	\item One parton distribution function (PDF) that described how momenta were distributed amongst quark and 
 		gluon constituents of colliding protons.  \WR simulations used NNPDF23 \cite{nnpdf23}, \DY simulations 
-		used NNPDF30 \cite{nnpdf30}, and both PDFs were characterized by fixed value coefficients with uncertainties.
+		used NNPDF30 \cite{nnpdf30}, and both PDFs were parameterized by functions with fixed value coefficients with uncertainties.
 	\item One renormalization scale value $\mu_{R}$ (in $\GeV$) that determined the QCD coupling strength $\alpha_{QCD}$.
 	\item One factorization scale value $\mu_{F}$ (in $\GeV$), which allowed QCD interactions with low momentum transfer 
 		$k_{low} \ll \mu_{F}$ to be simulated independently of QCD interactions with high momentum transfer 
