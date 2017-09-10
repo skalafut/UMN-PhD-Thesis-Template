@@ -21,19 +21,20 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 
 \section{Electron Reconstruction}
 \label{sec:eleReco}
-Electrons ($e^{\pm}$) were the only particles expected from \WR decays that, on average, lost non-negligible 
+Electrons ($e^{\pm}$) were the only particles expected from \WR decays that, on average, lost significant 
 energy in the tracker.  They lost energy by emitting bremsstrahlung photons in $\phi$, which were detected 
 by the ECAL.  A dedicated electron track algorithm reconstructed helical electron tracks from hits in tracker 
-layers, and estimated the bremsstrahlung energy lost.  Electron $(\eta, \phi)$ trajectories were measured 
-from reconstructed tracks, and the ECAL measured their energies.
+layers, and estimated the bremsstrahlung energy lost by comparing sequential hits.  The tracker measured 
+electron $(\eta, \phi)$ trajectories, and the ECAL measured their energies including bremsstrahlung photons.
 
-After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy particles, 
-through which electron energies were measured.  Approximately 94\% of the energy of an electron 
-incident on ECAL was measured in a 3 $\times$ 3 crystal area, but the energy lost in the tracker was spread 
-over a larger area in $\phi$.  To measure the total energy of each electron, ECAL energy deposits were 
-reconstructed in dynamically sized superclusters (SCs), as shown in Figure \ref{fig:eleTrackAndSC}.  Following 
-SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to the $(\eta, \phi)$ trajectories of 
-electron candidate tracks.  Each reconstructed electron was identified as a SC that matched at least one track.
+After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s.  
+Electron energies were measured through the particle showers.  Approximately 94\% of an electron's energy coming 
+into the ECAL was deposited in a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
+total energy was deposited over a larger area in $\phi$.  To measure the total energy of each electron, ECAL energy 
+deposits were reconstructed in superclusters (SCs) with variable lengths in $\eta$ and $\phi$, as shown in Figure 
+\ref{fig:eleTrackAndSC}.  Following SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to the 
+$(\eta, \phi)$ trajectories of electron candidate tracks.  Each reconstructed electron was identified as a SC that 
+matched at least one candidate track.
 
 \begin{figure}[h]
 	\centering
@@ -45,28 +46,25 @@ electron candidate tracks.  Each reconstructed electron was identified as a SC t
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
-Muon ($\mu^{\pm}$) reconstruction started with reconstructing tracks in the silicon tracker.  
-Hits in individual tracker layers were reconstructed into helical tracks, and their $(\eta, \phi)$ 
-trajectories determined reconstructed muon trajectories.  Muon momenta were measured with 
-reconstructed tracks, and were refined by muon detector measurements.
+Muon ($\mu^{\pm}$) reconstruction started with reconstructing tracks in the silicon tracker.  Hits in individual 
+tracker layers were reconstructed into helical tracks, and their $(\eta, \phi)$ trajectories determined reconstructed 
+muon trajectories.  Muon momenta were measured through the curvature of reconstructed tracks, and were refined by muon 
+detector measurements.
 
-On average, muons lost negligible energy before entering the muon detectors.  Hits in 
-the muon chambers were reconstructed into helical tracks, and their radii of curvature were 
-measured to improve the precision of muon momenta measurements.  Muon detector tracks were 
-extrapolated back to the silicon tracker where the $(\eta, \phi)$ trajectories of silicon tracker 
-and muon detector tracks were compared.  Each reconstructed muon was identified as a muon detector 
-track whose trajectory matched a silicon tracker track.
+On average muons lost negligible energy before entering the muon detectors.  Hits in the muon chambers were reconstructed 
+into helical tracks, and their radii of curvature were measured to improve the resolution of muon momenta measurements.  
+Muon detector tracks were extrapolated back to the silicon tracker where the $(\eta, \phi)$ trajectories of silicon tracker 
+and muon detector tracks were compared.  Each reconstructed muon was identified as a muon detector track whose trajectory 
+matched a track in the silicon tracker.
 
-The momentum of muons was determined using silicon tracker and muon detector measurements.  Four 
-reconstruction algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker 
-and muon detector hits to estimate a muon's trajectory through CMS, represented in Figure 
-\ref{fig:particleTrajectories}.  Each algorithm combined muon detector and silicon tracker measurements 
-in a different way, and could exclude measurements with large uncertainty.  The precision of each 
-continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty 
-$\sigma(\pt)/\pt$.  The track with the lowest uncertainties determined the reconstructed muon momenta.  
-This procedure improved the momentum resolution for muons with $\pt > 200$ $\GeV$, which were 
-expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as shown in Table 
-\ref{tab:wrHighPtMuons}.
+The momentum of muons was determined using silicon tracker and muon detector measurements.  Four muon reconstruction 
+algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon detector hits to estimate a 
+muon's trajectory through CMS, represented in Figure \ref{fig:particleTrajectories}.  Each algorithm combined muon detector 
+and silicon tracker measurements in a different way, and could exclude measurements with large uncertainty.  The quality 
+of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  
+The track with the lowest uncertainties was used to calculate the reconstructed muon momenta.  This procedure improved the 
+momentum resolution for muons with $\pt > 200$ $\GeV$, which were expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ 
+events, as shown in Table \ref{tab:wrHighPtMuons}.
 
 \begin{table}[h]
 	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
@@ -84,16 +82,14 @@ expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ events, as sho
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-Quarks, through hadronization, photon radiation, and leptonic weak decays, produced jets of photons, 
-hadrons, and leptons.  Jet reconstruction began by reconstructing photons, 
-electrons and muons, and charged and neutral hadrons.  Each charged hadron was reconstructed in a 
-similar way to electrons, by geometrically matching an energy measured in an HCAL tower to a 
-reconstructed track.  A charged hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position 
-matched the HCAL tower.  Each neutral hadron was reconstructed as an HCAL tower, possibly associated with 
-an ECAL SC, whose $(\eta, \phi)$ position did not match any reconstructed track.  Similarly, 
-each photon was reconstructed as an ECAL SC whose position did not match any reconstructed track.  
-After reconstructing individual particles, jets were reconstructed as clusters of individual particles, 
-as shown in Figure \ref{fig:jetClustering}.
+Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  Jet 
+reconstruction began by reconstructing photons, electrons and muons, and charged and neutral hadrons.  Each charged hadron was 
+reconstructed in a similar way to electrons, by geometrically matching an energy measured in an HCAL tower to a reconstructed 
+track.  A charged hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position matched the HCAL tower.  Each neutral 
+hadron was reconstructed as an HCAL tower, possibly associated with an ECAL SC, whose $(\eta, \phi)$ position did not match any 
+reconstructed track.  Similarly, each photon was reconstructed as an ECAL SC whose position did not match any reconstructed track.  
+After reconstructing individual particles, jets were reconstructed as clusters of individual particles, as shown in Figure 
+\ref{fig:jetClustering}.
 
 \begin{figure}[h]
 	\centering
@@ -103,18 +99,17 @@ as shown in Figure \ref{fig:jetClustering}.
 	\label{fig:jetClustering}
 \end{figure}
 
-In each collision event, every reconstructed particle was considered a jet candidate, except charged 
-hadrons that did not come from the reconstructed vertex with the highest $\sum \pt$.  Using the 
-anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles were clustered into jets 
-based on their individual energies and trajectories.  The jet energies were the total energies of 
-all constituents, and the jet $(\eta, \phi)$ trajectories were the energy-weighted average trajectories 
-of all constituents.  The majority of each jet's energy was contained in a cone with radius $\Delta R = 0.4$.
+In each collision event, every reconstructed particle was considered a jet candidate, except charged hadrons that did not come 
+from the reconstructed vertex with the highest $\sum \pt$.  Using the anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles 
+were clustered into jets, each approximately $\Delta R = 0.4$ wide, based on their individual energies and trajectories.  Each jet's 
+energy was the total energies of all constituents, and its $(\eta, \phi)$ trajectory was the energy-weighted average trajectory of 
+all its constituents.
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Energetic electrons, muons and jets produced in collisions were reconstructed using several CMS sub-detectors 
-and dedicated reconstruction algorithms.  Additional selections were applied to these leptons and jets to 
-increase sensitivity to the \WR signal relative to ST processes that produced $\ell\ell jj$ events.
+Energetic electrons, muons and jets produced in collisions were reconstructed using several CMS sub-detectors and high energy 
+reconstruction algorithms.  Additional selections were applied to reconstructed leptons and jets to increase sensitivity to the \WR 
+signal relative to ST processes that produced $\ell\ell jj$ events.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
