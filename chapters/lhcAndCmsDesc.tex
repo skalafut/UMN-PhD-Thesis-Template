@@ -24,12 +24,13 @@ field strength varied between 1 and 3 $\unit{T}$.  Each sub-detector covered 360
 to the beam axis, and was divided into a barrel and two endcaps to detect particles over a large angular region: 
 between 5.65 degrees and 90 degrees away from the beam axis.
 
-Detected particles were characterized by points of origination and trajectories relative to the IP, and energies 
-perpendicular to the beam axis.  The tracker and muon detectors measured the scalar transverse momentum $\pt$ of 
-detected particles, and the calorimeters measured their scalar transverse energy $\Et$.  Detected particles were 
-assumed to be massless, so their $\pt$ and $\Et$ were equivalent.  In addition to energy measurements, the tracker 
-and calorimeters also measured particle trajectories in terms of two quantities: the angle $\phi$, $0 \leq phi < 2\pi$, 
-in the plane perpendicular to the beam direction, and the pseudorapidity $\eta$ defined as
+Detected particles were characterized by energies perpendicular to the beam axis and trajectories relative to the IP; 
+charged particles were also characterized by points of origination measured from the IP.  The tracker and muon detectors 
+measured the scalar transverse momentum $\pt$ of leptons and jets, and the calorimeters measured the scalar transverse 
+energy $\Et$ of electrons and jets.  Detected particles were assumed to be massless, so their $\pt$ and $\Et$ were equivalent.  
+In addition to energy measurements, the tracker and calorimeters also measured particle trajectories in terms of two 
+quantities: the angle $\phi$, $0 \leq phi < 2\pi$, in the plane perpendicular to the beam direction, and the pseudorapidity 
+$\eta$ defined as
 
 \begin{equation}
 	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
@@ -93,33 +94,31 @@ The signal from a charged particle traversing a detector was measured by readout
 strips\footnote{$\sim$16000 readout modules were connected to 66 million pixels, and $\sim$15400 readout modules were connected 
 to 9.6 million strips.}.
 
-%RESUME HERE
-The tracker performance depended on the number of tracks in a collision event, and the momenta of 
-charged particles.  The tracker measured the position of an interaction vertex with a resolution that improved when more 
-tracks were associated with the vertex.  The search presented in this thesis used collision events where the tracker 
-measured the coordinate of the $\ell\ell jj$ interaction vertex with a resolution better than 12$\mu$m in any direction \cite{trackerPerformanceInCollisions}.  
-The tracker measured the momenta of charged particles with a resolution that degraded as the charged particle momenta 
-increased.  For reconstructed muons with $20 < \pt < 100\GeV$, the tracker measured the $\pt$ of barrel region muons with a 
-resolution of 1.3\% to 2.0\%, and measured the $\pt$ of endcap muons with a resolution no worse than $\approx$6\% \cite{muonRecoFirstCollisions}.  
-For reconstructed charged hadrons with similar $\pt$, the tracker measured the $\pt$ of charged hadrons with a resolution 
-similar to muons as long as a nuclear interaction did not occur in the tracker. Due to the tracker material budget, 0.18 
-to 0.56 nuclear interaction lengths, on average the tracker measured the 
-$\pt$ of charged hadrons with a worse resolution than muons.  Due to bremsstrahlung the tracker measured the $\pt$ of 
-electrons with a resolution worse than charged hadrons or muons, but this was inconsequential because the ECAL measured 
-electron energies with a better resolution.
+The tracker performance depended on the number and momenta of charged particles in a collision event.  In events used to search 
+for a \WR and \nul, the $\ell\ell jj$ vertex position was measured with 
+a resolution better than 12$\mu$m in any direction \cite{trackerPerformanceInCollisions}.  
+The tracker measured charged particle momenta by measuring the radius of curvature of charged particle tracks.  As a result, 
+the $\pt$ resolution degraded with higher charged particle momenta.  For reconstructed muons with $20 < \pt < 100$ $\GeV$, the 
+tracker measured the $\pt$ of barrel region muons with a resolution of 1.3\% to 2.0\%, and measured the $\pt$ of endcap muons 
+with a resolution $\lesssim$6\% \cite{muonRecoFirstCollisions}; higher $\pt$ muons were measured with worse $\pt$ resolution.  
+The tracker measured the $\pt$ of charged hadrons with $20 < \pt < 100$ $\GeV$ with a resolution similar to that of muons, as 
+long as the hadron did not experience a nuclear interaction. However, due to the $\eta$-dependent tracker 
+material budget of 0.18 to 0.56 nuclear interaction lengths, on average the tracker measured the 
+$\pt$ of charged hadrons with a worse resolution than that of muons.  Lastly, due to bremsstrahlung the tracker measured the 
+$\pt$ of electrons expected from \WR and \nul decays with a resolution worse than that of charged hadrons or muons.
 
 To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during 2015 pp collisions.  Before collisions, cosmic ray muons were 
 used to measure the tracker alignment and momentum response, and derive calibration factors that accounted for 
-changes in either relative to expectations.  During collisions $Z \rightarrow \mu\mu$ events and cosmic ray muon events 
+changes in either relative to expectations.  During collisions, $Z \rightarrow \mu\mu$ events and cosmic ray muons 
 were used to monitor and recalibrate the tracker alignment and momentum response.
 
 During particle reconstruction charged leptons and hadrons were distinguished from photons and neutral hadrons using 
 interaction vertices and tracks reconstructed by the tracker.  Tracks that extrapolated to ECAL energy deposits were 
 identified as electrons, and tracks that extrapolated to HCAL or muon detector energy deposits were identified as charged 
-hadrons or muons, respectively.  The association between tracks and interaction vertices allowed each charged particle class 
-to be divided into multiple sub-classes, like charged hadrons that came from the highest $\sum \pt$ vertex in an event, 
-or charged leptons produced by bottom quark decays.
+hadrons or muons, respectively.  In addition, the association between tracks and interaction vertices allowed reconstructed 
+charged particles to be selected with vertex requirements, like only selecting charged hadrons that came from the highest 
+$\sum \pt$ vertex in an event.
 
 
 \section{The Electromagnetic Calorimeter}
@@ -128,7 +127,7 @@ Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), whic
 electrons and positrons ($e^{\pm}$) from other charged particles.  
 The ECAL is an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
 In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible light in amounts proportional to 
-the energies of incident particles.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
+the incident particle energies.  The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$ by 
 measuring the amount of visible light produced by PbWO$_{4}$ crystals.
 
 The ECAL contained 75848 crystals \cite{ecalPerformanceInCollisions} divided into barrel and endcap regions.  In the 
@@ -139,9 +138,8 @@ each crystal measured 2.2 $\times$ 2.2 cm$^{2}$, and was 19 cm away from the out
 In the endcap region ($1.479 < |\eta| < 3.0$), 14648 crystals (half in each 
 endcap) with $\sim$25 radiation lengths of PbWO$_{4}$ were installed in a disk.  The front face of endcap crystals measured 2.86 
 $\times$ 2.86 cm$^{2}$, and was located behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
-The preshower improved the spatial and energy resolution with 
-which electromagnetic showers were studied in the endcap.  A partial view of the ECAL barrel, endcap and 
-preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
+The preshower detector improved the spatial and energy resolution with which electromagnetic showers were studied in the 
+endcap.  A partial view of the ECAL barrel, endcap and preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 
 \begin{figure}[ht]
 	\centering
@@ -155,15 +153,15 @@ signal to be emitted that was detected with avalanche photodiodes in the barrel,
 endcap.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, 
 was sufficiently high that the scintillation signal was usually fully contained in a 3 $\times$ 3 crystal 
 grid centered on the most energetic crystal.  PbWO$_{4}$ was chosen because the scintillation signal was fast - 
-more than 80\% of the scintillation light was emitted in $\sim$20 ns - as required by the high pp collision rate.  
+more than 80\% of the scintillation light was emitted in $\sim$20 ns - as required by the 40 MHz pp collision rate.  
 The scintillation signal was amplified and measured by photodetectors to determine the energy of incident 
 photons and electrons.  Based on real collision data, the ECAL measured the energies of electrons from $Z \rightarrow ee$ 
 decays ($\Et \approx 45 \GeV$) with a resolution better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  
 At a slightly lower $\Et$ scale in real collision data, the ECAL measured the energies of photons from $Z \rightarrow \mu\mu\gamma$ 
 decays with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
 
-To measure photon and electron energies with precision across the whole detector, the ECAL crystals were monitored and calibrated 
-during data taking using several techniques.  Every 40 minutes each ECAL crystal was illuminated 
+To measure photon and electron energies with similar precision across the entire detector, the ECAL crystals were 
+monitored and calibrated during data taking using several techniques.  Every 40 minutes each ECAL crystal was illuminated 
 with light from blue and green lasers to monitor the crystal transparency.  Every week laser data 
 was used to calculate new crystal correction factors, which corrected the changes in crystal transparency 
 since the previous week.  Photons from $\eta \rightarrow \gamma\gamma$, and electrons from 
@@ -171,17 +169,15 @@ $W \rightarrow e\nu$ and $Z \rightarrow e^{+}e^{-}$ were used to validate the we
 
 To compliment the transparency corrections, additional corrections were applied to ECAL crystals 
 to calibrate their responses based on the arrival times and energies of reconstructed particles.  Relative energy 
-and relative arrival time corrections were calculated from 
-the weighted average correction determined from methods described elsewhere \cite{eGammaMonitCalib2011}.  
-The relative corrections normalized the responses of all crystals, in terms of energy and time, to the same value, then 
-absolute energy scale corrections were applied.  The absolute energy correction for each crystal was derived using 
-electrons from $Z \rightarrow e^{+}e^{-}$, and ensured the average dilepton mass measured by each crystal in 
-$Z \rightarrow e^{+}e^{-}$ events was consistent with the true $Z$ boson mass.  New arrival time corrections 
-were applied every month, and new energy corrections were applied once in September 2015.
+and arrival time corrections for each crystal were calculated using methods described elsewhere \cite{eGammaMonitCalib2011}, and 
+were applied to normalize the the responses of all crystals, in terms of energy and time, to the same value.  Then 
+absolute energy scale corrections were derived using electrons from $Z \rightarrow e^{+}e^{-}$ events, and applied 
+to calibrate each crystal's energy response to the true $Z$ boson mass.  New arrival time corrections were applied 
+every month, and new energy corrections were applied once in September 2015.
 
 During particle reconstruction energies measured by individual ECAL crystals were grouped into dynamically 
-sized superclusters (SCs) with at least 9 crystals.  The SC size was allowed to vary to capture bremsstrahlung 
-photons produced by electrons traversing the silicon tracker.  In the subset of SCs that were isolated 
+sized superclusters (SCs) with at least 9 crystals.  The SC size was allowed to vary in $\eta$ and $\phi$ to capture 
+bremsstrahlung photons produced when $e^{\pm}$s traversed the silicon tracker.  In the subset of SCs that were isolated 
 from HCAL energy deposits, each $e^{\pm}$ was identified as a SC that geometrically matched a reconstructed track 
 trajectory, and each photon was identified as a SC not matched to any track.
 
@@ -203,15 +199,14 @@ combination with the tracker, ECAL, and muon detectors to measure the energy of 
 HCAL and the other sub-detectors, the energy of jets with $\pt > 50\GeV$ and $|\eta| < 3.0$ was measured with 
 a resolution better than 15\% \cite{jetResolutionInCollisions}.
 
-To measure hadron energies with precision across the whole detector, the amount of light measured in scintillating tile towers 
+To measure hadron energies with similar precision across the whole detector, the amount of light measured in scintillating tile towers 
 was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
 with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each 
 tower was used to calibrate each tower's response.  Once collisions began, a laser system 
 monitored the efficiency of light transmission from the scintillator tiles to the photodetectors.  
-From laser transparency data, relative calibrations were derived that normalized the response of all towers 
-to the same level.  The absolute 
-calibration was determined in events where a jet recoiled off a photon, or a leptonically decaying Z boson.  
-There, the absolute hadronic energy 
+From laser transparency data, relative calibrations were derived that normalized the energy response of all towers 
+to the same level.  The absolute energy calibration was determined in events where a jet recoiled off a photon, or 
+a leptonically decaying Z boson.  There, the absolute hadronic energy 
 scale was calibrated relative to the electromagnetic or muonic energy scale derived from $Z \rightarrow \ell\ell$ 
 and $Z \rightarrow \mu\mu\gamma$ events.  Finally, the precision of the absolute hadronic energy scale calibration 
 was improved using dijet resonances like $W/Z \rightarrow jj$.
@@ -219,20 +214,20 @@ was improved using dijet resonances like $W/Z \rightarrow jj$.
 During particle reconstruction the energy measured by each HCAL tower was treated as the basic unit of HCAL energy.  
 Each reconstructed hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
 deposits.  Charged hadrons were identified as calorimeter energies geometrically matched to reconstructed 
-track trajectories, while neutral hadrons were identified as calorimeter energy deposits not matching any 
+track trajectories, while neutral hadrons were identified as calorimeter energy deposits that did not match any 
 track.
 
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
 Interspersed among layers of the magnet iron return yoke were gas ionization chambers used to detect muons.  Muons 
-that traversed the chambers ionized charge along their trajectories, and the ionized charges drifted to the 
+that traversed the chambers ionized charge along their trajectories, and the ionized charges drifted to 
 anodes and cathodes.  The muon detectors measured the momenta, trajectories, and arrival times of muons with $0 < |\eta| < 2.4$ by 
-measuring the amount of charge collected by the anodes and cathodes.  The muon detectors measured each muon's arrival 
-time to identify the collision event that produced it.
+measuring the amount of charge collected by the anodes and cathodes.  Since the muon detectors were located 13 light-ns 
+or more from the IP, the muon detectors measured each muon's arrival time to identify the collision event that produced it.
 
 The muon barrel and endcap sections, shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, used three types of 
-gas ionization detectors to measure muon momenta, trajectories, and arrival times.  In the barrel region ($0 < |\eta| < 1.2$), 
+gas ionization detectors to measure muon kinematic quantities.  In the barrel region ($0 < |\eta| < 1.2$), 
 drift tubes (DTs) and resistive plate chambers (RPCs) measured muon momenta, trajectories, and arrival times.  In 
 the endcap region ($1.2 < |\eta| < 2.4$), RPCs and cathode strip chambers (CSCs) measured the same quantities.
 
@@ -246,27 +241,29 @@ the endcap region ($1.2 < |\eta| < 2.4$), RPCs and cathode strip chambers (CSCs)
 \end{figure}
 
 The DTs were organized into 5 wheels, each with 4 radial layers or 'stations', and 12 $\phi$ segments per 
-station covering 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
-muon trajectories in $z$, and r-$\phi$.  Using these planes, in 2015 collisions each DT station measured muon trajectories 
+station that each covered 30 degrees in $\phi$.  Each DT chamber contained several planes of drift tubes to measure 
+muon trajectories in $z$ and r-$\phi$.  Using these planes, in 2015 collisions each DT station measured muon trajectories 
 with a resolution better than 300$\mu$m in any direction, and measured muon arrival times with a resolution of 2 ns \cite{cmsMuonRecoRunTwo}.  
 
 In the endcap, CSCs were installed in four disks that faced the interaction point.  
-The disks were segmented into several radial layers (rings of different radii, 'stations'), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, 
-and each station contained 18 or 36 chambers with multiple measurement planes.  The CSCs measured muon trajectories with 
-resolution better than 150 $\mu$m in any direction, and measured muon arrival times with a resolution of 3.2 ns.  
+The disks were segmented into several radial layers (rings of different radii, 'stations'), as shown in Figure 
+\ref{fig:muonBarrelAndEndcapDetectors}, and each station contained 18 or 36 chambers with multiple measurement planes.  
+The CSCs measured muon trajectories with a resolution better than 150 $\mu$m in any direction, and measured muon arrival 
+times with a resolution of 3.2 ns.  
 
-In the barrel and the endcap for $|\eta| < 1.9$, the RPCs measured muon arrival times with a resolution better than 
+In the barrel and endcap for $|\eta| < 1.9$, the RPCs measured muon arrival times with a resolution better than 
 2 ns.  RPC measurements were used by the trigger system to identify the collision event that produced each muon \cite{cmsMuonRecoRunTwo}.
 
-The muon detectors complimented measurements made by the tracker, and improved the resolution of muon 
-momentum measurements for high $\pt$ muons relative to tracker only performance.  The strength of the magnetic field 
-enabled the tracker to measure muon momenta in the $\pt <$ 200 $\GeV$ phase space with 3 or more times better resolution 
-than the muon detectors.  As muon $\pt$ increased above 200 $\GeV$, muon trajectories approached straight line paths, 
-and the tracker momentum resolution degraded.  Using cosmic ray muons detected in 2015, the combined tracker and muon 
-detector system measured the $\pt$ of barrel region muons with $200 < \pt < 400 \GeV$ with a resolution better than 
-3.5\% \cite{cmsMuonRecoRunTwo}.
+The muon detectors complimented measurements made by the tracker, and improved the $\pt$ resolution of high $\pt$ muon 
+measurements relative to the tracker only performance.  Thanks to the 3.8 $\unit{T}$ magnetic field, the tracker measured 
+muon momenta in the $\pt <$ 200 $\GeV$ phase space with a resolution better than the muon detectors by a factor of 3 or 
+more.  As the muon $\pt$ increased above 200 $\GeV$, a muon's trajectory through the tracker approached a straight line path, 
+and the tracker momentum resolution degraded.  However, the muon detectors measured the curvature of muon tracks over several 
+meters, and as a result measured the $\pt$ of $\pt > 200$ $\GeV$ muons with a better resolution than the tracker.  Based on 
+cosmic ray muons detected in 2015, the combined tracker and muon detector system measured the $\pt$ of barrel region muons 
+with $200 < \pt < 400 \GeV$ with a resolution $<$ 3.5\% \cite{cmsMuonRecoRunTwo}.
 
-The muon detectors measured tracks that were used in muon reconstruction.  Muons produced outside the silicon tracker 
+The muon detectors measured curved tracks that were used in muon reconstruction.  Muons produced outside the silicon tracker 
 were identified as individual tracks in muon detectors, while muons produced within the silicon tracker were identified 
 as silicon tracker tracks whose trajectories extrapolated to muon detector tracks.
 
