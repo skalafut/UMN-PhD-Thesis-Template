@@ -21,8 +21,15 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 
 \section{Electron Reconstruction}
 \label{sec:eleReco}
-Electrons ($e^{\pm}$) were the only particles expected from \WR decays that, on average, lost significant 
-energy in the tracker.  They lost energy by emitting bremsstrahlung photons in $\phi$, which were detected 
+Electrons ($e^{\pm}$) were the only particles from \WR decays expected to lose more than a few percent of their 
+energy before reaching the ECAL.  One to two radiation lengths of material, depending on $\eta$, was in front of 
+the ECAL \cite{ecalPerformanceInCollisions}, and as a result electrons could lose 63\% or more of their initial 
+energy by emitting bremsstrahlung photons before reaching the ECAL.  Due to the curved trajectory of electrons, 
+bremsstrahlung photons were emitted with similar $\eta$ to the electron but different $\phi$.  .
+
+%RESUME HERE
+
+They lost energy by emitting bremsstrahlung photons in $\phi$, which were detected 
 by the ECAL.  A dedicated electron track algorithm reconstructed helical electron tracks from hits in tracker 
 layers, and estimated the bremsstrahlung energy lost by comparing sequential hits.  The tracker measured 
 electron $(\eta, \phi)$ trajectories, and the ECAL measured their energies including bremsstrahlung photons.
@@ -31,10 +38,12 @@ After traversing the tracker, electrons impinged on ECAL crystals and showered i
 Electron energies were measured through the particle showers.  Approximately 94\% of an electron's energy coming 
 into the ECAL was deposited in a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
 total energy was deposited over a larger area in $\phi$.  To measure the total energy of each electron, ECAL energy 
-deposits were reconstructed in superclusters (SCs) with variable lengths in $\eta$ and $\phi$, as shown in Figure 
+deposits were reconstructed in superclusters (SCs) centered on the most energetic crystal.  The 
+
+, as shown in Figure 
 \ref{fig:eleTrackAndSC}.  Following SC reconstruction, the $(\eta, \phi)$ positions of SCs were compared to the 
 $(\eta, \phi)$ trajectories of electron candidate tracks.  Each reconstructed electron was identified as a SC that 
-matched at least one candidate track.
+matched at least one candidate track to within 0.02 radians in $\phi$, and 0.004 in $\eta$ \cite{ecalPerformanceInCollisions}.
 
 \begin{figure}[h]
 	\centering
