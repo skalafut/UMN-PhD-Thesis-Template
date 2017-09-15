@@ -24,9 +24,9 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 Muons were first reconstructed as tracks from hits in the silicon tracker.  An interative algorithm started 
 by reconstructing tracks from the highest energy hits and hits closest to the IP, and progressed to outer layers 
 using a Kalman filter to link hits between successive layers.  Once the algorithm reached the outermost tracker 
-layer the hits associated with tracks were removed from the list of track candidates, and a new track 
-reconstruction iteration started with hits in the innermost pixel layers that had lower energy or were further 
-from the IP.  It was assumed that the magnetic field was uniform, and tracks were reconstructed as perfect helixes 
+layer the hits associated with tracks were removed from the list of track candidates, and a new iteration of track 
+reconstruction started with hits in the innermost pixel layers that had lower energy or were further 
+from the IP.  It was assumed that the magnetic field was uniform, so tracks were reconstructed as perfect helixes 
 from hits in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
 as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
 $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
@@ -52,14 +52,14 @@ Four muon reconstruction algorithms fitted four continuous tracks \cite{cmsMuonR
 detector hits to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  Each 
 algorithm combined muon detector and silicon tracker measurements in a different way, and could exclude measurements with 
 large uncertainty.  The quality of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum 
-uncertainty $\sigma(\pt)/\pt$.  The track with the lowest uncertainties was used to calculate the reconstructed muon 
-momentum.  For muons with $\pt \lesssim 100$ $\GeV$ this procedure used tracker measurements almost exclusively to 
-determine the muon momentum; as stated earlier, muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a 
-$\pt$ resolution of approximately 2.8\%.  As the muon $\pt$ increased above 100 $\GeV$ the silicon tracker $\pt$ 
-resolution degraded faster than the muon detector $\pt$ resolution, and it became advantageous to combine measurements 
-from both detectors.  Muons with $\pt > 200$ $\GeV$ were expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ 
-events (Table \ref{tab:wrHighPtMuons}), and for $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ they were measured with a 
-$\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the resolution was better than 6\% \cite{cmsMuonRecoRunTwo}.
+uncertainty $\sigma(\pt)/\pt$.  The track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ was 
+used to calculate the reconstructed muon momentum.  For muons with $\pt \lesssim 100$ $\GeV$ this procedure used tracker 
+measurements almost exclusively to determine the muon momentum; as stated earlier, muons with $|\eta| < 1.4$ and $\pt = 100$ 
+$\GeV$ were measured with a $\pt$ resolution of approximately 2.8\%.  As the muon $\pt$ increased above 100 $\GeV$ the 
+silicon tracker $\pt$ resolution degraded faster than the muon detector $\pt$ resolution, and it became advantageous to 
+combine measurements from both detectors.  Muons with $\pt > 200$ $\GeV$ were expected in a significant fraction of 
+$\WR \rightarrow \mu\mu jj$ events (Table \ref{tab:wrHighPtMuons}), and for $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ 
+they were measured with a $\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the resolution was better than 6\% \cite{cmsMuonRecoRunTwo}.
 
 \begin{table}[h]
 	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
@@ -74,12 +74,14 @@ $\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the resolution was better than
 	\end{tabular}
 \end{table}
 
-Following momentum calculations, the momenta of muons were corrected using $Z \rightarrow \mu\mu$ decays.  $Z \rightarrow \mu\mu$ 
-events in data and simulations were compared, and two differences were found.  The dilepton mass distribution in simulated 
-events was narrower, indicating better energy resolution, and the peak (in $\GeV$) was higher, indicating a higher 
-energy scale.  Both the energy resolution and scale affect the efficiency of muon $\pt$ requirements, so the 
-$\pt$ of muons in data and simulated events were corrected such that the $Z \rightarrow \mu\mu$ dilepton mass peak 
-positions and widths were identical.
+Muons reconstructed in $Z \rightarrow \mu\mu$ events were used to match the muon energy scale and resolution in data 
+and simulations used to estimate the \WR signal and ST backgrounds.  The di-muon mass ($M_{\mu\mu}$) distribution in 
+$Z \rightarrow \mu\mu$ events was compared between data and simulations, and two differences were found.  In simulations 
+the $M_{\mu\mu}$ peak position was higher in energy, indicating a higher muon energy scale, and the $M_{\mu\mu}$ distribution width 
+was smaller, indicating a better muon energy resolution than what was stated previously.  These differences 
+were resolved by increasing the momenta of muons reconstructed in data by a small fixed percentage, and smearing the momenta 
+of muons reconstructed in all simulations by a small positive value multiplied by a Gaussian random number that changed 
+with every event.
 
 
 \section{Electron Reconstruction}
@@ -124,25 +126,28 @@ $\phi$, and 0.001 (0.002) units in $\eta$.
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-Following reconstruction, the energies of electrons were corrected using $Z \rightarrow ee$ decays.  $Z \rightarrow ee$ 
-events in data and simulations were compared, and two differences were found.  The dilepton mass distribution in simulated 
-events was narrower, indicating better energy resolution, and the peak (in $\GeV$) was higher, indicating a higher 
-energy scale.  Both the energy resolution and scale affect the efficiency of electron $\Et$ requirements, so the 
-energies of electrons in data and simulated events were corrected such that the $Z \rightarrow ee$ dilepton mass peak 
-positions and widths were identical.
+Electrons reconstructed in $Z \rightarrow ee$ events were used to match the electron energy scale and resolution in data 
+and simulations used to estimate the \WR signal and ST backgrounds.  The di-electron mass ($M_{ee}$) distribution in 
+$Z \rightarrow ee$ events was compared between data and simulations, and two differences were found.  In simulations 
+the $M_{ee}$ peak position was higher in energy, indicating a higher electron energy scale, and the $M_{ee}$ distribution width 
+was smaller, indicating a better electron energy resolution than what was stated previously.  These differences 
+were resolved by increasing the energies of electrons reconstructed in data by a small fixed percentage, and smearing the energies 
+of electrons reconstructed in all simulations by a small positive value multiplied by a Gaussian random number that changed 
+with every event.
 
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-%RESUME HERE
-
-Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  Jet 
-reconstruction began by reconstructing photons, electrons and muons, and charged and neutral hadrons.  Each charged hadron was 
-reconstructed in a similar way to electrons, by geometrically matching an energy measured in an HCAL tower to a reconstructed 
-track.  A charged hadron could also contain an ECAL SC if the SC $(\eta, \phi)$ position matched the HCAL tower.  Each neutral 
-hadron was reconstructed as an HCAL tower, possibly associated with an ECAL SC, whose $(\eta, \phi)$ position did not match any 
-reconstructed track.  Similarly, each photon was reconstructed as an ECAL SC whose position did not match any reconstructed track.  
-After reconstructing individual particles, jets were reconstructed as clusters of individual particles, as shown in Figure 
+Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
+Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
+were reconstructed in the ECAL as superclusters that did not overlap in $(\eta,\phi)$ with any energy deposits measured 
+in the HCAL, and were separated from any reconstructed track by at least 1.1$^{\circ}$ in $\phi$ and 1 ECAL crystal in $\eta$.  
+Charged and neutral hadrons were reconstructed in the HCAL as individual or multiple neighboring towers, and were 
+reconstructed in the ECAL as superclusters that overlapped with the HCAL towers \cite{pflowJetRecoInCollisions}.  Each 
+charged hadron was identified as a track, reconstructed as described for muons in Section \ref{sec:muReco}, that extrapolated 
+to the $(\eta,\phi)$ area of the ECAL SC or at least one of the HCAL towers.  Each neutral hadron was identified as an HCAL 
+energy cluster, and possibly an ECAL SC, that did not overlap with any reconstructed track in $(\eta,\phi)$.  After 
+individual particles were reconstructed, jets were built from clusters of individual particles, as shown in Figure 
 \ref{fig:jetClustering}.
 
 \begin{figure}[h]
@@ -153,17 +158,35 @@ After reconstructing individual particles, jets were reconstructed as clusters o
 	\label{fig:jetClustering}
 \end{figure}
 
-In each collision event, every reconstructed particle was considered a jet candidate, except charged hadrons that did not come 
-from the reconstructed vertex with the highest $\sum \pt$.  Using the anti-$k_{T}$ algorithm \cite{antikt}, reconstructed particles 
-were clustered into jets, each approximately $\Delta R = 0.4$ wide, based on their individual energies and trajectories.  Each jet's 
-energy was the total energies of all constituents, and its $(\eta, \phi)$ trajectory was the energy-weighted average trajectory of 
-all its constituents.
+The high instantaneous luminosity of pp collisions delivered by the LHC almost always resulted in collision events with 
+multiple reconstructed vertices, which represented pileup interactions.  The dominant effect of pileup interactions was 
+the production of additional quarks and gluons, and thus additional jets.  Pileup jets originating from charged hadrons 
+were significantly reduced by excluding charged hadrons from jet reconstruction that were not associated with the vertex, 
+the primary vertex, that had the highest $\sum \pt$ in the event.  Neutral hadrons produced by pileup interactions contributed 
+to the energies of all reconstructed jets, in addition to creating new jets.  Their effect was reduced by measuring the average 
+neutral hadron energy density, $\rho$, over all $(\eta,\phi)$ in each event, and reducing the energy of jets reconstructed in each 
+event by $\rho$ multiplied by each jet's area \cite{pileup1,pileup2}.
+
+In each collision event, every reconstructed particle was considered a jet candidate except the charged hadrons from pileup 
+vertices.  Candidate particles were clustered into jets using the anti-$k_{T}$ algorithm \cite{antikt} to cluster particles 
+based on their $\pt$ and distance $\Delta R$ from the jet axis.  The jet axis was defined initially by a charged hadron, and 
+was updated iteratively based on the $\pt$ weighted $(\eta,\phi)$ trajectories of all jet constituents.  Jets were built 
+from particles reconstructed anywhere in the detector, but the anti-$k_{T}$ algorithm used a cone size of $\Delta R = 0.4$ to reduce the 
+likelihood of having a jet constituent that was $\Delta R > 0.4$ away from the jet axis.  Once a jet was clustered its 
+energy was determined as the $\sum \pt$ of all jet constituents.
+
+The energies of reconstructed jets were corrected based on several observed effects.  As described previously, neutral 
+hadrons produced in pileup interactions contributed to the energies of all jets, and their contributions were mitigated by 
+reducing each jet's energy based on its $(\eta,\phi)$ area.  Following this subtraction, jets reconstructed in dijet, $Z$+jet, 
+or $\gamma$+jet events were used to match the jet energy scale and resolution in data and simulations used to estimate the 
+signal and backgrounds.  In simulated events jets were found to have a different energy scale and resolution, and these 
+differences were resolved by correcting jet energies in data and simulated events, using methods described elsewhere \cite{jetpaper}.  
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
 Energetic electrons, muons and jets produced in collisions were reconstructed using several CMS sub-detectors and high energy 
 reconstruction algorithms.  Additional selections were applied to reconstructed leptons and jets to increase sensitivity to the \WR 
-signal relative to ST processes that produced $\ell\ell jj$ events.
+signal relative to ST backgrounds that produced $\ell\ell jj$ events.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
