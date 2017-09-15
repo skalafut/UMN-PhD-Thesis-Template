@@ -19,6 +19,69 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 \end{figure}
 
 
+\section{Muon Reconstruction}
+\label{sec:muReco}
+Muons were first reconstructed as tracks from hits in the silicon tracker.  An interative algorithm started 
+by reconstructing tracks from the highest energy hits and hits closest to the IP, and progressed to outer layers 
+using a Kalman filter to link hits between successive layers.  Once the algorithm reached the outermost tracker 
+layer the hits associated with tracks were removed from the list of track candidates, and a new track 
+reconstruction iteration started with hits in the innermost pixel layers that had lower energy or were further 
+from the IP.  It was assumed that the magnetic field was uniform, and tracks were reconstructed as perfect helixes 
+from hits in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
+as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
+$\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
+Muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ and their vertices were measured with resolutions of approximately 
+2.8\% in $\pt$, and 10 and 30 $\mu$m in transverse and longitudinal distances from the IP.  Muon trajectories and 
+initial energies were determined by tracker measurements, and their energies were refined by muon detector measurements.
+
+After traversing the calorimeters and the magnet, muons were reconstructed as tracks from hits in muon detector chambers.  
+First, local reconstruction was run to build track segments in individual chambers, then an iterative track 
+reconstruction algorithm built continuous tracks from multiple segments.  The muon track reconstruction algorithm started 
+with track segments in the inner muon chambers, then iterated outward and built longer tracks across multiple chambers 
+using a Kalman filter.  The algorithm estimated the effects of energy losses, inhomogenous magnetic fields, and multiple 
+scattering when linking segments between chambers, and updated all track parameters after including measurements 
+from each new chamber.  Once the algorithm incorporated measurements from the outermost chambers, a Kalman filter 
+was applied to the reconstructed tracks, starting with the outermost chamber segments and working towards the 
+innermost chamber segments, to ensure the tracks were built in a self-consistent way \cite{muonRecoFirstCollisions}.  
+
+Muons were reconstructed and their momenta were determined using silicon tracker and muon detector measurements.  
+Tracks reconstructed in the muon detectors were extrapolated back to the outermost silicon tracker layer, and in the 
+plane of the silicon strip each reconstructed muon was identified as a muon detector track that matched a silicon 
+tracker track to within 3 cm.  After reconstruction, the $\pt$ of each muon was calculated using the following procedure.  
+Four muon reconstruction algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon 
+detector hits to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  Each 
+algorithm combined muon detector and silicon tracker measurements in a different way, and could exclude measurements with 
+large uncertainty.  The quality of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum 
+uncertainty $\sigma(\pt)/\pt$.  The track with the lowest uncertainties was used to calculate the reconstructed muon 
+momentum.  For muons with $\pt \lesssim 100$ $\GeV$ this procedure used tracker measurements almost exclusively to 
+determine the muon momentum; as stated earlier, muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a 
+$\pt$ resolution of approximately 2.8\%.  As the muon $\pt$ increased above 100 $\GeV$ the silicon tracker $\pt$ 
+resolution degraded faster than the muon detector $\pt$ resolution, and it became advantageous to combine measurements 
+from both detectors.  Muons with $\pt > 200$ $\GeV$ were expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ 
+events (Table \ref{tab:wrHighPtMuons}), and for $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ they were measured with a 
+$\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the resolution was better than 6\% \cite{cmsMuonRecoRunTwo}.
+
+\begin{table}[h]
+	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
+	($\mnul = \frac{1}{2}\mWR$)}
+	\label{tab:wrHighPtMuons}
+	\centering
+	\begin{tabular}{c|c}
+		\mWR ($\TeV$) & Fraction of events with at least one high-$\pt$ muon (\%) \\  \hline
+		1.0 &  80.  \\
+		2.0 &  95.  \\ 
+		3.0 &  98.  \\ \hline
+	\end{tabular}
+\end{table}
+
+Following momentum calculations, the momenta of muons were corrected using $Z \rightarrow \mu\mu$ decays.  $Z \rightarrow \mu\mu$ 
+events in data and simulations were compared, and two differences were found.  The dilepton mass distribution in simulated 
+events was narrower, indicating better energy resolution, and the peak (in $\GeV$) was higher, indicating a higher 
+energy scale.  Both the energy resolution and scale affect the efficiency of muon $\pt$ requirements, so the 
+$\pt$ of muons in data and simulated events were corrected such that the $Z \rightarrow \mu\mu$ dilepton mass peak 
+positions and widths were identical.
+
+
 \section{Electron Reconstruction}
 \label{sec:eleReco}
 Electrons ($e^{\pm}$) were the only particles from \WR decays expected to lose more than a few percent of their 
@@ -31,7 +94,7 @@ these photons, but knowledge of electron bremsstrahlung was incorporated into a 
 algorithm.  The fractional energy lost by electrons traversing a tracker layer through bremsstrahlung was expected to 
 have a distribution described by the Bethe-Heitler formula, and this energy loss was approximated as a sum of 
 several Gaussians in the electron track reconstruction algorithm.  The electron algorithm was otherwise identical to 
-the track reconstruction algorithm used for muons and charged hadrons, except that the $\chi^{2}$ threshold used to 
+the muon track reconstruction algorithm, except that the $\chi^{2}$ threshold used to 
 associate tracker hits with a trajectory was loosened from 30 to 2000 \cite{trackerPerformanceInCollisions}.  This 
 facilitated the reconstruction of electron tracks whose trajectories deviated from expectations due to bremsstrahlung.  
 Bremsstrahlung increased the uncertainty of electron position and energy measurements made by the tracker relative to 
@@ -47,12 +110,12 @@ in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals w
 was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weighted average position of all crystals 
 in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
 an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
-track to within 1.1 degrees, about 60 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
+track to within 1.1$^{\circ}$, about 60 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
 crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
 resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
 $|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
-for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17 (0.29) degrees in $\phi$, and 
-0.001 (0.002) units in $\eta$.
+for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17$^{\circ}$ (0.29$^{\circ}$) in 
+$\phi$, and 0.001 (0.002) units in $\eta$.
 
 \begin{figure}[h]
 	\centering
@@ -61,54 +124,18 @@ for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-Following reconstruction, the energies of electrons were corrected using $Z \rightarrow ee$ decays.  Simulated 
-$Z \rightarrow ee$ events were compared to Z decay events in data, and the dilepton mass distribution in simulated 
+Following reconstruction, the energies of electrons were corrected using $Z \rightarrow ee$ decays.  $Z \rightarrow ee$ 
+events in data and simulations were compared, and two differences were found.  The dilepton mass distribution in simulated 
 events was narrower, indicating better energy resolution, and the peak (in $\GeV$) was higher, indicating a higher 
 energy scale.  Both the energy resolution and scale affect the efficiency of electron $\Et$ requirements, so the 
-$\Et$ of electrons in data and simulated events were modified so that the $Z \rightarrow ee$ dilepton mass peak 
-position and width agreed.
-
-
-\section{Muon Reconstruction}
-\label{sec:muReco}
-Muon ($\mu^{\pm}$) reconstruction started with reconstructing tracks in the silicon tracker.  Hits in individual 
-tracker layers were reconstructed into helical tracks, and their $(\eta, \phi)$ trajectories determined reconstructed 
-muon trajectories.  Muon momenta were measured through the curvature of reconstructed tracks, and were refined by muon 
-detector measurements.
-
-%RESUME HERE
-
-On average muons lost negligible energy before entering the muon detectors.  Hits in the muon chambers were reconstructed 
-into helical tracks, and their radii of curvature were measured to improve the resolution of muon momenta measurements.  
-Muon detector tracks were extrapolated back to the silicon tracker where the $(\eta, \phi)$ trajectories of silicon tracker 
-and muon detector tracks were compared.  Each reconstructed muon was identified as a muon detector track whose trajectory 
-matched a track in the silicon tracker.
-
-The momentum of muons was determined using silicon tracker and muon detector measurements.  Four muon reconstruction 
-algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon detector hits to estimate a 
-muon's trajectory through CMS, represented in Figure \ref{fig:particleTrajectories}.  Each algorithm combined muon detector 
-and silicon tracker measurements in a different way, and could exclude measurements with large uncertainty.  The quality 
-of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  
-The track with the lowest uncertainties was used to calculate the reconstructed muon momenta.  This procedure improved the 
-momentum resolution for muons with $\pt > 200$ $\GeV$, which were expected in a significant fraction of $\WR \rightarrow \mu\mu jj$ 
-events, as shown in Table \ref{tab:wrHighPtMuons}.
-
-\begin{table}[h]
-	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
-	($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrHighPtMuons}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR ($\TeV$) & Fraction of events with at least one high-$\pt$ muon (\%) \\  \hline
-		1.0 &  80.  \\
-		2.0 &  95.  \\ 
-		3.0 &  98.  \\ \hline
-	\end{tabular}
-\end{table}
+energies of electrons in data and simulated events were corrected such that the $Z \rightarrow ee$ dilepton mass peak 
+positions and widths were identical.
 
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
+%RESUME HERE
+
 Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  Jet 
 reconstruction began by reconstructing photons, electrons and muons, and charged and neutral hadrons.  Each charged hadron was 
 reconstructed in a similar way to electrons, by geometrically matching an energy measured in an HCAL tower to a reconstructed 
