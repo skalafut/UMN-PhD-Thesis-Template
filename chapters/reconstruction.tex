@@ -24,25 +24,23 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 Electrons ($e^{\pm}$) were the only particles from \WR decays expected to lose more than a few percent of their 
 energy before reaching the ECAL.  One to two radiation lengths of material, depending on $\eta$, was in front of 
 the ECAL \cite{ecalPerformanceInCollisions}, and about 35\% of electrons lose more than 70\% of their initial energy 
-through bremsstrahlung before reaching the ECAL \cite{trackerPerformanceInCollisions}.  Bremsstrahlung photons were emitted in $\eta$ along their parent electron 
-trajectories, but the magnetic field caused electrons to curve in $\phi$, and their photons were emitted a few 
-degrees behind the $\phi$ positions were the electrons entered the ECAL.  The tracker did not detect these photons, 
-but knowledge of electron bremsstrahlung was incorporated into a dedicated electron track reconstruction algorithm.  
-This algorithm .
+through bremsstrahlung before reaching the ECAL \cite{trackerPerformanceInCollisions}.  The curvature of electrons 
+in the magnetic field meant that bremsstrahlung photons emitted by the electrons, in general, struck the ECAL 
+at $\eta$ values similar to that of the electron, but at different $\phi$ coordinates.  The tracker could not detect 
+these photons, but knowledge of electron bremsstrahlung was incorporated into a dedicated electron track reconstruction 
+algorithm.  The fractional energy lost by electrons traversing a tracker layer through bremsstrahlung was expected to 
+have a distribution described by the Bethe-Heitler formula, and this energy loss was approximated as a sum of 
+several Gaussians in the electron track reconstruction algorithm.  The electron algorithm was otherwise identical to 
+the track reconstruction algorithm used for muons and charged hadrons, except that the $\chi^{2}$ threshold used to 
+associate tracker hits with a trajectory was loosened from 30 to 2000 \cite{trackerPerformanceInCollisions}.  This 
+facilitated the reconstruction of electron tracks whose trajectories deviated from expectations due to bremsstrahlung.  
+Bremsstrahlung increased the uncertainty of electron position and energy measurements made by the tracker relative to 
+measurements made by the ECAL, so the kinematics of electrons expected from \WR decays was measured using the ECAL.
 
-
-%RESUME HERE
-
-They lost energy by emitting bremsstrahlung photons in $\phi$, which were detected 
-by the ECAL.  A dedicated electron track algorithm reconstructed helical electron tracks from hits in tracker 
-layers, and estimated the bremsstrahlung energy lost by comparing sequential hits.  The tracker measured 
-electron $(\eta, \phi)$ trajectories, and the ECAL measured their energies including bremsstrahlung photons.
-
-%THIS PARAGRAPH IS GOOD EXCEPT FOR THE QUESTION IN THE LAST SENTENCE ABOUT RECO ELECTRON POSITION
-After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s.  
-Electron energies were measured through the particle showers.  Approximately 94\% of an electron's energy coming 
+After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
+electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
 into the ECAL was deposited over a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
-total energy was deposited over a larger area.  To measure the total energy of each electron, ECAL energy deposits 
+total energy was usually deposited over a larger area.  To measure the total energy of each electron, ECAL energy deposits 
 were reconstructed in superclusters (SCs) centered on the most energetic crystal, and were 3 or more crystals wide 
 in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals wide in $\phi$, as shown in Figure 
 \ref{fig:eleTrackAndSC}, to measure the energy lost by electrons through bremsstrahlung in the tracker.  Once a SC 
@@ -50,9 +48,11 @@ was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weigh
 in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
 an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
 track to within 1.1 degrees, about 60 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
-crystal wide, in $\eta$ \cite{ecalPerformanceInCollisions}.  Using the ECAL to determine reconstructed electron 
-energies, the energy resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better 
-than 2\% for $|\eta| < 0.8$, and was between 2\% and 5\% elsewhere.  RECO ELECTRON POSITION?.
+crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
+resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
+$|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
+for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17 (0.29) degrees in $\phi$, and 
+0.001 (0.002) units in $\eta$.
 
 \begin{figure}[h]
 	\centering
