@@ -7,12 +7,16 @@
 
 The LRS model predicts the existence of a \WR and \nul that decay to two charged leptons and two jets, all with 
 high transverse energy.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
-2015, evidence of a \WR and \nul was searched for in events with $eejj$ and $\mu\mu jj$ final states.  The requirements 
-used to select events were developed based on features of ST backgrounds and \WR and \nul decays.
+2015, evidence of a \WR and \nul was searched for as an excess of events in data with $eejj$ and $\mu\mu jj$ final 
+states above the predicted backgrounds - \DY, \ttbar, W+jets, diboson processes, and QCD - and their uncertainties.  
+The selections applied to data events were developed based on differences in lepton and jet kinematic distributions 
+between background and \WR signal events.
 
 
 \section{Selections based on \WR signal and ST backgrounds}
 \label{sec:signalAndBkgndFeatures}
+
+
 The event selections were driven by model independent features of \WR and \nul decays, and ST processes in the $\ell\ell jj$ 
 final states.  The expected \WR mass (\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
 so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay products, on average, 
@@ -24,8 +28,9 @@ state leptons and jets would have $\pt$ of several hundred $\GeV$ or more, as sh
 with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences between 
 lepton and jet kinematics in signal and background events motivated the following event selections:
 
+%RESUME HERE
 \begin{itemize}
-	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one had $\pt > 60$ $\GeV$.
+	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one with $\pt > 60$ $\GeV$.
 	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
 	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
 	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
@@ -313,14 +318,9 @@ Simulated events used in either channel were required to pass the appropriate tr
 
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
-The energies of reconstructed muons in data and simulations were corrected before applying any selections.  
-The muon energy corrections were derived by comparing muon kinematic variables in $Z \rightarrow \mu\mu$ decays 
-between data and simulated events.  The corrections were applied to resolve the difference in offline muon $\pt$ 
-selection efficiencies between data and simulated events.
-
-Following energy corrections, muon kinematic and identification (ID) selections were applied to select muons consistent 
+Muon kinematic and identification (ID) selections were applied to select muons consistent 
 with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
-$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those muons was required to have $\pt > 60$ $\GeV$.  
+$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one with $\pt > 60$ $\GeV$.  
 Reducing the lower $\pt$ selection was explored, but was found to increase ST backgrounds without a corresponding increase 
 in \WR signal, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons passing kinematic requirements were selected with the 
 following ID selections:
@@ -369,7 +369,7 @@ every event.
 \label{sec:electronSelection}
 Electron kinematic and ID selections were applied to select electrons 
 consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
-with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one of those electrons was required to have $\Et > 60$ $\GeV$.  
+with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one with $\Et > 60$ $\GeV$.  
 Electrons passing kinematic requirements were selected with the following ID selections:
 
 \begin{itemize}
@@ -406,14 +406,7 @@ weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were 
 
 \section{Offline Jet Selection}
 \label{sec:jetSelection}
-Similar to leptons, the energies of reconstructed jets in data and simulations were corrected before applying 
-any selections.  Jet energies in data and simulations were increased by neutral hadrons from pileup interactions, so 
-the first correction reduced each jet's energy based on its area and the neutral hadron energy density measured in the 
-event \cite{pileup1,pileup2}.  Subsequent corrections, explained elsewhere \cite{jetpaper}, were derived from simulations 
-and applied to data and simulated events to resolve the difference in jet $\pt$ selection efficiencies between data and 
-simulated events.
-
-Following energy corrections, jet kinematic and ID selections were applied to select jets consistent 
+Jet kinematic and ID selections were applied to select jets consistent 
 with those expected from \WR decays.  Each event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ 
 and $|\eta| < 2.4$.  Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds 
 without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic 
