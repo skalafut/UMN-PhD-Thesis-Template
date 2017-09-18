@@ -10,25 +10,22 @@ high transverse energy.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by
 2015, evidence of a \WR and \nul was searched for as an excess of events in data with $eejj$ and $\mu\mu jj$ final 
 states above the predicted backgrounds - \DY, \ttbar, W+jets, diboson processes, and QCD - and their uncertainties.  
 The selections applied to data events were developed based on differences in lepton and jet kinematic distributions 
-between background and \WR signal events.
+between \WR signal and background events.
 
 
 \section{Selections based on \WR signal and ST backgrounds}
 \label{sec:signalAndBkgndFeatures}
-
-
-The event selections were driven by model independent features of \WR and \nul decays, and ST processes in the $\ell\ell jj$ 
-final states.  The expected \WR mass (\mWR) was large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
-so \WR bosons were expected to have low net momentum.  Therefore, the charged lepton and jet decay products, on average, 
-were distributed uniformly in $\phi$, and concentrated in the $|\eta| < 2.4$ region\footnote{The $|\eta| < 2.4$ region 
+The event selections were driven by model independent features of \WR and \nul decays, and ST backgrounds in the $\ell\ell jj$ 
+final states.  The expected \WR mass (\mWR) is large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
+so \WR bosons are expected to have low net momentum.  Therefore, the charged lepton and jet decay products, on average, 
+are distributed uniformly in $\phi$, and are concentrated in the $|\eta| < 2.4$ region\footnote{The $|\eta| < 2.4$ region 
 covers 94\% of the $0 \leq \theta < 180$ degree phase space, where $\theta = 0$ points along the beam axis.}, 
-as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected \mWR meant final 
-state leptons and jets would have $\pt$ of several hundred $\GeV$ or more, as shown in Figures \ref{fig:wrLeptonPts} and 
-\ref{fig:wrJetPts}.  In contrast, the ST backgrounds in the $\ell\ell jj$ final states produced leptons and jets primarily 
-with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences between 
-lepton and jet kinematics in signal and background events motivated the following event selections:
+as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected \mWR means final 
+state leptons and jets should have $\pt$ of several hundred $\GeV$ or more, as shown in Figures \ref{fig:wrLeptonPts} and 
+\ref{fig:wrJetPts}.  In contrast, the ST backgrounds in the $\ell\ell jj$ final states produce leptons and jets primarily 
+with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences in 
+lepton and jet kinematics between signal and background events motivated the following event selections:
 
-%RESUME HERE
 \begin{itemize}
 	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one with $\pt > 60$ $\GeV$.
 	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
@@ -36,18 +33,28 @@ lepton and jet kinematics in signal and background events motivated the followin
 	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
 \end{itemize}
 
-The large expected mass difference between a charged lepton $\ell$ and a \nul motivated additional event selections.  In 
-the $\WR \rightarrow \ell_{1} \nul$ decay, the $\ell_{1}$ recoiled against the heavier \nul to conserve momentum.  Then, 
-the \nul decayed to a second lepton $\ell_{2}$ and two jets that recoiled against the $\ell_{1}$.  Thus the lepton pair 
-$\ell_{1}\ell_{2}$, on average, had a large dilepton mass ($\Mll$, Table \ref{tab:wrMll}), and the $\ell_{1}$ was well 
-separated from the \nul decay products in $(\eta,\phi)$.  In constrast, lepton pairs from \DY and diboson (WW, WZ, ZZ) 
-backgrounds primarily had $\Mll < 180 \GeV$.  Returning to the signal, the mass of neutrinos, \mnul, in the \WR decay must 
-be $\mnul \gg 90$ $\GeV$ to suppress \nul production through left-right mixing $pp \rightarrow Z \rightarrow \nu\nu \rightarrow \nul\nu$, 
-and to predict ST neutrino masses $<$ 1 eV consistent with experimental evidence \cite{sumNuMassLimit}.  The high expected 
-\mnul resulted in large $\Delta R$ separations between the \nul decay products.  However, in QCD and other multi-jet background 
-events with a reconstructed lepton, the lepton was often a byproduct of hadronization, and was reconstructed near a jet but 
-not clustered into it.  The separation between leptons and jets, and the recoil of $\ell_{2}$ against $\ell_{1}$ motivated 
-the following additional event selections:
+The \WR decays to a ST charged lepton $\ell$ (mass $m_{\ell}$) and a \nul (mass \mnul), and the large expected difference 
+between their masses $m_{\ell}$ and \mnul motivated additional event selections.  As \mnul decreases towards the $Z$ boson 
+mass, mixing between left- and right-handed neutrinos increases, and producing events with a ST neutrino and a charged lepton 
+through $pp \rightarrow Z \rightarrow \nu\nu \rightarrow \nul\nu,\quad \nul \rightarrow \ell\WR^{*}$ becomes more likely.  
+Evidence of \nul production through this process has not been found in Run I or II data \cite{gammaZinvisResult,higgsInvisResultsRunIandII}, 
+so \mnul is expected to exceed the $Z$ boson mass, and thus $m_{\ell}$.  Due to this mass difference, the charged 
+lepton $\ell_{1}$ from $\WR \rightarrow \nul\ell_{1}$ recoils against the heavier \nul to conserve momentum.  Then, 
+the \nul decays to a second lepton $\ell_{2}$ and a dijet system $jj$, which recoil against each other.  As long as the \nul 
+momentum is not $\gtrsim$10$\times \mnul$, the recoil between the dijet system and $\ell_{2}$, on average, produces a 
+$\Delta R > 0.4$ separation between $\ell_{2}$ and both jets.  In addition, since $m_{\ell}$ is much less than \mnul and \mWR, 
+$\ell_{2}$ ($\ell_{1}$) is equally likely to be emitted in any direction relative to the \nul (\WR) momentum.  Therefore, in 
+approximately half of all \WR decays the angular separation between $\ell_{1}$ and $\ell_{2}$ in a plane that contains both of 
+their momentum vectors is greater than $\frac{\pi}{2}$, which means the dilepton mass $\Mll$ is greater than $\sqrt{2} p_{1}p_{2}$, 
+where $p_{i}$ is the momentum magnitude of $\ell_{i}$.  The final state leptons and jets are essentially massless with 
+respect to the \WR, so on average the lepton momentum magnitude sum is $p_{1} + p_{2} = \mWR / 2$, and the geometric mean of 
+lepton momentum magnitudes is $\mWR / \sqrt{8}$.  Thus, in approximately half of all \WR decays $\Mll$ is greater than $\mWR /2$.  
+In contrast, the two dominant backgrounds - \ttbar and \DY - produce more than 50\% of their $\ell\ell jj$ events with 
+$\Mll < 200$ $\GeV$, several hundred $\GeV$ below $\mWR / 2$ for the majority of signal mass hypotheses tested in the search 
+presented in this thesis.  In addition, in QCD multijet and W+jets background events where two leptons were reconstructed, 
+at least one lepton was often a byproduct of hadronization, and was reconstructed near but not clustered into a jet.  These 
+differences between the signal and ST backgrounds in the $\Mll$ and $\Delta R(\ell,j)$ variables motivated the following 
+additional event selections:
 
 \begin{itemize}
 	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
@@ -133,17 +140,17 @@ the following additional event selections:
 		two reconstructed electrons is shown on the top (bottom).  Both electrons are required to have $\pt > 33$ $\GeV$.}
 \end{figure}
 
-\begin{table}[h]
-	\caption{The fraction of simulated $\WR \rightarrow eejj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
-	\label{tab:wrMll}
-	\centering
-	\begin{tabular}{c|c}
-		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
-		1.0 &  88.  \\
-		2.0 &  98.  \\
-		3.0 &  99.  \\ \hline
-	\end{tabular}
-\end{table}
+%\begin{table}[h]
+%	\caption{The fraction of simulated $\WR \rightarrow eejj$ events with dilepton mass $\Mll > 200$ \GeV. ($\mnul = \frac{1}{2}\mWR$)}
+%	\label{tab:wrMll}
+%	\centering
+%	\begin{tabular}{c|c}
+%		\mWR (\TeV) & Fraction of events with high \Mll (\%) \\  \hline
+%		1.0 &  88.  \\
+%		2.0 &  98.  \\
+%		3.0 &  99.  \\ \hline
+%	\end{tabular}
+%\end{table}
 
 %\begin{figure}[btp]
 %	\centering
@@ -188,6 +195,7 @@ and $W+jets \rightarrow \ell\nu+jets$ that produced events where 2 leptons and 2
 and passed all selections.  \MC simulations of ST backgrounds and \WR signals were produced using the 
 following procedure:
 
+%RESUME HERE
 \begin{itemize}
 	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
 		colliding in a vacuum, and the particles produced by the interaction.
