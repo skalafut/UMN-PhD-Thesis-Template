@@ -10,6 +10,110 @@ the number of background events found in the $\Mlljj$ distribution, but did not 
 contributions of ST backgrounds to the $\Mlljj$ distribution found in data was estimated using procedures 
 described here.
 
+%RESUME HERE make a smooth transition from intro to MC section, and from MC section to DY bkgnd
+
+
+
+\section{Monte Carlo}
+\label{sec:MC}
+Monte Carlo (\MC) simulations were used to estimate the ST backgrounds, and to study lepton and jet kinematics 
+in $\WR \rightarrow \ell\ell jj$ events.  The ST backgrounds, primarily $Z+jets \rightarrow \ell\ell+jets$ and 
+$\ttbar+jets \rightarrow \ell\ell+jets$, produced events where 2 leptons and 2 jets were reconstructed and passed 
+all selections.  These backgrounds and \WR signals at different \mWR and \mnul hypotheses were estimated using 
+three step \MC simulations.
+
+In the first step an .
+
+%instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
+%each step, then move on to the next step
+
+\begin{itemize}
+	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
+		colliding in a vacuum, and the particles produced by the interaction.
+	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
+		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
+		and the detector response to particles.
+	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
+		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
+		algorithms used in data.
+\end{itemize}
+
+In step 1 the \MC generator also simulated the decay of unstable particles, and hadronized partons into jets.  
+Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
+Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
+was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
+pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
+simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
+3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
+
+The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
+differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
+dependent weight to every simulated event.
+
+\begin{table}[bt]
+\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
+	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching fraction of the process.}
+\label{tab:centrallyProducedMC}
+
+\centering
+\resizebox{\textwidth}{!}{
+	\begin{tabular}{ |c|c|c|c| } 
+	\hline
+	Dataset         & Step 1 Generator & cross section (pb) & Size (fb$^{-1}$)   \\
+		\hline
+		Inclusive DY+jets, $DY \rightarrow ll$ & \MADGRAPH   & 5991    & 1.51 \\ \hline
+		DY+jets HT 100-200, $DY \rightarrow ll$ & \MADGRAPH   & 181.3    & 15.0 \\ \hline
+		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42    & 19.3 \\ \hline
+		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984    & 153. \\ \hline
+		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704    & 369. \\ \hline
+		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
+		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 20.8 \\ \hline
+		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 24.3 \\ \hline
+		$\bar{t}$+W $\rightarrow$ all   & \POWHEG & 35.85 & 27.6 \\ \hline
+		t+W $\rightarrow$ all   & \POWHEG & 35.85 & 27.8 \\ \hline
+		WW $\rightarrow$ all  & \PYTHIA & 113.8   & 8.73   \\ \hline
+		ZZ $\rightarrow$ all  & \PYTHIA & 10.15   & 98.2   \\ \hline
+		WZ $\rightarrow$ all  & \PYTHIA & 23.4   & 41.8   \\ \hline
+		W+jets $\rightarrow l\nu$+jets & \MADGRAPH & 50270   & 1.44 \\ \hline
+		$\WR \rightarrow l\nul \rightarrow lljj$  & \PYTHIA & 1$\times 10^{-5}$ - 4.3 & 5$\times 10^{6}$ - 11.6   \\ \hline
+		\end{tabular}
+}
+\end{table}
+
+In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
+\MADGRAPH \cite{madgraph} generator simulated all leading order Feynman diagrams of an interaction with up to 4 
+additional radiated partons, which produced additional jets.  The effect of additional jets on the number of 
+events passing the selections described in Chapter \ref{sec:signalAndBkgndFeatures} was significant 
+only in high cross section ST backgrounds - $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and 
+$W \rightarrow \ell\nu$.  Although all ST background simulations would produce more events passing the 
+selections if additional radiated partons were simulated, other ST backgrounds had 
+cross sections $\times$ branching fractions to $\ell\ell jj$ final states that were much lower than those of $DY$, 
+$\ttbar$, and $W \rightarrow \ell\nu$; the contribution of other backgrounds to the total background after selections 
+was negligible, regardless of additional parton radiation.  Therefore, \MADGRAPH was used to simulate the $DY$, $\ttbar$, and 
+$W \rightarrow \ell\nu$ backgrounds with additional radiation partons, but was not used to simulate other backgrounds 
+for two reasons: the way \MADGRAPH simulated additional parton radiation made it one of the most time consuming generators, and 
+it only simulated interactions at leading order in the electroweak and strong coupling constants.  The cross sections 
+$\times$ branching fractions of other top and $\bar{t}$ quark backgrounds, like $\bar{t}$+W, to $\ell\ell jj$ final 
+states were sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
+was used to simulate these backgrounds.  The cross sections $\times$ branching fractions of diboson (WW, WZ, ZZ) backgrounds 
+to $\ell\ell jj$ final states were so low that the next-to-leading order electroweak corrections were irrelevant.  
+To save simulation time and computing resources, the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator 
+was used to simulate the diboson backgrounds.  In all simulations, \PYTHIA with the NNPDF23 PDF set \cite{nnpdf} 
+was also used to hadronize partons into jets.
+
+The \WR signal model assumes negligible mixing between left- and right-handed fermions, so the next-to-leading 
+order electroweak corrections have a negligible impact on the signal.  \PYTHIA was used to simulate the 
+\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
+stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
+
+Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
+signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
+full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
+At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
+datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
+hypotheses, and set \mWR and \mnul exclusion limits.
+
+
 
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
