@@ -209,34 +209,34 @@ Level-1 selection were reconstructed offline if they passed the following double
 	\end{itemize}
 \end{itemize}
 
-In the $\mu\mu$-channel, events were first selected by a Level-1 trigger that required a track in at least one muon DT or 
-CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection were reconstructed offline if they 
-passed the following single muon HLT selections:
+In the $\mu\mu$-channel, events were first selected by a Level-1 trigger that required a track segment in at least one muon DT or 
+CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection were reconstructed offline if they passed the 
+following single muon HLT selections:
 
-%RESUME HERE
 \begin{itemize}
 	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
-		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching reconstructed 
-		track:
+		the muon detector track segment that passed the L1 trigger.
+	\item For the muon detector track segment and the matching silicon tracker track:
 	\begin{itemize}
 		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least 
-			one muon detector hit with $\chi^{2}/nDOF < 20$.
+			one muon detector hit in the muon detector track segment with $\chi^{2}/nDOF < 20$.
 		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
 			reconstructed vertex was $< 1$ mm.
 	\end{itemize}
 \end{itemize}
 
-Simulated events used in either channel were required to pass the appropriate trigger.
-
 
 \section{Offline Muon Selection}
 \label{sec:muonSelection}
-Muon kinematic and identification (ID) selections were applied to select muons consistent 
-with those expected from \WR decays.  Each event was required to have two muons reconstructed with 
-$\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one with $\pt > 60$ $\GeV$.  
-Reducing the lower $\pt$ selection was explored, but was found to increase ST backgrounds without a corresponding increase 
-in \WR signal, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons passing kinematic requirements were selected with the 
-following ID selections:
+%RESUME HERE
+%include trigger pT turn-on curves to show that offline pt cuts are above trigger turn-on curves
+%also quote electron and muon energy resolutions in the selected kinematic region, see Offline Jet Selection section for an example
+
+Muon kinematic and identification (ID) selections were applied to select muons consistent with those expected from \WR decays.  Each 
+event was required to have two muons reconstructed with $\pt > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one with 
+$\pt > 60$ $\GeV$.  Reducing the lower $\pt$ selection was explored, but was found to increase ST backgrounds without a 
+corresponding increase in \WR signal, as shown in Table \ref{tab:lowerMuonPtCuts}.  Muons passing kinematic requirements 
+were selected with the following ID selections:
 
 \begin{itemize}
 	\item The muon track reconstructed in the silicon tracker:
@@ -246,9 +246,9 @@ following ID selections:
 		\item Within a cone of radius $\Delta R = 0.3$ centered on the track, the $\sum \pt$ of all other 
 			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{muon \pt} < 0.1$.
 	\end{itemize}
-	\item The muon was detected in at least 2 muon chambers.
-	\item The fitted track representing the estimated muon trajectory through all of CMS originated at a 
-		point that was within 2 (5) mm of the muon's reconstructed vertex in the $x-y$ plane ($z$ axis). 
+	\item The muon was reconstructed as a continuous track segment that spanned at least 2 muon chambers.
+	\item The fitted track originated at a point that was within 2 (5) mm of the muon's reconstructed vertex 
+		in the $x-y$ plane ($z$ axis). 
 	\item The muon momentum measurement included at least one muon chamber hit.
 	\item The error on the muon momentum measurement, $\sigma(\pt)$, was less than 30\% of the muon $\pt$, 
 		$\sigma(\pt)/\pt < 0.3$.
@@ -280,14 +280,12 @@ every event.
 
 \section{Offline Electron Selection}
 \label{sec:electronSelection}
-Electron kinematic and ID selections were applied to select electrons 
-consistent with those expected from \WR decays.  Each event was required to have two electrons reconstructed 
-with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least one with $\Et > 60$ $\GeV$.  
-Electrons passing kinematic requirements were selected with the following ID selections:
+Electron kinematic and ID selections were applied to select electrons consistent with those expected from \WR decays.  
+Each event was required to have two electrons reconstructed with $\Et > 53$ $\GeV$ and $|\eta| < 2.4$, and at least 
+one with $\Et > 60$ $\GeV$.  Electrons passing kinematic requirements were selected with the following ID selections:
 
 \begin{itemize}
-	\item Electrons were ignored if they were reconstructed in the dead zone separating the ECAL barrel and 
-		endcap detectors, $1.44 < |\eta| < 1.57$.
+	\item Electrons reconstructed in the region $1.44 < |\eta| < 1.57$ were ignored.
 	\item For endcap electrons, at least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
 	\item For barrel electrons, at least 94\% (83\%) of the SC energy was measured in a region 2 (1) crystals wide 
 		in $\eta$.
@@ -312,18 +310,19 @@ electrons were selected.
 
 The efficiencies of electron reconstruction and ID selections\footnote{The electron trigger efficiency was the same 
 in data and simulated events within its statistical uncertainty.} differed between simulations and data, and, similar 
-to muons, the differences were corrected by applying multiplicative weights to simulated events.  Fixed value reconstruction 
-and ID weights were calculated for electrons with $\Et > 53$ $\GeV$, inclusive of $\eta$.  The reconstruction 
+to muons, the differences were corrected by applying multiplicative weights to simulated events.  Fixed value 
+reconstruction and ID weights were calculated for electrons with $\Et > 53$ $\GeV$, inclusive of $\eta$.  The reconstruction 
 weight, 0.982 (1.8\% decrease), and the ID weight, 0.989 (1.1\% decrease), were applied twice to every event.
 
 
 \section{Offline Jet Selection}
 \label{sec:jetSelection}
-Jet kinematic and ID selections were applied to select jets consistent 
-with those expected from \WR decays.  Each event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ 
-and $|\eta| < 2.4$.  Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds 
-without a corresponding increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic 
-requirements were selected with the following ID selections:
+Jet kinematic and ID selections were applied to select jets consistent with those expected from \WR decays.  Each 
+event was required to have two jets reconstructed with $\pt > 40$ $\GeV$ and $|\eta| < 2.4$ to mitigate ST backgrounds 
+and to use jets whose $\pt$s were measured with a resolution better than 13\% \cite{jetResolutionInCollisions}.  
+Reducing the $\pt$ selection on one jet was explored, but was found to increase ST backgrounds without a corresponding 
+increase in \WR signal, as shown in Table \ref{tab:lowerJetPtCuts}.  Jets passing kinematic requirements were selected 
+with the following ID selections:
 
 \begin{itemize}
 	\item The jet had at least 2 constituents.
@@ -350,7 +349,7 @@ requirements were selected with the following ID selections:
 If an event contained more than two jets passing all kinematic and ID selections, the two highest $\pt$ jets were selected.
 
 The efficiencies of jet reconstruction and ID selections were the same in data and simulated events within uncertainties, so 
-no additional corrective weights were needed.
+no corrective weights were needed.
 
 
 \section{\WR Candidate Selection}
