@@ -8,7 +8,7 @@
 The LRS model predicts the existence of a \WR and \nul that decay to two charged leptons and two jets, all with 
 high transverse energy.  Using the 2.6 fb$^{-1}$ \cite{lumi} of data recorded by CMS from September through November 
 2015, evidence of a \WR and \nul was searched for as an excess of events in data with $eejj$ and $\mu\mu jj$ final 
-states above the predicted backgrounds - \DY, \ttbar, W+jets, diboson processes, and QCD - and their uncertainties.  
+states above the predicted backgrounds - \DY, top quark processes, W+jets, diboson processes, and QCD - and their uncertainties.  
 The selections applied to data events were developed based on differences in lepton and jet kinematic distributions 
 between \WR signal and background events.
 
@@ -30,7 +30,7 @@ lepton and jet kinematics between signal and background events motivated the fol
 	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one with $\pt > 60$ $\GeV$.
 	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
 	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
-	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets exceeded $\Mlljj > 600$ $\GeV$.
+	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets was greater than 600 $\GeV$.
 \end{itemize}
 
 The \WR decays to a ST charged lepton $\ell$ (mass $m_{\ell}$) and a \nul (mass \mnul), and the large expected difference 
@@ -49,7 +49,7 @@ their momentum vectors is greater than $\frac{\pi}{2}$, which means the dilepton
 where $p_{i}$ is the momentum magnitude of $\ell_{i}$.  The final state leptons and jets are massless with 
 respect to the \WR, so on average the lepton momentum magnitude sum is $p_{1} + p_{2} = \mWR / 2$, and the geometric mean of 
 lepton momentum magnitudes is $\mWR / \sqrt{8}$.  Thus, in approximately half of all \WR decays $\Mll$ is greater than $\mWR /2$.  
-In contrast, the two dominant backgrounds - \ttbar and \DY - produce more than 50\% of their $\ell\ell jj$ events with 
+In contrast, the two dominant backgrounds - \DY and top quark processes - produce more than 50\% of their $\ell\ell jj$ events with 
 $\Mll < 200$ $\GeV$, several hundred $\GeV$ below $\mWR / 2$ for the majority of signal mass hypotheses tested in the search 
 presented in this thesis.  In addition, in QCD multijet and W+jets background events where two leptons were reconstructed, 
 at least one lepton was often a byproduct of hadronization, and was reconstructed near but not clustered into a jet.  These 
@@ -58,7 +58,7 @@ additional event selections:
 
 \begin{itemize}
 	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
-	\item The dilepton mass $\Mll$ of the two reconstructed leptons exceeded $\Mll > 200$ $\GeV$.
+	\item The dilepton mass $\Mll$ of the two reconstructed leptons was greater than 200 $\GeV$.
 \end{itemize}
 
 
@@ -386,8 +386,8 @@ a candidate was selected using the following kinematic requirements:
 
 \begin{itemize}
 	\item Each selected lepton was separated from the other selected lepton and both jets by $\Delta R > 0.4$.
-	\item The dilepton mass $\Mll$ of the two selected leptons was $> 200$ $\GeV$.
-	\item The invariant mass $\Mlljj$ of the selected leptons and jets was $> 600$ $\GeV$.
+	\item The dilepton mass $\Mll$ of the two selected leptons was greater than 200 $\GeV$.
+	\item The invariant mass $\Mlljj$ of the selected leptons and jets was greater than 600 $\GeV$.
 \end{itemize}
 
 The total efficiency of trigger, kinematic, and ID selections in \WR signal events increased with \mWR, and, as shown in 
@@ -398,33 +398,35 @@ applied to electrons relative to muons.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
-	\caption{The full selection efficiency in $\WR \rightarrow \ell\ell jj$ events, in the $ee$-channel ($\mu\mu$-channel) 
+	\caption{The full selection efficiency in simulated $\WR \rightarrow \ell\ell jj$ events, in the $ee$-channel ($\mu\mu$-channel) 
 		on the left (right).  Different curves represent events where both leptons are in the barrel (BB), one was in the 
 	endcap (EB), or both were in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 
 After all selections were applied, evidence of a \WR and \nul was searched for as an excess of events over predicted backgrounds 
-in one kinematic variable distribution.  A \WR and \nul produces an excess in the distributions of many kinematic variables, including 
-the lepton and jet energy and invariant mass variables used to select events.  However, the position and shape of the resulting 
-excess in all kinematic variable distributions is sensitive to the unknown \mnul, as well as \mWR.  By construction the shape of 
-the $\Mlljj$ distribution excess has negligible sensitivity to \mnul, and the excess is centered at \mWR.  For these reasons evidence 
-of a \WR and \nul was searched for as an excess above predicted backgrounds in the $\Mlljj$ distribution.
+in one kinematic variable distribution.  A \WR and \nul produce an excess in the distributions of many kinematic variables, including 
+the lepton and jet energy and invariant mass variables used to select events.  However, the resulting excess in every kinematic variable 
+distribution has a shape and peak position that are sensitive to the unknown \mnul, as well as \mWR.  At a given \mWR these sensitivities 
+exist because $\sigma(\WR \rightarrow \ell\nul)$, and the energies of and separations between final state leptons and jets depend 
+on \mnul.  These sensitivities are minimzed for the $\Mlljj$ variable.  A \WR and \nul produce an excess in the 
+$\Mlljj$ distribution whose peak position is \mWR for any \mnul, and whose shape varies with \mnul only because 
+$\sigma(\WR \rightarrow \ell\nul)$ depends on \mnul.  For these reasons evidence of a \WR and \nul was searched for as an excess 
+above predicted backgrounds in the $\Mlljj$ distribution.
 
-Events from ST backgrounds that passed all selections produced a $\Mlljj$ distribution that decreased rapidly with increasing 
-$\Mlljj$, as shown in Figure \ref{fig:mlljjVariableOfMerit}.  Before searching for evidence of a \WR and \nul in the data, the 
-$\Mlljj$ distribution from all backgrounds was predicted using data and simulated events in control regions.  In the control 
-regions data and simulated events were expected to agree, and, based on the Run I search results and the assumption of lepton 
-flavor conservation in $\WR \rightarrow \ell\nul$, no sign of a \WR and \nul was expected.
+Before searching for evidence of a \WR and \nul in the $\Mlljj$ distribution found in data, the $\Mlljj$ distribution for all 
+backgrounds was predicted using data and simulated events in control regions.  In the control regions data and simulated events were 
+expected to agree, and, based on the prior search results \cite{cmsWRRunOneResults} and the assumption of lepton flavor conservation 
+in $\WR \rightarrow \ell\nul$ decays, no sign of a \WR and \nul was expected.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
-	\caption{The $\Mlljj$ distribution from simulated ST backgrounds and a \WR signal in the $ee$-channel.  
-		The \WR signal normalization is reduced by 70\% to better visualize the difference 
-	between the signal and expected backgrounds.}
-	\label{fig:mlljjVariableOfMerit}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{figures/useOfLLJJMassAsFigureOfMerit.pdf}
+%	\caption{The $\Mlljj$ distribution from simulated ST backgrounds and a \WR signal in the $ee$-channel.  
+%		The \WR signal normalization is reduced by 70\% to better visualize the difference 
+%	between the signal and expected backgrounds.}
+%	\label{fig:mlljjVariableOfMerit}
+%\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
