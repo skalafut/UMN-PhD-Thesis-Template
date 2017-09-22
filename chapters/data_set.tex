@@ -17,18 +17,45 @@ protons was simulated at the Feynman diagram level, then the detector response t
 simulated, and finally the trigger and offline particle reconstruction algorithms were run using the simulated detector 
 response.
 
-In the first step one or two \MC generators simulated the hard interaction, like $pp \rightarrow \WR \rightarrow \ell\ell jj$, 
-between protons colliding in a vacuum, the decay of unstable particles, and the hadronization of final state partons 
-into jets.  Partons were always hadronized into jets using the \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, but 
-different generators were used based on their respective strengths and characteristics of the hard interaction that was 
-simulated.  The \MADGRAPH generator \cite{madgraph}.
+In the first step one \MC generator simulated the hard interaction, like $pp \rightarrow \WR \rightarrow \ell\ell jj$, 
+between protons colliding in a vacuum and the decay of unstable particles; also, final state partons were hadronized 
+into jets, possibly using a second \MC generator.  Partons were always hadronized into jets using the \PYTHIA generator 
+\cite{pythia8,Sjostrand:2006za}, but different generators simulated different hard interactions based on their respective 
+strengths and the hard interaction characteristics.  The \MADGRAPH generator \cite{madgraph} simulated all leading 
+order Feynman diagrams of a hard interaction with up to 4 additional radiated partons, which produced additional jets.  
+As simulations only approximate the jet spectrum of ST background events found in data, simulating more jets was expected 
+to yield a better prediction of the $\Mlljj$ distribution of any background.  However, simulating more than 1 additional 
+radiated parton decreased the cross section $\times$ branching ratio to $\ell\ell jj$ final states by the QCD coupling 
+strength squared, $\alpha_{QCD}^{2}$, or more.  For this reason, \MADGRAPH was only used to simulate large cross section ST 
+backgrounds - \DY, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  In contrast with the \MADGRAPH generator, 
+the \POWHEG generator \cite{powheg} simulated all Feynman diagrams of a hard interaction at leading (LO) and next-to-leading (NLO) 
+order in the electroweak and QCD coupling strengths, but with either zero or one additional radiated partons.  The cross 
+sections $\times$ branching ratios of single t or $\bar{t}$ quark processes, like $\bar{t}$+W, to leptonic final states change 
+by 7\% or more when going from LO to NLO \cite{singleTopNLOvsLO}, so the \POWHEG generator was used to simulate single 
+t or $\bar{t}$ quark backgrounds.  .
+
+%RESUME HERE
+
+%selections if additional radiated partons were simulated, other ST backgrounds had 
+%cross sections $\times$ branching fractions to $\ell\ell jj$ final states that were much lower than those of $DY$, 
+%$\ttbar$, and $W \rightarrow \ell\nu$; the contribution of other backgrounds to the total background after selections 
+%was negligible, regardless of additional parton radiation.  Therefore, \MADGRAPH was used to simulate the $DY$, $\ttbar$, and 
+%$W \rightarrow \ell\nu$ backgrounds with additional radiation partons, but was not used to simulate other backgrounds 
+%for two reasons: the way \MADGRAPH simulated additional parton radiation made it one of the most time consuming generators, and 
+%it only simulated interactions at leading order in the electroweak and strong coupling constants.  The cross sections 
+%$\times$ branching fractions of other top and $\bar{t}$ quark backgrounds, like $\bar{t}$+W, to $\ell\ell jj$ final 
+%states were sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
+%was used to simulate these backgrounds.  The cross sections $\times$ branching fractions of diboson (WW, WZ, ZZ) backgrounds 
+%to $\ell\ell jj$ final states were so low that the next-to-leading order electroweak corrections were irrelevant.  
+%To save simulation time and computing resources, the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator 
+%was used to simulate the diboson backgrounds.  In all simulations, \PYTHIA with the NNPDF23 PDF set \cite{nnpdf} 
+%was also used to hadronize partons into jets.
 
 
-%POWHEG generator \cite{powheg}
+
 %instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
 %each step, then move on to the next step
 
-%RESUME HERE
 
 \begin{itemize}
 	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
