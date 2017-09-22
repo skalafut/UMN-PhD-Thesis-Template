@@ -1,31 +1,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % data_set.tex:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Background Estimation}
+\chapter{Signal and Background Estimation}
 \label{sec:backgroundEstimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Data used in the $ee$- and $\mu\mu$-channel searches contained events produced by ST backgrounds.  
-Applying the event selection described in Chapter \ref{sec:event_selection_chapter} to data reduced 
-the number of background events found in the $\Mlljj$ distribution, but did not eliminate them completely.  The 
-contributions of ST backgrounds to the $\Mlljj$ distribution found in data was estimated using procedures 
-described here.
-
-%RESUME HERE make a smooth transition from intro to MC section, and from MC section to DY bkgnd
-
+The $\Mlljj$ distribution found in data after all selections contained events from ST backgrounds, and an unknown 
+number of \WR signal events.  The contribution of ST backgrounds to the $\Mlljj$ distribution found in data, and the 
+$\Mlljj$ distribution of a \WR signal was predicted using the procedures and the Monte Carlo simulations described here.
 
 
 \section{Monte Carlo}
 \label{sec:MC}
-Monte Carlo (\MC) simulations were used to estimate the ST backgrounds, and to study lepton and jet kinematics 
-in $\WR \rightarrow \ell\ell jj$ events.  The ST backgrounds, primarily $Z+jets \rightarrow \ell\ell+jets$ and 
-$\ttbar+jets \rightarrow \ell\ell+jets$, produced events where 2 leptons and 2 jets were reconstructed and passed 
-all selections.  These backgrounds and \WR signals at different \mWR and \mnul hypotheses were estimated using 
-three step \MC simulations.
+The signal and background contributions to the $\Mlljj$ distribution found in data were predicted using events produced 
+by Monte Carlo (\MC) simulations.  Events were simulated in three steps.  First the hard interaction between colliding 
+protons was simulated at the Feynman diagram level, then the detector response to all final state particles was 
+simulated, and finally the trigger and offline particle reconstruction algorithms were run using the simulated detector 
+response.
 
-In the first step an .
+In the first step one or two \MC generators simulated the hard interaction, like $pp \rightarrow \WR \rightarrow \ell\ell jj$, 
+between protons colliding in a vacuum, the decay of unstable particles, and the hadronization of final state partons 
+into jets.  Partons were always hadronized into jets using the \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, but 
+different generators were used based on their respective strengths and characteristics of the hard interaction that was 
+simulated.  The \MADGRAPH generator \cite{madgraph}.
 
+
+%POWHEG generator \cite{powheg}
 %instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
 %each step, then move on to the next step
+
+%RESUME HERE
 
 \begin{itemize}
 	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
@@ -66,7 +69,7 @@ dependent weight to every simulated event.
 		DY+jets HT 200-400, $DY \rightarrow ll$ & \MADGRAPH   & 50.42    & 19.3 \\ \hline
 		DY+jets HT 400-600, $DY \rightarrow ll$ & \MADGRAPH   & 6.984    & 153. \\ \hline
 		DY+jets HT $>$ 600, $DY \rightarrow ll$ & \MADGRAPH   & 2.704    & 369. \\ \hline
-		\ttbar+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
+		t$\bar{t}$+jets $\rightarrow ll$+jets & \MADGRAPH  & 85.67    & 286. \\ \hline
 		single t $\rightarrow$ leptons+jets  & \POWHEG & 80.95 & 20.8 \\ \hline
 		single $\bar{t}$ $\rightarrow$ leptons+jets & \POWHEG & 136.0 & 24.3 \\ \hline
 		$\bar{t}$+W $\rightarrow$ all   & \POWHEG & 35.85 & 27.6 \\ \hline
