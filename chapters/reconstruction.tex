@@ -23,15 +23,42 @@ measurements are made using tracks reconstructed from signals measured in the si
 
 \section{Track Reconstruction}
 \label{sec:trkReco}
+Charged particles are reconstructed as helical tracks from signals in the silicon tracker.  An interative algorithm 
+reconstructs tracks from the highest energy signals and signals closest to the IP, and progressively includes outer layer 
+signals using a Kalman filter to link signals in successive layers.  Signals in succesive layers are linked only if they 
+pass a $\chi^{2} =$ 30 threshold \cite{trackerPerformanceInCollisions}, and during linking it is assumed that particles do 
+not lose more than a few percent of their initial energy when traversing the entire tracker.  Upon reaching the outermost 
+tracker layer, the collection of signals linked into continuous helical tracks are removed from the list of track candidates, 
+and the algorithm restarts using signals in the innermost pixel layers that have lower energy or are further from the IP.  Isolated muons 
+were used to estimate the tracker reconstruction efficiency; and those with $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ 
+were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  After reconstructing all 
+tracks, each point where two or more tracks originated is identified as an interaction vertex, and its position relative 
+to the IP is measured.  Again muons were used to estimate the tracker vertex resolution; for muons reconstructed with 
+$|\eta| < 1.4$, $\pt = 100$ $\GeV$ and associated with a vertex, the vertex position relative to the IP was measured 
+with 10 and 30 $\mu$m resolutions in the transverse (r-$\phi$) and longitudinal ($z$) directions.
 
-%RESUME HERE
+Tracks from muons and charged hadrons are reconstructed as described previously, but a second track reconstruction 
+algorithm was used to reconstruct electron tracks.  The silicon tracker contains, depending on $\eta$, 1 to 2 radiation 
+lengths of material, and $\sim$35\% of electrons that traverse the tracker lose more than 70\% of their initial energies 
+through bremsstrahlung \cite{trackerPerformanceInCollisions}.  The electron track reconstruction algorithm differs from 
+the muon and charged hadron track algorithm in that it models the electron energy loss in successive silicon layers 
+as a sum of multiple Gaussians, and requires that signals in successive layers have $\chi^{2} =$ 2000 or better to create 
+a link.  Electrons traversing the tracker lose energy that cannot be measured by the tracker, but, by using this second 
+track reconstruction algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed as a track 
+matched to an ECAL energy deposit with an efficiency of 97\% or better \cite{gsfPerformanceInCollisions}.
+
 
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
 
+%RESUME HERE
+
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
+%from \cite{trackerPerformanceInCollisions}
+%muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\%.
+
 Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
 by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
 using a Kalman filter to link signals between successive layers.  Once the algorithm reached the outermost tracker 
@@ -123,7 +150,7 @@ in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals w
 was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weighted average position of all crystals 
 in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
 an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
-track to within 1.1$^{\circ}$, about 60 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
+track to within 1.1$^{\circ}$, about 6 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
 crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
 resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
 $|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
