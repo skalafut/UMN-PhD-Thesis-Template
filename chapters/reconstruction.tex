@@ -5,11 +5,13 @@
 \label{sec:reco_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Electrons, muons and jets expected from \WR and \nul decays traversed multiple CMS sub-detectors, 
-as shown in Figure \ref{fig:particleTrajectories}.  Their trajectories and energies were measured 
-from charged particle tracks reconstructed by the silicon tracker, and energy deposits reconstructed 
-by the calorimeters and the muon detectors.  The high energy of expected leptons and jets motivated 
-the use of specific lepton and jet reconstruction algorithms described herein.
+Electrons, muons and jets expected from \WR and \nul decays traverse multiple CMS sub-detectors, as shown in 
+Figure \ref{fig:particleTrajectories}.  Their trajectories and energies were measured from charged particle tracks 
+reconstructed by the silicon tracker and muon detectors, and energy deposits reconstructed by the calorimeters.  The 
+high energy of expected leptons and jets motivated the use of specific lepton and jet reconstruction algorithms 
+described here.  These algorithms combine measurements from multiple CMS sub-detectors to measure the trajectory 
+and energy of each particle with the best resolution.  For charged particles, initial energy and trajectory 
+measurements are made using tracks reconstructed from signals measured in the silicon tracker.
 
 \begin{figure}[h]
 	\centering
@@ -19,22 +21,31 @@ the use of specific lepton and jet reconstruction algorithms described herein.
 \end{figure}
 
 
+\section{Track Reconstruction}
+\label{sec:trkReco}
+
+%RESUME HERE
+
+\section{Energy Reconstruction}
+\label{sec:enrgReco}
+
+
 \section{Muon Reconstruction}
 \label{sec:muReco}
-Muons were first reconstructed as tracks from hits in the silicon tracker.  An interative algorithm started 
-by reconstructing tracks from the highest energy hits and hits closest to the IP, and progressed to outer layers 
-using a Kalman filter to link hits between successive layers.  Once the algorithm reached the outermost tracker 
-layer the hits associated with tracks were removed from the list of track candidates, and a new iteration of track 
-reconstruction started with hits in the innermost pixel layers that had lower energy or were further 
+Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
+by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
+using a Kalman filter to link signals between successive layers.  Once the algorithm reached the outermost tracker 
+layer the signals associated with tracks were removed from the list of track candidates, and a new iteration of track 
+reconstruction started with signals in the innermost pixel layers that had lower energy or were further 
 from the IP.  It was assumed that the magnetic field was uniform, so tracks were reconstructed as perfect helixes 
-from hits in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
+from signals in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
 as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
 $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
 Muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ and their vertices were measured with resolutions of approximately 
 2.8\% in $\pt$, and 10 and 30 $\mu$m in transverse and longitudinal distances from the IP.  Muon trajectories and 
 initial energies were determined by tracker measurements, and their energies were refined by muon detector measurements.
 
-After traversing the calorimeters and the magnet, muons were reconstructed as tracks from hits in muon detector chambers.  
+After traversing the calorimeters and the magnet, muons were reconstructed as tracks from signals in muon detector chambers.  
 First, local reconstruction was run to build track segments in individual chambers, then an iterative track 
 reconstruction algorithm built continuous tracks from multiple segments.  The muon track reconstruction algorithm started 
 with track segments in the inner muon chambers, then iterated outward and built longer tracks across multiple chambers 
@@ -49,7 +60,7 @@ Tracks reconstructed in the muon detectors were extrapolated back to the outermo
 plane of the silicon strip each reconstructed muon was identified as a muon detector track that matched a silicon 
 tracker track to within 3 cm.  After reconstruction, the $\pt$ of each muon was calculated using the following procedure.  
 Four muon reconstruction algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon 
-detector hits to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  Each 
+detector signals to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  Each 
 algorithm combined muon detector and silicon tracker measurements in a different way, and could exclude measurements with 
 large uncertainty.  The quality of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum 
 uncertainty $\sigma(\pt)/\pt$.  The track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ was 
@@ -97,7 +108,7 @@ algorithm.  The fractional energy lost by electrons traversing a tracker layer t
 have a distribution described by the Bethe-Heitler formula, and this energy loss was approximated as a sum of 
 several Gaussians in the electron track reconstruction algorithm.  The electron algorithm was otherwise identical to 
 the muon track reconstruction algorithm, except that the $\chi^{2}$ threshold used to 
-associate tracker hits with a trajectory was loosened from 30 to 2000 \cite{trackerPerformanceInCollisions}.  This 
+associate tracker signals with a trajectory was loosened from 30 to 2000 \cite{trackerPerformanceInCollisions}.  This 
 facilitated the reconstruction of electron tracks whose trajectories deviated from expectations due to bremsstrahlung.  
 Bremsstrahlung increased the uncertainty of electron position and energy measurements made by the tracker relative to 
 measurements made by the ECAL, so the kinematics of electrons expected from \WR decays was measured using the ECAL.
