@@ -42,14 +42,48 @@ algorithm was used to reconstruct electron tracks.  The silicon tracker contains
 lengths of material, and $\sim$35\% of electrons that traverse the tracker lose more than 70\% of their initial energies 
 through bremsstrahlung \cite{trackerPerformanceInCollisions}.  The electron track reconstruction algorithm differs from 
 the muon and charged hadron track algorithm in that it models the electron energy loss in successive silicon layers 
-as a sum of multiple Gaussians, and requires that signals in successive layers have $\chi^{2} =$ 2000 or better to create 
-a link.  Electrons traversing the tracker lose energy that cannot be measured by the tracker, but, by using this second 
-track reconstruction algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed as a track 
-matched to an ECAL energy deposit with an efficiency of 97\% or better \cite{gsfPerformanceInCollisions}.
+as a sum of multiple Gaussians, and requires that signals in successive layers have $\chi^{2} =$ 2000 or better before a 
+link is made.  Electrons traversing the tracker lose energy that cannot be measured by the tracker, but, by using a 
+dedicated electron track reconstruction algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed 
+in the tracker with an efficiency of 97\% or better \cite{gsfPerformanceInCollisions}.
 
 
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
+The total energies of photons and electrons, and partial energies of hadrons produced by pp interactions are measured 
+in the ECAL.  Photons, electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are 
+converted into $\Et$ measurements.  The upstream tracker material causes $\sim$35\% .
+
+
+%After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
+%electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
+%into the ECAL was deposited over a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
+%total energy was usually deposited over a larger area.  To measure the total energy of each electron, ECAL energy deposits 
+%were reconstructed in superclusters (SCs) centered on the most energetic crystal, and were 3 or more crystals wide 
+%in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals wide in $\phi$, as shown in Figure 
+%\ref{fig:eleTrackAndSC}, to measure the energy lost by electrons through bremsstrahlung in the tracker.  Once a SC 
+%was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weighted average position of all crystals 
+%in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
+%an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
+%track to within 1.1$^{\circ}$, about 6 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
+%crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
+%resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
+%$|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
+%for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17$^{\circ}$ (0.29$^{\circ}$) in 
+%$\phi$, and 0.001 (0.002) units in $\eta$.
+
+%Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
+%Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
+%were reconstructed in the ECAL as superclusters that did not overlap in $(\eta,\phi)$ with any energy deposits measured 
+%in the HCAL, and were separated from any reconstructed track by at least 1.1$^{\circ}$ in $\phi$ and 1 ECAL crystal in $\eta$.  
+%Charged and neutral hadrons were reconstructed in the HCAL as individual or multiple neighboring towers, and were 
+%reconstructed in the ECAL as superclusters that overlapped with the HCAL towers \cite{pflowJetRecoInCollisions}.  Each 
+%charged hadron was identified as a track, reconstructed as described for muons in Section \ref{sec:muReco}, that extrapolated 
+%to the $(\eta,\phi)$ area of the ECAL SC or at least one of the HCAL towers.  Each neutral hadron was identified as an HCAL 
+%energy cluster, and possibly an ECAL SC, that did not overlap with any reconstructed track in $(\eta,\phi)$.  After 
+%individual particles were reconstructed, jets were built from clusters of individual particles, as shown in Figure 
+%\ref{fig:jetClustering}.
+
 
 %RESUME HERE
 
