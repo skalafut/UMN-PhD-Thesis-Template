@@ -23,11 +23,20 @@ measurements are made using tracks reconstructed from signals measured in the si
 
 \section{Track Reconstruction}
 \label{sec:trkReco}
-Charged particles are reconstructed as helical tracks from signals in the silicon tracker.  An interative algorithm 
-reconstructs tracks from the highest energy signals and signals closest to the IP, and progressively includes outer layer 
-signals using a Kalman filter to link signals in successive layers.  Signals in succesive layers are linked only if they 
-pass a $\chi^{2} =$ 30 threshold \cite{trackerPerformanceInCollisions}, and during linking it is assumed that particles do 
-not lose more than a few percent of their initial energy when traversing the entire tracker.  Upon reaching the outermost 
+Charged particles are reconstructed as helical tracks from signals measured in the silicon tracker.  An interative algorithm 
+starts by reconstructing tracks from signals in the inner pixel tracker characterized by the highest energies or smallest 
+distances from the IP, and progressively includes signals measured in outer pixel tracker and silicon strip tracker layers.  
+Signals in successive layers are linked into continuous tracks using a Kalman filter that requires each signal to have 
+$\chi^{2} \leq$ 30 \cite{trackerPerformanceInCollisions}.  Each time a new signal is added to a track, an analytic function 
+extrapolates the track trajectory to the next layer assuming energy is lost only through ionization in the silicon.  Hits in 
+the next layer are searched for in the region identified by the analytic function extrapolation, and this procedure repeats 
+until signals are included from the outermost silicon strip tracker layer.  Then, the signals linked into tracks are removed 
+from the list of track candidates, and the algorithm restarts using signals measured in the inner pixel tracker characterized 
+by lower energies or larger distances from the IP.  Using this algorithm, the .
+
+%RESUME HERE
+
+lose negligible energy when traversing the entire tracker.  Upon reaching the outermost 
 tracker layer, the collection of signals linked into continuous helical tracks are removed from the list of track candidates, 
 and the algorithm restarts using signals in the innermost pixel layers that have lower energy or are further from the IP.  Isolated muons 
 were used to estimate the tracker reconstruction efficiency; and those with $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ 
@@ -37,26 +46,32 @@ to the IP is measured.  Again muons were used to estimate the tracker vertex res
 $|\eta| < 1.4$, $\pt = 100$ $\GeV$ and associated with a vertex, the vertex position relative to the IP was measured 
 with 10 and 30 $\mu$m resolutions in the transverse (r-$\phi$) and longitudinal ($z$) directions.
 
-Tracks from muons and charged hadrons are reconstructed as described previously, but a second track reconstruction 
-algorithm was used to reconstruct electron tracks.  The silicon tracker contains, depending on $\eta$, 1 to 2 radiation 
-lengths of material, and $\sim$35\% of electrons that traverse the tracker lose more than 70\% of their initial energies 
-through bremsstrahlung \cite{trackerPerformanceInCollisions}.  The electron track reconstruction algorithm differs from 
-the muon and charged hadron track algorithm in that it models the electron energy loss in successive silicon layers 
-as a sum of multiple Gaussians, and requires that signals in successive layers have $\chi^{2} =$ 2000 or better before a 
-link is made.  Electrons traversing the tracker lose energy that cannot be measured by the tracker, but, by using a 
-dedicated electron track reconstruction algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed 
-in the tracker with an efficiency of 97\% or better \cite{gsfPerformanceInCollisions}.
+The track reconstruction algorithm described previously is used to reconstruct muon and charged hadron tracks, but a second 
+algorithm is used to reconstruct electron tracks.  The silicon tracker contains, depending on $\eta$, 1 to 2 radiation 
+lengths of material.  As a result, $\sim$35\% of electrons that traverse the tracker lose more than 70\% of their initial energies 
+through bremsstrahlung \cite{trackerPerformanceInCollisions}, which cannot be measured by the tracker.  Using the iterative 
+track reconstruction procedure described previously, the electron track reconstruction algorithm builds tracks starting 
+with signals from the inner tracker layers, and works outward to include signals with similar or lower energies.  The 
+algorithm models the electron energy loss in successive silicon layers as a sum of multiple Gaussians, and requires that 
+signals in successive layers have $\chi^{2} \leq$ 2000 before a link is made.  By using this electron track reconstruction 
+algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed in the tracker with an efficiency of 97\% 
+or better \cite{gsfPerformanceInCollisions}.
 
 
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
-The total energies of photons and electrons, and partial energies of hadrons produced by pp interactions are measured 
-in the ECAL.  Photons, electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are 
-converted into $\Et$ measurements.  The upstream tracker material causes $\sim$35\% of electrons with $|\eta| < 2.5$ to 
-lose .
+The ec
+
+%The total energies of photons and electrons, and the partial energies of hadrons produced by pp interactions are measured 
+%in the ECAL.  Photons, electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are 
+%converted into $\Et$ measurements.  The upstream tracker material causes $\sim$35\% of electrons with $|\eta| < 2.5$ to 
+%lose .
+
 
 %what fraction of photons produced at the IP convert into e+e- pairs in the tracker?
-%
+%depending on pt and eta (more likely for higher pt or eta), up to 25\% of charged pions experience a nuclear 
+%interaction in the tracker \cite{trackerPerformanceInCollisions}
+
 
 %After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
 %electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
@@ -87,8 +102,6 @@ lose .
 %individual particles were reconstructed, jets were built from clusters of individual particles, as shown in Figure 
 %\ref{fig:jetClustering}.
 
-
-%RESUME HERE
 
 
 \section{Muon Reconstruction}
@@ -213,6 +226,9 @@ with every event.
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
+%remember that the particle flow algorithm also removes macroscopic particles from the list of jet candidates once they 
+%are associated with a jet
+
 Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
 Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
 were reconstructed in the ECAL as superclusters that did not overlap in $(\eta,\phi)$ with any energy deposits measured 
