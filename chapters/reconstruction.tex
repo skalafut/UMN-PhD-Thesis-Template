@@ -27,40 +27,33 @@ Charged particles are reconstructed as helical tracks from signals measured in t
 starts by reconstructing tracks from signals in the inner pixel tracker characterized by the highest energies or smallest 
 distances from the IP, and progressively includes signals measured in outer pixel tracker and silicon strip tracker layers.  
 Signals in successive layers are linked into continuous tracks using a Kalman filter that requires each signal to have 
-$\chi^{2} \leq$ 30 \cite{trackerPerformanceInCollisions}.  Each time a new signal is added to a track, an analytic function 
+$\chi^{2} <$ 30 \cite{trackerPerformanceInCollisions}.  Each time a new signal is added to a track, an analytic function 
 extrapolates the track trajectory to the next layer assuming energy is lost only through ionization in the silicon.  Hits in 
 the next layer are searched for in the region identified by the analytic function extrapolation, and this procedure repeats 
 until signals are included from the outermost silicon strip tracker layer.  Then, the signals linked into tracks are removed 
 from the list of track candidates, and the algorithm restarts using signals measured in the inner pixel tracker characterized 
-by lower energies or larger distances from the IP.  Using this algorithm, the .
-
-%RESUME HERE
-
-lose negligible energy when traversing the entire tracker.  Upon reaching the outermost 
-tracker layer, the collection of signals linked into continuous helical tracks are removed from the list of track candidates, 
-and the algorithm restarts using signals in the innermost pixel layers that have lower energy or are further from the IP.  Isolated muons 
-were used to estimate the tracker reconstruction efficiency; and those with $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ 
-were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  After reconstructing all 
-tracks, each point where two or more tracks originated is identified as an interaction vertex, and its position relative 
-to the IP is measured.  Again muons were used to estimate the tracker vertex resolution; for muons reconstructed with 
-$|\eta| < 1.4$, $\pt = 100$ $\GeV$ and associated with a vertex, the vertex position relative to the IP was measured 
-with 10 and 30 $\mu$m resolutions in the transverse (r-$\phi$) and longitudinal ($z$) directions.
+by lower energies or larger distances from the IP.  Using this algorithm, isolated muons with $\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ 
+were reconstructed as tracks with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  After reconstructing 
+all tracks in an event, each point where two or more tracks originate is identified as an interaction vertex, and its position 
+is measured relative to the IP.  The positions of vertices that have muon tracks with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ 
+were measured with 10 and 30 $\mu$m resolutions in the transverse (r-$\phi$) and longitudinal ($z$) directions.
 
 The track reconstruction algorithm described previously is used to reconstruct muon and charged hadron tracks, but a second 
 algorithm is used to reconstruct electron tracks.  The silicon tracker contains, depending on $\eta$, 1 to 2 radiation 
-lengths of material.  As a result, $\sim$35\% of electrons that traverse the tracker lose more than 70\% of their initial energies 
-through bremsstrahlung \cite{trackerPerformanceInCollisions}, which cannot be measured by the tracker.  Using the iterative 
-track reconstruction procedure described previously, the electron track reconstruction algorithm builds tracks starting 
-with signals from the inner tracker layers, and works outward to include signals with similar or lower energies.  The 
-algorithm models the electron energy loss in successive silicon layers as a sum of multiple Gaussians, and requires that 
-signals in successive layers have $\chi^{2} \leq$ 2000 before a link is made.  By using this electron track reconstruction 
-algorithm, electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ are reconstructed in the tracker with an efficiency of 97\% 
-or better \cite{gsfPerformanceInCollisions}.
+lengths of material that causes electrons to shower.  As a result, $\sim$35\% of electrons that traverse the tracker lose more 
+than 70\% of their initial energies through bremsstrahlung \cite{trackerPerformanceInCollisions}, which cannot be measured by 
+the tracker.  The electron track reconstruction algorithm uses the same iterative track reconstruction procedure described 
+previously, but extrapolates each track's trajectory to the next silicon layer assuming the energy lost through bremsstrahlung 
+is described by a sum of Gaussians.  In addition, the Kalman filter used to link signals in successive layers requires that new 
+signals have $\chi^{2} <$ 2000.  The electron track algorithm reconstructed electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ 
+as tracks with 97\% or better efficiency \cite{gsfPerformanceInCollisions}.
 
 
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
 The ec
+
+%RESUME HERE
 
 %The total energies of photons and electrons, and the partial energies of hadrons produced by pp interactions are measured 
 %in the ECAL.  Photons, electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are 
