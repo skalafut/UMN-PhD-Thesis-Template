@@ -131,7 +131,7 @@ of 3.2\%, and higher $\pt$ muons were measured with a resolution better than 6\%
 \end{table}
 
 Global muons reconstructed in simulated events are known to have different energies than muons reconstructed in data.  Energy 
-corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass 
+corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events found in simulations and data.  The di-muon mass 
 ($M_{\mu\mu}$) distribution in $Z \rightarrow \mu\mu$ events is compared between data and simulations, and the energies of muons 
 in simulated events are corrected so that the two $M_{\mu\mu}$ distributions match.
 
@@ -160,33 +160,44 @@ for higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
 \end{figure}
 
 Electrons reconstructed in simulated events are known to have different energies than electrons reconstructed in data.  Energy 
-corrections for simulated electrons are derived using $Z \rightarrow ee$ events from simulations and data.  The di-electron mass 
+corrections for simulated electrons are derived using $Z \rightarrow ee$ events found in simulations and data.  The di-electron mass 
 ($M_{ee}$) distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of electrons 
 in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-%On average, 85 percent of a jet's energy is carried by photons and charged particles  \cite{pflowJetRecoInCollisions}
+Quarks and gluons emitted from pp interactions produced jets of photons, hadrons and leptons.  On average, 85\% of a jet's 
+energy is carried by charged particles and photons \cite{pflowJetRecoInCollisions}, so these particles are prioritized during 
+jet reconstruction.  The particle flow jet reconstruction algorithm \cite{pflowEventReco} identifies $(\eta,\phi)$ regions 
+with one or more tracks, from the silicon tracker or muon detectors, one or more HCAL energy clusters, and one or more ECAL 
+SCs.  In these regions, muons are reconstructed first, followed by electrons using algorithms described previously.  Then 
+tracks and energy deposits linked to reconstructed leptons are removed from the list of particle candidates.  The remaining 
+candidates are used to simultaneously identify charged hadrons, photons, and neutral hadrons.  Each charged hadron is identified 
+as a track linked to an HCAL cluster and possibly an ECAL SC, and the total calorimeter $\Et$ and track $\pt$ agree within the 
+calorimeter $\Et$ uncertainty.  Each photon is identified as an ECAL SC that fails the electron track-SC matching requirement, 
+or is matched to a track and an HCAL cluster with significantly lower energy.  Finally, each neutral hadron is identified as 
+an HCAL cluster and possibly an ECAL SC that are not matched to a track, or match a track with significantly lower $\pt$ that 
+is not reconstructed using the electron track reconstruction algorithm.  Then a jet is clustered from reconstructed particles in 
+each region, as shown in Figure \ref{fig:jetClustering}.
 
-%PF algo reconstructs muons first, then estimates the muon energy in ECAL and HCAL and subtracts this energy from 
-%the calorimeter clusters.  The silicon tracker tracks associated with reco muons are removed from the list of charged particle candidates.
-%then electrons are reconstructed, after which their tracks are removed from the list of candidates.
-%lastly, photons and charged and neutral hadrons are reconstructed from the remaining calo energy clusters and tracks
-
-%RESUME HERE
-
-Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
-Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
-were reconstructed in the ECAL as superclusters that did not overlap in $(\eta,\phi)$ with any energy deposits measured 
-in the HCAL, and were separated from any reconstructed track by at least 1.1$^{\circ}$ in $\phi$ and 1 ECAL crystal in $\eta$.  
-Charged and neutral hadrons were reconstructed in the HCAL as individual or multiple neighboring towers, and were 
-reconstructed in the ECAL as superclusters that overlapped with the HCAL towers \cite{pflowJetRecoInCollisions}.  Each 
-charged hadron was identified as a track, reconstructed as described for muons in Section \ref{sec:muReco}, that extrapolated 
-to the $(\eta,\phi)$ area of the ECAL SC or at least one of the HCAL towers.  Each neutral hadron was identified as an HCAL 
-energy cluster, and possibly an ECAL SC, that did not overlap with any reconstructed track in $(\eta,\phi)$.  After 
-individual particles were reconstructed, jets were built from clusters of individual particles, as shown in Figure 
-\ref{fig:jetClustering}.
+Due to the high instantaneous collision luminosity, each pp bunch crossing delivered by the LHC yields multiple pp interactions, 
+or pileup (PU) interactions, that makes jet clustering more challenging.  In every unit of $\eta$, each PU interaction adds 
+$\sim$11 charged particle tracks with $\pt \approx 0.5$ $\GeV$ to the event \cite{chgdHdrMultInData}.  These tracks are primarily 
+from charged hadrons, so before jets are clustered the charged hadrons associated with PU interaction vertices are removed from 
+all jet clustering regions.  Jets are then clustered from reconstructed particles using the anti-$k_{T}$ algorithm \cite{antikt} 
+with a cone size of $\Delta R = 0.4$.  In each region the anti-$k_{T}$ algorithm starts with the highest $\Et$ hadron and adds 
+other particles to the jet cone based on their $\pt$ and distance from the jet axis.  A cone size of $\Delta R = 0.4$ was used 
+to reduce the likelihood of having a jet with radius $\Delta R > 0.4$, which would be more sensitive to pileup contributions.  
+Once jets are clustered a second technique is used to reduce the contribution of neutral particles produced in PU interactions 
+to jet energies.  In this technique, the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with cone size $\Delta R = 0.3$ 
+is used to cluster jets from all particles reconstructed in the event, including jets that only contain photon and neutral hadrons.  
+Each $k_{T}$ jet's $\pt$ is divided by the jet's area ($\pt_{j} / A_{j}$), and the median value represents the average neutral 
+particle energy density in the event \cite{pileup1,pileup2}.  Using the hybrid jet area subtraction technique described in 
+\cite{pflowJetRecoInCollisions}, the photon and neutral hadron energies in each anti-$k_{T}$ jet are reduced based on each jet's 
+area and $\eta$.  After all subtractions, jet energies are calibrated based on known variations in the detector response to jets 
+as functions of $\eta$ and $\pt$.  By combining measurements from the silicon tracker, calorimeters, and muon detectors, particle 
+flow jets with $\pt > 50$ $\GeV$ and $|\eta| < 3.0$ were measured with $\pt$ resolution better than 15\% \cite{jetResolutionInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -196,37 +207,16 @@ individual particles were reconstructed, jets were built from clusters of indivi
 	\label{fig:jetClustering}
 \end{figure}
 
-The high instantaneous luminosity of pp collisions delivered by the LHC almost always resulted in collision events with 
-multiple reconstructed vertices, which represented pileup interactions.  The dominant effect of pileup interactions was 
-the production of additional quarks and gluons, and thus additional jets.  Pileup jets originating from charged hadrons 
-were significantly reduced by excluding charged hadrons from jet reconstruction that were not associated with the vertex, 
-the primary vertex, that had the highest $\sum \pt$ in the event.  Neutral hadrons produced by pileup interactions contributed 
-to the energies of all reconstructed jets, in addition to creating new jets.  Their effect was reduced by measuring the average 
-neutral hadron energy density, $\rho$, over all $(\eta,\phi)$ in each event, and reducing the energy of jets reconstructed in each 
-event by $\rho$ multiplied by each jet's area \cite{pileup1,pileup2}.
-
-In each collision event, every reconstructed particle was considered a jet candidate except the charged hadrons from pileup 
-vertices.  Candidate particles were clustered into jets using the anti-$k_{T}$ algorithm \cite{antikt} to cluster particles 
-based on their $\pt$ and distance $\Delta R$ from the jet axis.  The jet axis was defined initially by a charged hadron, and 
-was updated iteratively based on the $\pt$ weighted $(\eta,\phi)$ trajectories of all jet constituents.  Jets were built 
-from particles reconstructed anywhere in the detector, but the anti-$k_{T}$ algorithm used a cone size of $\Delta R = 0.4$ to reduce the 
-likelihood of having a jet constituent that was $\Delta R > 0.4$ away from the jet axis.  Once a jet was clustered its 
-energy was determined as the $\sum \pt$ of all jet constituents.  Reconstructing jets from individual particles benefitted 
-from the energy resolution of the tracker and the ECAL, and as a result jets with $\pt > 50$ $\GeV$ and $|\eta| < 3.0$ were 
-measured with $\pt$ resolution better than 15\% \cite{jetResolutionInCollisions}.
-
-The energies of reconstructed jets were corrected based on several observed effects.  As described previously, neutral 
-hadrons produced in pileup interactions contributed to the energies of all jets, and their contributions were mitigated by 
-reducing each jet's energy based on its $(\eta,\phi)$ area.  Following this subtraction, jets reconstructed in dijet, $Z$+jet, 
-or $\gamma$+jet events were used to match the jet energy scale and resolution in data and simulations used to estimate the 
-signal and backgrounds.  In simulated events jets were found to have a different energy scale and resolution, and these 
-differences were resolved by correcting jet energies in data and simulated events, using methods described elsewhere \cite{jetpaper}.  
+Jets reconstructed in simulated events are known to have different energies than jets reconstructed in data.  Energy corrections for 
+simulated jets are derived using dijet, $Z \rightarrow \ell\ell$+jet, and $\gamma$+jet events found in simulations and data 
+\cite{jetpaper}.  The di-jet mass and leading jet $\pt$ distributions in these events are compared between data and simulations, and 
+the energies of jets in simulated events are corrected so that the distributions match in data and simulations.
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Energetic electrons, muons and jets produced in collisions were reconstructed using several CMS sub-detectors and high energy 
-reconstruction algorithms.  Additional selections were applied to reconstructed leptons and jets to increase sensitivity to the \WR 
-signal relative to ST backgrounds that produced $\ell\ell jj$ events.
+Energetic electrons, muons and jets produced in collisions are reconstructed from signals measured in CMS sub-detectors and using 
+specialized reconstruction algorithms.  Reconstructed leptons and jets were required to pass additional selections to increase 
+sensitivity to a \WR signal relative to ST backgrounds.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
