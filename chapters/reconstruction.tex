@@ -60,11 +60,9 @@ photons and other particles.  The energy is typically radiated along the particl
 crystals in $\phi$.  To capture this energy, each SC is at least 5 crystals wide in $\phi$, and can be much larger, 
 as shown in Figure \ref{fig:eleTrackAndSC}.  Once a SC is built, the energy of each crystal in the SC is multiplied by a laser 
 transparency correction, and relative and absolute energy calibration corrections.  The sum of the calibrated crystal energies 
-is the SC energy, and the energy weighted average $(\eta,\phi)$ position is the SC position.  Using only ECAL SCs, the energies of 
-electrons with $\Et \approx 45$ $\GeV$ and $|\eta| < 0.8$ were measured with a resolution better than 2\%, and a resolution between 
-2\% and 5\% for higher $|\eta|$ \cite{ecalPerformanceInCollisions}.  Furthermore, the $(\eta,\phi)$ positions of electrons in the 
-barrel (endcap) were measured with a $\phi$ resolution of 0.17$^{\circ}$ (0.29$^{\circ}$), and an $\eta$ resolution of 0.001 (0.002) 
-units.
+is the SC energy, and the energy weighted average $(\eta,\phi)$ position is the SC position.  Using only ECAL SCs, the $(\eta,\phi)$ 
+positions of electrons in the barrel (endcap) were measured with a $\phi$ resolution of 0.17$^{\circ}$ (0.29$^{\circ}$), and an 
+$\eta$ resolution of 0.001 (0.002) units.
 
 The energies of hadrons that traverse the ECAL are measured in groups of HCAL towers.  Hadrons impinging on the HCAL generate signals 
 in the HCAL towers that are converted into uncalibrated energies.  The highest energy towers with $\Et \gtrsim 1$ $\GeV$ are used to 
@@ -132,10 +130,10 @@ of 3.2\%, and higher $\pt$ muons were measured with a resolution better than 6\%
 	\end{tabular}
 \end{table}
 
-Global muons reconstructed in simulated events were known to have different energies than muons reconstructed in data.  Energy 
-corrections for simulated muons were derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass 
-($M_{\mu\mu}$) distribution in $Z \rightarrow \mu\mu$ events was compared between data and simulations, and the energies of muons 
-in simulated events were corrected so that the two $M_{\mu\mu}$ distributions matched.
+Global muons reconstructed in simulated events are known to have different energies than muons reconstructed in data.  Energy 
+corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass 
+($M_{\mu\mu}$) distribution in $Z \rightarrow \mu\mu$ events is compared between data and simulations, and the energies of muons 
+in simulated events are corrected so that the two $M_{\mu\mu}$ distributions match.
 
 
 \section{Electron Reconstruction}
@@ -143,28 +141,16 @@ in simulated events were corrected so that the two $M_{\mu\mu}$ distributions ma
 Electrons are the only particles from \WR decays expected to lose more than a few percent of their initial energy through 
 bremsstrahlung in the tracker.  A dedicated electron track reconstruction algorithm is used to reconstruct tracks from electrons, 
 even those that experience large energy losses, with high efficiency, but the tracker cannot measure the magnitude of bremsstrahlung 
-energy losses.  However, the energies of electrons and their bremsstrahlung photons are measured by the ECAL.  Therefore, the $\Et$ 
-and $(\eta,\phi)$ trajectory of each electron is measured by the ECAL.
+energy losses.  However, the energies of electrons and their bremsstrahlung photons are measured by the ECAL.  Therefore, the ECAL 
+is used to measure the $\Et$ and $(\eta,\phi)$ trajectory of each electron.
 
-
-%RESUME HERE
-
-After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
-electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
-into the ECAL was deposited over a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
-total energy was usually deposited over a larger area.  To measure the total energy of each electron, ECAL energy deposits 
-were reconstructed in superclusters (SCs) centered on the most energetic crystal, and were 3 or more crystals wide 
-in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals wide in $\phi$, as shown in Figure 
-\ref{fig:eleTrackAndSC}, to measure the energy lost by electrons through bremsstrahlung in the tracker.  Once a SC 
-was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weighted average position of all crystals 
-in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
-an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
-track to within 1.1$^{\circ}$, about 6 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
-crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
-resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
-$|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
-for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17$^{\circ}$ (0.29$^{\circ}$) in 
-$\phi$, and 0.001 (0.002) units in $\eta$.
+Electrons are identified using reconstructed tracks and ECAL SCs.  Reconstructed tracks are extrapolated from the outermost 
+silicon strip layer to the front face of the ECAL, and their positions are compared to ECAL SCs.  Each electron is identified 
+as one or more tracks that match the SC $(\eta,\phi)$ position within 1.1$^{\circ}$, about 1 crystal wide, in $\phi$, and 
+within 0.004 units, less than $\frac{1}{2}$ a crystal wide, in $\eta$.  In addition, the ECAL SC $\Et$ and the matched 
+track $\pt$ must agree within the uncertainty on the track $\pt$.  Using the SC energy, electrons with $\Et \approx 45$ 
+$\GeV$ and $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a resolution between 2\% and 5\% 
+for higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -173,14 +159,10 @@ $\phi$, and 0.001 (0.002) units in $\eta$.
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-Electrons reconstructed in $Z \rightarrow ee$ events were used to match the electron energy scale and resolution in data 
-and simulations used to estimate the \WR signal and ST backgrounds.  The di-electron mass ($M_{ee}$) distribution in 
-$Z \rightarrow ee$ events was compared between data and simulations, and two differences were found.  In simulations 
-the $M_{ee}$ peak position was higher in energy, indicating a higher electron energy scale, and the $M_{ee}$ distribution width 
-was smaller, indicating a better electron energy resolution than what was stated previously.  These differences 
-were resolved by increasing the energies of electrons reconstructed in data by a small fixed percentage, and smearing the energies 
-of electrons reconstructed in all simulations by a small positive value multiplied by a Gaussian random number that changed 
-with every event.
+Electrons reconstructed in simulated events are known to have different energies than electrons reconstructed in data.  Energy 
+corrections for simulated electrons are derived using $Z \rightarrow ee$ events from simulations and data.  The di-electron mass 
+($M_{ee}$) distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of electrons 
+in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 
 \section{Jet Reconstruction}
@@ -191,6 +173,8 @@ with every event.
 %the calorimeter clusters.  The silicon tracker tracks associated with reco muons are removed from the list of charged particle candidates.
 %then electrons are reconstructed, after which their tracks are removed from the list of candidates.
 %lastly, photons and charged and neutral hadrons are reconstructed from the remaining calo energy clusters and tracks
+
+%RESUME HERE
 
 Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
 Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
