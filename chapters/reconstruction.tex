@@ -78,66 +78,46 @@ Using the combined ECAL-HCAL system, hadrons with $\Et = 100$ $\GeV$ were measur
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
-Muons are first reconstructed as tracks from signals measured in the muon chambers.  In each DT chamber, the start and end points of 
+Muons are first reconstructed as tracks from signals measured in individual muon chambers.  In each DT chamber, the start and end points of 
 track segments are identified first as pairs of signals measured in the same plane (r-$\phi$ or r-z) but in different layers.  Then straight 
 lines are drawn between the signal pairs, and a signal pair is ignored if its line is not compatible with a track that extrapolates from 
 the chamber to the IP.  The remaining signals that are consistent with any of these straight lines are built into track segments that are 
 measured in at least 3 layers.  In each plane the track segment with signals in the largest number of layers, at least 3, and the lowest 
 $\chi^{2}/nDOF$, less than 20, is used to build a 3D track.  In the event where more than one track segment is reconstructed 
 in one plane of a DT chamber, all combinations of r-$\phi$ and r-z track segments are considered when reconstructing a 3D track.  In 
-practice, more than one 3D track is reconstructed in a DT chamber in less than 1\% of events \cite{cmsTdrPhysPerformance}.  In each CSC 
-chamber, the .
+practice, more than one 3D track is reconstructed in a DT chamber in less than 1\% of events \cite{cmsTdrPhysPerformance}.  The same 
+track segment reconstruction algorithm is used in each 6 layer, single plane CSC.  There the final track segment must have signals 
+in at least 4 layers.  In the barrel-endcap transition region, $1.3 < |\eta| < 1.6$, where the DT chambers stop and the CSCs begin, RPCs 
+are used to improve the muon reconstruction efficiency and the precision of arrival time measurements.  Each RPC contains two parallel 
+plates divided into many thin strips, and strips that measure a signal are grouped into clusters.  Each reconstructed cluster represents 
+a hit whose position is the 'center of gravity' of all the strips in the cluster.
 
+Tracks reconstructed in individual chambers are used to reconstruct muon trajectories through the magnetic field and all muon chambers.  
+A Kalman filter algorithm starts with tracks in the chambers closest to the IP, and predicts the track positions in chambers in the next 
+radial station with the effects of an inhomogeneous magnetic field and material losses taken into account \cite{muonRecoFirstCollisions}.  
+Track segments in outer chambers are added to existing tracks subject to a $\chi^{2}$ requirement, and existing tracks are propagated to 
+the next radial station even if no matching track segment is found in the current station.  Once the outermost station is included, a 
+reverse Kalman filter is applied to reconstructed tracks from the outermost station working to the innermost station.  The reverse Kalman 
+filter finalizes the track parameters, then these tracks are compared to silicon tracker tracks to identify global muons.
 
-%RESUME HERE
+Global muons are identified using tracks reconstructed in the silicon tracker and muon detectors.  Tracks from the muon detectors are 
+extrapolated back to the outermost silicon tracker layer, and their positions are compared.  In the local coordinate plane of the 
+silicon strip layer, each silicon tracker track that matches a muon detector track within 3 cm is identified as a global muon.  If an 
+extrapolated muon detector track has multiple silicon tracker track candidates within 3 cm, the closest match is used to make a global 
+muon.  The $(\eta,\phi)$ trajectory of each global muon corresponds to that of its silicon tracker track.
 
-%from \cite{trackerPerformanceInCollisions}
-%muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\%.
-
-%the Kalman filter used to build tracks in the muon detectors applies a chi2 < 20 cut to each new signal (1 DOF)
-%\cite{cmsTdrPhysPerformance}
-
-
-
-%Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
-%by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
-%using a Kalman filter to link signals between successive layers.  Once the algorithm reached the outermost tracker 
-%layer the signals associated with tracks were removed from the list of track candidates, and a new iteration of track 
-%reconstruction started with signals in the innermost pixel layers that had lower energy or were further 
-%from the IP.  It was assumed that the magnetic field was uniform, so tracks were reconstructed as perfect helixes 
-%from signals in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
-%as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
-%$\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
-%Muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ and their vertices were measured with resolutions of approximately 
-%2.8\% in $\pt$, and 10 and 30 $\mu$m in transverse and longitudinal distances from the IP.  Muon trajectories and 
-%initial energies were determined by tracker measurements, and their energies were refined by muon detector measurements.
-
-After traversing the calorimeters and the magnet, muons were reconstructed as tracks from signals in muon detector chambers.  
-First, local reconstruction was run to build track segments in individual chambers, then an iterative track 
-reconstruction algorithm built continuous tracks from multiple segments.  The muon track reconstruction algorithm started 
-with track segments in the inner muon chambers, then iterated outward and built longer tracks across multiple chambers 
-using a Kalman filter.  The algorithm estimated the effects of energy losses, inhomogenous magnetic fields, and multiple 
-scattering when linking segments between chambers, and updated all track parameters after including measurements 
-from each new chamber.  Once the algorithm incorporated measurements from the outermost chambers, a Kalman filter 
-was applied to the reconstructed tracks, starting with the outermost chamber segments and working towards the 
-innermost chamber segments, to ensure the tracks were built in a self-consistent way \cite{muonRecoFirstCollisions}.  
-
-Muons were reconstructed and their momenta were determined using silicon tracker and muon detector measurements.  
-Tracks reconstructed in the muon detectors were extrapolated back to the outermost silicon tracker layer, and in the 
-plane of the silicon strip each reconstructed muon was identified as a muon detector track that matched a silicon 
-tracker track to within 3 cm.  After reconstruction, the $\pt$ of each muon was calculated using the following procedure.  
-Four muon reconstruction algorithms fitted four continuous tracks \cite{cmsMuonRecoRunTwo} to silicon tracker and muon 
-detector signals to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  Each 
-algorithm combined muon detector and silicon tracker measurements in a different way, and could exclude measurements with 
-large uncertainty.  The quality of each continuous track was identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum 
-uncertainty $\sigma(\pt)/\pt$.  The track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ was 
-used to calculate the reconstructed muon momentum.  For muons with $\pt \lesssim 100$ $\GeV$ this procedure used tracker 
-measurements almost exclusively to determine the muon momentum; as stated earlier, muons with $|\eta| < 1.4$ and $\pt = 100$ 
-$\GeV$ were measured with a $\pt$ resolution of approximately 2.8\%.  As the muon $\pt$ increased above 100 $\GeV$ the 
-silicon tracker $\pt$ resolution degraded faster than the muon detector $\pt$ resolution, and it became advantageous to 
-combine measurements from both detectors.  Muons with $\pt > 200$ $\GeV$ were expected in a significant fraction of 
-$\WR \rightarrow \mu\mu jj$ events (Table \ref{tab:wrHighPtMuons}), and for $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ 
-they were measured with a $\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the resolution was better than 6\% \cite{cmsMuonRecoRunTwo}.
+The momentum of each global muon is determined by sampling four different global muon reconstruction algorithms, and selecting the  
+highest quality result.  Each algorithm fits a continuous track \cite{cmsMuonRecoRunTwo} to a unique combination of silicon tracker 
+and muon detector signals to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  The 
+quality of each continuous track is identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$; and 
+the track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ determines the global muon's momentum.  
+For muons with $\pt \lesssim 100$ $\GeV$ the highest quality result is obtained using only silicon tracker measurements.  Muons with 
+$|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\% \cite{trackerPerformanceInCollisions}.  
+However, as a muon's $\pt$ increases above 100 $\GeV$ the silicon tracker $\pt$ resolution degrades faster that that of the muon 
+detectors.  A significant fraction of $\WR \rightarrow \mu\mu jj$ events are expected to produce at least one muon with $\pt > 200$ $\GeV$ 
+(Table \ref{tab:wrHighPtMuons}), and in this high $\pt$ region the highest quality momentum measurement is made by combining silicon 
+tracker and muon detector measurements.  Muons with $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ were measured with a $\pt$ resolution 
+of 3.2\%, and higher $\pt$ muons were measured with a resolution better than 6\% \cite{cmsMuonRecoRunTwo}.
 
 \begin{table}[h]
 	\caption{Fraction of expected $\WR \rightarrow \mu\mu jj$ events that had at least one muon with $\pt > 200$ $\GeV$. 
@@ -152,33 +132,22 @@ they were measured with a $\pt$ resolution of 3.2\%; for $\pt > 400$ $\GeV$ the 
 	\end{tabular}
 \end{table}
 
-Muons reconstructed in $Z \rightarrow \mu\mu$ events were used to match the muon energy scale and resolution in data 
-and simulations used to estimate the \WR signal and ST backgrounds.  The di-muon mass ($M_{\mu\mu}$) distribution in 
-$Z \rightarrow \mu\mu$ events was compared between data and simulations, and two differences were found.  In simulations 
-the $M_{\mu\mu}$ peak position was higher in energy, indicating a higher muon energy scale, and the $M_{\mu\mu}$ distribution width 
-was smaller, indicating a better muon energy resolution than what was stated previously.  These differences 
-were resolved by increasing the momenta of muons reconstructed in data by a small fixed percentage, and smearing the momenta 
-of muons reconstructed in all simulations by a small positive value multiplied by a Gaussian random number that changed 
-with every event.
+Global muons reconstructed in simulated events were known to have different energies than muons reconstructed in data.  Energy 
+corrections for simulated muons were derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass 
+($M_{\mu\mu}$) distribution in $Z \rightarrow \mu\mu$ events was compared between data and simulations, and the energies of muons 
+in simulated events were corrected so that the two $M_{\mu\mu}$ distributions matched.
 
 
 \section{Electron Reconstruction}
 \label{sec:eleReco}
-Electrons ($e^{\pm}$) were the only particles from \WR decays expected to lose more than a few percent of their 
-energy before reaching the ECAL.  One to two radiation lengths of material, depending on $\eta$, was in front of 
-the ECAL \cite{ecalPerformanceInCollisions}, and about 35\% of electrons lose more than 70\% of their initial energy 
-through bremsstrahlung before reaching the ECAL \cite{trackerPerformanceInCollisions}.  The curvature of electrons 
-in the magnetic field meant that bremsstrahlung photons emitted by the electrons, in general, struck the ECAL 
-at $\eta$ values similar to that of the electron, but at different $\phi$ coordinates.  The tracker could not detect 
-these photons, but knowledge of electron bremsstrahlung was incorporated into a dedicated electron track reconstruction 
-algorithm.  The fractional energy lost by electrons traversing a tracker layer through bremsstrahlung was expected to 
-have a distribution described by the Bethe-Heitler formula, and this energy loss was approximated as a sum of 
-several Gaussians in the electron track reconstruction algorithm.  The electron algorithm was otherwise identical to 
-the muon track reconstruction algorithm, except that the $\chi^{2}$ threshold used to 
-associate tracker signals with a trajectory was loosened from 30 to 2000 \cite{trackerPerformanceInCollisions}.  This 
-facilitated the reconstruction of electron tracks whose trajectories deviated from expectations due to bremsstrahlung.  
-Bremsstrahlung increased the uncertainty of electron position and energy measurements made by the tracker relative to 
-measurements made by the ECAL, so the kinematics of electrons expected from \WR decays was measured using the ECAL.
+Electrons are the only particles from \WR decays expected to lose more than a few percent of their initial energy through 
+bremsstrahlung in the tracker.  A dedicated electron track reconstruction algorithm is used to reconstruct tracks from electrons, 
+even those that experience large energy losses, with high efficiency, but the tracker cannot measure the magnitude of bremsstrahlung 
+energy losses.  However, the energies of electrons and their bremsstrahlung photons are measured by the ECAL.  Therefore, the $\Et$ 
+and $(\eta,\phi)$ trajectory of each electron is measured by the ECAL.
+
+
+%RESUME HERE
 
 After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
 electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
