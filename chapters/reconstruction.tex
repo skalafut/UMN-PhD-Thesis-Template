@@ -78,25 +78,39 @@ Using the combined ECAL-HCAL system, hadrons with $\Et = 100$ $\GeV$ were measur
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
-%from \cite{trackerPerformanceInCollisions}
-%muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\%.
+Muons are first reconstructed as tracks from signals measured in the muon chambers.  In each DT chamber, the start and end points of 
+track segments are identified first as pairs of signals measured in the same plane (r-$\phi$ or r-z) but in different layers.  Then straight 
+lines are drawn between the signal pairs, and a signal pair is ignored if its line is not compatible with a track that extrapolates from 
+the chamber to the IP.  The remaining signals that are consistent with any of these straight lines are built into track segments that are 
+measured in at least 3 layers.  In each plane the track segment with signals in the largest number of layers, at least 3, and the lowest 
+$\chi^{2}/nDOF$, less than 20, is used to build a 3D track.  In the event where more than one track segment is reconstructed 
+in one plane of a DT chamber, all combinations of r-$\phi$ and r-z track segments are considered when reconstructing a 3D track.  In 
+practice, more than one 3D track is reconstructed in a DT chamber in less than 1\% of events \cite{cmsTdrPhysPerformance}.  In each CSC 
+chamber, the .
 
 
 %RESUME HERE
 
+%from \cite{trackerPerformanceInCollisions}
+%muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\%.
 
-Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
-by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
-using a Kalman filter to link signals between successive layers.  Once the algorithm reached the outermost tracker 
-layer the signals associated with tracks were removed from the list of track candidates, and a new iteration of track 
-reconstruction started with signals in the innermost pixel layers that had lower energy or were further 
-from the IP.  It was assumed that the magnetic field was uniform, so tracks were reconstructed as perfect helixes 
-from signals in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
-as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
-$\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
-Muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ and their vertices were measured with resolutions of approximately 
-2.8\% in $\pt$, and 10 and 30 $\mu$m in transverse and longitudinal distances from the IP.  Muon trajectories and 
-initial energies were determined by tracker measurements, and their energies were refined by muon detector measurements.
+%the Kalman filter used to build tracks in the muon detectors applies a chi2 < 20 cut to each new signal (1 DOF)
+%\cite{cmsTdrPhysPerformance}
+
+
+
+%Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
+%by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
+%using a Kalman filter to link signals between successive layers.  Once the algorithm reached the outermost tracker 
+%layer the signals associated with tracks were removed from the list of track candidates, and a new iteration of track 
+%reconstruction started with signals in the innermost pixel layers that had lower energy or were further 
+%from the IP.  It was assumed that the magnetic field was uniform, so tracks were reconstructed as perfect helixes 
+%from signals in consecutive layers.  If two or more tracks shared a common origin point, that point was reconstructed 
+%as an interaction vertex, whose position was measured relative to the IP.  Isolated muons with 
+%$\pt > 0.9$ $\GeV$ and $|\eta| < 2.4$ were reconstructed with essentially 100\% efficiency \cite{trackerPerformanceInCollisions}.  
+%Muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ and their vertices were measured with resolutions of approximately 
+%2.8\% in $\pt$, and 10 and 30 $\mu$m in transverse and longitudinal distances from the IP.  Muon trajectories and 
+%initial energies were determined by tracker measurements, and their energies were refined by muon detector measurements.
 
 After traversing the calorimeters and the magnet, muons were reconstructed as tracks from signals in muon detector chambers.  
 First, local reconstruction was run to build track segments in individual chambers, then an iterative track 
@@ -204,7 +218,10 @@ with every event.
 \label{sec:jetReco}
 %On average, 85 percent of a jet's energy is carried by photons and charged particles  \cite{pflowJetRecoInCollisions}
 
-%PF algo reconstructs muons first, then electrons 
+%PF algo reconstructs muons first, then estimates the muon energy in ECAL and HCAL and subtracts this energy from 
+%the calorimeter clusters.  The silicon tracker tracks associated with reco muons are removed from the list of charged particle candidates.
+%then electrons are reconstructed, after which their tracks are removed from the list of candidates.
+%lastly, photons and charged and neutral hadrons are reconstructed from the remaining calo energy clusters and tracks
 
 Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
 Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
