@@ -52,57 +52,38 @@ as tracks with 97\% or better efficiency \cite{gsfPerformanceInCollisions}.
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
 The energies of photons, electrons, and hadrons produced by pp interactions are measured in groups of ECAL crystals.  Photons, 
-electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are converted into $\Et$ measurements.  For 
-each particle, a group, or supercluster (SC), of crystals is built from the most energetic crystal and its nearest neighbors, and 
-is at least 3 crystals wide in $\eta$.  The upstream tracker material causes some electrons, photons, and hadrons to shower early 
-and radiate energy, through photons or other particles, along the particle's $\eta$ trajectory, but spread over a $\phi$ distance 
-that spans several ECAL crystals.  To capture this energy, each SC is at least 5 crystals wide in $\phi$, and can be much larger, 
-as shown in Figure \ref{fig:eleTrackAndSC}.  .
+electrons, and hadrons impinging on the ECAL generate signals in the ECAL crystals that are converted into uncalibrated energies.  Groups, 
+or superclusters (SCs), of crystals are built from the most energetic crystals with $\Et \gtrsim 0.2$ $\GeV$ and their nearest 
+neighbors, and are at least 3 crystals wide in $\eta$.  The upstream tracker material causes $\sim$35\% of electrons and 
+photons, and up to 25\% of hadrons \cite{trackerPerformanceInCollisions} to shower in the tracker, and radiate energy by emitting 
+photons and other particles.  The energy is typically radiated along the particle's $\eta$ trajectory, but spread over several ECAL 
+crystals in $\phi$.  To capture this energy, each SC is at least 5 crystals wide in $\phi$, and can be much larger, 
+as shown in Figure \ref{fig:eleTrackAndSC}.  Once a SC is built, the energy of each crystal in the SC is multiplied by a laser 
+transparency correction, and relative and absolute energy calibration corrections.  The sum of the calibrated crystal energies 
+is the SC energy, and the energy weighted average $(\eta,\phi)$ position is the SC position.  Using only ECAL SCs, the energies of 
+electrons with $\Et \approx 45$ $\GeV$ and $|\eta| < 0.8$ were measured with a resolution better than 2\%, and a resolution between 
+2\% and 5\% for higher $|\eta|$ \cite{ecalPerformanceInCollisions}.  Furthermore, the $(\eta,\phi)$ positions of electrons in the 
+barrel (endcap) were measured with a $\phi$ resolution of 0.17$^{\circ}$ (0.29$^{\circ}$), and an $\eta$ resolution of 0.001 (0.002) 
+units.
 
-
-%RESUME HERE
-
-
-%what fraction of photons produced at the IP convert into e+e- pairs in the tracker?
-%depending on pt and eta (more likely for higher pt or eta), up to 25\% of charged pions experience a nuclear 
-%interaction in the tracker \cite{trackerPerformanceInCollisions}
-
-
-%After traversing the tracker, electrons impinged on ECAL crystals and showered into lower energy $e^{\pm}$s, and 
-%electron energies were measured through these showers.  Approximately 94\% of an electron's energy coming 
-%into the ECAL was deposited over a 3 $\times$ 3 crystal area, but due to bremsstrahlung in the tracker an electron's 
-%total energy was usually deposited over a larger area.  To measure the total energy of each electron, ECAL energy deposits 
-%were reconstructed in superclusters (SCs) centered on the most energetic crystal, and were 3 or more crystals wide 
-%in $\eta$ depending on the electron shower shape.  SCs were 5 or more crystals wide in $\phi$, as shown in Figure 
-%\ref{fig:eleTrackAndSC}, to measure the energy lost by electrons through bremsstrahlung in the tracker.  Once a SC 
-%was reconstructed its $(\eta, \phi)$ position was calculated as the energy-weighted average position of all crystals 
-%in the SC, and this position was compared to $(\eta, \phi)$ trajectories of electron candidate tracks to identify 
-%an electron.  Each reconstructed electron was identified as a SC that geometrically matched at least one candidate 
-%track to within 1.1$^{\circ}$, about 6 crystals wide, in $\phi$, and within 0.004 units, less than $\frac{1}{2}$ a 
-%crystal wide, in $\eta$.  The ECAL was used to determine reconstructed electron energies and positions.  The energy 
-%resolution for electrons from $Z \rightarrow ee$ decays with $\Et \approx 45$ $\GeV$ was better than 2\% for 
-%$|\eta| < 0.8$, and was between 2\% and 5\% elsewhere \cite{ecalPerformanceInCollisions}.  The position resolution 
-%for single electrons from $W \rightarrow e\nu$ decays in the barrel (endcap) was 0.17$^{\circ}$ (0.29$^{\circ}$) in 
-%$\phi$, and 0.001 (0.002) units in $\eta$.
-
-%Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
-%Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
-%were reconstructed in the ECAL as superclusters that did not overlap in $(\eta,\phi)$ with any energy deposits measured 
-%in the HCAL, and were separated from any reconstructed track by at least 1.1$^{\circ}$ in $\phi$ and 1 ECAL crystal in $\eta$.  
-%Charged and neutral hadrons were reconstructed in the HCAL as individual or multiple neighboring towers, and were 
-%reconstructed in the ECAL as superclusters that overlapped with the HCAL towers \cite{pflowJetRecoInCollisions}.  Each 
-%charged hadron was identified as a track, reconstructed as described for muons in Section \ref{sec:muReco}, that extrapolated 
-%to the $(\eta,\phi)$ area of the ECAL SC or at least one of the HCAL towers.  Each neutral hadron was identified as an HCAL 
-%energy cluster, and possibly an ECAL SC, that did not overlap with any reconstructed track in $(\eta,\phi)$.  After 
-%individual particles were reconstructed, jets were built from clusters of individual particles, as shown in Figure 
-%\ref{fig:jetClustering}.
-
+The energies of hadrons that traverse the ECAL are measured in groups of HCAL towers.  Hadrons impinging on the HCAL generate signals 
+in the HCAL towers that are converted into uncalibrated energies.  The highest energy towers with $\Et \gtrsim 1$ $\GeV$ are used to 
+seed clusters, which extend to all neighboring towers with $\Et > 0.8$ $\GeV$ \cite{pflowEventReco}.  If one tower is grouped into 
+multiple clusters, the tower's contribution to each cluster is weighted by its distance from each cluster's seed.  After clusters are 
+built, each tower's energy is multiplied by a laser transparency correction, and relative and absolute energy calibration corrections.  
+The sum of the calibrated tower energies is the cluster energy, and the energy weighted average $(\eta,\phi)$ position is the cluster 
+position.  Hadron energies are measured as a combination of calibrated HCAL cluster energies, and energies of overlapping ECAL SCs.  
+Using the combined ECAL-HCAL system, hadrons with $\Et = 100$ $\GeV$ were measured with a $\sim$10\% $\Et$ resolution \cite{pflowEventReco}.
 
 
 \section{Muon Reconstruction}
 \label{sec:muReco}
 %from \cite{trackerPerformanceInCollisions}
 %muons with $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\%.
+
+
+%RESUME HERE
+
 
 Muons were first reconstructed as tracks from signals in the silicon tracker.  An interative algorithm started 
 by reconstructing tracks from the highest energy signals and signals closest to the IP, and progressed to outer layers 
@@ -221,8 +202,9 @@ with every event.
 
 \section{Jet Reconstruction}
 \label{sec:jetReco}
-%remember that the particle flow algorithm also removes macroscopic particles from the list of jet candidates once they 
-%are associated with a jet
+%On average, 85 percent of a jet's energy is carried by photons and charged particles  \cite{pflowJetRecoInCollisions}
+
+%PF algo reconstructs muons first, then electrons 
 
 Through hadronization, photon radiation, and leptonic weak decays, quarks produced jets of photons, hadrons, and leptons.  
 Thus, photons, electrons and muons, and charged and neutral hadrons were reconstructed before jets were built.  Photons 
