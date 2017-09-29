@@ -140,7 +140,7 @@ in simulated events are corrected so that the two $M_{\mu\mu}$ distributions mat
 \subsection{Online Selection}
 During collisions events with muons were selected using a single muon Level-1 trigger.  The trigger required one reconstructed 
 track segment with $\pt > 16$ $\GeV$ that spanned one DT or CSC chamber in at least 2 stations, and the track segment in each chamber 
-was built from signals in at least 4 layers.  Events were then required to pass the following single muon HLT selection criteria:
+was built from signals in at least 4 layers.  Then, events were required to pass the following single muon HLT selection criteria:
 
 \begin{itemize}
 	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
@@ -150,9 +150,9 @@ was built from signals in at least 4 layers.  Events were then required to pass 
 \end{itemize}
 
 \subsection{Offline Identification Selection}
-In events selected by the single muon trigger, muons were reconstructed offline using algorithms described previously and the full 
-event information from all sub-detectors.  Prompt muons that were reconstructed from high quality signals in the muon detectors and 
-the silicon tracker were selected using the following identification criteria:
+In events selected by the single muon trigger, muons were reconstructed offline from muon detector and silicon tracker tracks using 
+algorithms described previously.  After reconstruction, the following identification criteria were applied to select promptly produced, 
+isolated muons that were reconstructed in multiple muon stations:
 
 \begin{itemize}
 	\item The muon track reconstructed in the silicon tracker:
@@ -172,6 +172,8 @@ the silicon tracker were selected using the following identification criteria:
 
 \section{Electron Reconstruction and Selection}
 \label{sec:eleReco}
+
+\subsection{Reconstruction}
 Electrons are the only particles from \WR decays expected to lose more than a few percent of their initial energy through 
 bremsstrahlung in the tracker.  A dedicated electron track reconstruction algorithm is used to reconstruct tracks from electrons, 
 even those that experience large energy losses, with high efficiency, but the tracker cannot measure the magnitude of bremsstrahlung 
@@ -197,6 +199,50 @@ Electrons reconstructed in simulated events are known to have different energies
 corrections for simulated electrons are derived using $Z \rightarrow ee$ events found in simulations and data.  The di-electron mass 
 ($M_{ee}$) distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of electrons 
 in simulated events are corrected so that the two $M_{ee}$ distributions match.
+
+\subsection{Online Selection}
+During collisions events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
+either one 5 $\times$ 5 ECAL crystal cluster reconstructed with $\Et > 40$ $\GeV$, or two 5 $\times$ 5 crystal clusters: one with 
+$\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection 
+criteria:
+
+\begin{itemize}
+	\item Two 5 $\times$ 5 crystal clusters separated by $\Delta R > 0.1$ were reconstructed with $\Et > 33$ $\GeV$.
+	\item For each crystal cluster:
+	\begin{itemize}
+		\item The ratio of energy (H) in the HCAL tower behind the cluster to the cluster energy (E) was $\frac{H}{E} < 0.15$ 
+			in the barrel, and $\frac{H}{E} < 0.1$ in the endcap.
+		\item Ninety percent of the cluster energy was measured in an area that was two crystals wide in $\eta$.
+		\item If the cluster was in the barrel, a reconstructed track with signals in at least two pixel tracker layers 
+			extrapolated close to the cluster position.  The track extrapolated from the pixel tracker to within $2.3$ cm 
+			of the ECAL cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Offline Identification Selection}
+In events selected by the double-electron trigger, electrons were reconstructed offline from ECAL SCs and tracks using algorithms 
+described previously.  After reconstruction, the following identification criteria were applied to select promptly produced 
+electrons that did not lose significant energy in the tracker:
+
+\begin{itemize}
+	\item Electrons were ignored if they were reconstructed with $1.44 < |\eta| < 1.57$.
+	\item For barrel electrons, at least 94\% of the SC energy was measured in an $\eta$ region that was 2 crystals 
+		wide.
+	\item The ratio of energy (H) in the HCAL tower behind the SC to the SC energy ($E_{SC}$) was $\frac{H}{E_{SC}}< 0.05 + 1/E_{SC}$ 
+		in the barrel, and $\frac{H}{E_{SC}}< 0.05 + 5/E_{SC}$ in the endcap.
+	\item In a $\Delta R =$ 0.3 radius cone centered on the electron's $(\eta, \phi)$ trajectory:
+	\begin{itemize}
+		\item The $\sum \pt$ of all tracks excluding the electron's track was low, $\sum \pt < 5$ $\GeV$.
+		\item The total calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
+			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$.  $\rho$ was the neutral particle energy per unit $\eta,\phi$ area, 
+			$\alpha$ in the barrel was the electron $\Et$, and $\alpha$ in the endcap was the electron $\Et - 50$.
+	\end{itemize}
+	\item The electron track extrapolated from the outermost silicon tracker measurement to within $\sim$3 crystal 
+		widths in $\phi$ of the SC seed crystal position.
+	\item The electron track was built from signals in every silicon pixel and inner strip detector layers, or all but 1 layer.
+	\item The electron track's origin was separated from its vertex by a small distance $\Delta_{xy}$ in the $x-y$ 
+		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
+\end{itemize}
 
 
 \section{Jet Reconstruction and Selection}
