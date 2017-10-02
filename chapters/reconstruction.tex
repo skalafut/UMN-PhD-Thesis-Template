@@ -316,19 +316,23 @@ clusters:
 The data is expected to contain events where two charged leptons ($\ell$) and two jets are reconstructed.  These events are produced 
 by ST processes like $\DY$+jets, and their final state leptons and jets imitate the $\WR \rightarrow \ell\ell jj$ decay signature.
 
-\subsection{Signal and Background Characteristics}
-The heavy \WR decays through a lighter \nul to a $\ell\ell jj$ final state according to the following decay chain:
-
+The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state according to the following decay chain:
+\begin{tikzpicture}[grow=right]
+	\node (Wr) at (0,0) {$\WR \thickspace \rightarrow \thickspace \nul + \ell$};
+	\node (Ar) at (0.75,-0.4) {$\searrow$};
+	\node (Nl) at (1.25,-0.75) {$\ell jj$};
+\end{tikzpicture}
 The previous \WR and \nul search \cite{cmsWRRunOneResults} excluded \WR production at 95\% CL for $\mWR < 2$ $\TeV$ and $\mnul < \mWR$, 
-so the \WR and \nul lifetimes, inversely proportional to their masses, are very short.  As a result, both leptons and quarks are 
-promptly produced near the IP.  Subsequently the quarks hadronize into jets of stable particles, whose masses are negligible compared to 
-\mWR and \mnul.
+so the expected \WR and \nul lifetimes, inversely proportional to their masses, are very short.  Therefore, \WR and \nul decays produce 
+prompt leptons and quarks near the IP.  Subsequently the quarks hadronize into jets of stable particles, whose masses are negligible 
+compared to \mWR and \mnul.
 
 The majority of background events are produced by the $\DY$+jets process and processes with at least one top quark; the remainder are 
-produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  The .
+produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  .
 
 %RESUME HERE
 
+\subsection{Signal and Background Kinematics}
 
 
 \section{Conclusion}
