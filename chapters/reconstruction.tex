@@ -314,7 +314,8 @@ clusters:
 \section{\WR Signal and ST Backgrounds}
 \label{sec:signalAndBkgnds}
 The data is expected to contain events where two charged leptons ($\ell$) and two jets are reconstructed.  These events are produced 
-by ST processes like $\DY$+jets, and their final state leptons and jets imitate the $\WR \rightarrow \ell\ell jj$ decay signature.
+by ST background processes like $\DY$+jets, and their final state leptons and jets conceal the $\WR \rightarrow \ell\ell jj$ decay 
+signature.
 
 The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state according to the following decay chain:
 \begin{tikzpicture}[grow=right]
@@ -323,12 +324,20 @@ The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state acco
 	\node (Nl) at (1.25,-0.75) {$\ell jj$};
 \end{tikzpicture}
 The previous \WR and \nul search \cite{cmsWRRunOneResults} excluded \WR production at 95\% CL for $\mWR < 2$ $\TeV$ and $\mnul < \mWR$, 
-so the expected \WR and \nul lifetimes, inversely proportional to their masses, are very short.  Therefore, \WR and \nul decays produce 
-prompt leptons and quarks near the IP.  Subsequently the quarks hadronize into jets of stable particles, whose masses are negligible 
-compared to \mWR and \mnul.
+so the \WR and \nul lifetimes, inversely proportional to their masses, are expected to be very short.  Therefore, \WR and \nul decay 
+promptly to leptons, and quarks that hadronize into jets.  The \WR is the progenitor of the final state particles, so their average 
+energies are set by \mWR.
 
 The majority of background events are produced by the $\DY$+jets process and processes with at least one top quark; the remainder are 
-produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  .
+produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  \DY produces two same flavor leptons at a rate that decreases 
+rapidly for di-lepton masses ($\Mll$) above 120 $\GeV$.  At $\sqrt{s} = 13$ $\TeV$ the quarks participating in the \DY interaction can 
+radiate a parton and lower the \DY rate by the QCD coupling $\alpha_{QCD} \sim$0.1.  Thus, two partons are radiated in $\alpha_{QCD}^{2} \sim$
+0.01 $=$1\% of \DY events.  Since these partons are radiated before the \DY interaction, their energies and trajectories are only 
+constrained by the final state leptons insofar as the \DY+jets system $\pt$ must be conserved.  Unlike \DY, the top quark background, 
+including $t\bar{t}$ and t+W, naturally produces $\ell\ell jj$ final states without initial state parton radiation.  As a result, the 
+average energies of final state leptons and jets are set by the progenitor top quark system.  The top quark background is also the only 
+significant background that produces $e\mu jj$ final states at a higher rate than same flavor $\ell\ell jj$ final states; a fact that 
+will be discussed later when estimating the top quark background.
 
 %RESUME HERE
 
