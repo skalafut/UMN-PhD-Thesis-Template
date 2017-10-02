@@ -10,7 +10,7 @@ Figure \ref{fig:particleTrajectories}.  Their trajectories and energies were mea
 reconstructed by the silicon tracker and muon detectors, and energy deposits reconstructed by the calorimeters.  The 
 high energy of expected leptons and jets motivated the use of specific lepton and jet reconstruction algorithms 
 described here.  These algorithms combine measurements from multiple CMS sub-detectors to measure the trajectory 
-and energy of each particle with the best resolution.  For charged particles, initial energy and trajectory 
+and energy of each particle with optimal resolution.  For charged particles, initial energy and trajectory 
 measurements are made using tracks reconstructed from signals measured in the silicon tracker.
 
 \begin{figure}[h]
@@ -57,8 +57,8 @@ or superclusters (SCs), of crystals are built from the most energetic crystals w
 neighbors, and are at least 3 crystals wide in $\eta$.  The upstream tracker material causes $\sim$35\% of electrons and 
 photons, and up to 25\% of hadrons \cite{trackerPerformanceInCollisions} to shower in the tracker, and radiate energy by emitting 
 photons and other particles.  The energy is typically radiated along the particle's $\eta$ trajectory, but spread over several ECAL 
-crystals in $\phi$.  To capture this energy, each SC is at least 5 crystals wide in $\phi$, and can be much larger, 
-as shown in Figure \ref{fig:eleTrackAndSC}.  Once a SC is built, the energy of each crystal in the SC is multiplied by a laser 
+crystals in $\phi$.  To capture this energy, each SC is at least 5 crystals wide in $\phi$, and can be much larger, as in 
+Figure \ref{fig:eleTrackAndSC}.  Once a SC is built, the energy of each crystal in the SC is multiplied by a laser 
 transparency correction, and relative and absolute energy calibration corrections.  The sum of the calibrated crystal energies 
 is the SC energy, and the energy weighted average $(\eta,\phi)$ position is the SC position.  Using only ECAL SCs, the $(\eta,\phi)$ 
 positions of electrons in the barrel (endcap) were measured with a $\phi$ resolution of 0.17$^{\circ}$ (0.29$^{\circ}$), and an 
@@ -108,7 +108,7 @@ muon.  The matched silicon tracker track determines the $(\eta,\phi)$ trajectory
 
 The momentum of each global muon is determined by sampling four different global muon reconstruction algorithms, and selecting the  
 highest quality result.  Each algorithm fits a continuous track \cite{cmsMuonRecoRunTwo} to a unique combination of silicon tracker 
-and muon detector signals to estimate a muon's trajectory through CMS, as represented in Figure \ref{fig:particleTrajectories}.  The 
+and muon detector signals to estimate a muon's trajectory through CMS, depicted in Figure \ref{fig:particleTrajectories}.  The 
 quality of each continuous track is identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$; and 
 the track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ determines the global muon's momentum.  
 For muons with $\pt \lesssim 100$ $\GeV$ the highest quality result is obtained using only silicon tracker measurements.  Muons with 
@@ -202,13 +202,13 @@ in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 \subsection{Online Selection}
 During collisions events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
-either one 5 $\times$ 5 ECAL crystal cluster reconstructed with $\Et > 40$ $\GeV$, or two 5 $\times$ 5 crystal clusters: one with 
+either one 5 $\times$ 5 ECAL crystal cluster reconstructed with $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters: one with 
 $\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection 
 criteria:
 
 \begin{itemize}
-	\item Two 5 $\times$ 5 crystal clusters separated by $\Delta R > 0.1$ were reconstructed with $\Et > 33$ $\GeV$.
-	\item For each crystal cluster:
+	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were reconstructed with $\Et > 33$ $\GeV$.
+	\item For each ECAL cluster:
 	\begin{itemize}
 		\item The ratio of energy (H) in the HCAL tower behind the cluster to the cluster energy (E) was $\frac{H}{E} < 0.15$ 
 			in the barrel, and $\frac{H}{E} < 0.1$ in the endcap.
@@ -247,36 +247,40 @@ electrons that did not lose significant energy in the tracker:
 
 \section{Jet Reconstruction and Selection}
 \label{sec:jetReco}
+
+\subsection{Reconstruction}
 Quarks and gluons emitted from pp interactions produced jets of photons, hadrons and leptons.  On average, 85\% of a jet's 
 energy is carried by charged particles and photons \cite{pflowJetRecoInCollisions}, so these particles are prioritized during 
 jet reconstruction.  The particle flow jet reconstruction algorithm \cite{pflowEventReco} identifies $(\eta,\phi)$ regions 
 with one or more silicon tracker or muon detector tracks, one or more HCAL energy clusters, and any number of ECAL 
 SCs.  In these regions, algorithms described previously are used to reconstruct muons first, followed by electrons.  Tracks and 
 energy deposits identified as leptons are removed from the list of particle candidates.  The remaining tracks and energy clusters 
-are used to identify charged hadrons, photons, and neutral hadrons.  Each charged hadron is identified as a track linked to an HCAL 
-cluster and possibly an ECAL SC, and the track $\pt$ must agree with the total calorimeter $\Et$ within the calorimeter $\Et$ 
-uncertainty.  Each photon is identified as an ECAL SC that fails the electron track-SC matching requirement, or an ECAL SC that 
-matches a significantly lower energy HCAL cluster or track.  Finally, each neutral hadron is identified as an HCAL cluster and 
-an overlapping ECAL SC that are not matched to a track, or are matched to a track with significantly lower $\pt$.  Then a jet is 
-clustered from reconstructed particles in each region, as shown in Figure \ref{fig:jetClustering}.
+are used to identify charged hadrons, photons, and neutral hadrons.  Each charged hadron is identified as a track matched to an HCAL 
+cluster and possibly an ECAL SC, and the charged hadron's $\pt$ and $(\eta,\phi)$ trajectory are determined by the track.  The track 
+$\pt$ must agree with the total calorimeter $\Et$ within the calorimeter $\Et$ uncertainty.  Each photon is identified as an ECAL SC 
+that are not geometrically matched to a track or HCAL cluster whose $\pt$ or $\Et$ agrees with the SC $\Et$ within the ECAL $\Et$ 
+uncertainty.  Finally, each neutral hadron is identified as an HCAL cluster and any overlapping ECAL SC that are not geometrically 
+matched to a track whose $\pt$ agrees with the calorimeter $\Et$ within the calorimeter $\Et$ uncertainty.  After all tracks and 
+energy clusters in a region are identified as specific particles, a jet, represented by the cone in Figure \ref{fig:jetClustering}, 
+is clustered from those particles.
 
-Due to the high instantaneous collision luminosity, each pp bunch crossing delivered by the LHC yields multiple pp interactions, 
-or pileup (PU) interactions, that makes jet clustering more challenging.  In every unit of $\eta$, each PU interaction adds 
+Due to the high instantaneous collision luminosity, each pp bunch crossing delivered by the LHC produces multiple pp interactions, 
+or pileup (PU) interactions, that make jet clustering more challenging.  In every unit of $\eta$, each PU interaction adds 
 $\sim$11 charged particle tracks with $\pt \approx 0.5$ $\GeV$ to the event \cite{chgdHdrMultInData}.  These tracks are primarily 
-from charged hadrons, so before jets are clustered the charged hadrons associated with PU interaction vertices are removed from 
+charged hadrons, so before jets are clustered the charged hadrons associated with PU interaction vertices are removed from 
 all jet clustering regions.  Jets are then clustered from reconstructed particles using the anti-$k_{T}$ algorithm \cite{antikt} 
-with a cone size of $\Delta R = 0.4$.  In each region the anti-$k_{T}$ algorithm starts with the highest $\Et$ hadron and adds 
-other particles to the jet cone based on their $\pt$ and distance from the jet axis.  A cone size of $\Delta R = 0.4$ was used 
-to reduce the likelihood of having a jet with radius $\Delta R > 0.4$, which would be more sensitive to pileup contributions.  
-Once jets are clustered a second technique is used to reduce the contribution of neutral particles produced in PU interactions 
-to jet energies.  In this technique, the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with cone size $\Delta R = 0.3$ 
-is used to cluster jets from all particles reconstructed in the event, including jets that only contain photon and neutral hadrons.  
-Each $k_{T}$ jet's $\pt$ is divided by the jet's area ($\pt_{j} / A_{j}$), and the median value represents the average neutral 
+with a cone size of $\Delta R = 0.4$.  In each region the anti-$k_{T}$ algorithm starts with the highest $\pt$ hadron and adds 
+other particles to the jet cone based on their $\pt$ and distance from the jet axis.  A cone size of $\Delta R = 0.4$ is used to 
+cluster lower area jets that are less sensitive to PU contamination, but does not prohibit jets from being clustered with radius 
+$\Delta R > 0.4$.  Once jets are clustered a second technique is used to reduce the contribution of neutral particles produced in PU interactions 
+to jet energies.  This technique uses the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with cone size $\Delta R = 0.3$ 
+to cluster jets from all particles reconstructed in the event, including jets that only contain neutral particles.  
+Each $k_{T}$ jet's $\pt$ is divided by the jet's area ($\pt_{j} / A_{j}$), and the median value $\rho$ is used as the average neutral 
 particle energy density in the event \cite{pileup1,pileup2}.  Using the hybrid jet area subtraction technique described in 
-\cite{pflowJetRecoInCollisions}, the photon and neutral hadron energies in each anti-$k_{T}$ jet are reduced based on each jet's 
-area and $\eta$.  After all subtractions, jet energies are calibrated based on known variations in the detector response to jets 
+\cite{pflowJetRecoInCollisions}, the photon and neutral hadron energies in each anti-$k_{T}$ jet are reduced based on $\rho$, and each 
+jet's area and $\eta$.  After all subtractions, jet energies are calibrated to correct for known variations in the detector response to jets 
 as functions of $\eta$ and $\pt$.  By combining measurements from the silicon tracker, calorimeters, and muon detectors, particle 
-flow jets with $\pt > 50$ $\GeV$ and $|\eta| < 3.0$ were measured with $\pt$ resolution better than 15\% \cite{jetResolutionInCollisions}.
+flow jets with $\pt > 40$ $\GeV$ and $|\eta| < 2.4$ were measured with $\pt$ resolution better than 13\% \cite{jetResolutionInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -289,13 +293,38 @@ flow jets with $\pt > 50$ $\GeV$ and $|\eta| < 3.0$ were measured with $\pt$ res
 Jets reconstructed in simulated events are known to have different energies than jets reconstructed in data.  Energy corrections for 
 simulated jets are derived using dijet, $Z \rightarrow \ell\ell$+jet, and $\gamma$+jet events found in simulations and data 
 \cite{jetpaper}.  The di-jet mass and leading jet $\pt$ distributions in these events are compared between data and simulations, and 
-the energies of jets in simulated events are corrected so that the distributions match in data and simulations.
+the energies of jets in simulated events are corrected so that the jet distributions match in data and simulations.
+
+\subsection{Offline Identification Selection}
+In events selected by the single muon or double-electron trigger, jets were reconstructed offline from tracks and calorimeter energy 
+clusters using algorithms described previously.  After reconstruction, the following identification criteria were applied to select 
+jets that contained at least one energetic charged hadron, and whose energies were not dominated by ECAL SCs disconnected from HCAL 
+clusters:
+
+\begin{itemize}
+	\item The jet had at least 2 constituents.
+	\item The jet had at least 1 charged hadron constituent.
+	\item More than 0\% of the total jet energy came from charged hadrons.
+	\item Less than 90\% of the total jet energy came from neutral hadrons.
+	\item Less than 90\% of the total jet energy came from photons.
+	\item Less than 99\% of the total jet energy came from electrons.
+\end{itemize}
+
+
+\section{\WR Signal and ST Backgrounds}
+\label{sec:signalAndBkgnds}
+
+\subsection{Signal and Background Characteristics}
+
 
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Energetic electrons, muons and jets produced in collisions are reconstructed from signals measured in CMS sub-detectors and using 
-specialized reconstruction algorithms.  Reconstructed leptons and jets were required to pass additional selections to increase 
-sensitivity to a \WR signal relative to ST backgrounds.
+%conclusion for original reconstruction chapter, which did not include selection criteria
+%Energetic electrons, muons and jets produced in collisions are reconstructed from signals measured in CMS sub-detectors and using 
+%specialized reconstruction algorithms.  Reconstructed leptons and jets were required to pass additional selections to increase 
+%sensitivity to a \WR signal relative to ST backgrounds.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
