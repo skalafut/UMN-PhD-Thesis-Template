@@ -160,7 +160,7 @@ isolated muons that were reconstructed in multiple muon stations:
 		\item Was reconstructed from a signal in at least 1 silicon pixel detector layer, and signals in at least 
 			5 layers in the entire tracker.
 		\item Within a cone of radius $\Delta R = 0.3$ centered on the track, the $\sum \pt$ of all other 
-			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{muon \pt} < 0.1$.
+			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{\mu \pt} < 0.1$.
 	\end{itemize}
 	\item The muon was reconstructed in the muon detectors as a track segment that spanned one chamber in at least 
 		2 muon stations.  Track segments in each DT chamber were required to have signals in all 4 r-$z$ layers, and 
@@ -186,7 +186,7 @@ as one or more tracks that match the SC $(\eta,\phi)$ position within 1.1$^{\cir
 within 0.004 units, less than $\frac{1}{2}$ a crystal wide, in $\eta$.  In addition, the ECAL SC $\Et$ and the matched 
 track $\pt$ must agree within the uncertainty on the track $\pt$.  Using the SC energy, electrons with $\Et \approx 45$ 
 $\GeV$ and $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a resolution between 2\% and 5\% 
-for higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
+at higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -222,14 +222,14 @@ criteria:
 \subsection{Offline Identification Selection}
 In events selected by the double-electron trigger, electrons were reconstructed offline from ECAL SCs and tracks using algorithms 
 described previously.  After reconstruction, the following identification criteria were applied to select promptly produced 
-electrons that did not lose significant energy in the tracker:
+electrons that did not lose significant energy in the tracker, and were not reconstructed near a jet:
 
 \begin{itemize}
 	\item Electrons reconstructed with $1.44 < |\eta| < 1.57$ were ignored.
 	\item For barrel electrons, at least 94\% of the SC energy was measured in an $\eta$ region that was 2 crystals 
 		wide.
-	\item The ratio of energy (H) in the HCAL tower behind the SC to the SC energy ($E_{SC}$) was $\frac{H}{E_{SC}}< 0.05 + 1/E_{SC}$ 
-		in the barrel, and $\frac{H}{E_{SC}}< 0.05 + 5/E_{SC}$ in the endcap.
+	\item The ratio of energy (H) in the HCAL tower behind the SC to the SC energy ($E_{SC}$) was $\frac{H}{E_{SC}}< 0.05 + \frac{1}{E_{SC}}$ 
+		in the barrel, and $\frac{H}{E_{SC}}< 0.05 + \frac{5}{E_{SC}}$ in the endcap.
 	\item In a $\Delta R =$ 0.3 radius cone centered on the electron's $(\eta, \phi)$ trajectory:
 	\begin{itemize}
 		\item The $\sum \pt$ of all tracks excluding the electron's track was low, $\sum \pt < 5$ $\GeV$.
@@ -291,7 +291,7 @@ flow jets with $\pt > 40$ $\GeV$ and $|\eta| < 2.4$ were measured with a $\pt$ r
 \end{figure}
 
 Jets reconstructed in simulated events are known to have different energies than jets reconstructed in data.  Energy corrections for 
-simulated jets are derived using dijet, $Z \rightarrow \ell\ell$+jet, and $\gamma$+jet events found in simulations and data 
+simulated jets are derived using dijet, $Z$+jet, and $\gamma$+jet events found in simulations and data 
 \cite{jetpaper}.  The di-jet mass and leading jet $\pt$ distributions in these events are compared between data and simulations, and 
 the energies of jets in simulated events are corrected so that the jet distributions match in data and simulations.
 
@@ -318,30 +318,82 @@ by ST background processes like $\DY$+jets, and their final state leptons and je
 signature.
 
 The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state according to the following decay chain:
+
 \begin{tikzpicture}[grow=right]
 	\node (Wr) at (0,0) {$\WR \thickspace \rightarrow \thickspace \nul + \ell$};
 	\node (Ar) at (0.75,-0.4) {$\searrow$};
 	\node (Nl) at (1.25,-0.75) {$\ell jj$};
-\end{tikzpicture}
-The previous \WR and \nul search \cite{cmsWRRunOneResults} excluded \WR production at 95\% CL for $\mWR < 2$ $\TeV$ and $\mnul < \mWR$, 
-so the \WR and \nul lifetimes, inversely proportional to their masses, are expected to be very short.  Therefore, \WR and \nul decay 
-promptly to leptons, and quarks that hadronize into jets.  The \WR is the progenitor of the final state particles, so their average 
-energies are set by \mWR.
+\end{tikzpicture} $\newline$
+The previous \WR and \nul search \cite{cmsWRRunOneResults} excluded \WR production at 95\% CL for $\mWR < 3$ $\TeV$ and 
+$90 \GeV \lesssim \mnul < \mWR$, so the \WR and \nul lifetimes, inversely proportional to their masses, are expected to be very short.  
+Therefore, \WR and \nul decay promptly to leptons, and quarks that hadronize into jets.  The \WR is the progenitor of the final state 
+particles, so these particles' average energies scale with \mWR.
 
 The majority of background events are produced by the $\DY$+jets process and processes with at least one top quark; the remainder are 
 produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  \DY produces two same flavor leptons at a rate that decreases 
-rapidly for di-lepton masses ($\Mll$) above 120 $\GeV$.  At $\sqrt{s} = 13$ $\TeV$ the quarks participating in the \DY interaction can 
+rapidly as a function of di-lepton mass above 120 $\GeV$.  At $\sqrt{s} = 13$ $\TeV$ the quarks participating in the \DY interaction can 
 radiate a parton and lower the \DY rate by the QCD coupling $\alpha_{QCD} \sim$0.1.  Thus, two partons are radiated in $\alpha_{QCD}^{2} \sim$
-0.01 $=$1\% of \DY events.  Since these partons are radiated before the \DY interaction, their energies and trajectories are only 
+0.01 $=$ 1\% of \DY events.  Since these partons are radiated before the \DY interaction, their energies and trajectories are only 
 constrained by the final state leptons insofar as the \DY+jets system $\pt$ must be conserved.  Unlike \DY, the top quark background, 
 including $t\bar{t}$ and t+W, naturally produces $\ell\ell jj$ final states without initial state parton radiation.  As a result, the 
-average energies of final state leptons and jets are set by the progenitor top quark system.  The top quark background is also the only 
-significant background that produces $e\mu jj$ final states at a higher rate than same flavor $\ell\ell jj$ final states; a fact that 
-will be discussed later when estimating the top quark background.
+average energies of final state leptons and jets scale with the progenitor top quark system energy.  The top quark background is also the 
+only significant background that produces $e\mu jj$ final states at a higher rate than same flavor $\ell\ell jj$ final states.  This is 
+exploited to estimate the top quark background, using methods described later.  Amongst the remaining backgrounds, only WZ and ZZ 
+production yield $\ell\ell jj$ final states without initial state parton radiation.  In these events, the lepton and jet energies scale 
+with the progenitor $VV$ system energy.  The remaining subdominant processes - WW, W+jets, and QCD multi-jet - contribute to the 
+$\ell\ell jj$ final states only when the initial state partons radiate at least one parton, or when at least one real jet is incorrectly 
+reconstructed as a $\ell$.
+
+\subsection{Signal and Background Kinematics}
+\mWR and the mass ratio $\mnul/\mWR$ govern the kinematic properties, like $\pt$ and $(\eta,\phi)$ trajectory, of all final state leptons 
+and jets.  The \WR has been excluded by previous searches at 95\% CL for $\mWR < 3$ $\TeV$, so the expected \mWR is large relative to 
+the $\sqrt{s} = 13$ $\TeV$ collision energy.  .
 
 %RESUME HERE
 
-\subsection{Signal and Background Kinematics}
+
+%The event selections were driven by model independent features of \WR and \nul decays, and ST backgrounds in the $\ell\ell jj$ 
+%final states.  The expected \WR mass (\mWR) is large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
+%so \WR bosons are expected to have low net momentum.  Therefore, the charged lepton and jet decay products, on average, 
+%are distributed uniformly in $\phi$, and are concentrated in the $|\eta| < 2.4$ region\footnote{The $|\eta| < 2.4$ region 
+%covers 94\% of the $0 \leq \theta < 180$ degree phase space, where $\theta = 0$ points along the beam axis.}, 
+%as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected \mWR means final 
+%state leptons and jets should have $\pt$ of several hundred $\GeV$ or more, as shown in Figures \ref{fig:wrLeptonPts} and 
+%\ref{fig:wrJetPts}.  In contrast, the ST backgrounds in the $\ell\ell jj$ final states produce leptons and jets primarily 
+%with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences in 
+%lepton and jet kinematics between signal and background events motivated the following event selections:
+%
+%\begin{itemize}
+%	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one with $\pt > 60$ $\GeV$.
+%	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
+%	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
+%	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets was greater than 600 $\GeV$.
+%\end{itemize}
+%
+%The decay $\WR \rightarrow \ell_{1}\nul$ produces a charged lepton $\ell_{1}$ that is very light relative 
+%to the \WR, so in the CM frame of the \WR, $\ell_{1}$ is equally likely to be emitted in any direction.  Subsequently, the decay 
+%$\nul \rightarrow \ell_{2}\WR^{*} \rightarrow \ell_{2}jj$ produces a dijet system and a second charged lepton $\ell_{2}$.  As 
+%long as $\mnul \gtrsim \mWR / 10$, the mass difference $\mnul - m_{\ell}$ produces a low velocity dijet system, and a high 
+%velocity lepton $\ell_{2}$ that, on average, is separated from both jets by $\Delta R > 0.4$.  In the CM frame of the \nul, the 
+%lepton $\ell_{2}$ is equally likely to be emitted in any direction.  Therefore, in $\sim$50\% of \WR decays the angular separation 
+%between $\ell_{1}$ and $\ell_{2}$ measured in a plane that contains both of their momentum vectors is greater than $\frac{\pi}{2}$.  
+%This separation causes the dilepton mass $\Mll$ to exceed $\sqrt{2} p_{1}p_{2}$, where $p_{i}$ is the momentum magnitude of 
+%$\ell_{i}$.  Both leptons and jets are very light relative to the \WR, so on average the sum of lepton momentum magnitudes is 
+%$p_{1} + p_{2} = \mWR / 2$, and their geometric mean is $p_{1}p_{2} = \mWR /\sqrt{8}$.  Thus, in $\sim$50\% of \WR decays the 
+%difference between \mnul and $m_{\ell}$ results in a dilepton mass $\Mll > \mWR/2$.  In contrast, the two dominant backgrounds 
+%- \DY and top quark processes - produce more than 50\% of their $\ell\ell jj$ events with $\Mll < 200$ $\GeV$, several hundred 
+%$\GeV$ below $\mWR / 2$ for the majority of signal mass hypotheses tested in the search presented in this thesis.  In addition, 
+%in QCD multijet and W+jets background events where two leptons were reconstructed, at least one lepton was often a byproduct of 
+%hadronization, and was reconstructed near but not clustered into a jet.  These differences in the $\Mll$ and $\Delta R(\ell,j)$ 
+%separation variables between signal and ST background events motivated the following event selections:
+%
+%\begin{itemize}
+%	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
+%	\item The dilepton mass $\Mll$ of the two reconstructed leptons was greater than 200 $\GeV$.
+%\end{itemize}
+
+
+\subsection{Kinematic Selection Criteria}
 
 
 \section{Conclusion}
