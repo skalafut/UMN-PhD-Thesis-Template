@@ -347,11 +347,59 @@ reconstructed as a $\ell$.
 \subsection{Signal and Background Kinematics}
 \mWR and the mass ratio $\mnul/\mWR$ govern the kinematic properties, like $\pt$ and $(\eta,\phi)$ trajectory, of all final state leptons 
 and jets.  The \WR has been excluded by previous searches at 95\% CL for $\mWR < 3$ $\TeV$, so the expected \mWR is large relative to 
-the $\sqrt{s} = 13$ $\TeV$ collision energy.  .
+the $\sqrt{s} = 13$ $\TeV$ collision energy.  Thus \WR bosons are expected to have low net momentum, so in the lab frame their progeny \nul 
+and $\ell$ are emitted isotropically.  In addition, due to the large expected \mWR, the final state leptons and jets are produced with 
+high $\pt$ (Figure \ref{fig:wrLeptJetPts}) and low $\eta$ (Figure \ref{fig:wrLeptJetEtas}).
+
+%now shift discussion to kinematics affected by \mnul
 
 %see June 2015 for kinematic plots with fixed MWR and several low MNu
 %see July 2016 answersToFirstRoundOfANQuestions for kinematic plots with fixed MWR and low, medium, and high MNu
 %RESUME HERE
+
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.4\textwidth]{figures/etaMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
+		\caption{e from $\WR \rightarrow e\nul$}
+	}
+	\subfigure{
+		\includegraphics[width=0.4\textwidth]{figures/etaMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
+		\caption{e from $\nul \rightarrow ejj$}
+	}
+
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrLeptJetEtas}
+	\caption{The $\eta$ distributions of electrons and jets reconstructed in $\WR \rightarrow eejj$ events with $\mWR = 2.2$ $\TeV$ 
+		and $\mnul = \frac{1}{2}\mWR$.  The jets are geometrically matched to the quark progeny of the \nul.}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/ptMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/ptMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
+	}
+
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/ptMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/ptMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
+	}
+	\label{fig:wrLeptJetPts}
+	\caption{The $\pt$ distribution of the reconstructed electron produced by the \WR (\nul) decay is shown on the left (right) for 
+		simulated $\WR \rightarrow eejj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+\end{figure}
+
 
 
 %The event selections were driven by model independent features of \WR and \nul decays, and ST backgrounds in the $\ell\ell jj$ 
