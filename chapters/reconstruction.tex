@@ -345,15 +345,23 @@ $\ell\ell jj$ final states only when the initial state partons radiate at least 
 reconstructed as a $\ell$.
 
 \subsection{Signal and Background Kinematics}
-\mWR and the mass ratio $\mnul/\mWR$ govern the kinematic properties, like $\pt$ and $(\eta,\phi)$ trajectory, of all final state leptons 
+\mWR and the ratio $\mnul/\mWR$ govern the kinematic properties, like $\pt$ and $(\eta,\phi)$ trajectory, of the final state leptons 
 and jets.  The \WR has been excluded by previous searches at 95\% CL for $\mWR < 3$ $\TeV$, so the expected \mWR is large relative to 
 the $\sqrt{s} = 13$ $\TeV$ collision energy.  Thus \WR bosons are expected to have low net momentum, so in the lab frame their progeny \nul 
 and $\ell$ are emitted isotropically.  In addition, due to the large \mWR, the final state leptons and jets are produced with high $\pt$ 
-(Figure \ref{fig:wrLeptJetPts}) and low $|\eta|$ (Figure \ref{fig:wrLeptJetEtas}).  At a specific \mWR, however large it is, the transverse 
-energy of the leptons and jets, and their $(\eta,\phi)$ trajectories relative to each other are determined by the ratio $\mnul/\mWR$.  As 
-$\mnul/\mWR \to 1$ the $\ell_{1}$, from $\WR \rightarrow \ell_{1}\nul$, is emitted with lower average transverse energy; this is balanced 
-by the $\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, being emitted with higher average transverse energy.  The .
+(Figure \ref{fig:wrLeptJetPts}) and low $|\eta|$ (Figure \ref{fig:wrLeptJetEtas}).  At a specific \mWR, however large it is, the ratio 
+$\mnul/\mWR$ has a strong effect on the lepton and jet energies, and their $(\eta,\phi)$ trajectories relative to each other.  As 
+$\mnul/\mWR$ approaches 1 the $\ell_{1}$, from $\WR \rightarrow \ell_{1}\nul$, is emitted with lower average transverse energy; and the 
+$\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, are emitted with higher average transverse energy.  As $\mnul/\mWR$ 
+approaches 0 the $\ell_{1}$ is emitted with higher average transverse energy, and conversely the $\ell_{2}$ and both jets are emitted 
+with lower average transverse energy.  These changes in lepton and jet transverse energies as a function of $\mnul/\mWR$ for 
+$\mWR = 2.2$ $\TeV$ are shown in Figure \ref{fig:wrLeptQrkPtsVarMNu}.  Furthermore, as $\mnul/\mWR$ approaches 0 the \nul is emitted with 
+larger momentum (Figure \ref{fig:hvyNuMomentumVarMNu}).  This momentum is conserved, and consequently in the lab frame the $\ell_{2}$ 
+and dijet system are preferentially emitted, or boosted, along the \nul $(\eta,\phi)$ trajectory.  The boost of the \nul decay products 
+decreases the $\Delta R(\ell,j)$ separation between $\ell_{2}$ and both jets (Figure \ref{fig:wrDrLeptQrkVarMNu}), but does not affect 
+the angle $\Theta$ between $\ell_{2}$ and $\ell_{1}$ (Figure \ref{fig:wrLeptAngleSepVarMNu}).  .
 
+%\ref{sec:lrsPhenomenology} motivates the lower bound $\mnul \gtrsim 90$ $\GeV$
 
 %see June 2015 for kinematic plots with fixed MWR and several low MNu
 %see July 2016 answersToFirstRoundOfANQuestions for kinematic plots with fixed MWR and low, medium, and high MNu
@@ -364,13 +372,13 @@ by the $\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, being emitt
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/ptMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
-		\caption{e from $\WR \rightarrow eN_{e}$}\label{fig:wrLeptJetPtsa}
+		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptJetPtsa}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/ptMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
-		\caption{e from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetPtsb}
+		\caption{$\ell$ from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetPtsb}
 	\end{subfigure}
 	\newline
 	\newline
@@ -379,15 +387,15 @@ by the $\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, being emitt
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/ptMatchedRecoJetOne_mwr2200_mnu1100.pdf}
-		\caption{jet from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetPtsc}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetPtsc}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/ptMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
-		\caption{jet from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetPtsd}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetPtsd}
 	\end{subfigure}
-	\caption{The $\pt$ distributions of electrons and jets reconstructed in $\WR \rightarrow eejj$ events with $\mWR = 2.2$ $\TeV$ 
+	\caption{The $\pt$ of leptons and jets reconstructed in $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2$ $\TeV$ 
 		and $\mnul = \frac{1}{2}\mWR$.}\label{fig:wrLeptJetPts}
 \end{figure}
 
@@ -396,13 +404,13 @@ by the $\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, being emitt
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
-		\caption{e from $\WR \rightarrow eN_{e}$}\label{fig:wrLeptJetEtasa}
+		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptJetEtasa}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
-		\caption{e from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetEtasb}
+		\caption{$\ell$ from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasb}
 	\end{subfigure}
 	\newline
 	\newline
@@ -411,25 +419,83 @@ by the $\ell_{2}$ and both jets, from $\nul \rightarrow \ell_{2}jj$, being emitt
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
-		\caption{jet from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetEtasc}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasc}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
-		\caption{jet from $N_{e} \rightarrow ejj$}\label{fig:wrLeptJetEtasd}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasd}
 	\end{subfigure}
-	\caption{The $\eta$ distributions of electrons and jets reconstructed in $\WR \rightarrow eejj$ events with $\mWR = 2.2$ $\TeV$ 
+	\caption{The $\eta$ of leptons and jets reconstructed in $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2$ $\TeV$ 
 		and $\mnul = \frac{1}{2}\mWR$.}\label{fig:wrLeptJetEtas}
 \end{figure}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptQrkPtsVarMNua}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\caption{$\ell$ from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNub}
+	\end{subfigure}
+	\newline
+	\newline
+	\newline
+	\newline
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\caption{quark from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNuc}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\caption{quark from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNud}
+	\end{subfigure}
+	\caption{The $\pt$ of leptons and quarks produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ 
+		and different \mnul.}\label{fig:wrLeptQrkPtsVarMNu}
+\end{figure}
 
-%The event selections were driven by model independent features of \WR and \nul decays, and ST backgrounds in the $\ell\ell jj$ 
-%final states.  The expected \WR mass (\mWR) is large, above 2 $\TeV$, relative to the 13 $\TeV$ collision energy, 
-%so \WR bosons are expected to have low net momentum.  Therefore, the charged lepton and jet decay products, on average, 
-%are distributed uniformly in $\phi$, and are concentrated in the $|\eta| < 2.4$ region\footnote{The $|\eta| < 2.4$ region 
-%covers 94\% of the $0 \leq \theta < 180$ degree phase space, where $\theta = 0$ points along the beam axis.}, 
-%as shown in Figures \ref{fig:wrLeptonEtas} and \ref{fig:wrJetEtas}.  Furthermore, the large expected \mWR means final 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
+	\caption{The $|p|$ of the \nul produced in $\WR \rightarrow \ell\nul$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}
+	\label{fig:hvyNuMomentumVarMNu}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		%\caption{ }\label{fig:wrDrLeptQrkVarMNua}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/missingImage.png}
+		%\caption{ }\label{fig:wrDrLeptQrkVarMNub}
+	\end{subfigure}
+	\caption{The $\Delta R(\ell,q)$ separation between the $\ell$ and both quarks produced by $\nul \rightarrow \ell qq$ 
+		in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}\label{fig:wrDrLeptQrkVarMNu}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
+	\caption{The angle between the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
+	different \mnul.}
+	\label{fig:wrLeptAngleSepVarMNu}
+\end{figure}
+
+
 %state leptons and jets should have $\pt$ of several hundred $\GeV$ or more, as shown in Figures \ref{fig:wrLeptonPts} and 
 %\ref{fig:wrJetPts}.  In contrast, the ST backgrounds in the $\ell\ell jj$ final states produce leptons and jets primarily 
 %with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences in 
