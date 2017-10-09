@@ -637,20 +637,30 @@ decrease with lower $\mnul/\mWR$ (Figure \ref{fig:wrLeptQrkPtsVarMNu}), so the j
 to avoid concealing low $\mnul/\mWR$ signals.  The $\pt$ of jets reconstructed with $|\eta| < 2.4$ were measured with a resolution 
 better than 13$\pm$1\% for $\pt > 40$ $\GeV$; for $30 < \pt < 40$ $\GeV$ the resolution worsened to $\sim$15$\pm$4\% 
 \cite{jetResolutionInCollisions}.  To avoid low $\pt$ jets measured with large $\pt$ uncertainty, each event was required to have two 
-$|\eta| < 2.4$ jets reconstructed with $\pt > 40$ $\GeV$.  The 40 $\GeV$ threshold was validated by comparing a \WR signal to ST 
-backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, reducing the jet $\pt$ threshold reduces sensitivity to a \WR signal relative 
-to ST backgrounds.
+$|\eta| < 2.4$ jets reconstructed with $\pt > 40$ $\GeV$.  If more than 2 jets passed these criteria, the two highest $\pt$ jets were 
+used.  The 40 $\GeV$ threshold was validated by comparing a \WR signal to ST backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, 
+reducing the jet $\pt$ threshold reduces sensitivity to a \WR signal relative to ST backgrounds.
 
-%the online lepton selection criteria and \WR kinematics motivate the lepton pt and eta selection criteria
 The large expected \mWR and trigger selection criteria motivated the offline lepton $\pt$ and $\eta$ selection criteria.  For the same 
-reason cited for the jets, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}).  
-Thus, each event was required to have two leptons reconstructed with $|\eta| < 2.4$.  The leptons and .
+reason cited for the \WR quarks, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}) 
+with high $\pt$ (Figure \ref{fig:wrLeptJetPts}).  Therefore, each event was required to have two leptons reconstructed with $|\eta| < 2.4$ 
+and $\pt > 53$.  The $\pt > 53$ requirement is applied to electrons and muons, and the 53 $\GeV$ threshold was used so that both muons 
+were selected in a $\pt$ region where the trigger efficiency was maximized.  In \WR decays one lepton is often produced with greater 
+$\pt$ than the other, so an additional lepton $\pt$ requirement was applied.  At least one reconstructed lepton was required to have 
+$\pt > 60$ $\GeV$ to increase sensitivity to a \WR signal relative to the ST backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 
+2 leptons passed these criteria, the two highest $\pt$ leptons were used.
 
-%jet reco algorithm motivates lepton jet deltaR selection criteria
-
+Jets are reconstructed using the anti-$k_{T}$ algorithm with distance parameter $\Delta R = 0.4$.  This parameter defines the 
+characteristic length in $(\eta,\phi)$ space between two well separated constituent particles of the same jet, and puts a soft limit 
+on the jet $(\eta,\phi)$ area.  However, it is possible for constituent particles in a jet to be separated from the $\pt$ averaged 
+jet axis by $\Delta R > 0.4$.  To avoid a jet and lepton that are reconstructed in close proximity, each reconstructed lepton 
+passing the identification, $\pt$, and $\eta$ selections was required to be separated from both selected jets by $\Delta R > 0.4$.
 
 %WR lepton kinematics motivates dilepton mass selection criteria
-
+The \WR decay produces one lepton through $\WR \rightarrow \ell_{1}\nul$, and a second lepton via $\nul \rightarrow \ell_{2}jj$.  Since 
+both leptons are produced by the decay of massive particles ($\mnul \gtrsim 90$ $\GeV$, see Chapter \ref{sec:lrsPhenomenology}), their 
+trajectories are correlated only if the \nul is boosted ($\mnul/\mWR \lesssim \frac{1}{10}$).  When their trajectories are uncorrelated 
+their .
 
 %all previous lepton and jet selection criteria create an artificial peak at Mlljj = 550 GeV, so Mlljj is required to exceed 600 GeV
 
