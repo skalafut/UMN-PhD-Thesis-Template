@@ -138,8 +138,27 @@ corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events 
 in simulated events are corrected so that the two $M_{\mu\mu}$ distributions match.
 
 \subsection{Online Selection}
+\WR events that produced two muons could be selected online using single muon or double-muon triggers.  The single muon 
+triggers required one track segment reconstructed in multiple muon detectors with $\pt> A$, while the double-muon 
+triggers required two such track segments with $\pt$ above a threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ events the 
+highest efficiency single muon trigger was more efficient than the highest efficiency double muon trigger (Table \ref{tab:singleVsDblMuHlt}) 
+because the efficiency to reconstruct one track segment with $\pt > B$ was not 100\%.  To maximize the trigger efficiency a single 
+muon trigger was used to select collision events with muons.
+
+\begin{table}[h]
+	\caption{The efficiency of a single and double-muon trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
+		and $\mnul = \frac{1}{2} \mWR$.}
+	\label{tab:singleVsDblMuHlt}
+	\centering
+	\begin{tabular}{c|c|c|c}
+		trigger type & leading $\mu$ $\pt$ criteria ($\GeV$) & subleading $\mu$ $\pt$ criteria ($\GeV$) & efficiency (\%) \\  \hline
+		single &  $>50$ & - & 98  \\ 
+		double & $>17$ & $>8$ & 93  \\
+	\end{tabular}
+\end{table}
+
 During collisions events with muons were selected using a single muon Level-1 trigger.  The trigger required one reconstructed 
-track segment with $\pt > 16$ $\GeV$ that spanned one DT or CSC chamber in at least 2 stations, and the track segment in each chamber 
+track segment with $\pt > 16$ $\GeV$ that spanned one DT or CSC chamber in at least 2 stations.  In each chamber the track segment 
 was built from signals in at least 4 layers.  Then, events were required to pass the following single muon HLT selection criteria:
 
 \begin{itemize}
@@ -201,6 +220,27 @@ corrections for simulated electrons are derived using $Z \rightarrow ee$ events 
 in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 \subsection{Online Selection}
+\WR events that produced two electrons could be selected online using single electron or double-electron triggers.  The single electron 
+triggers required one track reconstructed in the silicon tracker to extrapolate to a 5 $\times$ 5 ECAL crystal region with $\Et > D$; 
+the double-electron triggers required two such track-ECAL cluster combinations with $\Et$ above a threshold $E < D$.  In simulated 
+$\WR \rightarrow eejj$ events the highest efficiency single and double-electron triggers had similar efficiencies (Table 
+\ref{tab:singleVsDblMuHlt}), but the single electron trigger required $\Et > 105$ $\GeV$.  Such a high $\Et$ requirement would 
+significantly reduce the number of $Z \rightarrow \ell\ell$+jets events, whose leptons have $\pt \lesssim 60$ $\GeV$, available for 
+background estimation.  A double-electron trigger that required $\Et > 33$ $\GeV$ was used to select collision events with electrons 
+so that the $Z \rightarrow \ell\ell$+jets background could be estimated with low statistical uncertainty.
+
+\begin{table}[h]
+	\caption{The efficiency of a single and double-electron trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
+		and $\mnul = \frac{1}{2} \mWR$.}
+	\label{tab:singleVsDblMuHlt}
+	\centering
+	\begin{tabular}{c|c|c|c}
+		trigger type & leading $e$ $\Et$ criteria ($\GeV$) & subleading $e$ $\Et$ criteria ($\GeV$) & efficiency (\%) \\  \hline
+		single &  $>105$ & - & 94  \\ 
+		double & $>33$ & $>33$ & 92  \\
+	\end{tabular}
+\end{table}
+
 During collisions events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
 either one 5 $\times$ 5 ECAL crystal cluster reconstructed with $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters: one with 
 $\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection 
@@ -588,21 +628,23 @@ are shown in Figure \ref{fig:bkgLeptJetPts}.
 Several independent reasons motivate the offline lepton and jet kinematic selection criteria.  These reasons and the resulting 
 selection criteria, identical for both $eejj$ and $\mu\mu jj$ final states, are described here.
 
-The CMS jet $\pt$ resolution and the large expected \mWR motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is expected 
-to be heavy ($\mWR > 3$ $\TeV$), so it is produced with with low momentum.  Therefore the \WR quark decay products are emitted uniformly in 
-$\phi$ and $\theta$ relative to the beam axis, and the quarks hadronize into jets in the central $|\eta|$ 
+The large expected \mWR and the CMS jet $\pt$ resolution vs $\pt$ motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is 
+expected to be heavy ($\mWR > 3$ $\TeV$), so it is produced with with low momentum.  Therefore the \WR quark decay products are emitted 
+uniformly in $\phi$ and $\theta$ relative to the beam axis, and the quarks hadronize into jets in the central $|\eta|$ 
 region (Figure \ref{fig:wrLeptJetEtas}).  Thus, each event was required to have two jets reconstructed with $|\eta| < 2.4$.  Also due to 
 the large expected \mWR, the jets are produced with large $\pt$ (Figure \ref{fig:wrLeptJetPts}).  However, the $\pt$s of both \WR quarks 
 decrease with lower $\mnul/\mWR$ (Figure \ref{fig:wrLeptQrkPtsVarMNu}), so the jet $\pt$ selection threshold should be as low as possible 
-to be sensitive to low $\mnul/\mWR$ signals.  The $\pt$ of jets reconstructed with $|\eta| < 2.4$ were measured with a resolution better 
-than 13$\pm$1\% for $\pt > 40$ $\GeV$; for $30 < \pt < 40$ $\GeV$ the resolution worsened to $\sim$15$\pm$4\% 
+to avoid concealing low $\mnul/\mWR$ signals.  The $\pt$ of jets reconstructed with $|\eta| < 2.4$ were measured with a resolution 
+better than 13$\pm$1\% for $\pt > 40$ $\GeV$; for $30 < \pt < 40$ $\GeV$ the resolution worsened to $\sim$15$\pm$4\% 
 \cite{jetResolutionInCollisions}.  To avoid low $\pt$ jets measured with large $\pt$ uncertainty, each event was required to have two 
 $|\eta| < 2.4$ jets reconstructed with $\pt > 40$ $\GeV$.  The 40 $\GeV$ threshold was validated by comparing a \WR signal to ST 
 backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, reducing the jet $\pt$ threshold reduces sensitivity to a \WR signal relative 
 to ST backgrounds.
 
 %the online lepton selection criteria and \WR kinematics motivate the lepton pt and eta selection criteria
-The 
+The large expected \mWR and trigger selection criteria motivated the offline lepton $\pt$ and $\eta$ selection criteria.  For the same 
+reason cited for the jets, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}).  
+Thus, each event was required to have two leptons reconstructed with $|\eta| < 2.4$.  The leptons and .
 
 %jet reco algorithm motivates lepton jet deltaR selection criteria
 
