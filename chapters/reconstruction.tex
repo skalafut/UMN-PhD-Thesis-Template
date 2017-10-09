@@ -311,7 +311,7 @@ clusters:
 \end{itemize}
 
 
-\section{\WR Signal and ST Backgrounds}
+\section{\WR Signal and ST Backgrounds Kinematics}
 \label{sec:signalAndBkgnds}
 The data is expected to contain events where two charged leptons ($\ell$) and two jets are reconstructed.  These events are produced 
 by ST background processes like $\DY$+jets, and their final state leptons and jets conceal the $\WR \rightarrow \ell\ell jj$ decay 
@@ -336,9 +336,9 @@ $=$1\% of \DY events the initial quarks radiate two partons before interacting. 
 $t\bar{t}$ and t+W, produces $\ell\ell jj$ final states without initial state parton radiation.  The top quark background is 
 also the only significant background that produces $e\mu jj$ final states twice as often as same flavor $\ell\ell jj$ final states.  The 
 $e\mu/\ell\ell$ ratio is used to predict the top quark background, using methods described later.  Amongst the remaining backgrounds, only 
-WZ and ZZ production yield $\ell\ell jj$ final states without initial state parton radiation.  The other backgrounds - WW, W+jets, and 
-QCD multi-jet - yield $\ell\ell jj$ final states only when the interacting quarks or gluons radiate partons, or when real jets are 
-incorrectly reconstructed as leptons.
+WZ and ZZ production yield $\ell\ell jj$ final states without initial state parton radiation.  The other backgrounds - $qq/qg/gg \rightarrow$ 
+WW, W+jets, and QCD multi-jet - yield $\ell\ell jj$ final states only when the interacting quarks or gluons radiate partons, or when real 
+jets are incorrectly reconstructed as leptons.
 
 \subsection{Signal and Background Kinematics}
 \mWR and the ratio $\mnul/\mWR$ govern the kinematics, like $\pt$ and $(\eta,\phi)$ trajectory, of the final state leptons and jets in 
@@ -365,27 +365,51 @@ with the angle between the leptons, so the boost at low $\mnul/\mWR$ also increa
 %see June 2015 for kinematic plots with fixed MWR and several low MNu
 %see July 2016 answersToFirstRoundOfANQuestions for kinematic plots with fixed MWR and low, medium, and high MNu
 
-The \DY+jets process produces $\ell\ell jj$ final state events that have low $\Mll$, and low $\pt$ 
-jets.  Before producing a dilepton system via \DY, the interacting quarks radiate two partons.  These partons are radiated with a 
+The \DY+jets process produces $\ell\ell jj$ final state events that have low $\pt$ jets, and whose leptons have low $\Mll$.  Before 
+producing a dilepton system via \DY, the interacting quarks radiate two partons.  These partons are radiated with a 
 probability that is independent of $\phi$ and the angle $\theta$ relative to the beam axis, but decreases rapidly with $\pt$.  These 
-partons recoil against the $Z/\gamma^{*}$ to conserve the initial quark system momentum, and subsequently hadronize into jets.  Due to 
-the $Z$ boson resonance, the majority of \DY events produce lepton pairs with $60 < \Mll < 120$ $\GeV$.  The upper bound $\Mll < 120$ 
-$\GeV$ constrains both leptons to have $\pt \lesssim 60$ $\GeV$.  Considering many $\DY$+jet events, the lepton jet 
-invariant mass ($\Mlljj$) distribution peaks below 200 $\GeV$ due to the $Z$ boson resonance.  However, events where the $Z$ boson 
-has significant momentum, or the $\gamma^{*}$ has significant energy create a long $\Mlljj$ tail above the peak.
+partons recoil against the $Z/\gamma^{*}$ to conserve the initial quark system momentum, and are reconstructed as jets.  Due to 
+the $Z$ boson resonance, the majority of \DY events produce lepton pairs reconstructed with $60 < \Mll < 120$ $\GeV$.  The $\Mll$ window 
+constrains both leptons to have $15 \gtrsim \pt \lesssim 60$ $\GeV$, and their $\pt$ distributions peak at $M_{Z}/2$.  Events where 
+the $Z$ boson has significant momentum, or the $\gamma^{*}$ has significant energy yield higher $\pt$ leptons, but at a significantly 
+lower rate.
 
 The top quark background, primarily $t\bar{t}$ and $t+W^{\pm}$, produces one bottom quark and one $W^{\pm}$ boson per top quark.  Both 
 the bottom quark and $W$ boson can decay to a charged lepton.  In events where one or more top quarks are created, the $\ell\ell jj$ 
-final state is realized when two $\ell$ are produced from bottom quark and $W$ boson decays.  Although several top quark processes 
-contribute to the background, the dominant contribution is from $t\bar{t}$.  In $t\bar{t} \rightarrow \ell\ell jj$ events both $W$ 
-bosons decay to a charged lepton, and, due to combinatorics, the $e\mu$ final state is produced twice as often as the $ee$ or $\mu\mu$ 
-final state.  The charged leptons are constrained by the $W$ mass to have $\pt \lesssim 50$ $\GeV$, and their invariant mass $\Mll$ 
-can be as high as the $t\bar{t}$ rest mass.  Considering many $t\bar{t} \rightarrow \ell\ell jj$ events, the $\Mlljj$ distribution 
-peaks below the $t\bar{t}$ mass because of the neutrinos from the $W$ decay.  However, events where the $t\bar{t}$ system has significant 
-momentum create a long $\Mlljj$ tail above the peak.
+final state is realized when two $\ell$ are reconstructed from a combination of bottom quark and $W$ boson decays.  Although several 
+top quark processes contribute to the total background, the dominant contribution is from $t\bar{t}$.  In $t\bar{t} \rightarrow \ell\ell jj$ 
+events both $W$ bosons decay to a charged lepton via $W^{\pm} \rightarrow \ell\nu$, and, due to combinatorics, the $e\mu$ final state 
+is produced twice as often as the $ee$ or $\mu\mu$ final state.  The reconstructed charged leptons are constrained by the $W$ mass to 
+have $15 \gtrsim \pt \lesssim 50$ $\GeV$, and their $\pt$ distributions peak at $M_{W}/2$.  However, their invariant mass $\Mll$ can be 
+as high as the $t\bar{t}$ rest mass.  The reconstructed lepton-jet invariant mass ($\Mlljj$) distribution found in $t\bar{t}$ events 
+peaks below the $t\bar{t}$ mass because of the neutrinos from the $W$ decay.
 
-%RESUME HERE
+The WZ and ZZ processes produce $\ell\ell jj$ final state events that have low $\pt$ jets, and whose leptons have low $\Mll$.  WZ and 
+ZZ pairs can be produced with one off-shell boson ($M_{Z^{*}} < 90$ $\GeV$), but their production rate is maximized when both bosons are 
+produced on-shell.  In both processes one $Z$ decays to leptons via $Z \rightarrow \ell\ell$.  The majority of these lepton pairs are 
+reconstructed with $60 < \Mll < 120$ $\GeV$, and each lepton's $\pt$ distribution spans $15 \gtrsim \pt \lesssim 60$ $\GeV$ with a 
+peak at $M_{Z}/2$.  The other $Z$ in ZZ, and the $W$ in WZ decay to quarks via $W/Z \rightarrow qq$.  The quarks are reconstructed as 
+two jets whose dijet mass is consistent with the $W$ or $Z$ mass.  Similar to the leptons from the $Z$ decay, the $W/Z$ mass window 
+and rest mass constrains each jet's $\pt$ distribution to $15 \gtrsim \pt \lesssim 50$ $\GeV$ with a peak at half the progenitor boson 
+mass.  The reconstructed $\Mlljj$ distribution found in WZ and ZZ events peaks at the diboson rest mass.
 
+The $qq/qg/gg \rightarrow$ WW, W+jets and QCD multi-jet backgrounds produce $\ell\ell jj$ final states with low $\pt$ leptons and jets.  
+WW production contributes to the $\ell\ell jj$ final states when both bosons decay to charged leptons via $W^{\pm} \rightarrow \ell\nu$, 
+and the initial state quarks or gluons radiate partons that are reconstructed as two jets.  Additionally, WW pairs yield lepton-jet final 
+states when one boson decays to a charged lepton, the other boson decays to two quarks, and the initial state quarks or gluons radiate 
+additional partons.  Such events contribute to $\ell\ell jj$ final states when the real lepton and two jets are correctly reconstructed, 
+and one parton is incorrectly reconstructed as a second lepton.  Leptons and jets reconstructed from $W$ decay 
+products are constrained by the $W$ mass to have $15 \gtrsim \pt \lesssim 50$ $\GeV$, while radiated partons, reconstructed as jets or 
+leptons, are emitted with decreasing probability at higher $\pt$.  The $qq/qg \rightarrow W \rightarrow \ell\nu$+jets process radiates 
+partons from the initial state quarks or gluons, and produces one charged lepton.  W+jets events contribute to $\ell\ell jj$ final states 
+when the charged lepton and two jets are correctly reconstructed, and one parton is incorrectly reconstructed as a second lepton.  The 
+$\ell$ from the $W$ decay is constrained by the $W$ mass to have $15 \gtrsim \pt \lesssim 50$ $\GeV$, and the radiated partons, 
+reconstructed as jets or leptons, are emitted with decreasing probability at higher $\pt$.  The QCD multi-jet background contributes to 
+$\ell\ell jj$ final states when at least 4 outgoing partons are produced, 2 are reconstructed as jets, and 2 are incorrectly reconstructed 
+as leptons.  The outgoing partons, reconstructed as jets or leptons, are produced with a probability that decreases with $\pt$.
+
+The $\pt$ distributions of leptons and jets reconstructed in simulated background events that pass the online trigger selection criteria 
+are shown in Figure \ref{fig:bkgLeptJetPts}.
 
 \begin{figure}
 	\centering
@@ -523,44 +547,44 @@ momentum create a long $\Mlljj$ tail above the peak.
 	\label{fig:wrMllVarMNu}
 \end{figure}
 
-
-
-%state leptons and jets should have $\pt$ of several hundred $\GeV$ or more, as shown in Figures \ref{fig:wrLeptonPts} and 
-%\ref{fig:wrJetPts}.  In contrast, the ST backgrounds in the $\ell\ell jj$ final states produce leptons and jets primarily 
-%with $\pt < 100$ $\GeV$, as shown in Figures \ref{fig:bkgLeptonPts} and \ref{fig:bkgJetPts}.  These differences in 
-%lepton and jet kinematics between signal and background events motivated the following event selections:
-%
-%\begin{itemize}
-%	\item Two leptons were reconstructed with $\pt > 53$ $\GeV$, and one with $\pt > 60$ $\GeV$.
-%	\item Two jets were reconstructed with $\pt > 40$ $\GeV$.
-%	\item Both leptons and jets were reconstructed with $|\eta| < 2.4$.
-%	\item The invariant mass $\Mlljj$ of the reconstructed leptons and jets was greater than 600 $\GeV$.
-%\end{itemize}
-%
-%The decay $\WR \rightarrow \ell_{1}\nul$ produces a charged lepton $\ell_{1}$ that is very light relative 
-%to the \WR, so in the CM frame of the \WR, $\ell_{1}$ is equally likely to be emitted in any direction.  Subsequently, the decay 
-%$\nul \rightarrow \ell_{2}\WR^{*} \rightarrow \ell_{2}jj$ produces a dijet system and a second charged lepton $\ell_{2}$.  As 
-%long as $\mnul \gtrsim \mWR / 10$, the mass difference $\mnul - m_{\ell}$ produces a low velocity dijet system, and a high 
-%velocity lepton $\ell_{2}$ that, on average, is separated from both jets by $\Delta R > 0.4$.  In the CM frame of the \nul, the 
-%lepton $\ell_{2}$ is equally likely to be emitted in any direction.  Therefore, in $\sim$50\% of \WR decays the angular separation 
-%between $\ell_{1}$ and $\ell_{2}$ measured in a plane that contains both of their momentum vectors is greater than $\frac{\pi}{2}$.  
-%This separation causes the dilepton mass $\Mll$ to exceed $\sqrt{2} p_{1}p_{2}$, where $p_{i}$ is the momentum magnitude of 
-%$\ell_{i}$.  Both leptons and jets are very light relative to the \WR, so on average the sum of lepton momentum magnitudes is 
-%$p_{1} + p_{2} = \mWR / 2$, and their geometric mean is $p_{1}p_{2} = \mWR /\sqrt{8}$.  Thus, in $\sim$50\% of \WR decays the 
-%difference between \mnul and $m_{\ell}$ results in a dilepton mass $\Mll > \mWR/2$.  In contrast, the two dominant backgrounds 
-%- \DY and top quark processes - produce more than 50\% of their $\ell\ell jj$ events with $\Mll < 200$ $\GeV$, several hundred 
-%$\GeV$ below $\mWR / 2$ for the majority of signal mass hypotheses tested in the search presented in this thesis.  In addition, 
-%in QCD multijet and W+jets background events where two leptons were reconstructed, at least one lepton was often a byproduct of 
-%hadronization, and was reconstructed near but not clustered into a jet.  These differences in the $\Mll$ and $\Delta R(\ell,j)$ 
-%separation variables between signal and ST background events motivated the following event selections:
-%
-%\begin{itemize}
-%	\item Each reconstructed lepton was separated from the other lepton and both jets by $\Delta R > 0.4$.
-%	\item The dilepton mass $\Mll$ of the two reconstructed leptons was greater than 200 $\GeV$.
-%\end{itemize}
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/}
+		\caption{leading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsa}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/}
+		\caption{subleading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsb}
+	\end{subfigure}
+	\newline
+	\newline
+	\newline
+	\newline
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/}
+		\caption{leading $\pt$ jet}\label{fig:bkgLeptJetPtsc}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/}
+		\caption{subleading $\pt$ jet}\label{fig:bkgLeptJetPtsd}
+	\end{subfigure}
+	\caption{The $\pt$ of leptons and jets reconstructed in simulated background events that passed the online 
+	selection criteria.}\label{fig:bkgLeptJetPts}
+\end{figure}
 
 
 \subsection{Kinematic Selection Criteria}
+
+%find plot of 2015 jet energy resolution vs pt and eta to help motivate jet pt and eta cut
+%RESUME HERE
+
 
 
 \section{Conclusion}
