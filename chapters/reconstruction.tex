@@ -551,13 +551,13 @@ are shown in Figure \ref{fig:bkgLeptJetPts}.
 	\centering
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/}
+		\includegraphics[width=2.4in]{figures/l1_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
 		\caption{leading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsa}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/}
+		\includegraphics[width=2.4in]{figures/l2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
 		\caption{subleading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsb}
 	\end{subfigure}
 	\newline
@@ -566,24 +566,82 @@ are shown in Figure \ref{fig:bkgLeptJetPts}.
 	\newline
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/}
+		\includegraphics[width=2.4in]{figures/j1_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
 		\caption{leading $\pt$ jet}\label{fig:bkgLeptJetPtsc}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/}
+		\includegraphics[width=2.4in]{figures/j2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
 		\caption{subleading $\pt$ jet}\label{fig:bkgLeptJetPtsd}
 	\end{subfigure}
 	\caption{The $\pt$ of leptons and jets reconstructed in simulated background events that passed the online 
 	selection criteria.}\label{fig:bkgLeptJetPts}
 \end{figure}
+%The $qq/qg/gg \rightarrow$ WW, W+jets and QCD multi-jet backgrounds produce $\ell\ell jj$ final states with low $\pt$ leptons and jets.  
+%WW production contributes to the $\ell\ell jj$ final states when both bosons decay to charged leptons via $W^{\pm} \rightarrow \ell\nu$, 
+%and the initial state quarks or gluons radiate partons that are reconstructed as two jets.  Additionally, WW pairs yield lepton-jet final 
+%states when one boson decays to a charged lepton, the other boson decays to two quarks, and the initial state quarks or gluons radiate 
 
 
 \subsection{Kinematic Selection Criteria}
+Several independent reasons motivate the offline lepton and jet kinematic selection criteria.  These reasons and the resulting 
+selection criteria, identical for both $eejj$ and $\mu\mu jj$ final states, are described here.
 
-%find plot of 2015 jet energy resolution vs pt and eta to help motivate jet pt and eta cut
+The CMS jet energy resolution and the large expected \mWR motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is expected 
+to be heavy ($\mWR > 3$ $\TeV$), so it is produced with with low momentum.  Therefore, the \WR decay produces jets in the central $|\eta|$ 
+region (Figure \ref{fig:wrLeptJetEtas}).  Thus, each event must have two jets reconstructed with $|\eta| < 2.4$.  Also due to 
+the large expected \mWR, the \WR decay produces jets with large $\pt$ (Figure \ref{fig:wrLeptJetPts}).  However, the quark progenitors 
+of both jets have $\pt$s that decrease with lower $\mnul/\mWR$ (Figure \ref{fig:wrLeptQrkPtsVarMNu}), so the jet $\pt$ selection threshold 
+should be as low as possible to maintain good sensitivity to low $\mnul/\mWR$ signals.  The $\pt$ of jets reconstructed with 
+$|\eta| < 2.4$ were measured with a resolution better than 13$\pm$1\% for $\pt > 40$ $\GeV$; for $30 < \pt < 40$ $\GeV$ the resolution 
+and its uncertainty worsened to $\sim$15$\pm$4\% \cite{jetResolutionInCollisions}.  To avoid low $\pt$ jets measured with large $\pt$ 
+uncertainty, each event must have two $|\eta| < 2.4$ jets reconstructed with $\pt > 40$ $\GeV$.  The 40 $\GeV$ threshold was validated 
+by comparing a \WR signal to ST backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, reducing the jet $\pt$ threshold would reduce 
+sensitivity to a \WR signal relative to ST backgrounds.
+
+%the online lepton selection criteria and \WR kinematics motivate the lepton pt and eta selection criteria
+
+
+%jet reco algorithm motivates lepton jet deltaR selection criteria
+
+
+%WR lepton kinematics motivates dilepton mass selection criteria
+
+
+%all previous lepton and jet selection criteria create an artificial peak at Mlljj = 550 GeV, so Mlljj is required to exceed 600 GeV
+
+
+
 %RESUME HERE
+
+\begin{table}[h]
+	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
+	selection criteria on one jet.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
+	signal is estimated using simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+	\label{tab:lowerJetPtCuts}
+	\centering
+	\begin{tabular}{c|c}
+		jet $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
+		30 &  12.1  \\
+		40 &  12.6  \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ selection 
+		criteria on the leading lepton.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
+		signal is estimated using simulated $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+	\label{tab:lowerLeptPtCut}
+	\centering
+	\begin{tabular}{c|c}
+		$\ell$ $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
+		53 &  11.7  \\
+		60 &  12.6  \\ \hline
+	\end{tabular}
+\end{table}
+
 
 
 
