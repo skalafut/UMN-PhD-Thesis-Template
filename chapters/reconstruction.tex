@@ -309,18 +309,19 @@ or pileup (PU) interactions, that make jet clustering more challenging.  In ever
 $\sim$11 charged particle tracks with $\pt \approx 0.5$ $\GeV$ to the event \cite{chgdHdrMultInData}.  These tracks are primarily 
 charged hadrons, so before jets are clustered the charged hadrons associated with PU interaction vertices are removed from 
 all jet clustering regions.  Jets are then clustered from reconstructed particles using the anti-$k_{T}$ algorithm \cite{antikt} 
-with a cone size of $\Delta R = 0.4$.  In each region the anti-$k_{T}$ algorithm starts with the highest $\pt$ hadron and adds 
-other particles to the jet cone based on their $\pt$ and distance from the jet axis.  A cone size of $\Delta R = 0.4$ is used to 
-cluster lower area jets that are less sensitive to PU contamination, but does not prohibit jets from being clustered with radius 
-$\Delta R > 0.4$.  Once jets are clustered a second technique is used to reduce the contribution of neutral particles produced in PU interactions 
-to jet energies.  This technique uses the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with cone size $\Delta R = 0.3$ 
-to cluster jets from all particles reconstructed in the event, including jets that only contain neutral particles.  
-Each $k_{T}$ jet's $\pt$ is divided by the jet's area ($\pt_{j} / A_{j}$), and the median value $\rho$ is used as the average neutral 
-particle energy density in the event \cite{pileup1,pileup2}.  Using the hybrid jet area subtraction technique described in 
-\cite{pflowJetRecoInCollisions}, the photon and neutral hadron energies in each anti-$k_{T}$ jet are reduced based on $\rho$, and each 
-jet's area and $\eta$.  After all subtractions, jet energies are calibrated to correct for known variations in the detector response to jets 
-as functions of $\eta$ and $\pt$.  By combining measurements from the silicon tracker, calorimeters, and muon detectors, particle 
-flow jets with $\pt > 40$ $\GeV$ and $|\eta| < 2.4$ were measured with a $\pt$ resolution better than 13\% \cite{jetResolutionInCollisions}.
+with a distance parameter $R = 0.4$.  In each region the anti-$k_{T}$ algorithm starts with the highest $\pt$ hadron and adds 
+other particles to the jet based on their $\pt$ and distance from the jet axis.  Using the distance parameter $R = 0.4$, 
+particles located $\Delta R > 0.4$ from the jet axis are less likely to be clustered into the jet than particles located within 
+$\Delta R \leq 0.4$.  Once anti-$k_{T}$ jets are clustered a second set of smaller jets are clustered to estimate the average 
+increase in jet energy due to neutral particles produced in PU interactions.  The second set of jets are clustered from all 
+reconstructed particles using the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with parameter $R = 0.3$.  
+Then each $k_{T}$ jet's $\pt$ is divided by its area ($\pt_{j} / A_{j}$), and the median value $\rho$ is the average neutral 
+particle energy density in the event \cite{pileup1,pileup2}.  Each PU interaction increases $\rho$ by about 0.5 $\GeV$ 
+\cite{jetResolutionInCollisions}.  Using the hybrid jet area subtraction technique described in \cite{pflowJetRecoInCollisions}, 
+the photon and neutral hadron energies in each anti-$k_{T}$ jet are reduced by multiplying $\rho$ by the jet's area and and $\eta$ 
+dependent factor.  After the area based subtraction, jet energies are calibrated to correct for known $\eta$ and $\pt$ variations 
+of the detector's response to jets.  After calibrations, particle flow jets with $\pt > 40$ $\GeV$ and $|\eta| < 1.3$ were 
+measured with a $\pt$ resolution of 16\% or better \cite{jetResolutionInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -628,18 +629,20 @@ are shown in Figure \ref{fig:bkgLeptJetPts}.
 Several independent reasons motivate the offline lepton and jet kinematic selection criteria.  These reasons and the resulting 
 selection criteria, identical for both $eejj$ and $\mu\mu jj$ final states, are described here.
 
-The large expected \mWR and the CMS jet $\pt$ resolution vs $\pt$ motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is 
+The large expected \mWR and the CMS jet $\pt$ resolution motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is 
 expected to be heavy ($\mWR > 3$ $\TeV$), so it is produced with with low momentum.  Therefore the \WR quark decay products are emitted 
 uniformly in $\phi$ and $\theta$ relative to the beam axis, and the quarks hadronize into jets in the central $|\eta|$ 
 region (Figure \ref{fig:wrLeptJetEtas}).  Thus, each event was required to have two jets reconstructed with $|\eta| < 2.4$.  Also due to 
 the large expected \mWR, the jets are produced with large $\pt$ (Figure \ref{fig:wrLeptJetPts}).  However, the $\pt$s of both \WR quarks 
 decrease with lower $\mnul/\mWR$ (Figure \ref{fig:wrLeptQrkPtsVarMNu}), so the jet $\pt$ selection threshold should be as low as possible 
-to avoid concealing low $\mnul/\mWR$ signals.  The $\pt$ of jets reconstructed with $|\eta| < 2.4$ were measured with a resolution 
-better than 13$\pm$1\% for $\pt > 40$ $\GeV$; for $30 < \pt < 40$ $\GeV$ the resolution worsened to $\sim$15$\pm$4\% 
-\cite{jetResolutionInCollisions}.  To avoid low $\pt$ jets measured with large $\pt$ uncertainty, each event was required to have two 
-$|\eta| < 2.4$ jets reconstructed with $\pt > 40$ $\GeV$.  If more than 2 jets passed these criteria, the two highest $\pt$ jets were 
-used.  The 40 $\GeV$ threshold was validated by comparing a \WR signal to ST backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, 
-reducing the jet $\pt$ threshold reduces sensitivity to a \WR signal relative to ST backgrounds.
+to search for low $\mnul/\mWR$ signals.  Jets reconstructed with $|\eta| < 1.3$ and $\pt > 40$ $\GeV$ were measured 
+with a $\pt$ resolution of 16\% or better; for $|\eta| < 1.3$ and $30 < \pt < 40$ $\GeV$ the resolution worsened to $\sim$21\% 
+\cite{jetResolutionInCollisions}.  To avoid low $\pt$ jets measured with poor $\pt$ resolution, each event was required to have two 
+jets passing identification criteria and reconstructed with $|\eta| < 2.4$ and $\pt > 40$ $\GeV$.  If more than 2 jets passed these 
+criteria, the two highest $\pt$ jets were used.
+
+%The 40 $\GeV$ threshold was validated by comparing a \WR signal to ST backgrounds.  As listed in Table \ref{tab:lowerJetPtCuts}, 
+%reducing the jet $\pt$ threshold reduces sensitivity to a \WR signal relative to ST backgrounds.
 
 The large expected \mWR and trigger selection criteria motivated the offline lepton $\pt$ and $\eta$ selection criteria.  For the same 
 reason cited for the \WR quarks, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}) 
@@ -650,37 +653,37 @@ $\pt$ than the other, so an additional lepton $\pt$ requirement was applied.  At
 $\pt > 60$ $\GeV$ to increase sensitivity to a \WR signal relative to the ST backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 
 2 leptons passed these criteria, the two highest $\pt$ leptons were used.
 
-Jets are reconstructed using the anti-$k_{T}$ algorithm with distance parameter $\Delta R = 0.4$.  This parameter defines the 
-characteristic length in $(\eta,\phi)$ space between two well separated constituent particles of the same jet, and puts a soft limit 
-on the jet $(\eta,\phi)$ area.  However, it is possible for constituent particles in a jet to be separated from the $\pt$ averaged 
-jet axis by $\Delta R > 0.4$.  To avoid a jet and lepton that are reconstructed in close proximity, each reconstructed lepton 
-passing the identification, $\pt$, and $\eta$ selections was required to be separated from both selected jets by $\Delta R > 0.4$.
+Jets are clustered from reconstructed particles using the anti-$k_{T}$ algorithm with distance parameter $R = 0.4$.  For a particle 
+i separated from the jet axis j by $\Delta R(i,j)$, this parameter weights the likelihood of clustering particle i into the jet by 
+$(\frac{0.4}{\Delta R(i,j)})^{2}$.  Thus, the parameter $R$ puts a soft limit on each jet's $(\eta,\phi)$ area.  However, it is 
+possible for a reconstructed particle to be clustered into a jet and be separated from the jet axis by $\Delta R > 0.4$.  To avoid 
+selecting a lepton reconstructed near a jet, each reconstructed lepton that passed the identification, $\pt$, and $\eta$ selection 
+criteria was required to be separated from both selected jets by $\Delta R > 0.4$.
 
 %WR lepton kinematics motivates dilepton mass selection criteria
-The \WR decay produces one lepton through $\WR \rightarrow \ell_{1}\nul$, and a second lepton via $\nul \rightarrow \ell_{2}jj$.  Since 
-both leptons are produced by the decay of massive particles ($\mnul \gtrsim 90$ $\GeV$, see Chapter \ref{sec:lrsPhenomenology}), their 
-trajectories are correlated only if the \nul is boosted ($\mnul/\mWR \lesssim \frac{1}{10}$).  When their trajectories are uncorrelated 
-their .
+%The \WR decay produces one lepton through $\WR \rightarrow \ell_{1}\nul$, and a second lepton via $\nul \rightarrow \ell_{2}jj$.  Since 
+%both leptons are produced by the decay of massive particles ($\mnul \gtrsim 90$ $\GeV$, see Chapter \ref{sec:lrsPhenomenology}), their 
+%trajectories are correlated only if the \nul is boosted ($\mnul/\mWR \lesssim \frac{1}{10}$).  When their trajectories are uncorrelated 
+%their .
 
 %all previous lepton and jet selection criteria create an artificial peak at Mlljj = 550 GeV, so Mlljj is required to exceed 600 GeV
-
+The lepton and jet selections described earlier .
 
 
 %RESUME HERE
 
-\begin{table}[h]
-	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
-	selection criteria on one jet.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
-	signal is estimated using simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
-	\label{tab:lowerJetPtCuts}
-	\centering
-	\begin{tabular}{c|c}
-		jet $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
-		30 &  12.1  \\
-		40 &  12.6  \\ \hline
-	\end{tabular}
-\end{table}
-
+%\begin{table}[h]
+%	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
+%	selection criteria on one jet.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
+%	signal is estimated using simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
+%	\label{tab:lowerJetPtCuts}
+%	\centering
+%	\begin{tabular}{c|c}
+%		jet $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
+%		30 &  12.1  \\
+%		40 &  12.6  \\ \hline
+%	\end{tabular}
+%\end{table}
 
 \begin{table}[h]
 	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ selection 
