@@ -394,7 +394,7 @@ $\mnul/\mWR$ approaches 0 the $\ell_{1}$ carries more energy, and the $\ell_{2}$
 in lepton and jet transverse energies as a function of $\mnul/\mWR$ are shown in 
 Figure \ref{fig:wrLeptQrkPtsVarMNu}.  Furthermore, as $\mnul/\mWR$ approaches 0 the \nul is emitted with larger momentum (Figure 
 \ref{fig:hvyNuMomentumVarMNu}).  The \nul momentum is conserved in its decay, and as that momentum increases the $\ell_{2} jj$ system 
-in the lab frame is preferentially emitted, or boosted, along the \nul $(\eta,\phi)$ trajectory.  The boost of the \nul decay products 
+is preferentially emitted in the lab frame, or boosted, along the \nul $(\eta,\phi)$ trajectory.  The boost of the \nul decay products 
 decreases the $\Delta R(\ell,j)$ separation between $\ell_{2}$ and both jets (Figure \ref{fig:wrDrLeptQrkVarMNu}).  Since the \nul recoils 
 against $\ell_{1}$ to conserve the \WR momentum in $\WR \rightarrow \ell_{1}\nul$, the boost at low $\mnul/\mWR$ increases the angle 
 between $\ell_{1}$ and $\ell_{2}$ (Figure \ref{fig:wrLeptAngleSepVarMNu}).  The $\ell_{1}\ell_{2}$ invariant mass ($\Mll$) increases 
@@ -622,9 +622,9 @@ are shown in Figure \ref{fig:bkgLeptJetPts}.
 
 
 \subsection{Offline Kinematic Selection Criteria}
-Differences in lepton and jet kinematics between \WR signal and ST backgrounds, and other reasons motivated offline lepton and jet 
-kinematic selection criteria.  These reasons and the resulting selection criteria are described here, and apply equally to the $eejj$ 
-and $\mu\mu jj$ final states.
+Differences in lepton and jet kinematics between signal and background events, online lepton selection criteria, and other reasons 
+motivated offline lepton and jet kinematic selection criteria.  These reasons and the resulting selection criteria are described here, 
+and apply equally to the $eejj$ and $\mu\mu jj$ final states.
 
 The large expected \mWR and the CMS jet $\pt$ resolution motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR is 
 expected to be heavy ($\mWR > 3$ $\TeV$), so it is produced with with low momentum.  Therefore the \WR quark decay products are emitted 
@@ -657,29 +657,32 @@ However, it is possible for a reconstructed particle to be clustered into a jet 
 To avoid selecting a lepton reconstructed near a jet, each reconstructed lepton that passed the identification, $\pt$, and $\eta$ 
 selection criteria was required to be separated from both selected jets by $\Delta R > 0.4$.
 
-%WR lepton kinematics motivates dilepton mass selection criteria
 The \WR decay produces two high $\pt$ leptons whose dilepton mass $\Mll$, given by Equation \ref{eq:dileptMass}, varies with $\mnul/\mWR$.  
 For $\mnul/\mWR$ near 1 the decay $\WR \rightarrow \ell_{1}\nul$ produces a \nul nearly at rest, and a $\ell_{1}$ that moves away from the 
 \nul.  Subsequently the decay $\nul \rightarrow \ell_{2}jj$ produces a $\ell_{2}$ that moves in a random direction with respect to 
 $\ell_{1}$ (Figure \ref{fig:wrLeptAngleSepVarMNu}).  Thus for $\mnul/\mWR$ near 1 the two lepton trajectories are uncorrelated, and the 
-$\Mll$ is .
+$\Mll$ is driven by the product of the two lepton momentum magnitudes (Figure \ref{fig:wrLeptMomMagVarMNu}), which increases with $\mWR$.  
+As $\mnul/\mWR$ decreases from 1 the \nul carries more energy as momentum, and, as explained earlier, this increases the $\Mll$ relative 
+to signal hypotheses with $\mnul/\mWR \sim$1 (Figure \ref{fig:wrMllVarMNu}).  Since the $\Mll$ increases with \mWR and a large range of 
+\mWR values were excluded previously \cite{cmsWRRunOneResults}, each event that passed all previous selection criteria was required to 
+have two leptons with $\Mll > 200$ $\GeV$.  The $\Mll$ threshold was 200 $\GeV$ and not higher to be sensitive to signals with 
+$\mnul/\mWR \sim$1, and to suppress leptons from diboson and $\DY$+jets backgrounds whose $\Mll$ was limited by the weak boson masses.
 
 \begin{equation}
 	\Mll = 2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))
 	\label{eq:dileptMass}
 \end{equation}
 
-%The \WR decay produces one lepton through $\WR \rightarrow \ell_{1}\nul$, and a second lepton via $\nul \rightarrow \ell_{2}jj$.  Since 
-%both leptons are produced by the decay of massive particles ($\mnul \gtrsim 90$ $\GeV$, see Chapter \ref{sec:lrsPhenomenology}), their 
-%trajectories are correlated only if the \nul is boosted ($\mnul/\mWR \lesssim \frac{1}{10}$).  When their trajectories are uncorrelated 
-%their .
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
+	\caption{The product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
+	different \mnul.}
+	\label{fig:wrLeptMomMagVarMNu}
+\end{figure}
 
-Applying the previously described selection criteria to simulated background events created a peak at 550 $\GeV$ in the $\Mlljj$ 
-distribution, represented in Figure \ref{fig:sculptedMlljj}.  To avoid this artificial peak, each event passing all previous selection 
-criteria was required to have $\Mlljj > 600$ $\GeV$.
-
-
-%RESUME HERE
+Applying the previous selection criteria to simulated background events created a peak at 550 $\GeV$ in the $\Mlljj$ distribution, represented 
+in Figure \ref{fig:sculptedMlljj}.  To avoid this peak, each event was also required to have $\Mlljj > 600$ $\GeV$.
 
 %\begin{table}[h]
 %	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\pt$ 
@@ -721,6 +724,8 @@ criteria was required to have $\Mlljj > 600$ $\GeV$.
 %Energetic electrons, muons and jets produced in collisions are reconstructed from signals measured in CMS sub-detectors and using 
 %specialized reconstruction algorithms.  Reconstructed leptons and jets were required to pass additional selections to increase 
 %sensitivity to a \WR signal relative to ST backgrounds.
+
+%RESUME HERE
 
 
 
