@@ -45,7 +45,7 @@ than 70\% of their initial energies through bremsstrahlung \cite{trackerPerforma
 the tracker.  The electron track reconstruction algorithm uses the same iterative track reconstruction procedure described 
 previously, but extrapolates each track's trajectory to the next silicon layer assuming the energy lost through bremsstrahlung 
 is described by a sum of Gaussians.  In addition, the Kalman filter used to link signals in successive layers requires that new 
-signals have $\chi^{2} <$ 2000.  The electron track algorithm reconstructed electrons with $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ 
+signals have $\chi^{2} <$ 2000.  The electron track algorithm reconstructed electrons that had $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ 
 as tracks with 97\% or better efficiency \cite{gsfPerformanceInCollisions}.
 
 
@@ -138,16 +138,17 @@ corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events 
 in simulated events are corrected so that the two $M_{\mu\mu}$ distributions match.
 
 \subsection{Online Selection}
-\WR events that produced two muons could be selected online using single muon or double-muon triggers.  The single muon 
-triggers required one track segment reconstructed in multiple muon detectors with $\pt> A$, while the double-muon 
-triggers required two such track segments with $\pt$ above a threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ events the 
-highest efficiency single muon trigger was more efficient than the highest efficiency double muon trigger (Table \ref{tab:singleVsDblMuHlt}) 
-because the efficiency to reconstruct one track segment with $\pt > B$ was not 100\%.  To maximize the trigger efficiency a single 
-muon trigger was used to select collision events with muons.
+\WR decays that produce two muons can be selected online using single muon or double-muon triggers.  The single muon 
+triggers require one track segment to be reconstructed in multiple muon detectors and have $\pt>$ some threshold $A$, while the 
+double-muon triggers require two track segments that have $\pt>$ some threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ events the 
+highest efficiency single muon trigger selected more \WR events than the highest efficiency double muon trigger (Table \ref{tab:singleVsDblMuHlt}).  
+Although the double-muon trigger $\pt$ selection criteria were lower than those of the single muon trigger, the double-muon trigger 
+selected fewer \WR events because the efficiency to reconstruct a muon with $\pt > B$ as a track segment was below 100\% \cite{cmsMuonRecoRunTwo}.  
+To maximize the trigger efficiency a single muon trigger was used to select collision events with muons.
 
 \begin{table}[h]
 	\caption{The efficiency of a single and double-muon trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
-		and $\mnul = \frac{1}{2} \mWR$.}
+		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblMuHlt}
 	\centering
 	\begin{tabular}{c|c|c|c}
@@ -157,9 +158,9 @@ muon trigger was used to select collision events with muons.
 	\end{tabular}
 \end{table}
 
-During collisions events with muons were selected using a single muon Level-1 trigger.  The trigger required one reconstructed 
-track segment with $\pt > 16$ $\GeV$ that spanned one DT or CSC chamber in at least 2 stations.  In each chamber the track segment 
-was built from signals in at least 4 layers.  Then, events were required to pass the following single muon HLT selection criteria:
+During collisions events with muons were selected using a Level-1 trigger that required one track segment with $\pt > 16$ $\GeV$.  The 
+segment was required to have signals in DT or CSC chambers from at least 2 stations, and signals in at least 4 layers of each chamber.  
+Then, events were required to pass the following single muon HLT selection criteria:
 
 \begin{itemize}
 	\item A track reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
@@ -169,9 +170,9 @@ was built from signals in at least 4 layers.  Then, events were required to pass
 \end{itemize}
 
 \subsection{Offline Identification Selection}
-In events selected by the single muon trigger, muons were reconstructed offline from muon detector and silicon tracker tracks using 
-algorithms described previously.  After reconstruction, the following identification criteria were applied to select promptly produced, 
-isolated muons that were reconstructed in multiple muon stations:
+In events selected by the single muon trigger, muons were reconstructed offline from tracks in the muon detectors and silicon tracker using 
+algorithms described previously.  Then, the following identification criteria were applied to select promptly produced muons 
+that were isolated from other particles and reconstructed in multiple muon stations:
 
 \begin{itemize}
 	\item The muon track reconstructed in the silicon tracker:
@@ -181,9 +182,9 @@ isolated muons that were reconstructed in multiple muon stations:
 		\item Within a cone of radius $\Delta R = 0.3$ centered on the track, the $\sum \pt$ of all other 
 			reconstructed tracks was low compared to the muon $\pt$, $\frac{\sum \pt}{\mu \pt} < 0.1$.
 	\end{itemize}
-	\item The muon was reconstructed in the muon detectors as a track segment that spanned one chamber in at least 
-		2 muon stations.  Track segments in each DT chamber were required to have signals in all 4 r-$z$ layers, and 
-		at least 7 of 8 r-$\phi$ layers.  Track segments in each CSC were required to have signals in all 6 layers.
+	\item The muon's track segment went through a muon chamber in at least 2 muon stations.  Track segments in each DT 
+		chamber were required to have signals in all 4 r-$z$ layers, and at least 7 of 8 r-$\phi$ layers.  Track segments 
+		in each CSC were required to have signals in all 6 layers.
 	\item The origin of the muon's silicon tracker track was within 2 mm of the muon's reconstructed vertex 
 		position along the $z$ axis.
 \end{itemize}
@@ -203,7 +204,7 @@ Electrons are identified using reconstructed tracks and ECAL SCs.  Reconstructed
 silicon strip layer to the front face of the ECAL, and their positions are compared to ECAL SCs.  Each electron is identified 
 as one or more tracks that match the SC $(\eta,\phi)$ position within 1.1$^{\circ}$, about 1 crystal wide, in $\phi$, and 
 within 0.004 units, less than $\frac{1}{2}$ a crystal wide, in $\eta$.  In addition, the ECAL SC $\Et$ and the matched 
-track $\pt$ must agree within the uncertainty on the track $\pt$.  Using the SC energy, electrons with $\Et \approx 45$ 
+track(s) $\pt$ must agree within the uncertainty on the track $\pt$.  Using the SC energy, electrons with $\Et \approx 45$ 
 $\GeV$ and $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a resolution between 2\% and 5\% 
 at higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
 
@@ -220,18 +221,20 @@ corrections for simulated electrons are derived using $Z \rightarrow ee$ events 
 in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 \subsection{Online Selection}
-\WR events that produced two electrons could be selected online using single electron or double-electron triggers.  The single electron 
-triggers required one track reconstructed in the silicon tracker to extrapolate to a 5 $\times$ 5 ECAL crystal region with $\Et > D$; 
-the double-electron triggers required two such track-ECAL cluster combinations with $\Et$ above a threshold $E < D$.  In simulated 
-$\WR \rightarrow eejj$ events the highest efficiency single and double-electron triggers had similar efficiencies (Table 
-\ref{tab:singleVsDblEleHlt}), but the single electron trigger required $\Et > 105$ $\GeV$.  Such a high $\Et$ requirement would 
-significantly reduce the number of $Z \rightarrow \ell\ell$+jets events, whose leptons have $\pt \lesssim 60$ $\GeV$, available for 
-background estimation.  A double-electron trigger that required $\Et > 33$ $\GeV$ was used to select collision events with electrons 
-so that the $Z \rightarrow \ell\ell$+jets background could be estimated with low statistical uncertainty.
+\WR decays that produce two electrons can be selected online using single electron or double-electron triggers.  The single electron 
+triggers require that one track reconstructed in the silicon tracker extrapolates to a 5 $\times$ 5 ECAL crystal region with $\Et >$ some 
+threshold $D$, while the double-electron triggers require two such track-ECAL cluster combinations each with $\Et >$ some threshold 
+$G < D$.  In simulated $\WR \rightarrow eejj$ events the highest efficiency single and double-electron triggers selected similar numbers 
+of signal events (Table \ref{tab:singleVsDblEleHlt}), so a trigger was chosen for another reason.  The electron trigger was used 
+to select signal events and events in a low dilepton mass ($\Mll$) control region discussed later.  The low $\Mll$ control region was 
+used to estimate the $\DY$+jets background, and needed as many $\DY$+jets events as possible to minimize the statistical uncertainty 
+on the background estimate.  The single electron trigger required $\Et > 105$ $\GeV$, and excluded a significant fraction of 
+$Z \rightarrow ee$ events.  The lower $\Et$ threshold double-electron trigger, which required two electrons with $\Et > 33$ $\GeV$, was 
+used to select collision events with electrons.
 
 \begin{table}[h]
 	\caption{The efficiency of a single and double-electron trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
-		and $\mnul = \frac{1}{2} \mWR$.}
+		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblEleHlt}
 	\centering
 	\begin{tabular}{c|c|c|c}
@@ -242,44 +245,42 @@ so that the $Z \rightarrow \ell\ell$+jets background could be estimated with low
 \end{table}
 
 During collisions events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
-either one 5 $\times$ 5 ECAL crystal cluster reconstructed with $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters: one with 
-$\Et > 22$ $\GeV$, the other with $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection 
-criteria:
+one 5 $\times$ 5 ECAL crystal cluster that had $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters that had 
+$\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection criteria:
 
 \begin{itemize}
-	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were reconstructed with $\Et > 33$ $\GeV$.
-	\item For each ECAL cluster:
+	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were required to have $\Et > 33$ $\GeV$.
+	\item For each ECAL cluster with energy E:
 	\begin{itemize}
-		\item The ratio of energy (H) in the HCAL tower behind the cluster to the cluster energy (E) was $\frac{H}{E} < 0.15$ 
-			in the barrel, and $\frac{H}{E} < 0.1$ in the endcap.
-		\item Ninety percent of the cluster energy was measured in an area that was two crystals wide in $\eta$.
+		\item The hadronic energy behind the cluster was $<$ 15\% of E in the barrel, and $<$ 10\% of E in the endcap. 
+		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
 		\item If the cluster was in the barrel, a reconstructed track with signals in at least two pixel tracker layers 
 			extrapolated close to the cluster position.  The track extrapolated from the pixel tracker to within $2.3$ cm 
-			of the ECAL cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
+			of the cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
 	\end{itemize}
 \end{itemize}
 
 \subsection{Offline Identification Selection}
 In events selected by the double-electron trigger, electrons were reconstructed offline from ECAL SCs and tracks using algorithms 
-described previously.  After reconstruction, the following identification criteria were applied to select promptly produced 
-electrons that did not lose significant energy in the tracker, and were not reconstructed near a jet:
+described previously.  Then, the following identification criteria were applied to select promptly produced 
+electrons that did not lose significant energy in the tracker, and were not reconstructed from a real jet, or in the ECAL barrel-endcap 
+transition region $1.44 < |\eta| < 1.57$:
 
 \begin{itemize}
-	\item Electrons reconstructed with $1.44 < |\eta| < 1.57$ were ignored.
-	\item For barrel electrons, at least 94\% of the SC energy was measured in an $\eta$ region that was 2 crystals 
-		wide.
-	\item The ratio of energy (H) in the HCAL tower behind the SC to the SC energy ($E_{SC}$) was $\frac{H}{E_{SC}}< 0.05 + \frac{1}{E_{SC}}$ 
-		in the barrel, and $\frac{H}{E_{SC}}< 0.05 + \frac{5}{E_{SC}}$ in the endcap.
+	\item The electron $\Et$ is the calibrated ECAL SC energy $E_{SC}$.
+	\item For a SC in the barrel, at least 94\% of $E_{SC}$ was measured in an area that was 2 crystals wide in $\eta$.
+	\item The hadronic energy (H) behind the SC was $\frac{H}{E_{SC}}< 0.05 +\thickspace \frac{1 \GeV}{E_{SC}}$ 
+		in the barrel, and $\frac{H}{E_{SC}}< 0.05 +\thickspace \frac{5 \GeV}{E_{SC}}$ in the endcap.
 	\item In a $\Delta R =$ 0.3 radius cone centered on the electron's $(\eta, \phi)$ trajectory:
 	\begin{itemize}
 		\item The $\sum \pt$ of all tracks excluding the electron's track was low, $\sum \pt < 5$ $\GeV$.
-		\item The total calorimeter energy $E_{ECAL + HCAL}$ in the cone not associated with the electron was low, 
-			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$.  $\rho$ was the neutral particle energy per unit $\eta,\phi$ area, 
-			$\alpha$ in the barrel was the electron $\Et$, and $\alpha$ in the endcap was the electron $\Et - 50$.
+		\item The total calorimeter energy $E_{ECAL + HCAL}$ not associated with the electron was 
+			$E_{ECAL + HCAL} < 2 + 0.03\alpha + 0.28\rho$.  $\rho$ is the neutral particle energy per unit $\eta,\phi$ area, 
+			$\alpha$ in the barrel is $E_{SC}$, and $\alpha$ in the endcap is $E_{SC} - 50$.
 	\end{itemize}
-	\item The electron track extrapolated from the outermost silicon tracker measurement to within $\sim$3 crystal 
-		widths in $\phi$ of the SC seed crystal position.
-	\item The electron track was built from signals in every silicon pixel and inner strip detector layers, or all but 1 layer.
+	\item For a SC in the endcap, the electron track extrapolated from the outermost silicon tracker measurement to the SC 
+		seed crystal position to within $\sim$3 crystal widths in $\phi$.
+	\item The electron track was reconstructed from signals in every silicon pixel and inner strip detector layers, or all but 1 layer.
 	\item The electron track's origin was separated from its vertex by a small distance $\Delta_{xy}$ in the $x-y$ 
 		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
@@ -290,16 +291,17 @@ electrons that did not lose significant energy in the tracker, and were not reco
 
 \subsection{Reconstruction}
 Quarks and gluons emitted from pp interactions produced jets of photons, hadrons and leptons.  On average, 85\% of a jet's 
-energy is carried by charged particles and photons \cite{pflowJetRecoInCollisions}, so these particles are prioritized during 
+energy is carried by charged particles and photons \cite{pflowJetRecoInCollisions}, so these particles are reconstructed first during 
 jet reconstruction.  The particle flow jet reconstruction algorithm \cite{pflowEventReco} identifies $(\eta,\phi)$ regions 
 with one or more silicon tracker or muon detector tracks, one or more HCAL energy clusters, and any number of ECAL 
 SCs.  In these regions, algorithms described previously are used to reconstruct muons first, followed by electrons.  Tracks and 
-energy deposits identified as leptons are removed from the list of particle candidates.  The remaining tracks and energy clusters 
-are used to identify charged hadrons, photons, and neutral hadrons.  Each charged hadron is identified as a track matched to an HCAL 
-cluster and possibly an ECAL SC, and the charged hadron's $\pt$ and $(\eta,\phi)$ trajectory are determined by the track.  The track 
+energy deposits identified as leptons are subsequently removed from the list of particle candidates.  The remaining tracks and energy clusters 
+are used to identify charged hadrons, photons, and neutral hadrons.  Each charged hadron is identified as a track that extrapolates to 
+an HCAL cluster and possibly an ECAL SC.  The charged hadron's $\pt$ and $(\eta,\phi)$ trajectory are determined by the track, and the track 
 $\pt$ must agree with the total calorimeter $\Et$ within the calorimeter $\Et$ uncertainty.  Each photon is identified as an ECAL SC 
-that are not geometrically matched to a track or HCAL cluster whose $\pt$ or $\Et$ agrees with the SC $\Et$ within the ECAL $\Et$ 
-uncertainty.  Finally, each neutral hadron is identified as an HCAL cluster and any overlapping ECAL SC that are not geometrically 
+that is not geometrically matched to a track or HCAL cluster whose $\pt$ or $\Et$ agrees with the SC $\Et$ within the ECAL $\Et$ 
+uncertainty.  The energy matching criteria is critical to reconstructing photons in close proximity to other particles in jets.  
+Finally, each neutral hadron is identified as an HCAL cluster and any overlapping ECAL SC that are not geometrically 
 matched to a track whose $\pt$ agrees with the calorimeter $\Et$ within the calorimeter $\Et$ uncertainty.  After all tracks and 
 energy clusters in a region are identified as specific particles, a jet, represented by the cone in Figure \ref{fig:jetClustering}, 
 is clustered from those particles.
@@ -313,8 +315,8 @@ with a distance parameter $R = 0.4$.  In each region the anti-$k_{T}$ algorithm 
 other particles to the jet based on their $\pt$ and distance from the jet axis.  Using the distance parameter $R = 0.4$, 
 particles located $\Delta R > 0.4$ from the jet axis are less likely to be clustered into the jet than particles located within 
 $\Delta R \leq 0.4$.  Once anti-$k_{T}$ jets are clustered a second set of smaller jets are clustered to estimate the average 
-increase in jet energy due to neutral particles produced in PU interactions.  The second set of jets are clustered from all 
-reconstructed particles using the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with parameter $R = 0.3$.  
+increase in jet energy due to neutral particles produced in PU interactions.  The second set of jets are clustered from 
+reconstructed particles using the $k_{T}$ algorithm \cite{ktAlgoOne,ktAlgoTwo,ktAlgoThree} with distance parameter $R = 0.3$.  
 Then each $k_{T}$ jet's $\pt$ is divided by its area ($\pt_{j} / A_{j}$), and the median value $\rho$ is the average neutral 
 particle energy density in the event \cite{pileup1,pileup2}.  Each PU interaction increases $\rho$ by about 0.5 $\GeV$ 
 \cite{jetResolutionInCollisions}.  Using the hybrid jet area subtraction technique described in \cite{pflowJetRecoInCollisions}, 
@@ -338,9 +340,8 @@ the energies of jets in simulated events are corrected so that the jet distribut
 
 \subsection{Offline Identification Selection}
 In events selected by the single muon or double-electron trigger, jets were reconstructed offline from tracks and calorimeter energy 
-clusters using algorithms described previously.  After reconstruction, the following identification criteria were applied to select 
-jets that contained at least one energetic charged hadron, and whose energies were not dominated by ECAL SCs disconnected from HCAL 
-clusters:
+clusters using algorithms described previously.  Then, the following identification criteria were applied to select 
+jets that contained at least one charged hadron, and whose energies were not dominated by ECAL SCs not linked to HCAL clusters:
 
 \begin{itemize}
 	\item The jet had at least 2 constituents.
@@ -354,11 +355,10 @@ clusters:
 
 \section{\WR Signal and ST Backgrounds Kinematics}
 \label{sec:signalAndBkgnds}
-The data is expected to contain events where two charged leptons ($\ell$) and two jets are reconstructed.  These events are produced 
-by ST background processes like $\DY$+jets, and their final state leptons and jets conceal the $\WR \rightarrow \ell\ell jj$ decay 
-signature.
+%The data is expected to contain events where two charged leptons ($\ell$) and two jets are reconstructed.  These events are produced 
+%by ST background processes like $\DY$+jets, and conceal the $\WR \rightarrow \ell\ell jj$ decay signature.
 
-The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state according to the following decay chain:
+The heavy \WR decays through a lighter \nul to two leptons and two jets according to the following decay chain:
 
 \begin{tikzpicture}[grow=right]
 	\node (Wr) at (0,0) {$\WR \thickspace \rightarrow \thickspace \nul + \ell$};
@@ -366,12 +366,15 @@ The heavy \WR decays through a lighter \nul to an $\ell\ell jj$ final state acco
 	\node (Nl) at (1.25,-0.75) {$\ell jj$};
 \end{tikzpicture} $\newline$
 The previous \WR and \nul search \cite{cmsWRRunOneResults} excluded \WR production at 95\% CL for $\mWR < 3$ $\TeV$ and 
-$90 \GeV \lesssim \mnul < \mWR$, so the \WR and \nul lifetimes, inversely proportional to their masses, are expected to be very short.  
+$90 \GeV \lesssim \mnul < \mWR$.  Thus the \WR and \nul lifetimes, inversely proportional to their masses, are expected to be very short.  
 Therefore, \WR and \nul decay promptly to leptons, and quarks that hadronize into jets.
 
-The majority of background events are produced by the $\DY$+jets process and processes with at least one top quark; the remaining events are 
+%RESUME HERE
+%cite production rates for different bkgnds
+The data contained events with two leptons and two jets that were produced by ST backgrounds.  The majority of background events are produced 
+by the $\DY$+jets process and processes with at least one top quark; the remaining events are 
 produced by diboson (WW, WZ, ZZ), W+jets, and QCD multi-jet processes.  \DY produces two same flavor leptons at a rate that decreases 
-rapidly as a function of di-lepton mass above 120 $\GeV$.  The \DY interaction occurs between two quarks, and at $\sqrt{s} = 13$ $\TeV$ 
+rapidly as a function of dilepton mass above 120 $\GeV$.  The \DY interaction occurs between two quarks, and at $\sqrt{s} = 13$ $\TeV$ 
 the probability for either quark to radiate a parton, the QCD coupling $\alpha_{QCD}$, is $\sim$0.1.  Thus, in $\alpha_{QCD}^{2} \sim$0.01 
 $=$1\% of \DY events the initial quarks radiate two partons before interacting.  Unlike \DY, the top quark background, including 
 $t\bar{t}$ and t+W, produces $\ell\ell jj$ final states without initial state parton radiation.  The top quark background is 
@@ -449,8 +452,8 @@ reconstructed as jets or leptons, are emitted with decreasing probability at hig
 $\ell\ell jj$ final states when at least 4 outgoing partons are produced, 2 are reconstructed as jets, and 2 are incorrectly reconstructed 
 as leptons.  The outgoing partons, reconstructed as jets or leptons, are produced with a probability that decreases with $\pt$.
 
-The $\pt$ distributions of leptons and jets reconstructed in simulated background events that pass the online trigger selection criteria 
-are shown in Figure \ref{fig:bkgLeptJetPts}.
+ST background events that passed the trigger selection criteria produced leptons and jets with $\pt$ distributions shown in Figure 
+\ref{fig:bkgLeptJetPts}.
 
 \begin{figure}
 	\centering
@@ -732,15 +735,14 @@ Applying the previous selection criteria to ST background events resulted in a $
 	\label{fig:sculptedMlljj}
 \end{figure}
 
-The offline kinematic selection criteria used to select events in data are summarized in Table \ref{tab:offlineKinemSel}.  The thresholds 
-of the $\Mll$ and $\pt$ selection criteria were set as low as possible to increase selection efficiency for signals with $\mnul/\mWR \to$ 0 or 1 
+The offline kinematic selection criteria are summarized in Table \ref{tab:offlineKinemSel}.  The thresholds 
+of the $\Mll$ and $\pt$ selection criteria were set as low as possible to increase selection efficiency for signals with $\mnul/\mWR \sim$ 0 or 1 
 without a similar increase in selection efficiency for backgrounds.  At a given \mWR the kinematic effects that lower the signal selection 
-efficiency at low and high values of $\mnul/\mWR$ are minimized or nearly minimized for $\mnul/\mWR = \frac{1}{2}$ (Figure \ref{fig:wrOffSelEffVarMWrMNu}), 
-so simulated signal events with variable \mWR and $\mnul/\mWR = \frac{1}{2}$ were used to estimate the signal selection efficiency.  In these 
-signal events, the net efficiency of online and offline selection criteria as a function of \mWR, Figure \ref{fig:wrRecoSelectionEff}, exceeded 
-50\% in the $ee$-channel and 70\% in the $\mu\mu$-channel.  The efficiency was lower in the $ee$-channel due to the ECAL gap in electron detection 
-for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID selections applied to electrons relative to muons.
-
+efficiency for $\mnul/\mWR \sim$ 0 or 1 are minimized or nearly minimized for $\mnul/\mWR = \frac{1}{2}$ (Figure \ref{fig:wrOffSelEffVarMWrMNu}).  
+For this reason simulated signal events with $\mnul/\mWR = \frac{1}{2}$ were used to estimate the signal selection efficiency versus \mWR.  The 
+net efficiency of online and offline selection criteria versus \mWR, Figure \ref{fig:wrRecoSelectionEff}, exceeded 50\% in the $ee$-channel and 
+70\% in the $\mu\mu$-channel.  The efficiency was lower in the $ee$-channel due to the ECAL gap in electron detection for $1.44 < |\eta| < 1.57$, 
+and lower efficiency offline ID selection criteria applied to electrons relative to muons.
 
 \begin{table}[h]
 	\caption{The kinematic selection criteria applied to reconstructed leptons and jets that passed the offline identification 
@@ -776,21 +778,19 @@ for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID selections applied t
 	\label{fig:wrOffSelEffVarMWrMNu}
 \end{figure}
 
-%conclude section with discussion of Mlljj distribution and how signals were searched for
-%RESUME HERE
-
-
-
 
 \section{Conclusion}
 \label{sec:recoConclusion}
-Electrons, muons and jets produced by pp interactions.
-
-%conclusion for original reconstruction chapter, which did not include selection criteria
-%Energetic electrons, muons and jets produced in collisions are reconstructed from signals measured in CMS sub-detectors and using 
-%specialized reconstruction algorithms.  Reconstructed leptons and jets were required to pass additional selections to increase 
-%sensitivity to a \WR signal relative to ST backgrounds.
-
+Electrons, muons and jets expected from \WR and \nul decays are reconstructed from signals measured in CMS sub-detectors using dedicated 
+reconstruction algorithms.  These algorithms reconstruct true leptons, hadrons and jets with high efficiency by using minimal selection criteria, 
+and occasionally ($\sim$1-3\%) reconstruct individual particles and jets as the wrong type of particle.  The contribution of incorrectly 
+reconstructed particles to $\ell\ell jj$ events was reduced by requiring leptons and jets to pass identification (ID) selection criteria.  The 
+leptons and jets that passed the ID criteria were required to pass kinematic selection criteria, including central $|\eta|$ and high transverse 
+energy, to select reconstructed particles measured with good energy resolution that are consistent with \WR decay kinematics.  All selection criteria 
+were applied to data events, and selected events were used to make a $\Mlljj$ distribution.  The decay $\WR \rightarrow \ell\ell jj$ transfers 
+all energy of the \WR into the invariant mass of the leptons and jets, so evidence of a \WR, independent of \mnul, was searched for as an excess 
+of data events above predicted backgrounds in the $\Mlljj$ distribution.  The $\Mlljj$ distribution of the backgrounds was predicted using data 
+and simulated events in control regions with no signal contamination.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
