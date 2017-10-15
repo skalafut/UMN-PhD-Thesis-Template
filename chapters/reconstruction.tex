@@ -411,9 +411,6 @@ with the angle between the leptons, so the boost at low $\mnul/\mWR$ also increa
 %to draw a plot of the angle between the two leptons use this argument in TTree Draw within quotes, and multiplied by 180/3.1416
 % TMath::ACos(1-( (TMath::CosH(etaEle[0]-etaEle[1]) - TMath::Cos(phiEle[0]-phiEle[1]))/(TMath::CosH(etaEle[0])*TMath::CosH(etaEle[1]))  ))
 
-%see June 2015 for kinematic plots with fixed MWR and several low MNu
-%see July 2016 answersToFirstRoundOfANQuestions for kinematic plots with fixed MWR and low, medium, and high MNu
-
 The \DY+jets process produces events where low $\pt$ jets, and low $\Mll$ lepton pairs are reconstructed.  Before 
 producing the dilepton system via \DY, the interacting quarks radiate two partons.  These partons are radiated with a 
 probability that is independent of $\phi$ and the angle $\theta$ relative to the beam axis, but decreases rapidly with $\pt$.  These 
@@ -527,13 +524,13 @@ ST background events that passed the trigger selection criteria produced leptons
 	\centering
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/ptGenLeptFromFstHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptQrkPtsVarMNua}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/ptGenLeptFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		\caption{$\ell$ from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNub}
 	\end{subfigure}
 	\newline
@@ -542,13 +539,13 @@ ST background events that passed the trigger selection criteria produced leptons
 	\newline
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/ptGenQuarkOneFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		\caption{quark from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNuc}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/ptGenQuarkTwoFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		\caption{quark from $\nul \rightarrow \ell qq$}\label{fig:wrLeptQrkPtsVarMNud}
 	\end{subfigure}
 	\caption{The $\pt$ of leptons and quarks produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ 
@@ -557,7 +554,7 @@ ST background events that passed the trigger selection criteria produced leptons
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
+	\includegraphics[width=0.5\textwidth]{figures/genNuMomMag_MWR_2200_several_MNu_private.pdf}
 	\caption{The $|p|$ of the \nul produced in $\WR \rightarrow \ell\nul$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}
 	\label{fig:hvyNuMomentumVarMNu}
 \end{figure}
@@ -566,19 +563,18 @@ ST background events that passed the trigger selection criteria produced leptons
 	\centering
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkOneFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		%\caption{ }\label{fig:wrDrLeptQrkVarMNua}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/missingImage.png}
+		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkTwoFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		%\caption{ }\label{fig:wrDrLeptQrkVarMNub}
 	\end{subfigure}
 	\caption{The $\Delta R(\ell,q)$ separation between the $\ell$ and both quarks produced in $\nul \rightarrow \ell qq$ 
 		in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}\label{fig:wrDrLeptQrkVarMNu}
 \end{figure}
-%RESUME HERE make plot of deltaR(l,q) btwn Nu progeny for signal evts with MWR = 2.2 TeV and several MNu values
 
 \begin{figure}[h]
 	\centering
