@@ -409,7 +409,7 @@ between $\ell_{1}$ and $\ell_{2}$ (Figure \ref{fig:wrLeptAngleSepVarMNu}).  The 
 with the angle between the leptons, so the boost at low $\mnul/\mWR$ also increases the $\Mll$ (Figure \ref{fig:wrMllVarMNu}).
 
 %to draw a plot of the angle between the two leptons use this argument in TTree Draw within quotes, and multiplied by 180/3.1416
-% acos(1-( (cosh(etaEle[0]-etaEle[1]) - cos(phiEle[0]-phiEle[1]))/(cosh(etaEle[0])*cosh(etaEle[1]))  ))
+% TMath::ACos(1-( (TMath::CosH(etaEle[0]-etaEle[1]) - TMath::Cos(phiEle[0]-phiEle[1]))/(TMath::CosH(etaEle[0])*TMath::CosH(etaEle[1]))  ))
 
 %see June 2015 for kinematic plots with fixed MWR and several low MNu
 %see July 2016 answersToFirstRoundOfANQuestions for kinematic plots with fixed MWR and low, medium, and high MNu
@@ -575,26 +575,26 @@ ST background events that passed the trigger selection criteria produced leptons
 		\includegraphics[width=2.4in]{figures/missingImage.png}
 		%\caption{ }\label{fig:wrDrLeptQrkVarMNub}
 	\end{subfigure}
-	\caption{The $\Delta R(\ell,q)$ separation between the $\ell$ and both quarks produced by $\nul \rightarrow \ell qq$ 
+	\caption{The $\Delta R(\ell,q)$ separation between the $\ell$ and both quarks produced in $\nul \rightarrow \ell qq$ 
 		in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}\label{fig:wrDrLeptQrkVarMNu}
 \end{figure}
+%RESUME HERE make plot of deltaR(l,q) btwn Nu progeny for signal evts with MWR = 2.2 TeV and several MNu values
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
-	\caption{The angle between the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
-	different \mnul.}
+	\includegraphics[width=0.5\textwidth]{figures/angleBtwnGenLepts_MWR_2200_several_MNu_private.pdf}
+	\caption{The angle $\theta_{12}$ between the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ events with 
+		$\mWR = 2.2$ $\TeV$ and different \mnul.}
 	\label{fig:wrLeptAngleSepVarMNu}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
+	\includegraphics[width=0.5\textwidth]{figures/dileptonMassFromGenLeptonsFromFstAndScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
 	\caption{The $\Mll$ of the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
 	different \mnul.}
 	\label{fig:wrMllVarMNu}
 \end{figure}
-%RESUME HERE make dilepton mass plot for signal evts with MWR = 2.2 TeV and several MNu values
 
 \begin{figure}
 	\centering
