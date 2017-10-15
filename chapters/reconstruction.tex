@@ -594,6 +594,7 @@ ST background events that passed the trigger selection criteria produced leptons
 	different \mnul.}
 	\label{fig:wrMllVarMNu}
 \end{figure}
+%RESUME HERE make dilepton mass plot for signal evts with MWR = 2.2 TeV and several MNu values
 
 \begin{figure}
 	\centering
@@ -694,28 +695,27 @@ The \WR decay produces two high $\pt$ leptons whose dilepton mass $\Mll$, given 
 For $\mnul/\mWR$ near 1 the decay $\WR \rightarrow \ell_{1}\nul$ produces a \nul nearly at rest, and a $\ell_{1}$ that moves away from the 
 \nul.  Subsequently the decay $\nul \rightarrow \ell_{2}jj$ produces a $\ell_{2}$ that moves in a random direction with respect to 
 $\ell_{1}$ (Figure \ref{fig:wrLeptAngleSepVarMNu}).  Thus for $\mnul/\mWR$ near 1 the two lepton trajectories are uncorrelated, and the 
-$\Mll$ is driven by the product of the two lepton momentum magnitudes $|p_{1}||p_{2}|$.  $|p_{1}||p_{2}|$ increases with \mWR (Figure 
-\ref{fig:wrLeptMomMagVarMNu}), so $\Mll$ also increases with \mWR.  As explained earlier, as $\mnul/\mWR$ decreases from 1 the \nul carries 
-more energy as momentum, and this increases the $\Mll$ relative to signal hypotheses with $\mnul/\mWR \sim$1 (Figure \ref{fig:wrMllVarMNu}).  
-Thus for a given \mWR hypothesis, the $\Mll$ will be minimized when $\mnul/\mWR \sim$1, and this minimum increases with \mWR.  Since a large 
-range of \mWR values were excluded previously \cite{cmsWRRunOneResults}, each event that passed all previous selection criteria was required 
-to have two leptons with $\Mll > 200$ $\GeV$.  The 200 $\GeV$ threshold was chosen because a lower threshold would increase the backgrounds 
-without a corresponding increase in the signal (Table \ref{tab:lowerMllCut}), and a higher threshold would reduce sensitivity to signals with 
-$\mnul/\mWR \sim$1 without a similar reduction in the backgrounds.
+$\Mll$ is driven by the square root of the product of the two lepton momentum magnitudes, $\sqrt{|p_{1}||p_{2}|}$.  This variable increases 
+with \mWR (Figure \ref{fig:wrLeptSqrtMomMagVarMNu}), so $\Mll$ also increases with \mWR.  As explained earlier, as $\mnul/\mWR$ decreases 
+from 1 the \nul carries more energy as momentum, and this increases the $\Mll$ relative to signal hypotheses with $\mnul/\mWR \sim$1 (Figure 
+\ref{fig:wrMllVarMNu}).  Thus for a given \mWR hypothesis, the $\Mll$ will be minimized when $\mnul/\mWR \sim$1, and this minimum increases 
+with \mWR.  Since a large range of \mWR values were excluded previously \cite{cmsWRRunOneResults}, each event that passed all previous 
+selection criteria was required to have two leptons with $\Mll > 200$ $\GeV$.  The 200 $\GeV$ threshold was chosen because a lower threshold 
+would increase the backgrounds without a corresponding increase in the signal (Table \ref{tab:lowerMllCut}), and a higher threshold would 
+reduce sensitivity to signals with $\mnul/\mWR \sim$1 without a similar reduction in the backgrounds.
 
 \begin{equation}
-	\Mll = 2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))
+	\Mll = \sqrt{2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))}
 	\label{eq:dileptMass}
 \end{equation}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/missingImage.png}
-	\caption{The product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with several \mWR and 
-	$\mnul = \frac{1}{2}\mWR$.}
-	\label{fig:wrLeptMomMagVarMNu}
+	\includegraphics[width=0.5\textwidth]{figures/sqrtProdGenLeptMomentumMag_several_MWR_and_MNu_private.pdf}
+	\caption{The square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell{2} qq$ 
+		events with several \mWR and $\mnul = \frac{1}{2}\mWR$.}
+	\label{fig:wrLeptSqrtMomMagVarMNu}
 \end{figure}
-%RESUME HERE make plot of |p1||p2| in WR evts with several MWR and MNu = MWR/2
 
 \begin{table}[h]
 	\caption{The signal (S) over background (B) sensitivity, represented by S/$\sqrt{B}$, for different $\Mll$ selection 
