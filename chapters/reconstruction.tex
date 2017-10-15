@@ -139,8 +139,8 @@ in simulated events are corrected so that the two $M_{\mu\mu}$ distributions mat
 
 \subsection{Online Selection}
 \WR decays that produce two muons can be selected online using single muon or double-muon triggers.  The single muon 
-triggers require one track segment to be reconstructed in multiple muon detectors and have $\pt>$ some threshold $A$, while the 
-double-muon triggers require two track segments that have $\pt>$ some threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ events the 
+triggers require one track segment to be reconstructed in multiple muon detectors and have $\pt$ above some threshold $A$, while the 
+double-muon triggers require two track segments that have $\pt$ above some threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ events the 
 highest efficiency single muon trigger selected more \WR events than the highest efficiency double muon trigger (Table \ref{tab:singleVsDblMuHlt}).  
 Although the double-muon trigger $\pt$ selection criteria were lower than those of the single muon trigger, the double-muon trigger 
 selected fewer \WR events because the efficiency to reconstruct a muon with $\pt > B$ as a track segment was below 100\% \cite{cmsMuonRecoRunTwo}.  
@@ -151,10 +151,10 @@ To maximize the trigger efficiency a single muon trigger was used to select coll
 		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblMuHlt}
 	\centering
-	\begin{tabular}{c|c|c|c}
-		trigger type & leading $\mu$ $\pt$ criteria ($\GeV$) & subleading $\mu$ $\pt$ criteria ($\GeV$) & efficiency (\%) \\  \hline
-		single &  $>50$ & - & 98  \\ 
-		double & $>17$ & $>8$ & 93  \\
+	\begin{tabular}{c|c}
+		trigger $\pt$ criteria & efficiency (\%) \\  \hline
+		one $\mu$ $\pt >50$ $\GeV$ & 98  \\ 
+		one $\mu$ $\pt >17$, another $\mu$ $\pt >8$ $\GeV$ & 93  \\
 	\end{tabular}
 \end{table}
 
@@ -222,25 +222,25 @@ in simulated events are corrected so that the two $M_{ee}$ distributions match.
 
 \subsection{Online Selection}
 \WR decays that produce two electrons can be selected online using single electron or double-electron triggers.  The single electron 
-triggers require that one track reconstructed in the silicon tracker extrapolates to a 5 $\times$ 5 ECAL crystal region with $\Et >$ some 
-threshold $D$, while the double-electron triggers require two such track-ECAL cluster combinations each with $\Et >$ some threshold 
+triggers require that one track reconstructed in the silicon tracker extrapolates to a 5 $\times$ 5 ECAL crystal region with $\Et$ above some 
+threshold $D$, while the double-electron triggers require two such track-ECAL cluster combinations each with $\Et$ above some threshold 
 $G < D$.  In simulated $\WR \rightarrow eejj$ events the highest efficiency single and double-electron triggers selected similar numbers 
 of signal events (Table \ref{tab:singleVsDblEleHlt}), so a trigger was chosen for another reason.  The electron trigger was used 
 to select signal events and events in a low dilepton mass ($\Mll$) control region discussed later.  The low $\Mll$ control region was 
 used to estimate the $\DY$+jets background, and needed as many $\DY$+jets events as possible to minimize the statistical uncertainty 
 on the background estimate.  The single electron trigger required $\Et > 105$ $\GeV$, and excluded a significant fraction of 
-$Z \rightarrow ee$ events.  The lower $\Et$ threshold double-electron trigger, which required two electrons with $\Et > 33$ $\GeV$, was 
-used to select collision events with electrons.
+$Z \rightarrow ee$ events.  To select a larger portion of $Z \rightarrow ee$ events, the double-electron trigger, which required two 
+electrons to have $\Et > 33$ $\GeV$, was used to select collision events with electrons.
 
 \begin{table}[h]
 	\caption{The efficiency of a single and double-electron trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
 		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblEleHlt}
 	\centering
-	\begin{tabular}{c|c|c|c}
-		trigger type & leading $e$ $\Et$ criteria ($\GeV$) & subleading $e$ $\Et$ criteria ($\GeV$) & efficiency (\%) \\  \hline
-		single &  $>105$ & - & 94  \\ 
-		double & $>33$ & $>33$ & 92  \\
+	\begin{tabular}{c|c}
+		trigger $\Et$ criteria & efficiency (\%) \\  \hline
+		one $e$ $\Et >105$ $\GeV$ & 94  \\ 
+		two $e$ $\Et >33$ $\GeV$ & 92  \\
 	\end{tabular}
 \end{table}
 
@@ -416,7 +416,7 @@ producing the dilepton system via \DY, the interacting quarks radiate two parton
 probability that is independent of $\phi$ and the angle $\theta$ relative to the beam axis, but decreases rapidly with $\pt$.  These 
 partons recoil against the $Z/\gamma^{*}$ to conserve the initial quark system momentum, and are reconstructed as jets.  Due to 
 the $Z$ boson resonance, the majority of \DY interactions produce lepton pairs that have $60 < \Mll < 120$ $\GeV$.  The $\Mll$ window 
-constrains both leptons to have $15 \gtrsim \pt \lesssim 60$ $\GeV$, and average $\pt \sim M_{Z}/2$.  Events where 
+constrains both leptons to have $15 \lesssim \pt \lesssim 60$ $\GeV$, and average $\pt \sim M_{Z}/2$.  Events where 
 the $Z$ boson has significant momentum, or the $\gamma^{*}$ has significant energy yield higher $\pt$ leptons, but at a significantly 
 lower rate.
 
@@ -424,17 +424,17 @@ Top quark processes produce bottom quarks and $W^{\pm}$ bosons that decay, and p
 are reconstructed.  The dominant contribution to the top quark background is the $t\bar{t} \rightarrow \ell\ell jj$ decay, where 
 both $W$ bosons decay to a charged lepton via $W^{\pm} \rightarrow \ell\nu$.  Due to combinatorics the $e\mu$ final state 
 is produced twice as often as the $ee$ or $\mu\mu$ final state.  The reconstructed charged leptons are constrained by the $W$ mass to 
-have $15 \gtrsim \pt \lesssim 50$ $\GeV$, and their $\pt$ distributions peak near $M_{W}/2$.  However, since they are produced 
+have $15 \lesssim \pt \lesssim 50$ $\GeV$, and their $\pt$ distributions peak near $M_{W}/2$.  However, since they are produced 
 independently their invariant mass $\Mll$ can be as high as the $t\bar{t}$ rest mass.  The reconstructed lepton-jet invariant mass 
 ($\Mlljj$) distribution found in $t\bar{t}$ events peaks below the $t\bar{t}$ mass because of the neutrinos from the $W$ decay.
 
 The WZ and ZZ processes produce events where low $\pt$ jets, and low $\Mll$ leptons pairs are reconstructed.  WZ and ZZ pairs can be 
 produced with one off-shell boson ($M_{Z^{*}} < 90$ $\GeV$), but their production rate is maximized when both bosons are 
 produced on-shell.  In both processes one $Z$ decays to leptons via $Z \rightarrow \ell\ell$.  The majority of these lepton pairs are 
-reconstructed with $60 < \Mll < 120$ $\GeV$, and each lepton's $\pt$ distribution spans $15 \gtrsim \pt \lesssim 60$ $\GeV$ and peaks 
+reconstructed with $60 < \Mll < 120$ $\GeV$, and each lepton's $\pt$ distribution spans $15 \lesssim \pt \lesssim 60$ $\GeV$ and peaks 
 near $M_{Z}/2$.  The second $Z$ in ZZ, and the $W$ in WZ decay to quarks via $W/Z \rightarrow qq$.  The quarks are reconstructed as 
 two jets whose dijet mass is consistent with the progenitor $W$ or $Z$ mass.  Similar to the leptons from the $Z$ decay, the $W/Z$ mass 
-window constrains each jet's $\pt$ distribution to $15 \gtrsim \pt \lesssim 50$ $\GeV$, and creates a peak in the $\pt$ distribution 
+window constrains each jet's $\pt$ distribution to $15 \lesssim \pt \lesssim 50$ $\GeV$, and creates a peak in the $\pt$ distribution 
 near half the progenitor boson mass.  Finally, the $W$ and $Z$ masses also constrain the reconstructed $\Mlljj$ distribution to below 
 the diboson rest mass.
 
@@ -444,11 +444,11 @@ and the initial state quarks or gluons radiate partons that are reconstructed as
 lepton final states when one boson decays to a charged lepton, the other boson decays to two quarks, and the initial state quarks or gluons 
 radiate additional partons.  These events contribute to $\ell\ell jj$ final states when the real lepton and two jets are correctly 
 reconstructed, and one parton is incorrectly reconstructed as a second lepton.  Leptons and jets reconstructed from $W$ decay 
-products are constrained by the $W$ mass to have $15 \gtrsim \pt \lesssim 50$ $\GeV$, while radiated partons, reconstructed as jets or 
+products are constrained by the $W$ mass to have $15 \lesssim \pt \lesssim 50$ $\GeV$, while radiated partons, reconstructed as jets or 
 leptons, are emitted with decreasing probability at higher $\pt$.  The $qq/qg \rightarrow W \rightarrow \ell\nu$+jets process radiates 
 partons from the initial state quarks or gluons, and produces one charged lepton.  W+jets events contribute to $\ell\ell jj$ final states 
 when the charged lepton and two jets are correctly reconstructed, and one parton is incorrectly reconstructed as a second lepton.  The 
-$\ell$ from the $W$ decay is constrained by the $W$ mass to have $15 \gtrsim \pt \lesssim 50$ $\GeV$, and the radiated partons, 
+$\ell$ from the $W$ decay is constrained by the $W$ mass to have $15 \lesssim \pt \lesssim 50$ $\GeV$, and the radiated partons, 
 reconstructed as jets or leptons, are emitted with decreasing probability at higher $\pt$.  The QCD multi-jet background contributes to 
 $\ell\ell jj$ final states when at least 4 outgoing partons are produced, 2 are reconstructed as jets, and 2 are incorrectly reconstructed 
 as leptons.  The outgoing partons, reconstructed as jets or leptons, are produced with a probability that decreases with $\pt$.
@@ -597,13 +597,13 @@ ST background events that passed the trigger selection criteria produced leptons
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/l1_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-		\caption{leading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsa}
+		\caption{leading $\pt$ electron}\label{fig:bkgLeptJetPtsa}
 	\end{subfigure}
 	\thickspace
 	\begin{subfigure}[t]{2.4in}
 		\centering
 		\includegraphics[width=2.4in]{figures/l2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-		\caption{subleading $\pt$ $\ell$}\label{fig:bkgLeptJetPtsb}
+		\caption{subleading $\pt$ electron}\label{fig:bkgLeptJetPtsb}
 	\end{subfigure}
 	\newline
 	\newline
@@ -620,8 +620,8 @@ ST background events that passed the trigger selection criteria produced leptons
 		\includegraphics[width=2.4in]{figures/j2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
 		\caption{subleading $\pt$ jet}\label{fig:bkgLeptJetPtsd}
 	\end{subfigure}
-	\caption{The $\pt$ of leptons and jets reconstructed in simulated background events that passed the online 
-	selection criteria.}\label{fig:bkgLeptJetPts}
+	\caption{The $\pt$ of electrons and jets reconstructed in simulated background events that passed the $ee$-channel offline ID and 
+	full online selection criteria.}\label{fig:bkgLeptJetPts}
 \end{figure}
 
 
@@ -708,7 +708,7 @@ reduce sensitivity to signals with $\mnul/\mWR \sim$1 without a similar reductio
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/sqrtProdGenLeptMomentumMag_several_MWR_and_MNu_private.pdf}
-	\caption{The square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell{2} qq$ 
+	\caption{The square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ 
 		events with several \mWR and $\mnul = \frac{1}{2}\mWR$.}
 	\label{fig:wrLeptSqrtMomMagVarMNu}
 \end{figure}
