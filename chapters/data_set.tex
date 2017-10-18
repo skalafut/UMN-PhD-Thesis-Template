@@ -17,33 +17,30 @@ the data in kinematic control regions where the two were expected to agree.
 Events from \WR processes, characterized by different \mnul and \mWR, and backgrounds are simulated in three steps.  The first 
 step simulates the hard interaction between colliding protons, the decay of unstable particles, and the hadronization of 
 outgoing partons into color neutral hadrons.  For particles produced in the first step that traverse any CMS sub-detector, the 
-second step simulates the electronic signals that these particles generate in each sub-detector.  From these signals the third 
-step simulates the reconstruction of leptons and jets using the algorithms described previously.
-
+second step simulates the electronic signals that these particles generate in each sub-detector.  In the third step these signals 
+are used by previously described algorithms to reconstruct leptons and jets.
 
 In the first step a \MC generator simulates the hard interaction between colliding protons, and the decay of unstable particles.  
-Simulated inelastic pp collisions show the best agreement with experimental data \cite{pythiaForHadronization} when the \PYTHIA 
-generator \cite{pythia8,Sjostrand:2006za} is used to simulate parton hadronization, so all simulations use \PYTHIA to hadronize 
-partons.  The simulated events are then .
+Inelastic pp collisions simulated with any \MC generator show the best agreement with experimental data \cite{pythiaForHadronization} 
+when the \PYTHIA generator \cite{pythia8,Sjostrand:2006za} is used to simulate parton hadronization, so all simulations use \PYTHIA 
+to hadronize partons.  Excluding parton hadronization, the \MC generator used to simulate the hard interaction of each background 
+was chosen based on the characteristics of the generator and the hard interaction.  The \MADGRAPH generator \cite{madgraph} simulates 
+all Feynman diagrams of a hard interaction at leading order in the electroweak 
+coupling with up to 4 additional partons radiated from the interaction.  Increasing the number of partons radiated from an 
+interaction by 1 decreases the cross section $\times$ branching ratio by $\alpha_{QCD} \sim$0.1, so simulating up to 4 additional 
+radiated partons is only relevant to simulations of ST backgrounds with large cross sections - \DY, $t\bar{t} \rightarrow \ell\ell jj$, 
+and $W \rightarrow \ell\nu$.  Therefore, \MADGRAPH was used to simulate the $\DY$+jets, $t\bar{t}$ and $W$+jets 
+backgrounds.  In contrast with \MADGRAPH, the \POWHEG generator \cite{powheg} simulated all Feynman diagrams of a hard interaction 
+out to next-to-leading order in the electroweak and QCD couplings with up to one additional parton radiated from the interaction.  
+\POWHEG was used to simulate single top quark backgrounds because those interactions, like $pp \rightarrow \bar{t}$+W, produce 
+$\ell\ell jj$ final states at rates that differ by 7\% or more between leading and next-to-leading order in the electroweak coupling 
+\cite{singleTopNLOvsLO}.  The diboson (WW, WZ, ZZ) backgrounds collectively produce $\ell\ell jj$ final states at a rate that is 
+$\sim$2\% of the $\DY$+jets or top quark background rate.  Simulating the diboson hard interactions with next-to-leading order 
+precision, or multiple radiated partons will not significantly change the.
+
 
 %RESUME HERE
 
-
-between protons colliding in a vacuum and the decay of unstable particles; also, final state partons were hadronized 
-into jets, possibly using a second \MC generator.  Partons were always hadronized into jets using the \PYTHIA generator 
-\cite{pythia8,Sjostrand:2006za}, but different generators simulated different hard interactions based on their respective 
-strengths and the hard interaction characteristics.  The \MADGRAPH generator \cite{madgraph} simulated all leading 
-order Feynman diagrams of a hard interaction with up to 4 additional radiated partons, which produced additional jets.  
-As simulations only approximate the jet spectrum of ST background events found in data, simulating more jets was expected 
-to yield a better prediction of the $\Mlljj$ distribution of any background.  However, simulating more than 1 additional 
-radiated parton decreased the cross section $\times$ branching ratio to $\ell\ell jj$ final states by the QCD coupling 
-strength squared, $\alpha_{QCD}^{2}$, or more.  For this reason, \MADGRAPH was only used to simulate large cross section ST 
-backgrounds - \DY, $t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  In contrast with the \MADGRAPH generator, 
-the \POWHEG generator \cite{powheg} simulated all Feynman diagrams of a hard interaction at leading (LO) and next-to-leading (NLO) 
-order in the electroweak and QCD coupling strengths, but with either zero or one additional radiated partons.  The cross 
-sections $\times$ branching ratios of single t or $\bar{t}$ quark processes, like $\bar{t}$+W, to leptonic final states change 
-by 7\% or more when going from LO to NLO \cite{singleTopNLOvsLO}, so the \POWHEG generator was used to simulate single 
-t or $\bar{t}$ quark backgrounds.  .
 
 %Compared to other \MC generators, \PYTHIA more accurately simulates low energy, high cross section interactions, like single- 
 %and double-diffractive dissociation, that cause pileup interactions.
@@ -68,7 +65,7 @@ t or $\bar{t}$ quark backgrounds.  .
 
 
 %instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
-%each step, then move on to the next step
+%each step, then move on to a new paragraph and the next step
 
 
 \begin{itemize}
