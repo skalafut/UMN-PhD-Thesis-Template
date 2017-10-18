@@ -8,19 +8,27 @@ The online and offline event selection criteria were applied to the data to sele
 whose kinematics were consistent with particles produced by \WR decays.  However, the kinematics of selected particles are 
 also consistent with the particles produced by ST backgrounds, such as $\DY$+jets and top quark processes.  \WR signal and 
 ST background contributions to the $\Mlljj$ distribution found in the data were predicted using Monte Carlo (\MC) simulations 
-of the signal and the backgrounds.  The background predictions were further refined by comparing the background simulations 
-to the data in kinematic control regions where the simulations were expected to agree with the data.
+of the signals and backgrounds.  The background predictions were further refined by comparing the background simulations to 
+the data in kinematic control regions where the two were expected to agree.
 
 
 \section{Monte Carlo}
 \label{sec:MC}
-The signal and background contributions to the $\Mlljj$ distribution found in data were predicted using events produced 
-by Monte Carlo (\MC) simulations.  Events were simulated in three steps.  First the hard interaction between colliding 
-protons was simulated at the Feynman diagram level, then the detector response to all final state particles was 
-simulated, and finally the trigger and offline particle reconstruction algorithms were run using the simulated detector 
-response.
+Events from \WR processes, characterized by different \mnul and \mWR, and backgrounds are simulated in three steps.  The first 
+step simulates the hard interaction between colliding protons, the decay of unstable particles, and the hadronization of 
+outgoing partons into color neutral hadrons.  For particles produced in the first step that traverse any CMS sub-detector, the 
+second step simulates the electronic signals that these particles generate in each sub-detector.  From these signals the third 
+step simulates the reconstruction of leptons and jets using the algorithms described previously.
 
-In the first step one \MC generator simulated the hard interaction, like $pp \rightarrow \WR \rightarrow \ell\ell jj$, 
+
+In the first step a \MC generator simulates the hard interaction between colliding protons, and the decay of unstable particles.  
+Simulated inelastic pp collisions show the best agreement with experimental data \cite{pythiaForHadronization} when the \PYTHIA 
+generator \cite{pythia8,Sjostrand:2006za} is used to simulate parton hadronization, so all simulations use \PYTHIA to hadronize 
+partons.  The simulated events are then .
+
+%RESUME HERE
+
+
 between protons colliding in a vacuum and the decay of unstable particles; also, final state partons were hadronized 
 into jets, possibly using a second \MC generator.  Partons were always hadronized into jets using the \PYTHIA generator 
 \cite{pythia8,Sjostrand:2006za}, but different generators simulated different hard interactions based on their respective 
@@ -37,7 +45,10 @@ sections $\times$ branching ratios of single t or $\bar{t}$ quark processes, lik
 by 7\% or more when going from LO to NLO \cite{singleTopNLOvsLO}, so the \POWHEG generator was used to simulate single 
 t or $\bar{t}$ quark backgrounds.  .
 
-%RESUME HERE
+%Compared to other \MC generators, \PYTHIA more accurately simulates low energy, high cross section interactions, like single- 
+%and double-diffractive dissociation, that cause pileup interactions.
+%\cite{pythiaForHadronization}
+
 
 %selections if additional radiated partons were simulated, other ST backgrounds had 
 %cross sections $\times$ branching fractions to $\ell\ell jj$ final states that were much lower than those of $DY$, 
