@@ -38,44 +38,30 @@ final states increases by up to 45\% going from leading order to next-to-leading
 background at next-to-leading order is still negligible compared to the $\DY$+jets and top quark backgrounds; the next-to-leading 
 order simulation is not needed.  The production of diboson pairs and their decays to lepton+jet final states was simulated using 
 the leading order \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, with up to one additional parton radiated from the interaction.  
-Simulated events using any \MC generator show the best agreement with experimental data when \PYTHIA is used to simulate parton 
-hadronization \cite{pythiaForHadronization}, so all simulations use \PYTHIA to hadronize partons.  Furthermore, in all simulations 
-the unstable particles are decayed into quasi-stable particles, like the $\Sigma^{\pm}$ and $\pi^{\pm}$, with mean lifetime 
-$\tau \gtrsim 8\times10^{-11}$ seconds.  These quasi-stable particles travel a mean distance c$\tau \gtrsim 2.4$ cm before decaying, 
-and some will decay after generating a signal in the first layer of the silicon pixel tracker, located 4.4 cm from the interaction 
-point \cite{cmsTdrPhysPerformance}.
+Events simulated with any \MC generator show the best agreement with experimental data when \PYTHIA is used to simulate parton 
+hadronization \cite{pythiaForHadronization}, so all simulations use \PYTHIA and the NNPDF23 PDF set \cite{nnpdf} to hadronize partons.  
+The \MC generator that simulates the hard interaction also simulates the decay of all unstable particles, excluding the partons, into 
+quasi-stable and stable particles, like the $\Sigma^{\pm}$ and $\gamma$, with mean lifetime $\tau \gtrsim 8\times10^{-11}$ seconds.  
+These relatively long lived particles travel a mean distance c$\tau \gtrsim 2.4$ cm before decaying, and some will generate a signal 
+in the first layer of the silicon pixel tracker, located 4.4 cm from the interaction point \cite{cmsTdrPhysPerformance}.
 
 %SAVE THIS statement that explains why the aMCatNLO inclusive diboson simulated datasets were not used
 %A second set of diboson$\to$leptons+jets events was simulated with a next-to-leading order \MC generator, but these events were 
 %generated with positive and negative event weights.  Due to the presence of positive and negative event weights, in some $\Mlljj$ 
 %regions the predicted number of diboson events was negative, and the prediction's statistical uncertainty was greater than 100\%.
 
-In the second step the quasi-stable particles produced earlier are propagated through the CMS detector and the 3.8 $\unit{T}$ magnetic 
-field, and GEANT \cite{geant4} simulates their sporadic decays and interactions with the detector.  These inter.
+In the second step the effect of pileup is simulated, and subsequently GEANT \cite{geant4} simulates the propagation and decay of 
+quasi-stable and stable particles, and their interactions with the CMS detector.  The large instantaneous luminosity of the LHC 
+beams produced multiple pp interactions, pileup, in each selected data event.  When \MC simulations started in the spring of 2015, 
+the pileup distribution in upcoming data events was expected to follow a Poisson distribution with a mean, based on the expected 
+average instantaneous luminosity, of 12.  In each event produced by the first step, the effect of pileup is simulated by pulling a 
+random integer $X$ from a Poisson distribution with mean 12, and mixing $X$ simulated minimum bias events into the event.  The 
+minimum bias events were simulated only through the first simulation step.  Minimum bias events simulated with \PYTHIA show the 
+best agreement with minimum bias events in data \cite{pythiaForHadronization}, so \PYTHIA simulated the minimum bias events that 
+were used to emulate pileup.  After simulating the effect of pileup, GEANT propagated all particles (stable and quasi-stable) .
+
 
 %RESUME HERE
-
-
-%Compared to other \MC generators, \PYTHIA more accurately simulates low energy, high cross section interactions, like single- 
-%and double-diffractive dissociation, that cause pileup interactions.
-%\cite{pythiaForHadronization}
-
-
-%selections if additional radiated partons were simulated, other ST backgrounds had 
-%cross sections $\times$ branching fractions to $\ell\ell jj$ final states that were much lower than those of $DY$, 
-%$\ttbar$, and $W \rightarrow \ell\nu$; the contribution of other backgrounds to the total background after selections 
-%was negligible, regardless of additional parton radiation.  Therefore, \MADGRAPH was used to simulate the $DY$, $\ttbar$, and 
-%$W \rightarrow \ell\nu$ backgrounds with additional radiation partons, but was not used to simulate other backgrounds 
-%for two reasons: the way \MADGRAPH simulated additional parton radiation made it one of the most time consuming generators, and 
-%it only simulated interactions at leading order in the electroweak and strong coupling constants.  The cross sections 
-%$\times$ branching fractions of other top and $\bar{t}$ quark backgrounds, like $\bar{t}$+W, to $\ell\ell jj$ final 
-%states were sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
-%was used to simulate these backgrounds.  The cross sections $\times$ branching fractions of diboson (WW, WZ, ZZ) backgrounds 
-%to $\ell\ell jj$ final states were so low that the next-to-leading order electroweak corrections were irrelevant.  
-%To save simulation time and computing resources, the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator 
-%was used to simulate the diboson backgrounds.  In all simulations, \PYTHIA with the NNPDF23 PDF set \cite{nnpdf} 
-%was also used to hadronize partons into jets.
-
 
 
 %instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
