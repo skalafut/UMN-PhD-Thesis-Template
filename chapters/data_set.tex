@@ -38,6 +38,8 @@ final states increases by up to 45\% going from leading order to next-to-leading
 background at next-to-leading order is still negligible compared to the $\DY$+jets and top quark backgrounds; the next-to-leading 
 order simulation is not needed.  The production of diboson pairs and their decays to lepton+jet final states was simulated using 
 the leading order \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, with up to one additional parton radiated from the interaction.  
+\PYTHIA also provides a flexible, generic \WR signal model that is based on the ST weak interaction model; for this reason \PYTHIA 
+was also used to simulate $\WR \rightarrow \ell\ell jj$ interactions.  
 Events simulated with any \MC generator show the best agreement with experimental data when \PYTHIA is used to simulate parton 
 hadronization \cite{pythiaForHadronization}, so all simulations use \PYTHIA and the NNPDF23 PDF set \cite{nnpdf} to hadronize partons.  
 The \MC generator that simulates the hard interaction also simulates the decay of all unstable particles, excluding the partons, into 
@@ -58,41 +60,26 @@ average instantaneous luminosity, of 12.  In each event produced by the first st
 random integer $X$ from a Poisson distribution with mean 12, and mixing $X$ simulated minimum bias events into the event.  The 
 minimum bias events were simulated only through the first simulation step.  Minimum bias events simulated with \PYTHIA show the 
 best agreement with minimum bias events in data \cite{pythiaForHadronization}, so \PYTHIA simulated the minimum bias events that 
-were used to emulate pileup.  After simulating the effect of pileup, GEANT propagated all particles (stable and quasi-stable) .
+were used to emulate pileup.  After simulating the effect of pileup, GEANT propagates all particles (stable and quasi-stable) in 
+the 3.8 $\unit{T}$ magnetic field, simulates their interactions with the detector, and simulates the decays of quasi-stable particles 
+to $\gamma,p^{\pm},n^{0},\bar{n}^{0},\nu,e^{\pm}$.  Finally, GEANT simulates the signal generation in the detector in response to 
+particle interactions with the detector materials.
 
+In the third step the detector signals simulated by GEANT are processed by the online trigger algorithms, and the offline particle 
+reconstruction algorithms.  For every trigger algorithm a boolean variable is saved to each event, which indicates if the event 
+passed the corresponding trigger.  Unlike collision events in data, no simulated events are discarded based on the performance of 
+the triggers in the third step.  Then the same offline reconstruction algorithms used in real collisions are used to reconstruct 
+interaction vertices, leptons, and jets.
 
-%RESUME HERE
+After finishing the third simulation step, the pileup distribution in simulated events (identical in all simulations) was 
+compared to the pileup distribution found in data.  The simulated pileup distribution differed from its counterpart in data, so 
+each simulated event was weighted to bring the simulated and data pileup distributions into agreement.
 
-
-%instead of briefly describing each step and then referencing it later, write an all-encompassing paragraph about 
-%each step, then move on to a new paragraph and the next step
-
-
-\begin{itemize}
-	\item In \textbf{step 1} a dedicated \MC generator was used to simulate the interaction between two protons 
-		colliding in a vacuum, and the particles produced by the interaction.
-	\item In \textbf{step 2} the effect of multiple pp interactions occurring in the same collision was simulated, 
-		and GEANT4 \cite{geant4} was used to simulate interactions between particles and detector materials, 
-		and the detector response to particles.
-	\item In \textbf{step 3}the simulated detector response was used to simulate the Level-1 and High Level 
-		trigger decisions, and to reconstruct particles and interaction vertices using the same reconstruction 
-		algorithms used in data.
-\end{itemize}
-
-In step 1 the \MC generator also simulated the decay of unstable particles, and hadronized partons into jets.  
-Before starting step 2, an independent \MC simulation of minimum bias collisions was produced using step 1.  
-Then, for every event $i$ simulated in step 2, a random integer $X$ representing the number of pileup interactions 
-was pulled from a Poisson distribution with mean twelve\footnote{When 2015 \MC simulations began, the average expected 
-pileup per event was 12}.  $X$ simulated minimum bias events were added to the primary event $i$ before starting GEANT4 
-simulations.  In step 3, trigger decisions were saved but were not used to exclude events from reconstruction.  This 
-3 step procedure was used to simulate the ST backgrounds and \WR signals listed in Table \ref{tab:centrallyProducedMC}.
-
-The distribution of the number of pileup interactions per event was identical for all simulated datasets, and 
-differed in shape from the distribution found in data.  This shape difference was resolved by applying a pileup 
-dependent weight to every simulated event.
+The simulated backgrounds are summarized in Table \ref{tab:centrallyProducedMC}.  Their sizes are expressed in units of integrated 
+luminosity, and should be compared to the 2.6 fb$^{-1}$ of data \cite{lumi}.
 
 \begin{table}[bt]
-\caption{The simulated datasets used to study ST backgrounds and the \WR signal.  The "Size" of a dataset is equal 
+	\caption{The ST background and \WR signal (only $\mnul = \frac{1}{2}\mWR$) simulated datasets.  The "Size" of a dataset is equal 
 	to the number of simulated events divided by the 13 $\TeV$ cross section $\times$ branching fraction of the process.}
 \label{tab:centrallyProducedMC}
 
@@ -121,43 +108,18 @@ dependent weight to every simulated event.
 }
 \end{table}
 
-In step 1 different \MC generators were used based on the characteristics of the process being simulated.  The 
-\MADGRAPH \cite{madgraph} generator simulated all leading order Feynman diagrams of an interaction with up to 4 
-additional radiated partons, which produced additional jets.  The effect of additional jets on the number of 
-events passing the selections described in Chapter \ref{sec:signalAndBkgndFeatures} was significant 
-only in high cross section ST backgrounds - $DY \rightarrow \ell\ell$, $t\bar{t} \rightarrow \ell\ell jj$, and 
-$W \rightarrow \ell\nu$.  Although all ST background simulations would produce more events passing the 
-selections if additional radiated partons were simulated, other ST backgrounds had 
-cross sections $\times$ branching fractions to $\ell\ell jj$ final states that were much lower than those of $DY$, 
-$\ttbar$, and $W \rightarrow \ell\nu$; the contribution of other backgrounds to the total background after selections 
-was negligible, regardless of additional parton radiation.  Therefore, \MADGRAPH was used to simulate the $DY$, $\ttbar$, and 
-$W \rightarrow \ell\nu$ backgrounds with additional radiation partons, but was not used to simulate other backgrounds 
-for two reasons: the way \MADGRAPH simulated additional parton radiation made it one of the most time consuming generators, and 
-it only simulated interactions at leading order in the electroweak and strong coupling constants.  The cross sections 
-$\times$ branching fractions of other top and $\bar{t}$ quark backgrounds, like $\bar{t}$+W, to $\ell\ell jj$ final 
-states were sensitive to next-to-leading order electroweak corrections, so the next-to-leading order \POWHEG \cite{powheg} generator 
-was used to simulate these backgrounds.  The cross sections $\times$ branching fractions of diboson (WW, WZ, ZZ) backgrounds 
-to $\ell\ell jj$ final states were so low that the next-to-leading order electroweak corrections were irrelevant.  
-To save simulation time and computing resources, the leading order \PYTHIA \cite{pythia8,Sjostrand:2006za} generator 
-was used to simulate the diboson backgrounds.  In all simulations, \PYTHIA with the NNPDF23 PDF set \cite{nnpdf} 
-was also used to hadronize partons into jets.
-
-The \WR signal model assumes negligible mixing between left- and right-handed fermions, so the next-to-leading 
-order electroweak corrections have a negligible impact on the signal.  \PYTHIA was used to simulate the 
-\WR signal using the NNPDF23 PDF set.  A large range of \mWR values were studied by generating datasets with \mWR 
-stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and requiring $\mnul = \frac{1}{2}\mWR$.
-
-Additional $\WR \rightarrow \ell\ell jj$ datasets were produced with \PYTHIA, and used in the situation when no \WR 
-signal was found.  Events were simulated only through step 1, and using the same \PYTHIA configuration used in the 
-full 3 step simulation.  Datasets were produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  
-At each \mWR, several datasets were produced with $0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these 
-datasets were used to test observations from data against predictions made by different $(\mWR, \mnul \neq \frac{1}{2}\mWR)$ 
-hypotheses, and set \mWR and \mnul exclusion limits.
-
+Two sets of \WR signal events were simulated using \PYTHIA - one set was simulated through all three simulation steps, the other 
+was simulated through the first step.  The set that included simulations of particle reconstruction and pileup was produced with 
+\mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and required $\mnul = \frac{1}{2}\mWR$.  The other set was produced 
+with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and, at each \mWR, several \mnul values between 
+$0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these events were used to set \mWR and \mnul exclusion limits for 
+$\mnul \neq \frac{1}{2}\mWR$.
 
 
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
+%make a logical transition from MC section to this section
+
 One of the two largest backgrounds in the \WR and \nul search was ST processes that produced at least 
 one top quark, like top quark $\plus$ $W$ boson production (top+W, Figure \ref{fig:singleTopDiags}), 
 and top anti-top quark pair production ($\ttbar$, Figure \ref{fig:ttbarDiag}).  Top 
@@ -168,6 +130,7 @@ in the weak coupling constant, the \WR cannot decay through a \nul to the $e\mu 
 data events are essentially free of \WR signal.  This allowed $e\mu$-channel data events to be used to 
 estimate the top quark contribution to the $\Meejj$ and $\Mmumujj$ distributions found in data.
 
+%RESUME HERE
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/topAntiTopFeynDiagram.png}
