@@ -112,13 +112,44 @@ Two sets of \WR signal events were simulated using \PYTHIA - one set was simulat
 was simulated through the first step.  The set that included simulations of particle reconstruction and pileup was produced with 
 \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and required $\mnul = \frac{1}{2}\mWR$.  The other set was produced 
 with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and, at each \mWR, several \mnul values between 
-$0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal was found, these events were used to set \mWR and \mnul exclusion limits for 
+$0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal is found, these events are used to set \mWR and \mnul exclusion limits for 
 $\mnul \neq \frac{1}{2}\mWR$.
 
 
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
-%make a logical transition from MC section to this section
+Top quark processes, including $t\bar{t}$ (Figure \ref{fig:ttbarDiag}) and top quark $\plus$ W (top+W, Figure 
+\ref{fig:singleTopDiags}), yield $\ell\ell jj$ events when two $W$ bosons are produced and decay to leptons.  Due to lepton 
+universality the two $W$ bosons decay to the $e\mu$ final state twice as often as the $ee$ or $\mu\mu$ final state.  No other 
+pertinent ST backgrounds or the \WR (Chapter \ref{sec:lrsPhenomenology}) produce the $e\mu$ final state at leading order in the 
+electroweak coupling, so $e\mu jj$ events selected in data represented the top quark background.  The $e\mu jj$ events were selected 
+during collisions by the same Level-1 single muon trigger described in Chapter \ref{sec:muOnlineSel}.  Then, events were required 
+to pass the following electron-muon HLT selection criteria:
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector track segment that passed the L1 trigger.
+	\item In the plane perpendicular to the beam axis, the distance between the silicon tracker track origin and its 
+		reconstructed vertex was $< 1$ mm.
+	\item One 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$.
+	\item For the selected ECAL cluster (energy E):
+	\begin{itemize}
+		\item The hadronic energy behind the cluster was $<$ 15\% of E in the barrel, and $<$ 10\% of E in the endcap. 
+		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
+		\item If the cluster was in the barrel, a reconstructed track with signals in at least two pixel tracker layers 
+			extrapolated close to the cluster position.  The track extrapolated from the pixel tracker to within $2.3$ cm 
+			of the cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
+	\end{itemize}
+\end{itemize}
+
+
+
+%RESUME HERE
+
+%Simulated events are not the main element of the top quark bkgnd estimate
+%the estimate is made using data, so discuss this first, then explain role of simulations when appropriate
+Simulations of $t\bar{t}$ (Figure \ref{fig:ttbarDiag}), top quark $\plus$ W (top+W, Figure \ref{fig:singleTopDiags}), and other 
+top quark production processes were used to estimate the top quark background.  .
 
 One of the two largest backgrounds in the \WR and \nul search was ST processes that produced at least 
 one top quark, like top quark $\plus$ $W$ boson production (top+W, Figure \ref{fig:singleTopDiags}), 
@@ -130,7 +161,6 @@ in the weak coupling constant, the \WR cannot decay through a \nul to the $e\mu 
 data events are essentially free of \WR signal.  This allowed $e\mu$-channel data events to be used to 
 estimate the top quark contribution to the $\Meejj$ and $\Mmumujj$ distributions found in data.
 
-%RESUME HERE
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/topAntiTopFeynDiagram.png}
@@ -144,31 +174,6 @@ estimate the top quark contribution to the $\Meejj$ and $\Mmumujj$ distributions
 	\caption{Single top quark Feynman diagrams \cite{singleTopQrkDiagrams}.}
 	\label{fig:singleTopDiags}
 \end{figure}
-
-Data events in the $e\mu$-channel were selected by a Level-1 trigger that required a track in at least one 
-muon DT or CSC detector with $\pt > 16$ $\GeV$.  Events that passed the Level-1 selection were reconstructed 
-if they passed the following electron and muon HLT selections:
-
-\begin{itemize}
-	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
-		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching 
-		reconstructed track:
-	\begin{itemize}
-		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least one 
-			muon detector hit with $\chi^{2}/nDOF < 20$.
-		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
-			reconstructed vertex was $< 1$ mm.
-	\end{itemize}
-	\item One ECAL SC was detected with $\Et > 30$ $\GeV$.
-	\item For the SC:
-	\begin{itemize}
-		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ in the barrel, and $< 0.1$ in the endcap.
-		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that is two crystals wide in $\eta$.
-		\item For SCs in the barrel, a reconstructed track with hits in at least two pixel tracker layers extrapolated to the 
-			SC centroid along the beam axis within 2.3 \cm, and extrapolated to the SC centroid in $(\eta_{SC}, \phi_{SC})$ within the 
-			$(\eta, \phi)$ area of one ECAL crystal.
-	\end{itemize}
-\end{itemize}
 
 The reconstructed $e\mu$ data events were selected using the electron, muon, and jet requirements described 
 in Chapter \ref{sec:event_selection_chapter}, and with the additional requirements that one selected lepton was a 
