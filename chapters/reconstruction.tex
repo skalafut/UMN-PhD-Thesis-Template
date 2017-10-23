@@ -132,7 +132,7 @@ of 3.2\%, and higher $\pt$ muons were measured with a resolution better than 6\%
 	\end{tabular}
 \end{table}
 
-Global muons reconstructed in simulated events are known to have different energies than muons reconstructed in data.  Energy 
+Global muons reconstructed in simulated events have different energies than muons reconstructed in data.  Energy 
 corrections for simulated muons are derived using $Z \rightarrow \mu\mu$ events found in simulations and data.  The di-muon mass 
 ($M_{\mu\mu}$) distribution in $Z \rightarrow \mu\mu$ events is compared between data and simulations, and the energies of muons 
 in simulated events are corrected so that the two $M_{\mu\mu}$ distributions match.
@@ -170,6 +170,10 @@ Then, events were required to pass the following single muon HLT selection crite
 		reconstructed vertex was $< 1$ mm.
 \end{itemize}
 
+Simulated muons pass the trigger criteria with a different efficiency than muons produced in real collisions.  This 
+efficiency difference was corrected by multiplying the weight of every simulated event (default weight is 1.0) by a $\pt$,$\eta$-
+dependent value between 0.95 (5\% decrease) and 1.04 (4\% increase) for the muon that fired the trigger.
+
 \subsection{Offline Identification Selection}
 In events selected by the single muon trigger, muons were reconstructed offline from tracks in the muon detectors and silicon tracker using 
 algorithms described previously.  Then, the following identification criteria were applied to select promptly produced muons 
@@ -189,6 +193,10 @@ that were isolated from other particles and reconstructed in multiple muon stati
 	\item The origin of the muon's silicon tracker track was within 2 mm of the muon's reconstructed vertex 
 		position along the $z$ axis.
 \end{itemize}
+
+Simulated muons are reconstructed and pass the offline muon identification selection criteria with a higher 
+efficiency than muons produced in real collisions.  This efficiency difference was corrected by multiplying the weight of every 
+simulated event by a $\pt$,$\eta$-dependent value between 0.985 and 1.0 for each offline muon selected in the event.
 
 
 \section{Electron Reconstruction and Selection}
@@ -216,7 +224,7 @@ at higher $|\eta|$ \cite{ecalPerformanceInCollisions}.
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-Electrons reconstructed in simulated events are known to have different energies than electrons reconstructed in data.  Energy 
+Electrons reconstructed in simulated events have different energies than electrons reconstructed in data.  Energy 
 corrections for simulated electrons are derived using $Z \rightarrow ee$ events found in simulations and data.  The di-electron mass 
 ($M_{ee}$) distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of electrons 
 in simulated events are corrected so that the two $M_{ee}$ distributions match.
@@ -261,6 +269,9 @@ $\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  Then, events were required to pass the
 	\end{itemize}
 \end{itemize}
 
+Simulated electrons passed the trigger criteria with the same efficiency as electrons produced in real collisions, so no electron 
+trigger efficiency correction was applied to simulated events.
+
 \subsection{Offline Identification Selection}
 In events selected by the double-electron trigger, electrons were reconstructed offline from ECAL SCs and tracks using algorithms 
 described previously.  Then, the following identification criteria were applied to select promptly produced 
@@ -285,6 +296,11 @@ transition region $1.44 < |\eta| < 1.57$:
 	\item The electron track's origin was separated from its vertex by a small distance $\Delta_{xy}$ in the $x-y$ 
 		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
+
+Simulated electrons are reconstructed and pass the offline electron identification selection criteria with a higher 
+efficiency than electrons produced in real collisions.  This efficiency difference was corrected by multiplying the weight of every 
+simulated event by 0.982, the reconstruction efficiency correction, and by 0.989, the ID efficiency correction, for each offline 
+electron selected in the event.
 
 
 \section{Jet Reconstruction and Selection}
@@ -334,7 +350,7 @@ measured with a $\pt$ resolution of 16\% or better \cite{jetResolutionInCollisio
 	\label{fig:jetClustering}
 \end{figure}
 
-Jets reconstructed in simulated events are known to have different energies than jets reconstructed in data.  Energy corrections for 
+Jets reconstructed in simulated events have different energies than jets reconstructed in data.  Energy corrections for 
 simulated jets are derived using dijet, $Z$+jet, and $\gamma$+jet events found in simulations and data 
 \cite{jetpaper}.  The di-jet mass and leading jet $\pt$ distributions in these events are compared between data and simulations, and 
 the energies of jets in simulated events are corrected so that the jet distributions match in data and simulations.
@@ -352,6 +368,9 @@ jets that contained at least one charged hadron, and whose energies were not dom
 	\item Less than 90\% of the total jet energy came from photons.
 	\item Less than 99\% of the total jet energy came from electrons.
 \end{itemize}
+
+Simulated jets are reconstructed and pass the ID criteria with the same efficiency as jets produced in real collisions, so no jet 
+reconstruction or ID efficiency corrections were applied to simulated events.
 
 
 \section{\WR Signal and ST Backgrounds Kinematics}
