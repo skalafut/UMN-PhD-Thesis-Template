@@ -71,9 +71,15 @@ passed the corresponding trigger.  Unlike collision events in data, no simulated
 the triggers in the third step.  Then the same offline reconstruction algorithms used in real collisions are used to reconstruct 
 interaction vertices, leptons, and jets.
 
-After finishing the third simulation step, the pileup distribution in simulated events (identical in all simulations) was 
-compared to the pileup distribution found in data.  The simulated pileup distribution differed from its counterpart in data, so 
-each simulated event was weighted to bring the simulated and data pileup distributions into agreement.
+After finishing the third simulation step, particle energy corrections and event weights were applied to simulated events.  As 
+explained previously, the energies of simulated jets, muons, and electrons were corrected to match the energy of particles 
+reconstructed in data.  The differences in lepton reconstruction, trigger selection, and offline ID selection efficiencies between 
+data and simulated events were corrected by changing the weight of each simulated event depending on the $\pt$ and 
+$\eta$ of the selected leptons.  Independent of the kinematics of the selected leptons or jets, the weight of each simulated event 
+was normalized based on the dataset size and the integrated luminosity of data, and adjusted further according to the pileup 
+distribution found in data.  The pileup distribution found in the data is approximated by a Poisson distribution with mean 14 \cite{lumi}, 
+but the pileup distribution found in simulated events matches a Poisson distribution with mean 12.  The discrepancy between the 
+pileup distributions was corrected by changing the weight of each simulated event by a pileup-dependent value.
 
 The simulated backgrounds are summarized in Table \ref{tab:centrallyProducedMC}.  Their sizes are expressed in units of integrated 
 luminosity, and should be compared to the 2.6 fb$^{-1}$ of data \cite{lumi}.
@@ -119,12 +125,12 @@ $\mnul \neq \frac{1}{2}\mWR$.
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
 Top quark processes, including $t\bar{t}$ (Figure \ref{fig:ttbarDiag}) and top quark $\plus$ W (top+W, Figure 
-\ref{fig:singleTopDiags}), yield $\ell\ell jj$ events when two $W$ bosons are produced and decay to leptons.  Due to lepton 
-universality the two $W$ bosons decay to the $e\mu$ final state twice as often as the $ee$ or $\mu\mu$ final state.  No other 
-pertinent ST backgrounds or the \WR (Chapter \ref{sec:lrsPhenomenology}) produce the $e\mu$ final state at leading order in the 
-electroweak coupling, so $e\mu jj$ events selected in data represented the top quark background.  The $e\mu jj$ events were selected 
-during collisions by the same Level-1 single muon trigger described in Chapter \ref{sec:muOnlineSel}.  Then, events were required 
-to pass the following electron-muon HLT selection criteria:
+\ref{fig:singleTopDiags}), produce two $W$ bosons.  When both bosons decay to leptons the $\ell\ell jj$ final state is produced.  
+Due to lepton universality the two $W$ bosons decay to the $e\mu$ final state twice as often as the $ee$ or $\mu\mu$ final state.  
+No other pertinent ST backgrounds or the \WR (Chapter \ref{sec:lrsPhenomenology}) produce the $e\mu$ final state at leading order in 
+the electroweak coupling, so $e\mu jj$ events selected in data represented the top quark background.  The $e\mu jj$ events were 
+selected during collisions by the same Level-1 single muon trigger described in Chapter \ref{sec:muOnlineSel}.  Then, events were 
+required to pass the following electron-muon HLT selection criteria:
 
 \begin{itemize}
 	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
@@ -142,7 +148,28 @@ to pass the following electron-muon HLT selection criteria:
 	\end{itemize}
 \end{itemize}
 
+In events selected by the $e\mu$ trigger, muons, electrons, and jets were reconstructed and selected using the reconstruction algorithms 
+and selection criteria described in Chapter \ref{sec:reco_chapter}.  The offline selection criteria applied to the two leptons was 
+applied to the reconstructed electrons and muons.  Events were selected if a reconstructed electron and muon had $\pt > 50$ $\GeV$, 
+and one had $\pt > 60$ $\GeV$.  The online and offline selection criteria were applied to all simulated background events, and compared 
+to the selected data events in Figure \ref{fig:dataAndSimsInEMuChannel}.  Based on the magnitudes of different simulated backgrounds, 
+more than 95\% of $e\mu jj$ events come from the top quark background.
 
+The top quark background in the $e\mu$-channel ($e\mu jj$ final state) was multiplied by the ratio of $\ell\ell / e\mu$ production $\times$ 
+$\frac{e}{\mu}$ selection efficiency to predict the top quark background in the same flavor $\ell\ell$-channels.  As explained 
+previously, the $\ell\ell / e\mu$ production ratio is 0.5, independent of lepton energy, because of lepton universality in $W$ boson 
+decays.  The $\frac{e}{\mu}$ selection efficiency ratio was below 1 for two reasons: electrons reconstructed in the ECAL barrel-endcap 
+transition region, $1.44 < |\eta| < 1.57$, were ignored, and the offline electron identification selection criteria were less efficient 
+than the muon selection criteria.  The $\frac{e}{\mu}$ selection efficiency ratio was expected to be constant as a function of $\Mlljj$, 
+and this was checked using simulated top quark events.  First, simulated top quark events were selected in three groups: those passing 
+the $e\mu$-channel, $ee$-channel, or $\mu\mu$-channel selection criteria.  Then, selected events were used .
+
+
+The $\ell\ell / e\mu$ production ratio $\times$ the $\frac{e}{\mu}$ selection efficiency was 
+calculated as the ratio .
+
+using simulated top quark background events selected in three groups: events that passed the $e\mu$-channel selection, the $ee$-
+channel selection, and the $\mu\mu$-channel selection.  The ratio of .
 
 %RESUME HERE
 
