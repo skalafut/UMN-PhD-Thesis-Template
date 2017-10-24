@@ -11,17 +11,63 @@ The contribution of ST backgrounds to the $\Mlljj$ distribution found in the dat
 simulations, and control regions with no \WR signal contamination.  The magnitudes of individual backgrounds, how 
 they were simulated, and how the control regions were used to estimate the background contributions are described here.
 
-%\section{Background Magnitudes}
-%\label{sec:bkgndMags}
-The .
+The magnitude of the background produced by each ST interaction is proportional to its cross section $\times$ branching fraction 
+to $\ell\ell jj$ final states in 2015 collisions.  The \DY interaction (Figure \ref{fig:dyDiags}) produced two same flavor 
+leptons in the detector with a cross section $\times$ branching ratio that peaked at 6000 pb for dilepton mass $\Mll \approx 90$ $\GeV$, 
+and decreased rapidly for higher $\Mll$.  At $\sqrt{s} = 13$ $\TeV$ either quark that participates in the \DY interaction 
+radiates a parton with a probability of $\sim$0.1, equal to the QCD coupling $\alpha_{QCD}$.  Thus, in $\alpha_{QCD}^{2} \sim$
+0.01 $=$1\% of \DY interactions the initial quarks radiate two partons before interacting, and those partons hadronize into 
+jets.  Unlike \DY, interactions that produced single top quarks (Figure \ref{fig:singleTopDiags}) and $t\bar{t}$ quark pairs 
+(Figure \ref{fig:ttbarDiag}) produced $\ell\ell jj$ final states with no initial state parton radiation.  Collectively the 
+single top quark and $t\bar{t}$ interactions produce the top quark background, and $t\bar{t}$ production is the dominant 
+contributor.  The $t\bar{t}$ interaction produced two leptons and two jets with a cross section $\times$ branching ratio of 
+86 pb, similar to the 6000 pb \DY cross section $\times$ branching ratio weighted by the 1\% probability to radiate two partons.  
+The only other interactions that produce two leptons and jets without initial state parton radiation are the WZ and ZZ 
+interactions.  WZ production creates two leptons and jets when the $W$ decays hadronically, and the $Z$ decays to charged 
+leptons.  ZZ production creates two leptons and jets when one $Z$ decays hadronically, and the other decays to charged leptons.  
+However, the combined WZ and ZZ interactions produced $\ell\ell jj$ final states in the detector with a cross section $\times$ branching 
+ratio of $\sim$3 pb, so the WZ and ZZ background was negligible.  The WW interaction produces two charged leptons with a 
+cross section $\times$ branching ratio of 12 pb.  The initial state partons that produce the WW pair can radiate a parton 
+with a $\sim$10\% probability, so the WW interaction produced two leptons and jets in the detector with cross section $\times$ 
+branching ratio of $\sim\frac{12}{100} = $ 0.1 pb, negligible compared to $\DY$+jets and $t\bar{t}$.  The interactions that 
+radiate partons and produce a $W$ boson, and QCD multi-jet interactions contribute to the $\Mlljj$ distribution found in data 
+only when jets are incorrectly reconstruct as leptons.
 
-%DESCRIBE magnitudes of backgrounds using txt written in reco+selection chapter
+\begin{figure}[btp]
+	\centering
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/dyNoJetFeynDiagram.png}
+	}
+	\subfigure{
+		\includegraphics[width=0.45\textwidth]{figures/dyThreeJetFeynDiagram.png}
+	}
+	\label{fig:dyDiags}
+	\caption{Feynman diagrams for the \DY interaction with 0 radiated partons, and 3 radiated partons \cite{dyDiagrams}.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/singleTopQuarkFeynDiagrams.png}
+	\caption{Single top quark Feynman diagrams \cite{singleTopQrkDiagrams}.}
+	\label{fig:singleTopDiags}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/topAntiTopFeynDiagram.png}
+	\caption{$t\bar{t}$ Feynman diagram \cite{ttbarDiagram}.}
+	\label{fig:ttbarDiag}
+\end{figure}
+
 
 \section{Monte Carlo}
 \label{sec:MC}
 %Events from \WR processes, characterized by different \mnul and \mWR, and backgrounds are simulated in three steps.
 %\PYTHIA also provides a flexible, generic \WR signal model that is based on the ST weak interaction model; for this reason \PYTHIA 
 %was also used to simulate $\WR \rightarrow \ell\ell jj$ interactions.  
+
+%RESUME HERE
+%review this again, take out any information about cross section times branching ratio that was explained previously
 
 Background events are simulated in three steps.  The first 
 step simulates the hard interaction between colliding protons, the decay of unstable particles, and the hadronization of 
@@ -135,7 +181,6 @@ $\mnul \neq \frac{1}{2}\mWR$.
 \label{sec:topQrkBkgnds}
 %here add information about top quark background production rate and kinematics that was previously written 
 %in the reco and event selection chapter
-%RESUME HERE
 
 Top quark processes, including $t\bar{t}$ (Figure \ref{fig:ttbarDiag}) and top quark $\plus$ W (top+W, Figure 
 \ref{fig:singleTopDiags}), produce two $W$ bosons.  When both bosons decay to leptons the $\ell\ell jj$ final state is produced.  
