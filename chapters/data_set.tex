@@ -1,51 +1,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % data_set.tex:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Signal and Background Estimation}
+\chapter{Background Estimation}
 \label{sec:backgroundEstimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The online and offline event selection criteria were applied to the data to select events with two leptons and jets, 
-whose kinematics were consistent with particles produced by \WR decays.  However, the kinematics of selected particles are 
-also consistent with the particles produced by ST backgrounds, such as $\DY$+jets and top quark processes.  \WR signal and 
-ST background contributions to the $\Mlljj$ distribution found in the data were predicted using Monte Carlo (\MC) simulations 
-of the signals and backgrounds.  The background predictions were further refined by comparing the background simulations to 
-the data in kinematic control regions where the two were expected to agree.
+The online and offline event selection criteria were applied to the data to select events where two leptons and jets were 
+reconstructed, and had kinematics consistent with $\WR \rightarrow \ell\ell jj$ decay progeny.  However, applying these 
+selection criteria also selected data events produced by ST background interactions like $\DY$+jets.  
+The contribution of ST backgrounds to the $\Mlljj$ distribution found in the data were predicted using Monte Carlo (\MC) 
+simulations, and control regions with no \WR signal contamination.  The magnitudes of individual backgrounds, how 
+they were simulated, and how the control regions were used to estimate the background contributions are described here.
 
+%\section{Background Magnitudes}
+%\label{sec:bkgndMags}
+The .
+
+%DESCRIBE magnitudes of backgrounds using txt written in reco+selection chapter
 
 \section{Monte Carlo}
 \label{sec:MC}
-Events from \WR processes, characterized by different \mnul and \mWR, and backgrounds are simulated in three steps.  The first 
-step simulates the hard interaction between colliding protons, the decay of unstable particles, and the hadronization of 
-partons leaving the interaction into color neutral hadrons.  For particles produced in the first step that traverse any CMS 
-sub-detector, the second step simulates the electronic signals that these particles generate in each sub-detector.  In the third 
-step these signals are used by previously described algorithms to reconstruct leptons and jets.
+%Events from \WR processes, characterized by different \mnul and \mWR, and backgrounds are simulated in three steps.
+%\PYTHIA also provides a flexible, generic \WR signal model that is based on the ST weak interaction model; for this reason \PYTHIA 
+%was also used to simulate $\WR \rightarrow \ell\ell jj$ interactions.  
 
-In the first step a \MC generator simulates the hard interaction between colliding protons, and the decay of unstable particles.  
-The \MC generator used to simulate the each background's hard interaction was chosen to align the strengths of the generator 
+Background events are simulated in three steps.  The first 
+step simulates the hard interaction between colliding protons, the decay of unstable particles, and the hadronization of 
+partons leaving the interaction with one or two \MC generators.  For particles produced in the first step that interact with 
+any sub-detector, the second step simulates the electronic signals generated in each sub-detector.  In the third step, the 
+reconstruction algorithms process these signals to reconstruct leptons and jets.
+
+In the first step one \MC generator simulates the hard interaction between colliding protons, and the decay of unstable particles.  
+The \MC generator used to simulate the each background was chosen to match the strengths of the generator 
 with the characteristics of the hard interaction.  The \MADGRAPH generator \cite{madgraph} simulates all Feynman diagrams of a hard 
-interaction at leading order in the electroweak 
-coupling with up to 4 additional partons radiated from the interaction.  Increasing the number of partons radiated from an 
-interaction by 1 decreases the cross section $\times$ branching ratio by $\alpha_{QCD} \sim$0.1, so simulating up to 4 additional 
-radiated partons is only relevant to simulations of ST backgrounds with large cross sections - \DY, $t\bar{t} \rightarrow \ell\ell jj$, 
-and $W \rightarrow \ell\nu$.  Therefore, \MADGRAPH was used to simulate the $\DY$+jets, $t\bar{t}$ and $W$+jets 
-backgrounds.  In contrast with \MADGRAPH, the \POWHEG generator \cite{powheg} simulated all Feynman diagrams of a hard interaction 
-out to next-to-leading order in the electroweak and QCD couplings with up to one additional parton radiated from the interaction.  
-\POWHEG was used to simulate single top quark backgrounds because those interactions have cross sections $\times$ branching ratios to 
-$\ell\ell jj$ final states that increase by 7\% or more going from leading order to next-to-leading order simulations \cite{singleTopNLOvsLO}.  
-The diboson (WW, WZ, ZZ) backgrounds collectively have a low cross section $\times$ branching ratio to $\ell\ell jj$ final states - 
-$\sim$2\% of the $\DY$+jets or total top quark background.  Although the diboson cross section $\times$ branching ratio to leptonic 
-final states increases by up to 45\% going from leading order to next-to-leading order \cite{dibosonLOvsNLO}, the diboson 
-background at next-to-leading order is still negligible compared to the $\DY$+jets and top quark backgrounds; the next-to-leading 
-order simulation is not needed.  The production of diboson pairs and their decays to lepton+jet final states was simulated using 
-the leading order \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, with up to one additional parton radiated from the interaction.  
-\PYTHIA also provides a flexible, generic \WR signal model that is based on the ST weak interaction model; for this reason \PYTHIA 
-was also used to simulate $\WR \rightarrow \ell\ell jj$ interactions.  
-Events simulated with any \MC generator show the best agreement with experimental data when \PYTHIA is used to simulate parton 
-hadronization \cite{pythiaForHadronization}, so all simulations use \PYTHIA and the NNPDF23 PDF set \cite{nnpdf} to hadronize partons.  
-The \MC generator that simulates the hard interaction also simulates the decay of all unstable particles, excluding the partons, into 
-quasi-stable and stable particles, like the $\Sigma^{\pm}$ and $\gamma$, with mean lifetime $\tau \gtrsim 8\times10^{-11}$ seconds.  
-These relatively long lived particles travel a mean distance c$\tau \gtrsim 2.4$ cm before decaying, and some will generate a signal 
-in the first layer of the silicon pixel tracker, located 4.4 cm from the interaction point \cite{cmsTdrPhysPerformance}.
+interaction at leading order in the electroweak coupling with up to 4 additional partons radiated from the interaction.  Radiating 
+one additional parton with $|\eta| < 2.5$ and $\pt > 30$ $\GeV$ virtually guarantees that an additional jet will be reconstructed 
+\cite{pflowEventReco}, but reduces the cross section $\times$ branching ratio by $\alpha_{QCD} \sim$0.1.  Due to the cross section penalty, 
+simulating up to 4 additional radiated partons was only warranted for high cross section $\times$ branching ratio interactions - \DY, 
+$t\bar{t} \rightarrow \ell\ell jj$, and $W \rightarrow \ell\nu$.  Therefore, \MADGRAPH was used to simulate the $\DY$+jets, $t\bar{t}$ 
+and $W$+jets interactions.  In contrast with \MADGRAPH, the \POWHEG generator \cite{powheg} simulated all Feynman diagrams of a hard 
+interaction at next-to-leading order in the electroweak and QCD couplings with up to one additional parton radiated from the interaction.  
+\POWHEG was used to simulate single top quark interactions because their cross sections $\times$ branching ratios to $\ell\ell jj$ 
+final states are at least 7\% larger at next-to-leading order relative to leading order \cite{singleTopNLOvsLO}.  
+At leading order the diboson (WW, WZ, ZZ) interactions collectively have a cross section $\times$ branching ratio to $\ell\ell jj$ 
+final states that is $\sim$50$\times$ less than that of the $\DY$+jets or top quark interactions.  The next-to-leading order correction 
+to the diboson cross section $\times$ branching ratio, an increase up to 45\% \cite{dibosonLOvsNLO}, is not large enough to make 
+the diboson interactions a significant background, so the next-to-leading order simulation is not needed.  The production of diboson 
+pairs and their decays to lepton+jet final states was simulated using the leading order \PYTHIA generator \cite{pythia8,Sjostrand:2006za}, 
+with up to one additional parton radiated from the interaction.  Events simulated with any \MC generator show the best agreement with 
+experimental data when \PYTHIA is used to simulate parton hadronization \cite{pythiaForHadronization}, so all simulations use \PYTHIA 
+and the NNPDF23 PDF set \cite{nnpdf} to hadronize partons.  Excluding partons, the \MC generator that simulates the hard interaction 
+also simulates decays of unstable particles with mean lifetime $\tau \lesssim 8\times10^{-11}$ seconds into longer lifetime quasi-stable 
+particles, like the $\Sigma^{\pm}$ and $\pi^{\pm}$, and stable particles, like the $\gamma$ and n$^{0}$.  These quasi-stable particles 
+travel a mean distance c$\tau \gtrsim 2.4$ cm before decaying, so a few percent of these particles will travel far enough before 
+decaying to generate a signal in the first layer of the silicon pixel tracker, located 4.4 cm from the interaction point 
+\cite{cmsTdrPhysPerformance}.
 
 %SAVE THIS statement that explains why the aMCatNLO inclusive diboson simulated datasets were not used
 %A second set of diboson$\to$leptons+jets events was simulated with a next-to-leading order \MC generator, but these events were 
@@ -55,34 +63,33 @@ in the first layer of the silicon pixel tracker, located 4.4 cm from the interac
 In the second step the effect of pileup is simulated, and subsequently GEANT \cite{geant4} simulates the propagation and decay of 
 quasi-stable and stable particles, and their interactions with the CMS detector.  The large instantaneous luminosity of the LHC 
 beams produced multiple pp interactions, pileup, in each selected data event.  When \MC simulations started in the spring of 2015, 
-the pileup distribution in upcoming data events was expected to follow a Poisson distribution with a mean, based on the expected 
-average instantaneous luminosity, of 12.  In each event produced by the first step, the effect of pileup is simulated by pulling a 
+the pileup distribution in upcoming data events was predicted to be a Poisson distribution with mean 12.  In each event produced 
+by the first step, the effect of pileup is simulated by pulling a 
 random integer $X$ from a Poisson distribution with mean 12, and mixing $X$ simulated minimum bias events into the event.  The 
-minimum bias events were simulated only through the first simulation step.  Minimum bias events simulated with \PYTHIA show the 
-best agreement with minimum bias events in data \cite{pythiaForHadronization}, so \PYTHIA simulated the minimum bias events that 
-were used to emulate pileup.  After simulating the effect of pileup, GEANT propagates all particles (stable and quasi-stable) in 
-the 3.8 $\unit{T}$ magnetic field, simulates their interactions with the detector, and simulates the decays of quasi-stable particles 
-to $\gamma,p^{\pm},n^{0},\bar{n}^{0},\nu,e^{\pm}$.  Finally, GEANT simulates the signal generation in the detector in response to 
-particle interactions with the detector materials.
+minimum bias events were simulated only through the first simulation step.  \PYTHIA simulates minimum bias events whose reconstructed 
+particle kinematics show the best agreement with particles reconstructed in minimum bias events in data \cite{pythiaForHadronization}, 
+so \PYTHIA was used to simulate minimum bias events.  After adding minimum bias events to simulate pileup, GEANT propagates all particles 
+(stable and quasi-stable) in the 3.8 $\unit{T}$ magnetic field, simulates their interactions with the detector, and simulates the decays 
+of quasi-stable particles to stable particles - $\gamma,p^{\pm},n^{0},\bar{n}^{0},\nu,e^{\pm}$.  Finally, for particles that interact 
+with the detector, GEANT simulates the signal generated in the detector.
 
-In the third step the detector signals simulated by GEANT are processed by the online trigger algorithms, and the offline particle 
-reconstruction algorithms.  For every trigger algorithm a boolean variable is saved to each event, which indicates if the event 
-passed the corresponding trigger.  Unlike collision events in data, no simulated events are discarded based on the performance of 
-the triggers in the third step.  Then the same offline reconstruction algorithms used in real collisions are used to reconstruct 
-interaction vertices, leptons, and jets.
+In the third step the online trigger and offline reconstruction algorithms process the detector signals simulated by GEANT.  The 
+final decision of each trigger algorithm, to keep or discard the event, is saved in each simulated event, but no events are discarded 
+for any reason.  Then, the same offline reconstruction algorithms used in real collisions are used to reconstruct interaction vertices, 
+leptons, and jets.
 
 After finishing the third simulation step, particle energy corrections and event weights were applied to simulated events.  As 
 explained previously, the energies of simulated jets, muons, and electrons were corrected to match the energy of particles 
 reconstructed in data.  The differences in lepton reconstruction, trigger selection, and offline ID selection efficiencies between 
-data and simulated events were corrected by changing the weight of each simulated event depending on the $\pt$ and 
-$\eta$ of the selected leptons.  Independent of the kinematics of the selected leptons or jets, the weight of each simulated event 
-was normalized based on the dataset size and the integrated luminosity of data, and adjusted further according to the pileup 
-distribution found in data.  The pileup distribution found in the data is approximated by a Poisson distribution with mean 14 \cite{lumi}, 
-but the pileup distribution found in simulated events matches a Poisson distribution with mean 12.  The discrepancy between the 
-pileup distributions was corrected by changing the weight of each simulated event by a pileup-dependent value.
+data and simulated events were corrected by changing the weight of each simulated event, up to $\pm$7\%, depending on the $\pt$ and 
+$\eta$ of the selected leptons.  Independent of the reconstructed particle kinematics, the weight of each simulated event 
+was normalized to the integrated luminosity of the data, and adjusted further to match the pileup distribution found in the data.  The 
+simulated pileup distribution is a Poisson distribution with mean 12, but the pileup distribution found in the data is better 
+represented by a Poisson distribution with mean 14 \cite{lumi}.  The discrepancy between the data and simulated pileup distributions 
+was corrected by changing the weight of each simulated event, on average by $\sim$5\%, depending on the simulated pileup.
 
-The simulated backgrounds are summarized in Table \ref{tab:centrallyProducedMC}.  Their sizes are expressed in units of integrated 
-luminosity, and should be compared to the 2.6 fb$^{-1}$ of data \cite{lumi}.
+The simulated interactions are summarized in Table \ref{tab:centrallyProducedMC}.  The number of simulated events are expressed in units 
+of integrated luminosity, and should be compared to the 2.6 fb$^{-1}$ of data \cite{lumi}.
 
 \begin{table}[bt]
 	\caption{The ST background and \WR signal (only $\mnul = \frac{1}{2}\mWR$) simulated datasets.  The "Size" of a dataset is equal 
@@ -114,23 +121,29 @@ luminosity, and should be compared to the 2.6 fb$^{-1}$ of data \cite{lumi}.
 }
 \end{table}
 
+%MOVE information about WR signal events into appendix on WR signal MC
 Two sets of \WR signal events were simulated using \PYTHIA - one set was simulated through all three simulation steps, the other 
-was simulated through the first step.  The set that included simulations of particle reconstruction and pileup was produced with 
-\mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$, and required $\mnul = \frac{1}{2}\mWR$.  The other set was produced 
-with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and, at each \mWR, several \mnul values between 
-$0.025 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal is found, these events are used to set \mWR and \mnul exclusion limits for 
+was simulated through the first step.  The set simulated through all three steps was produced with \mWR stepping from 0.8 to 6 
+$\TeV$ in increments of 0.2 $\TeV$, and $\mnul = \frac{1}{2}\mWR$; these fully reconstructed events are used to calculate cross 
+section $\times$ branching ratio limits on the $\WR \rightarrow \ell\ell jj$ process as a function of \mWR.  The other set was 
+produced with \mWR stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and, at each \mWR, several \mnul values between 
+$0.1 \leq \mnul < \mWR$ $\TeV$.  If no \WR signal is found, these events are used to set \mWR and \mnul exclusion limits for 
 $\mnul \neq \frac{1}{2}\mWR$.
 
 
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
+%here add information about top quark background production rate and kinematics that was previously written 
+%in the reco and event selection chapter
+%RESUME HERE
+
 Top quark processes, including $t\bar{t}$ (Figure \ref{fig:ttbarDiag}) and top quark $\plus$ W (top+W, Figure 
 \ref{fig:singleTopDiags}), produce two $W$ bosons.  When both bosons decay to leptons the $\ell\ell jj$ final state is produced.  
 Due to lepton universality the two $W$ bosons decay to the $e\mu$ final state twice as often as the $ee$ or $\mu\mu$ final state.  
 No other pertinent ST backgrounds or the \WR (Chapter \ref{sec:lrsPhenomenology}) produce the $e\mu$ final state at leading order in 
 the electroweak coupling, so $e\mu jj$ events selected in data represented the top quark background.  The $e\mu jj$ events were 
 selected during collisions by the same Level-1 single muon trigger described in Chapter \ref{sec:muOnlineSel}.  Then, events were 
-required to pass the following electron-muon HLT selection criteria:
+required to pass the following $e\mu$ HLT selection criteria:
 
 \begin{itemize}
 	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
@@ -152,8 +165,8 @@ In events selected by the $e\mu$ trigger, muons, electrons, and jets were recons
 and selection criteria described in Chapter \ref{sec:reco_chapter}.  The offline selection criteria applied to the two leptons was 
 applied to the reconstructed electrons and muons.  Events were selected if a reconstructed electron and muon had $\pt > 50$ $\GeV$, 
 and one had $\pt > 60$ $\GeV$.  The online and offline selection criteria were applied to all simulated background events, and compared 
-to the selected data events in Figure \ref{fig:dataAndSimsInEMuChannel}.  Based on the magnitudes of different simulated backgrounds, 
-more than 95\% of $e\mu jj$ events come from the top quark background.
+to the selected data events in Figure \ref{fig:dataAndSimsInEMuChannel}.  Comparing the magnitudes of different simulated backgrounds, 
+the top quark background produces more than 95\% of selected $e\mu jj$ events.
 
 The top quark background in the $e\mu$-channel ($e\mu jj$ final state) was multiplied by the ratio of $\ell\ell / e\mu$ production $\times$ 
 $\frac{e}{\mu}$ selection efficiency to predict the top quark background in the same flavor $\ell\ell$-channels.  As explained 
@@ -171,7 +184,7 @@ calculated as the ratio .
 using simulated top quark background events selected in three groups: events that passed the $e\mu$-channel selection, the $ee$-
 channel selection, and the $\mu\mu$-channel selection.  The ratio of .
 
-%RESUME HERE
+
 
 %Simulated events are not the main element of the top quark bkgnd estimate
 %the estimate is made using data, so discuss this first, then explain role of simulations when appropriate
