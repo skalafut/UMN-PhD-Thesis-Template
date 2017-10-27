@@ -182,7 +182,7 @@ Top quark interactions, primarily $t\bar{t}$ production, produce bottom quarks t
 decay into charged leptons.  Since $W$ bosons decay to electrons and muons with equal branching fractions, top quark interactions 
 produce the $e\mu jj$ final state twice as often as the $eejj$ or $\mu\mu jj$ final states.  The $e\mu jj$ final state is not 
 contaminated with \WR signal (Chapter \ref{sec:lrsPhenomenology}) or other background interactions, so the $e\mu jj$ final state was 
-used as a control region to estimate the top quark background.  $e\mu jj$ events in data were selected during collisions using the 
+used as a control region to estimate the top quark background.  During collisions, $e\mu jj$ events were selected using the 
 Level-1 single muon trigger described in Chapter \ref{sec:muOnlineSel}.  Then, events were required to pass the following $e\mu$ HLT 
 selection criteria:
 
@@ -254,73 +254,59 @@ Their contribution was neglected because it was small compared to the 10\% top q
 
 \section{\DY Background}
 \label{sec:dyBkgnd}
-The second of the two largest backgrounds in the \WR and \nul search was the production and decay of a Z boson to 
-a lepton pair in association with jets (\DY), $pp \rightarrow Z+jets \rightarrow \ell\ell+jets$.  The \DY 
-background was estimated using simulated $\DY$+jets events selected with the $ee$- and $\mu\mu$-channel requirements 
-described previously.  Using simulated events to predict the \DY background transformed known limitations of 
-the $\DY$+jets simulation into changes to the normalization and shape of the \DY background.  The magnitude of 
-these changes were estimated in control regions where data and simulated background events were expected to agree.
-
-%RESUME HERE
+The \DY+jets interaction produced $\ell\ell jj$ events at a similar rate to the top quark interactions.  The $\Mlljj$ distribution 
+produced by the \DY+jets interaction was estimated using simulated \DY+jets events.  Simulated \DY+jets events were selected using 
+the $ee$- and $\mu\mu$-channel requirements.  Selected events defined the shape of the $\Mlljj$ distribution in both channels, but 
+the magnitude was adjusted based on comparisons between simulations and data in three control regions.
 
 \subsection{\DY Normalization in $\Mlljj$}
 \label{sec:dyNormInMlljj}
-$\DY$+jets events were simulated using the \MADGRAPH generator at leading order in the electroweak and strong coupling 
-constants, while $\DY$+jets events observed in data were produced at all orders in these coupling constants.  The 
-simulated dataset contained more events than were expected in the 2.6 fb$^{-1}$ of data, so the simulated events were 
-weighted to the integrated luminosity of data using an uncertain cross section $\times$ branching fraction calculated during 
-simulations.  The cross section $\times$ branching fraction uncertainty was sensitive to the higher order electroweak 
-and strong coupling corrections, and the size of these corrections created a discrepancy in the $\Mlljj$ distribution 
-normalization between data and simulated events.
+$\DY$+jets events were simulated using the \MADGRAPH generator at leading order in the electroweak and strong couplings, while 
+$\DY$+jets events observed in data were produced at all orders in these couplings.  The simulated events were normalized to the 
+integrated luminosity of data using the simulated cross section $\times$ branching ratio.  Thus, the higher order cross section 
+corrections created a \DY normalization discrepancy between simulations and data.
 
-The magnitude of the normalization discrepancy in the $\Mlljj$ distribution was estimated 
-using the $Z \rightarrow \ell\ell$ control region where data and simulated background events were expected to agree.  Data and simulated 
-$\DY$+jets events in the $ee$-channel control region were selected by a Level-1 trigger that required one ECAL SC with 
-$\Et > 30$ $\GeV$ and $|\eta| < 2.1$.  Events that passed the Level-1 selection were used offline if they passed the 
-following double electron HLT selections:
+The normalization discrepancy was estimated by comparing data to simulated $\DY$+jets events using the $Z \rightarrow \ell\ell$ control 
+region, where the majority of events were produced by $\DY$+jets interactions.  Events in the $ee$-channel control region were selected 
+by a Level-1 trigger that required one 5 $\times$ 5 ECAL crystal cluster with $\Et > 30$ $\GeV$ and $|\eta| < 2.1$.  Then, selected 
+events were required to pass the following double-electron HLT selection criteria:
 
 \begin{itemize}
-	\item One SC was detected with $\Et > 30$ $\GeV$, and a second non-overlapping SC was detected with $\Et > 4$ $\GeV$.
-	\item For the SC with $\Et > 30$ $\GeV$:
+	\item One 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$, and a second non-overlapping cluster 
+		was required to have $\Et > 4$ $\GeV$.
+	\item For the cluster with $\Et > 30$ $\GeV$ (energy E):
 	\begin{itemize}
-		\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.055$ in the barrel, and 
-			$< 0.07$ in the endcap.
-		\item Ninety percent of the SC energy was measured in an $(\eta, \phi)$ region that was two crystals wide in $\eta$.
-		\item A reconstructed track with hits in at least two pixel tracker layers was matched to the SC, and extrapolated to the SC 
-			centroid along the beam axis within 1 cm, and extrapolated to the SC centroid in $(\eta, \phi)$ within the $(\eta, \phi)$ 
-			area of $\frac{1}{2}$ an ECAL crystal.  In addition, the SC energy and track momentum cannot differ by more than 50\%.
-		\item In a cone of radius $\Delta R =$ 0.3 centered on the SC:
+		\item The hadronic energy behind the cluster was $<$ 5.5\% of E in the barrel, and $<$ 7\% of E in the endcap. 
+		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
+		\item A reconstructed track with signals in at least two pixel tracker layers extrapolated close to the cluster 
+			position.  The track extrapolated from the pixel tracker to within 1 cm of the cluster $z$ position, and to 
+			the cluster $(\eta,\phi)$ position within half the area of one ECAL crystal.
+		\item The cluster $\Et$ and matching track $\pt$ cannot differ by more than 50\%. 
+		
+		\item In a $\Delta R =$ 0.3 radius cone centered on the cluster:
 		\begin{itemize}
-			\item The fraction of the total ECAL energy in the cone not associated with the SC was $< 0.225$ in the barrel, and 
-				$< 0.121$ in the endcap.
-			\item The total HCAL energy in the cone divided by the SC energy is $< 0.155$ in the barrel, and $< 0.16$ in the endcap.
+			\item The total ECAL energy not measured in the cluster was $<$ 22.5\% of E in the barrel, and $<$ 12.1\% of 
+				E in the endcap.
+			\item The total HCAL energy was $<$ 15.5\% of E in the barrel, and $<$ 16\% of E in the endcap.
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
 
-Data and simulated events in the $\mu\mu$-channel control region were selected by a Level-1 trigger that required a track 
-in at least one muon DT or CSC detector with $\pt > 20$ $\GeV$.  Events that passed the Level-1 selection were used offline 
-if they passed the following single muon HLT selections:
+Events in the $\mu\mu$-channel control region were selected by a Level-1 single muon trigger.  The Level-1 trigger was identical to the 
+Level-1 single muon trigger described in Chapter \label{sec:topQrkBkgnds}, but required the track to have $\pt > 20$ $\GeV$.  Then, 
+selected events were required to pass the following single muon HLT selection criteria:
 
 \begin{itemize}
-	\item A track reconstructed in the silicon tracker with $\pt > 22$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
-		the muon detector hits that passed the L1 trigger.  Considering this set of muon detector hits and the matching reconstructed 
-		track:
-	\begin{itemize}
-		\item A curve representing the muon trajectory through CMS was fitted to the reconstructed track and at least 
-			one muon detector hit with $\chi^{2}/nDOF < 20$.
-		\item In the plane perpendicular to the beam axis, the distance between the reconstructed track origin and its 
-			reconstructed vertex was $< 1$ mm.
-		\item In a cone of radius $\Delta R =$ 0.3 centered on the muon trajectory:
+	\item A track reconstructed in the silicon tracker with $\pt_{1} > 22$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector track segment, reconstructed with $\pt_{2}$ that passed the L1 trigger.
+	\item In the plane perpendicular to the beam axis, the distance between the silicon tracker track origin and its 
+		reconstructed vertex was $< 1$ mm.
+	\item In a $\Delta R =$ 0.3 radius cone centered on the muon trajectory:
 		\begin{itemize}
-			\item The total ECAL energy in the cone divided by the momentum measured by the muon detectors is $< 0.11$ in 
-				the barrel, and $< 0.08$ in the endcap.
-			\item The total HCAL energy in the cone divided by the momentum measured by the muon detectors is $< 0.21$ in 
-				the barrel, and $< 0.22$ in the endcap.
-			\item The total $\pt$ of all silicon tracker tracks in the cone (excluding the muon track) divided by the 
-				muon track $\pt$ is $< 0.09$.
+			\item The total ECAL energy was $<$ 11\% of $\pt_{2}$ in the barrel, and $<$ 8\% of $\pt_{2}$ in the endcap.
+			\item The total HCAL energy was $<$ 21\% of $\pt_{2}$ in the barrel, and $<$ 22\% of $\pt_{2}$ in the endcap.
+			\item The total $\pt$ of all silicon tracker tracks excluding the muon track was $<$ 9\% of $\pt_{1}$.
 		\end{itemize}
-	\end{itemize}
 \end{itemize}
 
 Similar to the offline lepton and jet selections used in the \WR search defined in Chapter 
@@ -328,6 +314,8 @@ Similar to the offline lepton and jet selections used in the \WR search defined 
 and ID selections.  However, looser lepton $\pt$ and $\Mll$ selections were used to select events in the $Z \rightarrow \ell\ell$ 
 mass window.  The differences and similarities between the $Z \rightarrow \ell\ell$ control region and the \WR search selections 
 are listed in Table \ref{tab:cutCompSignalRegAndZllReg}.
+
+%RESUME HERE
 
 \begin{table}[h]
 	\caption{The corrections and selections applied to events used in the \WR search, and events used to estimate the \DY 
