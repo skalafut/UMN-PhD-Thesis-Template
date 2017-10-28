@@ -204,8 +204,8 @@ selection criteria:
 
 In selected events, muons, electrons, and jets were reconstructed and selected using the reconstruction algorithms and selection 
 criteria described in Chapter \ref{sec:reco_chapter}.  The same selection criteria were applied to simulated background events, and compared 
-to the selected data events in Figure \ref{fig:dataAndSimsInEMuChannel}.  Comparing the magnitudes of different simulated backgrounds, 
-the top quark background produces more than 98\% of selected $e\mu jj$ events as expected.
+to the selected data events in Figure \ref{fig:dataAndSimsInEMuChannel}.  Comparing the magnitudes of different simulated backgrounds, the 
+top quark background produces more than 98\% of selected $e\mu jj$ events as expected.
 
 \begin{figure}[h]
 	\centering
@@ -293,7 +293,7 @@ events were required to pass the following double-electron HLT selection criteri
 \end{itemize}
 
 Events in the $\mu\mu$-channel control region were selected by a Level-1 single muon trigger.  The Level-1 trigger was identical to the 
-Level-1 single muon trigger described in Chapter \label{sec:topQrkBkgnds}, but required the track to have $\pt > 20$ $\GeV$.  Then, 
+Level-1 single muon trigger described in Chapter \label{sec:topQrkBkgnds}, but required one track to have $\pt > 20$ $\GeV$.  Then, 
 selected events were required to pass the following single muon HLT selection criteria:
 
 \begin{itemize}
@@ -309,44 +309,34 @@ selected events were required to pass the following single muon HLT selection cr
 		\end{itemize}
 \end{itemize}
 
-Similar to the offline lepton and jet selections used in the \WR search defined in Chapter 
-\ref{sec:event_selection_chapter}, reconstructed events in both channels were required to have two leptons and two jets passing kinematic 
-and ID selections.  However, looser lepton $\pt$ and $\Mll$ selections were used to select events in the $Z \rightarrow \ell\ell$ 
-mass window.  The differences and similarities between the $Z \rightarrow \ell\ell$ control region and the \WR search selections 
-are listed in Table \ref{tab:cutCompSignalRegAndZllReg}.
+Simulated electrons passed the electron trigger criteria with a different efficiency than leptons produced in real collisions.  This 
+efficiency difference was corrected by multiplying the weight of every selected $Z\rightarrow ee$ simulated event by a weight that 
+depended on the $\Et$,$\eta$ of the electron with $\Et > 30$ $\GeV$; the average weight was 0.96 (4\% decrease).  Muons in data and 
+simulations passed the muon trigger criteria with the same efficiency, so no correction was applied.
 
-%RESUME HERE
+In events selected by the triggers, reconstructed leptons and jets were required to pass ID and kinematic selection criteria.  The ID 
+criteria are identical to those described previously, but the kinematic selection criteria, in Table \ref{tab:cutsZllReg}, include 
+lower lepton $\pt$ thresholds to select more $Z\rightarrow \ell\ell$ events.
 
 \begin{table}[h]
-	\caption{The corrections and selections applied to events used in the \WR search, and events used to estimate the \DY 
-	background normalization discrepancy.  \textbf{Differences} in \textbf{bold}. (energies and masses in $\GeV$)}
-	\label{tab:cutCompSignalRegAndZllReg}
+	\caption{The offline kinematic selection criteria applied to events in the $Z\rightarrow \ell\ell$ control region 
+	to select two leptons and two jets.}
+	\label{tab:cutsZllReg}
 	\centering
-	\begin{tabular}{c|c|c}
-		Correction & \WR search region & $Z \rightarrow \ell\ell$ region \\  \hline
-		lepton energy & applied & identical applied \\
-		jet energy & applied & identical applied \\
-		trigger selection efficiency & applied & applied (different values) \\
-		lepton reco and selection efficiency & applied & identical applied \\	\hline
-		Selection & \WR search region & $Z \rightarrow \ell\ell$ region \\  \hline
-		jet $\pt$ and $\eta$ & $\pt > 40$, $|\eta| < 2.4$ & identical applied \\
-		jet ID & applied & identical applied \\
-		lepton-jet separation & $\Delta R > 0.4$ & identical applied \\
-		lepton ID & applied & identical applied \\
-		\textbf{lepton} $\pt$ \textbf{and} $\eta$ & $\pt > 60, 53$, both $|\eta| < 2.4$ & both $\pt > 35$, $|\eta| < 2.4$ \\
-		\textbf{di-lepton mass} $\Mll$ & $> 200$ & $70 < \Mll < 110$ \\
-		\textbf{di-lepton di-jet mass} $\Mlljj$ & $> 600$ & none applied \\	\hline
+	\begin{tabular}{c|c}
+		variable & criteria \\  \hline
+		jet $\pt$ and $\eta$ & $\pt > 40$, $|\eta| < 2.4$ \\
+		lepton-jet separation & $\Delta R > 0.4$ \\
+		lepton $\pt$ and $\eta$ & $\pt > 35$, $|\eta| < 2.4$ \\
+		di-lepton mass $\Mll$ & $70 < \Mll < 110$ \\
 	\end{tabular}
 \end{table}
 
-Events in data and $\DY$+jets simulations passing the $Z \rightarrow \ell\ell$ selections were used to produce $\Mll$ 
-distributions.  In both lepton channels, the $\Mll$ distribution shape agreed between data and simulated events.  The 
-$\Mll$ distribution normalization in data events exceeded that in simulated events by 15.7\% in the $ee$-channel, 
-and by 14.2\% in the $\mu\mu$-channel.  This normalization discrepancy was applied as an increase to the simulated $\DY$ 
-background in each channel.  The contamination of other ST backgrounds in 
-selected data events was estimated using simulated background events selected with the requirements described above, and 
-was $\sim$3\% of the estimated $\DY$ background.  This was comparable to the uncertainty on the $\sim$15\% correction 
-discussed next, so other ST backgrounds were ignored when the \DY background normalization correction was calculated.
+The $\Mll$ distribution found in selected $Z\rightarrow \ell\ell$ events was compared between data and $\DY$+jets simulations.  Their 
+shapes matched, but the normalization of the data events exceeded that of simulated events by 15.7\% in the $ee$-channel, and by 14.2\% 
+in the $\mu\mu$-channel.  Therefore, the $\DY$ background normalization was increased by 15.7\% in the $ee$-channel, and by 14.2\% in the 
+$\mu\mu$-channel.  The uncertainty on this normalization correction, discussed next, was comparable to the background from top quark and 
+other interactions in the $Z \rightarrow \ell\ell$ control region, so the other interactions were neglected.
 
 Two additional simulated $\DY$+jets datasets were produced with different \MC generators, and used to estimate the uncertainty 
 on the $\sim$15\% \DY background correction.  Events from data and all three simulated $\DY$+jets datasets were selected 
@@ -355,6 +345,9 @@ to simulations in a phase space where all three simulated datasets yielded a lar
 events were used to produce $\Mll$ distributions, and the difference in the $\Mll$ normalization was calculated between data and each 
 set of simulated events.  The largest difference between data and any set of simulated events was taken as the uncertainty on 
 $\sim$15\%.  The uncertainty was 2.0\% in the $ee$-channel, and 1.0\% in the $\mu\mu$-channel.
+
+%RESUME HERE
+
 
 \subsection{\DY Shape in $\Mlljj$}
 \label{sec:dyShapeInMlljj}
