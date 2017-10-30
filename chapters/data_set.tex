@@ -210,7 +210,7 @@ top quark background produces more than 98\% of selected $e\mu jj$ events as exp
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/Mlljj_eMuChannel_log.pdf}
-	\caption{The $\Mlljj$ distribution from data and simulated ST events that passed the $e\mu$ selection, excluding 
+	\caption{The $\Mlljj$ distribution from data and simulated ST events that passed the $e\mu$ selection criteria, excluding 
 	the $\Mlljj > 600 \GeV$ cut.  The bin widths were variable, and their contents were normalized to the bin widths.}
 	\label{fig:dataAndSimsInEMuChannel}
 \end{figure}
@@ -314,12 +314,12 @@ efficiency difference was corrected by multiplying the weight of every selected 
 depended on the $\Et$,$\eta$ of the electron with $\Et > 30$ $\GeV$; the average weight was 0.96 (4\% decrease).  Muons in data and 
 simulations passed the muon trigger criteria with the same efficiency, so no correction was applied.
 
-In events selected by the triggers, reconstructed leptons and jets were required to pass ID and kinematic selection criteria.  The ID 
+In events selected by the triggers, reconstructed leptons and jets were required to pass offline selection criteria.  The ID 
 criteria are identical to those described previously, but the kinematic selection criteria, in Table \ref{tab:cutsZllReg}, include 
 lower lepton $\pt$ thresholds to select more $Z\rightarrow \ell\ell$ events.
 
 \begin{table}[h]
-	\caption{The offline kinematic selection criteria applied to events in the $Z\rightarrow \ell\ell$ control region 
+	\caption{The kinematic selection criteria applied to events in the $Z\rightarrow \ell\ell$ control region 
 	to select two leptons and two jets.}
 	\label{tab:cutsZllReg}
 	\centering
@@ -335,13 +335,18 @@ lower lepton $\pt$ thresholds to select more $Z\rightarrow \ell\ell$ events.
 The $\Mll$ distribution found in selected $Z\rightarrow \ell\ell$ events was compared between data and $\DY$+jets simulations.  Their 
 shapes matched, but the normalization of the data events exceeded that of simulated events by 15.7\% in the $ee$-channel, and by 14.2\% 
 in the $\mu\mu$-channel.  Therefore, the $\DY$ background normalization was increased by 15.7\% in the $ee$-channel, and by 14.2\% in the 
-$\mu\mu$-channel.  The uncertainty on this normalization correction, discussed next, was comparable to the background from top quark and 
+$\mu\mu$-channel.  The uncertainty on this normalization correction, discussed next, is comparable to the background from top quark and 
 other interactions in the $Z \rightarrow \ell\ell$ control region, so the other interactions were neglected.
 
-Two additional simulated $\DY$+jets datasets were produced with different \MC generators, and used to estimate the uncertainty 
-on the $\sim$15\% \DY background correction.  Events from data and all three simulated $\DY$+jets datasets were selected 
-using the $Z \rightarrow \ell\ell$ selections without jet requirements.  The jet requirements were removed to compare data 
-to simulations in a phase space where all three simulated datasets yielded a large number of events after selections.  Selected 
+Two additional $\DY$+jets datasets were simulated using different generators, and used to estimate the uncertainty on the $\sim$15\% 
+\DY normalization correction.  One of the two generators was a different version of the \MADGRAPH generator that still simulates up to 
+four radiated partons leaving the \DY interaction; \POWHEG, which only simulates up to one radiated parton leaving the \DY interaction, 
+was used to produce the other dataset.  Events from data and all three simulated datasets were selected using the $Z \rightarrow \ell\ell$ 
+selection criteria without jet requirements.  The jet requirements were removed to compare data to simulations in a phase space where 
+\POWHEG yielded a large number of selected events, comparable to the other simulated datasets.  The $\Mll$ distributions found in 
+simulated events were compared to the distributions found in data, and the lar.
+
+all three simulations produced a large number of events after selections.  Selected 
 events were used to produce $\Mll$ distributions, and the difference in the $\Mll$ normalization was calculated between data and each 
 set of simulated events.  The largest difference between data and any set of simulated events was taken as the uncertainty on 
 $\sim$15\%.  The uncertainty was 2.0\% in the $ee$-channel, and 1.0\% in the $\mu\mu$-channel.
