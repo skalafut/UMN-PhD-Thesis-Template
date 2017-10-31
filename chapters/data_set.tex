@@ -345,37 +345,30 @@ was used to produce the other dataset.  Events from data and all three simulated
 selection criteria without jet requirements.  The jet requirements were removed to compare data to simulations in a phase space where 
 \POWHEG yielded a large number of selected events, comparable to the other simulated datasets.  The $\Mll$ distributions found in 
 simulated events were compared to the distributions found in data.  Their shapes matched, but the normalization differed between data and 
-simulations.  The largest difference between any set of simulated events and data, 2.0\% in the $ee$-channel and 1.0\% in the $\mu\mu$-
-channel, was taken as the uncertainty on the $\sim$15\% normalization correction.
+simulations.  Since the simulations were expected to match the data, the largest normalization difference between any of the three 
+simulations and data was taken as the uncertainty on the $\sim$15\% normalization correction.  The uncertainty was 2.0\% in the $ee$-
+channel and 1.0\% in the $\mu\mu$-channel.
 
 \subsection{\DY Shape in $\Mlljj$}
 \label{sec:dyShapeInMlljj}
-In $\DY$+jets events from data or simulations, the Z production and decay was reconstructed as a vertex that was 
-most often the primary vertex (PV), which was defined as the vertex with the highest $\sum \pt$ of all associated 
-tracks in the event.  Selected reconstructed jets were required to have at least one charged hadron from the PV, and the partons 
-radiated during the Z production and decay produced the majority of charged hadrons that traced back to the PV\footnote{The 
-contamination of $Z \rightarrow \tau\tau$ in events with $ee$+jets or $\mu\mu$+jets final states was minimized by 
-requiring two leptons with $\pt > 53$ $\GeV$.}.  $\DY$+jets events were simulated with up to 4 partons radiated from 
-the $Z \rightarrow \ell\ell$ interaction, while $\DY$+jets events observed in data were produced with any number - 
-0, 2, 6, etc. - of partons radiated from the $Z \rightarrow \ell\ell$ interaction.  The limit of 4 radiated partons 
-in simulated events reduced the number of reconstructed jets that could pass the selections, and affected the energy 
-of selected jets, as multiple partons could contribute to the same jet.  These jet modelling effects produced a discrepancy 
-in the $\Mlljj$ distribution shape between data and simulated events.
+$\DY$+jets events were simulated at leading order in the QCD coupling with up to four radiated partons leaving the \DY interaction.  \DY 
+interactions in real collisions radiate partons, with no upper limit, through processes at all orders in the QCD coupling.  Therefore, the 
+$\pt$,$\eta$, and multiplicity spectra of radiated partons in real and simulated \DY events were not expected to agree.  More than 50\% of 
+partons radiated with $|\eta| < 2.5$ and $\pt > 10$ $\GeV$ were reconstructed as jets \cite{pflowEventReco}, so the reconstructed jet $\pt$, 
+$\eta$, and multiplicity distributions found in data and simulated events were not expected to agree.  As a result, the shapes of the 
+$\Mlljj$ distributions found in real and simulated \DY events were expected to differ.
 
-%RESUME HERE
+The size of the $\Mlljj$ distribution shape discrepancy was estimated using the low $\Mll$ control region, where the dominant 
+background was $\DY$+jets.  Events from data and all simulated backgrounds in the $ee$- and $\mu\mu$-channel control regions were selected 
+using the triggers, offline ID, and offline kinematic selection criteria described in Chapter \ref{sec:reco_chapter}.  However, the 
+di-lepton mass cut was changed from $\Mll > 200$ $\GeV$ to $\Mll < 180$ $\GeV$.  The normalization of simulated $\DY$+jets events was 
+increased by $\sim$15\%, then the $\Mlljj$ distributions found in selected data and simulated events were compared (Figure 
+\ref{fig:mlljjLowMllCR}).  The size of the $\Mlljj$ shape discrepancy was calculated as the largest difference between the data and the 
+total estimated background in any bin.  The maximum discrepancy was 40\%, for $\Mlljj > 1.9$ $\TeV$, in both channels, and this was 
+conservatively taken as the shape discrepancy for all simulated $\DY$+jets events that had $\Mlljj > 0.6$ $\TeV$.
 
 
-The magnitude of the $\Mlljj$ distribution shape discrepancy was estimated 
-using a low $\Mll$ control region where data and simulated ST background events were expected to agree.  Events from data and all simulated ST 
-backgrounds in the $ee$- and $\mu\mu$-channel low $\Mll$ control regions were selected using the electron and muon triggers described in 
-Chapter \ref{sec:triggers}.  Events passing the trigger selections were corrected and selected in the same way as events 
-used in the \WR search region (Table \ref{tab:cutCompSignalRegAndZllReg}), but were required to have $\Mll < 180$ $\GeV$.  
-Selected events in data and simulations were used to produce $\Mlljj$ distributions, and the $\sim$15\% increase was 
-applied to simulated $\DY$+jets events.  The $\Mlljj$ distributions from data and simulated events, shown in Figure 
-\ref{fig:mlljjLowDileptonMassSideband}, were compared, and the $\Mlljj$ shape discrepancy was estimated as the largest 
-percentage difference between data and the total simulated background in any bin.  The shape discrepancy magnitude was 
-conservatively estimated to be 40\% in both lepton channels, constant versus $\Mlljj$.  When calculating results the 
-40\% uncertainty was applied to the expected number of \DY events.
+%When calculating results the 40\% uncertainty was applied to the expected number of \DY events.
 
 \begin{figure}[btp]
 \centering
@@ -387,7 +380,7 @@ conservatively estimated to be 40\% in both lepton channels, constant versus $\M
 }
 \caption{The $\Mlljj$ distribution from data and simulated ST background events that passed the low $\Mll$ region selection, with 
 	the $ee$- ($\mu\mu$-) channel on the left (right).  The bin widths are variable, and the bin contents are normalized to their widths.}
-\label{fig:mlljjLowDileptonMassSideband}
+\label{fig:mlljjLowMllCR}
 \end{figure}
 
 The $\DY$+jets simulation was produced at leading order in the strong coupling constant, and it was studied if the 40\% 
@@ -397,6 +390,9 @@ control region requirements.  Using the higher order simulation did not reduce t
 \ref{fig:mlljjLowDileptonMassSidebandAMCNLO}, because the higher order simulation lacked events with $\Mlljj > 600$ 
 $\GeV$.  Relative to the leading order $\DY$+jets simulation, the higher order simulation had a factor of $\sim$3 fewer 
 events with $\Mlljj > 600$ $\GeV$, and a factor of $\sim$10 fewer events with $\Mlljj > 1$ $\TeV$.
+
+%RESUME HERE
+
 
 \begin{figure}[btp]
 \centering
