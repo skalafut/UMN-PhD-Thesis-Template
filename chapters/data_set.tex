@@ -476,51 +476,48 @@ distribution found in data were neglected.
 
 \section{QCD Background}
 \label{sec:qcdBkgnd}
-%The diboson (WW, WZ, ZZ) and W+jets interactions produced $\ell\ell jj$ events at a much lower rate than the $\DY$+jets interaction.  In 
-%addition, no control region existed where diboson or W+jets interactions produced the dominant background.  Thus the shapes and magnitudes 
-%of the diboson and W+jets $\Mlljj$ distributions were estimated directly from simulated events, which were selected using the selection 
-%criteria described in Chapter \ref{sec:reco_chapter}.  The $\Mlljj$ distribution found in selected diboson and W+jets events (Figure 
-%\ref{fig:allExpectedBkgnds}) was concentrated in the $\Mlljj \leq 2.0$ $\TeV$ region, and its integral was less than 3\% of the predicted 
-%$\DY$+jets $\plus$ top quark background events.  For these reasons the diboson and W+jets contributions to the $\Mlljj$ distribution found 
-%in data were neglected.
+%The diboson (WW, WZ, ZZ) and W+jets interactions produced $\ell\ell jj$ events at a much lower rate than the $\DY$+jets background.  In 
+%addition, no control region existed where the diboson and W+jets backgrounds could be extracted directly from data.  As a result, the 
+%shape and magnitude of the diboson and W+jets $\Mlljj$ distributions were estimated directly from simulated events, which were selected 
+%using the selection criteria described in Chapter \ref{sec:reco_chapter}.  The $\Mlljj$ distribution found in selected diboson and W+jets 
+%events (Figure \ref{fig:allExpectedBkgnds}) was concentrated in the $\Mlljj \leq 2.0$ $\TeV$ region, and its integral was less than 3\% 
+%of the predicted $\DY$+jets $\plus$ top quark background events.  For these reasons the diboson and W+jets contributions to the $\Mlljj$ 
+%distribution found in data were neglected.
 
-QCD multi-jet interactions produced $\ell\ell jj$ events at a rate that was expected to be much lower than the $\DY$+jets interaction.  
-Unlike events produced by the other background interactions, QCD interactions produced .
+Similar to the diboson and W+jets interactions, QCD multi-jet interactions produced $\ell\ell jj$ events at a much lower rate than the 
+$\DY$+jets background.  Unlike the other backgrounds, the leptons selected offline in QCD events were incorrectly reconstructed from 
+jets that contained energetic electrons or photons.  Furthermore, the number of incorrectly identified jets was very sensitive to the 
+lepton ID selection criteria.  This sensitivity was used to estimate the QCD background directly from data, starting with events that 
+were selected with fewer lepton ID requirements.
 
-In those events, two real 
-jets were incorrectly reconstructed and identified as charged leptons.  The QCD multi-jet contribution to the $\Mlljj$ 
-distribution found in data was estimated by selecting events in data with loose lepton ID requirements, then weighting selected 
-events by the probability for selected leptons to pass the default (tight) lepton ID reuiqrements.  Data events were selected 
-with the requirements described in Chapter \ref{sec:event_selection_chapter}, but with the following (looser) lepton ID 
-requirements:
-
-%RESUME HERE
+Data events were selected with the same online and offline selection criteria described in Chapter \ref{sec:reco_chapter}, but only 
+with the following lepton ID selection criteria:
 
 \textbf{Muons}
 \begin{itemize}
-	\item The silicon tracker track was reconstructed from at least 1 hit in the silicon pixel detector, and at least 5 hits in the 
-		entire tracker.
-	\item The fitted track representing the estimated muon trajectory through all of CMS originated at a 
-		point that was within 2 (5) mm of the muon's reconstructed vertex in the $x-y$ plane ($z$ axis). 
+	\item The silicon tracker track was reconstructed from signals in at least 1 silicon pixel detector layer, and signals in at least 
+		5 layers in the entire tracker.
 \end{itemize}
 
 \textbf{Electrons}
 \begin{itemize}
-	\item At least 90\% of the SC energy was measured in a region 2 crystals wide in $\eta$.
-	\item The ratio of hadronic energy in the HCAL tower behind the SC to the SC energy was $< 0.15$ 
-		in the barrel, and $< 0.10$ in the endcap.
-	\item The electron track missed 1 or fewer layers in the silicon pixel or inner silicon strip detectors.
-	\item The electron track origin and its reconstructed vertex were separated by a small distance in the $x-y$ plane, 
-		$\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
+	\item The electron track was reconstructed from signals in every silicon pixel and inner strip detector layers, or all but 1 layer.
+	\item The electron track's origin was separated from its vertex by a small distance $\Delta_{xy}$ in the $x-y$ 
+		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
 
-Events were not selected if one or more reconstructed leptons passed the default (tighter) lepton ID selections, as these 
-events likely had one or more real leptons.  In selected events, the $\Et$ or $\pt$, and $\eta$ of the two selected leptons 
-were used to calculate a probability for both leptons to pass the default lepton ID selections.  The probability was calculated 
-using empirical formulas for electrons and muons derived from data, and each selected event was weighted by its probability.  
-The contribution of weighted events, representing the QCD background, to the $\Mlljj$ distribution found in data is shown in 
-Figure \ref{fig:allExpectedBkgnds}, and was negligible compared to other ST backgrounds.  Based on its small contribution, the 
-QCD background was ignored when calculating results.
+Events were rejected if one or more reconstructed leptons passed the standard lepton ID selections, as these were more likely real 
+leptons.  In selected events, the $\pt$ and $\eta$ of the two selected leptons were used to calculate a probability for both leptons to 
+pass the standard lepton ID selections.  The $\pt,\eta$-dependent probability functions were derived from a separate sample of multi-jet 
+events in data.
+
+%using empirical formulas for electrons and muons derived from data, and each selected event was weighted by its probability.  
+%The contribution of weighted events, representing the QCD background, to the $\Mlljj$ distribution found in data is shown in 
+%Figure \ref{fig:allExpectedBkgnds}, and was negligible compared to other ST backgrounds.  Based on its small contribution, the 
+%QCD background was ignored when calculating results.
+
+%RESUME HERE
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
