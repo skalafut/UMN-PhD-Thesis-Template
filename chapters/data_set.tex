@@ -5,9 +5,9 @@
 \label{sec:backgroundEstimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The online and offline event selection criteria were applied to the data to select events where two leptons and jets were 
-reconstructed, and had kinematics consistent with $\WR \rightarrow \ell\ell jj$ decay progeny.  However, applying these 
-selection criteria also selected data events produced by ST background interactions like $\DY$+jets.  
-The contribution of ST backgrounds to the $\Mlljj$ distribution found in the data were predicted using Monte Carlo (\MC) 
+reconstructed, and had kinematics consistent with $\WR \rightarrow \ell\ell jj$ decay progeny.  However, these criteria also 
+selected data events produced by ST background interactions, like $\DY$+jets.  
+The contributions of ST backgrounds to the $\Mlljj$ distribution found in the data were predicted using Monte Carlo (\MC) 
 simulations, and control regions with no \WR signal contamination.  The magnitudes of individual backgrounds, how 
 they were simulated, and how the control regions were used to estimate the background contributions are described here.
 
@@ -447,10 +447,6 @@ the $\mu\mu$-channel.  When calculating the results, a 40\% uncertainty was assi
 
 \section{Diboson and W+jets Backgrounds}
 \label{sec:dibosonAndWJetsBkgnds}
-%The $\DY$+jets interaction produced $\ell\ell jj$ events at a similar rate to the top quark interactions.  The $\Mlljj$ distribution 
-%produced by the \DY+jets interaction was estimated using simulated \DY+jets events.  Simulated \DY+jets events were selected using 
-%the $ee$- and $\mu\mu$-channel requirements.  Selected events defined the shape of the $\Mlljj$ distribution in both channels, but 
-%the magnitude was adjusted based on comparisons between simulations and data in three control regions.
 The diboson (WW, WZ, ZZ) and W+jets interactions produced $\ell\ell jj$ events at a much lower rate than the $\DY$+jets background.  In 
 addition, no control region existed where the diboson and W+jets backgrounds could be extracted directly from data.  As a result, the 
 shape and magnitude of the diboson and W+jets $\Mlljj$ distributions were estimated directly from simulated events, which were selected 
@@ -476,22 +472,14 @@ distribution found in data were neglected.
 
 \section{QCD Background}
 \label{sec:qcdBkgnd}
-%The diboson (WW, WZ, ZZ) and W+jets interactions produced $\ell\ell jj$ events at a much lower rate than the $\DY$+jets background.  In 
-%addition, no control region existed where the diboson and W+jets backgrounds could be extracted directly from data.  As a result, the 
-%shape and magnitude of the diboson and W+jets $\Mlljj$ distributions were estimated directly from simulated events, which were selected 
-%using the selection criteria described in Chapter \ref{sec:reco_chapter}.  The $\Mlljj$ distribution found in selected diboson and W+jets 
-%events (Figure \ref{fig:allExpectedBkgnds}) was concentrated in the $\Mlljj \leq 2.0$ $\TeV$ region, and its integral was less than 3\% 
-%of the predicted $\DY$+jets $\plus$ top quark background events.  For these reasons the diboson and W+jets contributions to the $\Mlljj$ 
-%distribution found in data were neglected.
-
 Similar to the diboson and W+jets interactions, QCD multi-jet interactions produced $\ell\ell jj$ events at a much lower rate than the 
 $\DY$+jets background.  Unlike the other backgrounds, the leptons selected offline in QCD events were incorrectly reconstructed from 
 jets that contained energetic electrons or photons.  Furthermore, the number of incorrectly identified jets was very sensitive to the 
-lepton ID selection criteria.  This sensitivity was used to estimate the QCD background directly from data, starting with events that 
+lepton ID selection criteria.  This sensitivity was used to estimate the QCD background directly from data, using events that 
 were selected with fewer lepton ID requirements.
 
-Data events were selected with the same online and offline selection criteria described in Chapter \ref{sec:reco_chapter}, but only 
-with the following lepton ID selection criteria:
+Data events were selected with the same online and offline selection criteria described in Chapter \ref{sec:reco_chapter}, but using 
+the following reduced lepton ID selection criteria:
 
 \textbf{Muons}
 \begin{itemize}
@@ -506,18 +494,20 @@ with the following lepton ID selection criteria:
 		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
 
-Events were rejected if one or more reconstructed leptons passed the standard lepton ID selections, as these were more likely real 
-leptons.  In selected events, the $\pt$ and $\eta$ of the two selected leptons were used to calculate a probability for both leptons to 
-pass the standard lepton ID selections.  The $\pt,\eta$-dependent probability functions were derived from a separate sample of multi-jet 
-events in data.
+Events were rejected if one or both selected leptons passed the standard lepton ID selection criteria.  In the selected events, 
+the $\pt$s and $\eta$s of both selected leptons were used as inputs to a $\pt,\eta$-dependent probability function.  This function, 
+derived elsewhere \cite{ZprimeRunOneAndTwo}, calculates the probability for a jet that has been incorrectly reconstructed as a lepton 
+to pass the standard lepton ID selection criteria\footnote{The form of the function differed for electrons and muons.}.  The 
+probability calculated for both selected leptons was applied to each selected event as a weight.  The $\Mlljj$ distribution found in 
+selected weighted events (Figure \ref{fig:allExpectedBkgnds}) was negligible compared to other backgrounds, so the QCD background was 
+neglected.
 
-%using empirical formulas for electrons and muons derived from data, and each selected event was weighted by its probability.  
-%The contribution of weighted events, representing the QCD background, to the $\Mlljj$ distribution found in data is shown in 
-%Figure \ref{fig:allExpectedBkgnds}, and was negligible compared to other ST backgrounds.  Based on its small contribution, the 
-%QCD background was ignored when calculating results.
-
-%RESUME HERE
-
-
+\section{Background Estimation Summary}
+ST interactions produced events in data where two leptons and jets were reconstructed, and passed the selection criteria that was 
+designed to select $\WR \rightarrow \ell\ell jj$ events.  The $\Mlljj$ distribution produced by each interaction, and the uncertainty on 
+the $\Mlljj$ normalization uncertainty was estimated using data and simulated events.  The $\DY$+jets and top quark interactions produced 
+more than 97\% of predicted events, so the sum of their backgrounds was considered the total predicted background.  Then the $\Mlljj$ 
+distribution found in the data was compared to the predicted background in bins of $\Mlljj$, which were linked to specific \mWR 
+hypotheses.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
