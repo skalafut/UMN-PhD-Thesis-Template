@@ -1,10 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % app_wrMC.tex: Appendix on WR MC generation:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{WR MC}
+\chapter{\WR \MC}
 \label{app_wrMC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-test
-\WR \MC appendix
+Events from \WR interactions, characterized by different \mnul and \mWR, are simulated in the same three steps used to simulate 
+background interactions, described in Chapter \ref{sec:backgroundEstimation}.  The \PYTHIA generator implements a flexible, generic 
+\WR signal model, which captures the main characteristics of theoretical models discussed in the literature 
+\cite{earlyLRSModel,lrsHiggsStageOne,lrsHiggsStageTwo,seeSawAndParityViolation,seeSawAndGUTs,lrsMassConstraints}.  For this reason 
+\PYTHIA was used to simulate $\WR \rightarrow \ell\ell jj$ interactions.
+
+Two classes of \WR signal events were simulated using \PYTHIA: one class was simulated through all three simulation steps, the other 
+was simulated only through the first step.  Events simulated through all three steps were produced with \mWR stepping from 0.8 to 6 
+$\TeV$ in increments of 0.2 $\TeV$, and $\mnul = \frac{1}{2}\mWR$.  Those events were used to calculate cross section $\times$ branching 
+ratio limits on the $\WR \rightarrow \ell\ell jj$ process as a function of \mWR.  The other class of events were produced with \mWR 
+stepping from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and several \mnul values between $0.1 \leq \mnul < \mWR$ $\TeV$ at each 
+value of \mWR.  If no \WR signal is found, these events are used to transform the cross section $\times$ branching ratio limits for 
+$\mnul = \frac{1}{2}\mWR$ into \mWR and \mnul exclusion limits for 100 $\GeV$ $\lesssim \mnul < \mWR$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
