@@ -4,17 +4,31 @@
 \chapter{Statistical Analysis, Uncertainties, and Results}
 \label{statAnalysis_uncerts_results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The $\Mlljj$ distributions found in the selected data and predicted background events were compared, and any excess found in 
-data .
+After estimating the background, the $\Mlljj$ distributions found in the selected data and predicted background events 
+were compared.  The difference between the number of data and background events was compared to the background uncertainty, 
+the predicted number of simulated \WR events, and the \WR prediction uncertainty (simulation details in Appendix \ref{app_wrMC}).  
+The width of the $\Mlljj$ distribution found in simulated \WR events was several hundred $\GeV$ or more (Figure 
+\ref{fig:signalShapes}), so any excess of data events above the background can be consistent with several \mWR hypotheses.  
+A set of $\Mlljj$ bins, each tailored to the $\Mlljj$ distribution of a specific \mWR hypothesis, was used to interpret 
+excesses of data in the context of individual \mWR hypotheses.  The width of the $\Mlljj$ bins, and the uncertainties on 
+the number of signal and background events were determined using the procedures described here.
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/Mlljj_signalRegionCuts_severalWrSignals_EE.pdf}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
+	\end{subfigure}
+	\caption{The $\Mlljj$ distribution found in selected \WR events with different \mWR and \mnul.  The $ee$-channel is on the 
+	left, and the $\mu\mu$-channel is on the right.}
+	\label{fig:signalShapes}
+\end{figure}
 
-
-The selections described in Chapter \ref{sec:event_selection_chapter} were applied to data, backgrounds 
-and simulated \WR signals, and 
-the selected events were used to produce $\Mlljj$ distributions in the $ee$- and $\mu\mu$-channels.  
-Each $\Mlljj$ distribution ($\Mlljj > 600$ $\GeV$) was divided into smaller $\Mlljj$ windows linked 
-to specific \mWR hypotheses.  The size of each window was optimized by calculating cross section $\times$ 
-branching fraction limits with Bayesian statistics.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,6 +37,7 @@ branching fraction limits with Bayesian statistics.
 \section{Statistical Analysis}
 \label{sec:statAnalysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Bayesian Limits}
 \label{sec:bayesianStatsAndLimits}
 Generic cross section $\times$ branching fraction limits are calculated using several quantities 
@@ -64,7 +79,7 @@ to $\mu = \mu_{max}$ such that 95\% of the area under $p(\mu|G)$ was covered.  T
 The difference in the $\Mlljj$ distribution shape between selected ST background and simulated \WR events motivated the 
 use of finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
 peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
-as shown in Figure \ref{fig:signalShapesAfterSelection}.  In contrast, the $\Mlljj$ distribution found in all ST 
+as shown in Figure \ref{fig:signalShapes}.  In contrast, the $\Mlljj$ distribution found in all ST 
 backgrounds decreased rapidly with increasing $\Mlljj$.  To transform this difference in the $\Mlljj$ shape into 
 greater signal over background sensitivity, the $\Mlljj > 600$ $\GeV$ range was divided into smaller $\Mlljj$ 
 windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized for its corresponding 
@@ -87,19 +102,6 @@ windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window wa
 	\end{itemize}
 	\item The optimized window was chosen as the window that minimized the expected upper limit.
 \end{itemize}
-
-\begin{figure}[btp]
-	\centering
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_EE.pdf}
-	}
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
-	}
-	\label{fig:signalShapesAfterSelection}
-	\caption{The $\Mlljj$ distribution after all selections using simulated \WR signal events with several \mWR hypotheses.  The 
-	$ee$- ($\mu\mu$-) channel is shown on the left (right).}
-\end{figure}
 
 The optimized windows, listed in Table \ref{tab:masscuts}, overlapped in $\Mlljj$ because any selected event could be 
 consistent with several \mWR hypotheses.  In each window the number of data events, $\DY$ and top quark background events, 
