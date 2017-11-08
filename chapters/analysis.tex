@@ -9,8 +9,8 @@ were compared.  The difference between the number of data and background events 
 the predicted number of simulated \WR events, and the \WR prediction uncertainty (simulation details in Appendix \ref{app_wrMC}).  
 The width of the $\Mlljj$ distribution found in simulated \WR events was several hundred $\GeV$ or more (Figure 
 \ref{fig:signalShapes}), so any excess of data events above the background can be consistent with several \mWR hypotheses.  
-A set of $\Mlljj$ bins, each tailored to the $\Mlljj$ distribution of a specific \mWR hypothesis, was used to interpret 
-excesses of data in the context of different \mWR hypotheses.  The sizes of these $\Mlljj$ bins, and the uncertainties on 
+A set of $\Mlljj$ windows, each tailored to the $\Mlljj$ distribution of a specific \mWR hypothesis, was used to interpret 
+excesses of data in the context of different \mWR hypotheses.  The sizes of these windows, and the uncertainties on 
 the number of signal and background events were determined using the procedures described here.
 
 \begin{figure}
@@ -36,21 +36,21 @@ the number of signal and background events were determined using the procedures 
 \section{Statistical Analysis}
 \label{sec:statAnalysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The number of $\Mlljj$ bins were chosen based on how the $\Mlljj$ distribution found in selected 
+The number of $\Mlljj$ windows was chosen based on how the $\Mlljj$ distribution found in selected 
 simulated \WR events changed with \mWR and \mnul.  For a fixed \mWR, the shape of the $\Mlljj$ distribution found in signal 
 events is weakly dependent on \mnul (Figure \ref{fig:mWrShapeVsMNu}), only because the $\WR \rightarrow \ell\ell jj$ cross 
-section $\times$ branching ratio varies weakly with \mnul.  Since the shape varies weakly with \mnul, one $\Mlljj$ bin is 
-assigned per \mWR.  Discussed later, the $\Mlljj$ bin size for a specific \mWR is determined using events that have 
+section $\times$ branching ratio varies weakly with \mnul.  Since the shape varies weakly with \mnul, one $\Mlljj$ window is 
+assigned per \mWR, independent of \mnul.  The $\Mlljj$ window size for a specific \mWR is determined using events that have 
 $\mnul = \frac{1}{2}\mWR$, because at this $\mnul$ the event selection efficiency is maximized or nearly maximized.  As \mWR 
 increases the $\Mlljj$ distribution shape shifts to higher values, and the distribution normalization 
 decreases with the \WR cross section $\times$ branching ratio.  However, for $X \geq 2.0$ $\TeV$, the $\Mlljj$ distributions 
 found in signal events that have $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ overlap by 10\% or more (Figure \ref{fig:mWrShapeVsMWr}).  
-The two $\Mlljj$ bins that are used for $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ are sensitive to signals that have 
+The two $\Mlljj$ windows that are used for $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ are sensitive to signals that have 
 $X < \mWR < X + 0.2$ $\TeV$, so finer granularity in \mWR is not needed.  To cover the entire $\Mlljj$ spectrum found in the 
-data, one $\Mlljj$ bin is assigned to each value of \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$.  The size 
-of each $\Mlljj$ bin was determined based on the shape and normalization of the $\Mlljj$ distribution found in background events.  
-Specifically, each bin's size was calculated such that the number of signal and background events in the bin minimized the 95\% 
-confidence level (CL) upper limit on the \WR cross section $\times$ branching ratio.
+data, one $\Mlljj$ window is assigned to each value of \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$.  The size 
+of each $\Mlljj$ window was determined based on the shape and normalization of the $\Mlljj$ distribution found in background 
+events.  Specifically, each window's size was chosen to maximize the difference between the number of signal and background 
+events, and thus minimize the upper limit on the \WR cross section $\times$ branching ratio.
 
 \clearpage
 \begin{figure}[h]
@@ -72,44 +72,40 @@ confidence level (CL) upper limit on the \WR cross section $\times$ branching ra
 
 \subsection{Bayesian Limits}
 \label{sec:bayesianStatsAndLimits}
-Cross section $\times$ branching ratio limits are calculated using several quantities 
-obtained after all selections were applied: the 
-number of measured events $G$, the estimated number of signal events $S$ and background events $B$, 
-and the signal and background event uncertainties $\delta S$ and $\delta B$.  In the \WR search, 
-limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated in two scenarios: 
-``expected'' limits where $G = B$, and ``observed'' limits, the results, where $G$ equaled the number 
-of selected events in data.  Expected limits were calculated to optimize the sizes of $\Mlljj$ windows, 
-in which the observed limits were calculated to test different \mWR hypotheses.  In both scenarios 
-limits were calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
-
-%RESUME HERE
+The \WR cross section $\times$ branching ratio ($\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$) limits are calculated 
+using several quantities.  Each limit for a specific \mWR signal is calculated using the number of measured events $G$ and 
+predicted signal ($S$) and background ($B$) events in the $\Mlljj$ window, and their uncertainties $\delta S$ and $\delta B$.  
+Expected limits, calculated by setting $G = B$, were used to determine the sizes of the $\Mlljj$ bins.  Expected limits were 
+calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
 
 \begin{equation}
 	Poisson(\mu S(\pmb{\theta}) \thickspace \plus \thickspace B(\pmb{\theta}))
 	\label{eq:poissonModel}
 \end{equation}
-where $\mu$ was the unknown, dimensionless \WR signal strength, and $\pmb{\theta}$ represented the uncertainties $\delta S$ 
-and $\delta B$ described later in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability 
-distribution for $\mu$ given $G$ measured events, $p(\mu|G)$, was obtained by evaluating the integral\cite{bayesianDataAnalysis}:
+where $\mu$ is the dimensionless \WR signal strength, and $\pmb{\theta}$ represent the uncertainties $\delta S$ and $\delta B$ 
+described later in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability distribution for $\mu$ given 
+$G$ measured events, $p(\mu|G)$, is obtained by evaluating the integral \cite{bayesianDataAnalysis}:
 
 \begin{equation}
 	p(\mu|G) = \int p(\mu|\pmb{\theta},G)p(\pmb{\theta}|G)d\pmb{\theta}
 	\label{eq:sigStrngthProbDist}
 \end{equation}
-where $p(\pmb{\theta}|G)$ were the probability distributions for the uncertainties given the measurement 
-$G$ (``marginal posterior distributions''), and $p(\mu|\pmb{\theta},G)$ were the probability distributions 
-for $\mu$ given the uncertainties, and the measurement $G$ (``conditional posterior distributions'').  
-Functional forms of the marginal posterior distributions were either log-normal or Gamma distributions 
-depending on the uncertainty, and are identified later in Section \ref{sec:uncertainties}.  Functional forms 
-of the conditional posterior distributions were derived from uniform prior distributions and Equation 
-\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated 
-numerically using \MC simulations to obtain $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 
-to $\mu = \mu_{max}$ such that 95\% of the area under $p(\mu|G)$ was covered.  The value $\mu_{max}$ was the 
-95\% CL upper limit on the signal strength; and $\mu_{max}$ was multiplied by $\sigma(\WR)$ obtained from 
-\WR simulations to calculate a limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
+where $p(\pmb{\theta}|G)$ are the probability distributions for the uncertainties given the measurement $G$ (``marginal 
+posterior distributions''), and $p(\mu|\pmb{\theta},G)$ are the probability distributions for $\mu$ given the uncertainties, 
+and the measurement $G$ (``conditional posterior distributions'').  Functional forms of the marginal posterior distributions 
+are either log-normal or Gamma distributions depending on the uncertainty, and are identified later for specific uncertainties.  
+Functional forms of the conditional posterior distributions are derived from uniform prior distributions and Equation 
+\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated numerically, using \MC methods, to 
+derive $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that the normalized integral equaled 
+0.95.  The value $\mu_{max}$ is the 95\% CL upper limit on the signal strength.  The value of $\sigma(\WR) \times BR(\WR \rightarrow 
+\ell\ell jj)$ obtained from simulations is multiplied by $\mu_{max}$ to calculate the upper limit on 
+$\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 
-\subsection{$\Mlljj$ Windows}
+\subsection{$\Mlljj$ Window Sizes}
 \label{sec:mlljjWindows}
+The size of each $\Mlljj$ window was chosen to minimize the 95\% CL upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
+The .
+
 The difference in the $\Mlljj$ distribution shape between selected ST background and simulated \WR events motivated the 
 use of finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
 peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
@@ -142,6 +138,9 @@ consistent with several \mWR hypotheses.  In each window the number of data even
 and simulated \WR events\footnote{In the window optimized for $\mWR = 1000$ $\GeV$, only events produced in the $\mWR = 1000$ $\GeV$ 
 simulation were counted.} were counted, and were used to calculate observed and expected upper limits on 
 $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
+
+%RESUME HERE
+
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
