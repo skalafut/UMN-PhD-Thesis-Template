@@ -36,22 +36,39 @@ the number of signal and background events were determined using the procedures 
 \section{Statistical Analysis}
 \label{sec:statAnalysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The size of each bin in the set of $\Mlljj$ bins was optimized based on the shape and normalization of the $\Mlljj$ 
-distribution found in predicted background and simulated \WR events.  $\WR \rightarrow \ell\ell jj$ events were simulated 
-for signal hypotheses that had $\mnul = \frac{1}{2}\mWR$ and \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$.  
-The shape of the $\Mlljj$ distribution found in \WR events is not .
+The number of $\Mlljj$ bins were chosen based on how the $\Mlljj$ distribution found in selected 
+simulated \WR events changed with \mWR and \mnul.  For a fixed \mWR, the shape of the $\Mlljj$ distribution found in signal 
+events is weakly dependent on \mnul (Figure \ref{fig:mWrShapeVsMNu}), only because the $\WR \rightarrow \ell\ell jj$ cross 
+section $\times$ branching ratio varies weakly with \mnul.  Since the shape varies weakly with \mnul, one $\Mlljj$ bin is 
+assigned per \mWR.  Discussed later, the $\Mlljj$ bin size for a specific \mWR is determined using events that have 
+$\mnul = \frac{1}{2}\mWR$, because at this $\mnul$ the event selection efficiency is maximized or nearly maximized.  As \mWR 
+increases the $\Mlljj$ distribution shape shifts to higher values, and the distribution normalization 
+decreases with the \WR cross section $\times$ branching ratio.  However, for $X \geq 2.0$ $\TeV$, the $\Mlljj$ distributions 
+found in signal events that have $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ overlap by 10\% or more (Figure \ref{fig:mWrShapeVsMWr}).  
+The two $\Mlljj$ bins that are used for $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ are sensitive to signals that have 
+$X < \mWR < X + 0.2$ $\TeV$, so finer granularity in \mWR is not needed.  To cover the entire $\Mlljj$ spectrum found in the 
+data, one $\Mlljj$ bin is assigned to each value of \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$.  The size 
+of each $\Mlljj$ bin was determined based on the shape and normalization of the $\Mlljj$ distribution found in background events.  
+Specifically, each bin's size was calculated such that the number of signal and background events in the bin minimized the 95\% 
+confidence level (CL) upper limit on the \WR cross section $\times$ branching ratio.
 
-%RESUME HERE
-%why was MNu = MWR/2 used? because Mlljj distribution shape is not sensitive to MNu, and MNu = MWR/2 has highest selection efficiency
+\clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{figures/massGenFstHvyPtcl_MWR_2200_several_MNu_private.pdf}
+	\caption{The $\Mlljj$ distribution found in $\WR \rightarrow \ell\ell jj$ events that have $\mWR = 2.2$ $\TeV$ 
+	and different \mnul.}
+	\label{fig:mWrShapeVsMNu}
+\end{figure}
 
-%why MWR increments of 0.2 TeV, instead of smaller value? For MWR = some X >= 2 TeV, the Mlljj distributions for two signal hypotheses 
-%that have MWR = X and X+0.2 TeV overlap by at least 80 percent (show a figure).  The Mlljj bin optimized for MWR = X will work 
-%for other hypotheses that have MWR up to X+0.2 TeV
-
-
-Smaller increments in .
-
-The sizes of the $\Mlljj$ bins, used to interpret data in the context of.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{figures/massGenFstHvyPtcl_several_MWR_and_MNu_private.pdf}
+	\caption{The $\Mlljj$ distribution found in $\WR \rightarrow \ell\ell jj$ events that have $\mnul = \frac{1}{2}\mWR$ 
+		and different \mWR.}
+	\label{fig:mWrShapeVsMWr}
+\end{figure}
+\clearpage
 
 \subsection{Bayesian Limits}
 \label{sec:bayesianStatsAndLimits}
@@ -64,6 +81,8 @@ limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated i
 of selected events in data.  Expected limits were calculated to optimize the sizes of $\Mlljj$ windows, 
 in which the observed limits were calculated to test different \mWR hypotheses.  In both scenarios 
 limits were calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
+
+%RESUME HERE
 
 \begin{equation}
 	Poisson(\mu S(\pmb{\theta}) \thickspace \plus \thickspace B(\pmb{\theta}))
