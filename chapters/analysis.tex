@@ -7,11 +7,12 @@
 After estimating the background, the $\Mlljj$ distributions found in the selected data and predicted background events 
 were compared.  The difference between the number of data and background events was compared to the background uncertainty, 
 the predicted number of simulated \WR events, and the \WR prediction uncertainty (simulation details in Appendix \ref{app_wrMC}).  
-The width of the $\Mlljj$ distribution found in simulated \WR events was several hundred $\GeV$ or more (Figure 
-\ref{fig:signalShapes}), so any excess of data events above the background can be consistent with several \mWR hypotheses.  
+The $\Mlljj$ distribution found in simulated \WR events was several hundred $\GeV$ wide or larger (Figure 
+\ref{fig:signalShapes}), so excesses of data events above the background can be consistent with several \mWR hypotheses.  
 A set of $\Mlljj$ windows, each tailored to the $\Mlljj$ distribution of a specific \mWR hypothesis, was used to interpret 
-excesses of data in the context of different \mWR hypotheses.  The sizes of these windows, and the uncertainties on 
-the number of signal and background events were determined using the procedures described here.
+the excesses of data in the context of different \mWR hypotheses.  The sizes of these windows, the uncertainties on 
+the number of signal and background events, and the results of the comparisons were determined using the procedures described 
+here.
 
 \begin{figure}
 	\centering
@@ -95,52 +96,41 @@ posterior distributions''), and $p(\mu|\pmb{\theta},G)$ are the probability dist
 and the measurement $G$ (``conditional posterior distributions'').  Functional forms of the marginal posterior distributions 
 are either log-normal or Gamma distributions depending on the uncertainty, and are identified later for specific uncertainties.  
 Functional forms of the conditional posterior distributions are derived from uniform prior distributions and Equation 
-\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated numerically, using \MC methods, to 
-derive $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that the normalized integral equaled 
-0.95.  The value $\mu_{max}$ is the 95\% CL upper limit on the signal strength.  The value of $\sigma(\WR) \times BR(\WR \rightarrow 
-\ell\ell jj)$ obtained from simulations is multiplied by $\mu_{max}$ to calculate the upper limit on 
+\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated numerically using \MC methods 
+to derive $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that the normalized integral 
+equaled 0.95.  The value $\mu_{max}$ is the 95\% CL upper limit on the signal strength.  The value of $\sigma(\WR) \times 
+BR(\WR \rightarrow \ell\ell jj)$ obtained from simulations is multiplied by $\mu_{max}$ to calculate the upper limit on 
 $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 
 \subsection{$\Mlljj$ Window Sizes}
 \label{sec:mlljjWindows}
-The size of each $\Mlljj$ window was chosen to minimize the 95\% CL upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
-The .
-
-The difference in the $\Mlljj$ distribution shape between selected ST background and simulated \WR events motivated the 
-use of finite size $\Mlljj$ windows to search for evidence of different \mWR hypotheses.  A \WR signal appeared as a 
-peak in the $\Mlljj$ distribution, with tails above and below the peak that grew longer with increasing \mWR, 
-as shown in Figure \ref{fig:signalShapes}.  In contrast, the $\Mlljj$ distribution found in all ST 
-backgrounds decreased rapidly with increasing $\Mlljj$.  To transform this difference in the $\Mlljj$ shape into 
-greater signal over background sensitivity, the $\Mlljj > 600$ $\GeV$ range was divided into smaller $\Mlljj$ 
-windows linked to specific \mWR hypotheses.  The size of each $\Mlljj$ window was optimized for its corresponding 
-\mWR hypothesis using the following procedure:
+The sizes of the $\Mlljj$ windows were chosen to minimize the 95\% CL upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
+For each value of \mWR between 0.8 and 6 $\TeV$, the size of the corresponding window was determined using the following 
+procedure:
 
 \begin{itemize}
-	\item $\sim$150 $\Mlljj$ windows of different sizes were defined based on the width of the simulated \WR $\Mlljj$ distribution.
-	\item In each window:
+	\item 150 $\Mlljj$ windows of different sizes and central values were defined based on the peak position in the \WR $\Mlljj$ 
+		distribution.  The window lower bound went down to 40\% of \mWR, and the upper bound went up to 140\% of \mWR.
+	\item For each window:
 	\begin{itemize}
 		\item The number of signal events $S$ and background events $B$ were counted.
-		\item A Poisson distribution was made with mean equal to $B$, and a random number $C$ was pulled 
-			from the Poisson distribution that represented the number of measured events in the window.
-		\item Using the procedure described in Section \ref{sec:bayesianStatsAndLimits}, an expected 
-			upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL was calculated 
-			based on the probability of measuring $C$ due to fluctuations in $S$ and $B$.  To expedite the calculation, 
-			only statistical uncertainties were considered in the fluctuations of $S$ and $B$.
-		\item The expected limit was recalculated 300 times, and each time a new random number $C$ was 
-			pulled from the Poisson distribution with mean $B$.  The expected upper limit for the window 
-			was the median value of all 300 limits.
+		\item A Poisson distribution was created with mean $B$, and a random number $C$ was pulled 
+			from the Poisson distribution.  $C$ represents the number of measured events in the window.
+		\item Using $C$, $S$, $B$, and the procedure described in Section \ref{sec:bayesianStatsAndLimits}, an 
+			expected upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ was calculated at 
+			95\% CL.  The systematic uncertainties on $S$ and $B$ had a negligible effect on the final 
+			window size, so only the statistical uncertainties on $S$ and $B$ were included.
+		\item The limit was recalculated 300 times, and each time a new random number $C$ was pulled 
+			from the Poisson distribution.  The median value of all 300 limits is the expected upper limit 
+			for the window.
 	\end{itemize}
-	\item The optimized window was chosen as the window that minimized the expected upper limit.
+	\item The window that minimized the expected upper limit was chosen.
 \end{itemize}
 
-The optimized windows, listed in Table \ref{tab:masscuts}, overlapped in $\Mlljj$ because any selected event could be 
-consistent with several \mWR hypotheses.  In each window the number of data events, $\DY$ and top quark background events, 
-and simulated \WR events\footnote{In the window optimized for $\mWR = 1000$ $\GeV$, only events produced in the $\mWR = 1000$ $\GeV$ 
-simulation were counted.} were counted, and were used to calculate observed and expected upper limits on 
-$\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
-
-%RESUME HERE
-
+The $\Mlljj$ windows, listed in Table \ref{tab:masscuts}, capture at least 70\% of the corresponding \WR $\Mlljj$ distribution.  
+The central value of each window ($\frac{max \plus min}{2}$) exceeds the corresponding \mWR value to minimize the predicted 
+background, which falls rapidly with increasing $\Mlljj$.  In each window, the observed limit using data, and the final 
+expected limit was calculated with all systematic and statistical uncertainties included.
 
 \begin{table}[h]
 \caption{$\Mlljj$ window ranges that minimized the expected upper limit on the \WR cross section at different \mWR values.}
@@ -177,6 +167,7 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 \end{tabular}
 \end{table}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Uncertainties 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -202,6 +193,9 @@ to the energy of all jets and leptons in an event, so the effect of uncertaintie
 to simulated events was estimated simultaneously with the effect of energy uncertainties.  Independently considering 
 simulated \WR events, simulated \DY events, and $e\mu$ data events representing the top quark background, the effect 
 of energy and lepton ID uncertainties was estimated using the following procedure:
+
+%RESUME HERE
+
 
 \begin{itemize}
 	\item In each event selected by a trigger, but before any lepton or jet selections:
