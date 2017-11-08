@@ -173,62 +173,55 @@ background, which falls rapidly with increasing $\Mlljj$.
 \section{Uncertainties}
 \label{sec:uncertainties}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In each window, the observed (using data) and expected upper limits were calculated with all systematic and statistical 
+In each window, the observed limit, using data, and the expected limit were calculated with all systematic and statistical 
 uncertainties included.  The dominant uncertainties were the 40\% $\DY$+jets uncertainty, the lepton and jet energy 
 uncertainties, and the top quark background statistical uncertainty.  The magnitudes of these uncertainties and all 
 others that affected the number of predicted signal and background events were calculated using the procedures described 
 here.  The uncertainty magnitude is the same for all $\Mlljj$ windows unless noted otherwise.
 
-\subsection{Primary Uncertainties}
-\label{sec:dominantUncs}
-
-\subsubsection{Energy and Lepton Identification Uncertainties}
+\subsection{Energy and Lepton Identification Uncertainties}
 \label{sec:enrgyLeptIdUncs}
-The only uncertainties that affected the shape of the $\Mlljj$ distribution found in signal and background 
-events were uncertainties on the lepton and jet energy resolutions and energy calibration scales.  The magnitude of 
-these uncertainties varied with kinematic variables like lepton and jet energy and $(\eta,\phi)$ trajectory, 
-and never exceeded 25\% for jets, and $\sim$7\% for electrons and muons.  These energy uncertainties affected 
-the energies of all reconstructed leptons and jets, and therefore could cause an event to pass or fail the 
-selection, or change the $\Mlljj$ value of a selected event.  The efficiency of lepton ID selections was sensitive 
-to the energy of all jets and leptons in an event, so the effect of uncertainties in lepton ID weights applied 
-to simulated events was estimated simultaneously with the effect of energy uncertainties.  Independently considering 
-simulated \WR events, simulated \DY events, and $e\mu$ data events representing the top quark background, the effect 
-of energy and lepton ID uncertainties was estimated using the following procedure:
-
-%RESUME HERE
-
+The lepton and jet energy uncertainties are unique in that they are the only uncertainties that can change the shapes of 
+the $\Mlljj$ distributions found in signal and background events.  These uncertainties, specifically on the lepton and 
+jet energy scales and resolutions, affect the energies of all reconstructed leptons and jets in every event.  Variations 
+of lepton and jet energies within their uncertainties can cause each event to pass or fail the selection criteria, or 
+change a selected event's $\Mlljj$ value.  The jet energy uncertainties went up to 25\% for jets that had low $\pt$ and 
+large $|\eta|$, and the lepton energy uncertainties went up to $\sim$7\% for electrons and muons.  The efficiency of the 
+lepton ID selection criteria is sensitive to lepton and jet energies, so the energy uncertainties are correlated with the 
+lepton ID selection efficiency uncertainty.  The effect of energy and lepton ID uncertainties were estimated simultaneously 
+using the following procedure:
 
 \begin{itemize}
-	\item In each event selected by a trigger, but before any lepton or jet selections:
+	\item In each event selected by a trigger, but before applying any lepton or jet selection criteria:
 	\begin{itemize}
 		\item Eight random numbers were pulled from eight different Gaussians, each with mean 0 and variance 1.
 		\item Two random numbers multiplied each electron's energy scale and resolution uncertainty to determine the 
 			energy change applied to each electron.  In simulated events, a third random number multiplied 
-			each electron's ID weight uncertainty, and the change in weight was propagated to the total event weight 
-			after selections.
+			each electron's ID weight uncertainty, and the change in weight of the two selected electrons was propagated 
+			to the total event weight.
 		\begin{itemize}
-			\item Using the same procedure with three other random numbers, the effect of energy and ID uncertainties were 
-				propagated to each muon's energy and ID weight.
+			\item Using the same procedure with three other random numbers, the effect of muon energy and ID uncertainties 
+				were propagated to each muon's energy and ID weight.
 		\end{itemize}
-		\item The two remaining random numbers multiplied each jet's energy scale and resolution uncertainty to 
-			determine the energy change applied to each jet.
+		\item The last two random numbers multiplied every jet's energy scale and resolution uncertainty, and these 
+			energy changes were added to the jet's energy.
 	\end{itemize}
-	\item Then, the offline selection described previously was applied to each event.  If all requirements were met, the 
-		event was assigned to one or more $\Mlljj$ windows based on its $\Mlljj$ value.
+	\item The offline selection criteria were applied to each event.  Selected events were assigned to $\Mlljj$ 
+		bins based on their $\Mlljj$ values.
 \end{itemize}
 
-This procedure was repeated 3200 times for every \WR, \DY, and $e\mu$ data event.  For each signal and background process 
-in each $\Mlljj$ window, a distribution was made showing the number of events in the window for all 3200 iterations, as 
-shown in Figure \ref{fig:effectOfEnergyIdUncerts}.  The distribution's standard deviation represented the uncertainty on 
-the number of events due to energy and ID uncertainties.  In mass windows for $\mWR \geq 2$ $\TeV$ hypotheses, the combined 
-energy and ID uncertainty lead to an uncertainty of $\lesssim$4\% on the number of \WR events, and larger uncertainties on 
-the number of \DY and top quark background events, as shown in Table \ref{tab:impactOfEnergyIdUncerts}.  These uncertainties 
-were included in limit calculations by using Gamma distributions for the marginal posterior distributions.
+This procedure was repeated 3200 times for every event used to predict the signal and background $\Mlljj$ distributions.  
+Then, a distribution was made showing the number of selected events in each window for all 3200 iterations (Figure 
+\ref{fig:effectOfEnergyIdUncerts}).  The distribution's standard deviation is the uncertainty on the number of events 
+due to all energy and lepton ID uncertainties.  In $\Mlljj$ windows for signals that have $\mWR \geq 2$ $\TeV$, the effect 
+of the energy and ID uncertainties was an uncertainty of $\lesssim$4\% on the number of \WR events, and larger uncertainties 
+on the number of background events (Table \ref{tab:impactOfEnergyIdUncerts}).  These uncertainties were included in limit 
+calculations using Gamma distributions for the marginal posterior distributions.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/missingImage.png}
-	\caption{The number of expected $\WR \rightarrow \mu\mu jj$ signal events with $\mWR = 2.2\TeV$ in the 2.2$\TeV$ 
+	\caption{The number of expected $\WR \rightarrow \mu\mu jj$ signal events with $\mWR = 2.2$ $\TeV$ in the 2.2 $\TeV$ 
 	$\Mlljj$ window after 3200 iterations of energy and ID uncertainty variations.}
 	\label{fig:effectOfEnergyIdUncerts}
 \end{figure}
@@ -236,7 +229,7 @@ were included in limit calculations by using Gamma distributions for the margina
 \begin{table}[ht]
 	\caption{The effect of energy and ID uncertainties on the number of signal and background events in the $\Mlljj$ 
 		window optimized for the $\mWR = 2.2\TeV$ hypothesis.  All uncertainties are in percentages of expected events.  The top 
-	quark background estimate is sensitive to $e$ and $\mu$ energy uncertainties.}
+	quark background estimate is sensitive to both the $e$ and $\mu$ energy uncertainties.}
   \label{tab:impactOfEnergyIdUncerts}
   \centering
     \begin{tabular}{c|c|c|c}
@@ -252,7 +245,8 @@ were included in limit calculations by using Gamma distributions for the margina
   \end{tabular}
 \end{table}
 
-\subsubsection{Statistical Uncertainty}
+
+\subsection{Statistical Uncertainty}
 \label{sec:statUnc}
 The statistical uncertainty was calculated for each signal and background source as $\sqrt{\sum w_{i}^{2}}$, where 
 $w_{i}$ was the weight of event i, and the sum ran over all selected events in a $\Mlljj$ window.  The $e\mu$ data 
@@ -262,6 +256,8 @@ In the mass windows for $\mWR \geq 2$ $\TeV$ hypotheses, the statistical uncerta
 of \WR events, $\geq$5\% on the number of \DY events, and $>$30\% on the number of top quark events, as shown in 
 Table \ref{tab:impactOfStatUncert}.  These uncertainties were included in limit calculations by using Gamma distributions 
 for the marginal posterior distributions.
+
+%RESUME HERE
 
 Every $\Mlljj$ window had more than one simulated \DY and \WR event, so the formula $\sqrt{\sum w_{i}^{2}}$ could always 
 be used to calculate the statistical uncertainty on the number of \DY and \WR events.  However, the absence of $e\mu$ 
@@ -284,7 +280,7 @@ calculated as 1 $e\mu$ event multiplied by the appropriate $\ell\ell:e\mu$ norma
   \end{tabular}
 \end{table}
 
-\subsubsection{Background Uncertainty from Control Regions}
+\subsection{Background Uncertainty from Control Regions}
 \label{sec:bkgndNormUnc}
 Additional uncertainties were assigned to background estimates based on previously discussed studies of data and simulated 
 backgrounds in control regions.  A 10\% uncertainty was assigned to the top quark background estimate to account for 
@@ -293,10 +289,7 @@ background estimate to account for disagreement between data and simulated $\DY$
 in the low $\Mll$ control region.  These uncertainties were included in limit calculations using log-normal distributions 
 for the marginal posterior distributions.
 
-\subsection{Secondary Uncertainties}
-\label{sec:subdominantUncs}
-
-\subsubsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
+\subsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
 \label{sec:leptonRecoTriggerEffUnc}
 The efficiencies of lepton reconstruction and muon trigger selections differed between selected data and simulated events, 
 and these differences were corrected in simulated events by applying $\sim$unity event weights.  In the $\mu\mu$-channel, 
@@ -310,7 +303,7 @@ into the weight of each event.  The electron reconstruction weight uncertainty w
 0.982 and an $\Et,\eta$ dependent weight, and was found to be 2\%.  The lepton reconstruction and trigger uncertainties were 
 included in limit calculations using log-normal distributions for the marginal posterior distributions.
 
-\subsubsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
+\subsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
 Simulated events were also weighted to normalize the events to the integrated luminosity of data, and to account for the pileup 
 distribution measured in data, and the effects of parton distribution functions (PDFs), and renormalization and factorization 
