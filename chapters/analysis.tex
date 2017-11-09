@@ -213,10 +213,14 @@ using the following procedure:
 This procedure was repeated 3200 times for every event used to predict the signal and background $\Mlljj$ distributions.  
 Then, a distribution was made showing the number of selected events in each window for all 3200 iterations (Figure 
 \ref{fig:effectOfEnergyIdUncerts}).  The distribution's standard deviation is the uncertainty on the number of events 
-due to all energy and lepton ID uncertainties.  In $\Mlljj$ windows for signals that have $\mWR \geq 2$ $\TeV$, the effect 
-of the energy and ID uncertainties was an uncertainty of $\lesssim$4\% on the number of \WR events, and larger uncertainties 
-on the number of background events (Table \ref{tab:impactOfEnergyIdUncerts}).  These uncertainties were included in limit 
-calculations using Gamma distributions for the marginal posterior distributions.
+due to all energy and lepton ID uncertainties.  In the $\Mlljj$ windows linked to signals that have $\mWR \geq 2$ $\TeV$, 
+the effect of the energy and ID uncertainties was an uncertainty of $\lesssim$4\% on the signal prediction, and larger 
+uncertainties on the background prediction (Table \ref{tab:impactOfEnergyIdUncerts}).  The uncertainty on the background 
+prediction changed with the $\Mlljj$ window.  These uncertainties were included 
+in limit calculations using Gamma distributions for the marginal posterior distributions.
+
+%describe how uncertainties change with the Mlljj window
+%RESUME HERE
 
 \begin{figure}[h]
 	\centering
@@ -248,15 +252,15 @@ calculations using Gamma distributions for the marginal posterior distributions.
 
 \subsection{Statistical Uncertainty}
 \label{sec:statUnc}
-The statistical uncertainty was calculated for each signal and background source as $\sqrt{\sum w_{i}^{2}}$, where 
-$w_{i}$ was the weight of event i, and the sum ran over all selected events in a $\Mlljj$ window.  The $e\mu$ data 
-events used to estimate the top quark background all had a weight of 1, while simulated \WR and \DY events had positive 
-weights $<$1 because the number of simulated events exceeded the number of events expected in 2.6 fb$^{-1}$ of data.  
-In the mass windows for $\mWR \geq 2$ $\TeV$ hypotheses, the statistical uncertainty was $<$2\% on the number 
-of \WR events, $\geq$5\% on the number of \DY events, and $>$30\% on the number of top quark events, as shown in 
-Table \ref{tab:impactOfStatUncert}.  These uncertainties were included in limit calculations by using Gamma distributions 
-for the marginal posterior distributions.
+The signal and background statistical uncertainties were calculated as $\sqrt{\sum w_{i}^{2}}$, where $w_{i}$ is the weight 
+of event i, and the sum ran over all events in a $\Mlljj$ window.  The $e\mu$ data events, used to estimate the top quark 
+background, all have a weight of 1.  The simulated \WR and $\DY$+jets event weights were normalized to the integrated 
+luminosity of the data, and as a result have positive weights less than 1.  In the $\Mlljj$ windows linked to signals 
+that have $\mWR \geq 2$ $\TeV$, the statistical uncertainty was $<$2\% on the signal prediction, $\geq$5\% on the \DY 
+background prediction, and $>$30\% on the top quark background prediction (Table \ref{tab:impactOfStatUncert}).  These 
+uncertainties were included in limit calculations by using Gamma distributions for the marginal posterior distributions.
 
+%describe how uncertainties change with Mlljj window
 %RESUME HERE
 
 Every $\Mlljj$ window had more than one simulated \DY and \WR event, so the formula $\sqrt{\sum w_{i}^{2}}$ could always 
