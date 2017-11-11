@@ -176,8 +176,8 @@ background, which falls rapidly with increasing $\Mlljj$.
 In each window, the observed limit, using data, and the expected limit were calculated with all systematic and statistical 
 uncertainties included.  The dominant uncertainties were the 40\% $\DY$+jets uncertainty, the lepton and jet energy 
 uncertainties, and the top quark background statistical uncertainty.  The magnitudes of these uncertainties and all 
-others that affected the number of predicted signal and background events were calculated using the procedures described 
-here.  The uncertainty magnitude is the same for all $\Mlljj$ windows unless noted otherwise.
+others that affected the number of predicted signal and background events were calculated in each $\Mlljj$ window using the 
+procedures described here.  The uncertainty magnitude is the same for all $\Mlljj$ windows unless noted otherwise.
 
 \subsection{Energy and Lepton Identification Uncertainties}
 \label{sec:enrgyLeptIdUncs}
@@ -305,78 +305,69 @@ calculated as the maximum difference between 0.982 and an $\Et,\eta$ dependent w
 signal and \DY predictions.  The lepton reconstruction and trigger uncertainties were included in limit calculations using 
 log-normal distributions for the marginal posterior distributions.
 
-\subsection{Cross Section, Luminosity, Pileup and PDF Uncertainties}
+\subsection{Cross Section, Luminosity, Pileup and PDF Weight Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
-Simulated events were also weighted to normalize the events to the integrated luminosity of data, and to account for the pileup 
-distribution measured in data, and the effects of parton distribution functions (PDFs), and renormalization and factorization 
-energy scales.  Uncertainties on these weights lead to additional uncertainties on the number of selected \DY and \WR events.  
-The uncertainties on the number of selected events in each $\Mlljj$ window were estimated as follows.
+Additional weights were applied to simulated \WR and $\DY$+jets events for several reasons.  The uncertainties on these weights 
+resulted in additional, albeit small, uncertainties to the signal and \DY background predictions.
 
-%RESUME HERE
+Simulated events were weighted by the integrated luminosity of data $\Ell$, the cross section $\sigma$, and the number of 
+simulated events $N_{evts}$: $\frac{\Ell \times \sigma}{N_{evts}}$.  The uncertainty on the integrated luminosity measurement 
+resulted in a 2.7\% uncertainty on the signal and \DY predictions.  The uncertainty on the \DY cross section resulted in a 
+2\% uncertainty on the \DY prediction in the $ee$-channel, and a 1\% uncertainty in the $\mu\mu$-channel.  The uncertainty on 
+the \WR cross section, calculated during simulations of \WR events, resulted in an uncertainty below 0.5\% on the signal 
+prediction for all values of \mWR.
+
+The efficiency to reconstruct an interaction as a vertex was known exactly in simulated events, but could only be estimated 
+to within $\sim$5\% uncertainty in data events.  As a result, there was an uncertainty on the number of pileup interactions 
+reconstructed in each data event.  Simulated events were weighted to bring the pileup distributions found in data and simulated 
+events into agreement, ignoring the pileup uncertainty in data.  The effect of the pileup uncertainty on the signal and 
+background predictions was estimated by shifting the pileup distribution found in data within its uncertainty, and calculating 
+new weights for simulated events.  The change in the signal and \DY predictions using the new and original weights was taken 
+as an uncertainty.  The resulting uncertainty for signal and \DY predictions was between 2\% and 3\% for all $\Mlljj$ windows.
+
+In simulated events, the distribution of momenta amongst gluons, up, down, and strange quarks, and their anti-quarks in interacting 
+protons was modeled using one parton distribution function (pdf).  \DY events were simulated using the NNPDF30 pdf \cite{nnpdf30}, 
+and signal events were simulated using the NNPDF23 pdf \cite{nnpdf23}.  Both pdfs are parameterized in terms of the independent 
+variables x (momentum fraction) and $Q_{0}^{2}$ (energy scale), and several constant coefficients and exponents whose values 
+and uncertainties are determined using experimental data.  In each simulated event these coefficients and exponents were varied 
+within their uncertainties, and the average change in the cross section was propagated to the event weight.  The average change 
+in the total weight of all events was taken as an uncertainty on the signal or \DY prediction.  The uncertainty on the \DY 
+prediction was between 2\% and 3\% for all $\Mlljj$ windows.  As \mWR increased from 0.8 to 4 $\TeV$ the uncertainty on the signal 
+prediction increased from 1\% to 15\%.  The portion of the \WR pdf uncertainty that affected the $(\eta,\phi)$ trajectories was 
+below 1\% for all values of \mWR; only this portion of the uncertainty was included in limit calculations.  The remaining 
+uncertainty, that grew with \mWR, depended on unconstrained parameters of the LRS model, and therefore was not included in limit 
+calculations.
 
 
-The \DY cross section uncertainty was estimated by comparing data to three sets of simulated \DY events in the 
-$Z \rightarrow \ell\ell$ control region discussed earlier, and was found to be 2\% (1\%) in the $ee$- ($\mu\mu$-) channel.  
-At each \mWR value the \WR cross section was calculated during simulations based on the fraction of \MC trials executed that 
-produced \WR events in the kinematically allowed phase space.  The cross section uncertainty was calculated as the uncertainty 
-on this fraction, and was $<$0.5\% for all values of \mWR.
+In each simulated pp interaction the coupling $\alpha_{QCD}$ was calculated at the renormalization energy scale $\mu_{R}$, and 
+QCD interactions were divided into two regions based on a factorization energy scale $\mu_{F}$.  QCD interactions that exchanged 
+momentum $Q^{2} \ll \mu_{F}^{2}$ are not perturbative in $\alpha_{QCD}$, and are simulated using low energy QCD models.  QCD 
+interactions that exchanged momentum $Q^{2} \gtrsim \mu_{F}^{2}$ are simulated using perturbative QCD \cite{qcdFactorizationTheory}.  
+Neither $\mu_{R}$ nor $\mu_{F}$ are extracted from experimental data or simulations, and no uncertainties are assigned to either 
+parameter.  Variations of $\mu_{R}$ or $\mu_{F}$ affect the simulated cross section, and therefore the signal and \DY 
+predictions.  The signal and \DY prediction uncertainties due to variations in $\mu_{R}$ and $\mu_{F}$ were estimated by 
+simulating each event 8 different times, each time increasing or decreasing one or both parameters by a factor of 2.  Then, the 
+change in cross section was propagated to the weight of each event.  The maximum change in the total weight of all selected events 
+relative to the standard $\mu_{R}$ and $\mu_{F}$ values was taken as an uncertainty on the prediction.  The uncertainties on the 
+signal and \DY predictions were below 3\%.
 
-The \WR and \DY events were normalized to the measured integrated luminosity of data using the \WR and \DY cross sections 
-calculated in simulations.  The uncertainty on the integrated luminosity measurement in data lead to a 2.7\% uncertainty on the 
-number of \WR and \DY events in every $\Mlljj$ window.
+These uncertainties on the signal and \DY predictions were included in limit calculations using log-normal distributions for the 
+marginal posterior distributions.
 
-The efficiency in data to reconstruct an interaction as a vertex could not be measured exactly, so an analytic 
-function was used to approximate this efficiency.  This function was used to derive the pileup weights\footnote{The pileup 
-weights were equal to the pileup distribution in data divided by the pileup distribution in simulated events} $w_{PU}$ applied 
-to simulated events, and the uncertainties in this function's parameters lead to an uncertainty in $w_{PU}$.  The $w_{PU}$ uncertainty 
-was estimated by first shifting the pileup distribution in data without changing its shape so that the mean pileup value increased 
-or decreased by 5\%.  After the upward and downward shifts new pileup weights $w_{PU,\Uparrow}$ and $w_{PU,\Downarrow}$ were 
-calculated.  Using selected events the $w_{PU}$ uncertainty was calculated as the largest difference in the total weight of 
-all events between the original weights $w_{PU}$ and either of the new sets of weights $w_{PU,\Uparrow}$ or $w_{PU,\Downarrow}$.  
-For \DY and \WR the pileup uncertainty was 3\% or less in all $\Mlljj$ windows.
-
-\DY and \WR events were simulated using:
-\begin{itemize}
-	\item One parton distribution function (PDF) that described how momenta were distributed amongst quark and 
-		gluon constituents of colliding protons.  \WR simulations used NNPDF23 \cite{nnpdf23}, \DY simulations 
-		used NNPDF30 \cite{nnpdf30}, and both PDFs were parameterized by functions with fixed value coefficients with uncertainties.
-	\item One renormalization scale value $\mu_{R}$ (in $\GeV$) that determined the QCD coupling strength $\alpha_{QCD}$.
-	\item One factorization scale value $\mu_{F}$ (in $\GeV$), which allowed QCD interactions with low momentum transfer 
-		$k_{low} \ll \mu_{F}$ to be simulated independently of QCD interactions with high momentum transfer 
-		$k_{high} \sim \mu_{F}$ (explained further in \cite{qcdFactorizationTheory}).
-\end{itemize}
-The effect of PDF uncertainties, and $\mu_{R}$ and $\mu_{F}$ (QCD scale) uncertainties were estimated by resimulating \DY and 
-\WR events with different PDF coefficients and QCD scale values, and subsequently reapplying all event corrections and 
-selections.  The QCD scales were independently increased or decreased by a factor of 2 (both were doubled, one was not changed 
-while the other was halved, etc), and the QCD scale uncertainty was calculated as the maximum change in selected events between 
-the original scales and any other scales.  Similarly, the PDF coefficients were increased and decreased independently to test 
-$\sim$300 different sets of PDF coefficients, and the PDF uncertainty was calculated as the average change in the number of events 
-between the original PDF coefficients and any other set of coefficients.  In \DY events the QCD scale uncertainty added in 
-quadrature with the PDF uncertainty never exceeded 4\% in any $\Mlljj$ window.  The same procedures were used to estimate the QCD 
-scale and PDF uncertainties in \WR events.  There the QCD scale uncertainty never exceeded 5\% for any \mWR hypothesis, but the 
-PDF uncertainty increased with from 1\% to 15\% as \mWR increased from 0.8 to 4 $\TeV$, as shown in Table \ref{tab:wrPdfAndQCDscaleUnc}.  
-Following CMS guidelines, the \WR PDF uncertainty was factored into two parts: one part that affected the \WR production rate, 
-and another part that affected the $(\eta,\phi)$ trajectories of final state leptons and jets.  The PDF uncertainty affecting 
-$(\eta,\phi)$ was included in limit calculations, and was $\lesssim$ 1\% for all \mWR hypotheses.  The remaining PDF uncertainty, 
-which grew with \mWR, varied with the specific LRS model realization being tested, so it was not included in limit calculations.
-
-These simulated event uncertainties were included in limit calculations using log-normal distributions for the marginal posterior 
-distributions.
-
-\begin{table}[ht]
-	\caption{The uncertainty ($\Delta$) in the number of \WR events ($\Nlljj$) due to PDF and QCD scale uncertainties.}
-  \label{tab:wrPdfAndQCDscaleUnc}
-  \centering
-    \begin{tabular}{c|c|c}
-		\mWR ($\GeV$)             & $\Delta(\Neejj)$ (\%) & $\Delta(\Nmumujj)$ (\%)  \\
-      \hline
-	  1000  & $4$ & $4$ \\
-	  2200 & $7$ & $7$ \\
-	  3000 & $15$ & $15$ \\
-	  4000 & $18$ & $19$ \\
-	  \hline
-  \end{tabular}
-\end{table}
+%\begin{table}[ht]
+%	\caption{The uncertainty ($\Delta$) in the number of \WR events ($\Nlljj$) due to PDF and QCD scale uncertainties.}
+%  \label{tab:wrPdfAndQCDscaleUnc}
+%  \centering
+%    \begin{tabular}{c|c|c}
+%		\mWR ($\GeV$)             & $\Delta(\Neejj)$ (\%) & $\Delta(\Nmumujj)$ (\%)  \\
+%      \hline
+%	  1000  & $4$ & $4$ \\
+%	  2200 & $7$ & $7$ \\
+%	  3000 & $15$ & $15$ \\
+%	  4000 & $18$ & $19$ \\
+%	  \hline
+%  \end{tabular}
+%\end{table}
 
 \subsection{Cumulative Uncertainty}
 \label{sec:cumulativeUnc}
@@ -386,6 +377,9 @@ uncertainties, and the magnitudes of all systematic uncertainties are summed in 
 was the 40\% uncertainty assigned based on disagreement between data and simulated ST backgrounds in a control region where good 
 agreement was expected.  The dominant top quark background uncertainty was the statistical uncertainty, as fewer than 500 $e\mu$ data 
 events passed the full selection with $\Mlljj > 600$ $\GeV$.
+
+%RESUME HERE
+
 
 \begin{table}[htp]
 	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of \WR signal and background events in each $\Mlljj$ window, and 
