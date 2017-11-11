@@ -470,17 +470,20 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 	\end{tabular}}
 \end{table}
 
-\begin{figure}[btp]
+\begin{figure}
 	\centering
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
-	}
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_MuMuChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
-	}
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/Mlljj_2012Bins_MWR3000Signal_SignalRegion_MuMuChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_WithUnblindedData_withRatio_log.pdf}
+	\end{subfigure}
+	\caption{The $\Mlljj$ distributions found in data, and predicted in \WR and background events.  The $ee$-channel is 
+	on the left, and the $\mu\mu$-channel is on the right.}
 	\label{fig:obsAndExpMlljj}
-	\caption{The $\Mlljj$ distributions after selections found in data, \WR simulations, and expected backgrounds.  The $ee$ ($\mu\mu$) 
-		channel is shown on the left (right).}
 \end{figure}
 
 Using the signal and background predictions, and the data observations listed in Table \ref{tab:expAndObsEvtsWithAllUncs}, upper limits 
@@ -488,17 +491,20 @@ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% 
 were calculated using the data and signal and background predictions, and expected upper limits were calculated only using the signal 
 and background predictions.  The expected and observed limits as a function of \mWR are shown in Figure \ref{fig:oneDimLimits}.  
 
-\begin{figure}[btp]
+\begin{figure}
 	\centering
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/limWReejj_SHv19700toysAprilTwentyThree.png}
-	}
-	\subfigure{
-		\includegraphics[width=0.65\textwidth]{figures/limWRmumujj_SHv19700toysAprilTwentyThree.png}
-	}
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/limWReejj_SHv19700toysAprilTwentyThree.png}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/limWRmumujj_SHv19700toysAprilTwentyThree.png}
+	\end{subfigure}
+	\caption{The expected and observed limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL versus the \mWR 
+		hypothesis.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on the right.}
 	\label{fig:oneDimLimits}
-	\caption{Limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ at 95\% CL versus \mWR hypothesis.  The $ee$ ($\mu\mu$) channel 
-	is shown on the left (right).}
 \end{figure}
 
 The observed limit did not exceed the expected limit in any $\Mlljj$ window by more than 2$\sigma$, so the observed and expected limits 
@@ -516,44 +522,47 @@ into a limit at $(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$.
 The signal selection efficiency $\chi$ versus \mnul and \mWR was calculated using additional $\WR \rightarrow \ell\ell jj$ samples, 
 which were simulated through the first simulation step (Chapter \ref{sec:MC}) and without pileup.  These samples were produced with 
 \mWR increasing from 800 to 4000 $\GeV$ in 100 $\GeV$ steps.  At each \mWR value, samples were produced with at least 20 different 
-\mnul values between 100 $\GeV$ and \mWR.  
+\mnul values between 100 $\GeV$ and \mWR.  In each event, leptons and partons produced in the \WR decay were used in place of 
+reconstructed leptons and jets.  Then, the offline kinematic selection criteria without ID requirements were applied to leptons and 
+partons.  At each $(\mWR,\mnul)$ point, the signal selection efficiency $\chi^'$ was calculated as the fraction of simulated events 
+that passed the selection criteria.  Then, $\chi^'$ and Equation \ref{eq:limitExtrapolation} were used to extrapolate 
+the cross section limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for $\mnul \neq \frac{1}{2}\mWR$.  At each 
+$(\mWR,\mnul)$ point, the new limit $L'$ was divided by $\sigma(\WR)$.  The points where $L'$ and $\sigma(\WR)$ are equal (Figure 
+\ref{fig:twoDimLimits}) represent the 95\% CL exclusion limit on \mnul and \mWR.
 
-.  Similar to reconstructed jets, jets from \PYTHIA were clustered from 
-individual hadrons, leptons and photons in a cone of radius $\Delta R =$ 0.4.  After jet clustering, the offline selection was 
-applied, excluding lepton and jet ID selections.  The efficiency of this selection $\chi^'$ was measured as a function of 
-$(\mWR, \mnul)$, and used in place of $\chi$.  Then, $\chi^'$ and Equation \ref{eq:limitExtrapolation} were used to extrapolate 
-the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for 
-$\mnul \neq \frac{1}{2}\mWR$.  The resulting $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits were rescaled by $\sigma(\WR)$ 
-for $\mnul \neq \frac{1}{2}\mWR$ to obtain the \mnul and \mWR exclusion limits at 95\% CL shown in Figure \ref{fig:twoDimLimits}.
-
-%RESUME HERE
-
-\begin{figure}[tp]
-  \centering
-  
-  \subfigure{
-    \includegraphics[width=0.65\textwidth]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
-  }
-  \subfigure{
-    \includegraphics[width=0.65\textwidth]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
-  }
-  \caption{The exclusion limits on \mWR and \mnul at 95\% CL for $\WR \rightarrow eejj$ (left) and $\WR \rightarrow \mu\mu jj$ (right).}
-  \label{fig:twoDimLimits}
- 
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+	\end{subfigure}
+	\caption{The exclusion limits on \mWR and \mnul at 95\% CL.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on 
+	the right.}
+	\label{fig:twoDimLimits}
 \end{figure}
 
 The difference between the selection efficiencies $\chi^'$, without reconstruction, and $\chi$ was estimated by simulating 
-$\WR \rightarrow \ell\ell jj$ at $\mWR =$ 2400 and 4000 $\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$ with detector 
-response simulations and particle reconstruction, and calculating limits with these events.  Simulated events were selected with the online and offline selection 
-requirements, and the limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at each 
-$(\mWR, \mnul \neq \frac{1}{2}\mWR)$ point.  For $\mnul \gtrsim \frac{1}{8}\mWR$, $L_{true}$ and $L'$ were consistent 
-within their uncertainties.  For $\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ was stronger than $L'$ because of 
-pileup jets.  $L_{true}$ was calculated using simulated events that included pileup interactions, on average 10 per event, that 
-produced pileup jets, which enabled more \WR events to pass the full selection.  The resulting increase in signal selection 
-efficiency $\chi$ extended the excluded \WR production region to lower \mnul values.  Although $\chi > \chi^'$ in this region, 
-both signal selection efficiencies were below 10\%, and at every \mWR value the difference in the lowest excluded \mnul between 
-$L_{true}$ and $L'$ was less than 100 $\GeV$.  The extrapolated limit $L'$ represented the result, and no correction was applied 
-to it because $L'$ was weaker than $L_{true}$.
+pileup, the detector response and particle reconstruction in $\WR \rightarrow \ell\ell jj$ events that had $\mWR =$ 2400 and 4000 
+$\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$.  The full online and offline selection criteria was applied to these events, and 
+selected events were used to calculate the limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  For events 
+that had $\mnul \gtrsim \frac{1}{8}\mWR$, $L_{true}$ and $L'$ were consistent within their uncertainties.  For events that had 
+$\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ was stronger than $L'$ because of jets that were reconstructed from pileup 
+interactions.  The simulated events used to calculate $L_{true}$ had an average of 10 pileup interactions, some of which produced 
+jets that were reconstructed and passed the selection criteria.  The increased jet production resulted in a larger signal selection 
+efficiency $\chi$ relative to $\chi^'$ in events that had $\mnul \lesssim \frac{1}{8}\mWR$.  However, in those events the difference 
+between $L_{true}$ and $L'$ was small, below 100 $\GeV$, relative to the total range of excluded \mnul values.  Therefore, the 
+extrapolated limit $L'$ represented the result, and no correction was applied to it because $L'$ was weaker than $L_{true}$.
+
+\section{Results Summary}
+The $\Mlljj$ distributions were divided into finite width $\Mlljj$ windows linked to specific \mWR hypotheses.  In each window the 
+signal and background predictions and their uncertainties were compared to the data, and no statistically significant excess of 
+data above the background was found.  Cross section $\times$ branching ratio limits on $\WR \rightarrow \ell\ell jj$ were calculated 
+at 95\% CL for $\mnul = \frac{1}{2}\mWR$, and transformed into exclusion limits on \mWR and \mnul.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
