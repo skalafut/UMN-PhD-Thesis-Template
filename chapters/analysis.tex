@@ -176,8 +176,8 @@ background, which falls rapidly with increasing $\Mlljj$.
 In each window, the observed limit, using data, and the expected limit were calculated with all systematic and statistical 
 uncertainties included.  The dominant uncertainties were the 40\% $\DY$+jets uncertainty, the lepton and jet energy 
 uncertainties, and the top quark background statistical uncertainty.  The magnitudes of these uncertainties and all 
-others that affected the number of predicted signal and background events were calculated in each $\Mlljj$ window using the 
-procedures described here.  The uncertainty magnitude is the same for all $\Mlljj$ windows unless noted otherwise.
+others were calculated in each $\Mlljj$ window using the procedures described here.  The uncertainty magnitudes are the same 
+for all $\Mlljj$ windows unless noted otherwise.
 
 \subsection{Energy and Lepton Identification Uncertainties}
 \label{sec:enrgyLeptIdUncs}
@@ -371,19 +371,13 @@ marginal posterior distributions.
 
 \subsection{Cumulative Uncertainty}
 \label{sec:cumulativeUnc}
-The cumulative effect of all uncertainties on the number of ST background and \WR signal events in several $\Mlljj$ windows is 
-shown in Table \ref{tab:expectedEventsAndAllUncs}.  All uncertainties excluding the statistical uncertainty are labeled as systematic 
-uncertainties, and the magnitudes of all systematic uncertainties are summed in quadrature.  The dominant \DY background uncertainty 
-was the 40\% uncertainty assigned based on disagreement between data and simulated ST backgrounds in a control region where good 
-agreement was expected.  The dominant top quark background uncertainty was the statistical uncertainty, as fewer than 500 $e\mu$ data 
-events passed the full selection with $\Mlljj > 600$ $\GeV$.
-
-%RESUME HERE
-
+The signal and background predictions, and their total uncertainties are listed in Table \ref{tab:expectedEventsAndAllUncs}.  The 
+magnitudes of all uncertainties excluding the statistical uncertainty are summed in quadrature, and are listed as the systematic 
+uncertainty.
 
 \begin{table}[htp]
-	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of \WR signal and background events in each $\Mlljj$ window, and 
-	their statistical and systematic uncertainties.  Each uncertainty is listed as a number of events relative to the expected number of events. BG = Backgrounds, DY = \DY }
+	\caption{The predicted number of signal ($\mnul = \frac{1}{2}\mWR$) and background events, and the prediction uncertainties in 
+		several $\Mlljj$ windows.  The uncertainties are expressed in number of events. BG = Total Background, DY = \DY }
 	\label{tab:expectedEventsAndAllUncs}
 	\centering
 	\resizebox{1\textwidth}{3.1cm}{\begin{tabular}{|c|c|c|c|c|}
@@ -408,16 +402,14 @@ events passed the full selection with $\Mlljj > 600$ $\GeV$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:searchResults}
-Evidence of LRS models was searched for by comparing selected events in data to ST backgrounds and \WR signals.  Initial 
-results were obtained by comparing the $\Meejj$ and $\Mmumujj$ distributions between data and ST backgrounds with 
-(Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) the $\Mlljj$ window cuts.  
-No statistically significant excess was found in data relative to backgrounds, so limits on 
+The $\Meejj$ and $\Mmumujj$ distributions found in data events were compared to those in predicted background events, initially with 
+(Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) $\Mlljj$ window selection criteria.  No 
+statistically significant excess of data events relative to the background was found, so limits on 
 $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 
 \begin{table}[htp]
-	\caption{For \mWR hypotheses with $M_{\nul} = \frac{1}{2} \mWR$, these are the number of signal and background 
-		events in each $\Mlljj$ window, and their uncertainties.  Each uncertainty is shown as a number of events. 
-	BG = All Backgrounds, DY = \DY }
+	\caption{The predicted number of signal ($\mnul = \frac{1}{2}\mWR$) and background events, their uncertainties, and the number of 
+		data events. BG = Total Background, DY = \DY }
 	\label{tab:expAndObsEvtsWithAllUncs}
 	\centering
 	\resizebox{1\textwidth}{9cm}{\begin{tabular}{|c|c|c|c|c|c|}
@@ -491,12 +483,10 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 		channel is shown on the left (right).}
 \end{figure}
 
-Upper limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window 
-assuming $\mnul = \frac{1}{2}\mWR$.  Expected limits were calculated by setting the measured number of events $\Nlljj$ 
-equal to the number of ST background events, and observed limits were calculated by setting $\Nlljj$ equal to the number 
-of events found in data.  The expected and observed limits as functions of \mWR are shown in Figure \ref{fig:oneDimLimits}.  
-Subsequently, the expected and observed cross section limits for $\mnul = \frac{1}{2}\mWR$ were extrapolated into \mnul 
-and \mWR exclusion limits.
+Using the signal and background predictions, and the data observations listed in Table \ref{tab:expAndObsEvtsWithAllUncs}, upper limits 
+on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window.  Observed upper limits 
+were calculated using the data and signal and background predictions, and expected upper limits were calculated only using the signal 
+and background predictions.  The expected and observed limits as a function of \mWR are shown in Figure \ref{fig:oneDimLimits}.  
 
 \begin{figure}[btp]
 	\centering
@@ -511,37 +501,32 @@ and \mWR exclusion limits.
 	is shown on the left (right).}
 \end{figure}
 
-The limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ for any \mnul were linearly proportional to the signal 
-efficiency $\chi$ of the event selection multiplied by the \WR cross section $\sigma(\WR)$, $\chi \times \sigma(\WR)$.  
-Since the estimated background was only sensitive to the \mWR hypothesis, the limits at two points with the same \mWR but 
-different \mnul only differed by the ratio of $\chi \times \sigma(\WR)$ at the points.  Since the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ 
-limit was known at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$, the limit at any other point $(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$ 
-could be calculated as:
+The observed limit did not exceed the expected limit in any $\Mlljj$ window by more than 2$\sigma$, so the observed and expected limits 
+were extrapolated into \mnul and \mWR exclusion limits.  The cross section limits for any \mnul are linearly proportional to the signal 
+efficiency $\chi$ of the event selection criteria multiplied by the \WR cross section $\sigma(\WR)$: $\chi \times \sigma(\WR)$.  Since 
+the background prediction at a given \mWR value is independent of all \mnul values, the cross section limit at two $(\mWR,\mnul)$ points 
+with the same \mWR but different \mnul were related by the ratio of $\chi \times \sigma(\WR)$ at the points.  Using this relationship 
+(Equation \ref{eq:limitExtrapolation}), the known cross section limit at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$ was transformed 
+into a limit at $(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$.
 
 \begin{equation}
 	Limit[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})] = \frac{\chi[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})]}{\chi[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]} \quad Limit[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]
 \label{eq:limitExtrapolation}
 \end{equation}
-The dependence of $\chi$ on \mnul and \mWR was estimated by simulating additional $\WR \rightarrow \ell\ell jj$ samples with 
-\mWR increasing from 800 to 4000 $\GeV$ in 100 $\GeV$ steps.  At each \mWR value, at least 20 samples were produced with 
-different \mnul values between 0 $\GeV$ and \mWR.  
-%in steps of:
-%\begin{itemize}
-%	\item 25 $\GeV$ from 0 to 300 $\GeV$,
-%	\item 100 $\GeV$ from 300 to $\mWR - 200$ $\GeV$,
-%	\item 25 $\GeV$ from $\mWR - 200$ to \mWR $\GeV$
-%\end{itemize}
-%Smaller steps were used in regions where $\chi$ had a strong dependence on \mnul.
-The standard full simulation and reconstruction used to produce \WR samples with $\mnul = \frac{1}{2}\mWR$ required enormous 
-computational resources that were not available for the limit extrapolation procedure described here.  Instead, additional \WR 
-simulations were produced using only the first simulation step.  \PYTHIA simulated the \WR production and decay into leptons 
-and quarks, and the hadronization of quarks into jets.  Similar to reconstructed jets, jets from \PYTHIA were clustered from 
+The signal selection efficiency $\chi$ versus \mnul and \mWR was calculated using additional $\WR \rightarrow \ell\ell jj$ samples, 
+which were simulated through the first simulation step (Chapter \ref{sec:MC}) and without pileup.  These samples were produced with 
+\mWR increasing from 800 to 4000 $\GeV$ in 100 $\GeV$ steps.  At each \mWR value, samples were produced with at least 20 different 
+\mnul values between 100 $\GeV$ and \mWR.  
+
+.  Similar to reconstructed jets, jets from \PYTHIA were clustered from 
 individual hadrons, leptons and photons in a cone of radius $\Delta R =$ 0.4.  After jet clustering, the offline selection was 
 applied, excluding lepton and jet ID selections.  The efficiency of this selection $\chi^'$ was measured as a function of 
 $(\mWR, \mnul)$, and used in place of $\chi$.  Then, $\chi^'$ and Equation \ref{eq:limitExtrapolation} were used to extrapolate 
 the $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for 
 $\mnul \neq \frac{1}{2}\mWR$.  The resulting $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ limits were rescaled by $\sigma(\WR)$ 
 for $\mnul \neq \frac{1}{2}\mWR$ to obtain the \mnul and \mWR exclusion limits at 95\% CL shown in Figure \ref{fig:twoDimLimits}.
+
+%RESUME HERE
 
 \begin{figure}[tp]
   \centering
