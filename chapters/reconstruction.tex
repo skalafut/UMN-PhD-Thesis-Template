@@ -5,13 +5,21 @@
 \label{sec:reco_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Electrons, muons and jets expected from \WR and \nul decays traverse multiple CMS sub-detectors, as shown in 
-Figure \ref{fig:particleTrajectories}.  Their trajectories and energies were measured from charged particle tracks 
-reconstructed by the silicon tracker and muon detectors, and energy deposits reconstructed by the calorimeters.  The 
-high energy of expected leptons and jets motivated the use of specific lepton and jet reconstruction algorithms 
-described here.  These algorithms combine measurements from multiple CMS sub-detectors to measure the trajectory 
-and energy of each particle with optimal resolution.  For charged particles, initial energy and trajectory 
-measurements are made using tracks reconstructed from signals measured in the silicon tracker.
+\WR decays produce electrons, muons, and jets that generate signals in multiple sub-detectors (Figure 
+\ref{fig:particleTrajectories}).  During collisions, events are selected using electron and muon triggers that fire in more 
+than 90\% of simulated \WR events.  Using offline reconstruction algorithms, the signals of leptons and jets in the tracker and 
+muon detectors are reconstructed as curved tracks and interaction vertices, and their signals in the calorimeters are 
+reconstructed as energy clusters.  Then the reconstruction algorithms search for silicon tracker tracks that extrapolate to a 
+small $\eta,\phi$ distance within calorimeter energy clusters or muon detector tracks.  Matching pairs are identified as electrons 
+(track-ECAL), charged hadrons (track-HCAL), and muons (track-muon detector track); energy clusters that do not match silicon 
+tracker tracks are identified as photons (ECAL) and neutral hadrons (HCAL).  Jets are then reconstructed from individual leptons 
+and hadrons.  Following offline reconstruction, events are required to have at least two leptons and jets that pass identification 
+(ID) and kinematic selection criteria.  The ID selection criteria require that the leptons and jets are reconstructed from high 
+quality signals, which are consistent with real leptons and jets.  The kinematic selection criteria were developed based on the 
+kinematic properties - $\pt$, di-lepton mass, and di-lepton $\plus$ di-jet mass - of leptons and jets produced in \WR decays.
+
+The reconstruction algorithms, lepton triggers, and offline ID and kinematic selection criteria are described here.  The 
+reconstruction algorithms are used in the lepton triggers and in offline event reconstruction, so they are described first.
 
 \begin{figure}[h]
 	\centering
@@ -48,6 +56,7 @@ is described by a sum of Gaussians.  In addition, the Kalman filter used to link
 signals have $\chi^{2} <$ 2000.  The electron track algorithm reconstructed electrons that had $\pt > 20$ $\GeV$ and $|\eta| < 2.5$ 
 as tracks with 97\% or better efficiency \cite{gsfPerformanceInCollisions}.
 
+%RESUME HERE
 
 \section{Energy Reconstruction}
 \label{sec:enrgReco}
