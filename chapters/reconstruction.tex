@@ -650,8 +650,8 @@ decreases and as \mWR increases.  Based on the high expected value of \mWR, the 
 mass window of $60 < \Mll < 120$ $\GeV$ to reduce a significant background.  However, the $\Mll$ requirement cannot be too high, otherwise 
 the sensitivity to signal hypotheses with $\mnul/\mWR \sim$1 will decrease dramatically (Figure \ref{fig:wrMllVarMNu}).  Knowing that the 
 \DY and diboson backgrounds decrease rapidly with increasing $\Mll$, each event was required to have two leptons that had $\Mll > 200$ 
-$\GeV$.  After comparing this threshold to a 180 $\GeV$ threshold (Table \ref{tab:lowerMllCut}), the 200 $\GeV$ selection was not reduced 
-because it would increase the background without a corresponding increase in the signal.
+$\GeV$.  A lower threshold was not used because it would increase the background without a corresponding increase in the signal (Table 
+\ref{tab:lowerMllCut}).
 
 \begin{equation}
 	\Mll = \sqrt{2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))}
@@ -691,13 +691,24 @@ Applying the previous selection criteria to ST background events resulted in a $
 	\label{fig:sculptedMlljj}
 \end{figure}
 
-The offline kinematic selection criteria are summarized in Table \ref{tab:offlineKinemSel}.  At a given \mWR the kinematic effects 
-that lower the signal selection efficiency for $\mnul/\mWR \sim$ 0 or 1 are minimized or nearly minimized for $\mnul/\mWR = \frac{1}{2}$ 
-(Figure \ref{fig:wrOffSelEffVarMWrMNu}).  For this reason, simulated signal events with $\mnul/\mWR = \frac{1}{2}$ were used to 
-estimate the signal selection efficiency versus \mWR.  The net efficiency of online and offline selection criteria versus \mWR (Figure 
-\ref{fig:wrRecoSelectionEff}) exceeded 50\% in the $ee$-channel, and 70\% in the $\mu\mu$-channel.  The efficiency was lower in the 
-$ee$-channel due to the ECAL gap in electron detection for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID selection criteria 
-applied to electrons relative to muons.
+The offline kinematic selection criteria (Table \ref{tab:offlineKinemSel}) were developed to select at least 30\% of $\ell\ell jj$ events 
+produced by signals that cover a large range of \mWR and \mnul values.  The efficiency of the full online and offline (ID and kinematic) 
+selection criteria in selecting signal events was estimated by simulating $pp \rightarrow \WR \rightarrow \ell\ell jj$ interactions, and 
+applying the selection criteria to those events.  The \PYTHIA \MC generator implements a flexible, generic \WR signal model that captures the 
+main characteristics of theoretical models discussed in the literature 
+\cite{earlyLRSModel,lrsHiggsStageOne,lrsHiggsStageTwo,seeSawAndParityViolation,seeSawAndGUTs,lrsMassConstraints}, so \PYTHIA was used to 
+simulate $\WR \rightarrow \ell\ell jj$ events with different \mWR and \mnul.  The trigger efficiency, offline ID and kinematic selection 
+efficiency was calculated using 50000 event datasets produced with $\mnul = \frac{1}{2}\mwr$ and \mWR stepping from 0.8 to 6.0 $\TeV$ in 
+increments of 0.2 $\TeV$.  At a given \mWR, only the offline kinematic selection efficiency varied by more than a few percent over the 
+entire \mnul range.  The variation in the offline kinematic selection efficiency versus \mnul was calculated using 10000 event datasets 
+produced with \mWR increasing from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and \mnul increasing from 100 $\GeV$ to \mWR in 
+increments of 0.1 $\TeV$ or less, depending on \mWR.  The total trigger, offline ID and kinematic selection efficiency (Figure 
+\ref{fig:wrRecoSelectionEff}) exceeded 50\% in the $ee$-channel, and 70\% in the $\mu\mu$-channel.  The efficiency is lower in the $ee$-
+channel due to the gap in ECAL coverage for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID criteria applied to electrons 
+relative to muons.  The difference between the maximum and minimum offline kinematic selection efficiency versus \mnul (Figure 
+\ref{fig:wrOffSelEffVarMWrMNu}) increases with \mWR: 30\% for $\mWR \leq 1.3$ $\TeV$, 70\% for $\mWR \geq 2.5$ $\TeV$.  For a specific 
+\mWR, the offline kinematic selection efficiency is maximized or nearly so for $\mnul = \frac{1}{2}\mWR$.
+
 
 \begin{table}[h]
 	\caption{The kinematic selection criteria applied to reconstructed leptons and jets that passed the offline identification 
@@ -705,7 +716,7 @@ applied to electrons relative to muons.
 	\label{tab:offlineKinemSel}
 	\centering
 	\begin{tabular}{c|c}
-		requirement on & threshold  \\  \hline
+		parameter & threshold  \\  \hline
 		lead jet $\pt,\eta$ & $\pt>40\GeV,|\eta|<2.4$ \\
 		sublead jet $\pt,\eta$ & $\pt>40\GeV,|\eta|<2.4$ \\
 		lead $\ell$ $\pt,\eta$ & $\pt>60\GeV,|\eta|<2.4$ \\
@@ -730,7 +741,7 @@ applied to electrons relative to muons.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/genWrMuMuAccEff_NoMassWindows13TeV.png}
-	\caption{The offline kinematic selection efficiency (\%) in signal events as a function of \mWR and \mnul.}
+	\caption{The offline kinematic selection efficiency (\%) in $\WR \rightarrow \ell\ell jj$ events as a function of \mWR and \mnul.}
 	\label{fig:wrOffSelEffVarMWrMNu}
 \end{figure}
 
