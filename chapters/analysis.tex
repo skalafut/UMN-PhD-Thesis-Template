@@ -489,8 +489,8 @@ Using the signal and background predictions, and the observed number of data eve
 limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window.  Observed upper limits 
 were calculated using the data and signal and background predictions, and expected upper limits were calculated using the signal and 
 background predictions.  The observed limit never exceeds the expected limit (Figure \ref{fig:oneDimLimits}) by more than one standard deviation.  
-For $\mnul = \frac{1}{2}\mWR$, the data excludes \WR production for $\mWR < 3.2$ $\TeV$ in the $ee$-channel, and $\mWR < 3.4$ $\TeV$ in the 
-$\mu\mu$-channel.
+For $\mnul = \frac{1}{2}\mWR$, the data excludes \WR production at 95\% CL for $\mWR < 3.2$ $\TeV$ in the $ee$-channel, and $\mWR < 3.4$ $\TeV$ 
+in the $\mu\mu$-channel.
 
 \begin{figure}
 	\centering
@@ -514,10 +514,10 @@ efficiency $\chi$ of the event selection criteria multiplied by the \WR cross se
 the background prediction at a given \mWR value is the same for all \mnul, the cross section limit at two $(\mWR,\mnul)$ points 
 with the same \mWR but different \mnul are related by the ratio of $\chi \times \sigma(\WR)$ at the points.  Using this relationship, 
 the known cross section limit at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$ was transformed into a limit at 
-$(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$ using Equation \ref{eq:limitExtrapolation}.
+$(\mWR^{a}, \mnul^{b} \neq \mnul^{a})$ using Equation \ref{eq:limitExtrapolation}.
 
 \begin{equation}
-	Limit[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})] = \frac{\chi[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})]}{\chi[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]} \quad Limit[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]
+	Limit[(\mWR^{a}, \mnul^{b} \neq \mnul^{a})] = \frac{\chi[(\mWR^{a}, \mnul^{b})]}{\chi[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]} \quad Limit[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]
 \label{eq:limitExtrapolation}
 \end{equation}
 The signal selection efficiency $\chi$ was calculated at different $(\mWR,\mnul)$ points using simulated signal events.  At a given 
@@ -526,19 +526,19 @@ more than a few percent.  Therefore, $\chi$ was approximated by the selection ef
 criteria.  $\chi^'$, whose variation with \mWR and \mnul is described in Chapter \ref{sec:offlineKinemSelCrit}, was used in Equation 
 \ref{eq:limitExtrapolation} to extrapolate the cross section limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for 
 $\mnul \neq \frac{1}{2}\mWR$.  Then, at each $(\mWR,\mnul)$ point the new limit $L'$ was divided by the cross section $\times$ branching 
-ratio $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  The points where $L'$ and the cross section $\times$ branching ratio are 
-equal (Figure \ref{fig:twoDimLimits}) are the extreme values of \mnul and \mWR that are excluded at 95\% CL.
+ratio.  The points where $L'$ and the cross section $\times$ branching ratio are equal (Figure \ref{fig:twoDimLimits}) are the extreme 
+values of \mnul and \mWR that are excluded at 95\% CL.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[t]{2.4in}
+	\begin{subfigure}[t]{2.2in}
 		\centering
-		\includegraphics[width=2.4in]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+		\includegraphics[width=2.2in]{figures/lim2dWReejj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
 	\end{subfigure}
 	\thickspace
-	\begin{subfigure}[t]{2.4in}
+	\begin{subfigure}[t]{2.2in}
 		\centering
-		\includegraphics[width=2.4in]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
+		\includegraphics[width=2.2in]{figures/lim2dWRmumujj_SHv19700toysAprilTwentyThree_exclusionOverlayWithExpPlusMinusOneSigma.png}
 	\end{subfigure}
 	\caption{The exclusion limits on \mWR and \mnul at 95\% CL.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on 
 	the right.}
@@ -555,14 +555,14 @@ $\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ is stronger than $L'$ bec
 events used to calculate $L_{true}$ had an average of 12 pileup interactions, some of which produced jets that were reconstructed and passed 
 the offline jet selection criteria.  As a result, the efficiency $\chi$ increased relative to $\chi^'$, and the lowest \mnul excluded 
 at 95\% CL was about 75 $\GeV$ lower for $L_{true}$ relative to $L'$.  The 75 $\GeV$ difference was small compared to the entire range of 
-\mnul excluded at 95\% CL, so no correction was applied to $\chi^'$, and $L'$ represents the result.
+\mnul excluded at 95\% CL, so no correction was applied to $\chi^'$, and $L'$ is the result.
 
 
 \section{Results Summary}
 The $\Mlljj$ distributions were divided into finite width $\Mlljj$ windows linked to specific \mWR hypotheses.  In each window the 
 signal and background predictions and their uncertainties were compared to the data, and no statistically significant excess of 
 data above the background was found.  Cross section $\times$ branching ratio limits on $\WR \rightarrow \ell\ell jj$ were calculated 
-at 95\% CL for $\mnul = \frac{1}{2}\mWR$, and transformed into exclusion limits on \mWR and \mnul for $\mnul \neq \frac{1}{2}\mWR$.
+at 95\% CL for $\mnul = \frac{1}{2}\mWR$, and transformed into exclusion limits on \mWR and \mnul.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
