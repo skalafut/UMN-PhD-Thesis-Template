@@ -1,18 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Uncertainties and Results:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Statistical Analysis, Uncertainties, and Results}
+\chapter{Results and their Uncertainties}
 \label{statAnalysis_uncerts_results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 After estimating the background, the $\Mlljj$ distributions found in the selected data and predicted background events 
 were compared.  The difference between the number of data and background events was compared to the background uncertainty, 
-the predicted number of simulated \WR events, and the \WR prediction uncertainty (simulation details in Appendix \ref{app_wrMC}).  
-The $\Mlljj$ distribution found in simulated \WR events was several hundred $\GeV$ wide or larger (Figure 
-\ref{fig:signalShapes}), so excesses of data events above the background can be consistent with several \mWR hypotheses.  
-A set of $\Mlljj$ windows, each tailored to the $\Mlljj$ distribution of a specific \mWR hypothesis, was used to interpret 
-the excesses of data in the context of different \mWR hypotheses.  The sizes of these windows, the uncertainties on 
-the number of signal and background events, and the results of the comparisons were determined using the procedures described 
-here.
+and the predicted number of simulated \WR events and its uncertainty.  Since different \mWR hypotheses resulted in $\Mlljj$ 
+distributions with different means and shapes (Figure \ref{fig:signalShapes}), comparisons were made in distinct windows (bins) 
+that were linked to specific \mWR hypotheses.  The sizes of these windows, the uncertainties on the number of signal and background 
+events, and the results of the comparisons were determined using the procedures described here.
 
 \begin{figure}
 	\centering
@@ -25,7 +22,7 @@ here.
 		\centering
 		\includegraphics[width=2.4in]{figures/Mlljj_signalRegionCuts_severalWrSignals_MuMu.pdf}
 	\end{subfigure}
-	\caption{The $\Mlljj$ distribution found in selected \WR events with different \mWR and \mnul.  The $ee$-channel is on the 
+	\caption{The $\Mlljj$ distributions found in selected \WR events with different \mWR and \mnul.  The $ee$-channel is on the 
 	left, and the $\mu\mu$-channel is on the right.}
 	\label{fig:signalShapes}
 \end{figure}
@@ -37,21 +34,21 @@ here.
 \section{Statistical Analysis}
 \label{sec:statAnalysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The number of $\Mlljj$ windows was chosen based on how the $\Mlljj$ distribution found in selected 
-simulated \WR events changed with \mWR and \mnul.  For a fixed \mWR, the shape of the $\Mlljj$ distribution found in signal 
-events is weakly dependent on \mnul (Figure \ref{fig:mWrShapeVsMNu}), only because the $\WR \rightarrow \ell\ell jj$ cross 
+The number of different $\Mlljj$ windows was chosen based on how the $\Mlljj$ distribution found in simulated \WR events 
+changed with \mWR and \mnul.  For a fixed \mWR, the shape of the $\Mlljj$ distribution found in signal 
+events is weakly dependent on \mnul (Figure \ref{fig:mWrShapeVsMNu}) because the $\WR \rightarrow \ell\ell jj$ cross 
 section $\times$ branching ratio varies weakly with \mnul.  Since the shape varies weakly with \mnul, one $\Mlljj$ window is 
-assigned per \mWR, independent of \mnul.  The $\Mlljj$ window size for a specific \mWR is determined using events that have 
+assigned per \mWR, and is used for all values of \mnul.  The $\Mlljj$ window size for a specific \mWR is determined using events that have 
 $\mnul = \frac{1}{2}\mWR$, because at this $\mnul$ the event selection efficiency is maximized or nearly maximized.  As \mWR 
-increases the $\Mlljj$ distribution shape shifts to higher values, and the distribution normalization 
-decreases with the \WR cross section $\times$ branching ratio.  However, for $X \geq 2.0$ $\TeV$, the $\Mlljj$ distributions 
+increases the $\Mlljj$ distribution mean shifts to higher values, the distribution width increases, and the distribution normalization 
+decreases with the \WR cross section $\times$ branching ratio.  For $X \geq 2.0$ $\TeV$, the $\Mlljj$ distributions 
 found in signal events that have $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ overlap by 10\% or more (Figure \ref{fig:mWrShapeVsMWr}).  
-The two $\Mlljj$ windows that are used for $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ are sensitive to signals that have 
-$X < \mWR < X + 0.2$ $\TeV$, so finer granularity in \mWR is not needed.  To cover the entire $\Mlljj$ spectrum found in the 
+Due to this overlap, the two $\Mlljj$ windows designed for $\mWR = X$ and $\mWR = X + 0.2$ $\TeV$ are also sensitive to signals 
+that have $X < \mWR < X + 0.2$ $\TeV$, and an additional window is not needed.  To cover the entire $\Mlljj$ spectrum found in the 
 data, one $\Mlljj$ window is assigned to each value of \mWR stepping from 0.8 to 6 $\TeV$ in increments of 0.2 $\TeV$.  The size 
 of each $\Mlljj$ window was determined based on the shape and normalization of the $\Mlljj$ distribution found in background 
 events.  Specifically, each window's size was chosen to maximize the difference between the number of signal and background 
-events, and thus minimize the upper limit on the \WR cross section $\times$ branching ratio.
+events, and thereby minimize the upper limit on the \WR cross section $\times$ branching ratio.
 
 \clearpage
 \begin{figure}[h]
@@ -76,7 +73,7 @@ events, and thus minimize the upper limit on the \WR cross section $\times$ bran
 The \WR cross section $\times$ branching ratio ($\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$) limits are calculated 
 using several quantities.  Each limit for a specific \mWR signal is calculated using the number of measured events $G$ and 
 predicted signal ($S$) and background ($B$) events in the $\Mlljj$ window, and their uncertainties $\delta S$ and $\delta B$.  
-Expected limits, calculated by setting $G = B$, were used to determine the sizes of the $\Mlljj$ bins.  Expected limits were 
+Expected limits, calculated by setting $G = B$, were used to determine the sizes of the $\Mlljj$ windows.  Expected limits were 
 calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
 
 \begin{equation}
@@ -105,8 +102,8 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
 \subsection{$\Mlljj$ Window Sizes}
 \label{sec:mlljjWindows}
 The sizes of the $\Mlljj$ windows were chosen to minimize the 95\% CL upper limit on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
-For each value of \mWR between 0.8 and 6 $\TeV$, the size of the corresponding window was determined using the following 
-procedure:
+For each value of \mWR between 0.8 and 6 $\TeV$ in increments of 0.2 $\TeV$, the size of the window was determined using the 
+following procedure:
 
 \begin{itemize}
 	\item 150 $\Mlljj$ windows of different sizes and central values were defined based on the peak position in the \WR $\Mlljj$ 
@@ -128,8 +125,8 @@ procedure:
 \end{itemize}
 
 The $\Mlljj$ windows, listed in Table \ref{tab:masscuts}, capture at least 70\% of the corresponding \WR $\Mlljj$ distribution.  
-The central value of each window ($\frac{max \plus min}{2}$) exceeds the corresponding \mWR value to minimize the predicted 
-background, which falls rapidly with increasing $\Mlljj$.
+The central value of each window ($\frac{max \plus min}{2}$) exceeds the corresponding \mWR value to reduce the background predicted 
+in the window, which falls rapidly with increasing $\Mlljj$.
 
 \clearpage
 \begin{table}[h]
@@ -180,7 +177,7 @@ uncertainties, and the top quark background statistical uncertainty.  The magnit
 others were calculated in each $\Mlljj$ window using the procedures described here.  The uncertainty magnitudes are the same 
 for all $\Mlljj$ windows unless noted otherwise.
 
-\subsection{Energy and Lepton Identification Uncertainties}
+\subsection{Energy and lepton identification Uncertainties}
 \label{sec:enrgyLeptIdUncs}
 The lepton and jet energy uncertainties are unique in that they are the only uncertainties that can change the shapes of 
 the $\Mlljj$ distributions found in signal and background events.  These uncertainties, specifically on the lepton and 
@@ -214,8 +211,8 @@ using the following procedure:
 This procedure was repeated 3200 times for every event used to predict the signal and background $\Mlljj$ distributions.  
 Then, a distribution was made showing the number of selected events in each window for all 3200 iterations (Figure 
 \ref{fig:effectOfEnergyIdUncerts}).  The distribution's standard deviation is the uncertainty on the number of predicted 
-events, and this uncertainty depended on the $\Mlljj$ window.  Increasing the \mWR hypothesis from 1.8 to 4.0 $\TeV$, the 
-uncertainty in each $\Mlljj$ window on the signal prediction was constant - 1\% in the $ee$-channel, and 3\% in the 
+events, and this uncertainty varied with the $\Mlljj$ window.  Increasing the \mWR hypothesis from 1.8 to 4.0 $\TeV$, the 
+uncertainty on the signal prediction in each window was constant - 1\% in the $ee$-channel, and 3\% in the 
 $\mu\mu$-channel.  In both channels over the same \mWR range the uncertainty on the \DY prediction increased from 10\% to 
 20\%, and the uncertainty on the top quark prediction increased from 14\% to 53\%.  These uncertainties were included in 
 limit calculations using Gamma distributions for the marginal posterior distributions.
@@ -255,14 +252,14 @@ of event i, and the sum ran over all events in a $\Mlljj$ window.  The $e\mu$ da
 background, all have a weight of 1.  The simulated \WR and $\DY$+jets event weights were normalized to the integrated 
 luminosity of the data, and as a result have positive weights less than 1.  The statistical uncertainty due to the number 
 of selected events was higher for the background prediction than the signal prediction, and the background uncertainty 
-depended on the $\Mlljj$ window.  Increasing the \mWR hypothesis from 1.8 to 4.0 $\TeV$, the uncertainty in each $\Mlljj$ 
-window on the signal prediction was 1\% in both channels.  In both channels over the same \mWR range the uncertainty on the \DY 
+varied with the $\Mlljj$ window.  Increasing the \mWR hypothesis from 1.8 to 4.0 $\TeV$, the uncertainty on the signal 
+prediction in each window was 1\% in both channels.  In both channels over the same \mWR range, the uncertainty on the \DY 
 prediction increased from 10\% to 13\%, and the uncertainty on the top quark prediction increased from 38\% to 100\%.  The 
 statistical uncertainty was the largest uncertainty on the top quark background prediction.  These uncertainties were included 
 in limit calculations using Gamma distributions for the marginal posterior distributions.
 
-No $e\mu$ data events were found in data with $\Memujj \geq 2700$ $\GeV$, so in $\Mlljj$ windows used for $\mWR \geq 3.6$ $\TeV$ 
-the top quark background prediction was 0 events.  In these mass windows the statistical uncertainty on the top quark prediction 
+No $e\mu$ data events were found in data with $\Memujj \geq 2700$ $\GeV$, so in the $\Mlljj$ windows used for $\mWR \geq 3.6$ $\TeV$ 
+the predicted top quark background was 0 events.  In these windows the statistical uncertainty on the top quark prediction 
 was set to 1 $e\mu$ event multiplied by the appropriate $\ell\ell:e\mu$ normalization factor - 0.659 or 0.432.
 
 %\begin{table}[ht]
@@ -280,27 +277,25 @@ was set to 1 $e\mu$ event multiplied by the appropriate $\ell\ell:e\mu$ normaliz
 %  \end{tabular}
 %\end{table}
 
-\subsection{Background Uncertainty from Control Regions}
+\subsection{Background Uncertainty from control regions}
 \label{sec:bkgndNormUnc}
-As discussed previously (Chapter \ref{sec:backgroundEstimation}), the shape of the $\Mlljj$ distribution found in simulated 
-background events in control regions motivated assigning additional uncertainties.  Based on the variation of 
-$\frac{\ell\ell}{e\mu}$ top quark events versus $\Mlljj$, a 10\% uncertainty was assigned to the top quark background prediction.  
-Based on the disagreement in the $\Mlljj$ distribution between data and and simulated $\DY$+jets events selected in the low 
-$\Mll$ control region, a 40\% uncertainty was assigned to the \DY background prediction.  This was the dominant uncertainty 
-on the \DY background prediction.  Both uncertainties were included in limit calculations using log-normal distributions for 
-the marginal posterior distributions.
+Based on fluctuations in the number of simulated top quark and $\DY$+jets events in control regions, additional uncertainties 
+were assigned to both background predictions.  A 10\% uncertainty was assigned to the top quark background prediction, and a 
+40\% uncertainty was assigned to the \DY background prediction.  This was the dominant uncertainty on the \DY background 
+prediction.  Both uncertainties were included in limit calculations using log-normal distributions for the marginal posterior 
+distributions.
 
-\subsection{Lepton Reconstruction and Trigger Efficiency Uncertainties}
+\subsection{Lepton efficiency Uncertainties}
 \label{sec:leptonRecoTriggerEffUnc}
-The efficiencies of lepton reconstruction algorithms and muon trigger selection criteria differed between data and simulated 
+The efficiencies of the lepton reconstruction algorithms and the muon trigger selection criteria differed between data and simulated 
 events, and these differences were corrected by applying $\sim$unity event weights to simulated events.  The uncertainties on 
-these weights affected the signal and \DY background predictions.  In the $\mu\mu$-channel, 
-the trigger and lepton reconstruction efficiency weights varied with the $\pt$ and $\eta$ of the selected muons, and their 
-uncertainties were statistical - based on the number of data and simulated events used to calculate the weights.  The uncertainty 
+these weights affected the signal and \DY background predictions.  In the $\mu\mu$-channel, the trigger and lepton reconstruction 
+efficiency weights varied with the $\pt$ and $\eta$ of the selected muons, and their uncertainties were statistical - based on the 
+number of data and simulated events used to calculate the weights.  The uncertainty 
 on the muon reconstruction weight was negligible.  For events triggered by muons that had $\pt < 140$ $\GeV$, the muon trigger 
-weight uncertainty resulted in an uncertainty below 0.5\% on the signal and \DY predictions.  For events triggered by higher $\pt$ 
-muons, when the triggering muon had $|\eta| < 2.1$ the prediction uncertainty was below 3\%, and for higher $|\eta|$ muons the 
-uncertainty was 5.1\%.  For events that passed the $ee$-channel criteria, an electron reconstruction efficiency weight of 0.982 
+uncertainty resulted in an uncertainty below 0.5\% on the signal and \DY predictions.  For events triggered by higher $\pt$ 
+muons, the prediction uncertainty was below 3\% if the triggering muon had $|\eta| < 2.1$; the uncertainty was 5.1\% for higher 
+$|\eta|$ muons.  For events that passed the $ee$-channel criteria, an electron reconstruction efficiency weight of 0.982 
 was applied to all selected electrons, and propagated into the weight of each event.  The reconstruction weight uncertainty, 
 calculated as the maximum difference between 0.982 and an $\Et,\eta$ dependent weight, resulted in a 2\% uncertainty on the 
 signal and \DY predictions.  The lepton reconstruction and trigger uncertainties were included in limit calculations using 
@@ -308,15 +303,15 @@ log-normal distributions for the marginal posterior distributions.
 
 \subsection{Cross Section, Luminosity, Pileup and PDF Weight Uncertainties}
 \label{sec:crossSxnPileupPdfUnc}
-Additional weights were applied to simulated \WR and $\DY$+jets events for several reasons.  The uncertainties on these weights 
-resulted in additional, albeit small, uncertainties to the signal and \DY background predictions.
+Additional weights were applied to simulated \WR and $\DY$+jets events for reasons explained previously.  The uncertainties on 
+these weights resulted in additional, small uncertainties on the signal and \DY background predictions.
 
 Simulated events were weighted by the integrated luminosity of data $\Ell$, the cross section $\sigma$, and the number of 
 simulated events $N_{evts}$: $\frac{\Ell \times \sigma}{N_{evts}}$.  The uncertainty on the integrated luminosity measurement 
-resulted in a 2.7\% uncertainty on the signal and \DY predictions.  The uncertainty on the \DY cross section resulted in a 
-2\% uncertainty on the \DY prediction in the $ee$-channel, and a 1\% uncertainty in the $\mu\mu$-channel.  The uncertainty on 
-the \WR cross section, calculated during simulations of \WR events, resulted in an uncertainty below 0.5\% on the signal 
-prediction for all values of \mWR.
+resulted in a 2.7\% uncertainty on the signal and \DY predictions.  The uncertainty on the \DY cross section, equivalent to 
+the difference between \DY \MC generators discussed in Chapter \ref{sec:dyNormInMlljj}, resulted in a 2\% uncertainty on the 
+\DY prediction in the $ee$-channel, and a 1\% uncertainty in the $\mu\mu$-channel.  The uncertainty on the \WR cross section, 
+calculated during simulations, resulted in an uncertainty below 0.5\% on the signal prediction for all values of \mWR.
 
 The efficiency to reconstruct an interaction as a vertex was known exactly in simulated events, but could only be estimated 
 to within $\sim$5\% uncertainty in data events.  As a result, there was an uncertainty on the number of pileup interactions 
@@ -340,7 +335,7 @@ uncertainty, that grew with \mWR, depended on unconstrained parameters of the LR
 calculations.
 
 
-In each simulated pp interaction the coupling $\alpha_{QCD}$ was calculated at the renormalization energy scale $\mu_{R}$, and 
+In each simulated pp interaction the coupling $\alpha_{QCD}$ was calculated at a renormalization energy scale $\mu_{R}$, and 
 QCD interactions were divided into two regions based on a factorization energy scale $\mu_{F}$.  QCD interactions that exchanged 
 momentum $Q^{2} \ll \mu_{F}^{2}$ are not perturbative in $\alpha_{QCD}$, and are simulated using low energy QCD models.  QCD 
 interactions that exchanged momentum $Q^{2} \gtrsim \mu_{F}^{2}$ are simulated using perturbative QCD \cite{qcdFactorizationTheory}.  
@@ -404,9 +399,9 @@ uncertainty.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:searchResults}
-The $\Meejj$ and $\Mmumujj$ distributions found in data events were compared to those in predicted background events, initially with 
-(Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) $\Mlljj$ window selection criteria.  No 
-statistically significant excess of data events relative to the background was found, so limits on 
+The $\Meejj$ and $\Mmumujj$ distributions found in data events were compared to those in predicted background events with 
+(Table \ref{tab:expAndObsEvtsWithAllUncs}) and without (Figure \ref{fig:obsAndExpMlljj}) $\Mlljj$ window selection criteria applied.  
+No statistically significant excess of data events relative to the background was found, so limits on 
 $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 
 \clearpage
@@ -490,10 +485,12 @@ $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated.
 	\label{fig:obsAndExpMlljj}
 \end{figure}
 
-Using the signal and background predictions, and the data observations listed in Table \ref{tab:expAndObsEvtsWithAllUncs}, upper limits 
-on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window.  Observed upper limits 
-were calculated using the data and signal and background predictions, and expected upper limits were calculated only using the signal 
-and background predictions.  The expected and observed limits as a function of \mWR are shown in Figure \ref{fig:oneDimLimits}.  
+Using the signal and background predictions, and the observed number of data events listed in Table \ref{tab:expAndObsEvtsWithAllUncs}, upper 
+limits on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$ were calculated at 95\% CL in each $\Mlljj$ window.  Observed upper limits 
+were calculated using the data and signal and background predictions, and expected upper limits were calculated using the signal and 
+background predictions.  The observed limit never exceeds the expected limit (Figure \ref{fig:oneDimLimits}) by more than one standard deviation.  
+For $\mnul = \frac{1}{2}\mWR$, the data excludes \WR production for $\mWR < 3.2$ $\TeV$ in the $ee$-channel, and $\mWR < 3.4$ $\TeV$ in the 
+$\mu\mu$-channel.
 
 \begin{figure}
 	\centering
@@ -511,28 +508,26 @@ and background predictions.  The expected and observed limits as a function of \
 	\label{fig:oneDimLimits}
 \end{figure}
 
-The observed limit did not exceed the expected limit in any $\Mlljj$ window by more than 2$\sigma$, so the observed and expected limits 
-were extrapolated into \mnul and \mWR exclusion limits.  The cross section limits for any \mnul are linearly proportional to the signal 
-efficiency $\chi$ of the event selection criteria multiplied by the \WR cross section $\sigma(\WR)$: $\chi \times \sigma(\WR)$.  Since 
-the background prediction at a given \mWR value is independent of all \mnul values, the cross section limit at two $(\mWR,\mnul)$ points 
-with the same \mWR but different \mnul were related by the ratio of $\chi \times \sigma(\WR)$ at the points.  Using this relationship 
-(Equation \ref{eq:limitExtrapolation}), the known cross section limit at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$ was transformed 
-into a limit at $(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$.
+Since no statistically significant excess of data over the predicted background was found, the observed and expected limits 
+were extrapolated into \mnul and \mWR exclusion limits.  For any \mnul the cross section limit L is linearly proportional to the signal 
+efficiency $\chi$ of the event selection criteria multiplied by the \WR cross section $L \sim \chi \times \sigma(\WR)$.  Since 
+the background prediction at a given \mWR value is the same for all \mnul, the cross section limit at two $(\mWR,\mnul)$ points 
+with the same \mWR but different \mnul are related by the ratio of $\chi \times \sigma(\WR)$ at the points.  Using this relationship, 
+the known cross section limit at $(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})$ was transformed into a limit at 
+$(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})$ using Equation \ref{eq:limitExtrapolation}.
 
 \begin{equation}
 	Limit[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})] = \frac{\chi[(\mWR^{a}, \mnul^{b} \neq \frac{1}{2}\mWR^{a})]}{\chi[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]} \quad Limit[(\mWR^{a}, \mnul^{a} = \frac{1}{2}\mWR^{a})]
 \label{eq:limitExtrapolation}
 \end{equation}
-The signal selection efficiency $\chi$ versus \mnul and \mWR was calculated using additional $\WR \rightarrow \ell\ell jj$ samples, 
-which were simulated through the first simulation step (Chapter \ref{sec:MC}) and without pileup.  These samples were produced with 
-\mWR increasing from 800 to 4000 $\GeV$ in 100 $\GeV$ steps.  At each \mWR value, samples were produced with at least 20 different 
-\mnul values between 100 $\GeV$ and \mWR.  In each event, leptons and partons produced in the \WR decay were used in place of 
-reconstructed leptons and jets.  Then, the offline kinematic selection criteria without ID requirements were applied to leptons and 
-partons.  At each $(\mWR,\mnul)$ point, the signal selection efficiency $\chi^'$ was calculated as the fraction of simulated events 
-that passed the selection criteria.  Then, $\chi^'$ and Equation \ref{eq:limitExtrapolation} were used to extrapolate 
-the cross section limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for $\mnul \neq \frac{1}{2}\mWR$.  At each 
-$(\mWR,\mnul)$ point, the new limit $L'$ was divided by $\sigma(\WR)$.  The points where $L'$ and $\sigma(\WR)$ are equal (Figure 
-\ref{fig:twoDimLimits}) represent the 95\% CL exclusion limit on \mnul and \mWR.
+The signal selection efficiency $\chi$ was calculated at different $(\mWR,\mnul)$ points using simulated signal events.  At a given 
+\mWR, the variation of $\chi$ versus \mnul due to the online criteria and offline identification criteria was expected to be small, no 
+more than a few percent.  Therefore, $\chi$ was approximated by the selection efficiency $\chi^'$ of the offline kinematic selection 
+criteria.  $\chi^'$, whose variation with \mWR and \mnul is described in Chapter \ref{sec:offlineKinemSelCrit}, was used in Equation 
+\ref{eq:limitExtrapolation} to extrapolate the cross section limits calculated for $\mnul = \frac{1}{2}\mWR$ to new limits $L'$ for 
+$\mnul \neq \frac{1}{2}\mWR$.  Then, at each $(\mWR,\mnul)$ point the new limit $L'$ was divided by the cross section $\times$ branching 
+ratio $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  The points where $L'$ and the cross section $\times$ branching ratio are 
+equal (Figure \ref{fig:twoDimLimits}) are the extreme values of \mnul and \mWR that are excluded at 95\% CL.
 
 \begin{figure}
 	\centering
@@ -550,23 +545,24 @@ $(\mWR,\mnul)$ point, the new limit $L'$ was divided by $\sigma(\WR)$.  The poin
 	\label{fig:twoDimLimits}
 \end{figure}
 
-The difference between the selection efficiencies $\chi^'$, without reconstruction, and $\chi$ was estimated by simulating 
-pileup, the detector response and particle reconstruction in $\WR \rightarrow \ell\ell jj$ events that had $\mWR =$ 2400 and 4000 
-$\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$.  The full online and offline selection criteria was applied to these events, and 
-selected events were used to calculate the limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  For events 
-that had $\mnul \gtrsim \frac{1}{8}\mWR$, $L_{true}$ and $L'$ were consistent within their uncertainties.  For events that had 
-$\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ was stronger than $L'$ because of jets that were reconstructed from pileup 
-interactions.  The simulated events used to calculate $L_{true}$ had an average of 10 pileup interactions, some of which produced 
-jets that were reconstructed and passed the selection criteria.  The increased jet production resulted in a larger signal selection 
-efficiency $\chi$ relative to $\chi^'$ in events that had $\mnul \lesssim \frac{1}{8}\mWR$.  However, in those events the difference 
-between $L_{true}$ and $L'$ was small, below 100 $\GeV$, relative to the total range of excluded \mnul values.  Therefore, the 
-extrapolated limit $L'$ represented the result, and no correction was applied to it because $L'$ was weaker than $L_{true}$.
+The difference between the selection efficiency $\chi^'$, without trigger and offline ID criteria, and $\chi$ was expected to be small.  
+This expectation was checked by simulating $\WR \rightarrow \ell\ell jj$ events with pileup, the detector response and particle 
+reconstruction for $\mWR =$ 2400 and 4000 $\GeV$ and several $\mnul \neq \frac{1}{2}\mWR$.  Then the trigger criteria and all offline selection 
+criteria were applied, and selected events were used to calculate the limits $L_{true}$ on $\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.  
+If the limits $L_{true}$ and $L'$ agree within their uncertainties, then the difference between $\chi^'$ and $\chi$ is small.  For events that 
+have $\mnul \gtrsim \frac{1}{8}\mWR$, $L_{true}$ and $L'$ are consistent within their uncertainties.  For events that have 
+$\mnul \lesssim \frac{1}{8}\mWR$, the limit $L_{true}$ is stronger than $L'$ because of jets produced by pileup interactions.  The simulated 
+events used to calculate $L_{true}$ had an average of 12 pileup interactions, some of which produced jets that were reconstructed and passed 
+the offline jet selection criteria.  As a result, the efficiency $\chi$ increased relative to $\chi^'$, and the lowest \mnul excluded 
+at 95\% CL was about 75 $\GeV$ lower for $L_{true}$ relative to $L'$.  The 75 $\GeV$ difference was small compared to the entire range of 
+\mnul excluded at 95\% CL, so no correction was applied to $\chi^'$, and $L'$ represents the result.
+
 
 \section{Results Summary}
 The $\Mlljj$ distributions were divided into finite width $\Mlljj$ windows linked to specific \mWR hypotheses.  In each window the 
 signal and background predictions and their uncertainties were compared to the data, and no statistically significant excess of 
 data above the background was found.  Cross section $\times$ branching ratio limits on $\WR \rightarrow \ell\ell jj$ were calculated 
-at 95\% CL for $\mnul = \frac{1}{2}\mWR$, and transformed into exclusion limits on \mWR and \mnul.
+at 95\% CL for $\mnul = \frac{1}{2}\mWR$, and transformed into exclusion limits on \mWR and \mnul for $\mnul \neq \frac{1}{2}\mWR$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
