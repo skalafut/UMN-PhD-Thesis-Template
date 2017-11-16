@@ -251,10 +251,10 @@ trigger was used to select collision events with muons.
 		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblMuHlt}
 	\centering
-	\begin{tabular}{c|c}
-		trigger $\pt$ criteria & efficiency (\%) \\  \hline
-		one $\mu$ $\pt >50$ $\GeV$ & 98  \\ 
-		one $\mu$ $\pt >17$, another $\mu$ $\pt >8$ $\GeV$ & 93  \\
+	\begin{tabular}{c|c|c}
+		trigger type & $\pt$ criteria & efficiency (\%) \\  \hline
+		single $\mu$ & $\pt >50$ $\GeV$ & 98  \\ 
+		double-$\mu$ & one $\pt >17$, other $\pt >8$ $\GeV$ & 93  \\
 	\end{tabular}
 \end{table}
 
@@ -313,10 +313,10 @@ was used to select collision events with electrons.
 		and $\mnul = 400$ $\GeV$.}
 	\label{tab:singleVsDblEleHlt}
 	\centering
-	\begin{tabular}{c|c}
-		trigger $\Et$ criteria & efficiency (\%) \\  \hline
-		one $e$ $\Et >105$ $\GeV$ & 94  \\ 
-		two $e$ $\Et >33$ $\GeV$ & 92  \\
+	\begin{tabular}{c|c|c}
+		trigger type & $\Et$ criteria & efficiency (\%) \\  \hline
+		single $e$ & $\Et >105$ $\GeV$ & 94  \\ 
+		double-$e$ & both $\Et >33$ $\GeV$ & 92  \\
 	\end{tabular}
 \end{table}
 
@@ -384,7 +384,7 @@ The efficiency with which jets are reconstructed and selected using the jet ID c
 no jet efficiency corrections were applied in simulations.
 
 
-\section{\WR Signal Kinematics and Offline Kinematic Selection Criteria}
+\section{\WR Kinematics and Offline Kinematic Selection Criteria}
 \label{sec:signalAndBkgnds}
 The offline identification selection criteria were used to select events where an interaction produced two real leptons and jets, 
 and their signals in the detector were correctly reconstructed as two leptons and jets.  These selection criteria were used in other 
@@ -603,8 +603,8 @@ identical in the $ee$- and $\mu\mu$-channels.
 The large expected \mWR and the reconstructed jet $\pt$ resolution motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR decay 
 produces two quarks in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}), so each reconstructed event was required to have two 
 jets in the region $|\eta| < 2.4$.  The $\pt$ of both jets scaled with the unknown ratio $\mnul/\mWR$, so the jet $\pt$ requirement was 
-minimized, based on the jet $\pt$ resolution, to increase sensitivity to signals with low $\mnul/\mWR$.  The $\pt$ resolution of 
-reconstructed jets that had $|\eta| < 1.3$ decreased rapidly below $\pt < 40$: from 16\% or better resolution for $\pt > 40$ $\GeV$ to 
+minimized to increase sensitivity to signals with low $\mnul/\mWR$.  The $\pt$ resolution of 
+reconstructed jets that had $|\eta| < 1.3$ decreased rapidly below $\pt = 40$ $\GeV$: from 16\% or better resolution for $\pt > 40$ $\GeV$ to 
 $\sim$21\% for $30 < \pt < 40$ $\GeV$ \cite{jetResolutionInCollisions}.  To avoid selecting low $\pt$ jets measured with poor $\pt$ 
 resolution, the two jets in each event that had $|\eta| < 2.4$ were required to have $\pt > 40$ $\GeV$.  If more than two jets passed 
 these criteria, the two highest $\pt$ jets were used.
@@ -612,11 +612,35 @@ these criteria, the two highest $\pt$ jets were used.
 The large expected \mWR and trigger selection criteria motivated the offline lepton $\pt$ and $\eta$ selection criteria.  For the same 
 reason cited for the \WR quarks, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}) 
 with high $\pt$ (Figure \ref{fig:wrLeptJetPts}).  Therefore, each event was required to have two leptons reconstructed with $|\eta| < 2.4$ 
-and $\pt > 53$.  The $\pt > 53$ requirement is applied to electrons and muons, and the 53 $\GeV$ threshold was used so that both muons 
-were selected in a $\pt$ region where the trigger efficiency was maximized.  In \WR decays one lepton is often produced with greater 
-$\pt$ than the other, so an additional lepton $\pt$ requirement was applied.  At least one reconstructed lepton was required to have 
-$\pt > 60$ $\GeV$ to increase sensitivity to a \WR signal relative to the ST backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 
-2 leptons passed these criteria, the two highest $\pt$ leptons were used.
+and $\pt > 53$.  The 53 $\GeV$ threshold value was chosen so that leptons were selected in a $\pt$ range where the trigger efficiency was 
+constant (Figure \ref{fig:trigEffs}).  In \WR decays one lepton is often produced with greater $\pt$ than the other, so at least one 
+reconstructed lepton was required to have $\pt > 60$ $\GeV$.  This requirement increased sensitivity to a \WR signal relative to the ST 
+backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 2 leptons passed these criteria, the two highest $\pt$ leptons were used.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/muonPt50TrgEffVsPt.png}
+		%\caption{muon}\label{fig:trigEffsa}
+	\end{subfigure}
+	\newline
+	\newline
+	\newline
+	\newline
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/L1EGEfficiencyBarrel.png}
+		%\caption{barrel electron}\label{fig:trigEffsb}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/L1EGEfficiencyEndcap.png}
+		%\caption{endcap electron}\label{fig:trigEffsc}
+	\end{subfigure}
+	\caption{The muon and electron trigger efficiencies versus $\pt$ or $\Et$ in $Z \rightarrow \ell\ell$ events.}\label{fig:trigEffs}
+\end{figure}
 
 \begin{table}[h]
 	\caption{The signal (S) over background (B) sensitivity (S/$\sqrt{B}$) for different $\pt$ selection 
@@ -630,35 +654,36 @@ $\pt > 60$ $\GeV$ to increase sensitivity to a \WR signal relative to the ST bac
 		60 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
+\clearpage
 
 Jets are clustered from reconstructed particles using the anti-$k_{T}$ algorithm with distance parameter $R = 0.4$.  If a particle is 
 separated from a jet's axis by $\Delta R = G$, the distance parameter $R$ weights the likelihood of clustering that particle into the 
-jet by $(\frac{0.4}{G})^{2}$.  Thus, the parameter $R$ constrains the maximum distance between a jet constituent and the jet axis.  
-However, it is possible for a reconstructed particle to be clustered into a jet and be separated from the jet axis by $\Delta R > 0.4$.  
-To avoid selecting a lepton reconstructed near a jet, each reconstructed lepton that passed the identification, $\pt$, and $\eta$ 
-selection criteria was required to be separated from both selected jets by $\Delta R > 0.4$.
+jet by $(\frac{0.4}{G})^{2}$.  The parameter $R$ constrains the maximum jet size, but it is possible for a reconstructed particle to be 
+clustered into a jet and be separated from its axis by $\Delta R > 0.4$.  To avoid selecting a lepton reconstructed near a jet, each 
+reconstructed lepton that passed the ID, $\pt$, and $\eta$ selection criteria was required to be separated from both selected jets by 
+$\Delta R > 0.4$.
 
 The \WR decay produces two high $\pt$ leptons whose dilepton mass $\Mll$, given by Equation \ref{eq:dileptMass}, increases as $\mnul/\mWR$ 
-decreases and as \mWR increases.  Based on the high expected value of \mWR, the $\Mll$ selection requirement can exceed the $Z$ boson 
-mass window of $60 < \Mll < 120$ $\GeV$ to reduce a significant background.  However, the $\Mll$ requirement cannot be too high, otherwise 
-the sensitivity to signal hypotheses with $\mnul/\mWR \sim$1 will decrease dramatically (Figure \ref{fig:wrMllVarMNu}).  Knowing that the 
-\DY and diboson backgrounds decrease rapidly with increasing $\Mll$, each event was required to have two leptons that had $\Mll > 200$ 
-$\GeV$.  A lower threshold was not used because it would increase the background without a corresponding increase in the signal (Table 
-\ref{tab:lowerMllCut}).
+decreases and as \mWR increases.  Based on the high expected value of \mWR, the $\Mll$ selection requirement can safely exceed the $Z$ boson 
+mass window of $60 < \Mll < 120$ $\GeV$ without adversely affecting the signal sensitivity.  However, the $\Mll$ requirement cannot be several 
+hundred $\GeV$, otherwise the sensitivity to signal hypotheses with $\mnul/\mWR \sim$1 will decrease dramatically (Figure \ref{fig:wrMllVarMNu}).  
+Knowing that the \DY and diboson backgrounds decrease rapidly with increasing $\Mll$, each event was required to have two leptons that had 
+$\Mll > 200$ $\GeV$.  A lower threshold was not used because it would increase the background without a corresponding increase in the signal 
+(Table \ref{tab:lowerMllCut}).
 
 \begin{equation}
 	\Mll = \sqrt{2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))}
 	\label{eq:dileptMass}
 \end{equation}
 
-\clearpage
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/sqrtProdGenLeptMomentumMag_several_MWR_and_MNu_private.pdf}
-	\caption{The distribution of the square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ 
-		events with several \mWR and $\mnul = \frac{1}{2}\mWR$.}
-	\label{fig:wrLeptSqrtMomMagVarMNu}
-\end{figure}
+%\clearpage
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{figures/sqrtProdGenLeptMomentumMag_several_MWR_and_MNu_private.pdf}
+%	\caption{The distribution of the square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ 
+%		events with several \mWR and $\mnul = \frac{1}{2}\mWR$.}
+%	\label{fig:wrLeptSqrtMomMagVarMNu}
+%\end{figure}
 
 \begin{table}[h]
 	\caption{The signal (S) over background (B) sensitivity (S/$\sqrt{B}$) for different $\Mll$ selection 
@@ -672,21 +697,23 @@ $\GeV$.  A lower threshold was not used because it would increase the background
 		200 &  12.6  \\ \hline
 	\end{tabular}
 \end{table}
-\clearpage
+%\clearpage
 
-Applying the previous selection criteria to ST background events resulted in a $\Mlljj$ distribution, represented in Figure 
-\ref{fig:sculptedMlljj}, that peaked near 500 $\GeV$.  To avoid this peak, each event was required to have $\Mlljj > 600$ $\GeV$.
+Applying the previous selection criteria to simulated ST background events created a peak in the $\Mlljj$ distribution near 500 $\GeV$ 
+(Figure \ref{fig:sculptedMlljj}).  To avoid this peak, each event was required to have $\Mlljj > 600$ $\GeV$.
+\clearpage
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.45\textwidth]{figures/Mlljj_varBins_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_log.pdf}
-	\caption{The $\Mlljj$ distribution in simulated background events after applying offline kinematic selection criteria.}
+	\caption{The $\Mlljj$ distribution in simulated background events after applying the online criteria, and the offline ID and kinematic 
+	selection criteria.}
 	\label{fig:sculptedMlljj}
 \end{figure}
 
-The offline kinematic selection criteria (Table \ref{tab:offlineKinemSel}) were developed to select at least 30\% of $\ell\ell jj$ events 
-produced by signals that cover a large range of \mWR and \mnul values.  The efficiency of the full online and offline (ID and kinematic) 
-selection criteria in selecting signal events was estimated by simulating $pp \rightarrow \WR \rightarrow \ell\ell jj$ interactions, and 
+The offline kinematic selection criteria (Table \ref{tab:offlineKinemSel}) were developed to select $\WR \rightarrow \ell\ell jj$ events 
+over a large range of \mWR and \mnul values with the highest possible efficiency.  The selection efficiency of the full online and offline 
+(ID and kinematic) selection criteria in signal events was estimated by simulating $pp \rightarrow \WR \rightarrow \ell\ell jj$ interactions, and 
 applying the selection criteria to those events.  The \PYTHIA \MC generator implements a flexible, generic \WR signal model that captures the 
 main characteristics of theoretical models discussed in the literature 
 \cite{earlyLRSModel,lrsHiggsStageOne,lrsHiggsStageTwo,seeSawAndParityViolation,seeSawAndGUTs,lrsMassConstraints}, so \PYTHIA was used to 
@@ -694,14 +721,13 @@ simulate $\WR \rightarrow \ell\ell jj$ events with different \mWR and \mnul.  Th
 efficiency was calculated using 50000 event datasets produced with $\mnul = \frac{1}{2}\mwr$ and \mWR stepping from 0.8 to 6.0 $\TeV$ in 
 increments of 0.2 $\TeV$.  At a given \mWR, only the offline kinematic selection efficiency varied by more than a few percent over the 
 entire \mnul range.  The variation in the offline kinematic selection efficiency versus \mnul was calculated using 10000 event datasets 
-produced with \mWR increasing from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$, and \mnul increasing from 100 $\GeV$ to \mWR in 
-increments of 0.1 $\TeV$ or less, depending on \mWR.  The total trigger, offline ID and kinematic selection efficiency (Figure 
+produced with \mWR increasing from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  Each 10000 event dataset was produced with a different \mnul 
+that increased from 100 $\GeV$ to \mWR in increments of 0.1 $\TeV$ or less.  The total trigger, offline ID and kinematic selection efficiency (Figure 
 \ref{fig:wrRecoSelectionEff}) exceeded 50\% in the $ee$-channel, and 70\% in the $\mu\mu$-channel.  The efficiency is lower in the $ee$-
 channel due to the gap in ECAL coverage for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID criteria applied to electrons 
-relative to muons.  The difference between the maximum and minimum offline kinematic selection efficiency versus \mnul (Figure 
-\ref{fig:wrOffSelEffVarMWrMNu}) increases with \mWR: 30\% for $\mWR \leq 1.3$ $\TeV$, 70\% for $\mWR \geq 2.5$ $\TeV$.  For a specific 
-\mWR, the offline kinematic selection efficiency is maximized or nearly so for $\mnul = \frac{1}{2}\mWR$.
-
+relative to muons.  The variation in the offline kinematic selection efficiency versus \mnul (Figure \ref{fig:wrOffSelEffVarMWrMNu}) increases 
+with \mWR: up to 30\% for $\mWR \leq 1.3$ $\TeV$, and up to 70\% for $\mWR \geq 2.5$ $\TeV$.  For a specific \mWR, the offline kinematic selection 
+efficiency is maximized or nearly so when $\mnul = \frac{1}{2}\mWR$.
 
 \begin{table}[h]
 	\caption{The kinematic selection criteria applied to reconstructed leptons and jets that passed the offline identification 
@@ -720,8 +746,6 @@ relative to muons.  The difference between the maximum and minimum offline kinem
 	\end{tabular}
 \end{table}
 
-\clearpage
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
@@ -730,11 +754,13 @@ relative to muons.  The difference between the maximum and minimum offline kinem
 	endcap (EB), or both were in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
+\clearpage
+
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/genWrMuMuAccEff_NoMassWindows13TeV.png}
-	\caption{The offline kinematic selection efficiency (\%) in $\WR \rightarrow \ell\ell jj$ events as a function of \mWR and \mnul.}
+	\caption{The offline kinematic selection efficiency (\%) in $\WR \rightarrow \ell\ell jj$ events versus \mWR and \mnul.}
 	\label{fig:wrOffSelEffVarMWrMNu}
 \end{figure}
 
