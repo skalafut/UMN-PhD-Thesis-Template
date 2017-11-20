@@ -1,21 +1,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % experiment.tex: Chapter describing the experiment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{The Large Hadron Collider and CMS Experiment}
+\chapter{The CMS Detector}
 \label{sec:experiment_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The CERN Large Hadron Collider (LHC) delivered proton-proton (pp) collisions at an energy of 13 $\TeV$.  The LHC 
-was constructed in a 27 km circular tunnel \cite{lhcTDR}, and collided two proton beams that contained 
-$\sim$2300 proton bunches, with 25 ns separating adjacent bunches.  The beams collided at 4 interaction points (IPs), and 
+The energies and trajectories of charged leptons and jets produced in proton-proton (pp) collisions are measured so 
+that the masses \mWR and \mnul can be determined.  The maximum \mWR and \mnul that can be measured are constrained by 
+the pp collision energy and interaction intensity integrated over time.  The mass resolutions are driven by the 
+resolutions with which the lepton and jet energies and trajectories are measured.  In this chapter, the CERN LHC and 
+the pp collisions it delivers are described, and is followed by descriptions of the CMS sub-detectors \cite{\cite{cmsDetectorPaper}} 
+that are used to measure lepton and jet energies and trajectories.
+
+The CERN LHC was constructed in a 27 km circular tunnel \cite{lhcTDR} to deliver pp collisions at 13 $\TeV$.  In the 
+collider two proton beams that contained $\sim$2300 proton bunches, with 25 ns separating adjacent 
+bunches are collided at the center of the CMS detector.  Collisions occurred at 4 interaction points (IPs), and 
 the beam optics were such that the highest intensity collisions occurred at 2 IPs.  The general purpose ATLAS 
 (A Toroidal Lhc Apparatus) \cite{atlasTdrPhysPerformance} and CMS (Compact Muon Solenoid) \cite{cmsTdrPhysPerformance} 
-experiments were built around these 2 IPs, and the CMS IP coincides with the geometric center of CMS.  The 
-intensity is proportional to the rate of pp bunch collisions $\div$ the beam cross sectional area at the IP, 
-and in 2015 the intensity at the CMS IP approached $6 \times 10^{33} \frac{Hz}{cm^{2}}$, 
-or $6 \times 10^{-3} \frac{Hz}{pb}$.
+experiments were built around these IPs, and the CMS IP coincides with the geometric center of CMS.  The interaction 
+intensity $\Ell$, given by Equation \ref{eq:instLumi}, is inversely proportional to the product of the two beam areas 
+$4\pi \epsilon_{n}\beta^{*}$, and proportional to a geometric factor F based on the beam crossing angle, and the rate 
+of protons crossing the IP $fnN^{2}\gamma$.  The interaction frequency f is fixed at 40 MHz by the time separating 
+adjacent bunches, the Lorentz boost $\gamma$ is fixed by the beam energy, and the factor F is fixed by the LHC design.  
+The other parameters - the number of bunches n, the number of protons per bunch N, and the beam areas - are manipulated 
+to maximize the interaction intensity $\Ell$.  In 2015 the intensity at the CMS IP approached $6 \times 10^{33} \frac{Hz}{cm^{2}}$ 
+($6 \times 10^{-3} \frac{Hz}{pb}$), and the intensity integrated over the year was 2.6 fb$^{-1}$ \cite{lumi}.
 
-The CMS experiment was built to detect all ST particles produced in collisions, and to search for interactions, like 
-those mediated by the \WR, that produced ST particles.  Particles produced in pp collisions were 
+\begin{equation}
+	\Ell = \frac{fnN^{2}\gamma}{4\pi \epsilon_{n}\beta^{*}}F
+\label{eq:instLumi}
+\end{equation}
+
+Particles produced at the CMS IP were detected using several sub-detectors.  Located closest to the IP was the silicon 
+tracker, which was used to detect charged particles.  Surrounding the tracker were the electromagnetic (ECAL) and hadronic 
+(HCAL) calorimeters, which were used to identify neutral and charged particles.  The ECAL was used to identify photons and 
+tracks produced by electrons ($e^{\pm}$), and the HCAL was used to identify neutral hadrons and tracks produced by charged 
+hadrons.  The tracker and both calorimeters were inside the solenoid magnet that generated a 3.8 $\unit{T}$ magnetic field.  
+Muon detectors, located in the iron magnet return yoke where the magnetic field strength varied between 1 and 3 $\unit{T}$, 
+were used to identify tracks produced by muons ($\mu^{\pm}$).  Each sub-detector covered 360$^{\circ}$ in the plane 
+perpendicular to the proton beam axis, and was .
+
+%RESUME HERE
+
+Particles produced in pp collisions were 
 detected using a powerful solenoid magnet, and four sub-detectors - the silicon tracker, the electromagnetic and 
 hadronic calorimeters, and the muon detectors - described in detail elsewhere \cite{cmsDetectorPaper}, and shown in 
 Figure \ref{fig:layersOfCMS}.  The tracker and both calorimeters were inside the solenoid magnet where the magnetic 
