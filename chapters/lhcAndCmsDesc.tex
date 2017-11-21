@@ -298,17 +298,12 @@ $\pt$ of barrel region muons that had $200 < \pt < 400 \GeV$ with a resolution (
 
 \section{The Trigger System}
 \label{sec:triggerDescription}
-In 2015 the rate of pp collision events delivered by the LHC was several orders of magnitude greater than the 
-rate that CMS could process collision event data into reconstructed particles.  The LHC collided two proton bunches 
-at a rate of 40 MHz, and in nearly every collision $\gtrsim$1 $\GeV$ of energy was detected in CMS.  Due to the large cross 
-section of QCD multijet processes and leptonically decaying heavy quark processes (Figure \ref{fig:smProductionXsxns}), CMS 
-detected $\sim10^{6}$ collision events per second with energetic charged leptons or hadronic jets.  In 2015 
-CMS was able to readout all detector information and subsequently reconstruct particles in only $\sim10^{3}$ 
-collision events per second, so a two level trigger 
-system selected events during collisions (online) that were reconstructed for physics analyses and detector calibration.
-
-%RESUME HERE
-
+In 2015 the rate of pp collision events delivered by the LHC was many orders of magnitude greater than the 
+rate that CMS could store all the data.  The LHC collided two proton bunches at a rate of 40 MHz, and in nearly every 
+collision $\gtrsim$1 $\GeV$ of energy was detected in CMS.  Due to the large cross section of QCD multijet processes 
+and leptonically decaying heavy quark processes (Figure \ref{fig:smProductionXsxns}), there were $\sim10^{6}$ collision 
+events per second with energetic charged leptons or hadronic jets.  A two level event-selection trigger system was used 
+to select events during collisions (online) that were stored for physics analyses.
 
 \begin{figure}[h]
 	\centering
@@ -319,24 +314,21 @@ system selected events during collisions (online) that were reconstructed for ph
 \end{figure}
 
 The Level-1 (L1) trigger system searched for collision events with photons, charged leptons, hadronic 
-jets or neutrinos.  After every collision event, data from the ECAL, the HCAL and the muon detectors was used to build trigger 
-primitive objects that represented photons, muons and other particles.  In $\sim$1 $\mu$s these objects, 
-distinguished by $\Et$ values and $(\eta, \phi)$ coordinates, were built and sent to the L1 logic system located 
-$\sim$20 m from CMS.  Implemented in programmable hardware like Field Programmable Gate Arrays, the L1 
-logic system ran $\sim$200 algorithms in less than 1 $\mu$s, and identified trigger primitive objects passing $\Et$ 
-and $|\eta|$ selection criteria.  Approximately 80000 events per second were found with at least one trigger 
-primitive object passing selection criteria, and these events were processed by the second level trigger.  
+jets or missing energy.  After every collision event, data from the ECAL, the HCAL and the muon detectors was used to 
+identify energy clusters and build tracks that represented photons, hadrons, muons and other particles.  In $\sim$1 $\mu$s these 
+clusters and tracks, distinguished by $(\eta, \phi)$ trajectories and $\Et$ (or $\pt$) values, were built and sent to the L1 
+logic system located $\sim$20 m from CMS.  Implemented in programmable hardware, the L1 logic system ran $\sim$200 algorithms 
+in less than 1 $\mu$s, and selected events of interested based on clusters and tracks passing energy and $|\eta|$ selection 
+criteria.  Approximately 80000 events per second were passed to the second level trigger.
 
-The second level, or High Level, trigger (HLT) selected events for offline reconstruction and subsequent 
-use in physics analyses and detector calibration analyses.  The HLT began by transferring data from all 
-sub-detectors to multi-core processors running the HLT software.  
-A fast, simplified version of the full offline particle reconstruction software was run in small 
-regions where L1 trigger algorithms had fired.  Then, $\sim$400 different selection algorithms, running in 
-parallel, applied selection criteria ($\Et$, $|\eta|$, etc) to locally reconstructed particles 
-to select energetic photons, charged leptons, jets, and neutrinos.  About 1000 events per second passed at least 
-one selection algorithm, and these events were stored offline for subsequent reconstruction using the entire event 
-information.  Offline, events were selected based on the kinematics of reconstructed electrons, muons, and jets.  
-The particle reconstruction algorithms and selection criteria are described in the next chapter.
+This trigger, a High Level trigger (HLT) was used to select events to be stored for offline physics analyses or for detector 
+calibration.  The HLT began by transferring data from all sub-detectors to multi-core processors running the HLT software.  
+A fast, simplified version of the full offline particle reconstruction software was run in small regions identified from the L1 
+trigger.  Then, $\sim$400 different selection algorithms, running in parallel, applied selection criteria ($\Et$, $|\eta|$, etc) 
+to locally reconstructed particles to select energetic photons, charged leptons, jets, and neutrinos.  About 1000 events per 
+second passed at least one selection algorithm, and the complete event was stored for subsequent reconstruction using the entire 
+event information.  The offline analysis of each event, the particle reconstruction algorithms, and the selection criteria are 
+described in the next chapter.
 
 %Considering events selected by any HLT algorithm, during 2015 pp collisions the rate of data written to 
 %permanent storage was $\lesssim 0.5$ gigabytes per second.
