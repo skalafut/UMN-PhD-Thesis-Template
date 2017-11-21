@@ -158,26 +158,26 @@ in the muon detectors were identified as muons.
 
 \section{The Electromagnetic Calorimeter}
 \label{sec:ecalDescription}
-Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons, and distinguished
-electrons and positrons ($e^{\pm}$) from other charged particles.  
-The ECAL is an absorption calorimeter built from homogeneous, scintillating lead-tungstate (PbWO$_{4}$) crystals.  
-In response to incident photons and $e^{\pm}$, the ECAL crystals emitted visible light in amounts proportional to 
-the incident particle energies.  The ECAL measured the energies of photons and $e^{\pm}$ that had $0 < |\eta| < 3.0$ by 
-measuring the amount of visible light produced by PbWO$_{4}$ crystals.
+Surrounding the silicon tracker was the electromagnetic calorimeter (ECAL), which detected photons, and distinguished electrons and 
+positrons from other charged particles.  The ECAL is a homogeneous absorption calorimeter built from scintillating lead-tungstate 
+(PbWO$_{4}$) crystals.  In response to incident photons and electrons ($e^{\pm}$), the ECAL crystals emitted visible light in $\sim$20 
+ns in amounts proportional to the incident particle energies that was detected with avalanche photodiodes (APDs) and vacuum phototriodes 
+(VPTs).
 
-The ECAL contained 75848 crystals \cite{ecalPerformanceInCollisions} divided into barrel and endcap regions.  In the 
-barrel region ($0 < |\eta| < 1.479$), 61200 
-crystals with $\sim$26 radiation lengths\footnote{On average the energy of a relativistic $e^{\pm}$ decreases by $e^{-1}$ after 
-travelling through one radiation length of material.} of PbWO$_{4}$ were arranged in a cylindrical shell.  The front face of 
-each crystal measured 2.2 $\times$ 2.2 cm$^{2}$, and was 19 cm away from the outer most silicon tracker layer.  
-In the endcap region ($1.479 < |\eta| < 3.0$), 14648 crystals (half in each 
-endcap) with $\sim$25 radiation lengths of PbWO$_{4}$ were installed in a disk.  The front face of endcap crystals measured 2.86 
-$\times$ 2.86 cm$^{2}$, and was located behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
-The preshower detector improved the spatial and energy resolution with which electromagnetic showers were studied in the 
-endcap.  A partial view of the ECAL barrel, endcap and preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
-
-%RESUME HERE
-
+The ECAL contained 75848 crystals \cite{ecalPerformanceInCollisions} divided into barrel and endcap regions.  In the barrel region 
+($0 < |\eta| < 1.479$), 61200 crystals with $\sim$26 radiation lengths\footnote{On average the energy of a relativistic $e^{\pm}$ 
+decreases by $e^{-1}$ after travelling through one radiation length of material.} of PbWO$_{4}$ were arranged in a cylindrical shell.  
+The scintillation light emitted in the barrel crystals was detected with APDs.  The front face of each crystal measured 2.2 $\times$ 
+2.2 cm$^{2}$, and was 19 cm away from the outer most silicon tracker layer.  In the endcap region ($1.479 < |\eta| < 3.0$), 14648 crystals 
+(half in each endcap) with $\sim$25 radiation lengths of PbWO$_{4}$ were installed in a disk.  The scintillation light emitted in the 
+endcap crystals was detected with VPTs.  The front face of the endcap crystals measured 2.86 $\times$ 2.86 cm$^{2}$, and was located behind 3 radiation 
+lengths of lead and silicon that constituted a preshower detector.  The preshower detector is a sampling calorimeter built from two 
+disks of lead absorber and two planes of silicon strips that cover $1.653 < |\eta| < 2.6$.  The first disk is 2 radiation lengths thick, 
+and the second is 1 radiation length thick.  The back side of each disk is covered by arrays of silicon sensors that each cover 63 
+$\times$ 63 mm$^{2}$ and contain 32 individual strips.  Each silicon sensor was connected to its own Read-Out Chip (ROC), and groups of 
+7, 8, or 10 ROCs were organized into individual micromodules.  The preshower detector improved the spatial and energy resolution with 
+which electromagnetic showers were studied in the endcap.  A partial view of the ECAL barrel, endcap and preshower detectors is shown 
+in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 
 \begin{figure}[ht]
 	\centering
@@ -186,17 +186,16 @@ endcap.  A partial view of the ECAL barrel, endcap and preshower detectors is sh
 	\label{fig:ecalEBEEandES}
 \end{figure}
 
-Photons and electrons that impinged on the ECAL interacted with lead-tungstate nuclei, causing a scintillation 
-signal to be emitted that was detected with avalanche photodiodes in the barrel, and vacuum phototriodes in the 
-endcap.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, 
-was sufficiently high that the scintillation signal was usually fully contained in a 3 $\times$ 3 crystal 
-grid centered on the most energetic crystal.  PbWO$_{4}$ was chosen because the scintillation signal was fast - 
-more than 80\% of the scintillation light was emitted in $\sim$20 ns - as required by the 40 MHz pp collision rate.  
-The scintillation signal was amplified and measured by photodetectors to determine the energy of incident 
-photons and electrons.  Based on real collision data, the ECAL measured the energies of electrons from $Z \rightarrow ee$ 
-decays ($\Et \approx 45 \GeV$) with a resolution better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  
-At a slightly lower $\Et$ scale in real collision data, the ECAL measured the energies of photons from $Z \rightarrow \mu\mu\gamma$ 
-decays with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
+%use later
+%The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
+
+The ECAL measured the energies of photons and electrons with $0 < |\eta| < 3.0$ by measuring the amount of scintillation light produced 
+in clusters of crystals.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, was sufficiently high that the signal of an electron or 
+photon was usually fully contained in a 3 $\times$ 3 crystal cluster centered on the most energetic crystal.  To estimate the energy lost 
+through bremsstrahlung in the tracker, the signals of electrons and photons were measured in 3 $\times$ 5 crystal clusters or larger.  Based 
+on real collision data, the ECAL measured the energies of electrons from $Z \rightarrow ee$ decays ($\Et \approx 45 \GeV$) with a resolution 
+better than 2\% for $|\eta| < 0.8$, and between 2\% and 5\% elsewhere.  At a slightly lower $\Et$ scale in real collision data, the ECAL measured 
+the energies of photons from $Z \rightarrow \mu\mu\gamma$ decays with a resolution of 2.5\% in the barrel, and 4.7\% in the endcaps \cite{ecalPerformanceInCollisions}.
 
 To measure photon and electron energies with similar precision across the entire detector, the ECAL crystals were 
 monitored and calibrated during data taking using several techniques.  Every 40 minutes each ECAL crystal was illuminated 
@@ -213,7 +212,7 @@ absolute energy scale corrections were derived using electrons from $Z \rightarr
 to calibrate each crystal's energy response to the true $Z$ boson mass.  New arrival time corrections were applied 
 every month, and new energy corrections were applied once in September 2015.
 
-During particle reconstruction energies measured by individual ECAL crystals were grouped into dynamically 
+In the reconstruction, energies measured by individual ECAL crystals were grouped into dynamically 
 sized superclusters (SCs) with at least 15 crystals.  The SC size was allowed to vary in $\eta$ and $\phi$ to capture 
 bremsstrahlung photons produced when $e^{\pm}$s traversed the silicon tracker.  In the subset of SCs that were isolated 
 from HCAL energy deposits, each $e^{\pm}$ was identified as a SC that geometrically matched a reconstructed track 
@@ -230,7 +229,7 @@ covering a 5 $\times$ 5 grid of ECAL barrel crystals.  In the endcap region ($1.
 plates and scintillating tiles were assembled into 2304 towers (1152 per endcap), each covering 
 a 5 $\times$ 5 grid of ECAL endcap crystals.
 
-Hadrons that impinged on the HCAL showered in metal absorber layers, and in $\sim$10 ns produced scintillation 
+Hadrons that impinged on the HCAL showered in brass absorber layers, and in $\sim$10 ns produced scintillation 
 light in the plastic tiles.  Optical fibers transmitted the scintillation light to hybrid photodiodes, 
 which measured the scintillation light to determine the energies of incident hadrons.  The HCAL was used in 
 combination with the tracker, ECAL, and muon detectors to measure the energy of jets.  After calibrating the 
@@ -238,8 +237,8 @@ HCAL and the other sub-detectors, the energy of jets with $\pt > 40\GeV$ and $|\
 a resolution of 16\% or better \cite{jetResolutionInCollisions}.
 
 To measure hadron energies with similar precision across the whole detector, the amount of light measured in scintillating tile towers 
-was monitored and calibrated before and during 2015 collisions.  Before collisions, a radioactive source 
-with known radioactivity was lowered into the HCAL, and the amount of scintillation light produced by each 
+was monitored and calibrated before and during 2015 collisions.  Before collisions, a cesium-137 source 
+was lowered into the HCAL, and the amount of scintillation light produced by each 
 tower was used to calibrate each tower's response.  Once collisions began, a laser system 
 monitored the efficiency of light transmission from the scintillator tiles to the photodetectors.  
 From laser transparency data, relative calibrations were derived that normalized the energy response of all towers 
@@ -249,7 +248,7 @@ scale was calibrated relative to the electromagnetic or muonic energy scale deri
 and $Z \rightarrow \mu\mu\gamma$ events.  Finally, the precision of the absolute hadronic energy scale calibration 
 was improved using dijet resonances like $W/Z \rightarrow jj$.
 
-During particle reconstruction the energy measured by each HCAL tower was treated as the basic unit of HCAL energy.  
+In the reconstruction, the energy measured by each HCAL tower was treated as the basic unit of HCAL energy.  
 Each reconstructed hadron contained at least one HCAL energy deposit, and potentially one or more ECAL energy 
 deposits.  Reconstructed tracks that extrapolated to the $(\eta,\phi)$ positions of HCAL energies were identified 
 as charged hadrons, while HCAL energies that did not match any track were identified as neutral hadrons.
@@ -257,11 +256,9 @@ as charged hadrons, while HCAL energies that did not match any track were identi
 
 \section{The Muon Detectors}
 \label{sec:muonDetectorsDescription}
-Interspersed among layers of the magnet iron return yoke were gas ionization chambers used to detect muons.  Muons 
-that traversed the chambers ionized charge along their trajectories, and the ionized charges drifted to 
-anodes and cathodes.  The muon detectors measured the momenta, trajectories, and arrival times of muons with $0 < |\eta| < 2.4$ by 
-measuring the amount of charge collected by the anodes and cathodes.  Since the muon detectors were located 13 light-ns 
-or further from the IP, the muon detectors measured each muon's arrival time to identify the collision event that produced it.
+Interspersed among layers of the magnet iron return yoke were gas ionization chambers that were used to detect and measure the 
+trajectories of muons.  The muon detectors had a geometrical acceptance of $0 < |\eta| < 2.4$.  Since the muon detectors were 
+located 13 light-ns or further from the IP, the muon detectors measured each muon's arrival time to identify the collision event that produced it.
 
 The muon barrel and endcap sections, shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, used three types of 
 gas ionization detectors to measure muon kinematic quantities.  In the barrel region ($0 < |\eta| < 1.2$), 
@@ -288,6 +285,9 @@ The disks were segmented into several radial layers (rings of different radii, '
 \ref{fig:muonBarrelAndEndcapDetectors}, that each contained 18 or 36 chambers, and each chamber had 6 planes of CSC detectors.  
 These chambers measured muon trajectories with a resolution better than 150 $\mu$m in any direction, and measured muon arrival 
 times with a resolution of 3.2 ns.
+
+%RESUME HERE
+
 
 In the barrel and endcap for $|\eta| < 1.9$, the RPCs measured muon arrival times with a resolution better than 
 2 ns.  RPC measurements were used by the trigger system to identify the collision event that produced each muon \cite{cmsMuonRecoRunTwo}.
