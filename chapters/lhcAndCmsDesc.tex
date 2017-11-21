@@ -83,7 +83,7 @@ the pixel detector was the strip detector, which used silicon strips to measure 
 %Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ generated an 
 %analog signal that was detected and stored in an analog memory until it was readout or discarded.
 
-The pixel detector was built from $\approx$1 m$^{2}$ of arrays of pixels, each covering 100 $\times$ 150 $\mu$m$^{2}$.  In 
+The pixel tracker was built from $\approx$1 m$^{2}$ of arrays of pixels, each covering 100 $\times$ 150 $\mu$m$^{2}$.  In 
 the barrel region ($0 < |\eta| < 1.2$), individual silicon detectors were assembled in three concentric cylindrical shells 
 centered on the $z$ axis.  In the endcap region ($1.2 < |\eta| < 2.5$), two layers of pixel detectors were installed in a 
 turbine pattern (Figure \ref{fig:pixelTracker}) \cite{pixelCommissioning}.  These provided up to 3 measurements for every 
@@ -96,13 +96,13 @@ track, and primarily were used to reconstruct interaction vertices.
 	\label{fig:pixelTracker}
 \end{figure}
 
-Located outside the pixel detector, the strip detector was constructed with 198 m$^{2}$ of silicon divided into larger silicon 
-detectors\footnote{The strip size varied with $\eta$ and distance away from the beam axis.  The strip width was between 80 and 180 
-$\mu$m, and the strip length was between 12 and 16 cm.}, and organized into four structures based on $|\eta|$ and distance from the IP.  
-In the barrel region, silicon detectors were used to build 10 concentric cylindrical shells.  In the endcap region, silicon 
-detectors were arranged in 12 disks, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}, with some overlap in $|\eta|$ with 
-the barrel region silicon detectors.  The strip detector provided between 5 and 14 measurements for every track that were used 
-to measure particles' radii of curvature, and thereby measure their momenta.
+Located outside the pixel tracker, the strip tracker was constructed with 198 m$^{2}$ of silicon divided into arrays of strips, 
+and organized into four structures based on $|\eta|$ and distance from the IP.  As the distance from the beam axis increased, the 
+strip width increased from 80 to 180 $\mu$m, and the strip length increased from 12 to 16 cm.  
+In the barrel region, silicon strips were used to build 10 concentric cylindrical shells.  In the endcap region, silicon 
+strips were arranged in 12 disks, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}, with some overlap in $|\eta|$ with 
+the barrel region silicon strips.  The strip tracker provided between 5 and 14 measurements for every track over a $\sim$1 meter 
+distance.
 
 \begin{figure}[ht]
 	\centering
@@ -121,36 +121,39 @@ different type of ROC, 128 individual strips located on the same $\eta$ ring wer
 module.  The $\eta$ ring structure was used in the strip tracker barrel and endcap for a total of $\sim$15400 modules in the 
 strip tracker.
 
-The tracker performance depended on the number and momenta of charged particles in a collision event.  In events where two leptons 
+The tracker measured the positions and energies of charged particles at up to 17 points, and as far as 1.1 meters from the beam 
+axis.  The track reconstruction algorithms, described later, identified sets of multiple signals as individual particle tracks 
+using a Kalman filter and assuming particle trajectories were approximated by a perfect helix.  Along the trajectory of each track, 
+the equation of motion of a charged particle in an inhomogenous magnetic field subject to energy losses in silicon was solved 
+numerically.  Finally, the particle's $\pt$ was extracted from the numerical solution.
+
+The tracker performance depended on the number and momenta of the charged particles in a collision event.  In events where two leptons 
 and jets were reconstructed from tracks that pointed to one vertex, the vertex's position was measured with a resolution better than 
 12$\mu$m in any direction \cite{trackerPerformanceInCollisions}.  
 The tracker measured charged particle momenta by measuring the radius of curvature of charged particle tracks; thus 
 the $\pt$ resolution degraded with increasing $\pt$.  For muons with $20 < \pt < 100$ $\GeV$, the 
 tracker measured the $\pt$ of barrel region muons with a resolution of 1.3\% to 2.0\%, and measured the $\pt$ of endcap muons 
 with a resolution of 6\% or better \cite{muonRecoFirstCollisions}; higher $\pt$ muons were measured with a worse $\pt$ resolution.  
-Charged hadrons that did not experience a nuclear interaction in the tracker were measured with a $\pt$ resolution similar to 
-muons.  Accounting for the $\eta$-dependent tracker material budget of 0.18 to 0.56 nuclear interaction lengths, the tracker measured 
-the $\pt$ of all charged hadrons that had $10 < \pt < 100$ $\GeV$ with a resolution of 3.3\% or better in the barrel, and 20\% or better 
-in the endcap \cite{trackerPerformanceInCollisions}.  Although more than 90\% of electrons that had $\pt > 0.4$ $\GeV$ and $|\eta| < 2.5$ 
-were reconstructed as tracks, the electron track $\pt$ resolution was significantly worse than that of charged hadrons or muons due 
-to bremsstrahlung.  The tracker measured the $\pt$ of electrons that had $10 < \pt < 100$ $\GeV$ with a resolution of 27\% or better 
-in the barrel, and 50\% or better in the endcap.
+Charged hadrons that did not undergo a nuclear interaction in the tracker were measured with a $\pt$ resolution similar that of a 
+muon.  Accounting for the $\eta$-dependent tracker material budget of 0.18 to 0.56 nuclear interaction lengths, the tracker measured 
+the $\pt$ of all charged hadrons with $10 < \pt < 100$ $\GeV$ with a resolution of 3.3\% or better in the barrel, and 20\% or better 
+in the endcap \cite{trackerPerformanceInCollisions}.  Electrons were detectable as tracks if they had $\pt > 0.4$ $\GeV$ and 
+$|\eta| < 2.5$, but their $\pt$ resolution was significantly worse than that of charged hadrons or muons due to multiple scattering 
+and bremsstrahlung.  The tracker measured the $\pt$ of electrons with $10 < \pt < 100$ $\GeV$ with a resolution of between 6\% and 
+27\% of $\pt$ in the barrel, and between 20\% and 50\% of $\pt$ in the endcap.
 
-%RESUME HERE
+To measure the position of the interaction vertex and charged particle momenta with these resolutions, the alignment and momentum 
+response of the tracker were measured before the start of data taking with cosmic ray muons.  The alignment is the position of the 
+pixel and strip trackers relative to the calorimeters and muon detectors, and was measured to determine the absolute positions of 
+interaction vertices.  The magnitudes of signals generated by charged particles in the pixel and strip detector modules vary with 
+$\pt$, and the response of each module versus $\pt$ was measured to identify variations in the tracker measurements versus $\eta$ 
+and $\phi$.  During collisions, $Z \rightarrow \mu\mu$ events and cosmic ray muons were used to monitor and recalibrate the tracker 
+alignment and momentum response.
 
-
-To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
-of the tracker were measured before and during 2015 pp collisions.  Before collisions, cosmic ray muons were 
-used to measure the tracker alignment and momentum response, and derive calibration factors that accounted for 
-changes in either relative to expectations.  During collisions, $Z \rightarrow \mu\mu$ events and cosmic ray muons 
-were used to monitor and recalibrate the tracker alignment and momentum response.
-
-During particle reconstruction charged leptons and hadrons were distinguished from photons and neutral hadrons using 
-interaction vertices and tracks reconstructed by the tracker.  Tracks that extrapolated to ECAL energy deposits were 
-identified as electrons, and tracks that extrapolated to HCAL or muon detector energy deposits were identified as charged 
-hadrons or muons, respectively.  In addition, the association between tracks and interaction vertices allowed reconstructed 
-charged particles to be selected with vertex requirements, like only selecting charged hadrons that came from the highest 
-$\sum \pt$ vertex in an event.
+In the reconstruction, charged leptons and hadrons were distinguished from photons and neutral hadrons using tracks found in the 
+tracker.  Tracks that extrapolated to energy deposits found in the electromagnetic calorimeter (ECAL) or hadronic calorimeter (HCAL) 
+were identified as electrons or charged hadrons, respectively.  Tracks found in the silicon tracker that extrapolated to tracks found 
+in the muon detectors were identified as muons.
 
 
 \section{The Electromagnetic Calorimeter}
@@ -172,6 +175,9 @@ endcap) with $\sim$25 radiation lengths of PbWO$_{4}$ were installed in a disk. 
 $\times$ 2.86 cm$^{2}$, and was located behind 3 radiation lengths of lead and silicon that constituted the preshower detector.  
 The preshower detector improved the spatial and energy resolution with which electromagnetic showers were studied in the 
 endcap.  A partial view of the ECAL barrel, endcap and preshower detectors is shown in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
+
+%RESUME HERE
+
 
 \begin{figure}[ht]
 	\centering
