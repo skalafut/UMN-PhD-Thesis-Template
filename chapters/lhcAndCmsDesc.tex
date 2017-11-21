@@ -7,15 +7,20 @@
 The energies and trajectories of charged leptons and jets produced in proton-proton (pp) collisions are measured so 
 that the masses \mWR and \mnul can be determined.  The maximum \mWR and \mnul that can be measured are constrained by 
 the pp collision energy and interaction intensity integrated over time.  The mass resolutions are driven by the 
-resolutions with which the lepton and jet energies and trajectories are measured.  In this chapter, the CERN LHC and 
-the pp collisions it delivers are described, and is followed by descriptions of the CMS sub-detectors \cite{\cite{cmsDetectorPaper}} 
-that are used to measure lepton and jet energies and trajectories.
+resolutions with which the lepton and jet energies and trajectories are measured.  In this chapter, the CERN Large 
+Hadron Collider (LHC) and the pp collisions it delivers are described as a prelude to the main chapter topic - the 
+Compact Muon Solenoid (CMS) sub-detectors that are used to measure lepton and jet energies and trajectories.  The 
+structure and the performance (measurement resolutions) of the sub-detectors used to detect leptons and jets are 
+described here, and a more detailed explanation is given elsewhere \cite{cmsDetectorPaper}.
 
-The CERN LHC was constructed in a 27 km circular tunnel \cite{lhcTDR} to deliver pp collisions at 13 $\TeV$.  In the 
+
+\section{The LHC and CMS Overview}
+\label{sec:lhcCmsOverview}
+The LHC was constructed in a 27 km circular tunnel \cite{lhcTDR} to deliver pp collisions at 13 $\TeV$.  In the 
 collider two proton beams that contained $\sim$2300 proton bunches, with 25 ns separating adjacent 
 bunches are collided at the center of the CMS detector.  Collisions occurred at 4 interaction points (IPs), and 
 the beam optics were such that the highest intensity collisions occurred at 2 IPs.  The general purpose ATLAS 
-(A Toroidal Lhc Apparatus) \cite{atlasTdrPhysPerformance} and CMS (Compact Muon Solenoid) \cite{cmsTdrPhysPerformance} 
+(A Toroidal Lhc Apparatus) \cite{atlasTdrPhysPerformance} and CMS \cite{cmsTdrPhysPerformance} 
 experiments were built around these IPs, and the CMS IP coincides with the geometric center of CMS.  The interaction 
 intensity $\Ell$, given by Equation \ref{eq:instLumi}, is inversely proportional to the product of the two beam areas 
 $4\pi \epsilon_{n}\beta^{*}$, and proportional to a geometric factor F based on the beam crossing angle, and the rate 
@@ -30,43 +35,32 @@ to maximize the interaction intensity $\Ell$.  In 2015 the intensity at the CMS 
 \label{eq:instLumi}
 \end{equation}
 
-Particles produced at the CMS IP were detected using several sub-detectors.  Located closest to the IP was the silicon 
-tracker, which was used to detect charged particles.  Surrounding the tracker were the electromagnetic (ECAL) and hadronic 
-(HCAL) calorimeters, which were used to identify neutral and charged particles.  The ECAL was used to identify photons and 
-tracks produced by electrons ($e^{\pm}$), and the HCAL was used to identify neutral hadrons and tracks produced by charged 
-hadrons.  The tracker and both calorimeters were inside the solenoid magnet that generated a 3.8 $\unit{T}$ magnetic field.  
-Muon detectors, located in the iron magnet return yoke where the magnetic field strength varied between 1 and 3 $\unit{T}$, 
-were used to identify tracks produced by muons ($\mu^{\pm}$).  Each sub-detector covered 360$^{\circ}$ in the plane 
-perpendicular to the proton beam axis, and was .
+Particles produced at the CMS IP were detected using the sub-detectors shown in Figure \ref{fig:layersOfCMS}.  Located closest 
+to the IP was the silicon tracker, which was used to detect charged particles.  Surrounding the tracker were the electromagnetic 
+(ECAL) and hadronic (HCAL) calorimeters, which were used to identify neutral and charged particles.  The ECAL was used to 
+identify photons and tracks produced by electrons ($e^{\pm}$), and the HCAL was used to identify neutral hadrons and tracks 
+produced by charged hadrons.  The tracker and both calorimeters were inside a solenoid magnet that generated a 3.8 $\unit{T}$ 
+magnetic field.  Muon detectors were located in the iron magnet return yoke where the magnetic field strength varied between 
+1 and 3 $\unit{T}$, and were used to identify tracks produced by muons ($\mu^{\pm}$).  Each sub-detector covered 360$^{\circ}$ 
+in the plane perpendicular to the beam axis, and was divided into a barrel and two endcaps to detect particles over a large 
+angular region: between 5.65$^{\circ}$ and 90$^{\circ}$ away from the beam axis.
 
-%RESUME HERE
-
-Particles produced in pp collisions were 
-detected using a powerful solenoid magnet, and four sub-detectors - the silicon tracker, the electromagnetic and 
-hadronic calorimeters, and the muon detectors - described in detail elsewhere \cite{cmsDetectorPaper}, and shown in 
-Figure \ref{fig:layersOfCMS}.  The tracker and both calorimeters were inside the solenoid magnet where the magnetic 
-field strength was 3.8 $\unit{T}$.  The muon detectors were located in the magnet iron return yoke where the magnetic 
-field strength varied between 1 and 3 $\unit{T}$.  Each sub-detector covered 360 degrees in the plane perpendicular 
-to the beam axis, and was divided into a barrel and two endcaps to detect particles over a large angular region: 
-between 5.65 degrees and 90 degrees away from the beam axis.
-
-Detected particles were characterized by energies perpendicular to the beam axis and trajectories relative to the IP; 
-charged particles were also characterized by points of origination, vertices, measured from the IP.  The tracker and muon 
-detectors measured the scalar transverse momentum ($\pt$) of leptons and jets, and the calorimeters measured the scalar transverse 
-energy ($\Et$) of electrons and jets.  Detected particles were assumed to be massless, so their $\pt$ and $\Et$ were equivalent.  
-In addition to energy measurements, the tracker and calorimeters also measured particle trajectories in terms of two 
-quantities: the angle $\phi$, $0 \leq \phi < 2\pi$, in the plane perpendicular to the beam direction, and the pseudorapidity 
-$\eta$:
+Particles detected in each sub-detector were characterized by energies perpendicular to the beam axis and trajectories relative 
+to the IP.  The tracker and muon detectors measured the scalar transverse momentum ($\pt$) of particles, and the calorimeters 
+measured the scalar transverse energy ($\Et$) of particles.  Detected particles were assumed to be massless, so $\pt$ and $\Et$ 
+were equivalent.  Each particle's trajectory was represented by a vector pointing from the IP to the spatial position of an energy 
+measurement, and the vector coordinates were expressed in terms of two quantities: the angle $\phi$, $0 \leq \phi < 2\pi$, in 
+the plane perpendicular to the beam direction, and the pseudorapidity $\eta$:
 
 \begin{equation}
 	\eta \equiv \frac{1}{2}\ln{\frac{E+p_{z}}{E-p_{z}}}
 \end{equation}
-where E is the particle's energy, and $p_{z}$ is the particle's momentum along the beam direction.  The 
+where E is the magnitude of the particle's energy, and $p_{z}$ is the particle's momentum along the beam direction.  The 
 transverse energies $\Et$ and $\pt$ are related to the magnitudes $E$ and $|p|$ by $\Et \equiv E/\cosh{\eta}$ and 
 $\pt \equiv |p|/\cosh{\eta}$.  The quantities $\eta$ and $\phi$ were also used to quantify the distance between two 
-trajectories as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  Every charged particle detected by the tracker 
-was also distinguished by an interaction vertex.  Each vertex was measured from the IP, and was defined by a transverse 
-distance perpendicular to the beam axis, and a longitudinal distance along the beam axis.
+trajectories as $\Delta R \equiv \sqrt{\eta^{2} + \phi^{2}}$.  Finally, each particle detected in the tracker was also 
+distinguished by a point of origin - an interaction vertex.  Each vertex's position was measured from the IP, and was 
+defined by a transverse distance perpendicular to the beam axis, and a longitudinal distance along the beam axis.
 
 \begin{figure}[h]
 	\centering
@@ -79,19 +73,21 @@ distance perpendicular to the beam axis, and a longitudinal distance along the b
 
 \section{The Silicon Tracker}
 \label{sec:siTrackerDescription}
-The silicon tracker consisted of silicon pixel and strip detectors that detected charged particles, measured their 
-momenta, and identified interaction vertices.  Closest to the beam axis was the pixel detector, which used silicon 
-pixels to pinpoint pp interaction vertices with $\mu$m precision.  
-Surrounding the pixel detector was the strip detector, which used silicon strips to measure charged particle momenta with 
-a resolution of a few percent.  Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ generated an 
-analog signal that was detected and stored in an analog memory until it was readout or discarded.
+The silicon tracker consisted of silicon pixel and strip detectors whose purpose was to detect and track charged particles 
+as they traverse the magnetic field, thereby measuring their radii of curvature.  Then the points where particle tracks 
+originated were used to identify interaction vertices.  Closest to the beam axis was the pixel detector, which used 
+silicon pixels to measure particles' points of origin and their trajectories up to 15 cm from the $z$ axis.  Surrounding 
+the pixel detector was the strip detector, which used silicon strips to measure the radii of curvature of particles up to 
+110 cm from the $z$ axis.
 
-The pixel detector was built from $\approx$1 m$^{2}$ of small silicon detectors, each covering 100 $\times$ 150 $\mu$m$^{2}$.  
-In the barrel region ($0 < |\eta| < 1.2$), individual silicon detectors were assembled in three concentric cylindrical shells 
-centered on the $z$ axis.  In the endcap region ($1.2 < |\eta| < 2.5$), two layers of silicon detectors were 
-installed in a turbine pattern (Figure \ref{fig:pixelTracker}) \cite{pixelCommissioning}.  These pixel 
-layers provided up to 3 measurements for every track, and primarily were used to reconstruct interaction 
-vertices.
+%Charged particles produced within the tracker acceptance of $|\eta| < 2.5$ generated an 
+%analog signal that was detected and stored in an analog memory until it was readout or discarded.
+
+The pixel detector was built from $\approx$1 m$^{2}$ of arrays of pixels, each covering 100 $\times$ 150 $\mu$m$^{2}$.  In 
+the barrel region ($0 < |\eta| < 1.2$), individual silicon detectors were assembled in three concentric cylindrical shells 
+centered on the $z$ axis.  In the endcap region ($1.2 < |\eta| < 2.5$), two layers of pixel detectors were installed in a 
+turbine pattern (Figure \ref{fig:pixelTracker}) \cite{pixelCommissioning}.  These provided up to 3 measurements for every 
+track, and primarily were used to reconstruct interaction vertices.
 
 \begin{figure}[ht]
 	\centering
@@ -105,8 +101,8 @@ detectors\footnote{The strip size varied with $\eta$ and distance away from the 
 $\mu$m, and the strip length was between 12 and 16 cm.}, and organized into four structures based on $|\eta|$ and distance from the IP.  
 In the barrel region, silicon detectors were used to build 10 concentric cylindrical shells.  In the endcap region, silicon 
 detectors were arranged in 12 disks, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}, with some overlap in $|\eta|$ with 
-the barrel region silicon detectors.  The strip detector provided 5 to 14 measurements for every track, and was primarily used to 
-measure the momenta of charged particles.
+the barrel region silicon detectors.  The strip detector provided between 5 and 14 measurements for every track that were used 
+to measure particles' radii of curvature, and thereby measure their momenta.
 
 \begin{figure}[ht]
 	\centering
@@ -116,9 +112,14 @@ measure the momenta of charged particles.
 	\label{fig:stripTracker}
 \end{figure}
 
-The signal from a charged particle traversing a detector was measured by readout modules connected to groups of pixels or 
-strips\footnote{$\sim$16000 readout modules were connected to 66 million pixels, and $\sim$15400 readout modules were connected 
-to 9.6 million strips.}.
+The signals from a charged particle traversing the tracker were measured by silicon detector modules that each had arrays of 
+individual pixels or strips connected to Read-Out Chips (ROCs).  In the pixel tracker barrel and endcap, each ROC was connected 
+to an array of 52 $\times$ 80 individual pixels.  The pixel tracker barrel was divided into silicon detector modules that each had 
+16 ROCs.  In the pixel tracker endcap, each turbine blade was divided into 7 silicon detector modules (4 on one face, 3 on the 
+other), and each module had between 2 and 10 ROCs.  In total, $\sim$16000 ROCs were connected to 66 million pixels.  Using a 
+different type of ROC, 128 individual strips located on the same $\eta$ ring were connected to a ROC to form one strip detector 
+module.  The $\eta$ ring structure was used in the strip tracker barrel and endcap for a total of $\sim$15400 modules in the 
+strip tracker.
 
 The tracker performance depended on the number and momenta of charged particles in a collision event.  In events where two leptons 
 and jets were reconstructed from tracks that pointed to one vertex, the vertex's position was measured with a resolution better than 
@@ -134,6 +135,9 @@ in the endcap \cite{trackerPerformanceInCollisions}.  Although more than 90\% of
 were reconstructed as tracks, the electron track $\pt$ resolution was significantly worse than that of charged hadrons or muons due 
 to bremsstrahlung.  The tracker measured the $\pt$ of electrons that had $10 < \pt < 100$ $\GeV$ with a resolution of 27\% or better 
 in the barrel, and 50\% or better in the endcap.
+
+%RESUME HERE
+
 
 To measure interaction vertex positions and charged particle momenta with the quoted resolutions, the alignment and calibration 
 of the tracker were measured before and during 2015 pp collisions.  Before collisions, cosmic ray muons were 
