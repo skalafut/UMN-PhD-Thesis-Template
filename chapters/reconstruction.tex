@@ -10,6 +10,10 @@
 and two leptons whose kinematics are consistent with those of the \WR progeny.  The reconstruction algorithms, lepton triggers, and 
 offline selection criteria are described in this section.
 
+The reconstruction algorithms used in and the event selection criteria applied to data and simulated events, used to estimate the 
+signal and the background, were identical.  In this section, any difference in reconstruction and selection efficiency between data 
+and simulated events is described.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/flowOfParticlesThroughCMS.png}
@@ -49,50 +53,45 @@ $|\eta| < 2.5$ were reconstructed as tracks with an efficiency $\geq$ 97\% \cite
 
 \subsection{Muon Reconstruction}
 \label{sec:muReco}
-Muons are reconstructed as tracks from signals measured in individual muon chambers.  In each DT chamber\footnote{The 3 innermost radial 
-layers of DTs use DT chambers that have 8 layers of r-$\phi$ measurement planes and 4 layers of r-z measurement planes.}, first the start 
-and end points of track segments are identified as pairs of signals measured in the same plane (r-$\phi$ or r-z) but in different layers.  
-Then, straight lines are drawn between the signal pairs, and a signal pair is ignored if its line does not point toward the IP.  The 
-remaining signals that overlap with any of these straight lines are built into track segments 
-that are measured in at least 3 layers.  In each plane the track segment that has signals in the largest number of layers ($N_{lay}$), at 
-least 3, and the lowest $\chi^{2}/nDOF$ ($\chi^{2}_{min}$), less than 20, is used to build a 3D track.  If there are two or more track 
-segments in one plane with the same $N_{lay}$ and $\chi^{2}_{min}$, then all combinations of r-$\phi$ and r-z track segments are 
-used to build several 3D tracks.  In practice, more than one 3D track is reconstructed in a DT chamber in less than 1\% of events 
-\cite{cmsTdrPhysPerformance}.  The same 
-track segment reconstruction algorithm is used in each 6 layer, single plane CSC.  There, the final track segment must have signals 
-in at least 4 layers.  In the barrel-endcap transition region ($1.3 < |\eta| < 1.6$) where the DT chambers stop and the CSCs begin, RPCs 
+Muons are reconstructed as tracks from signals measured in individual muon chambers.  In each DT chamber, the start 
+and end points of track candidates are identified as pairs of track points measured in the same plane (r-$\phi$ or r-z) but in different 
+layers.  Then, straight lines representing the track candidates are drawn between the pairs of points, and candidates that do not project 
+to the IP are discarded.  The trajectories of these candidates are compared to the positions of all track points, and the points that 
+overlap with the candidate trajectories are merged with the candidates to build track segments that are measured in at least 3 layers.  
+In each plane the track segment that is measured in the largest number of layers ($N_{layer}$) and has the lowest $\chi^{2}/nDOF$ 
+($\chi^{2}_{min}$), less than 20, is used to build a 3D track.  If there are two or more track segments in one plane with the same 
+$N_{layer}$ and $\chi^{2}_{min}$, then all combinations of r-$\phi$ and r-z track segments are used to build tracks.  In practice, only 
+$\sim$1\% of events have more than 1 track in a DT chamber \cite{cmsTdrPhysPerformance}.  The same track segment reconstruction algorithm 
+is used in each of the six-layer, single plane CSCs.  There, the final track segment is required to have signals in at least 4 layers.  
+In the barrel-endcap transition region ($1.3 < |\eta| < 1.6$) where the DT chambers end and the CSCs begin, RPCs 
 are used to improve the muon reconstruction efficiency and the precision of arrival time measurements.  Each RPC contains two parallel 
 plates divided into many thin strips, and strips that measure a signal are grouped into clusters.  Each reconstructed cluster represents 
 a hit whose position is the center of gravity of all the strips in the cluster.
 
-%RESUME HERE
-
-
-Individual chamber tracks are connected to reconstruct muon trajectories over several meters.  
-A Kalman filter algorithm starts with tracks in the chambers closest to the IP, and predicts the track positions in chambers in the next 
+Tracks in individual chambers are connected to reconstruct muon trajectories over several meters.  
+A Kalman filter algorithm similar to the one used to reconstruct electron tracks starts with tracks in the chambers closest to the IP, 
+and predicts the track positions in chambers in the next 
 radial station with the effects of an inhomogeneous magnetic field and material losses taken into account \cite{muonRecoFirstCollisions}.  
 Track segments in outer chambers are added to existing tracks subject to a $\chi^{2}$ requirement, and existing tracks are propagated to 
 the next radial station even if no matching track segment is found in the current station.  Once the outermost station is included, a 
-reverse Kalman filter is applied to reconstructed tracks from the outermost to the innermost station.  The reverse Kalman filter finalizes 
-the track parameters, then these tracks are compared to silicon tracker tracks to identify muons.
+reverse Kalman filter is applied to reconstructed tracks from the outermost to the innermost station.  The reverse Kalman filter is used 
+to determine the final track parameters, and the resultant tracks are compared to tracks found in the silicon detector to identify muons.
 
-Muons are identified using tracks reconstructed in the silicon tracker and muon detectors.  Tracks from the muon detectors are 
-extrapolated to the outermost silicon strip tracker layer, where their $(\eta,\phi)$ positions are compared to those of silicon tracker 
-tracks.  In the local coordinate plane of the silicon strip layer, each silicon tracker track that passes within 3 cm of a muon detector 
-track is identified as a muon.  If an extrapolated muon detector track has multiple silicon tracker track candidates within 3 cm, the 
-closest match is identified as a muon.  The silicon tracker track determines the $(\eta,\phi)$ trajectory of each muon.
+Each silicon detector track that passes within 3 cm of a muon detector track is identified as a muon.  If a muon detector track has multiple 
+silicon detector track candidates within 3 cm, the closest match is identified as a muon; and comparing the results of the silicon detector 
+track and the muon detector track determines the $(\eta,\phi)$ trajectory of each muon.
 
-The momentum of each muon is determined by sampling four different muon reconstruction algorithms, and selecting the  
-highest quality result.  Each algorithm fits a continuous track \cite{cmsMuonRecoRunTwo} to a unique combination of silicon tracker 
-and muon detector signals to estimate a muon's trajectory through CMS, depicted in Figure \ref{fig:particleTrajectories}.  The 
+As there are two independent detectors each measuring the muon's momentum, four different muon reconstruction algorithms are composed, 
+and the highest quality result is selected.  Each algorithm fits a continuous track \cite{cmsMuonRecoRunTwo} to a unique combination of 
+silicon tracker and muon detector measurements to estimate a muon's trajectory, depicted in Figure \ref{fig:particleTrajectories}.  The 
 quality of each continuous track is identified by a fit uncertainty $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt$.  The 
 track with the lowest $\chi^{2}/nDOF$ and momentum uncertainty $\sigma(\pt)/\pt < 0.3$ determines the muon's momentum.  
 For muons with $\pt \lesssim 100$ $\GeV$ the highest quality result is obtained using only silicon tracker measurements.  Muons that had 
 $|\eta| < 1.4$ and $\pt = 100$ $\GeV$ were measured with a $\pt$ resolution of $\sim$2.8\% \cite{trackerPerformanceInCollisions}.  
 As a muon's $\pt$ increases above 100 $\GeV$ the silicon tracker $\pt$ resolution degrades faster that that of the muon 
 detectors.  A significant fraction of $\WR \rightarrow \mu\mu jj$ events are expected to produce at least one muon with $\pt > 200$ $\GeV$ 
-(Table \ref{tab:wrHighPtMuons}), and in this high $\pt$ region the highest quality momentum measurement comes from combining silicon 
-tracker and muon detector measurements.  By combining measurements, muons with $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ were measured 
+(Table \ref{tab:wrHighPtMuons}).  In this high $\pt$ region the highest quality momentum measurement comes from a combination of the 
+silicon tracker and muon detector measurements, such that muons with $|\eta| < 0.9$ and $200 < \pt < 400$ $\GeV$ were measured 
 with a $\pt$ resolution of 3.2\%; higher $\pt$ muons were measured with a resolution better than 6\% \cite{cmsMuonRecoRunTwo}.
 
 \begin{table}[h]
@@ -108,11 +107,8 @@ with a $\pt$ resolution of 3.2\%; higher $\pt$ muons were measured with a resolu
 	\end{tabular}
 \end{table}
 
-Muons reconstructed in simulated events have slightly different energies than muons reconstructed in data.  Energy corrections for simulated 
-muons are derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass ($M_{\mu\mu}$) distribution in 
-$Z \rightarrow \mu\mu$ events is compared between data and simulations, and the energies of simulated muons are corrected so that the two 
-$M_{\mu\mu}$ distributions match.  The average correction is 1\% of a muon's $\pt$.
-
+%Describe muon reco efficiency difference between data and simulated events, if there is one
+%RESUME HERE
 
 \section{Energy Measurement}
 \label{sec:enrgReco}
@@ -155,10 +151,7 @@ $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a res
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-Electrons reconstructed in simulated events have slightly different energies than electrons reconstructed in data.  Energy corrections for 
-simulated electrons are derived using $Z \rightarrow ee$ events from simulations and data.  The di-electron mass ($M_{ee}$) 
-distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of simulated electrons 
-are corrected so that the two $M_{ee}$ distributions match.  The average correction is 1\% of an electron's $\Et$.
+%Describe electron reco efficiency difference between data and simulated events here
 
 After electrons are identified, ECAL SCs are identified as being caused by photons using the remaining reconstructed tracks.  An ECAL SC that does 
 not match any reconstructed track within the electron track-SC $(\eta,\phi)$ window is identified as a photon.  Alternatively, an ECAL SC that 
@@ -219,11 +212,6 @@ measured with a $\pt$ resolution of 16\% or better \cite{jetResolutionInCollisio
 	From the CMS Experiment.}
 	\label{fig:jetClustering}
 \end{figure}
-
-Jets reconstructed in simulated events have slightly different energies than jets reconstructed in data.  Energy corrections for 
-simulated jets are derived using dijet, $Z$+jet, and $\gamma$+jet events found in simulations and data \cite{jetpaper}.  The di-jet 
-mass and leading jet $\pt$ distributions found in these events are compared between data and simulations, and the energies of simulated 
-jets are corrected so that the jet distributions match.  The average correction is 6\% of a jet's $\pt$.
 
 
 \section{Trigger and Offline Selection Criteria}

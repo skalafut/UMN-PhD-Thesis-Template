@@ -74,7 +74,7 @@ Monte Carlo (\MC) simulations.
 
 \clearpage
 
-\section{Monte Carlo}
+\section{Monte Carlo and Corrections}
 \label{sec:MC}
 Background interactions are simulated in three steps.  The first step uses one or two \MC generators to simulate the interaction between 
 colliding protons, the decay of unstable particles, and the hadronization of partons leaving the interaction.  Particles produced by the 
@@ -121,6 +121,25 @@ signals, and simulates the decays of quasi-stable particles to the following sta
 In the third step, particle reconstruction algorithms reconstruct particles and vertices at the trigger level and offline using the detector 
 signals simulated by GEANT.  The trigger selections are applied, and the final decision of each trigger algorithm, pass or fail, is saved in each 
 simulated event, but no events are discarded.
+
+%Describe lepton and jet energy corrections here
+
+%Muons reconstructed in simulated events have slightly different energies than muons reconstructed in data.  Energy corrections for simulated 
+%muons are derived using $Z \rightarrow \mu\mu$ events from simulations and data.  The di-muon mass ($M_{\mu\mu}$) distribution in 
+%$Z \rightarrow \mu\mu$ events is compared between data and simulations, and the energies of simulated muons are corrected so that the two 
+%$M_{\mu\mu}$ distributions match.  The average correction is 1\% of a muon's $\pt$.
+
+%Electrons reconstructed in simulated events have slightly different energies than electrons reconstructed in data.  Energy corrections for 
+%simulated electrons are derived using $Z \rightarrow ee$ events from simulations and data.  The di-electron mass ($M_{ee}$) 
+%distribution in $Z \rightarrow ee$ events is compared between data and simulations, and the energies of simulated electrons 
+%are corrected so that the two $M_{ee}$ distributions match.  The average correction is 1\% of an electron's $\Et$.
+
+%Jets reconstructed in simulated events have slightly different energies than jets reconstructed in data.  Energy corrections for 
+%simulated jets are derived using dijet, $Z$+jet, and $\gamma$+jet events found in simulations and data \cite{jetpaper}.  The di-jet 
+%mass and leading jet $\pt$ distributions found in these events are compared between data and simulations, and the energies of simulated 
+%jets are corrected so that the jet distributions match.  The average correction is 6\% of a jet's $\pt$.
+
+
 
 After the third step, particle energy corrections and event weights are applied.  As explained previously, the energies of simulated jets, muons, 
 and electrons were corrected to match the energy of particles reconstructed in data.  The differences in lepton reconstruction, trigger selection, 
