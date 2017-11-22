@@ -6,12 +6,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The energies and trajectories of charged leptons and jets produced in proton-proton (pp) collisions are measured so 
 that the masses \mWR and \mnul can be determined.  The maximum \mWR and \mnul that can be measured are constrained by 
-the pp collision energy and interaction intensity integrated over time.  The mass resolutions are driven by the 
+the pp collision energy and collision intensity integrated over time.  The mass resolutions are driven by the 
 resolutions with which the lepton and jet energies and trajectories are measured.  In this chapter, the CERN Large 
-Hadron Collider (LHC) and the pp collisions it delivers are described as a prelude to the main chapter topic - the 
-Compact Muon Solenoid (CMS) sub-detectors that are used to measure lepton and jet energies and trajectories.  The 
-structure and the performance (measurement resolutions) of the sub-detectors used to detect leptons and jets are 
-described here, and a more detailed explanation is given elsewhere \cite{cmsDetectorPaper}.
+Hadron Collider (LHC) and the pp collisions it delivers are described as a prelude to the main topic of the chapter - 
+the Compact Muon Solenoid (CMS) sub-detectors that are used to identify leptons and jets, and measure their energies 
+and trajectories.  The structure and the performance of the sub-detectors used to detect leptons and jets are described 
+here, and a more detailed explanation is given elsewhere \cite{cmsDetectorPaper}.
 
 
 \section{The LHC and CMS Overview}
@@ -36,19 +36,18 @@ to maximize the interaction intensity $\Ell$.  In 2015 the intensity at the CMS 
 \end{equation}
 
 Particles produced at the CMS IP were detected using the sub-detectors shown in Figure \ref{fig:layersOfCMS}.  Located closest 
-to the IP was the silicon tracker, which was used to detect charged particles.  Surrounding the tracker were the electromagnetic 
-(ECAL) and hadronic (HCAL) calorimeters, which were used to identify neutral and charged particles.  The ECAL was used to 
-identify photons and tracks produced by electrons ($e^{\pm}$), and the HCAL was used to identify neutral hadrons and tracks 
-produced by charged hadrons.  The tracker and both calorimeters were inside a solenoid magnet that generated a 3.8 $\unit{T}$ 
+to the IP was the silicon tracker, which was used to detect and track charged particles.  Surrounding the tracker were the electromagnetic 
+(ECAL) and hadronic (HCAL) calorimeters, which were used to identify and measure the kinematics of photons and electrons (e$^{\pm}$), 
+and neutral and charged hadrons.  The tracker and both calorimeters were inside a solenoid magnet that generated a 3.8 $\unit{T}$ 
 magnetic field.  Muon detectors were located in the iron magnet return yoke where the magnetic field strength varied between 
-1 and 3 $\unit{T}$, and were used to identify tracks produced by muons ($\mu^{\pm}$).  Each sub-detector covered 360$^{\circ}$ 
-in the plane perpendicular to the beam axis, and was divided into a barrel and two endcaps to detect particles over a large 
+1 and 3 $\unit{T}$, and were used to detect and track muons ($\mu^{\pm}$) over several meters.  Each sub-detector covered 360$^{\circ}$ 
+in the plane perpendicular to the beam axis, and was divided into a barrel and two endcap sections to detect particles over a large 
 angular region: between 5.65$^{\circ}$ and 90$^{\circ}$ away from the beam axis.
 
 Particles detected in each sub-detector were characterized by energies perpendicular to the beam axis and trajectories relative 
 to the IP.  The tracker and muon detectors measured the scalar transverse momentum ($\pt$) of particles, and the calorimeters 
-measured the scalar transverse energy ($\Et$) of particles.  Detected particles were assumed to be massless, so $\pt$ and $\Et$ 
-were equivalent.  Each particle's trajectory was represented by a vector pointing from the IP to the spatial position of an energy 
+measured their scalar transverse energy ($\Et$).  Detected particles were assumed to be massless, so $\pt$ and $\Et$ were equivalent.  
+Each particle's trajectory was represented by a vector pointing from the IP to the spatial position of an energy 
 measurement, and the vector coordinates were expressed in terms of two quantities: the angle $\phi$, $0 \leq \phi < 2\pi$, in 
 the plane perpendicular to the beam direction, and the pseudorapidity $\eta$:
 
@@ -112,20 +111,19 @@ distance.
 	\label{fig:stripTracker}
 \end{figure}
 
-The signals from a charged particle traversing the tracker were measured by silicon detector modules that each had arrays of 
-individual pixels or strips connected to Read-Out Chips (ROCs).  In the pixel tracker barrel and endcap, each ROC was connected 
-to an array of 52 $\times$ 80 individual pixels.  The pixel tracker barrel was divided into silicon detector modules that each had 
-16 ROCs.  In the pixel tracker endcap, each turbine blade was divided into 7 silicon detector modules (4 on one face, 3 on the 
-other), and each module had between 2 and 10 ROCs.  In total, $\sim$16000 ROCs were connected to 66 million pixels.  Using a 
-different type of ROC, 128 individual strips located on the same $\eta$ ring were connected to a ROC to form one strip detector 
-module.  The $\eta$ ring structure was used in the strip tracker barrel and endcap for a total of $\sim$15400 modules in the 
-strip tracker.
+Charged particles traversing the tracker generated signals in silicon detector modules that each had arrays of pixels or strips 
+connected to Read-Out Chips (ROCs).  In the pixel tracker, each ROC was connected to an array of 52 $\times$ 80 pixels.  The pixel 
+tracker barrel was built from silicon detector modules that each had 16 ROCs.  In the pixel tracker endcap, each turbine blade was 
+built from 7 silicon detector modules (4 on one face, 3 on the other), and each module had between 2 and 10 ROCs.  In total, 
+$\sim$16000 ROCs were connected to 66 million pixels.  The strip tracker used a different type of ROC, and each ROC was connected 
+to 128 strips located on the same $\eta$ ring.  Each ROC and its associated strips was one strip detector module, and the strip 
+tracker was built from $\sim$15400 detector modules.
 
 The tracker measured the positions and energies of charged particles at up to 17 points, and as far as 1.1 meters from the beam 
-axis.  The track reconstruction algorithms, described later, identified sets of multiple signals as individual particle tracks 
-using a Kalman filter and assuming particle trajectories were approximated by a perfect helix.  Along the trajectory of each track, 
-the equation of motion of a charged particle in an inhomogenous magnetic field subject to energy losses in silicon was solved 
-numerically.  Finally, the particle's $\pt$ was extracted from the numerical solution.
+axis.  The track reconstruction algorithms, described later, identified sets of track points as individual particle tracks.  Along 
+the trajectory of each track, the equation of motion of a charged particle in an inhomogenous magnetic field subject to ionization 
+energy losses in silicon was solved numerically.  The numerical solution was used to extract the particle's radius of curvature, and 
+thereby its $\pt$.
 
 The tracker performance depended on the number and momenta of the charged particles in a collision event.  In events where two leptons 
 and jets were reconstructed from tracks that pointed to one vertex, the vertex's position was measured with a resolution better than 
@@ -142,13 +140,11 @@ $|\eta| < 2.5$, but their $\pt$ resolution was significantly worse than that of 
 and bremsstrahlung.  The tracker measured the $\pt$ of electrons with $10 < \pt < 100$ $\GeV$ with a resolution of between 6\% and 
 27\% of $\pt$ in the barrel, and between 20\% and 50\% of $\pt$ in the endcap.
 
-To measure the position of the interaction vertex and charged particle momenta with these resolutions, the alignment and momentum 
-response of the tracker were measured before the start of data taking with cosmic ray muons.  The alignment is the position of the 
-pixel and strip trackers relative to the calorimeters and muon detectors, and was measured to determine the absolute positions of 
-interaction vertices.  The magnitudes of signals generated by charged particles in the pixel and strip detector modules vary with 
-$\pt$, and the response of each module versus $\pt$ was measured to identify variations in the tracker measurements versus $\eta$ 
-and $\phi$.  During collisions, $Z \rightarrow \mu\mu$ events and cosmic ray muons were used to monitor and recalibrate the tracker 
-alignment and momentum response.
+To measure the positions of the interaction vertices and charged particle momenta with these resolutions, the tracker alignment was 
+measured before the start of data taking with cosmic ray muons.  The alignment is the position of the silicon detector modules relative 
+to the calorimeters and muon detectors.  Knowing and calibrating the alignment is crucial because the momenta of charged particles 
+and the positions of interaction vertices are extracted from track position measurements.  During collisions, $Z \rightarrow \mu\mu$ 
+events and cosmic ray muons were used to monitor and recalibrate the tracker alignment.
 
 In the reconstruction, charged leptons and hadrons were distinguished from photons and neutral hadrons using tracks found in the 
 tracker.  Tracks that extrapolated to energy deposits found in the electromagnetic calorimeter (ECAL) or hadronic calorimeter (HCAL) 
@@ -185,9 +181,6 @@ in Figure \ref{fig:ecalEBEEandES} \cite{ecalTDR}.
 	\caption{The ECAL barrel, endcap and preshower detectors.}
 	\label{fig:ecalEBEEandES}
 \end{figure}
-
-%use later
-%The ECAL measured the energies of photons and $e^{\pm}$ with $0 < |\eta| < 3.0$.
 
 The ECAL measured the energies of photons and electrons with $0 < |\eta| < 3.0$ by measuring the amount of scintillation light produced 
 in clusters of crystals.  The density of PbWO$_{4}$, 5.4 $\frac{gm}{cm^{3}}$, was sufficiently high that the signal of an electron or 
@@ -262,8 +255,9 @@ located 4.0 meters or further from the IP, the muon detectors also measured each
 event that produced it.
 
 The muon barrel and endcap sections, shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, used three types of gas ionization 
-detectors to measure muon kinematic quantities.  In the barrel region ($0 < |\eta| < 1.2$), drift tubes (DTs) and resistive plate 
-chambers (RPCs) were used, while in the endcap region ($1.2 < |\eta| < 2.4$), RPCs and cathode strip chambers (CSCs) were used.
+detectors to identify muons and to measure their kinematics.  In the barrel region ($0 < |\eta| < 1.2$), drift tubes (DTs) and 
+resistive plate chambers (RPCs) were used, while in the endcap region ($1.2 < |\eta| < 2.4$), RPCs and cathode strip chambers 
+(CSCs) were used.
 
 \begin{figure}[ht]
 	\centering
@@ -274,11 +268,13 @@ chambers (RPCs) were used, while in the endcap region ($1.2 < |\eta| < 2.4$), RP
 	\label{fig:muonBarrelAndEndcapDetectors}
 \end{figure}
 
-The DTs were organized into 5 wheels, each with 4 radial layers called stations, and 12 $\phi$ segments per 
-station that each covered 30 degrees in $\phi$.  Each DT chamber measured muon trajectories using 8 planes of 
-drift tubes in r-$\phi$, and 4 planes of drift tubes in r-z\footnote{There were no r-z planes of drift tubes in 
-the outermost station}.  Using these planes, in 2015 collisions each DT station measured muon trajectories 
-with a resolution better than 300$\mu$m in any direction, and measured muon arrival times with a resolution of 2 ns \cite{cmsMuonRecoRunTwo}.  
+The DTs were organized into 5 wheels, each with 4 radial units called stations, and 12 $\phi$ segments per 
+station that each covered 30 degrees in $\phi$.  Each DT chamber measured muon trajectories using a set of 4 DT 
+planes measuring r-z coordinates\footnote{There were no r-z planes of drift tubes in the outermost station.} that 
+were between two sets of DTs measuring r-$\phi$ coordinates.  Each r-$\phi$ set had 4 DT planes, and the two sets 
+were separated by 24 cm to increase the lever arm length that causes muons to curve in the magnetic field.  Based on 
+collision data from 2015, each DT station measured muon trajectories with a resolution better than 300$\mu$m in any 
+direction, and measured muon arrival times with a resolution of 2 ns \cite{cmsMuonRecoRunTwo}.  
 
 In the endcap, CSCs were installed in four disks facing the interaction point.  These disks were segmented into several radial layers 
 (rings of different radii, stations), as shown in Figure \ref{fig:muonBarrelAndEndcapDetectors}, each containing 18 or 36 chambers, 
@@ -291,9 +287,18 @@ were used to identify the collision event that produced each muon \cite{cmsMuonR
 By combining information from the tracker and the muon system, the $\pt$ resolution of muons could be improved.  Due to the 3.8 
 $\unit{T}$ magnetic field, the tracker measured muon momenta in the $\pt <$ 200 $\GeV$ phase space with a resolution better than the 
 muon detectors by a factor of 3 or more.  As the muon $\pt$ increased above 200 $\GeV$, the muon momentum resolution reduced.  However, 
-since the curvature of muon tracks was measured over several meters, the $\pt$ of muons with a $\pt > 200$ $\GeV$ was measured with a 
-better resolution than the tracker.  Based on cosmic ray measurements made in 2015, the combined tracker and muon system measured the 
-$\pt$ of barrel region muons that had $200 < \pt < 400 \GeV$ with a resolution ($\frac{\Delta p}{\pt}$) of 3.5\% or better \cite{cmsMuonRecoRunTwo}.
+since particle trajectories in the muon detectors were measured over 3 meters or more, the $\pt$ of muons with a $\pt > 200$ $\GeV$ was 
+measured with a better resolution than the tracker.  Based on cosmic ray measurements made in 2015, the combined tracker and muon system 
+measured the $\pt$ of barrel region muons that had $200 < \pt < 400 \GeV$ with a resolution ($\frac{\Delta p}{\pt}$) of 3.5\% or better 
+\cite{cmsMuonRecoRunTwo}.
+
+To measure the trajectories of tracks and muon momenta with these resolutions, the muon detector alignment was measured before the 
+start of data taking with cosmic ray muons.  Knowing and calibrating the alignment is crucial because the momenta of muons and their 
+trajectories are extracted from track position measurements.  During collisions, cosmic ray muons, and $W \rightarrow \mu\nu$ and 
+$Z \rightarrow \mu\mu$ events were used to monitor and recalibrate the alignment of the muon detectors.
+
+In the reconstruction, the tracks measured in individual $\phi$ segments of each muon station were treated as the basic building block 
+of a muon.  Each reconstructed muon contained one track from a muon station or one track from the silicon tracker, or both.
 
 
 \section{The Trigger System}
@@ -322,7 +327,7 @@ in less than 1 $\mu$s, and selected events of interested based on clusters and t
 criteria.  Approximately 80000 events per second were passed to the second level trigger.
 
 This trigger, a High Level trigger (HLT) was used to select events to be stored for offline physics analyses or for detector 
-calibration.  The HLT began by transferring data from all sub-detectors to multi-core processors running the HLT software.  
+calibration.  The HLT began by transferring data from all sub-detectors to $\sim$13000 CPU cores running the HLT software \cite{hltFarm}.  
 A fast, simplified version of the full offline particle reconstruction software was run in small regions identified from the L1 
 trigger.  Then, $\sim$400 different selection algorithms, running in parallel, applied selection criteria ($\Et$, $|\eta|$, etc) 
 to locally reconstructed particles to select energetic photons, charged leptons, jets, and neutrinos.  About 1000 events per 
