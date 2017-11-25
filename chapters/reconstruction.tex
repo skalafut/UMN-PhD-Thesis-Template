@@ -107,12 +107,14 @@ with a $\pt$ resolution of 3.2\%; higher $\pt$ muons were measured with a resolu
 	\end{tabular}
 \end{table}
 
-%Describe muon reco efficiency difference between data and simulated events, if there is one
-%RESUME HERE
+Muons produced in simulated events are reconstructed with a higher efficiency than muons produced in real collisions.  This efficiency 
+difference was corrected by multiplying the weight of each simulated event by a value between 0.99 and 1.0, depending on the muon $\pt$ 
+and $\eta$, for each muon that was selected.
+
 
 \section{Energy Measurement}
 \label{sec:enrgReco}
-The energies of photons and electrons produced in pp interactions are measured in groups of ECAL crystals.  Photons and electrons 
+The energies of photons and electrons are measured in groups of ECAL crystals.  Photons and electrons 
 impinging on the ECAL generate signals in the ECAL crystals that are converted into uncalibrated energies.  The most energetic crystals 
 with $\Et \gtrsim 0.2$ $\GeV$ and their nearest neighbors are grouped into superclusters (SCs) that are at least 3 crystals wide in 
 $\eta$.  The upstream tracker material causes $\sim$35\% of electrons and photons to shower early in the tracker 
@@ -131,18 +133,18 @@ used to seed tower clusters, which include all neighboring towers that have $\Et
 grouped into multiple clusters, the tower's contribution to each cluster is weighted by its distance from each cluster's seed.  After 
 the clusters are built, each tower's energy is multiplied by a laser transparency correction, and relative and absolute energy calibration 
 corrections.  The sum of the calibrated tower energies is the cluster energy, and the energy weighted average $(\eta,\phi)$ position is 
-the cluster position.  Combining ECAL and HCAL energy measurements, hadrons that have $\Et = 100$ $\GeV$ were measured with a $\sim$10\% 
-$\Et$ resolution \cite{pflowEventReco}.
+the cluster position.  Combining ECAL and HCAL energy measurements, hadrons that have $\Et = 100$ $\GeV$ were measured with a resolution 
+of 10\% $\Et$ \cite{pflowEventReco}.
 
 \subsection{Electron, Photon, and Hadron Reconstruction}
 \label{sec:elePhoHadReco}
-A track is identified as being caused by an electron using ECAL SCs.  Reconstructed tracks are extrapolated from the outermost silicon strip 
-layer to the front face of the ECAL, where their $(\eta,\phi)$ positions are compared to those of ECAL SCs.  If one or more tracks match a SC's 
-$(\eta,\phi)$ position within 1.0$^{\circ}$ (1 crystal wide) in $\phi$, and within 0.004 units (below $\frac{1}{2}$ a crystal wide) in $\eta$, then 
-the track and ECAL SC are identified as an electron candidate.  If the ECAL SC $\Et$ and the matched track $\pt$(s) agree within the track 
-$\pt$ uncertainty, then the track and SC are identified as an electron.  Using the SC energy, electrons with $\Et \approx 45$ $\GeV$ and 
-$|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a resolution between 2\% and 5\% at higher $|\eta|$ 
-\cite{ecalPerformanceInCollisions}.
+A track is identified as being caused by an electron if it extrapolates from the outermost silicon strip layer to the front face of the 
+ECAL, and matches a shower found at that location, represented by an ECAL SC.  If a track matches the $(\eta,\phi)$ position of a SC to 
+within 1.0$^{\circ}$ (1 crystal wide) in $\phi$ and within 0.004 units (below $\frac{1}{2}$ a crystal wide) in $\eta$, then 
+the track and ECAL SC are identified as an electron candidate.  If the measured $\Et$ and the matched track $\pt$ agree within the track 
+$\pt$ uncertainty, then the track and shower are identified as being caused by an electron.  Using the SC energy, electrons with 
+$\Et \approx 45$ $\GeV$ and $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a resolution between 2\% and 5\% 
+at higher values of $|\eta|$ \cite{ecalPerformanceInCollisions}.
 
 \begin{figure}[h]
 	\centering
@@ -151,30 +153,28 @@ $|\eta| < 0.8$ were measured with an $\Et$ resolution better than 2\%, and a res
 	\label{fig:eleTrackAndSC}
 \end{figure}
 
-%Describe electron reco efficiency difference between data and simulated events here
+Electrons produced in simulated events are reconstructed with a higher efficiency than electrons produced in real collisions.  This 
+efficiency difference was corrected by multiplying the weight of each simulated event by 0.982 for each electron that was selected.
 
-After electrons are identified, ECAL SCs are identified as being caused by photons using the remaining reconstructed tracks.  An ECAL SC that does 
-not match any reconstructed track within the electron track-SC $(\eta,\phi)$ window is identified as a photon.  Alternatively, an ECAL SC that 
-matches a reconstructed track within the electron track-SC $(\eta,\phi)$ window is identified as a photon if its $\Et$ does not agree with the track 
-$\pt$ within the track $\pt$ uncertainty.
+After electrons have been identified, ECAL SCs are identified as being caused by photons using the remaining reconstructed tracks.  A SC 
+that does not match any reconstructed track within the matching window ($\Delta \eta =$ 0.004 units, $\Delta \phi =$ 1.0$^{\circ}$) is 
+identified as a photon.  Alternatively, an ECAL shower that matches a reconstructed track within the matching window is identified as a 
+photon if its $\Et$ does not agree with the track $\pt$ within the uncertainty of the measurement of the track $\pt$.
 
 A reconstructed track is identified as being caused by a charged hadron using the calorimeter energy clusters.  A track that is not 
 identified as an electron is extrapolated from the outermost silicon strip layer to the HCAL front face, and its $(\eta,\phi)$ position is 
-compared to that of the HCAL clusters.  If a track intersects with any portion of an HCAL cluster, and the cluster $\Et$ and track $\pt$ agree 
-within the cluster $\Et$ uncertainty, then the track is identified as a charged hadron.  The track $\pt$ and $(\eta,\phi)$ characterize the charged 
-hadron kinematics.
-%If an ECAL SC that is not associated with an electron overlaps with any portion of the HCAL cluster, then the ECAL SC can 
-%be incorporated into the charged hadron.  The ECAL SC is incorporated into the charged hadron if the ECAL $\plus$ HCAL $\Et$ is 
-%consistent within its uncertainty with the matching track $\pt$.
+compared to that of the HCAL clusters.  If a track intersects any portion of an HCAL cluster, and the cluster $\Et$ and track $\pt$ agree 
+within the $\Et$ uncertainty, then the track is identified as being caused by a charged hadron.  The track $\pt$ and $(\eta,\phi)$ 
+determine the charged hadron kinematics.
 
-After all charged tracks are identified as leptons or hadrons, an HCAL cluster that is not intersected by a track is identified as a 
-neutral hadron.  Also, an HCAL cluster that is intersected by a track is identified as a neutral hadron if its $\Et$ does not agree with 
-the track $\pt$ within the $\Et$ uncertainty.  If an ECAL SC (energy $E_{ECAL}$, uncertainty $\delta E_{ECAL}$) 
-overlaps with any portion of an HCAL cluster (energy $E_{HCAL}$, uncertainty $\delta E_{HCAL}$) identified as a neutral hadron, then the 
-SC can be identified as a neutral hadron.  The ECAL SC is identified as a neutral hadron if $E_{ECAL}$ and $E_{HCAL}$ agree within the larger 
-of the two uncertainties $\delta E_{ECAL}$ and $\delta E_{HCAL}$.  The $\Et$ and $(\eta,\phi)$ trajectory of each neutral hadron is determined 
-by the calorimeter $\Et$s, and the $\Et$-weighted average cluster position relative to the IP.
-
+After all charged tracks have been identified as leptons or hadrons, an HCAL cluster that is not intersected by a track is identified as 
+a neutral hadron.  Also, an HCAL cluster that is intersected by a track is identified as a neutral hadron if its $\Et$ 
+does not agree with the track $\pt$ within the uncertainty of the measurement of the $\Et$.  If an ECAL SC (energy $E_{ECAL}$, 
+uncertainty $\delta E_{ECAL}$) overlaps with any portion of an HCAL cluster (energy $E_{HCAL}$, uncertainty $\delta E_{HCAL}$) identified 
+as being caused by a neutral hadron, then the SC can be identified as coming from a neutral hadron.  The SC is identified as a neutral 
+hadron if $E_{ECAL}$ and $E_{HCAL}$ agree within the larger of the two uncertainties $\delta E_{ECAL}$ and $\delta E_{HCAL}$.  The $\Et$ 
+and $(\eta,\phi)$ trajectory of each neutral hadron is determined by the calorimeter $\Et$s, and the $\Et$-weighted average cluster 
+position relative to the IP.
 
 \subsection{Jet Reconstruction}
 \label{sec:jetReco}
@@ -185,6 +185,9 @@ more silicon tracker or muon detector tracks, one or more HCAL clusters, and any
 described previously are used to reconstruct muons first, followed by electrons and photons and charged hadrons, then neutral hadrons.  
 After all tracks and energy clusters in a region are identified as specific particles, a jet, represented by the cone in Figure 
 \ref{fig:jetClustering}, is clustered from those particles.
+
+%RESUME HERE
+
 
 Due to the high instantaneous collision luminosity, each pp bunch crossing delivered by the LHC produces multiple pp interactions, 
 or pileup (PU) interactions, that make jet clustering more challenging.  In every unit of $\eta$, each PU interaction adds 
