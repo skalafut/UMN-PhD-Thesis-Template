@@ -224,22 +224,25 @@ from other particles and has a large transverse energy: $\pt > 50$ $\GeV$ for a 
 particles in each event are reconstructed using information from the entire detector, and then additional selection 
 criteria are applied to the reconstructed leptons and jets.  Events that met the selection criteria, described in detail in Appendix 
 \ref{app_trgOfflId}, had two same flavor leptons and at least two jets with the following characteristics:
+\newline
 
 \textbf{Electrons}
 \begin{itemize}
 	\item The $\Et$ of each electron was equal to the energy of its SC measured in the ECAL.
 	\item Each electron had an $\Et > 33$ $\GeV$, and an $|\eta| < 1.44$ or an $|\eta| > 1.57$.
 	\item The majority of each electron's energy in the ECAL was measured in a region that was 2 crystals wide in $\eta$.
-	\item Each electron was promptly produced, and was not reconstructed inside a jet or near other particles.
+	\item Each electron was promptly produced, and was not reconstructed near other particles.
 	\item The track of each electron was reconstructed from multiple high quality measurements made in the tracker.
 \end{itemize}
+\newline
 
 \textbf{Muons}
 \begin{itemize}
-	\item Each muon had an $|\eta| < 2.$, and at least one muon had a $\pt > 50$ $\GeV$.
+	\item Each muon had an $|\eta| < 2.4$, and at least one muon had a $\pt > 50$ $\GeV$.
 	\item Each muon was promptly produced, and was not reconstructed near other charged particles.
 	\item Each muon was reconstructed from multiple high quality measurements made in the tracker and the muon detectors.
 \end{itemize}
+\newline
 
 \textbf{Jets}
 \begin{itemize}
@@ -262,12 +265,12 @@ The trigger and offline selection criteria described previously were used to sel
 These selection criteria were also used in other searches for heavy particles that decay to leptons and jets \cite{exoLeptJetResults}, 
 and were not specifically optimized for this analysis.
 
-Having selected events for this search, the leptons and jets were required to pass additional selection criteria that are based on 
+Having selected events for this search, the leptons and jets were required to pass additional selection criteria that were motivated by 
 the kinematics of the \WR progeny.  The heavy \WR decays through a lighter \nul to two leptons and two jets according to the following 
 decay chain:
 
 \begin{equation}
-	\WR \rightarrow \nul \plus \ell ; \quad \nul \rightarrow \ell jj
+	\WR \rightarrow \nul \plus \ell_{1} ; \quad \nul \rightarrow \ell_{2} jj
 \end{equation}
 %\begin{tikzpicture}[grow=right]
 %	\node (Wr) at (0,0) {$\WR \thickspace \rightarrow \thickspace \nul + \ell$};
@@ -275,31 +278,88 @@ decay chain:
 %	\node (Nl) at (1.25,-0.75) {$\ell jj$};
 %\end{tikzpicture} $\newline$
 Since the \WR and \nul are assumed to couple to leptons and quarks with the same strengths as the $W$, the \WR and \nul decay promptly 
-to leptons and quarks that hadronize into jets.
+to leptons and quarks that hadronize into jets.  The kinematics of these particles are governed by the \WR mass and the ratio $\mnul/\mWR$.
 
-%RESUME HERE
+Since the \WR mass is expected to be several $\TeV$ the \WR has low net momentum, and its progeny \nul and $\ell_{1}$ are emitted 
+isotropically in the lab frame.  As a result, the $\ell_{1}$ and the \nul progeny are emitted in the region $|\eta| < 2.4$, as shown in 
+Figure \ref{fig:wrLeptJetEtas}.  Therefore, both reconstructed leptons and jets were required to have an $|\eta| < 2.4$.
 
-
-The kinematics of leptons and jets produced in \WR decays are governed by \mWR and the ratio $\mnul/\mWR$.  Since \mWR is expected to be 
-several $\TeV$ the \WR has low net momentum, so in the lab frame the \WR progeny \nul and $\ell$ are emitted isotropically.  In addition, 
-the leptons and jets have high $\pt$ (Figure \ref{fig:wrLeptJetPts}), and are emitted at low $|\eta|$ 
-(Figure \ref{fig:wrLeptJetEtas}).  At a specific \mWR, the ratio $\mnul/\mWR$ affects how the total energy \mWR is split amongst the leptons 
-and jets, and their $(\eta,\phi)$ trajectories.  As $\mnul/\mWR$ approaches 1 the average energy of the $\ell_{1}$, from 
-$\WR \rightarrow \ell_{1}\nul$, decreases, and the average \nul energy increases.  In general as $\mnul/\mWR$ increases, the transverse 
-energies of the jets and one lepton increase, at the cost of the other lepton's energy (Figure \ref{fig:wrLeptQrkPtsVarMNu}).  For $\mnul \sim \mWR$ 
-the decay $\nul \rightarrow \ell_{2}jj$ exemplifies the decay of a slow moving heavy particle into lighter particles: in the lab 
-frame the $\ell_{2}$ and both jets are emitted isotropically.  Conversely, as $\mnul/\mWR$ approaches 0 the average $\ell_{1}$ energy 
-increases, the average \nul energy decreases, but the average \nul momentum increases (Figure \ref{fig:hvyNuMomentumVarMNu}).  Here the decay 
-$\nul \rightarrow \ell_{2}jj$ exemplifies the decay of a fast moving particle: in the lab frame the \nul progeny are boosted in the 
-\nul momentum direction, and the $\Delta R(\ell,j)$ separation decreases (Figure \ref{fig:wrDrLeptQrkVarMNu}).  The \nul and $\ell_{1}$ 
-recoil against each other, and the boost at low $\mnul/\mWR$ increases the angle between $\ell_{1}$ and $\ell_{2}$ (Figure 
-\ref{fig:wrLeptAngleSepVarMNu}).  As a result, the di-lepton invariant mass ($\Mll$), proportional to the angle between the leptons, 
-increases as $\mnul/\mWR$ approaches 0 (Figure \ref{fig:wrMllVarMNu}).
-
-%to draw a plot of the angle between the two leptons use this argument in TTree Draw within quotes, and multiplied by 180/3.1416
-% TMath::ACos(1-( (TMath::CosH(etaEle[0]-etaEle[1]) - TMath::Cos(phiEle[0]-phiEle[1]))/(TMath::CosH(etaEle[0])*TMath::CosH(etaEle[1]))  ))
-
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
+		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptJetEtasa}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
+		\caption{$\ell$ from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasb}
+	\end{subfigure}
+	\newline
+	\newline
+	\newline
+	\newline
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasc}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
+		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasd}
+	\end{subfigure}
+	\caption{The $\eta$ distributions of leptons and jets reconstructed in $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2$ $\TeV$ 
+		and $\mnul = \frac{1}{2}\mWR$.}\label{fig:wrLeptJetEtas}
+\end{figure}
 \clearpage
+
+In the decay $\nul \rightarrow \ell_{2} q_{1}q_{2}$, the ratio $\mnul/\mWR$ affects the $\Delta R(\ell,q)$ separation between the lepton 
+and the two quarks.  As $\mnul/\mWR$ decreases from 1 to 0 the \nul momentum magnitude increases, as shown in Figure 
+\ref{fig:hvyNuMomentumVarMNu}.  As the \nul momentum increases the $\ell_{2}$ and both quarks produced in the \nul decay are boosted 
+along the \nul direction of momentum in the lab frame.  As $\mnul/\mWR$ decreases this boost increases, causing the $\Delta R(\ell,q)$ 
+separation between the $\ell_{2}$ and both quarks to decrease, as shown in Figure \ref{fig:wrDrLeptQrkVarMNu}.  Since the lepton 
+reconstructed from $\ell_{2}$ can also be reconstructed as part of a jet, as $\Delta R(\ell,q)$ decreases the probability increases that 
+a jet is reconstructed from $\ell_{2}$ and either $q_{1}$ or $q_{2}$, and passes the selection criteria.  In addition, there is a low 
+probability, independent of $\mnul/\mWR$, that the lepton produced in the decay $\WR \rightarrow \ell_{1} \nul$ is emitted in the vicinity 
+of $q_{1}$ or $q_{2}$, and $\ell_{1}$ and one quark are reconstructed as a jet that passes the selection criteria.  To avoid selecting 
+jets that are reconstructed from combinations of $\ell_{1}$ or $\ell_{2}$ and $q_{1}$ or $q_{2}$, each jet was required to be separated 
+from each selected lepton by $\Delta R > 0.4$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/genNuMomMag_MWR_2200_several_MNu_private.pdf}
+	\caption{The $|p|$ distribution of the \nul produced in $\WR \rightarrow \ell\nul$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}
+	\label{fig:hvyNuMomentumVarMNu}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkOneFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
+		%\caption{ }\label{fig:wrDrLeptQrkVarMNua}
+	\end{subfigure}
+	\thickspace
+	\begin{subfigure}[t]{2.4in}
+		\centering
+		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkTwoFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
+		%\caption{ }\label{fig:wrDrLeptQrkVarMNub}
+	\end{subfigure}
+	\caption{The $\Delta R(\ell,q)$ separation distributions between the $\ell$ and both quarks produced in $\nul \rightarrow \ell qq$ 
+		in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}\label{fig:wrDrLeptQrkVarMNu}
+\end{figure}
+\clearpage
+
+The leptons and jets produced in the \WR decay have $\pt$ that are affected by the \WR mass and the ratio $\mnul/\mWR$.  The \WR mass 
+represents the total momentum that is distributed amongst the leptons and jets, so the lepton and jet $\pt$ grow with the \WR mass.  
+For $\mWR = 2.2$ $\TeV$ and $\mnul = 1.1$ $\TeV$, the average $\pt$ of reconstructed leptons and jets is above 60 $\GeV$, as shown 
+in Figure \ref{fig:wrLeptJetPts}.  As $\mnul/\mWR$ increases to 1 the $\pt$ of \nul progeny increase, 
+while the $\pt$ of the other lepton decreases, as shown in Figure \ref{fig:wrLeptQrkPtsVarMNu}.  Similarly, as $\mnul/\mWR$ decreases 
+to 0 the $\pt$ of both jets decrease, and the $\pt$ of one lepton increases while the $\pt$ of the other lepton decreases.
 
 \begin{figure}
 	\centering
@@ -337,38 +397,6 @@ increases as $\mnul/\mWR$ approaches 0 (Figure \ref{fig:wrMllVarMNu}).
 	\centering
 	\begin{subfigure}[t]{2.4in}
 		\centering
-		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromWr_mwr2200_mnu1100.pdf}
-		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptJetEtasa}
-	\end{subfigure}
-	\thickspace
-	\begin{subfigure}[t]{2.4in}
-		\centering
-		\includegraphics[width=2.4in]{figures/etaMatchedRecoEleFromNu_mwr2200_mnu1100.pdf}
-		\caption{$\ell$ from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasb}
-	\end{subfigure}
-	\newline
-	\newline
-	\newline
-	\newline
-	\begin{subfigure}[t]{2.4in}
-		\centering
-		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetOne_mwr2200_mnu1100.pdf}
-		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasc}
-	\end{subfigure}
-	\thickspace
-	\begin{subfigure}[t]{2.4in}
-		\centering
-		\includegraphics[width=2.4in]{figures/etaMatchedRecoJetTwo_mwr2200_mnu1100.pdf}
-		\caption{jet from $\nul \rightarrow \ell jj$}\label{fig:wrLeptJetEtasd}
-	\end{subfigure}
-	\caption{The $\eta$ distributions of leptons and jets reconstructed in $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2$ $\TeV$ 
-		and $\mnul = \frac{1}{2}\mWR$.}\label{fig:wrLeptJetEtas}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{2.4in}
-		\centering
 		\includegraphics[width=2.4in]{figures/ptGenLeptFromFstHvyPtcl_MWR_2200_several_MNu_private.pdf}
 		\caption{$\ell$ from $\WR \rightarrow \ell\nul$}\label{fig:wrLeptQrkPtsVarMNua}
 	\end{subfigure}
@@ -396,103 +424,16 @@ increases as $\mnul/\mWR$ approaches 0 (Figure \ref{fig:wrMllVarMNu}).
 	\caption{The $\pt$ distributions of leptons and quarks produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ 
 		and different \mnul.}\label{fig:wrLeptQrkPtsVarMNu}
 \end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/genNuMomMag_MWR_2200_several_MNu_private.pdf}
-	\caption{The $|p|$ distribution of the \nul produced in $\WR \rightarrow \ell\nul$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}
-	\label{fig:hvyNuMomentumVarMNu}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{2.4in}
-		\centering
-		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkOneFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
-		%\caption{ }\label{fig:wrDrLeptQrkVarMNua}
-	\end{subfigure}
-	\thickspace
-	\begin{subfigure}[t]{2.4in}
-		\centering
-		\includegraphics[width=2.4in]{figures/dRgenLeptonFromScdHvyPtclGenQuarkTwoFromScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
-		%\caption{ }\label{fig:wrDrLeptQrkVarMNub}
-	\end{subfigure}
-	\caption{The $\Delta R(\ell,q)$ separation distributions between the $\ell$ and both quarks produced in $\nul \rightarrow \ell qq$ 
-		in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and different \mnul.}\label{fig:wrDrLeptQrkVarMNu}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/angleBtwnGenLepts_MWR_2200_several_MNu_private.pdf}
-	\caption{The distribution of the angle $\theta_{12}$ between the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ events with 
-		$\mWR = 2.2$ $\TeV$ and different \mnul.}
-	\label{fig:wrLeptAngleSepVarMNu}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/dileptonMassFromGenLeptonsFromFstAndScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
-	\caption{The $\Mll$ distribution of the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
-	different \mnul.}
-	\label{fig:wrMllVarMNu}
-\end{figure}
-
 \clearpage
 
-%\begin{figure}
-%	\centering
-%	\begin{subfigure}[t]{2.4in}
-%		\centering
-%		\includegraphics[width=2.4in]{figures/l1_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-%		\caption{leading $\pt$ electron}\label{fig:bkgLeptJetPtsa}
-%	\end{subfigure}
-%	\thickspace
-%	\begin{subfigure}[t]{2.4in}
-%		\centering
-%		\includegraphics[width=2.4in]{figures/l2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-%		\caption{subleading $\pt$ electron}\label{fig:bkgLeptJetPtsb}
-%	\end{subfigure}
-%	\newline
-%	\newline
-%	\newline
-%	\newline
-%	\begin{subfigure}[t]{2.4in}
-%		\centering
-%		\includegraphics[width=2.4in]{figures/j1_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-%		\caption{leading $\pt$ jet}\label{fig:bkgLeptJetPtsc}
-%	\end{subfigure}
-%	\thickspace
-%	\begin{subfigure}[t]{2.4in}
-%		\centering
-%		\includegraphics[width=2.4in]{figures/j2_pt_LooseSelection_TwoLeptsAndJets_EEChannelBkgndMC_log.pdf}
-%		\caption{subleading $\pt$ jet}\label{fig:bkgLeptJetPtsd}
-%	\end{subfigure}
-%	\caption{The $\pt$ of electrons and jets reconstructed in simulated background events that passed the $ee$-channel offline ID and 
-%	full online selection criteria.}\label{fig:bkgLeptJetPts}
-%\end{figure}
-
-
-\subsection{Offline Kinematic Selection Criteria}
-\label{sec:offlineKinemSelCrit}
-The kinematics of leptons and jets produced in \WR decays motivated the offline kinematic selection criteria.  These criteria are 
-identical in the $ee$- and $\mu\mu$-channels.
-
-The large expected \mWR and the reconstructed jet $\pt$ resolution motivated the jet $\pt$ and $\eta$ selection criteria.  The \WR decay 
-produces two quarks in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}), so each reconstructed event was required to have two 
-jets in the region $|\eta| < 2.4$.  The $\pt$ of both jets scaled with the unknown ratio $\mnul/\mWR$, so the jet $\pt$ requirement was 
-minimized to increase sensitivity to signals with low $\mnul/\mWR$.  The $\pt$ resolution of 
-reconstructed jets that had $|\eta| < 1.3$ decreased rapidly below $\pt = 40$ $\GeV$: from 16\% or better resolution for $\pt > 40$ $\GeV$ to 
-$\sim$21\% for $30 < \pt < 40$ $\GeV$ \cite{jetResolutionInCollisions}.  To avoid selecting low $\pt$ jets measured with poor $\pt$ 
-resolution, the two jets in each event that had $|\eta| < 2.4$ were required to have $\pt > 40$ $\GeV$.  If more than two jets passed 
-these criteria, the two highest $\pt$ jets were used.
-
-The large expected \mWR and trigger selection criteria motivated the offline lepton $\pt$ and $\eta$ selection criteria.  For the same 
-reason cited for the \WR quarks, the lepton progeny of the \WR are emitted in the central $|\eta|$ region (Figure \ref{fig:wrLeptJetEtas}) 
-with high $\pt$ (Figure \ref{fig:wrLeptJetPts}).  Therefore, each event was required to have two leptons reconstructed with $|\eta| < 2.4$ 
-and $\pt > 53$.  The 53 $\GeV$ threshold value was chosen so that leptons were selected in a $\pt$ range where the trigger efficiency was 
-constant (Figure \ref{fig:trigEffs}).  In \WR decays one lepton is often produced with greater $\pt$ than the other, so at least one 
-reconstructed lepton was required to have $\pt > 60$ $\GeV$.  This requirement increased sensitivity to a \WR signal relative to the ST 
-backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 2 leptons passed these criteria, the two highest $\pt$ leptons were used.
+Based on these kinematics, one reconstructed lepton was required to have $\pt > 60$ $\GeV$, and the other $\pt$ selection criteria 
+were as low as possible to increase sensitivity to \WR signals with low $\mnul/\mWR$.  The jet $\pt$ requirement was 
+set based on the decrease in jet $\pt$ resolution with jet $\pt$.  For reconstructed jets that were measured in the region $|\eta| < 1.3$, 
+the jet $\pt$ resolution was 16\% of $\pt$ or better for $\pt > 40$ $\GeV$, and $\sim$21\% of $\pt$ for $30 < \pt < 40$ $\GeV$ 
+\cite{jetResolutionInCollisions}.  The two selected jets were required to have $\pt > 40$ $\GeV$ to avoid selecting low $\pt$ jets that 
+were measured with poor $\pt$ resolution.  The $\pt$ selection criterion applied to the lower $\pt$ reconstructed lepton was set based on 
+the lepton trigger selection efficiency.  These efficiencies as a function of reconstructed muon and electron $\pt$, shown in Figure 
+\ref{fig:trigEffs}, are constant for $\pt > 53$ $\GeV$, so the second reconstructed lepton was required to have $\pt > 53$ $\GeV$.
 
 \begin{figure}
 	\centering
@@ -516,99 +457,70 @@ backgrounds (Table \ref{tab:lowerLeptPtCut}).  If more than 2 leptons passed the
 		\includegraphics[width=2.4in]{figures/L1EGEfficiencyEndcap.png}
 		%\caption{endcap electron}\label{fig:trigEffsc}
 	\end{subfigure}
-	\caption{The muon and electron trigger efficiencies versus $\pt$ or $\Et$ in $Z \rightarrow \ell\ell$ events.}\label{fig:trigEffs}
+	\caption{The muon and electron trigger efficiencies as a function of $\pt$ or $\Et$ in $Z \rightarrow \ell\ell$ events.}\label{fig:trigEffs}
 \end{figure}
-
-\begin{table}[h]
-	\caption{The signal (S) over background (B) sensitivity (S/$\sqrt{B}$) for different $\pt$ selection 
-		criteria on the leading lepton.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
-		signal is estimated using simulated $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
-	\label{tab:lowerLeptPtCut}
-	\centering
-	\begin{tabular}{c|c}
-		$\ell$ $\pt$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
-		53 &  11.7  \\
-		60 &  12.6  \\ \hline
-	\end{tabular}
-\end{table}
 \clearpage
 
-Jets are clustered from reconstructed particles using the anti-$k_{T}$ algorithm with distance parameter $R = 0.4$.  If a particle is 
-separated from a jet's axis by $\Delta R = G$, the distance parameter $R$ weights the likelihood of clustering that particle into the 
-jet by $(\frac{0.4}{G})^{2}$.  The parameter $R$ constrains the maximum jet size, but it is possible for a reconstructed particle to be 
-clustered into a jet and be separated from its axis by $\Delta R > 0.4$.  To avoid selecting a lepton reconstructed near a jet, each 
-reconstructed lepton that passed the ID, $\pt$, and $\eta$ selection criteria was required to be separated from both selected jets by 
-$\Delta R > 0.4$.
-
-The \WR decay produces two high $\pt$ leptons whose dilepton mass $\Mll$, given by Equation \ref{eq:dileptMass}, increases as $\mnul/\mWR$ 
-decreases and as \mWR increases.  Based on the high expected value of \mWR, the $\Mll$ selection requirement can safely exceed the $Z$ boson 
-mass window of $60 < \Mll < 120$ $\GeV$ without adversely affecting the signal sensitivity.  However, the $\Mll$ requirement cannot be several 
-hundred $\GeV$, otherwise the sensitivity to signal hypotheses with $\mnul/\mWR \sim$1 will decrease dramatically (Figure \ref{fig:wrMllVarMNu}).  
-Knowing that the \DY and diboson backgrounds decrease rapidly with increasing $\Mll$, each event was required to have two leptons that had 
-$\Mll > 200$ $\GeV$.  A lower threshold was not used because it would increase the background without a corresponding increase in the signal 
-(Table \ref{tab:lowerMllCut}).
+The invariant mass of the two leptons ($\Mll$), given by Equation \ref{eq:dileptMass}, is affected by the \WR mass and the ratio $\mnul/\mWR$.  
+As the \WR mass increases the $\pt$ of both leptons also increase, thus increasing the $\Mll$.  At a fixed \WR mass the ratio $\mnul/\mWR$ 
+affects the $\Mll$ as follows.  In the decay $\WR \rightarrow \ell_{1}\nul$, the \nul always recoils against $\ell_{1}$.  As $\mnul/\mWR$ 
+decreases to 0 the $\ell_{2}$ from the decay $\nul \rightarrow \ell_{2} jj$ is increasingly boosted along the \nul direction of momentum, 
+and opposite to the $\ell_{1}$ direction of momentum.  Therefore, as $\mnul/\mWR$ decreases the angle $\theta_{12}$ between the two leptons, 
+shown in Figure \ref{fig:wrLeptAngleSepVarMNu}, increases, and the $\Mll$ increases, as shown in Figure \ref{fig:wrMllVarMNu}.  Based on 
+the large expected \WR mass, the two reconstructed leptons were required to have $\Mll > 200$ $\GeV$.  The $\Mll$ threshold was not increased 
+because it would reduce sensitivity to \WR signals with $\mnul/\mWR \sim$1; the threshold was not lowered because it would increase 
+backgrounds, especially from $\DY$+jets production, without a corresponding increase in the signal.
 
 \begin{equation}
 	\Mll = \sqrt{2|p_{1}||p_{2}|(1\thickspace - \thickspace \cos(\theta_{12}))}
 	\label{eq:dileptMass}
 \end{equation}
 
-%\clearpage
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.5\textwidth]{figures/sqrtProdGenLeptMomentumMag_several_MWR_and_MNu_private.pdf}
-%	\caption{The distribution of the square root of the product of the momentum magnitudes of the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ 
-%		events with several \mWR and $\mnul = \frac{1}{2}\mWR$.}
-%	\label{fig:wrLeptSqrtMomMagVarMNu}
-%\end{figure}
-
-\begin{table}[h]
-	\caption{The signal (S) over background (B) sensitivity (S/$\sqrt{B}$) for different $\Mll$ selection 
-		criteria.  The background is estimated using simulated \DY+jets and $t\bar{t}$ events, and the 
-		signal is estimated using simulated $\WR \rightarrow \ell\ell jj$ events with $\mWR = 2.2 \TeV$ and $\mnul = 1.1 \TeV$.}
-	\label{tab:lowerMllCut}
+\begin{figure}[h]
 	\centering
-	\begin{tabular}{c|c}
-		$\Mll$ threshold ($\GeV$) & S/$\sqrt{B}$ \\  \hline
-		180 &  12.0  \\
-		200 &  12.6  \\ \hline
-	\end{tabular}
-\end{table}
-%\clearpage
+	\includegraphics[width=0.5\textwidth]{figures/angleBtwnGenLepts_MWR_2200_several_MNu_private.pdf}
+	\caption{The distribution of the angle $\theta_{12}$ between the two leptons produced in $\WR \rightarrow \ell_{1}\ell_{2} qq$ events with 
+		$\mWR = 2.2$ $\TeV$ and different \mnul.}
+	\label{fig:wrLeptAngleSepVarMNu}
+\end{figure}
 
-Applying the previous selection criteria to simulated ST background events created a peak in the $\Mlljj$ distribution near 500 $\GeV$ 
-(Figure \ref{fig:sculptedMlljj}).  To avoid this peak, each event was required to have $\Mlljj > 600$ $\GeV$.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/dileptonMassFromGenLeptonsFromFstAndScdHvyPtcl_MWR_2200_several_MNu_private.pdf}
+	\caption{The $\Mll$ distribution of the two leptons produced in $\WR \rightarrow \ell\ell qq$ events with $\mWR = 2.2$ $\TeV$ and 
+	different \mnul.}
+	\label{fig:wrMllVarMNu}
+\end{figure}
 \clearpage
+
+In selected events, if more than two jets passed the selection criteria described previously, the two highest $\pt$ jets were selected.
+
+Applying the selection criteria described previously to simulated ST background events created a peak in the $\Mlljj$ distribution 
+near 500 $\GeV$, as shown in Figure \ref{fig:sculptedMlljj}.  To avoid this peak, each event was required to have $\Mlljj > 600$ $\GeV$.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.45\textwidth]{figures/Mlljj_varBins_SignalRegion_EEChannelBkgndMC_DYMadHTAndIncl_TTBarFromData_log.pdf}
-	\caption{The $\Mlljj$ distribution in simulated background events after applying the online criteria, and the offline ID and kinematic 
-	selection criteria.}
+	\caption{The $\Mlljj$ distribution in simulated background events after applying the event selection.}
 	\label{fig:sculptedMlljj}
 \end{figure}
+\clearpage
 
-The offline kinematic selection criteria (Table \ref{tab:offlineKinemSel}) were developed to select $\WR \rightarrow \ell\ell jj$ events 
-over a large range of \mWR and \mnul values with the highest possible efficiency.  The selection efficiency of the full online and offline 
-(ID and kinematic) selection criteria in signal events was estimated by simulating $pp \rightarrow \WR \rightarrow \ell\ell jj$ interactions, and 
-applying the selection criteria to those events.  The \PYTHIA \MC generator implements a flexible, generic \WR signal model that captures the 
-main characteristics of theoretical models discussed in the literature 
+The offline kinematic selection criteria, listed in Table \ref{tab:offlineKinemSel}, were developed to select $\WR \rightarrow \ell\ell jj$ 
+events over a large range of \mWR and \mnul values with the highest possible efficiency.  The efficiency of the event selection, 
+including trigger selection criteria, in signal events was estimated by simulating $pp \rightarrow \WR \rightarrow \ell\ell jj$ 
+interactions, and applying the event selection to those events.  The \PYTHIA \MC generator implements a flexible, generic \WR signal 
+model that captures the main characteristics of theoretical models discussed in the literature 
 \cite{earlyLRSModel,lrsHiggsStageOne,lrsHiggsStageTwo,seeSawAndParityViolation,seeSawAndGUTs,lrsMassConstraints}, so \PYTHIA was used to 
-simulate $\WR \rightarrow \ell\ell jj$ events with different \mWR and \mnul.  The trigger efficiency, offline ID and kinematic selection 
-efficiency was calculated using 50000 event datasets produced with $\mnul = \frac{1}{2}\mwr$ and \mWR stepping from 0.8 to 6.0 $\TeV$ in 
-increments of 0.2 $\TeV$.  At a given \mWR, only the offline kinematic selection efficiency varied by more than a few percent over the 
-entire \mnul range.  The variation in the offline kinematic selection efficiency versus \mnul was calculated using 10000 event datasets 
-produced with \mWR increasing from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  Each 10000 event dataset was produced with a different \mnul 
-that increased from 100 $\GeV$ to \mWR in increments of 0.1 $\TeV$ or less.  The total trigger, offline ID and kinematic selection efficiency (Figure 
-\ref{fig:wrRecoSelectionEff}) exceeded 50\% in the $ee$-channel, and 70\% in the $\mu\mu$-channel.  The efficiency is lower in the $ee$-
-channel due to the gap in ECAL coverage for $1.44 < |\eta| < 1.57$, and lower efficiency offline ID criteria applied to electrons 
-relative to muons.  The variation in the offline kinematic selection efficiency versus \mnul (Figure \ref{fig:wrOffSelEffVarMWrMNu}) increases 
-with \mWR: up to 30\% for $\mWR \leq 1.3$ $\TeV$, and up to 70\% for $\mWR \geq 2.5$ $\TeV$.  For a specific \mWR, the offline kinematic selection 
-efficiency is maximized or nearly so when $\mnul = \frac{1}{2}\mWR$.
+simulate $\WR \rightarrow \ell\ell jj$ events with different values of \mWR and \mnul.  The event selection efficiency was calculated 
+using 50000 event datasets produced with $\mnul = \frac{1}{2}\mWR$ and \mWR stepping from 0.8 to 6.0 $\TeV$ in increments of 0.2 $\TeV$.  
+The event selection efficiency, shown in Figure \ref{fig:wrRecoSelectionEff}, exceeded 50\% in the $ee$-channel, and 70\% in the 
+$\mu\mu$-channel.  The efficiency is lower in the $ee$-channel due to the gap in ECAL coverage for $1.44 < |\eta| < 1.57$, and the lower 
+efficiency offline ID criteria applied to electrons relative to muons.
 
 \begin{table}[h]
-	\caption{The kinematic selection criteria applied to reconstructed leptons and jets that passed the offline identification 
-	selection criteria.  The criteria were applied in the order that they are listed.}
+	\caption{The kinematic selection criteria applied to reconstructed leptons and jets.  The criteria were applied in the order 
+	that they are listed.}
 	\label{tab:offlineKinemSel}
 	\centering
 	\begin{tabular}{c|c}
@@ -626,36 +538,41 @@ efficiency is maximized or nearly so when $\mnul = \frac{1}{2}\mWR$.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/wrRecoSelectionEfficiency.png}
-	\caption{The full selection efficiency in simulated $\WR \rightarrow \ell\ell jj$ events, in the $ee$-channel (left) and the 
-		$\mu\mu$-channel (right).  Different curves represent events where both leptons are in the barrel (BB), one was in the 
-	endcap (EB), or both were in the endcap (EE).}
+	\caption{The event selection efficiency in simulated $\WR \rightarrow \ell\ell jj$ events, in the $ee$-channel (left) and the 
+		$\mu\mu$-channel (right).  Different curves represent events where both leptons are in the barrel (BB), one is in the 
+	endcap (EB), or both are in the endcap (EE).}
 	\label{fig:wrRecoSelectionEff}
 \end{figure}
 \clearpage
 
+At a specific \WR mass, only the offline kinematic selection efficiency varied by more than a few percent over the entire \mnul range.  The 
+variation in this selection efficiency as a function of \mnul was calculated using 10000 event datasets produced with \mWR increasing 
+from 0.8 to 4.0 $\TeV$ in increments of 0.1 $\TeV$.  At each \WR mass, 10000 events were produced at each value of \mnul starting at 
+100 $\GeV$ and increasing to \mWR in increments of 0.1 $\TeV$ or less.  The maximum variation in the kinematic selection efficiency as a 
+function of \mnul, shown in Figure \ref{fig:wrOffSelEffVarMWrMNu}, increased with \mWR: up to 30\% for $\mWR \leq 1.3$ $\TeV$, and up 
+to 70\% for $\mWR \geq 2.5$ $\TeV$.  At a specific \WR mass, the kinematic selection efficiency is maximized or nearly so when 
+$\mnul = \frac{1}{2}\mWR$.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/genWrMuMuAccEff_NoMassWindows13TeV.png}
-	\caption{The offline kinematic selection efficiency (\%) in $\WR \rightarrow \ell\ell jj$ events versus \mWR and \mnul.}
+	\caption{The offline kinematic selection efficiency (\%) in $\WR \rightarrow \ell\ell jj$ events as a function of \mWR and \mnul.}
 	\label{fig:wrOffSelEffVarMWrMNu}
 \end{figure}
-
 \clearpage
 
-\section{Reconstruction and Selection Summary}
+\section{Reconstruction and Event Selection Summary}
 \label{sec:recoConclusion}
 Electrons, muons and jets expected from \WR and \nul decays are reconstructed from signals measured in CMS sub-detectors using dedicated 
 reconstruction algorithms.  These algorithms reconstruct leptons, hadrons and jets with high efficiency by using minimal selection criteria, 
 and occasionally ($\sim$1-3\%) reconstruct individual particles and jets incorrectly.  The contribution of incorrectly 
-reconstructed particles to $\ell\ell jj$ events was reduced by requiring leptons and jets to pass identification (ID) selection criteria.  
-Selected particles were then required to pass kinematic selection criteria to identify particles whose kinematics are consistent with \WR 
-decay kinematics.  After applying all selection criteria to data events, the selected events were used to make a $\Mlljj$ distribution.  
-The decay $\WR \rightarrow \ell\ell jj$ transfers all energy of the \WR into the invariant mass of the leptons and jets, so evidence of a 
-\WR, independent of \mnul, was searched for as an excess of data events above predicted backgrounds in the $\Mlljj$ distribution.  The 
-$\Mlljj$ distribution found in data due to backgrounds was predicted using data and simulated events in $\ell\ell jj$ control regions with 
-no signal contamination.  The selection criteria of the control regions and the resulting background predictions are discussed in the next 
+reconstructed particles to $\ell\ell jj$ events was reduced by selecting events using lepton triggers and requiring that leptons and jets 
+were reconstructed from high quality measurements.  
+Selected particles were then required to pass kinematic selection criteria to identify particles whose kinematics are consistent with the 
+\WR progeny.  After applying the event selection to the data, the selected events were used to make a $\Mlljj$ distribution.  The decay 
+$\WR \rightarrow \ell\ell jj$ transfers all energy of the \WR into the invariant mass of the leptons and jets, so evidence of a \WR, 
+independent of \mnul, was searched for as an excess of data events above the predicted background in the $\Mlljj$ distribution.  The 
+contribution of background processes to the $\Mlljj$ distribution found in the data was predicted using procedures described in the next 
 chapter.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

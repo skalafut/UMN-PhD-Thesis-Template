@@ -4,34 +4,34 @@
 \chapter{Trigger and Offline Selection Criteria}
 \label{app_trgOfflId}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-During collisions, in the high-level trigger the electron, muon, and HCAL cluster reconstruction algorithms are used in the electron and 
-muon HLT algorithms to select events with at least one lepton that is isolated from large HCAL energies.  The triggers used for the $\mu\mu$-
-channel and the $ee$-channel were chosen to maximize the \WR selection efficiency, and select a large fraction of $Z \rightarrow \ell\ell$ 
-events to minimize the statistical uncertainty on the \DY background prediction discussed later.
-
-Single muon and double-muon triggers select $\WR \rightarrow \mu\mu jj$ events with different efficiencies.  The single muon 
-triggers require one track segment to be reconstructed in multiple muon detectors and have $\pt$ above some threshold $A$, while the 
-double-muon triggers require two track segments that have $\pt$ above some threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ 
-events the highest efficiency single muon trigger selected 5\% more \WR events than the highest efficiency double muon trigger (Table 
-\ref{tab:singleVsDblMuHlt}).  The double-muon trigger selected fewer \WR events because the efficiency to reconstruct a muon with 
-$\pt > B$ as a track segment was below 100\% \cite{cmsMuonRecoRunTwo}.  To maximize the signal selection efficiency, a single muon 
-trigger was used to select collision events with muons.
-
-\begin{table}[h]
-	\caption{The efficiency of a single and double-muon trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
-		and $\mnul = 400$ $\GeV$.}
-	\label{tab:singleVsDblMuHlt}
-	\centering
-	\begin{tabular}{c|c|c}
-		trigger type & $\pt$ criteria & efficiency (\%) \\  \hline
-		single $\mu$ & $\pt >50$ $\GeV$ & 98  \\ 
-		double-$\mu$ & one $\pt >17$, other $\pt >8$ $\GeV$ & 93  \\
-	\end{tabular}
-\end{table}
+%During collisions, in the high-level trigger the electron, muon, and HCAL cluster reconstruction algorithms are used in the electron and 
+%muon HLT algorithms to select events with at least one lepton that is isolated from large HCAL energies.  The triggers used for the $\mu\mu$-
+%channel and the $ee$-channel were chosen to maximize the \WR selection efficiency, and select a large fraction of $Z \rightarrow \ell\ell$ 
+%events to minimize the statistical uncertainty on the \DY background prediction discussed later.
+%
+%Single muon and double-muon triggers select $\WR \rightarrow \mu\mu jj$ events with different efficiencies.  The single muon 
+%triggers require one track segment to be reconstructed in multiple muon detectors and have $\pt$ above some threshold $A$, while the 
+%double-muon triggers require two track segments that have $\pt$ above some threshold $B < A$.  In simulated $\WR \rightarrow \mu\mu jj$ 
+%events the highest efficiency single muon trigger selected 5\% more \WR events than the highest efficiency double muon trigger (Table 
+%\ref{tab:singleVsDblMuHlt}).  The double-muon trigger selected fewer \WR events because the efficiency to reconstruct a muon with 
+%$\pt > B$ as a track segment was below 100\% \cite{cmsMuonRecoRunTwo}.  To maximize the signal selection efficiency, a single muon 
+%trigger was used to select collision events with muons.
+%
+%\begin{table}[h]
+%	\caption{The efficiency of a single and double-muon trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
+%		and $\mnul = 400$ $\GeV$.}
+%	\label{tab:singleVsDblMuHlt}
+%	\centering
+%	\begin{tabular}{c|c|c}
+%		trigger type & $\pt$ criteria & efficiency (\%) \\  \hline
+%		single $\mu$ & $\pt >50$ $\GeV$ & 98  \\ 
+%		double-$\mu$ & one $\pt >17$, other $\pt >8$ $\GeV$ & 93  \\
+%	\end{tabular}
+%\end{table}
 
 During collisions, events with muons were selected using a Level-1 trigger that required one track segment with $\pt > 16$ $\GeV$.  The 
-segment was required to have signals in DT or CSC chambers from at least 2 stations, and signals in at least 4 layers of each chamber.  
-Then, events were required to pass the following single muon HLT selection criteria:
+segment was required to have measurements in DT or CSC chambers from at least 2 stations, and in at least 4 layers of each chamber.  
+In the HLT, the following selection criteria were applied:
 
 \begin{itemize}
 	\item A track was reconstructed in the silicon tracker with $\pt > 50$ $\GeV$ and $|\eta| < 2.4$.
@@ -41,13 +41,9 @@ Then, events were required to pass the following single muon HLT selection crite
 		position to within 3 cm.
 \end{itemize}
 
-Muons reconstructed in simulated events passed the trigger criteria with a different efficiency than muons reconstructed in data.  This 
-efficiency difference was corrected by multiplying the weight of every simulated event (default weight is 1.0) by a $\pt$,$\eta$-
-dependent value between 0.95 (5\% decrease) and 1.04 (4\% increase) for the muon that fired the trigger.
-
 In events selected by the single muon trigger, tracks in the muon detectors and silicon tracker were identified as being caused by muons 
-using algorithms described previously.  Then, the following identification criteria were applied to select promptly produced muons 
-that were isolated from other particles and reconstructed in multiple muon stations:
+using algorithms described previously.  Then, the following offline selection criteria were applied to select promptly produced muons 
+that were isolated from other particles, and reconstructed in multiple muon stations:
 
 \begin{itemize}
 	\item The muon track reconstructed in the silicon tracker:
@@ -64,36 +60,31 @@ that were isolated from other particles and reconstructed in multiple muon stati
 		position along the $z$ axis.
 \end{itemize}
 
-Simulated muons are reconstructed and pass the offline muon identification selection criteria with a higher 
-efficiency than muons produced in real collisions.  This efficiency difference was corrected by multiplying the weight of every 
-simulated event by a $\pt$,$\eta$-dependent value between 0.985 and 1.0 for each offline muon selected in the event.
-
-
-Similar to the muon triggers, single electron and double-electron triggers select $\WR \rightarrow eejj$ events with different efficiencies.  
-The single electron triggers require that one track reconstructed in the silicon tracker extrapolates to a 5 $\times$ 5 ECAL crystal 
-cluster with $\Et$ above some threshold $D$, while the double-electron triggers require two such track-ECAL cluster combinations each 
-with $\Et$ above some threshold $G < D$.  In simulated $\WR \rightarrow eejj$ events the highest efficiency single and double-electron 
-triggers selected similar numbers of signal events (Table \ref{tab:singleVsDblEleHlt}), so a trigger was chosen using different criteria.  To 
-reduce the statistical uncertainty on the \DY background prediction, the electron trigger should select a large fraction of $Z \rightarrow ee$ 
-events.  The single electron trigger required $\Et > 105$ $\GeV$, thereby excluding a significant fraction of $Z \rightarrow ee$ events.  To 
-select a larger portion of $Z \rightarrow ee$ events, a double-electron trigger that required two electrons that had $\Et > 33$ $\GeV$ 
-was used to select collision events with electrons.
-
-\begin{table}[h]
-	\caption{The efficiency of a single and double-electron trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
-		and $\mnul = 400$ $\GeV$.}
-	\label{tab:singleVsDblEleHlt}
-	\centering
-	\begin{tabular}{c|c|c}
-		trigger type & $\Et$ criteria & efficiency (\%) \\  \hline
-		single $e$ & $\Et >105$ $\GeV$ & 94  \\ 
-		double-$e$ & both $\Et >33$ $\GeV$ & 92  \\
-	\end{tabular}
-\end{table}
+%Similar to the muon triggers, single electron and double-electron triggers select $\WR \rightarrow eejj$ events with different efficiencies.  
+%The single electron triggers require that one track reconstructed in the silicon tracker extrapolates to a 5 $\times$ 5 ECAL crystal 
+%cluster with $\Et$ above some threshold $D$, while the double-electron triggers require two such track-ECAL cluster combinations each 
+%with $\Et$ above some threshold $G < D$.  In simulated $\WR \rightarrow eejj$ events the highest efficiency single and double-electron 
+%triggers selected similar numbers of signal events (Table \ref{tab:singleVsDblEleHlt}), so a trigger was chosen using different criteria.  To 
+%reduce the statistical uncertainty on the \DY background prediction, the electron trigger should select a large fraction of $Z \rightarrow ee$ 
+%events.  The single electron trigger required $\Et > 105$ $\GeV$, thereby excluding a significant fraction of $Z \rightarrow ee$ events.  To 
+%select a larger portion of $Z \rightarrow ee$ events, a double-electron trigger that required two electrons that had $\Et > 33$ $\GeV$ 
+%was used to select collision events with electrons.
+%
+%\begin{table}[h]
+%	\caption{The efficiency of a single and double-electron trigger in simulated $\WR \rightarrow \mu\mu jj$ events with $\mWR = 800$ $\GeV$ 
+%		and $\mnul = 400$ $\GeV$.}
+%	\label{tab:singleVsDblEleHlt}
+%	\centering
+%	\begin{tabular}{c|c|c}
+%		trigger type & $\Et$ criteria & efficiency (\%) \\  \hline
+%		single $e$ & $\Et >105$ $\GeV$ & 94  \\ 
+%		double-$e$ & both $\Et >33$ $\GeV$ & 92  \\
+%	\end{tabular}
+%\end{table}
 
 During collisions, events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
 one 5 $\times$ 5 ECAL crystal cluster that had $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters that had 
-$\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  Then, events were required to pass the following double-electron HLT selection criteria:
+$\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  In the HLT, the following selection criteria were applied:
 
 \begin{itemize}
 	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were required to have $\Et > 33$ $\GeV$.
@@ -107,12 +98,9 @@ $\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  Then, events were required to pass the
 	\end{itemize}
 \end{itemize}
 
-Electrons reconstructed in simulations passed the trigger criteria with the same efficiency as electrons that were reconstructed in data, 
-so no electron trigger efficiency correction was applied to simulated events.
-
 In events selected by the double-electron trigger, reconstructed tracks and ECAL SCs were identified as being caused by electrons using 
-algorithms described previously.  Then, the following identification criteria were applied to select the promptly produced electrons, 
-excluding electrons within a jet, or in the ECAL transition region $1.44 < |\eta| < 1.57$:
+the algorithms described previously.  Then, the following offline selection criteria were applied to select the promptly produced 
+electrons that were isolated from other particles, excluding electrons in the ECAL transition region $1.44 < |\eta| < 1.57$:
 
 \begin{itemize}
 	\item The electron $\Et$ is the calibrated ECAL SC energy $E_{SC}$.
@@ -133,13 +121,8 @@ excluding electrons within a jet, or in the ECAL transition region $1.44 < |\eta
 		plane: $\Delta_{xy} < 0.2$ mm in the tracker barrel, and $\Delta_{xy} < 0.5$ mm in the tracker endcap.
 \end{itemize}
 
-Simulated electrons are reconstructed and pass the offline electron identification selection criteria with a higher efficiency than 
-electrons that were reconstructed in data.  This efficiency difference was corrected by multiplying the weight of every 
-simulated event by 0.982, the reconstruction efficiency correction, and by 0.989, the ID efficiency correction, for each offline electron 
-selected in the event.
-
-In events selected by the lepton triggers, jets were reconstructed offline from tracks and calorimeter energy clusters using the 
-algorithms described previously.  Then, the following identification criteria were applied to select jets that contained at least one 
+In events selected by the lepton triggers, jets were reconstructed from tracks and calorimeter energy clusters using the 
+algorithms described previously.  Then, the following offline selection criteria were applied to select jets that contained at least one 
 charged hadron, and whose energies were not dominated by electron or photon SCs:
 
 \begin{itemize}
@@ -150,11 +133,6 @@ charged hadron, and whose energies were not dominated by electron or photon SCs:
 	\item Less than 90\% of the total jet energy came from photons.
 	\item Less than 99\% of the total jet energy came from electrons.
 \end{itemize}
-
-The efficiency with which jets are reconstructed and selected using the jet ID criteria is identical in data and simulations, so 
-no jet efficiency corrections were applied in simulations.
-
-
 
 %old material saved for reference
 %Events from \WR interactions, characterized by different \mnul and \mWR, are simulated in the same three steps used to simulate 
