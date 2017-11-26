@@ -4,43 +4,52 @@
 \chapter{Background Estimation}
 \label{sec:backgroundEstimation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The online and offline event selection criteria were applied to the data to select events where two leptons and jets were 
+As discussed in the previous chapter, the event selection criteria were applied to the data to select events where two leptons and jets were 
 reconstructed, and had kinematics consistent with the \WR decay progeny.  However, these criteria also selected data events 
 produced by ST background interactions, like \DY+jets.  The contributions of ST backgrounds to the $\Mlljj$ distribution 
 found in the data were predicted using Monte Carlo (\MC) simulations and control regions with no \WR signal contamination.  
 The magnitudes of the individual backgrounds, how the backgrounds were simulated, and how the control regions were defined 
-and used is described here.
+and used is described in this chapter.
 
-The magnitude of the background produced by each ST interaction is proportional to its cross section $\times$ branching ratio 
-to $\ell\ell jj$ final states at $\sqrt{s} =$ 13 $\TeV$.  The \DY interaction (Figure \ref{fig:dyDiags}) produced two same flavor 
-leptons with a cross section $\times$ branching ratio that peaked at 6000 pb for dilepton mass $\Mll \approx 90$ $\GeV$, 
-and decreased for higher $\Mll$.  At $\sqrt{s} = 13$ $\TeV$ either quark that initiates the \DY interaction 
-radiates a parton with a probability of $\sim$0.1, equal to the QCD coupling $\alpha_{QCD}$.  In $\alpha_{QCD}^{2} \sim$
-0.01 $=$1\% of \DY interactions the initial quarks radiate two partons before interacting, and those partons hadronize into 
-jets.  Therefore, the \DY interaction produces $\ell\ell jj$ final states with a cross section $\times$ branching ratio $\approx$ 
-60 pb.  Unlike \DY, the $t\bar{t}$ quark interaction (Figure \ref{fig:ttbarDiag}) produced $\ell\ell jj$ final states without 
-initial state parton radiation.  Its cross section $\times$ branching ratio, 86 pb, is similar to the cross section $\times$ 
-branching ratio of \DY+2 jets.  More than 99\% of top quarks decay to a $W$ boson and bottom quark, so single top quark+$W$ boson 
-interactions (Figure \ref{fig:singleTopDiags}) produced two leptons and one jet when both $W$ bosons decayed 
-leptonically.  The gluon that initiates the top+W interaction radiates a gluon with $\sim$100\% probability, so the top+W interaction 
-produced two lepton and two jet final states with a cross section $\times$ branching ratio of $\sim$7 pb.  Other single top quark 
-interactions (Figure \ref{fig:singleTopDiags}) produce only one $W$, and therefore did not produce $\ell\ell jj$ final states 
-at leading order in the electroweak coupling.  The only other interactions that produce two 
-leptons and jets without initial state parton radiation are the WZ and ZZ interactions.  The WZ interaction produces two leptons and 
-jets when the $W$ decays hadronically, and the $Z$ decays to charged leptons.  The ZZ interaction produces two leptons and jets 
-when one $Z$ decays hadronically, and the other decays to charged leptons.  The combined WZ and ZZ interactions produced $\ell\ell jj$ 
-final states with a cross section $\times$ branching ratio of $\sim$3 pb, negligible compared to the \DY+jets 
-and $t\bar{t}$ backgrounds.  The WW interaction produces two charged leptons when both $W$ bosons decay leptonically.  The two 
-quarks that initiate the WW interaction radiate two partons with $\sim$1\% probability, so the WW interaction produced $\ell\ell jj$ 
-final states with a cross section $\times$ branching ratio of $\sim$0.1 pb, negligible compared to other backgrounds.  Although 
-the $W$+jets and QCD multi-jet interactions do not produce $\ell\ell$ final states at leading order in the electroweak coupling, 
-a small fraction of their jets, less than 0.1\%, were incorrectly reconstructed as charged leptons.  Since the $W$+jets and QCD 
-multi-jet interactions produced multiple jets with large cross sections $\times$ branching ratios - in excess of several hundred pb 
-\cite{wJetsMeas,jetProductionMeas} - they contributed to the $\Mlljj$ distribution found in data, but at a negligible level.  
-In conclusion, the \DY+jets and top quark interactions produced the largest backgrounds, and other interactions produced significantly 
-smaller backgrounds.  The shape and magnitude of the $\Mlljj$ distribution produced by these interactions was estimated using 
-Monte Carlo (\MC) simulations.
+The magnitude of the background produced by each ST process is proportional to the product of the cross section and branching ratio 
+to $\ell\ell jj$ final states at $\sqrt{s} =$ 13 $\TeV$.  The production of jets in association with the \DY process, and the production 
+of top quarks yielded backgrounds with the largest magnitudes.  The production of diboson (WW, WZ, ZZ) pairs, single W bosons in 
+association with jets, and multiple jets through QCD also yielded backgrounds, but with significantly lower magnitudes.
 
+The \DY process is initiated by a quark and anti-quark that annihilate into a $Z/\gamma^{*}$, which decays promptly into two opposite 
+charge, same flavor leptons, as shown in Figure \ref{fig:dyDiags}.  The production of dilepton pairs through \DY has a cross section-
+branching ratio product that peaks at 6000 pb for dilepton mass $\Mll \approx 90$ $\GeV$, and decreases for higher values of $\Mll$.  
+At $\sqrt{s} = 13$ $\TeV$ the quarks that initiate the \DY interaction radiate two partons with a probability of $\sim$0.01, 
+equal to the QCD coupling squared $\alpha_{QCD}^{2}$.  Therefore, in $\sim$1\% of \DY events two partons are radiated and hadronize 
+into jets; the \DY process produces $\ell\ell jj$ final states with a cross section-branching ratio product of $\approx$60 pb.
+
+Unlike \DY, the production of $t\bar{t}$ quark pairs, shown in Figure \ref{fig:ttbarDiag}, produces $\ell\ell jj$ final states without 
+initial state parton radiation.  The product of the cross section and branching ratio, 86 pb, is similar to the product of the cross 
+section and branching ratio of the \DY+2 jets process.  Since more than 99\% of top quarks decay to a $W$ boson and bottom quark, the 
+production of single top quarks with a W boson (Figure \ref{fig:singleTopDiags}) yields two leptons and one jet when both $W$ bosons 
+decay leptonically.  The gluon that initiates the top+W interaction radiates a gluon with $\sim$100\% probability, so the production 
+of top+W yields two lepton and two jet final states with a cross section-branching ratio product of $\sim$7 pb.  The production of 
+single top quarks through other processes, shown in Figure \ref{fig:singleTopDiags}, yield only one $W$, and therefore do not produce 
+$\ell\ell jj$ final states at leading order in the electroweak coupling.
+
+The only other processes that produce two leptons and jets without initial state parton radiation are the production of WZ and ZZ pairs.  
+The WZ production yields two leptons and jets when the $W$ decays hadronically, and the $Z$ decays to charged leptons.  The ZZ process 
+produces two leptons and jets when one $Z$ decays hadronically, and the other decays to charged leptons.  The combined product of the 
+cross section and branching rato of the WZ and ZZ processes to $\ell\ell jj$ final states is $\sim$3 pb, negligible compared to the 
+production of top quarks.
+
+Other processes contributed to the total background, but at negligible levels.  The production of WW boson pairs yields two charged 
+leptons when both $W$ bosons decay leptonically.  The two quarks that initiate the WW process radiate two partons with $\sim$1\% 
+probability, so the WW process produces $\ell\ell jj$ final states with a cross section-branching ratio product of $\sim$0.1 pb, 
+negligible compared to other backgrounds.  Although the $W$+jets and QCD multi-jet processes do not produce $\ell\ell$ final states 
+at leading order in the electroweak coupling, a small fraction of their jets, less than 0.1\%, are incorrectly reconstructed as charged 
+leptons.  Since the $W$+jets and QCD multi-jet processes produce multiple jets with cross section-branching ratio products in excess of 
+several hundred pb \cite{wJetsMeas,jetProductionMeas}, they contributed to the $\Mlljj$ distribution found in data, but at a negligible 
+level.  
+
+In conclusion, the \DY+jets and top quark processes produced the largest backgrounds, and other processes produced significantly 
+smaller backgrounds.  The shape and magnitude of the $\Mlljj$ distribution produced by these processes was estimated using Monte Carlo 
+(\MC) simulations.
 \clearpage
 
 \begin{figure}
@@ -81,6 +90,7 @@ colliding protons, the decay of unstable particles, and the hadronization of par
 interaction interact with the sub-detectors, and the signals generated in the sub-detectors are simulated in the second step.  In the third 
 step, the reconstruction algorithms process the simulated signals to reconstruct leptons and jets.
 
+%RESUME HERE
 In the first step, one \MC generator simulates the interaction between colliding protons, and the decay of unstable particles.  
 The \MC generator used to simulate the background was chosen such that the strengths of the generator matched the characteristics of the 
 interaction.  The \MADGRAPH generator \cite{madgraph} simulates all Feynman diagrams of a interaction at leading order in the electroweak 
