@@ -263,7 +263,7 @@ were estimated by comparing simulated background events to data events in three 
 \subsection{\DY normalization in $\Mlljj$}
 \label{sec:dyNormInMlljj}
 The approximations made in the \DY+jets model result in a difference between the data and the simulations in the normalization of the 
-$\Mlljj$ distribution.  The size of this difference was estimated using events in the $Z \rightarrow \ell\ell$ control region.
+$\Mlljj$ distribution.  The size of this difference was estimated using the $Z \rightarrow \ell\ell$ control region.
 
 The data and simulated \DY+jets events were compared in the $Z \rightarrow \ell\ell$ control region, where the majority of events found 
 in the data were produced by the \DY+jets process.  During collisions, events that had two electrons or one muon were selected using the 
@@ -306,23 +306,25 @@ to the \DY background normalization uncertainty, so the contribution of other ba
 
 \subsection{\DY shape in $\Mlljj$}
 \label{sec:dyShapeInMlljj}
-The \DY+jets interaction was simulated with up to four radiated partons leaving the \DY interaction, and the \DY+jets interaction in 
-real collisions radiated any number of partons, with no upper limit.  As a result, the radiated parton $\pt$,$\eta$, and multiplicity 
-distributions found in \DY+jets events were not expected to agree between data and simulations.  More than 50\% of radiated partons 
-that had $|\eta| < 2.5$ and $\pt > 10$ $\GeV$ were reconstructed as jets \cite{pflowEventReco}, so the reconstructed jet kinematic 
-distributions found in data and simulated events were not expected to agree.  Therefore, the shapes of the $\Mlljj$ distributions found in 
-real and simulated \DY+jets events were expected to differ.
+The approximations made in the \DY+jets model also cause the shape of the $\Mlljj$ distribution to differ between data and simulated 
+\DY+jets events.  The size of this shape difference was estimated using the low $\Mll$ control region.
 
-The size of the shape discrepancy was estimated using the low $\Mll$ control region, where the dominant background was \DY.  
-Events from data and all simulated backgrounds were selected using the online and offline selection criteria described in Chapter 
-\ref{sec:reco_chapter}, but the $\Mll$ requirement was changed from $\Mll > 200$ $\GeV$ to $\Mll < 180$ $\GeV$.  The normalization of 
-simulated \DY+jets events was increased by $\sim$15\%, then the $\Mlljj$ distributions found 
-in selected data and simulated events were compared (Figure \ref{fig:mlljjLowMllCR}).  The size of the $\Mlljj$ shape discrepancy was 
-calculated as the largest difference between the data and the total background in any bin.  The maximum discrepancy, 40\% for 
-$\Mlljj > 1.9$ $\TeV$ in both channels, was taken as the shape discrepancy for all simulated \DY+jets events that had $\Mlljj > 0.6$ $\TeV$.
+%old material, no longer needed
+%The \DY+jets interaction was simulated with up to four radiated partons leaving the \DY interaction, and the \DY+jets interaction in 
+%real collisions radiated any number of partons, with no upper limit.  As a result, the radiated parton $\pt$,$\eta$, and multiplicity 
+%distributions found in \DY+jets events were not expected to agree between data and simulations.  More than 50\% of radiated partons 
+%that had $|\eta| < 2.5$ and $\pt > 10$ $\GeV$ were reconstructed as jets \cite{pflowEventReco}, so the reconstructed jet kinematic 
+%distributions found in data and simulated events were not expected to agree.  Therefore, the shapes of the $\Mlljj$ distributions found in 
+%real and simulated \DY+jets events were expected to differ.
 
-%RESUME HERE
-
+The data and simulated events of all ST processes were compared in the low $\Mll$ control region, where the majority of events found 
+in the data were produced by the \DY+jets process.  Data and simulated events were selected using the event selection described 
+previously in Chapter \ref{sec:reco_chapter}, but the two selected leptons were required to have a $\Mll < 180$ $\GeV$.  Based on 
+the normalization correction described in Section \ref{sec:dyNormInMlljj}, the weight of events selected in \DY+jets 
+simulations was increased by 15.7\% in the $ee$-channel, and 14.2\% in the $\mu\mu$-channel.  Then, the $\Mlljj$ distribution 
+measured in data and simulated events were compared.  The size of the $\Mlljj$ shape difference was calculated as the largest difference 
+between the data and the total background in any bin shown in Figure \ref{fig:mlljjLowMllCR}.  The maximum difference, 40\% for 
+$\Mlljj > 1.9$ $\TeV$ in both channels, was taken as the shape difference for events with $\Mlljj > 0.6$ $\TeV$.
 
 \begin{figure}
 	\centering
@@ -341,34 +343,36 @@ $\Mlljj > 1.9$ $\TeV$ in both channels, was taken as the shape discrepancy for a
 	\label{fig:mlljjLowMllCR}
 \end{figure}
 
-Initially the large shape discrepancy was attributed to a limitation of the \DY+jets simulation - the \DY interaction was simulated 
-at leading order in the electroweak and QCD couplings.  This hypothesis was tested by simulating a separate set of 
+Initially the large shape difference was attributed to limitations of the \DY+jets simulation - the \DY process was simulated 
+only at leading order in the electroweak and QCD couplings.  This was tested by simulating a separate set of 
 \DY+jets events using a different \MC generator at next-to-leading order in the electroweak and QCD couplings, and with up to four 
-radiated partons leaving the \DY interaction.  Then, the procedure described in Section \ref{sec:dyNormInMlljj} was repeated to 
-calculate a \DY+jets normalization correction for the simulated \DY events.  The normalization correction was applied, and 
-simulated \DY+jets and other background events were selected using the low $\Mll$ control region selection criteria.  The $\Mlljj$ 
-distribution found in simulated events, compared to data in Figure \ref{fig:mlljjLowMllCRAMC}, showed a larger discrepancy with the data 
-when using the next-to-leading order \DY+jets simulation.  The increased discrepancy was not caused by 
-higher order QCD or electroweak interactions, but a significant decrease in selected events.  Comparing the leading order 
+partons radiated from the initial state quarks.  The procedure described in Section \ref{sec:dyNormInMlljj} was repeated to 
+re-calculate a \DY+jets normalization correction for the simulated \DY events.  The $\Mlljj$ distribution measured in simulated events, 
+compared to data in Figure \ref{fig:mlljjLowMllCRAMC}, shows a larger difference with the data when using the next-to-leading order 
+\DY+jets simulation than with the leading order simulation.  The larger difference was therefore not caused by higher order QCD or 
+electroweak interactions, but by a significant decrease in selected events.  Comparing the leading order 
 and next-to-leading order \DY+jets simulations after applying the low $\Mll$ selection criteria, the next-to-leading order simulation 
-produced $\sim$3$\times$ fewer events with $\Mlljj > 0.6$ $\TeV$, and $\sim$10$\times$ fewer events with $\Mlljj > 1$ $\TeV$.  Similar 
-deficits in selected events were found in events that had $\Mlljj > 600$ $\GeV$ and $\Mll > 200$ $\GeV$.  For these reasons the 
-next-to-leading order \DY+jets simulation was not used to estimate the \DY+jets background, and the large shape discrepancy could not 
-be attributed to next-to-leading order effects.
+produced a factor of $\sim$3 fewer events with $\Mlljj > 0.6$ $\TeV$, and a factor of $\sim$10 fewer events with $\Mlljj > 1$ $\TeV$.  
+Similar deficits in selected events were found in events that had $\Mlljj > 600$ $\GeV$ and $\Mll > 200$ $\GeV$.  For these reasons the 
+next-to-leading order \DY+jets simulation was not used to estimate the \DY+jets background, and the large shape difference could not 
+be attributed to next-to-leading order effects.  Instead, it was investigated if the shape difference should be applied as a correction 
+or assigned as an uncertainty.
 
-The effect of the 40\% $\Mlljj$ shape discrepancy on the \DY background prediction can be accounted for in two ways.  The simulated \DY+jets 
+The effect of the 40\% $\Mlljj$ shape difference on the \DY background prediction can be accounted for in two ways.  The simulated \DY+jets 
 event weights can be adjusted to match the $\Mlljj$ distribution found in data, or an uncertainty can be assigned to the \DY background 
-prediction.  Correcting the simulated 
-event weights to match the data was not done for two reasons.  First, the variation of the $\Mlljj$-dependent correction versus $\Mll$ could 
-not be checked.  This was a significant concern in particular for events that had $\Mlljj > 1900$ $\GeV$, because the weight of those 
-events would have been corrected by 40\%.  Second, the uncertainty on the correction was dominated by the statistical uncertainty of the data, 
-which exceeded 30\% for $\Mlljj > 1900$ $\GeV$.  Therefore, the $\Mlljj$ distribution found in corrected \DY+jets events would still have a 
-large uncertainty.  For these reasons, the effect of the 40\% $\Mlljj$ shape discrepancy was accounted for by applying an uncertainty to the 
-\DY prediction, whose magnitude was determined as follows.  The results of the search presented here were obtained by counting 
-the number of predicted \DY+jets events in bins of $\Mlljj$.  Each bin is linked to a specific \mWR hypothesis, and the shape of the \DY 
-$\Mlljj$ distribution in each bin is irrelevant.  Thus a shape discrepancy and a normalization discrepancy have the same effect - the total 
-number of events in the bin change by the magnitude of the discrepancy.  Therefore, the effect of the 40\% shape discrepancy was accounted for 
-by assigning a 40\% uncertainty to the normalization of the $\Mlljj$ distribution found in simulated \DY+jets events, independent of $\Mlljj$.
+prediction.  Correcting the simulated event weights to match the data was not done for two reasons.  First, the variation of the 
+$\Mlljj$-dependent correction versus $\Mll$ could not be checked.  This was a significant concern in particular for events that had 
+$\Mlljj > 1900$ $\GeV$, because the weight of those events would have been corrected by 40\%.  Secondly, the uncertainty on the correction 
+was dominated by the statistical uncertainty of the data, which exceeded 30\% for $\Mlljj > 1900$ $\GeV$.  Since the correction had a 
+large statistical uncertainty and could not be validated in events with $\Mlljj > 600$ $\GeV$ and $\Mll > 200$ $\GeV$, the effect of 
+the 40\% shape difference was accounted for by assigning an uncertainty to the \DY prediction.
+
+The magnitude of the uncertainty was 
+determined by counting the number of predicted \DY+jets events in bins of $\Mlljj$.  Each bin is linked to a specific \mWR hypothesis, 
+and the shape of the \DY $\Mlljj$ distribution in each bin is irrelevant.  Thus a shape difference and a normalization difference have 
+the same effect - the total number of events in the bin change by the magnitude of the difference.  Therefore, the effect of the shape 
+difference was accounted for by assigning a 40\% uncertainty to the normalization of the $\Mlljj$ distribution measured in simulated 
+\DY+jets events, independent of $\Mlljj$.
 
 \begin{figure}
 	\centering
@@ -381,18 +385,19 @@ by assigning a 40\% uncertainty to the normalization of the $\Mlljj$ distributio
 		\centering
 		\includegraphics[width=2.4in]{figures/Mlljj_mumuChnl_lowMllCR_AMCNLO.pdf}
 	\end{subfigure}
-	\caption{The $\Mlljj$ distribution found in data and simulated background events that passed the $\Mll < 180 \GeV$ selection criteria.  
-		The $ee$-channel is on the left, and the $\mu\mu$-channel is on the right.  The bin contents are normalized to their widths.}
+	\caption{The $\Mlljj$ distribution found in data and simulated background events that passed the low $\Mll$ control region selection 
+		criteria.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on the right.  The bin contents are normalized to their 
+	widths.}
 	\label{fig:mlljjLowMllCRAMC}
 \end{figure}
 
-The low $\Mlljj$ control region was used to validate the $\sim$15\% correction applied, and 40\% uncertainty assigned to the predicted 
-\DY normalization.  Events from data and all background simulations were selected using the same selection criteria as the low $\Mll$ 
+The low $\Mlljj$ control region was used to validate the $\sim$15\% correction applied, and the 40\% uncertainty assigned to the \DY 
+prediction.  Events from data and all background simulations were selected using the same selection criteria as the low $\Mll$ 
 control region, but with $\Mll > 200$ $\GeV$ and $\Mlljj < 600$ $\GeV$.  The weight of simulated \DY events was increased by $\sim$15\%, and 
 then the $\Mll$ distributions found in selected data and simulated background events were compared.  The comparison, shown in Figure 
 \ref{fig:mllInLowMlljjSideband}, shows that the $\sim$15\% \DY correction brought the background estimate into better agreement with the 
-data.  In addition, the 40\% \DY normalization uncertainty was not too conservative, because the disagreement between data and estimated 
-backgrounds approached 40\% in several bins.
+data.  In addition, the 40\% \DY uncertainty was not too conservative, because the disagreement between data and estimated backgrounds 
+approached 40\% in several bins.
 
 \begin{figure}
 	\centering
@@ -406,24 +411,24 @@ backgrounds approached 40\% in several bins.
 		\includegraphics[width=2.4in]{figures/Mll_mumuChnl_lowMlljjCR.png}
 	\end{subfigure}
 	\caption{The $\Mll$ distribution found in data and simulated background events that passed the low $\Mlljj$ control region 
-		requirements.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on the right.}
+		selection criteria.  The $ee$-channel is on the left, and the $\mu\mu$-channel is on the right.}
 	\label{fig:mllInLowMlljjSideband}
 \end{figure}
 
 \subsection{\DY summary}
 The \DY contribution to the $\Mlljj$ distribution found in data was estimated by selecting simulated \DY events using the selection criteria 
 described in Chapter \ref{sec:reco_chapter}.  The weight of each selected event was increased by 15.7\% the $ee$-channel, and by 14.2\% in 
-the $\mu\mu$-channel.  When calculating the results, a 40\% uncertainty was assigned to the estimated number of \DY events.
+the $\mu\mu$-channel.  When calculating the results, a 40\% uncertainty was assigned to the \DY prediction.
 
 
 \section{Diboson and W+jets Backgrounds}
 \label{sec:dibosonAndWJetsBkgnds}
-The diboson (WW, WZ, ZZ) and W+jets interactions produced $\ell\ell jj$ events at a much lower rate than the \DY+jets interaction.  No 
+The diboson (WW, WZ, ZZ) and W+jets processes produced $\ell\ell jj$ events at a much lower rate than the \DY+jets process.  No 
 control region existed where the diboson or W+jets backgrounds could be extracted directly from data, so their contributions to the 
-$\Mlljj$ distributions found in data were estimated using simulated events.  The $\Mlljj$ distribution found in selected diboson and W+jets 
-events (Figure \ref{fig:allExpectedBkgnds}) was concentrated in the $\Mlljj \leq 2.0$ $\TeV$ region, and its integral was less than 3\% 
-of the predicted \DY+jets $\plus$ top quark background events.  For these reasons the diboson and W+jets contributions to the $\Mlljj$ 
-distribution found in data were neglected.
+$\Mlljj$ distributions found in data were estimated using simulated events.  The $\Mlljj$ distribution measured in selected diboson and 
+W+jets events (Figure \ref{fig:allExpectedBkgnds}) was concentrated in the $\Mlljj \leq 2.0$ $\TeV$ region, and its integral was less 
+than 3\% of the total \DY and top quark prediction.  For these reasons the diboson and W+jets contributions to the $\Mlljj$ distribution 
+in the data were neglected.
 
 \begin{figure}
 	\centering
@@ -444,11 +449,10 @@ distribution found in data were neglected.
 
 \section{QCD Background}
 \label{sec:qcdBkgnd}
-Similar to the diboson and W+jets interactions, QCD multi-jet interactions produced $\ell\ell jj$ events at a much lower rate than the 
-\DY+jets interaction.  Unlike the other backgrounds, the leptons selected offline in QCD events were incorrectly reconstructed from 
-jets that contained energetic electrons or photons.  Events in data where two jets may have been identified as leptons were selected 
-using the online and offline selection criteria described in Chapter \ref{sec:reco_chapter}, but using the following (reduced) lepton 
-ID selection criteria:
+Similarly, the QCD multi-jet processes produced $\ell\ell jj$ events at a much lower rate than the \DY+jets process.  Unlike the 
+other backgrounds, the leptons selected offline in QCD events were incorrectly reconstructed from jets that contained energetic 
+electrons or photons.  Events in data where two jets may have been identified as leptons were selected using the online and offline 
+selection criteria described in Chapter \ref{sec:reco_chapter}, but using the following (reduced) lepton ID selection criteria:
 
 \textbf{Muons}
 \begin{itemize}
@@ -464,18 +468,18 @@ ID selection criteria:
 \end{itemize}
 
 Events were rejected if one or both selected leptons passed the standard lepton ID selection criteria.  In the selected events, 
-the $\pt$s and $\eta$s of both selected leptons were used as inputs to a $\pt,\eta$-dependent probability function.  This function, 
+the $\pt$'s and $\eta$'s of both selected leptons were used as inputs to a $\pt,\eta$-dependent probability function.  This function, 
 derived elsewhere \cite{ZprimeRunOneAndTwo}, calculates the probability that a jet reconstructed as a lepton will pass the standard lepton 
 ID selection criteria\footnote{The form of the function differed for electrons and muons.}.  The probability calculated for both selected 
-leptons was applied to each selected event as a weight.  The $\Mlljj$ distribution found in selected weighted events (Figure \ref{fig:allExpectedBkgnds}) 
-was negligible compared to other backgrounds, so the QCD background was neglected.
+leptons was applied to each selected event as a weight.  The $\Mlljj$ distribution found in selected weighted events (Figure 
+\ref{fig:allExpectedBkgnds}) was negligible compared to other backgrounds, so the QCD background was neglected.
 
 \section{Background Estimation Summary}
-ST interactions produced events in data where two leptons and jets were reconstructed, and passed the selection criteria that was 
+ST processes produced events in data where two leptons and jets were reconstructed, and passed the selection criteria that was 
 designed to select $\WR \rightarrow \ell\ell jj$ events.  The $\Mlljj$ distribution produced by each interaction, and the uncertainty on 
-its normalization was estimated using data and simulated events in control regions.  The \DY+jets and top quark interactions produced 
-more than 97\% of predicted background events, so the sum of the \DY and top quark backgrounds was identified as the total predicted 
-background.  The predicted background was compared to data in bins of $\Mlljj$ that were linked to specific \mWR hypotheses.  These bins 
+its normalization was estimated using data and simulated events in control regions.  The \DY+jets and top quark processes were estimated 
+to give more than 97\% of the background, so the sum of the \DY and top quark backgrounds was identified as the total predicted 
+background.  This was compared to data in bins of $\Mlljj$ that were linked to specific \mWR hypotheses.  These bins 
 and the comparison between the data and predicted background is discussed in the next chapter.
 
 
