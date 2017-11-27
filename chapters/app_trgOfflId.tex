@@ -106,14 +106,14 @@ one 5 $\times$ 5 ECAL crystal cluster that had $\Et > 40$ $\GeV$, or two 5 $\tim
 $\Et > 10$ $\GeV$.  In the HLT, the following selection criteria were applied:
 
 \begin{itemize}
-	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were required to have $\Et > 33$ $\GeV$.
-	\item For each ECAL cluster (energy E):
+	\item At least two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were required to have $\Et > 33$ $\GeV$.
+	\item For each ECAL cluster:
 	\begin{itemize}
-		\item The hadronic energy behind the cluster was $<$ 15\% of E in the barrel, and $<$ 10\% of E in the endcap. 
-		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
-		\item If the cluster was in the barrel, a reconstructed track with signals in at least two pixel tracker layers 
-			extrapolated close to the cluster position.  The track extrapolated from the pixel tracker to within $2.3$ cm 
-			of the cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
+		\item The hadronic energy behind the cluster was $<$ 15\% of $\Et$ in the barrel, and $<$ 10\% of $\Et$ in the endcap. 
+		\item Ninety percent of $\Et$ was measured in an area that was only two crystals wide in $\eta$.
+		\item For a barrel cluster, a reconstructed track that was measured in at least two pixel tracker layers 
+			extrapolated from the pixel tracker to within $2.3$ cm of the cluster position in $z$, and to within the width 
+			of one crystal from the cluster $(\eta,\phi)$ position.
 	\end{itemize}
 \end{itemize}
 
@@ -153,6 +153,53 @@ charged hadron, and whose energies were not dominated by electron or photon SCs:
 	\item Less than 90\% of the total jet energy came from photons.
 	\item Less than 99\% of the total jet energy came from electrons.
 \end{itemize}
+
+\section{\DY Control Region Triggers}
+\label{sec:trgDyCR}
+During collisions, events with two muons were selected using a Level-1 trigger that required one track segment with $\pt > 20$ $\GeV$.  
+The segment was required to have measurements in DT or CSC chambers from at least 2 stations, and in at least 4 layers of each chamber.  
+In the HLT, the following selection criteria were applied:
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt_{1} > 22$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector track segment, reconstructed with $\pt_{2}$ that passed the L1 trigger.
+	\item In the plane perpendicular to the beam axis, the distance between the silicon tracker track origin and its 
+		reconstructed vertex was $< 1$ mm.
+	\item In a $\Delta R =$ 0.3 radius cone centered on the muon trajectory:
+		\begin{itemize}
+			\item The total ECAL energy was $<$ 11\% of $\pt_{2}$ in the barrel, and $<$ 8\% of $\pt_{2}$ in the endcap.
+			\item The total HCAL energy was $<$ 21\% of $\pt_{2}$ in the barrel, and $<$ 22\% of $\pt_{2}$ in the endcap.
+			\item The total $\pt$ of all silicon tracker tracks excluding the muon track was $<$ 9\% of $\pt_{1}$.
+		\end{itemize}
+\end{itemize}
+
+During collisions, events with two electrons were selected using a single electron Level-1 trigger that required one 5 $\times$ 5 
+ECAL crystal cluster that had an $\Et > 30$ $\GeV$ and an $|\eta| < 2.1$.  In the HLT, the following selection criteria were applied:
+
+\begin{itemize}
+	\item At least one 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$, and a second non-overlapping cluster 
+		was required to have $\Et > 4$ $\GeV$.
+	\item For the cluster with $\Et > 30$ $\GeV$:
+	\begin{itemize}
+		\item The hadronic energy behind the cluster was $<$ 5.5\% of $\Et$ in the barrel, and $<$ 7\% of $\Et$ in the endcap. 
+		\item Ninety percent of $\Et$ was measured in an area that was only two crystals wide in $\eta$.
+		\item A reconstructed track that was measured in at least two pixel tracker layers extrapolated from the pixel tracker to 
+			within 1 cm of the cluster position in $z$, and to within the width of one crystal from the cluster $(\eta,\phi)$ position.
+		\item The cluster $\Et$ and the $\pt$ of the matching track did not differ by more than 50\%. 
+		\item In a $\Delta R =$ 0.3 radius cone centered on the cluster:
+		\begin{itemize}
+			\item The total ECAL energy not measured in the cluster was $<$ 22.5\% of $\Et$ in the barrel, and $<$ 12.1\% of 
+				$\Et$ in the endcap.
+			\item The total HCAL energy was $<$ 15.5\% of $\Et$ in the barrel, and $<$ 16\% of $\Et$ in the endcap.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+In events selected by the electron and muon triggers, reconstructed tracks in the silicon tracker and muon detectors, and ECAL SCs 
+were identified as being caused by muons and electrons using the algorithms described in Chapter \ref{sec:reco_chapter}.  Then, the 
+offline selection criteria described previously were applied to select events with two electrons or two muons.
+
+
 
 %old material saved for reference
 %Events from \WR interactions, characterized by different \mnul and \mWR, are simulated in the same three steps used to simulate 

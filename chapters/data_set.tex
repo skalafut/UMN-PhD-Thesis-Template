@@ -251,111 +251,58 @@ estimate to cover any deviation from 0.659 or 0.432 at high $\Mlljj$.  Based on 
 \ref{fig:dataAndSimsInEMuChannel}, the non-top quark backgrounds contributed $\sim$1\% to the $\Memujj$ distribution found in data.  
 Their contribution was neglected because it was less than the 10\% top quark background uncertainty.
 
-%RESUME HERE
-
 
 \section{\DY Background}
 \label{sec:dyBkgnd}
-The \DY+jets and top quark interactions produced $\ell\ell jj$ events at similar rates, much higher than other interactions.  Since 
-the $\Mlljj$ distribution shape found in top quark events was the same in the $ee$-, $e\mu$-, and $\mu\mu$-channels, 
-the top quark background was estimated directly from data in the $e\mu$ control region.  No analogue of the signal free $e\mu$ control region 
-exists for the \DY+jets background, so the \DY background was estimated using simulated events.  The simulated \DY interaction is a 
-simplified version of the \DY interaction that occurs in real collisions, and the effect of those simplifications was estimated by 
-comparing simulated background events to data events in three control regions.
+The \DY+jets process produced $\ell\ell jj$ events at similar rates to the top quark processes.  Since the \WR decay does not produce 
+events with an electron and a muon, the top quark background was estimated directly from data in the $e\mu jj$ control region.  No 
+analogue of the $e\mu jj$ control region exists for the \DY+jets background, so it needed to be estimated using simulated events.  
+The model of the \DY+jets process used in simulations is an approximation, and the differences between the \DY predictions and the data 
+were estimated by comparing simulated background events to data events in three control regions.
 
 \subsection{\DY normalization in $\Mlljj$}
 \label{sec:dyNormInMlljj}
-Simulated \DY+jets events were produced at leading order in the electroweak and QCD couplings, and \DY+jets events found in 
-data were produced at all orders in these couplings.  The difference in the coupling orders created discrepancies between data and 
-simulations in the production rate and kinematics of leptons and jets.  The discrepancy in production rate was minimized by 
-weighting the simulated events based on the integrated luminosity of data $\times$ the next-to-next-to-leading order \DY cross section 
-$\times$ branching ratio.  The weight was the same for all simulated events, and did not correct the discrepancy in the lepton and jet 
-kinematics.
+The approximations made in the \DY+jets model result in a difference between the data and the simulations in the normalization of the 
+$\Mlljj$ distribution.  The size of this difference was estimated using events in the $Z \rightarrow \ell\ell$ control region.
 
-The effect of the kinematic discrepancy was estimated by comparing data to simulated \DY+jets events in the $Z \rightarrow \ell\ell$ 
-control region, where the majority of events were produced by the \DY+jets interaction.  Events in the $ee$-channel control region were 
-selected using a Level-1 trigger that required one 5 $\times$ 5 ECAL crystal cluster with $\Et > 30$ $\GeV$ and $|\eta| < 2.1$.  Then, 
-selected events were required to pass the following double-electron HLT selection criteria:
+The data and simulated \DY+jets events were compared in the $Z \rightarrow \ell\ell$ control region, where the majority of events found 
+in the data were produced by the \DY+jets process.  During collisions, events that had two electrons or one muon were selected using the 
+triggers described in Appendix \ref{sec:trgDyCR}.  Offline, leptons and jets were reconstructed, and additional selection criteria were 
+applied.  Selected events had two leptons and jets with the following characteristics:
 
 \begin{itemize}
-	\item One 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$, and a second non-overlapping cluster 
-		was required to have $\Et > 4$ $\GeV$.
-	\item For the cluster with $\Et > 30$ $\GeV$ (energy E):
-	\begin{itemize}
-		\item The hadronic energy behind the cluster was $<$ 5.5\% of E in the barrel, and $<$ 7\% of E in the endcap. 
-		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
-		\item A reconstructed track with signals in at least two pixel tracker layers extrapolated close to the cluster 
-			position.  The track extrapolated from the pixel tracker to within 1 cm of the cluster $z$ position, and to 
-			the cluster $(\eta,\phi)$ position within half the area of one ECAL crystal.
-		\item The cluster $\Et$ and matching track $\pt$ cannot differ by more than 50\%. 
-		
-		\item In a $\Delta R =$ 0.3 radius cone centered on the cluster:
-		\begin{itemize}
-			\item The total ECAL energy not measured in the cluster was $<$ 22.5\% of E in the barrel, and $<$ 12.1\% of 
-				E in the endcap.
-			\item The total HCAL energy was $<$ 15.5\% of E in the barrel, and $<$ 16\% of E in the endcap.
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-
-Events in the $\mu\mu$-channel control region were selected using a Level-1 single muon trigger.  The Level-1 trigger was identical to 
-the Level-1 single muon trigger used in the $e\mu$ control region, but required one track that had $\pt > 20$ $\GeV$.  Then, selected 
-events were required to pass the following single muon HLT selection criteria:
-
-\begin{itemize}
-	\item A track reconstructed in the silicon tracker with $\pt_{1} > 22$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
-		the muon detector track segment, reconstructed with $\pt_{2}$ that passed the L1 trigger.
-	\item In the plane perpendicular to the beam axis, the distance between the silicon tracker track origin and its 
-		reconstructed vertex was $< 1$ mm.
-	\item In a $\Delta R =$ 0.3 radius cone centered on the muon trajectory:
-		\begin{itemize}
-			\item The total ECAL energy was $<$ 11\% of $\pt_{2}$ in the barrel, and $<$ 8\% of $\pt_{2}$ in the endcap.
-			\item The total HCAL energy was $<$ 21\% of $\pt_{2}$ in the barrel, and $<$ 22\% of $\pt_{2}$ in the endcap.
-			\item The total $\pt$ of all silicon tracker tracks excluding the muon track was $<$ 9\% of $\pt_{1}$.
-		\end{itemize}
+	\item Each lepton had a $\pt > 35$ $\GeV$, and an $|\eta| < 2.4$.
+	\item The two leptons had a di-lepton mass $70 < \Mll < 110$ $\GeV$.
+	\item Each jet had a $\pt > 40$ $\GeV$, and an $|\eta| < 2.4$.
+	\item Each jet was separated from both leptons by $\Delta R > 0.4$.
 \end{itemize}
 
 Electrons reconstructed in simulated events passed the trigger criteria with a different efficiency than electrons reconstructed in 
-data.  The efficiency difference was corrected by multiplying the weight of every simulated event by a weight that depended on the 
-$\Et$ and $\eta$ of the electron that passed the highest energy requirement.  The average weight was 0.96 (4\% decrease).  No correction 
-was needed in the muon channel.
+data events.  This efficiency difference was corrected by multiplying the weight of every simulated event by a value that depended on the 
+$\Et$ and $\eta$ of the highest $\Et$ electron selected by the trigger.  The average value of the correction was 0.96.
 
-In events selected by the triggers, reconstructed leptons and jets were selected using offline selection criteria.  The ID criteria 
-were identical to those described previously.  The kinematic selection criteria, listed in Table \ref{tab:cutsZllReg}, use lower lepton 
-$\pt$ thresholds to select more $Z\rightarrow \ell\ell$ events.
+The $\Mll$ distribution in data for $Z \rightarrow \ell\ell$ events was compared with the distribution of the same events in \DY+jets 
+simulations.  The normalization of the $\Mll$ distribution in data and simulations was compared by 
+integrating the distribution in data and simulated events, and comparing the integral values.  The normalization of the $\Mll$ distribution 
+measured in data exceeded the normalization measured in simulated events by 15.7\% in the $ee$-channel, and 14.2\% in the $\mu\mu$-channel.  
+As a result, the weight of simulated \DY+jets events was increased by 15.7\% in the $ee$-channel, and 14.2\% in the $\mu\mu$-channel to 
+more accurately predict the \DY background.
 
-\begin{table}[h]
-	\caption{The kinematic selection criteria applied to events in the $Z\rightarrow \ell\ell$ control region 
-	to select two leptons and two jets.}
-	\label{tab:cutsZllReg}
-	\centering
-	\begin{tabular}{c|c}
-		variable & criteria \\  \hline
-		jet $\pt$ and $\eta$ & $\pt > 40$, $|\eta| < 2.4$ \\
-		lepton-jet separation & $\Delta R > 0.4$ \\
-		lepton $\pt$ and $\eta$ & $\pt > 35$, $|\eta| < 2.4$ \\
-		di-lepton mass $\Mll$ & $70 < \Mll < 110$ \\
-	\end{tabular}
-\end{table}
+The uncertainty on the $\sim$15\% \DY normalization correction was estimated using simulated \DY+jets events produced using two other \MC 
+generators.  One generator simulates the \DY process at next-to-leading order in the electroweak and QCD couplings and radiates up to 
+four partons.  The other generator was \POWHEG, which simulates the \DY process and radiates up to one parton.  Events from data and \DY+
+jets simulations using all three generators were selected using the $Z \rightarrow \ell\ell$ selection criteria without jet requirements.  
+The jet requirements were removed to compare data to simulations in a phase space where \POWHEG yielded a large number of selected events, 
+comparable to the simulations produced with the other generators.  The normalization of the $\Mll$ distribution in data and simulations 
+was compared by integrating the distribution measured in data and simulated events, and comparing the integral values.  Since no jet 
+requirements are applied the simulations are expected to match the data, and any deviation from this expectation was taken as an 
+uncertainty.  The largest difference in the normalization measured in data and any of the simulated events was 2.0\% in the $ee$-channel, 
+and 1.0\% in the $\mu\mu$-channel.  This difference was taken as an uncertainty on the number of \DY background events that were predicted 
+in each channel.
 
-The $\Mll$ distribution found in selected $Z\rightarrow \ell\ell$ events was compared between data and \DY+jets simulations.  Due to 
-the lepton and jet kinematic discrepancy, the normalization of the $\Mll$ distribution found in data exceeded the normalization found in 
-simulated events by 15.7\% in the $ee$-channel, and 14.2\% in the $\mu\mu$-channel.  The effect of the kinematic discrepancy was 
-minimized by increasing the weight of simulated \DY+jets events by 15.7\% in the $ee$-channel, and 14.2\% in the $\mu\mu$-channel.  
-The uncertainty on this normalization correction, discussed next, was comparable to the background from other interactions in the 
-$Z \rightarrow \ell\ell$ control region.  As a result, the contributions of other interactions to the data in the control region were 
-neglected.
-
-Two additional \DY+jets datasets were simulated using different generators, and used to estimate the uncertainty on the $\sim$15\% 
-\DY normalization correction.  Of the two other generators, one simulated the \DY interaction at next-to-leading order in the electroweak 
-and QCD couplings with up to four radiated partons leaving the interaction.  \POWHEG, which only simulates up to one radiated parton leaving 
-the \DY interaction, was used to produce the another dataset.  Events from data and all three simulated datasets were selected using the 
-$Z \rightarrow \ell\ell$ selection criteria without jet requirements.  The jet requirements were removed to compare data to simulations in 
-a phase space where \POWHEG yielded a large number of selected events, comparable to the other simulated datasets.  The $\Mll$ distributions 
-found in simulated events were compared to the distributions found in data.  Their shapes matched, but the normalization differed between 
-data and simulations.  Since the simulations were expected to match the data, the largest normalization difference between any of the three 
-simulations and data was taken as the uncertainty on the $\sim$15\% normalization correction.  The uncertainty was 2.0\% in the $ee$-
-channel and 1.0\% in the $\mu\mu$-channel.
+Based on simulations of all ST processes, the contribution of ST processes excluding \DY+jets to the data events selected in the 
+$Z \rightarrow \ell\ell$ control region was 2\% of the total background that was predicted in the control region.  This 2\% is comparable 
+to the \DY background normalization uncertainty, so the contribution of other backgrounds to the data in the control region was neglected.
 
 \subsection{\DY shape in $\Mlljj$}
 \label{sec:dyShapeInMlljj}
@@ -366,13 +313,16 @@ that had $|\eta| < 2.5$ and $\pt > 10$ $\GeV$ were reconstructed as jets \cite{p
 distributions found in data and simulated events were not expected to agree.  Therefore, the shapes of the $\Mlljj$ distributions found in 
 real and simulated \DY+jets events were expected to differ.
 
-The magnitude of the shape discrepancy was estimated using the low $\Mll$ control region, where the dominant background was \DY.  
+The size of the shape discrepancy was estimated using the low $\Mll$ control region, where the dominant background was \DY.  
 Events from data and all simulated backgrounds were selected using the online and offline selection criteria described in Chapter 
 \ref{sec:reco_chapter}, but the $\Mll$ requirement was changed from $\Mll > 200$ $\GeV$ to $\Mll < 180$ $\GeV$.  The normalization of 
 simulated \DY+jets events was increased by $\sim$15\%, then the $\Mlljj$ distributions found 
-in selected data and simulated events were compared (Figure \ref{fig:mlljjLowMllCR}).  The magnitude of the $\Mlljj$ shape discrepancy was 
+in selected data and simulated events were compared (Figure \ref{fig:mlljjLowMllCR}).  The size of the $\Mlljj$ shape discrepancy was 
 calculated as the largest difference between the data and the total background in any bin.  The maximum discrepancy, 40\% for 
 $\Mlljj > 1.9$ $\TeV$ in both channels, was taken as the shape discrepancy for all simulated \DY+jets events that had $\Mlljj > 0.6$ $\TeV$.
+
+%RESUME HERE
+
 
 \begin{figure}
 	\centering
