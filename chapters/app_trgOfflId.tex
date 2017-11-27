@@ -29,8 +29,8 @@
 %	\end{tabular}
 %\end{table}
 
-During collisions, events with muons were selected using a Level-1 trigger that required one track segment with $\pt > 16$ $\GeV$.  The 
-segment was required to have measurements in DT or CSC chambers from at least 2 stations, and in at least 4 layers of each chamber.  
+During collisions, events with two muons were selected using a Level-1 trigger that required one track segment with $\pt > 16$ $\GeV$.  
+The segment was required to have measurements in DT or CSC chambers from at least 2 stations, and in at least 4 layers of each chamber.  
 In the HLT, the following selection criteria were applied:
 
 \begin{itemize}
@@ -41,9 +41,28 @@ In the HLT, the following selection criteria were applied:
 		position to within 3 cm.
 \end{itemize}
 
-In events selected by the single muon trigger, tracks in the muon detectors and silicon tracker were identified as being caused by muons 
-using algorithms described previously.  Then, the following offline selection criteria were applied to select promptly produced muons 
-that were isolated from other particles, and reconstructed in multiple muon stations:
+During collisions, events with an electron and a muon were selected using the single muon Level-1 trigger described previously.  In 
+the HLT, the following selection criteria were applied:
+
+\begin{itemize}
+	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
+		the muon detector track segment that passed the L1 trigger.
+	\item In the plane perpendicular to the beam axis, the distance between the track and the reconstructed vertex was 
+		$< 1$ mm.
+	\item At least one 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$, and:
+	\begin{itemize}
+		\item the hadronic energy behind the cluster was $<$ 15\% of $\Et$ in the barrel, and $<$ 10\% of E in the endcap. 
+		\item Ninety percent of the cluster's energy was measured in an area that was only two crystals wide in $\eta$.
+		\item For a barrel cluster, a reconstructed track that was measured in at least two pixel tracker layers 
+			extrapolated from the pixel tracker to within $2.3$ cm of the cluster position in $z$, and to within the 
+			width of one crystal from the cluster $(\eta,\phi)$ position.
+	\end{itemize}
+\end{itemize}
+
+In events selected by the single muon trigger and the electron-muon trigger, tracks in the muon detectors and silicon tracker were 
+identified as being caused by muons using reconstruction algorithms described in Chapter \ref{sec:reco_chapter}.  Then, the following 
+offline selection criteria were applied to select promptly produced muons that were isolated from other particles, and reconstructed in 
+multiple muon stations:
 
 \begin{itemize}
 	\item The muon track reconstructed in the silicon tracker:
@@ -82,9 +101,9 @@ that were isolated from other particles, and reconstructed in multiple muon stat
 %	\end{tabular}
 %\end{table}
 
-During collisions, events with electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
-one 5 $\times$ 5 ECAL crystal cluster that had $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters that had 
-$\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  In the HLT, the following selection criteria were applied:
+During collisions, events with two electrons were selected using single and double-electron Level-1 triggers.  These triggers required 
+one 5 $\times$ 5 ECAL crystal cluster that had $\Et > 40$ $\GeV$, or two 5 $\times$ 5 ECAL clusters that had $\Et > 22$ $\GeV$ and 
+$\Et > 10$ $\GeV$.  In the HLT, the following selection criteria were applied:
 
 \begin{itemize}
 	\item Two 5 $\times$ 5 ECAL crystal clusters separated by $\Delta R > 0.1$ were required to have $\Et > 33$ $\GeV$.
@@ -98,9 +117,10 @@ $\Et > 22$ $\GeV$ and $\Et > 10$ $\GeV$.  In the HLT, the following selection cr
 	\end{itemize}
 \end{itemize}
 
-In events selected by the double-electron trigger, reconstructed tracks and ECAL SCs were identified as being caused by electrons using 
-the algorithms described previously.  Then, the following offline selection criteria were applied to select the promptly produced 
-electrons that were isolated from other particles, excluding electrons in the ECAL transition region $1.44 < |\eta| < 1.57$:
+In events selected by the double-electron trigger and the electron-muon trigger, reconstructed tracks and ECAL SCs were identified as 
+being caused by electrons using the algorithms described in Chapter \ref{sec:reco_chapter}.  Then, the following offline selection 
+criteria were applied to select the promptly produced electrons that were isolated from other particles, excluding the electrons in the 
+ECAL transition region $1.44 < |\eta| < 1.57$:
 
 \begin{itemize}
 	\item The electron $\Et$ is the calibrated ECAL SC energy $E_{SC}$.

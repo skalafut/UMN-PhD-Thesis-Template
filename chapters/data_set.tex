@@ -186,37 +186,25 @@ The number of simulated events is expressed in units of fb$^{-1}$, and should be
 
 \section{Top Quark Background}
 \label{sec:topQrkBkgnds}
-Top quark interactions, primarily those that produce a $t\bar{t}$ pair, produce bottom quarks and gluons that hadronize into jets, and 
-two $W$ bosons that yield two charged leptons.  Since $W$ bosons decay to electrons and muons with equal branching ratios, top quark 
-interactions produce the $e\mu jj$ final state twice as often as the $eejj$ or $\mu\mu jj$ final states.  Since the $e\mu jj$ final state 
-is not contaminated with \WR signal (Chapter \ref{sec:lrsPhenomenology}) or other background interactions, the $e\mu jj$ final state was 
-used as a control region to estimate the top quark background.  During collisions, $e\mu jj$ events were selected using the Level-1 single 
-muon trigger described in Chapter \ref{sec:onlineAndOfflineIdSel}.  Then, events were selected using the following 
-$e\mu$ HLT selection criteria:
+As discussed in Chapter \ref{sec:lrsPhenomenology}, due to lepton flavor conservation the \WR cannot decay to final states with an 
+electron and a muon.  Therefore, $e\mu jj$ events found in the data were produced only by background processes.  The production of 
+a $t\bar{t}$ quark pair and a top quark with a W boson yields events with two partons and two W bosons.  Since a W boson decays to 
+an electron or a muon with equal branching ratios, the top quark processes produce the $e\mu jj$ final state twice as often as the 
+$eejj$ or $\mu\mu jj$ final states.  As no other ST processes produce the $e\mu jj$ final state at leading order in the electroweak 
+coupling, the majority of $e\mu jj$ events found in data were produced by top quark processes.  The $e\mu jj$ final state was used 
+as a control region to estimate the top quark background.
 
-%RESUME HERE
+During collisions, $e\mu jj$ events were selected using a trigger that required one muon and one electron.  Leptons and jets 
+that were reconstructed offline were selected with additional criteria.  Events that met the selection criteria, described in detail 
+in Appendix \ref{app_trgOfflId}, had one electron, one muon, and at least two jets with the characteristics described previously in 
+Chapter \ref{sec:onlineAndOfflineIdSel}.  However, the electron had an $\Et > 30$ $\GeV$, and the muon had a $\pt > 30$ $\GeV$.
 
-\begin{itemize}
-	\item A track reconstructed in the silicon tracker with $\pt > 30$ $\GeV$ and $|\eta| < 2.4$ was geometrically matched to 
-		the muon detector track segment that passed the L1 trigger.
-	\item In the plane perpendicular to the beam axis, the distance between the silicon tracker track origin and its 
-		reconstructed vertex was $< 1$ mm.
-	\item One 5 $\times$ 5 ECAL crystal cluster was required to have $\Et > 30$ $\GeV$.
-	\item For the selected ECAL cluster (energy E):
-	\begin{itemize}
-		\item The hadronic energy behind the cluster was $<$ 15\% of E in the barrel, and $<$ 10\% of E in the endcap. 
-		\item Ninety percent of E was measured in an area that was two crystals wide in $\eta$.
-		\item If the cluster was in the barrel, a reconstructed track with signals in at least two pixel tracker layers 
-			extrapolated close to the cluster position.  The track extrapolated from the pixel tracker to within $2.3$ cm 
-			of the cluster $z$ position, and to within 1 ECAL crystal area of the cluster $(\eta,\phi)$ position.
-	\end{itemize}
-\end{itemize}
+In events selected by the trigger, leptons and jets were reconstructed, and events were selected using the event selection described in 
+Chapter \ref{sec:reco_chapter} applied to the electron and muon selected by the trigger.  
 
-In events selected by the trigger, leptons and jets were reconstructed and selected offline using the reconstruction algorithms and selection 
-criteria described in Chapter \ref{sec:reco_chapter}, with the additional requirement that one selected lepton is an electron, and the other 
-a muon.  The same selection criteria were applied to simulated background events, and compared to the selected data events in Figure 
-\ref{fig:dataAndSimsInEMuChannel}.  Comparing the magnitudes of different simulated backgrounds, the top quark background produces more than 
-98\% of selected $e\mu jj$ events, as expected.
+These selection criteria were applied to simulated background events, and compared to the selected data events in Figure 
+\ref{fig:dataAndSimsInEMuChannel}.  Comparing the magnitudes of different simulated backgrounds, the top quark background produces more 
+than 98\% of selected $e\mu jj$ events, as expected.
 
 \begin{figure}[h]
 	\centering
@@ -226,21 +214,20 @@ a muon.  The same selection criteria were applied to simulated background events
 	\label{fig:dataAndSimsInEMuChannel}
 \end{figure}
 
-The $\Memujj$ distribution found in selected data events was scaled by two factors to estimate the top quark background in the $ee$- 
-and $\mu\mu$-channels.  The first factor, the ratio of $\frac{\ell\ell}{e\mu}$ production, is 0.5, and is independent of $\Mlljj$.  The 
-second factor, the ratio of the electron and muon selection efficiencies $\frac{e}{\mu}$, is expected to be below 1 because electrons 
-reconstructed with $1.44 < |\eta| < 1.57$ are ignored.  However, the exact value of $\frac{e}{\mu}$ and its variation with $\Mlljj$ were 
-not known from first principles.  The product of the two factors and the product's variation with $\Mlljj$ was estimated using 
-simulated top quark events.  First, simulated events were selected using the $e\mu$-, $ee$-, and $\mu\mu$-channel selection 
-criteria.  Then, the $\Mlljj$ distribution found in each set of events was split into variable width bins such that each bin had 
-the same number of events.  The first bin covered $600 < \Mlljj \leq 625$ $\GeV$, and the last bin covered $\Mlljj > 1160$ $\GeV$.  
-Then, the integral of each bin was calculated for all three distributions.  Finally, the integrals of the $\Meejj$ and $\Mmumujj$ bins 
-were divided by the integrals of the $\Memujj$ bins.  The result, shown in Figure \ref{fig:ttbarSFratios}, represents the product of 
-the $\frac{\ell\ell}{e\mu}$ production ratio and the $\frac{e}{\mu}$ (or $\frac{\mu}{e}$) selection efficiency ratio as a function of $\Mlljj$.  
-The result within statistical uncertainty is consistent with a constant value versus $\Mlljj$: 0.659 for $\Mmumujj / \Memujj$, 0.432 
-for $\Meejj / \Memujj$.  This confirms that the $\Mlljj$ distribution shape found in top quark events is independent of the final state 
-lepton flavor.  In addition, it means that the top quark contributions to the $\Mlljj$ distributions found in data can be predicted by 
-the $\Memujj$ distribution found in data multiplied by a constant.
+The $\Memujj$ distribution found in selected data events was scaled by one factor to estimate the top quark background in the $ee$- 
+and $\mu\mu$-channels.  The factor is the ratio of $\frac{\ell\ell}{e\mu}$ production, which is 0.5 based on lepton universality in 
+the decay of the W boson, multiplied by the ratio of the electron and muon selection efficiencies $\frac{e}{\mu}$, which is below 1 
+due to the reduced acceptance of the ECAL relative to the muon detectors, and is not known $a$-$priori$.  The factor and its 
+variation with $\Mlljj$ was estimated using simulated top quark events.  To make this estimation, simulated events were selected 
+using the $e\mu$-, $ee$-, and $\mu\mu$-channel selection criteria.  Then, the $\Mlljj$ distribution found in each set of events was 
+split into variable width bins such that each bin had the same number of events.  The first bin covered $600 < \Mlljj \leq 625$ $\GeV$, 
+and the last bin covered $\Mlljj > 1160$ $\GeV$.  Then, the integral of each bin was calculated for all three distributions.  Finally, 
+the integrals of the $\Meejj$ and $\Mmumujj$ bins were divided by the integrals of the $\Memujj$ bins.  The result, shown in Figure 
+\ref{fig:ttbarSFratios}, represents the factor used to estimate the top quark background as a function of 
+$\Mlljj$.  The factor within its statistical uncertainty is independent of $\Mlljj$, and is equal to 0.659 for $\Mmumujj / \Memujj$, 
+and 0.432 for $\Meejj / \Memujj$.  It is assumed that the $\Mlljj$ distribution shape found in top quark events is independent of the final 
+state lepton flavor.  The top quark contributions to the $\Meejj$ and $\Mmumujj$ distributions found in data were estimated by scaling 
+the $\Memujj$ distribution found in data by 0.432 and 0.659, respectively.
 
 \begin{figure}
 	\centering
@@ -258,12 +245,13 @@ the $\Memujj$ distribution found in data multiplied by a constant.
 	\label{fig:ttbarSFratios}
 \end{figure}
 
-The $\Memujj$ distribution found in data was multiplied by 0.659 or 0.432 to estimate the top quark $\Mlljj$ distribution in the 
-$\mu\mu$- or $ee$-channel.  Although the values 0.659 and 0.432 were calculated using all simulated events with $\Mlljj > 600$ $\GeV$, 
+Although the values 0.659 and 0.432 were calculated using all simulated events with $\Mlljj > 600$ $\GeV$, 
 the majority of selected simulated events had $\Mlljj < 1500$ $\GeV$.  A 10\% uncertainty was assigned to the top quark background 
-estimate to cover any deviation from 0.659 or 0.432 at high $\Mlljj$.  Based data and simulated events shown in Figure 
+estimate to cover any deviation from 0.659 or 0.432 at high $\Mlljj$.  Based on the data and simulated events shown in Figure 
 \ref{fig:dataAndSimsInEMuChannel}, the non-top quark backgrounds contributed $\sim$1\% to the $\Memujj$ distribution found in data.  
 Their contribution was neglected because it was less than the 10\% top quark background uncertainty.
+
+%RESUME HERE
 
 
 \section{\DY Background}
