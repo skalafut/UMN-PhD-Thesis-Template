@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% app_wrMC.tex: Appendix on WR MC generation:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Bayesian Limits}
+\label{app_bayesLimits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The \WR cross section $\times$ branching ratio ($\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$) limits are calculated 
+using several quantities.  Each limit for a specific \mWR signal is calculated using the number of measured events $G$ and 
+predicted signal ($S$) and background ($B$) events in the $\Mlljj$ window, and their uncertainties $\delta S$ and $\delta B$.  
+Expected limits, calculated by setting $G = B$, were used to determine the sizes of the $\Mlljj$ windows.  Expected limits were 
+calculated at 95\% confidence level (CL) using a Poisson model of the $S \plus B$ events:
+
+\begin{equation}
+	Poisson(\mu S(\pmb{\theta}) \thickspace \plus \thickspace B(\pmb{\theta}))
+	\label{eq:poissonModel}
+\end{equation}
+where $\mu$ is the dimensionless \WR signal strength, and $\pmb{\theta}$ represent the uncertainties $\delta S$ and $\delta B$ 
+described later in Section \ref{sec:uncertainties}.  Using Bayesian statistics, the probability distribution for $\mu$ given 
+$G$ measured events, $p(\mu|G)$, is obtained by evaluating the integral \cite{bayesianDataAnalysis}:
+
+\begin{equation}
+	p(\mu|G) = \int p(\mu|\pmb{\theta},G)p(\pmb{\theta}|G)d\pmb{\theta}
+	\label{eq:sigStrngthProbDist}
+\end{equation}
+where $p(\pmb{\theta}|G)$ are the probability distributions for the uncertainties given the measurement $G$ (``marginal 
+posterior distributions''), and $p(\mu|\pmb{\theta},G)$ are the probability distributions for $\mu$ given the uncertainties, 
+and the measurement $G$ (``conditional posterior distributions'').  Functional forms of the marginal posterior distributions 
+are either log-normal or Gamma distributions depending on the uncertainty, and are identified later for specific uncertainties.  
+Functional forms of the conditional posterior distributions are derived from uniform prior distributions and Equation 
+\ref{eq:poissonModel}.  The integrals in Equation \ref{eq:sigStrngthProbDist} were evaluated numerically using \MC methods 
+to derive $p(\mu|G)$.  Then, $p(\mu|G)$ was integrated from $\mu =$ 0 to $\mu = \mu_{max}$ such that the normalized integral 
+equaled 0.95.  The value $\mu_{max}$ is the 95\% CL upper limit on the signal strength.  The value of $\sigma(\WR) \times 
+BR(\WR \rightarrow \ell\ell jj)$ obtained from simulations is multiplied by $\mu_{max}$ to calculate the upper limit on 
+$\sigma(\WR) \times BR(\WR \rightarrow \ell\ell jj)$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
