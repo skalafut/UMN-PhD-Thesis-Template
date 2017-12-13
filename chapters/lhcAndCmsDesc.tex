@@ -93,12 +93,11 @@ track, and primarily were used to reconstruct interaction vertices.
 \end{figure}
 
 Located outside the pixel tracker, the strip tracker was constructed with 198 m$^{2}$ of silicon divided into arrays of strips, 
-and organized into four structures based on $|\eta|$ and distance from the IP.  As the distance from the beam axis increased, the 
-strip width increased from 80 to 180 $\mu$m, and the strip length increased from 12 to 16 cm.  
+and organized into the four structures that are shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}.  As the distance from the 
+beam axis increased, the strip width increased from 80 to 180 $\mu$m, and the strip length increased from 12 to 16 cm.  
 In the barrel region, silicon strips were used to build 10 concentric cylindrical shells.  In the endcap region, silicon 
-strips were arranged in 12 disks, as shown in Figure \ref{fig:stripTracker} \cite{cmsTDR}, with some overlap in $|\eta|$ with 
-the barrel region silicon strips.  The strip tracker provided between 5 and 14 measurements for every track over a $\sim$1 meter 
-distance.
+strips were arranged in 12 disks with some overlap in $|\eta|$ with the barrel region silicon strips.  The strip tracker provided 
+between 5 and 14 measurements for every track over a $\sim$1 meter distance.
 
 \begin{figure}[ht]
 	\centering
@@ -323,7 +322,7 @@ logic system located $\sim$20 m from CMS.  Implemented in programmable hardware,
 in less than 1 $\mu$s, and selected events of interested based on clusters and tracks passing energy and $|\eta|$ selection 
 criteria.  Approximately 80000 events per second were passed to the second level trigger.
 
-This trigger, a High Level trigger (HLT) was used to select events to be stored for offline physics analyses or for detector 
+This High Level trigger (HLT) was used to select events to be stored for offline physics analyses or for detector 
 calibration.  The HLT began by transferring data from all sub-detectors to $\sim$13000 CPU cores running the HLT software \cite{hltFarm}.  
 A fast, simplified version of the full offline particle reconstruction software was run in small regions identified from the L1 
 trigger.  Then, $\sim$400 different selection algorithms, running in parallel, applied selection criteria ($\Et$, $|\eta|$, etc) 
