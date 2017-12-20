@@ -43,17 +43,17 @@
 \includeonly{
     preliminaries/title,
     chapters/intro,
-    %chapters/theoryAndMotives,
-    %chapters/lhcAndCmsDesc,
-    %%%%chapters/simulation,
-    %chapters/reconstruction,
-    %%%%chapters/event_selection,
-    %chapters/data_set,
-	%chapters/analysis,
-    %chapters/conclusion,
-    %chapters/app_glossary,
-	%chapters/app_trgOfflId,
-	%chapters/app_bayesLimits,
+    chapters/theoryAndMotives,
+    chapters/lhcAndCmsDesc,
+    %%%chapters/simulation,
+    chapters/reconstruction,
+    %%%chapters/event_selection,
+    chapters/data_set,
+	chapters/analysis,
+    chapters/conclusion,
+    chapters/app_glossary,
+	chapters/app_trgOfflId,
+	chapters/app_bayesLimits,
 }
 
 \begin{document}
@@ -72,20 +72,20 @@
 \include{chapters/intro}
 %%%%
 %%%%%%Base Chapters
-%\include{chapters/theoryAndMotives}
-%\include{chapters/lhcAndCmsDesc}
+\include{chapters/theoryAndMotives}
+\include{chapters/lhcAndCmsDesc}
+%
+%%%Software Chapters
+%%%\include{chapters/simulation}
+\include{chapters/reconstruction}
 %%
-%%%%Software Chapters
-%%%%\include{chapters/simulation}
-%\include{chapters/reconstruction}
+%%%Analysis Chapters
+%%%\include{chapters/event_selection}
+\include{chapters/data_set}
+\include{chapters/analysis}
 %%%
-%%%%Analysis Chapters
-%%%%\include{chapters/event_selection}
-%\include{chapters/data_set}
-%\include{chapters/analysis}
-%%%%
-%%%%%%Conclusion
-%\include{chapters/conclusion}
+%%%%%Conclusion
+\include{chapters/conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,10 +97,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Appendices
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\appendix
-%\include{chapters/app_glossary}
-%\include{chapters/app_trgOfflId}
-%\include{chapters/app_bayesLimits}
+\appendix
+\include{chapters/app_glossary}
+\include{chapters/app_trgOfflId}
+\include{chapters/app_bayesLimits}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
